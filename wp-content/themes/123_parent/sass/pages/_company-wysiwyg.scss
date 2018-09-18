@@ -1,0 +1,44 @@
+@media only screen {
+
+	/* 
+		StyleGuide for WYSIWYG fields:
+	*/
+	.section-wysiwyg,
+	.company-wysiwyg{
+		padding: 20px;
+		font-size: 1.7rem;
+		line-height: 26px;
+		display: inline-block;
+		margin: 0 auto;
+		max-width: 720px;
+		// 
+		h1,h2,h3,h4,h5,h6, p {
+			margin: 10px 0;
+		}
+		p {
+
+		}
+	}
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	.section-wysiwyg,
+	.company-wysiwyg{
+		padding: 40px;
+		max-width: 1025px;
+
+		// 
+		// 
+		h1,h2,h3,h4,h5,h6, p {
+			margin: 20px 0;
+		}
+		p {
+
+		}
+	}
+
+}

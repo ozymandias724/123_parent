@@ -1,0 +1,81 @@
+@import "vars", "mixins";
+
+@media only screen {
+	.login{
+		font-family: $body;
+	}
+	.login p.message,
+	.login #login #login_error {
+		background-color: $footer-grey;
+		font-weight: normal;
+		font-size: 16px;
+		text-transform: uppercase;
+		color: white;
+		border-left: 5px solid $primary;
+	}
+	.login #login #login_error a{
+		display: block;
+		color: white;
+		margin-top: 16px;
+		margin-bottom: -16px;
+	}
+	#loginform{
+		background-color: rgba($footer-grey, 0.85);
+	}
+	.login label{
+		color: white;
+		font-size: 16px;
+		font-weight: 300;
+	}
+	.login form .input, .login form input[type=checkbox], .login input[type=text]{
+		background-color: #e0e0e0;
+		&:focus{
+			border-color: $primary;
+		}
+	}
+	.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large{
+		background-color: $primary;
+		color: black;
+		font-weight: normal;
+		text-transform: uppercase;
+		padding: 12px 20px 10px 20px;
+		display: inline-block;
+		height: auto;
+		text-shadow: none;
+		box-shadow: none;
+		font-size: 16px;
+		border: none;
+	}
+	.login form .forgetmenot label{
+		font-size: 16px;
+		position: relative;
+		top: 11px;
+	}
+
+	.login #backtoblog, 
+	.login #nav{
+		padding: 10px 20px;
+		background-color: rgba($footer-grey, 0.85);
+		margin: 0;
+		a{
+			color: white;
+			font-size: 16px;
+			font-weight: 300;
+		}
+	}
+	.login #nav{
+		margin-top: 10px;
+		padding-top: 20px;
+	}
+	.login #backtoblog{
+		padding-bottom: 20px;
+	}
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+
+}

@@ -1,0 +1,64 @@
+@media only screen {
+	.disabled{
+		width: 100%;
+		height: 100vh;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		position: relative;
+		overflow: hidden;
+	}
+	.disabled-tint{
+		background-color: rgba(0,0,0,0.3);
+		width: 100%;
+		height: 100vh;
+		z-index: 1;
+		position: absolute;
+	}
+	.disabled-center{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		text-align: center;
+		color: white;
+		width: 100%;
+		padding: 80px;
+		z-index: 3;
+	}
+	.disabled-center-header{
+		font-family: $body;
+		font-weight: 900;
+		letter-spacing: 1px;
+	}
+	.disabled-center-subheader{
+		margin: 10px 0 20px 0;
+		line-height: 1.5;
+	}
+	.disabled-center-tel{
+		color: white;
+		font-size: 3rem;
+		margin-bottom: 20px;
+		display: block;
+		text-decoration: none;
+		font-weight: 700;
+	}
+	.disabled-center-image{
+		display: block;
+		margin: 0 auto;
+		width: 533px;
+		max-width: 90%;
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.disabled-center-header{
+		font-size: 4rem;
+	}
+}
+
+@media only screen and (min-width: $large){
+	.disabled-center-header{
+		font-size: 5rem;
+	}
+}

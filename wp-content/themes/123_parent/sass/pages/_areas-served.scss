@@ -1,0 +1,71 @@
+@media only screen {
+	.areas-served {
+		text-align: center;
+	}
+	/* 
+		Hero 
+	*/
+	.areas-served-hero{
+		overflow: hidden;
+		min-height: 320px;
+	}
+	.areas-served-hero-map{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	.areas-served-hero-text{
+		z-index: 2;
+		text-align: center;
+	}
+	.areas-served-hero-text-header{
+		color: white !important;
+	}
+	.areas-served-hero-tint{
+		z-index: 1;
+	}
+	.areas-served-areas {
+		font-size: 0;
+		text-align: center;
+		max-width: $large;
+		margin: 0 auto;
+	}
+	.areas-served-areas-area {
+		width: calc(100% - 40px);
+		margin: 40px auto;
+		overflow: hidden;
+	}
+	.areas-served-areas-area-image {
+		height: 240px;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	.areas-served-areas-area-image-img {
+		object-fit: cover;
+		min-height: 100%;
+		width: 100%;
+		@include centerer;
+	}
+	.areas-served-areas-area-header {
+		padding: 40px 0;
+		background-color: $light-grey;
+		margin: 0;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+}
+@media only screen and (min-width: $medium){
+	.areas-served-areas-area{
+		display: inline-block;
+		width: calc(50% - 20px);
+		&:nth-of-type(even) {
+			margin-left: 20px;
+		}
+	}
+}
+@media only screen and (min-width: $large){
+	.areas-served-hero{
+		min-height: 480px;
+	}
+}

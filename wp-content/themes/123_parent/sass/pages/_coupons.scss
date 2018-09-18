@@ -1,0 +1,135 @@
+@media only screen {
+	// 
+	.coupons-coupons-pagination{
+		*{
+			color: black;
+			font-family: $body;
+			font-size: 2rem;
+			font-weight: 500;
+			padding: 0 10px;
+			&.current{
+				font-weight: normal;
+			}
+		}
+	}
+	// 
+	.coupons-coupons-seemore {
+		display: block;
+		p {
+			display: inline-block;
+		}
+	}
+	.coupons-coupons-grid{
+		font-size: 0;
+		width: 100%;
+		max-width: $large;
+		margin-top: 40px;
+		position: relative;
+		display: inline-block;
+		margin: 0 auto;
+	}
+	.coupons-coupons-grid-item{
+		padding: 20px;
+		background-color: $footer-grey;
+		border: 2px solid grey;
+		display: inline-block;
+		width: calc(100% - 20px);
+		max-width: 400px;
+		margin: 20px;
+		margin-bottom: 40px;
+		text-align: center;
+		color: white;
+	}
+	.coupons-coupons-grid-item-textcontainer-sitename{
+		font-size: 1.6rem;
+		font-family: $body;
+	}
+	.coupons-coupons-grid-item-textcontainer-header{
+		margin-top: 15px;
+		font-family: $body;
+		font-size: 2rem;
+	}
+	.coupons-coupons-grid-item-textcontainer-expiration{
+		
+		padding: 15px 0;
+		font-size: 1.6rem;
+	}
+	.coupons-coupons-grid-item-textcontainer-code{
+		font-size: 1.6rem;
+		strong{
+			font-weight: 500;
+		}
+	}
+	.coupons-coupons-pagination{
+		.pagination{
+			text-align: center;
+			margin: 40px 0;
+			.nav-links *{
+				color: black;
+				font-family: $body;
+				font-size: 2rem;
+				font-weight: bold;
+				padding: 0 15px;
+				&.current{
+					font-weight: normal;
+				}
+			}
+		}
+	}
+	.coupons-coupons-grid-item-textcontainer-print{
+		border: 2px solid white;
+		padding: 15px 30px;
+		text-transform: uppercase;
+		text-align: center;
+		display: inline-block;
+		margin: 20px auto 10px auto;
+		font-size: 1.8rem;
+		font-weight: 500;
+		text-decoration: none;
+		color: white;
+	}
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	.coupons-coupons-grid-item{
+		margin: 0 20px 40px 20px;
+		vertical-align: top;
+		width: 400px;
+		height: 300px;
+	}
+}
+
+
+
+
+@media only print {
+	.coupons-coupons-grid-item{
+		padding: 20px;
+		background-color: $primary;
+		border: 4px dashed black;
+		display: inline-block;
+		width: calc(100% - 40px);
+		max-width: calc(473px - 40px);
+		margin-bottom: 40px;
+		text-align: center;
+	}
+	.coupons-coupons-grid-item-textcontainer-sitename{
+		font-size: 3rem;
+	}
+	.coupons-coupons-grid-item-textcontainer-header{
+		margin-top: 15px;
+		font-family: $body;
+		font-size: 2rem;
+	}
+	.coupons-coupons-grid-item-textcontainer-expiration{
+		padding: 15px 0;
+		font-size: 1.6rem;
+	}
+	.coupons-coupons-grid-item-textcontainer-code{
+		font-size: 1.6rem;
+	}
+}

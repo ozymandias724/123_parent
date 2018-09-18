@@ -1,0 +1,28 @@
+@media only screen {
+	.parallax{
+		height: 320px;
+		width: 100%;
+		position: relative;
+		overflow: hidden;	
+	}
+	.parallax-image{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		min-height: 125%;
+		height: auto;
+		object-fit: cover;
+		@include transform(translate3d(-50%, -50%, 0));
+	}
+}
+
+@media only screen and (min-width: $medium){
+
+}
+
+@media only screen and (min-width: $large){
+	.parallax{
+		height: 640px;
+	}
+}

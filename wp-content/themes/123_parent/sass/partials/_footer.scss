@@ -1,0 +1,194 @@
+@media only screen {
+	.footer{
+		display: none;
+	}
+	.footer-middlecolumn1-sitemap{
+		display: none;
+	}
+	.footer-copyright{
+		display: none;
+	}
+}	
+@media only screen and (min-width: $medium){
+}
+@media only screen and (min-width: $large){
+	// BG
+	.footer{
+		display: block;
+		text-align: center;
+		background-color: $footer-grey;
+		color: white;
+		ul{
+			list-style: none;
+		}
+		font-size: 0;
+	}
+	.footer-wrap{
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 0px 40px;
+	}
+	// Grid Wrappers
+	.footer-section {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		width: 20%;
+		margin: 20px 4% 0 0;
+	}
+	.footer-section {
+		&:first-of-type {
+			width: 28%;
+		}
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	// Grid Item Heading
+	.footer-section-heading {
+		display: block;
+		font-size: 2.4rem;
+		color: white;
+		text-transform: capitalize;
+		position: relative;
+		margin: 20px 0;
+		padding: 5px 0;
+		font-weight: 400;
+		font-family: $body;
+		&:after {
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 100%;
+			display: inline-block;
+			content: '';
+			border-bottom: 2px solid $light-grey;
+			@include transition(width 0.3s ease);
+		}
+	}
+	// Section 1
+	.footer-logo{
+		display: inline-block;
+		font-size: 16px;
+		margin: 10px auto;
+		padding: 5px 0;
+	}
+	.footer-logo-image{
+		
+	}
+	.footer-section-contactlinks {
+		padding: 5px 0;
+		text-align: left;
+	}
+	.footer-contactlinks-email,
+	.footer-contactlinks-fax,
+	.footer-contactlinks-address,
+	.footer-contactlinks-phone{
+		font-size: 1.3rem;
+		padding: 5px 0;
+		display: inline-block;
+		color: white;
+		text-decoration: none;
+	}
+	
+	// 
+	.footer-contactlinks{
+		font-size: 0;
+		padding-top: 10px;
+	}
+	// Reseller Logo
+	.footer-webxlink {
+		position: relative;
+		font-size: 16px;
+		color: white;
+		text-decoration: none;
+	}
+	// 
+	.footer-webxlink-logo {
+		height: auto;
+		margin: 10px auto;
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.footer-section-pagelinks {
+	}
+	.footer-pagelinks{
+		column-count: 2;
+		column-gap: 10px;
+		text-align: left;
+	}
+	.footer-pagelinks-item{
+		margin-bottom: 5px;
+	}
+	.footer-pagelinks-item-link{
+		color: white;
+		text-transform: capitalize;
+		text-decoration: none;
+		padding: 5px 0;
+		display: inline-block;
+		font-size: 1.6rem;
+	}
+	.footer-copyright{
+		color: white;
+		font-size: 1.3rem;
+		text-align: center;
+		padding: 10px 0;
+		width: 100%;
+		background-color: $footer-grey;
+		display: block;
+	}
+	.footer-copyright-tclink{
+		color: white;
+		text-decoration: none;
+	}
+	// Badges
+	.footer-badges {
+		display: inline-block;
+		margin: 10px auto;
+		padding: 0px 20px;
+		text-align: center;
+		border-top: 1px solid transparentize(white, 0.5);
+	}
+	.footer-badges-badge {
+		margin: 10px;
+		display: inline-block;
+		vertical-align: middle;
+		height: 64px;
+		width: 64px;
+		a {
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+		}
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: cover;
+		}
+	}
+	// Invert?
+	footer.footer.light{
+		background-color: $footer-bg;
+		color: black;
+		.footer-contactlinks-phone,
+		.footer-contactlinks-fax,
+		.footer-contactlinks-address,
+		.footer-pagelinks-item-link,
+		.footer-webxlink,
+		.footer-copyright,
+		.footer-copyright-tclink,
+		.footer-middlecolumn1-sitemap{
+			color: black;
+		}
+		.footer-copyright{
+			background-color: $estimate-bar;
+		}
+	}
+	footer.footer.invertlogo{
+		.footer-logo-image{
+			@include filter(invert, 100%);
+		}
+	}
+}
