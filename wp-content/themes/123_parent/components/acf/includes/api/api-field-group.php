@@ -23,7 +23,7 @@ function acf_is_field_group_key( $key = '' ) {
 	if( is_numeric($key) ) return false;
 	
 	
-	// look for 'field_' prefix
+	// look for 'group_' prefix
 	if( substr($key, 0, 6) === 'group_' ) return true;
 	
 	
@@ -52,8 +52,16 @@ function acf_is_field_group_key( $key = '' ) {
 
 function acf_get_valid_field_group( $field_group = false ) {
 	
+	// $field_group must be an array
+	if( !is_array($field_group) ) $field_group = array();
+	
+	
+	// bail ealry if already valid
+	if( !empty($field_group['_valid']) ) return $field_group;
+	
+	
 	// parse in defaults
-	$field_group = wp_parse_args( $field_group, array(
+	$field_group = wp_parse_args($field_group, array(
 		'ID'					=> 0,
 		'key'					=> '',
 		'title'					=> '',
@@ -65,9 +73,14 @@ function acf_get_valid_field_group( $field_group = false ) {
 		'label_placement'		=> 'top',
 		'instruction_placement'	=> 'label',
 		'hide_on_screen'		=> array(),
-		'active'				=> 1, // Added in 5.2.9
-		'description'			=> '' // Added in 5.2.9
+		'active'				=> 1, 		// Added in 5.2.9
+		'description'			=> '', 		// Added in 5.2.9
+		'_valid'				=> 0,		// Added in 5.6.2
 	));
+	
+	
+	// field is now valid
+	$field_group['_valid'] = 1;
 	
 	
 	// filter
@@ -622,7 +635,8 @@ function acf_update_field_group( $field_group = array() ) {
 		'title',
 		'menu_order',
 		'fields',
-		'active'
+		'active',
+		'_valid'
 	));
 	
 	
@@ -648,6 +662,11 @@ function acf_update_field_group( $field_group = array() ) {
 	add_filter( 'wp_unique_post_slug', 'acf_update_field_group_wp_unique_post_slug', 100, 6 ); 
 	
     
+    // slash data
+	// - WP expects all data to be slashed and will unslash it (fixes '\' character issues)
+	$save = wp_slash( $save );
+	
+	
     // update the field group and update the ID
     if( $field_group['ID'] ) {
 	    
@@ -992,93 +1011,40 @@ function acf_untrash_field_group( $selector = 0 ) {
 function acf_get_field_group_style( $field_group ) {
 	
 	// vars
-	$e = '';
+	$style = '';
+	$elements = array(
+		'permalink'			=> '#edit-slug-box',
+		'the_content'		=> '#postdivrich',
+		'excerpt'			=> '#postexcerpt',
+		'custom_fields'		=> '#postcustom',
+		'discussion'		=> '#commentstatusdiv',
+		'comments'			=> '#commentsdiv',
+		'slug'				=> '#slugdiv',
+		'author'			=> '#authordiv',
+		'format'			=> '#formatdiv',
+		'page_attributes'	=> '#pageparentdiv',
+		'featured_image'	=> '#postimagediv',
+		'revisions'			=> '#revisionsdiv',
+		'categories'		=> '#categorydiv',
+		'tags'				=> '#tagsdiv-post_tag',
+		'send-trackbacks'	=> '#trackbacksdiv'
+	);
 	
-	
-	// bail early if no array or is empty
-	if( !acf_is_array($field_group['hide_on_screen']) ) return $e;
-	
-	
-	// add style to html
-	if( in_array('permalink',$field_group['hide_on_screen']) )
-	{
-		$e .= '#edit-slug-box {display: none;} ';
+	// loop over field group settings and generate list of selectors to hide
+	if( is_array($field_group['hide_on_screen']) ) {
+		$hide = array();
+		foreach( $field_group['hide_on_screen'] as $k ) {
+			if( isset($elements[ $k ]) ) {
+				$id = $elements[ $k ];
+				$hide[] = $id;
+				$hide[] = '#screen-meta label[for=' . substr($id, 1) . '-hide]';
+			}
+		}
+		$style = implode(', ', $hide) . ' {display: none;}';
 	}
-	
-	if( in_array('the_content',$field_group['hide_on_screen']) )
-	{
-		$e .= '#postdivrich {display: none;} ';
-	}
-	
-	if( in_array('excerpt',$field_group['hide_on_screen']) )
-	{
-		$e .= '#postexcerpt, #screen-meta label[for=postexcerpt-hide] {display: none;} ';
-	}
-	
-	if( in_array('custom_fields',$field_group['hide_on_screen']) )
-	{
-		$e .= '#postcustom, #screen-meta label[for=postcustom-hide] { display: none; } ';
-	}
-	
-	if( in_array('discussion',$field_group['hide_on_screen']) )
-	{
-		$e .= '#commentstatusdiv, #screen-meta label[for=commentstatusdiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('comments',$field_group['hide_on_screen']) )
-	{
-		$e .= '#commentsdiv, #screen-meta label[for=commentsdiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('slug',$field_group['hide_on_screen']) )
-	{
-		$e .= '#slugdiv, #screen-meta label[for=slugdiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('author',$field_group['hide_on_screen']) )
-	{
-		$e .= '#authordiv, #screen-meta label[for=authordiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('format',$field_group['hide_on_screen']) )
-	{
-		$e .= '#formatdiv, #screen-meta label[for=formatdiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('page_attributes',$field_group['hide_on_screen']) )
-	{
-		$e .= '#pageparentdiv {display: none;} ';
-	}
-
-	if( in_array('featured_image',$field_group['hide_on_screen']) )
-	{
-		$e .= '#postimagediv, #screen-meta label[for=postimagediv-hide] {display: none;} ';
-	}
-	
-	if( in_array('revisions',$field_group['hide_on_screen']) )
-	{
-		$e .= '#revisionsdiv, #screen-meta label[for=revisionsdiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('categories',$field_group['hide_on_screen']) )
-	{
-		$e .= '#categorydiv, #screen-meta label[for=categorydiv-hide] {display: none;} ';
-	}
-	
-	if( in_array('tags',$field_group['hide_on_screen']) )
-	{
-		$e .= '#tagsdiv-post_tag, #screen-meta label[for=tagsdiv-post_tag-hide] {display: none;} ';
-	}
-	
-	if( in_array('send-trackbacks',$field_group['hide_on_screen']) )
-	{
-		$e .= '#trackbacksdiv, #screen-meta label[for=trackbacksdiv-hide] {display: none;} ';
-	}
-	
 	
 	// return	
-	return apply_filters('acf/get_field_group_style', $e, $field_group);
-	
+	return apply_filters('acf/get_field_group_style', $style, $field_group);
 }
 
 
@@ -1233,7 +1199,8 @@ function acf_prepare_field_group_for_export( $field_group ) {
 	// extract some args
 	$extract = acf_extract_vars($field_group, array(
 		'ID',
-		'local'	// local may have added 'php' or 'json'
+		'local',	// local may have added 'php' or 'json'
+		'_valid',
 	));
 	
 	

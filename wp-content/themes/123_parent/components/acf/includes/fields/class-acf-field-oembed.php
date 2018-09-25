@@ -202,46 +202,32 @@ class acf_field_oembed extends acf_field {
 			'class' => 'acf-oembed',
 		);
 		
+		// <strong><?php _e("Error.", 'acf'); </strong> _e("No embed found for the given URL.", 'acf');
 		
 		// value
 		if( $field['value'] ) $atts['class'] .= ' has-value';
 		
 ?>
 <div <?php acf_esc_attr_e($atts) ?>>
-	<div class="acf-hidden">
-		<input type="hidden" data-name="value-input" name="<?php echo esc_attr($field['name']); ?>" value="<?php echo esc_attr($field['value']); ?>" />
-	</div>
-	<div class="title acf-soh">
-		
-		<div class="title-value">
-			<h4 data-name="value-title"><?php echo $field['value']; ?></h4>
+	
+	<?php acf_hidden_input(array( 'class' => 'input-value', 'name' => $field['name'], 'value' => $field['value'] )); ?>
+	
+	<div class="title">
+		<?php acf_text_input(array( 'class' => 'input-search', 'value' => $field['value'], 'placeholder' => __("Enter URL", 'acf'), 'autocomplete' => 'off'  )); ?>
+		<div class="acf-actions -hover">
+			<a data-name="clear-button" href="#" class="acf-icon -cancel grey"></a>
 		</div>
-		
-		<div class="title-search">
-			
-			<input data-name="search-input" type="text" placeholder="<?php _e("Enter URL", 'acf'); ?>" autocomplete="off" />
-		</div>
-		
-		<a data-name="clear-button" href="#" class="acf-icon -cancel grey acf-soh-target"></a>
-		
 	</div>
+	
 	<div class="canvas">
-		
-		<div class="canvas-loading">
-			<i class="acf-loading"></i>
+		<div class="canvas-media">
+			<?php if( $field['value'] ) {
+				echo $this->wp_oembed_get($field['value'], $field['width'], $field['height']);
+			} ?>
 		</div>
-		
-		<div class="canvas-error">
-			<p><strong><?php _e("Error.", 'acf'); ?></strong> <?php _e("No embed found for the given URL.", 'acf'); ?></p>
-		</div>
-		
-		<div class="canvas-media" data-name="value-embed">
-			<?php if( $field['value'] ) echo $this->wp_oembed_get($field['value'], $field['width'], $field['height']); ?>
-		</div>
-		
 		<i class="acf-icon -picture hide-if-value"></i>
-		
 	</div>
+	
 </div>
 <?php
 		

@@ -75,7 +75,7 @@ class acf_admin_settings_updates {
 	    // error object
     	if( is_wp_error($error) ) {
         	
-        	$error = __('<b>Error</b>. Could not connect to update server', 'acf') . ' <span class="description">(' . $error->get_error_message() . ')</span>';
+        	$error = __('<b>Error</b>. Could not connect to update server', 'acf') . ' <span class="description">(' . esc_html( $error->get_error_message() ) . ')</span>';
         	
     	}
     	
@@ -118,7 +118,7 @@ class acf_admin_settings_updates {
 			// is relevant?
 	    	if( version_compare($h4, $version, '==') ) {
 	        	
-	        	return '<h4>' . $version . '</h4>' . $text;
+	        	return '<h4>' . esc_html($version) . '</h4>' . acf_esc_html($text);
 	        	
 	    	}
 	    	
@@ -185,16 +185,12 @@ class acf_admin_settings_updates {
 		
 		// activate
 		if( acf_verify_nonce('activate_pro_licence') ) {
-		
 			$this->activate_pro_licence();
 		
 		// deactivate	
 		} elseif( acf_verify_nonce('deactivate_pro_licence') ) {
-		
 			$this->deactivate_pro_licence();
-			
 		}
-		
 		
 		// vars
 		$license = acf_pro_get_license_key();
@@ -208,26 +204,20 @@ class acf_admin_settings_updates {
 			'upgrade_notice'	=> ''
 		);
 		
-		
-		// vars
-		$info = acf_updates()->get_plugin_info('pro');
-		
+		// get plugin updates
+		$force_check = !empty( $_GET['force-check'] );
+		$info = acf_updates()->get_plugin_info('pro', $force_check);
 		
 		// error
 		if( is_wp_error($info) ) {
-			
 			return $this->show_error( $info );
-			
 		}
-        
-        
+		
         // add info to view
         $this->view['remote_version'] = $info['version'];
         
-        
         // add changelog if the remote version is '>' than the current version
         $version = acf_get_setting('version');
-	 
 		
 	    // check if remote version is higher than current version
 		if( version_compare($info['version'], $version, '>') ) {
@@ -237,20 +227,18 @@ class acf_admin_settings_updates {
         	$this->view['changelog'] = $this->get_changelog_section($info['changelog'], $info['version']);
         	$this->view['upgrade_notice'] = $this->get_changelog_section($info['upgrade_notice'], $info['version']);
         	
-        	
-        	// refresh transient
-        	// - avoids new version not available in plugin update list
-        	// - only request if license is active
+        	// refresh transient if:
+        	// a) A license is active (can get update)
+        	// b) No update exists, or the update version is stale
+        	$basename = acf_get_setting('basename');
+        	$update = acf_updates()->get_plugin_update( $basename );
         	if( $license ) {
-	        	
-	        	acf_updates()->refresh_plugins_transient();	
-	        	
+	        	if( !$update || $update['new_version'] !== $info['version'] ) {
+		        	acf_updates()->refresh_plugins_transient();
+	        	}
         	}
-
         }
-		
 	}
-	
 	
 	/*
 	*  activate_pro_licence
@@ -281,6 +269,12 @@ class acf_admin_settings_updates {
 		
 		// connect
 		$response = acf_updates()->request('v2/plugins/activate?p=pro', $post);
+		
+		
+		// ensure response is expected JSON array (not string)
+		if( is_string($response) ) {
+			$response = new WP_Error( 'server_error', esc_html($response) );
+		}
 		
 		
 		// error
@@ -343,6 +337,12 @@ class acf_admin_settings_updates {
 		
 		// connect
 		$response = acf_updates()->request('v2/plugins/deactivate?p=pro', $post);
+		
+		
+		// ensure response is expected JSON array (not string)
+		if( is_string($response) ) {
+			$response = new WP_Error( 'server_error', esc_html($response) );
+		}
 		
 		
 		// error
