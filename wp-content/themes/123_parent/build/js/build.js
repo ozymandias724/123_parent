@@ -2094,6 +2094,7 @@ var Theme = {};
 	$(document).ready(function(){
 
 		Theme.Breakpoint = {
+			
 			name : '',
 			_init : function(){
 				$(window).on('resize', Theme.Breakpoint._resizeHander);
