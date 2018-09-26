@@ -1,5 +1,7 @@
 <?php 
-// require_once('fusiontables/handler.php');
+// Please document:
+include_once('fusiontables/handler.php');
+
 /*
 	Populate Setup_Pages Repeater's Select Field Choices w/ Required Page Templates:
 */
