@@ -44,35 +44,31 @@ var Theme = {};
 
 
 		/**
-		 * Guided Scroll (spyscrolling)
+		 * smooth-scrolling to anchor links
 		 * @type {Object}
 		 */
 		Theme.GuidedScroll = {
+
 			anchorTags: $(".mobileheader a[href^='#'], .header a[href^='#']"),
-			anchorSections: $('main.main'), 
+
+			anchorSections: $('main.main'),
+
+			nudgeDown : undefined,
+
 			_handleScrolling: function(e){
 				e.preventDefault();
 				if( $(e.target).hasClass('mobileheader-menus-pages-menu-item-link') ){
-					var anchorOffset = $('.mobileheader').height();
+					Theme.GuidedScroll.nudgeDown = $('.mobileheader').innerHeight();
 				} else {
-					var anchorOffset = $('.header').height();
+					Theme.GuidedScroll.nudgeDown = $('.header').innerHeight();
 				}
-				var anchorPlusOffset = $(e.target.hash).offset().top - anchorOffset;
+				var scrollTarget = $(e.target.hash).offset().top - Theme.GuidedScroll.nudgeDown;
 
 				$('html, body').animate({
-				    scrollTop: anchorPlusOffset
-				 }, 1000);
-
-
-
-				// window.scrollTo({
-				// 	top: anchorPlusOffset,
-				// 	left: 0,
-				// 	behavior: 'smooth'
-				// });
+				    scrollTop: scrollTarget
+				 }, 800);
 			},
 			_init: function(){
-
 				Theme.GuidedScroll.anchorTags.on('click', Theme.GuidedScroll._handleScrolling);
 			}
 		}

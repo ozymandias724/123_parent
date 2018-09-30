@@ -29,7 +29,9 @@ if( !function_exists('get_gmap_api_key') ){
 /**
  * 	Setup Theme :
  */
-	require_once('classes/class.Setup.php');
+include_once('classes/class.MiscUtil.php');
+include_once('classes/class.NavUtil.php');
+require_once('classes/class.Setup.php');
 
 /**
  * 	Organize this craziness ASAP
@@ -228,10 +230,13 @@ if(!function_exists('the_bg')){
 		}
 	}
 }
-///////////////////////////////////////////////////////////////////////////
-// Render the Main Navigation ( spyscroll of modules, or links to pages) //
-///////////////////////////////////////////////////////////////////////////
+
 if(!function_exists('render_active_pages_menu')){
+	/**
+	 * render page links ul li a 
+	 * @param  [type] $prefix [description]
+	 * @return [type]         [description]
+	 */
 	function render_active_pages_menu($prefix){
 	 ?>
 		<ul class="<?php echo $prefix; ?>">
