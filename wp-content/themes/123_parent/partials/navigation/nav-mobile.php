@@ -13,7 +13,7 @@
 	</div>
 	<div class="mobileheader-menus">
 		<nav class="mobileheader-menus-pages">
-			<?php render_active_pages_menu('mobileheader-menus-pages-menu'); ?>
+			<?php NavUtil::render_nav_links('mobileheader-menus-pages-menu'); ?>
 		</nav>
 		<nav class="mobileheader-menus-contact">
 			<a href="tel:<?php echo get_the_phone('tel'); ?>" class="mobileheader-menus-contact-phone"><?php echo get_the_phone(); ?></a>

@@ -2139,28 +2139,33 @@ var Theme = {};
 		 */
 		Theme.GuidedScroll = {
 
-			anchorTags: $(".mobileheader a[href^='#'], .header a[href^='#']"),
+			anchorTags: $(".mobileheader ul li a, .header ul li a"),
 
 			anchorSections: $('main.main'),
 
 			nudgeDown : undefined,
 
-			_handleScrolling: function(e){
-				e.preventDefault();
-				if( $(e.target).hasClass('mobileheader-menus-pages-menu-item-link') ){
-					Theme.GuidedScroll.nudgeDown = $('.mobileheader').innerHeight();
-				} else {
-					Theme.GuidedScroll.nudgeDown = $('.header').innerHeight();
-				}
-				var scrollTarget = $(e.target.hash).offset().top - Theme.GuidedScroll.nudgeDown;
-
-				$('html, body').animate({
-				    scrollTop: scrollTarget
-				 }, 800);
-			},
 			_init: function(){
 				Theme.GuidedScroll.anchorTags.on('click', Theme.GuidedScroll._handleScrolling);
-			}
+			},
+
+			_handleScrolling: function(e){
+				if( window.wphelpers.ishome === '1'){
+					e.preventDefault();
+					if( $(e.target).hasClass('mobileheader-menus-pages-menu-item-link') ){
+						Theme.GuidedScroll.nudgeDown = $('.mobileheader').innerHeight();
+					} else {
+						Theme.GuidedScroll.nudgeDown = $('.header').innerHeight();
+					}
+					var scrollTarget = $(e.target.hash).offset().top - Theme.GuidedScroll.nudgeDown;
+
+					$('html, body').animate({
+					    scrollTop: scrollTarget
+					 }, 800);
+				} else{
+					// normal behavior
+				}
+			},
 		}
 
 

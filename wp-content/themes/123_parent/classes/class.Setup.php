@@ -124,7 +124,6 @@ class SetupTheme
 
 	// Localize Extra JavaScript Variables
 	public static function localize_javascript(){
-		// 
 		$val = var_export(get_field('nav-fadein-toggle', 'option'), true);
 		wp_localize_script( 'parent-main', 'DisableNavTintFadein', $val);
 		// 
@@ -182,12 +181,17 @@ class SetupTheme
 			wp_localize_script( 'parent-main', 'CountriesServed', $fth->get_countries_geometry($fields_array) );
 		}
 
-
 		wp_localize_script('parent-main', 'PopupTimes', array(
 			'short' => !empty( get_field('popuptime-short', 'option') ) ? get_field('popuptime-short', 'option') : 30,
 			'long' => !empty( get_field('popuptime-long', 'option') ) ? get_field('popuptime-long', 'option') : 3600,
 		));
 		wp_localize_script( 'parent-main', 'DisableTimedPopup', json_encode(get_field('ad-disable', 'option')) );
+
+		$wphelpers = array(
+			//
+			'ishome' => (is_home()) ? true : false,
+		);
+		wp_localize_script('parent-main', 'wphelpers', $wphelpers);
 		// end localize scripts
 	}
 

@@ -34,17 +34,18 @@ class NavUtil extends MiscUtil
 			return get_page_by_path($val, ARRAY_A)['post_title'];
 		}, NavUtil::$activePageNames));
 
+
 		foreach (NavUtil::$acfPageList as $i => $page) {
 			# code...
 			NavUtil::$navItemData[$i]['permalink'] = NavUtil::$activePageLinks[$i];
 			NavUtil::$navItemData[$i]['slug'] = NavUtil::$activePageNames[$i];
 			NavUtil::$navItemData[$i]['title'] = NavUtil::$activePageTitles[$i];
-
 		}
 	}
 	public static function render_nav_links($css_prefix = "navlinks"){
 		echo '<ul class="'. $css_prefix .'">';
 		foreach (NavUtil::$navItemData as $i => $navItem) :
+			NavUtil::$navItemData[$i]['permalink'] = get_site_url() . "/#" . NavUtil::$activePageNames[$i];
 		?>
 			<li class="<?php echo $css_prefix . "-item" ?>">
 				<a class="<?php echo $css_prefix . '-item-link' ?>" href="<?php echo NavUtil::$navItemData[$i]['permalink']; ?>">
