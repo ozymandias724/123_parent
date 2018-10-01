@@ -37,7 +37,7 @@
 	 ?>
 	<body <?php body_class([$invertlogo_class, $fadein_class]); ?>>
 		<?php 
-		if( $post->post_name !== 'disabled' ): ?>
+		if( $post->post_name !== 'disabled' ) : ?>
 			<?php get_template_part('partials/navigation/nav', 'desktop'); ?>
 			<?php get_template_part('partials/navigation/nav', 'mobile'); ?>
 		<?php endif; ?>

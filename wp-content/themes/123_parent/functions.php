@@ -6,11 +6,11 @@
 /**
  * 	Verify Active Pages
  */
-	add_action('acf/init', 'manage_page_requirements', 1);
+	add_action('init', 'manage_page_requirements', 1);
 	require_once('classes/Pagedata.php');
 	if( !function_exists( 'manage_page_requirements' ) ){
 		function manage_page_requirements(){
-			$page_handler = new Pagedata();
+			new Pagedata();
 		}
 	}
 /**
@@ -29,9 +29,9 @@ if( !function_exists('get_gmap_api_key') ){
 /**
  * 	Setup Theme :
  */
+require_once('classes/class.Setup.php');
 include_once('classes/class.MiscUtil.php');
 include_once('classes/class.NavUtil.php');
-require_once('classes/class.Setup.php');
 
 /**
  * 	Organize this craziness ASAP

@@ -33,7 +33,7 @@
 					echo apply_filters( '123_social_menus_desktop_nav', $desktop_social );
 				 ?>
 				<nav class="header-content-menus-pages">
-					<?php render_active_pages_menu('header-content-menus-pages-menu'); ?>
+					<?php NavUtil::render_nav_links('header-content-menus-pages-menu'); ?>
 				</nav>
 			</div>
 		

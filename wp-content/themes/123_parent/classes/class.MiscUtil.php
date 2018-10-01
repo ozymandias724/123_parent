@@ -8,7 +8,8 @@
 		
 		function __construct()
 		{
-			error_log('MiscUtil Instantiated');
+			// error_log('MiscUtil Instantiated');
+			
 		}
 
 	}
