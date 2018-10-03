@@ -3,7 +3,7 @@
 /**
  * nav related stuff
  */
-class NavUtil extends MiscUtil
+class NavUtil
 {
 	public static $activePageTitles
 		, $activePageNames
@@ -48,7 +48,7 @@ class NavUtil extends MiscUtil
 			NavUtil::$navItemData[$i]['permalink'] = get_site_url() . "/#" . NavUtil::$activePageNames[$i];
 		?>
 			<li class="<?php echo $css_prefix . "-item" ?>">
-				<a class="<?php echo $css_prefix . '-item-link' ?>" href="<?php echo NavUtil::$navItemData[$i]['permalink']; ?>">
+				<a data-scroll class="<?php echo $css_prefix . '-item-link' ?>" href="<?php echo NavUtil::$navItemData[$i]['permalink']; ?>">
 					<?php echo NavUtil::$navItemData[$i]['title']; ?>
 				</a>
 			</li>		
@@ -57,6 +57,5 @@ class NavUtil extends MiscUtil
 		echo "</ul>";
 	}
 }
-
-$NavUtil = new NavUtil();
+new NavUtil();
  ?>

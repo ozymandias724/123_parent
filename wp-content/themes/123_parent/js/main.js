@@ -42,42 +42,29 @@ var Theme = {};
 		}
 
 
-
 		/**
-		 * smooth-scrolling to anchor links
+		 * Configure and Instantiate the SmoothScroll Plugin
 		 * @type {Object}
 		 */
-		Theme.GuidedScroll = {
+		Theme.SmoothScroll = {
 
-			anchorTags: $(".mobileheader ul li a, .header ul li a"),
+			_init : function(){
 
-			anchorSections: $('main.main'),
+				$('.header').attr('data-scroll-header', '');
 
-			nudgeDown : undefined,
+				new SmoothScroll('a[data-scroll]', {
+					header : '[data-scroll-header]',
+					speed : 800,
+				});
 
-			_init: function(){
-				Theme.GuidedScroll.anchorTags.on('click', Theme.GuidedScroll._handleScrolling);
-			},
+				$(window).on('breakpoint', Theme.SmoothScroll._resizeHander);
 
-			_handleScrolling: function(e){
-				if( window.wphelpers.ishome === '1'){
-					e.preventDefault();
-					if( $(e.target).hasClass('mobileheader-menus-pages-menu-item-link') ){
-						Theme.GuidedScroll.nudgeDown = $('.mobileheader').innerHeight();
-					} else {
-						Theme.GuidedScroll.nudgeDown = $('.header').innerHeight();
-					}
-					var scrollTarget = $(e.target.hash).offset().top - Theme.GuidedScroll.nudgeDown;
+			}
+			// on window resize (breakpoint)
+			_resizeHander : function(e){
 
-					$('html, body').animate({
-					    scrollTop: scrollTarget
-					 }, 800);
-				} else{
-					// normal behavior
-				}
-			},
+			}
 		}
-
 
 
 		/**

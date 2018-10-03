@@ -189,7 +189,7 @@ class SetupTheme
 
 		$wphelpers = array(
 			//
-			'ishome' => (is_home()) ? true : false,
+			'ishome' => (is_home()) ? 'true' : 'false',
 		);
 		wp_localize_script('parent-main', 'wphelpers', $wphelpers);
 		// end localize scripts
