@@ -12,10 +12,10 @@ var Theme = {};
 				$(document).ready(Theme.Breakpoint._loadHandler);
 			},
 			_loadHandler: function(){
-				if( window.innerWidth > 1024 ){
+				if( window.innerWidth > 1167 ){
 					Theme.Breakpoint.name = 'desktop';
 				}
-				else if( window.innerWidth <= 1024 && window.innerWidth >= 640 ){
+				else if( window.innerWidth <= 1167 && window.innerWidth >= 640 ){
 					Theme.Breakpoint.name = 'tablet';
 				}
 				else {
@@ -23,11 +23,11 @@ var Theme = {};
 				}
 			},
 			_resizeHander : function(){
-				if( window.innerWidth > 1024 && Theme.Breakpoint.name != 'desktop' ){
+				if( window.innerWidth > 1167 && Theme.Breakpoint.name != 'desktop' ){
 					Theme.Breakpoint.name = 'desktop';
 					Theme.Breakpoint._dispatchEvent();
 				}
-				else if( window.innerWidth <= 1024 && window.innerWidth >= 640 && Theme.Breakpoint.name != 'tablet' ){
+				else if( window.innerWidth <= 1167 && window.innerWidth >= 640 && Theme.Breakpoint.name != 'tablet' ){
 					Theme.Breakpoint.name = 'tablet';
 					Theme.Breakpoint._dispatchEvent();
 				}
@@ -48,21 +48,38 @@ var Theme = {};
 		 */
 		Theme.SmoothScroll = {
 
+			instance : undefined,
+			activeHeader : undefined,
+
 			_init : function(){
+				
+				$(window).on('breakpoint load', Theme.SmoothScroll._resizeHander);
 
-				$('.header').attr('data-scroll-header', '');
-
-				new SmoothScroll('a[data-scroll]', {
+				Theme.SmoothScroll.instance = new SmoothScroll('a[data-scroll]', {
 					header : '[data-scroll-header]',
-					speed : 800,
+					speed : 800
 				});
-
-				$(window).on('breakpoint', Theme.SmoothScroll._resizeHander);
-
-			}
+			},
 			// on window resize (breakpoint)
 			_resizeHander : function(e){
 
+				Theme.SmoothScroll.activeHeader = Theme.Breakpoint.name;
+
+				// clean up data-scroll-header
+				$('.header, .mobileheader').removeAttr('data-scroll-header');
+
+				// intel set data-scroll-header on appropriate nav on breakpoint
+				if( Theme.SmoothScroll.activeHeader === 'desktop'){
+					$('.header').attr('data-scroll-header', '');
+				}
+				else if( Theme.SmoothScroll.activeHeader != 'desktop' ){
+					$('.mobileheader').attr('data-scroll-header', '');
+				}
+
+				Theme.SmoothScroll.instance = new SmoothScroll('a[data-scroll]', {
+					header : '[data-scroll-header]',
+					speed : 800
+				});
 			}
 		}
 
