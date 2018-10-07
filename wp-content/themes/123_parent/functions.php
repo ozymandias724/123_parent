@@ -2,7 +2,7 @@
 /**
  * 	Deactivate ACF Plugins if Installed, and use Integrated ACF
  */
-	require_once('reqs/integrate-acf.php');
+	require_once('reqs/localize-acf.php');
 /**
  * 	Verify Active Pages
  */

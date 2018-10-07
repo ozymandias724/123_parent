@@ -37,7 +37,7 @@ function my_acf_settings_dir( $dir ) {
 // Include ACF
 require_once( get_template_directory() . '/components/acf/acf.php' );
 // Include Groups and Fields
-require_once( dirname(__FILE__) . '/../acf-groups.php');
+require_once( dirname(__FILE__) . '/acf-groups/acf-groups.php');
 /**
  * 
  */

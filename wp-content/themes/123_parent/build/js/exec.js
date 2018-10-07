@@ -21,8 +21,6 @@
 		Theme.CookieMonster._init();
 
 		Theme.Parallax._init();
-
-		// Theme.GuidedScroll._init();
 		
 		Theme.SmoothScroll._init();
 
