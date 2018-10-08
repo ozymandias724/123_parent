@@ -1,12 +1,23 @@
+<?php 
+/**
+ * 
+ */
+ ?>
 <main class="menu main" id="menu">
-	<h2 class="fade fade-in menu-hero-text-header hero-text-header"><?php Pagedata::the_active_page_name('menu'); ?></h2>
-
+	
+	<?php 
+		if( is_home() ) :
+	 ?>
+			<h2 class="fade fade-in menu-hero-text-header hero-text-header"><?php Pagedata::the_active_page_name('menu'); ?></h2>;
+	<?php 
+		endif;
+	 ?>
 	<div class="menu-menus">
 		<?php 
 			if( have_rows('menu-repeater', 'options') ) : while( have_rows('menu-repeater', 'options') ) : the_row();
-				$menu_name = ( !empty( get_sub_field('menu-category-name', 'options') ) ) ? get_sub_field('menu-category-name', 'options') : null;
-				$menu_description = ( !empty( get_sub_field('menu-category-description', 'options') ) ) ? get_sub_field('menu-category-description', 'options') : null;
-				$menu_type = ( !empty( get_sub_field('menutype', 'options') ) ) ? get_sub_field('menutype', 'options') : null;
+				$menu_name =  !empty( get_sub_field('menu-category-name', 'options') )  ? get_sub_field('menu-category-name', 'options') : null;
+				$menu_description =  !empty( get_sub_field('menu-category-description', 'options') )  ? get_sub_field('menu-category-description', 'options') : null;
+				$menu_type =  !empty( get_sub_field('menutype', 'options'))  ? get_sub_field('menutype', 'options') : null;
 		?>
 			<div class="menu-menus-menu <?php echo "menutype-" . $menu_type; ?>">
 				<h4 class="menu-menus-menu-title display-tf"><?php echo $menu_name; ?></h4>

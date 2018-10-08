@@ -231,46 +231,6 @@ if(!function_exists('the_bg')){
 	}
 }
 
-if(!function_exists('render_active_pages_menu')){
-	/**
-	 * render page links ul li a 
-	 * @param  [type] $prefix [description]
-	 * @return [type]         [description]
-	 */
-	function render_active_pages_menu($prefix){
-	 ?>
-		<ul class="<?php echo $prefix; ?>">
-			<?php
-			if( !empty(Pagedata::$active_pages)) :
-				foreach( Pagedata::$active_pages as $page ) :
-					$page_object = get_page_by_path( $page['page-template'], ARRAY_A);
-					$page_url = '#' . $page_object['post_name'];
-
-					// If on Home Page, and set as Latest Posts (not specific page)
-					if( is_home() ){
-						if( has_filter('do_remove_homepage_anchors') ){
-							$page_url = apply_filters('do_remove_homepage_anchors', $page_url);
-						}
-					}
-					// if were not on the home page, then links should be normal
-					else {
-						$page_url = get_site_url() . '/' .$page_object['post_name'];
-					}
-			?>
-				<li class="<?php echo $prefix . '-item'; ?>">
-					<a href="<?php echo $page_url; ?>" class="<?php echo $prefix . '-item-link'; ?>">
-						<?php echo $page_object['post_title']; ?>
-					</a>
-				</li>
-			<?php 
-				endforeach;
-			endif;
-			 ?>
-		</ul>
-	 <?php
-	}
-}
-
 
 
 

@@ -42,14 +42,29 @@ class NavUtil
 			NavUtil::$navItemData[$i]['title'] = NavUtil::$activePageTitles[$i];
 		}
 	}
-	public static function render_nav_links($css_prefix = "navlinks"){
-		echo '<ul class="'. $css_prefix .'">';
+	/**
+	 * echoes the main nav as html
+	 * @param  string $prepend [prepend the default classes]
+	 */
+	public static function render_nav_links($prepend = "navlinks"){
+		// wrapper
+		echo '<ul class="'.$prepend.'">';
+		// each link
 		foreach (NavUtil::$navItemData as $i => $navItem) :
-			NavUtil::$navItemData[$i]['permalink'] = get_site_url() . "/#" . NavUtil::$activePageNames[$i];
+			// vars
+			$title = NavUtil::$navItemData[$i]['title'];
+			$link = NavUtil::$navItemData[$i]['permalink'];
+
+			// toggle #hash nav
+			if( wp_get_theme()->Name == '123_three' || wp_get_theme()->Name == '123_one' ){
+				$link = get_site_url() . "/" . NavUtil::$activePageNames[$i];
+			} else {
+				$link = get_site_url() . "/#" . NavUtil::$activePageNames[$i];
+			}
 		?>
-			<li class="<?php echo $css_prefix . "-item" ?>">
-				<a data-scroll class="<?php echo $css_prefix . '-item-link' ?>" href="<?php echo NavUtil::$navItemData[$i]['permalink']; ?>">
-					<?php echo NavUtil::$navItemData[$i]['title']; ?>
+			<li class="<?php echo $prepend . "-item" ?>">
+				<a data-scroll class="<?php echo $prepend . '-item-link' ?>" href="<?php echo $link; ?>">
+					<?php echo $title; ?>
 				</a>
 			</li>		
 		<?php

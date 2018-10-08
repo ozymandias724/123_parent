@@ -37,7 +37,7 @@
 	<div class="mobilefooter-section mobilefooter-section-pagelinks ">
 		<h2 class="mobilefooter-section-heading">Links</h2>
 		<?php 
-			render_active_pages_menu('mobilefooter-pagelinks');
+			NavUtil::render_nav_links('mobilefooter-pagelinks');
 		 ?>
 	</div>	
 	<?php 

@@ -1,23 +1,33 @@
+<?php 
+$themeName = wp_get_theme()->Name;
+if( $themeName == "123_four"){
+	$t4_title = '<h1 class="contact-contact-right-title contact-contact-left-locations-header">Send us a Message</h1>';
+	}
+ ?>
 <main class="contact main" id="contact">
+	
+
 	<section class="contact-hero  hero">
 		<div class="contact-hero-text hero-text">
-			<h1 class="fade fade-up contact-hero-text-header hero-text-header">
-				<?php Pagedata::the_active_page_name('contact'); ?>	
-			</h1>
+			<h1 class="fade fade-up contact-hero-text-header hero-text-header"><?php Pagedata::the_active_page_name('contact'); ?></h1>
 		</div>
 		<div class="contact-hero-tint hero-tint"></div>
 		<div class="contact-hero-map"></div>
 	</section>
+
+
 	<section class="fade fade-up contact-contact  section">
-			<!-- need to add an optional title here; as per theme 4 -->
+
+
+		<!-- need to add an optional title here; as per theme 4 -->
 		<div class="contact-contact-right">
 			<?php 
-				if (has_action( 'do_render_contact_form_heading', 'render_contact_form_heading' )){
-					do_action( 'do_render_contact_form_heading' );
-				}			
-			?>
-			<?php echo do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
+				echo $t4_title;
+				echo do_shortcode('[gravityform id=1 title=false description=false ajax=true]');
+			 ?>
 		</div>
+
+
 		<div class="contact-contact-left">
 			<div class="contact-contact-left-locations">
 				<?php 

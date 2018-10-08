@@ -40,7 +40,7 @@
 	 ?>
 	<div class="footer-section footer-section-pagelinks">
 		<p class="footer-section-heading">Links</p>
-		 <?php render_active_pages_menu('footer-pagelinks'); ?>
+		 <?php NavUtil::render_nav_links('footer-pagelinks'); ?>
 	</div>	
 	<?php 
 		/////////////
