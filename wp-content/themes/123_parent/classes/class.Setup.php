@@ -57,24 +57,43 @@ class SetupTheme
 	    SetupTheme::enqueue_javascript();
 	    SetupTheme::localize_javascript();
 	}
+
+
 	public static function wp_enqueue_remote_css(){
 		wp_enqueue_style( 'remote-override-parent' );
 		wp_enqueue_style( 'remote-override-child' );
 	}
 
-	// Register Scripts
+
 	public static function register_javascript(){
-	    wp_register_script( 'parent-main', get_template_directory_uri() . '/build/js/build.js', false, filemtime(get_stylesheet_directory() . '/build/js/build.js') );
-	    wp_register_script( 'parent-exec', get_template_directory_uri() . '/build/js/exec.js', false, filemtime(get_stylesheet_directory() . '/build/js/exec.js') );
+	    wp_register_script( 'parent-main'
+	    	, get_template_directory_uri() . '/build/js/build.js'
+	    	, false
+	    	, filemtime(get_template_directory() . '/build/js/build.js')
+    	);
+	    wp_register_script( 'parent-exec'
+	    	, get_template_directory_uri() . '/build/js/exec.js'
+	    	, false
+	    	, filemtime(get_template_directory() . '/build/js/exec.js')
+	    );
 	}
-	// Register Styles
 	public static function register_styles(){
-	    wp_register_style( 'parent', get_template_directory_uri() . '/build/css/build.css', false, filemtime(get_stylesheet_directory() . '/build/css/build.css') );
+	    wp_register_style( 'parent'
+	    	, get_template_directory_uri() . '/build/css/build.css'
+	    	, false
+	    	, filemtime(get_template_directory() . '/build/css/build.css')
+    	);
 
-
+	    // remote css files
+		wp_register_style( 'remote-override-parent'
+			, "https://123websites.com/css-themes/123_parent.css"
+			, array('parent')
+		);
         $theme_name = wp_get_theme()->get_stylesheet();
-		wp_register_style( 'remote-override-parent', "https://123websites.com/css-themes/123_parent.css", array('parent'));
-    	wp_register_style( 'remote-override-child', "https://123websites.com/css-themes/${theme_name}.css", array('parent'));
+    	wp_register_style( 'remote-override-child'
+    		, "https://123websites.com/css-themes/${theme_name}.css"
+    		, array('parent')
+    	);
 	}
 	// 
 	public static function enqueue_javascript(){

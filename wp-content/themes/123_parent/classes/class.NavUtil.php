@@ -1,7 +1,6 @@
 <?php 
-
 /**
- * nav related stuff
+ * NavUtil handles config and render the main site nav
  */
 class NavUtil
 {
