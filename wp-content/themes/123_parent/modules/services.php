@@ -46,7 +46,7 @@
 					<h3 class="services-grid-item-header"><?php echo get_sub_field('service-name', 'option'); ?></h3>
 					<div class="services-grid-item-descriptioncontainer">
 						<div class="services-grid-item-descriptioncontainer-description">
-							<?php echo wp_trim_words(get_sub_field('service-description', 'option'), 55, "..."); ?>
+							<?php echo get_sub_field('service-description', 'option'); ?>
 						</div>
 					</div>
 					<div class="services-grid-item-pricecontainer">
