@@ -56,6 +56,8 @@
 			.mobileheader-menus-contact-phone,
 			.footer-section-heading,
 			.footer-section-heading:after,
+			.header-content-pages-item-link,
+			.mobileheader-content-pages-item-link,
 			.mobileheader-menus-social-menu-item-link-icon
 			{ 
 				border-color: <?php echo $color; ?>;
