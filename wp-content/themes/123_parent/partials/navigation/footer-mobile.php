@@ -1,50 +1,45 @@
 <?php 
-	///////////////////////////////////
-	// Parent Theme Footer (Updated) //
-	///////////////////////////////////
 	$logo_is_inverted = get_field('general-theme-invert-headerfooter-logo-colors', 'option');
  ?>
 <footer class="mobilefooter<?php echo $logo_is_inverted ? ' invertlogo' : ''; ?>">
-	<?php 
-		////////////////////////
-		// Owner Contact Info //
-		////////////////////////
-	 ?>
 	<div class="mobilefooter-section">
 		<a href="<?php echo site_url(); ?>" class="mobilefooter-logo">
 			<img src="<?php echo get_logo(); ?>" class="mobilefooter-logo-image">
 		</a>
+
+
 		<div class="mobilefooter-section-contactlinks">
-			<?php if( !empty( get_the_phone() ) ) : ?>
+			<?php 
+				if( !empty( get_the_phone() ) ) :
+			 ?>
 				<a href="tel:<?php echo get_the_phone('tel'); ?>" class="mobilefooter-contactlinks-phone"><?php echo 'P: ' . get_the_phone() ?></a>
-			<?php endif; ?>
-			<?php if( !empty( get_the_fax() ) ): ?>
-				<br>
-				<a href="tel:<?php echo get_the_fax('tel'); ?>" class="mobilefooter-contactlinks-fax"><?php echo 'F: ' . get_the_fax() ?></a>
-			<?php endif; ?>
-			<?php if( !empty( get_the_address() ) ) : ?>
-				<br>
-				<div class="mobilefooter-contactlinks-address"><?php echo get_master_address(); ?></div>
-			<?php endif; ?>
+			<?php 
+				endif;
+				if( !empty( get_the_fax() ) ):
+			 ?>
+					<br>
+					<a href="tel:<?php echo get_the_fax('tel'); ?>" class="mobilefooter-contactlinks-fax"><?php echo 'F: ' . get_the_fax() ?></a>
+			<?php 
+				endif;
+				if( !empty( get_the_address()) ) :
+					$maps = new GooMaps();
+					$address = get_field('social-address', 'options')['address'];
+					$fulladdress = $maps->geocode($address);
+			 ?>
+					<br>
+					<div class="mobilefooter-contactlinks-address"><?php echo $fulladdress[2]; ?></div>
+			<?php 
+				endif;
+			 ?>
 		</div>
 		<?php include locate_template( 'modules/sub-modules/social-icons.php' ); ?>		
 	</div>
-	<?php 
-		////////////////
-		// Page Links //
-		////////////////
-	 ?>
 	<div class="mobilefooter-section mobilefooter-section-pagelinks ">
 		<h2 class="mobilefooter-section-heading">Links</h2>
 		<?php 
 			NavUtil::render_nav_links('mobilefooter-pagelinks');
 		 ?>
 	</div>	
-	<?php 
-		/////////////
-		// Payment //
-		/////////////
-	 ?>
 	<div class="mobilefooter-section mobilefooter-section-payment ">
 		<h2 class="mobilefooter-section-heading">Payment</h2>
 		<?php 

@@ -26,6 +26,7 @@ if( !function_exists('get_gmap_api_key') ){
 		return 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY';
 	}
 }
+include_once('classes/class.GooMaps.php');
 /**
  * 	Setup Theme :
  */

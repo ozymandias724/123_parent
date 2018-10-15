@@ -28,7 +28,12 @@
 			<?php endif; ?>
 			<br>
 			<div class="footer-contactlinks-address">
-				<?php echo get_master_address(); ?>
+				<?php 
+					$maps = new GooMaps();
+					$address = get_field('social-address', 'options')['address'];
+					$fulladdress = $maps->geocode($address);
+					echo $fulladdress[2];
+				 ?>
 			</div>
 		</div>
 		<?php include locate_template( 'modules/sub-modules/social-icons.php' ); ?>
