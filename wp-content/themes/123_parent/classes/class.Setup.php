@@ -8,7 +8,7 @@ class SetupTheme
 		// 
 		SetupTheme::clean_head();
 		// 
-		add_action( "setup_theme", "SetupTheme::before_setup_theme");
+		// add_action( "setup_theme", "SetupTheme::before_setup_theme");
 		// 
 		add_action( "after_setup_theme", "SetupTheme::after_setup_theme");
 		// 

@@ -5,13 +5,18 @@
  */
 class GooMaps
 {
-	var $key = "AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY";	
-	
+	private $key = "AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY";	
+
 	function __construct()
 	{
-		# code...
+
 	}
 
+	function formatAddress($address){
+		$a = preg_replace(" /,/", '<br>', $address, 1);
+		$b = str_replace(', USA', '', $a);
+		return $b;
+	}
 
 	function geocode($address){
 	 

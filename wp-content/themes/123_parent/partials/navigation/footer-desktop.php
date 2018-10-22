@@ -29,10 +29,10 @@
 			<br>
 			<div class="footer-contactlinks-address">
 				<?php 
-					$maps = new GooMaps();
+					$handle = new GooMaps();
 					$address = get_field('social-address', 'options')['address'];
-					$fulladdress = $maps->geocode($address);
-					echo $fulladdress[2];
+					$geocodedArray = $handle->geocode($address);
+					echo $handle->formatAddress($geocodedArray[2]);
 				 ?>
 			</div>
 		</div>

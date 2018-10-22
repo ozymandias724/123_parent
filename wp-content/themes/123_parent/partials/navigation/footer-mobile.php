@@ -22,12 +22,13 @@
 			<?php 
 				endif;
 				if( !empty( get_the_address()) ) :
-					$maps = new GooMaps();
+					$handle = new GooMaps();
 					$address = get_field('social-address', 'options')['address'];
-					$fulladdress = $maps->geocode($address);
+					$geocodedArray = $handle->geocode($address);
+					$formattedAddress = $handle->formatAddress($geocodedArray[2]);
 			 ?>
 					<br>
-					<div class="mobilefooter-contactlinks-address"><?php echo $fulladdress[2]; ?></div>
+					<div class="mobilefooter-contactlinks-address"><?php echo $formattedAddress; ?></div>
 			<?php 
 				endif;
 			 ?>
