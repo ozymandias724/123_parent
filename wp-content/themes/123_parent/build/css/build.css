@@ -5556,6 +5556,7 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
     width: calc(30% - 20px);
     vertical-align: top;
     padding: 20px;
+    margin-top: 20px;
     margin-left: 20px;
     background-color: rgba(0, 0, 0, 0.1);
   }
@@ -6053,6 +6054,14 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
   .single-single {
     text-align: left;
   }
+
+  .single-single-title {
+    margin-top: 40px;
+  }
+
+  .single-single-date {
+    margin-bottom: 40px;
+  }
 }
 @media only screen and (min-width: 1025px) {
   .single-hero {
@@ -6064,9 +6073,19 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
   }
 
   .single-single {
-    padding: 40px 60px;
     margin: 0 auto;
     max-width: 1024px;
+    padding-bottom: 40px;
+  }
+
+  .single-single-socialcontainer {
+    margin: 15px auto;
+  }
+
+  .single-single-content {
+    width: calc(70% - 30px);
+    display: inline-block;
+    vertical-align: top;
   }
 }
 @media only screen {

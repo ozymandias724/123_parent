@@ -32,6 +32,13 @@
 	.single-single {
 		text-align: left;
 	}
+
+	.single-single-title {
+		margin-top: 40px;
+	}
+	.single-single-date {
+		margin-bottom: 40px;
+	}
 	
 }
 @media only screen and (min-width: $medium){}
@@ -43,8 +50,21 @@
 		font-size: 7.2rem;
 	}
 	.single-single{
-		padding: 40px 60px;
 		margin: 0 auto;
 		max-width: 1024px;
+		padding-bottom: 40px;
 	}
+	
+
+	.single-single-socialcontainer {
+		margin: 15px auto;
+	}
+
+
+	.single-single-content {
+		width: calc(70% - 30px);
+		display: inline-block;
+		vertical-align: top;
+	}
+
 }
