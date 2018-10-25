@@ -78,6 +78,7 @@
 		<?php
 	endif;
 
+	// (accent color)
 	if( get_field('buttons-underlines-toggle', 'option') ):
 		$color = get_field('buttons-underlines', 'option');
 		?>	
@@ -136,7 +137,8 @@
 				.blog-blog-sidebar-archive-header:after,
 				.blog-blog-sidebar-categories-header:after,
 				.blog-blog-sidebar-recentposts-header:after,
-				.gallery-galleries-gallery-header:after {
+				.gallery-galleries-gallery-header:after,
+				.services-grid-item-header:after {
 					border-bottom: 6px solid <?php echo $color; ?>;
 				}
 				.home-testimonials-grid-item-quotemark,
