@@ -21,7 +21,7 @@
 					<a href="tel:<?php echo get_the_fax('tel'); ?>" class="mobilefooter-contactlinks-fax"><?php echo 'F: ' . get_the_fax() ?></a>
 			<?php 
 				endif;
-				if( !empty( get_the_address()) ) :
+				if( !empty( get_master_address()) ) :
 					$handle = new GooMaps();
 					$address = get_field('social-address', 'options')['address'];
 					$geocodedArray = $handle->geocode($address);

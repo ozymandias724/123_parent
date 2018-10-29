@@ -484,6 +484,7 @@ if( !function_exists('check_logo_text_exists') ){
 		}
 	}
 }
+
 if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) : 
 	function wpse_custom_wp_trim_excerpt($wpse_excerpt) {
 

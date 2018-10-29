@@ -100,21 +100,21 @@
 
 	// TO BE DEPRICATED
 	// get the address for footers
-	if( !function_exists('get_the_address') ){
+	// if( !function_exists('get_the_address') ){
 		
-		function get_the_address(){
+	// 	function get_the_address(){
 			
-			if( !empty(get_field('social-address-line2', 'option')) && !empty(get_field('social-address', 'option')) ){
-				$address_line2 = get_field('social-address-line2', 'option');
-				return strstr(get_field('social-address', 'option')['address'],',', true) . ' ' . $address_line2 . strstr(get_field('social-address', 'option')['address'],',');
-			}
-			else if( !empty( get_field('social-address', 'option') ) ){
-				return get_field( 'social-address', 'option' )['address'];
-			}
-			else{
-				return '';
-			}
-		}
-	}
+	// 		if( !empty(get_field('social-address-line2', 'option')) && !empty(get_field('social-address', 'option')) ){
+	// 			$address_line2 = get_field('social-address-line2', 'option');
+	// 			return strstr(get_field('social-address', 'option')['address'],',', true) . ' ' . $address_line2 . strstr(get_field('social-address', 'option')['address'],',');
+	// 		}
+	// 		else if( !empty( get_field('social-address', 'option') ) ){
+	// 			return get_field( 'social-address', 'option' )['address'];
+	// 		}
+	// 		else{
+	// 			return '';
+	// 		}
+	// 	}
+	// }
 
  ?>

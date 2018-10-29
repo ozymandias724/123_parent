@@ -2503,6 +2503,7 @@ if( !function_exists('add_acf_fields') ){
 								'masonry' => 'Photo Style',
 								'list' => 'List Style',
 								'pdf' => 'PDF',
+								'gallery' => 'Gallery',
 							),
 							'instructions' => 'Use Photo Style if you have images and List Style if you don\'t.',
 							'default_value' => array(
@@ -2621,6 +2622,21 @@ if( !function_exists('add_acf_fields') ){
 								),
 							),
 						),
+						array(
+							'key' => 'field_n22oiinsksoakif',
+							'label' => 'Gallery Style',
+							'type' => 'gallery',
+							'name' => 'menu-gallery',
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_9sinfalka09ng',
+										'operator' => '==',
+										'value' => 'gallery',
+									),
+								),
+							),
+						)
 					),
 				),
 			),
