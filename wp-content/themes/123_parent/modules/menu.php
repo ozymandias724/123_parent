@@ -9,13 +9,14 @@
 <section class="menus" id="menu">
 	<?php 
 		$guide = '';
+		
 		foreach( $menus as $menu){
 			$name = $menu['menu-category-name'];
 			$description = $menu['menu-category-description'];
 			$type = $menu['menutype'];
 			$content = '<div class="menus-menu">';			
 			$guide = '
-				<h4>%s</h4>
+				<h3>%s</h3>
 				<p>%s</p>
 			';
 			$content .= sprintf(
@@ -28,7 +29,6 @@
 			{
 				case 'gallery':
 					$content .= '<ul class="menus-menu-list">';
-
 
 					$guide = '
 						<li class="menus-menu-list-item">
@@ -61,7 +61,7 @@
 					$content .= '<ul class="menus-menu-list">';
 					$guide = '
 						<li class="menus-menu-list-item">
-							<h6>%s</h6><h6>%s</h6><p>%s</p>
+							<h4>%s</h4><h4>%s</h4><p>%s</p>
 						</li>
 					';
 					foreach ($menu['menu-category-list-repeater'] as $i => $list) {
@@ -79,8 +79,8 @@
 					$content .= '<ul class="menus-menu-list">';
 					$guide = '
 						<li class="menus-menu-list-item">
-							<h6>%s</h6><h6>%s</h6><p>%s</p>
 							%s
+							<h4>%s</h4><h4>%s</h4><p>%s</p>
 						</li>
 					';
 					foreach ($menu['menu-category-repeater'] as $i => $list) {
@@ -90,10 +90,10 @@
 						}
 						$content .= sprintf(
 							$guide
+							,$doImage
 							,$list['menu-item-name']
 							,$list['menu-item-price']
 							,$list['menu-item-description']
-							,$doImage
 						);
 					}
 					$content .= '</ul>';

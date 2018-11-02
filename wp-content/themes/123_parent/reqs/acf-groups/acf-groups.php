@@ -2616,7 +2616,7 @@ if( !function_exists('add_acf_fields') ){
 								array(
 									array(
 										'field' => 'field_9sinfalka09ng',
-										'operator' => '=',
+										'operator' => '==',
 										'value' => 'pdf',
 									),
 								),

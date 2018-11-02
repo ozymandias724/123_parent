@@ -1,9 +1,13 @@
-<?php do_action('123_before_desktop_nav') ?>
+<?php 
+/**
+ * 
+ */
+	$invertlogo = get_field('general-theme-invert-headerfooter-logo-colors', 'option') ? ' invertlogo' : '';
+	$fadenav = get_field('nav-fadein-toggle', 'option') ? ' removefadein' : '';
+	do_action('123_before_desktop_nav');
+?>
+<header class="header <?php echo $invertlogo;echo $fadenav; ?>">
 
-<header class="header <?php 
-		echo get_field('general-theme-invert-headerfooter-logo-colors', 'option') ? ' invertlogo' : ''; 
-		echo get_field('nav-fadein-toggle', 'option') ? ' removefadein' : ''; ?>">
-	
 
 	<?php if(!get_field('remove-topbar', 'option')): ?>
 		<div class="header-topbar">

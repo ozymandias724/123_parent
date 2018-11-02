@@ -6097,6 +6097,13 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
     max-width: 960px;
     margin: 40px auto;
   }
+  .menus-menu h3, .menus-menu h4 {
+    font-family: "Gotham";
+    font-weight: 400;
+  }
+  .menus-menu > h3, .menus-menu > p {
+    text-align: left;
+  }
 
   .menus-menu-list {
     list-style-type: none;
@@ -6105,12 +6112,11 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
 
   .menus-menu-list-item {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     padding: 20px;
     margin: 20px auto;
     border-bottom: 1px solid lightgrey;
   }
-
   .menus-menu-list-item figure {
     width: 100%;
     overflow: hidden;
@@ -6118,9 +6124,11 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
     margin-bottom: 15px;
   }
   .menus-menu-list-item figure img {
-    max-height: 100%;
+    height: 100%;
     width: 100%;
-    height: auto;
+  }
+  .menus-menu-list-item p {
+    text-align: left;
   }
 }
 @media only screen and (min-width: 641px) {

@@ -66,10 +66,12 @@
 		}
 	}
 
-	/* 
-		Get the Address v2
-	*/
 	if( !function_exists('get_master_address') ){
+
+		/**
+		 * gets relevent fields to the site owner address and creates a formatted string
+		 * @return string formatted 'the address' string
+		 */
 		function get_master_address()
 		{
 			// vars
@@ -98,23 +100,23 @@
 	}
 
 
-	// TO BE DEPRICATED
-	// get the address for footers
-	// if( !function_exists('get_the_address') ){
+//	TO BE DEPRICATED
+//	get the address for footers
+	if( !function_exists('get_the_address') ){
 		
-	// 	function get_the_address(){
+		function get_the_address(){
 			
-	// 		if( !empty(get_field('social-address-line2', 'option')) && !empty(get_field('social-address', 'option')) ){
-	// 			$address_line2 = get_field('social-address-line2', 'option');
-	// 			return strstr(get_field('social-address', 'option')['address'],',', true) . ' ' . $address_line2 . strstr(get_field('social-address', 'option')['address'],',');
-	// 		}
-	// 		else if( !empty( get_field('social-address', 'option') ) ){
-	// 			return get_field( 'social-address', 'option' )['address'];
-	// 		}
-	// 		else{
-	// 			return '';
-	// 		}
-	// 	}
-	// }
+			if( !empty(get_field('social-address-line2', 'option')) && !empty(get_field('social-address', 'option')) ){
+				$address_line2 = get_field('social-address-line2', 'option');
+				return strstr(get_field('social-address', 'option')['address'],',', true) . ' ' . $address_line2 . strstr(get_field('social-address', 'option')['address'],',');
+			}
+			else if( !empty( get_field('social-address', 'option') ) ){
+				return get_field( 'social-address', 'option' )['address'];
+			}
+			else{
+				return '';
+			}
+		}
+	}
 
  ?>

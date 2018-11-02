@@ -7,6 +7,14 @@
 	.menus-menu {
 		max-width: 960px;
 		margin: 40px auto;
+		// change the header fonts (possibly address this in the globals?)
+		h3, h4 {
+			font-family: "Gotham";
+			font-weight: 400;
+		}
+		> h3, > p {
+			text-align: left;
+		}
 	}
 	.menus-menu-list {
 		list-style-type: none;
@@ -21,24 +29,25 @@
 
 	.menus-menu-list-item {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
 		padding: 20px;
 		margin: 20px auto;
 		border-bottom: 1px solid lightgrey;
-	}
-
-	// specific elements
-	.menus-menu-list-item figure {
-		width: 100%;
-		overflow: hidden;
-		height: 200px;
-		margin-bottom: 15px;
-		img {
-			max-height: 100%;
+		figure {
 			width: 100%;
-			height: auto;
+			overflow: hidden;
+			height: 200px;
+			margin-bottom: 15px;
+			img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+		p {
+			text-align: left;
 		}
 	}
+
 }
 @media only screen and (min-width: $medium){
 	.menus-menu-list-item {
