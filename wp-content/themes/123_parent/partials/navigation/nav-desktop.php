@@ -4,9 +4,29 @@
  */
 	$invertlogo = get_field('general-theme-invert-headerfooter-logo-colors', 'option') ? ' invertlogo' : '';
 	$fadenav = get_field('nav-fadein-toggle', 'option') ? ' removefadein' : '';
+
+	// get req vars
+	// toggle remove topbar
+	$remove_topbar = get_field('remove-topbar', 'option');
+	// topbar text
+	$topbar_text = get_field('header-bar-text', 'option');
+	// get_logo
+	$logo_src = get_logo();
+
+	// (structure)
+	// header wrapper
+	// tint background overlay 1
+	// content wrapper overlay 2
+	// logo section
+	// nav section
+		// page links
+		// call to action
+		// phone number
+
+
 	do_action('123_before_desktop_nav');
 ?>
-<header class="header <?php echo $invertlogo;echo $fadenav; ?>">
+<header class="header <?php echo $invertlogo .' '. $fadenav; ?>">
 
 
 	<?php if(!get_field('remove-topbar', 'option')): ?>
@@ -37,7 +57,7 @@
 					echo apply_filters( '123_social_menus_desktop_nav', $desktop_social );
 				 ?>
 				<nav class="header-content-menus-pages">
-					<?php NavUtil::render_nav_links('header-content-menus-pages-menu'); ?>
+					<?php echo NavUtil::get_nav_links('header-content-menus-pages-menu'); ?>
 				</nav>
 			</div>
 		

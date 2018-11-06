@@ -4,6 +4,86 @@ var Admin = {};
 
 	$(document).ready(function(){
 
+
+		Admin.SiteSetup = {
+
+			sections : $('#acf-group_sitesetup_1, #acf-group_sitesetup_2'),
+
+			_init : function(){
+
+
+
+			},
+		}
+		Admin.SiteSetup._init();
+
+
+
+
+		// Admin.SiteSetup = {
+
+		// 	form : $('#sitesetup'),
+		// 	formPages : $('#sitesetup section'),
+		// 	formPagination : $('#form-pagination span'),
+		// 	submitButton : $('#sitesetup-submit'),
+
+		// 	_init : function(){
+		// 		if( Admin.SiteSetup.form.length > 0 ){
+		// 			$(window).on('load', Admin.SiteSetup._buildFormPages);
+		// 			Admin.SiteSetup.formPagination.on('click', Admin.SiteSetup._changePageHandler);
+		// 			Admin.SiteSetup.form.on('submit', Admin.SiteSetup._submitHandler);
+		// 		}
+		// 	},
+		// 	_changePageHandler : function(e){
+		// 		// Clicked Next:
+		// 		if( $(this).hasClass('dashicons-arrow-right-alt') ){
+		// 			var current = Admin.SiteSetup.formPages.not('.js__sections--hidden');
+		// 			if( current.nextSibling !== null ){
+		// 				$(current).addClass('js__sections--hidden');
+		// 				$(current).next().removeClass('js__sections--hidden');
+		// 			}
+		// 		}
+		// 		else if( $(this).hasClass('dashicons-arrow-left-alt') ){
+		// 			var current = Admin.SiteSetup.formPages.not('.js__sections--hidden');
+		// 			if( current.previousSibling !== null ){
+		// 				$(current).addClass('js__sections--hidden');
+		// 				$(current).prev().removeClass('js__sections--hidden');
+		// 			}
+		// 		}
+		// 	},
+		// 	_buildFormPages : function(e){
+		// 		Admin.SiteSetup.formPages.each(function(){
+		// 			$(this).addClass('js__sections--hidden');
+		// 		});
+		// 		Admin.SiteSetup.formPages.first().removeClass('js__sections--hidden');
+		// 	},
+		// 	_submitHandler : function(e){
+		// 		e.preventDefault();
+		// 		$.post( ajaxurl , {
+		// 			// action hook in class.MultiSiteSetup.php
+		// 			action : 'do_site_setup',
+		// 			// Form Fields - To Translate to ACF Fields
+		// 			logo : Admin.SiteSetup.form.find('input[name=logo]').val(),
+		// 			addressone : Admin.SiteSetup.form.find('input[name=addressone]').val(),
+		// 			email : Admin.SiteSetup.form.find('input[name=email]').val(),
+
+		// 		}, Admin.SiteSetup._responseHandler);
+		// 	},
+		// 	_responseHandler : function(response){
+		// 		// console.log(JSON.parse(response));
+		// 		console.log(response);
+
+		// 	}
+
+		// }
+
+		// Admin.SiteSetup._init();
+
+
+
+
+
+
 		Admin.Training = {
 			_init: function(){
 				if( $('body').is('.toplevel_page_general-settings') ){

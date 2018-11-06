@@ -1,4 +1,48 @@
 @media only screen {
+  #sitesetup {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 20px 120px 20px 20px;
+    margin: 20px auto;
+  }
+
+  #sitesetup section {
+    text-align: left;
+  }
+  #sitesetup section span {
+    margin-bottom: 15px;
+  }
+  #sitesetup section span, #sitesetup section label, #sitesetup section input {
+    width: 100%;
+    display: block;
+  }
+  #sitesetup #form-pagination {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  #sitesetup #form-pagination span {
+    font-size: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  #sitesetup #form-pagination span:hover {
+    color: red;
+  }
+
+  #sitesetup section.js__sections--hidden {
+    display: none;
+  }
+
   #wp-toolbar #wp-admin-bar-root-default #wp-admin-bar-limelight_admin_link > a > span.ab-icon {
     display: inline-block;
     vertical-align: middle;

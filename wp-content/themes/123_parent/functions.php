@@ -2,6 +2,8 @@
 /**
  * 	Deactivate ACF Plugins if Installed, and use Integrated ACF
  */
+
+	include_once('classes/class.CustomFields.php');
 	require_once('reqs/localize-acf.php');
 /**
  * 	Verify Active Pages
@@ -16,6 +18,7 @@
 /**
  * 	FusionTables...
  */
+
 	require_once('fusiontables/handler.php');
 
 /**
@@ -30,6 +33,7 @@ include_once('classes/class.GooMaps.php');
 /**
  * 	Setup Theme :
  */
+require_once('classes/class.MultiSiteSetup.php');
 require_once('classes/class.Setup.php');
 include_once('classes/class.NavUtil.php');
 
@@ -46,6 +50,57 @@ require_once('components/reqs/footer-helpers.php');
 /**
  * 	Organize this craziness ASAP
  */
+
+
+
+
+
+
+
+
+/**
+ * adjusting site-setup clone fields to have new instructions, labels, etc
+ * @param  array $field 'this' field passed by add_filter
+ * @return array        the edited field
+ */
+function do_adjust_field_on_load($field){
+
+	$field['sub_fields'][0]['instructions'] = '';
+
+	return $field;
+}
+
+add_filter('acf/load_field/name=sitesetup_logo', 'do_adjust_field_on_load');
+add_filter('acf/load_field/name=sitesetup_address', 'do_adjust_field_on_load');
+add_filter('acf/load_field/name=sitesetup_email', 'do_adjust_field_on_load');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if( !function_exists( 'hide_the_acf_field' ) ){
 	function hide_the_acf_field( $field ){
