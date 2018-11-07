@@ -50,7 +50,7 @@ class SetupTheme
 
 		
 		wp_register_style( 'remote-override-parent'
-			, "https://123websites.com/css-themes/123_parent.css"
+			, "https://123websites.com/css-themes/123_backend.css"
 		);
 		wp_enqueue_style('remote-override-parent');
 
