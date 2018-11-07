@@ -14,18 +14,29 @@ var Admin = {};
 			_init : function(){
 
 
-				Admin.SiteSetup.sections.hide();
-				Admin.SiteSetup.sections.first().addClass('setup-page--visible');
-				Admin.SiteSetup.sections.first().show();
+				// hide all the sections
+				Admin.SiteSetup.sections.addClass('setup-section--hidden');
+				// add the visible class to the first section
+				Admin.SiteSetup.sections.first().removeClass('setup-section--hidden');
+
 
 				Admin.SiteSetup.pagination.on('click', Admin.SiteSetup._doPageHandler);
 
 			},
 			_doPageHandler : function(e){
 
-				console.log(e.target);
+				if( $(e.target).hasClass('dashicons-arrow-right-alt') ){
+						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
+						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').next();
+						$hideSection.addClass('setup-section--hidden');
+						$revealSection.removeClass('setup-section--hidden');
+				} else {
 
-
+						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
+						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').prev();
+						$hideSection.addClass('setup-section--hidden');
+					}
+				}
 			}
 		}
 		Admin.SiteSetup._init();
