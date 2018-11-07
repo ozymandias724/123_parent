@@ -7,10 +7,11 @@ var Admin = {};
 
 		Admin.SiteSetup = {
 
-			sections : $('#acf-group_sitesetup_1, #acf-group_sitesetup_2'),
+			sections : $('#acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4, #acf-group_sitesetup_5'),
 
 			_init : function(){
 
+				Admin.SiteSetup.sections.addClass('closed');
 
 
 			},

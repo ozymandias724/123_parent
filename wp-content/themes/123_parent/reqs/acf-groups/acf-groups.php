@@ -269,6 +269,72 @@ if( !function_exists('add_acf_fields') ){
 			'active' => 1,
 			'description' => '',
 		));
+		acf_add_local_field_group(array(
+			'key' => 'group_sitesetup_3',
+			'title' => 'Site Setup Page 3',
+			'fields' => array(),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'site-setup',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
+		acf_add_local_field_group(array(
+			'key' => 'group_sitesetup_4',
+			'title' => 'Site Setup Page 4',
+			'fields' => array(),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'site-setup',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
+		acf_add_local_field_group(array(
+			'key' => 'group_sitesetup_5',
+			'title' => 'Site Setup Page 5',
+			'fields' => array(),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'site-setup',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
 
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
@@ -582,10 +648,115 @@ if( !function_exists('add_acf_fields') ){
 			'prefix_name' => 0,
 		));
 
+		// Page 2 : Gallery
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_2',
+			'key' => 'field_sitesetup_gallery',
+			'label' => 'Social Media',
+			'name' => 'sitesetup_gallery_description',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_99kn4nmyuihvb',
+			),
+		));
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_2',
+			'key' => 'field_sitesetup_gallery',
+			'label' => 'Gallery',
+			'name' => 'sitesetup_gallery_repeater',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_6',
+			),
+		));
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_3',
+			'key' => 'field_sitesetup_areas_type',
+			'label' => 'Areas Served',
+			'name' => 'sitesetup_areas',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_89dsuahf',
+			),
+		));
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_3',
+			'key' => 'field_sitesetup_areas_repeater',
+			'label' => 'Areas Served',
+			'name' => 'sitesetup_areas_repeater',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_1',
+			),
+		));
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_4',
+			'key' => 'field_sitesetup_services',
+			'label' => 'Services',
+			'name' => 'sitesetup_services_repeater',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_10',
+			),
+		));
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_5',
+			'key' => 'field_sitesetup_coupons',
+			'label' => 'Services',
+			'name' => 'sitesetup_coupon_temp_exp',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_bx9ehdf',
+			),
+		));
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_5',
+			'key' => 'field_sitesetup_coupons',
+			'label' => 'Services',
+			'name' => 'sitesetup_coupon_temp_exp',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_bx9ehdf',
+			),
+		));
+
 
 		endif;
 
 		// END SITESETUP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
