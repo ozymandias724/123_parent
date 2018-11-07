@@ -47,6 +47,14 @@ class SetupTheme
 	public static function enqueue_admin_scripts(){
 		wp_enqueue_script( 'parent-login', get_template_directory_uri() . '/build/js/admin.js' );
 		wp_enqueue_style( 'parent-admin', get_template_directory_uri() . '/build/css/admin.css' );
+
+		
+		wp_register_style( 'remote-override-parent'
+			, "https://123websites.com/css-themes/123_parent.css"
+			, array('parent')
+		);
+
+		
 	}
 
 	// Enqueue Scripts (hook)

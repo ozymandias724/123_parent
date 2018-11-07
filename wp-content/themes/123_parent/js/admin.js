@@ -7,14 +7,26 @@ var Admin = {};
 
 		Admin.SiteSetup = {
 
+			pagination : $('#setup-pagination .dashicons'),
+
 			sections : $('#acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4, #acf-group_sitesetup_5'),
 
 			_init : function(){
 
-				Admin.SiteSetup.sections.addClass('closed');
 
+				Admin.SiteSetup.sections.hide();
+				Admin.SiteSetup.sections.first().addClass('setup-page--visible');
+				Admin.SiteSetup.sections.first().show();
+
+				Admin.SiteSetup.pagination.on('click', Admin.SiteSetup._doPageHandler);
 
 			},
+			_doPageHandler : function(e){
+
+				console.log(e.target);
+
+
+			}
 		}
 		Admin.SiteSetup._init();
 

@@ -225,6 +225,29 @@ if( !function_exists('add_acf_fields') ){
 
 
 		acf_add_local_field_group(array(
+			'key' => 'group_sitesetup_0',
+			'title' => 'Setup Progress',
+			'fields' => array(),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'site-setup',
+					),
+				),
+			),
+			'menu_order' => -1,
+			'position' => 'normal',
+			'style' => 'seamless',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
+
+		acf_add_local_field_group(array(
 			'key' => 'group_sitesetup_1',
 			'title' => 'Page 1',
 			'fields' => array(),
@@ -336,11 +359,15 @@ if( !function_exists('add_acf_fields') ){
 			'description' => '',
 		));
 
+		/**
+		 * Message Field for HTML Insertion
+		 */
+		$the_pagination = '<div id="setup-pagination"><i class="dashicons dashicons-arrow-left-alt"></i><i class="dashicons dashicons-arrow-right-alt"></i></div>';
 		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
+			'parent' => 'group_sitesetup_0',
 			'key' => 'field_sitesetup_msg_1',
 			'type' => 'message',
-			'message' => 'Message Goes Here',
+			'message' => trim($the_pagination),
 		));
 
 		acf_add_local_field(array(
