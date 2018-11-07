@@ -35,7 +35,7 @@ var Admin = {};
 						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
 						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').prev();
 						$hideSection.addClass('setup-section--hidden');
-					}
+						$revealSection.removeClass('setup-section--hidden');
 				}
 			}
 		}
