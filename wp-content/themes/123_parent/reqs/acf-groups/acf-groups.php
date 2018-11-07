@@ -248,6 +248,29 @@ if( !function_exists('add_acf_fields') ){
 		));
 
 		acf_add_local_field_group(array(
+			'key' => 'group_sitesetup_intro',
+			'title' => 'Introduction',
+			'fields' => array(),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'site-setup',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+		));
+
+		acf_add_local_field_group(array(
 			'key' => 'group_sitesetup_1',
 			'title' => 'Page 1',
 			'fields' => array(),
@@ -359,10 +382,23 @@ if( !function_exists('add_acf_fields') ){
 			'description' => '',
 		));
 
+		// INTRO
+		$format = '<p>%s</p>';
+		$content = sprintf(
+			$format
+			,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus nisl a laoreet vulputate. Mauris hendrerit vel ex nec sagittis. Aenean suscipit neque iaculis accumsan faucibus. Sed non tincidunt ipsum. Duis pulvinar velit at ipsum faucibus, sit amet faucibus mi ultrices. Etiam lorem felis, elementum non ipsum eget, consectetur faucibus metus. Phasellus et congue nisl. Mauris fermentum sem sed odio imperdiet, at pretium orci fringilla.'
+		);
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_intro',
+			'key' => 'field_sitesetup_msg_intro_1',
+			'type' => 'message',
+			'message' => $content,
+		));
+
 		/**
 		 * Message Field for HTML Insertion
 		 */
-		$the_pagination = '<div id="setup-pagination"><i class="dashicons dashicons-arrow-left-alt"></i><i class="dashicons dashicons-arrow-right-alt"></i></div>';
+		$the_pagination = '<div id="setup-pagination"><span>Prev Page</span><span class="nextPage">Next Page</span></div>';
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_0',
 			'key' => 'field_sitesetup_msg_1',
@@ -370,23 +406,52 @@ if( !function_exists('add_acf_fields') ){
 			'message' => trim($the_pagination),
 		));
 
+		
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_1',
-			'label' => 'Company Logo',
-			'name' => 'sitesetup_logo',
+			'key' => 'field_sitesetup_address',
+			'label' => 'Address',
+			'name' => 'sitesetup_address',
 			'type' => 'clone',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'clone' => array(
-				0 => 'field_2343135',
+				0 => 'field_bdaa98',
 			),
 			'display' => 'seamless',
 			'layout' => 'block',
 			'prefix_label' => 0,
 			'prefix_name' => 0,
 		));
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_1',
+			'key' => 'field_sitesetup_phone_main',
+			'label' => 'Primary Phone #',
+			'name' => 'sitesetup_phone',
+			'type' => 'clone',
+			'instructions' => '',
+			'clone' => array(
+				0 => 'field_8378888',
+			),
+			'display' => 'seamless',
+			'layout' => 'block',
+		));
+
+		// phone secondary
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_1',
+			'key' => 'field_sitesetup_phone_secondary',
+			'label' => 'Secondary Phone #',
+			'name' => 'sitesetup_phone_secondary',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_8378ddf888',
+			),
+			'display' => 'seamless',
+			'layout' => 'block',
+		));
+
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_email',
@@ -405,63 +470,6 @@ if( !function_exists('add_acf_fields') ){
 			'prefix_name' => 0,
 		));
 
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_address',
-			'label' => 'Address',
-			'name' => 'sitesetup_address',
-			'type' => 'clone',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'clone' => array(
-				0 => 'field_bdaa98',
-			),
-			'display' => 'seamless',
-			'layout' => 'block',
-			'prefix_label' => 0,
-			'prefix_name' => 0,
-		));
-
-
-		// COPIES
-		// phone # secondary
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_phone_main',
-			'label' => 'Primary Phone #',
-			'name' => 'sitesetup_phone',
-			'type' => 'clone',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'clone' => array(
-				0 => 'field_8378888',
-			),
-			'display' => 'seamless',
-			'layout' => 'block',
-			'prefix_label' => 0,
-			'prefix_name' => 0,
-		));
-
-		// phone secondary
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_phone_secondary',
-			'label' => 'Secondary Phone #',
-			'name' => 'sitesetup_phone_secondary',
-			'type' => 'clone',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'clone' => array(
-				0 => 'field_8378ddf888',
-			),
-			'display' => 'seamless',
-			'layout' => 'block',
-			'prefix_label' => 0,
-			'prefix_name' => 0,
-		));
 
 
 
@@ -509,17 +517,8 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_12hafhpwae',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_mc_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_mc_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_mzcpoihhad',
-			),
-		));
+
+
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_visa_tog',
@@ -531,17 +530,7 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_12hafhzapwae',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_visa_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_visa_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_mzcpaf122oihhad',
-			),
-		));
+		
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_amex_tog',
@@ -553,17 +542,7 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_12haf2dafhpwae',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_amex_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_amex_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_mzc219z',
-			),
-		));
+		
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_disc_tog',
@@ -575,17 +554,7 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_12ha1212fhpwae',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_disc_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_disc_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_mooooihhad',
-			),
-		));
+
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_paypal_tog',
@@ -597,17 +566,8 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_12hafhpwazdffde',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_paypal_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_paypal_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_mzcpoiz2',
-			),
-		));
+
+
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_cash_tog',
@@ -619,17 +579,8 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_12hafhp12398e',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_cash_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_cash_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_zcvadf123dsaf',
-			),
-		));
+
+
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_check_tog',
@@ -641,19 +592,6 @@ if( !function_exists('add_acf_fields') ){
 				0 => 'field_odasf129873e',
 			),
 		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_1',
-			'key' => 'field_sitesetup_payment_check_img',
-			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_check_img',
-			'type' => 'clone',
-			'instructions' => '',
-			'clone' => array(
-				0 => 'field_lafdhd123',
-			),
-		));
-
-
 
 
 		// social media
@@ -675,10 +613,65 @@ if( !function_exists('add_acf_fields') ){
 			'prefix_name' => 0,
 		));
 
+
+		// Setup Page 2
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_2',
+			'key' => 'field_sitesetup_1',
+			'label' => 'Company Logo',
+			'name' => 'sitesetup_logo',
+			'type' => 'clone',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'clone' => array(
+				0 => 'field_2343135',
+			),
+			'display' => 'seamless',
+			'layout' => 'block',
+			'prefix_label' => 0,
+			'prefix_name' => 0,
+		));
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_2',
+			'key' => 'field_sitesetup_hero_areas',
+			'label' => 'Areas Served Hero',
+			'name' => 'sitesetup_hero_areas',
+			'type' => 'clone',
+			'instructions' => '',
+			'clone' => array(
+				0 => 'field_afd9zx7',
+			),
+			'display' => 'normal',
+			'layout' => 'block',
+		));
+
+
+
+
+
+		// 
+		// 
+		// 
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_2',
+			'key' => 'field_sitesetup_hero_contact',
+			'label' => 'Contact Hero',
+			'name' => 'sitesetup_hero_contact',
+			'type' => 'clone',
+			'clone' => array(
+				0 => 'field_23',
+			),
+			'display' => 'normal',
+		));
+
+		
 		// Page 2 : Gallery
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_2',
-			'key' => 'field_sitesetup_gallery',
+			'key' => 'field_sitesetup_gallery_desc',
 			'label' => 'Social Media',
 			'name' => 'sitesetup_gallery_description',
 			'type' => 'clone',
@@ -695,6 +688,14 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_6',
 			),
+		));
+
+
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_3',
+			'key' => 'field_sitesetup_areas_msg',
+			'type' => 'message',
+			'message' => '<h2>Areas Served</h2>',
 		));
 
 		acf_add_local_field(array(
@@ -727,27 +728,6 @@ if( !function_exists('add_acf_fields') ){
 			'type' => 'clone',
 			'clone' => array(
 				0 => 'field_10',
-			),
-		));
-
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_5',
-			'key' => 'field_sitesetup_coupons',
-			'label' => 'Services',
-			'name' => 'sitesetup_coupon_temp_exp',
-			'type' => 'clone',
-			'clone' => array(
-				0 => 'field_bx9ehdf',
-			),
-		));
-		acf_add_local_field(array(
-			'parent' => 'group_sitesetup_5',
-			'key' => 'field_sitesetup_coupons',
-			'label' => 'Services',
-			'name' => 'sitesetup_coupon_temp_exp',
-			'type' => 'clone',
-			'clone' => array(
-				0 => 'field_bx9ehdf',
 			),
 		));
 
@@ -1976,6 +1956,9 @@ if( !function_exists('add_acf_fields') ){
 				/*
 					End of Theme 4 Color Pickers
 				 */
+
+
+
 				// Old Stuff (still good!)
 				array(
 					'key' => 'field_8123afaasfdaef',

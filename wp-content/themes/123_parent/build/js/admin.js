@@ -7,15 +7,18 @@ var Admin = {};
 
 		Admin.SiteSetup = {
 
-			pagination : $('#setup-pagination .dashicons'),
+			paginationWrapper : $('#acf-group_sitesetup_0'),
 
-			sections : $('#acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4, #acf-group_sitesetup_5'),
+			pagination : $('#setup-pagination span'),
+
+			sections : $('#acf-group_sitesetup_intro, #acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4, #acf-group_sitesetup_5'),
 
 			_init : function(){
 
 
 				// hide all the sections
 				Admin.SiteSetup.sections.addClass('setup-section--hidden');
+
 				// add the visible class to the first section
 				Admin.SiteSetup.sections.first().removeClass('setup-section--hidden');
 
@@ -25,13 +28,12 @@ var Admin = {};
 			},
 			_doPageHandler : function(e){
 
-				if( $(e.target).hasClass('dashicons-arrow-right-alt') ){
+				if( $(e.target).hasClass('nextPage') ){
 						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
 						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').next();
 						$hideSection.addClass('setup-section--hidden');
 						$revealSection.removeClass('setup-section--hidden');
 				} else {
-
 						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
 						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').prev();
 						$hideSection.addClass('setup-section--hidden');
