@@ -410,7 +410,7 @@ if( !function_exists('add_acf_fields') ){
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_address',
-			'label' => 'Address',
+			'label' => 'Choose Address',
 			'name' => 'sitesetup_address',
 			'type' => 'clone',
 			'instructions' => '',
@@ -424,6 +424,7 @@ if( !function_exists('add_acf_fields') ){
 			'prefix_label' => 0,
 			'prefix_name' => 0,
 		));
+
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_phone_main',
@@ -472,6 +473,15 @@ if( !function_exists('add_acf_fields') ){
 
 
 
+		acf_add_local_field(array(
+			'parent' => 'group_sitesetup_1',
+			'key' => 'field_sitesetup_hours_msg',
+			'type' => 'message',
+			'message' => 'We will make sure these are visible on your new site so people will know which hours they can call for a live person or message you after hours through the site for information.',
+			'display' => 'normal',
+			'label' => 'Hours of Operation',
+		));
+
 
 		// hours of operation
 		acf_add_local_field(array(
@@ -493,16 +503,15 @@ if( !function_exists('add_acf_fields') ){
 		));
 
 		// Payment Toggles / Images
+		//		
 		// payment options
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_1',
 			'key' => 'field_sitesetup_payment_msg',
+			'type' => 'message',
+			'message' => 'We want to be able to show people how they can pay for your services or products. No one wants a client that needs your service but does not have the proper way to pay you, right? So what are the types of payments you except?',
+			'display' => 'normal',
 			'label' => 'Payment Types',
-			'name' => 'sitesetup_payment_msg',
-			'type' => 'clone',
-			'clone' => array(
-				0 => 'field_mpoh12hadf',
-			),
 		));
 
 		// PAYMENT TYPE CLONES
@@ -516,6 +525,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_12hafhpwae',
 			),
+			'display' => 'seamless',
 		));
 
 
@@ -529,6 +539,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_12hafhzapwae',
 			),
+			'display' => 'seamless',
 		));
 		
 		acf_add_local_field(array(
@@ -541,6 +552,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_12haf2dafhpwae',
 			),
+			'display' => 'seamless',
 		));
 		
 		acf_add_local_field(array(
@@ -553,6 +565,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_12ha1212fhpwae',
 			),
+			'display' => 'seamless',
 		));
 
 		acf_add_local_field(array(
@@ -565,6 +578,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_12hafhpwazdffde',
 			),
+			'display' => 'seamless',
 		));
 
 
@@ -578,6 +592,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_12hafhp12398e',
 			),
+			'display' => 'seamless',
 		));
 
 
@@ -591,6 +606,7 @@ if( !function_exists('add_acf_fields') ){
 			'clone' => array(
 				0 => 'field_odasf129873e',
 			),
+			'display' => 'seamless',
 		));
 
 
@@ -2218,8 +2234,7 @@ if( !function_exists('add_acf_fields') ){
 				///////////////////
 				array(
 					'key' => 'field_mpoh12hadf',
-					'label' => '<h2>Payment Types</h2>
-						<h4>(For each payment method checking the box displays the payment method in the footer and uploading an image will override the default)</h4>',
+					'label' => 'Choose Payment Types Accepted',
 					'name' => 'payment-types',
 					'type' => 'message',
 				),

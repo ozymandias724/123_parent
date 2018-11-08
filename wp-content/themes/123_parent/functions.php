@@ -63,22 +63,99 @@ require_once('components/reqs/footer-helpers.php');
  * @param  array $field 'this' field passed by add_filter
  * @return array        the edited field
  */
-function do_adjust_field_on_load($field){
+function modacf_adjust_labelInstructions($field){
 
-	$field['sub_fields'][0]['instructions'] = '';
 
+	switch ($field['name']) {
+		case 'sitesetup_address':
+			# code...
+		$label = 'Choose Address';
+		$instructions = 'So the address you want on your new 123Website is,';
+			break;
+		case 'sitesetup_email':
+			# code...
+		$label = 'Email';
+		$instructions = 'What\'s the best email address to reach you on?';
+			break;
+		case 'sitesetup_phone':
+			# code...
+		$instructions = 'And the phone number you want listed is ? ';
+		$label = 'Phone Num';
+			break;
+		case 'sitesetup_phone_secondary':
+			# code...
+		$label = 'Secondary Phone Num';
+		$instructions = 'Can I get a secondary number from you? Preferably a cell phone number?Our software will text message remind you for your appointment we set with your Website Consultant';
+			break;
+		default:
+			# code...
+			break;
+	}
+
+	$field['sub_fields'][0]['instructions'] = $instructions;
+	$field['sub_fields'][0]['label'] = $label;
+	return $field;
+}
+function modacf_adjust_wrapper($field){
+
+	
+	$field['sub_fields'][0]['wrapper'] = array(
+		'width' => '13',
+		'class' => 'sitesetup_payment_togs',
+		'id' => '',
+	);
+	// Use Images
+	$dir = get_template_directory_uri() . '/library/img/payment_types/';
+	switch ($field['sub_fields'][0]['name'] ) {
+		case 'mastercard':
+			$png_path = $dir . 'mc.png';
+			break;
+		case 'amex':
+			$png_path = $dir . 'amex.png';
+			break;
+		case 'cash':
+			$png_path = $dir . 'cash.png';
+			break;
+		case 'check':
+			$png_path = $dir . 'check.png';
+			break;	
+		case 'discover':
+			$png_path = $dir . 'discover.png';
+			break;
+		case 'paypal':
+			$png_path = $dir . 'pp.png';
+			break;
+		case 'visa':
+			$png_path = $dir . 'visa.png';
+			break;			
+		default:
+			# code...
+			break;
+	}
+	$png_string = '<img src="'.$png_path.'">';
+	$field['sub_fields'][0]['label'] = $png_string;
 	return $field;
 }
 
-add_filter('acf/load_field/name=sitesetup_logo', 'do_adjust_field_on_load');
-add_filter('acf/load_field/name=sitesetup_address', 'do_adjust_field_on_load');
-add_filter('acf/load_field/name=sitesetup_email', 'do_adjust_field_on_load');
+add_filter('acf/load_field/name=sitesetup_logo', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_address', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_email', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_phone', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_phone_secondary', 'modacf_adjust_labelInstructions');
 
-
-
-
-
-
+/**
+ * update payment accepted checkbox fields w/ logo and fixed wrappers and a class
+ */
+add_filter('acf/load_field/name=sitesetup_payment_mc_tog', 'modacf_adjust_wrapper');
+add_filter('acf/load_field/name=sitesetup_payment_visa_tog', 'modacf_adjust_wrapper');
+add_filter('acf/load_field/name=sitesetup_payment_amex_tog', 'modacf_adjust_wrapper');
+add_filter('acf/load_field/name=sitesetup_payment_disc_tog', 'modacf_adjust_wrapper');
+add_filter('acf/load_field/name=sitesetup_payment_cash_tog', 'modacf_adjust_wrapper');
+add_filter('acf/load_field/name=sitesetup_payment_check_tog', 'modacf_adjust_wrapper');
+add_filter('acf/load_field/name=sitesetup_payment_paypal_tog', 'modacf_adjust_wrapper');
+// adjust payment header script
+add_filter('acf/load_field/name=sitesetup_payment_msg', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_hours', 'modacf_adjust_labelInstructions');
 
 
 
