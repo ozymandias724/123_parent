@@ -388,24 +388,24 @@ acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',
 		'type' => 'message',
-		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg">',
+		'message' => '<h2>Verify Blog</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg">',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_testimoniallink',
 		'type' => 'message',
-		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg">',
+		'message' => '<h2>Verify Testimonial</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg">',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg">',
+		'message' => '<h2>Verify Coupon</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg">',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg">',
+		'message' => '<h2>Verify Domain</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg">',
 	));
 ?>
