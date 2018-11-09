@@ -67,6 +67,14 @@ function modacf_adjust_labelInstructions($field){
 
 
 	switch ($field['name']) {
+		case 'sitesetup_hero_services':
+			$instructions = '';
+			# code...
+			break;
+		case 'sitesetup_logo':
+			# code...
+			$instructions = '';
+			break;
 		case 'sitesetup_address':
 			# code...
 		$label = 'Choose Address';
@@ -138,6 +146,7 @@ function modacf_adjust_wrapper($field){
 }
 
 add_filter('acf/load_field/name=sitesetup_logo', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_hero_services', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_address', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_email', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_phone', 'modacf_adjust_labelInstructions');
