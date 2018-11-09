@@ -4,7 +4,7 @@
 */
 
 
-$format = '<h1>%s</h1><h2>%s</h2><img src="%s" alt="select theme">';
+$format = '<h1>%s</h1><h2>%s</h2><img class="sitesetup_images" src="%s" alt="select theme">';
 $content = sprintf(
 	$format
 	,'Introduction'
@@ -388,24 +388,24 @@ acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',
 		'type' => 'message',
-		'message' => '<img src="http://www.123websites.com/images/signup/blog.jpg">',
+		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg">',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_testimoniallink',
 		'type' => 'message',
-		'message' => '<img src="http://www.123websites.com/images/signup/testimonials.jpg">',
+		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg">',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '<img src="http://www.123websites.com/images/signup/coupons.jpg">',
+		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg">',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '<img src="http://www.123websites.com/images/signup/godaddy.jpg">',
+		'message' => '<img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg">',
 	));
 ?>
