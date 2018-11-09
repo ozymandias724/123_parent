@@ -88,11 +88,11 @@ function modacf_adjust_labelInstructions($field){
 		case 'sitesetup_phone':
 			# code...
 		$instructions = 'And the phone number you want listed is ? ';
-		$label = 'Phone Num';
+		$label = 'Phone Number';
 			break;
 		case 'sitesetup_phone_secondary':
 			# code...
-		$label = 'Secondary Phone Num';
+		$label = 'Secondary Phone Number';
 		$instructions = 'Can I get a secondary number from you? Preferably a cell phone number?Our software will text message remind you for your appointment we set with your Website Consultant';
 			break;
 		default:

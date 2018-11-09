@@ -4,11 +4,10 @@
 */
 
 
-$format = '<h1>%s</h1><h2>%s</h2><img class="sitesetup_images" src="%s" alt="select theme">';
+$format = '<a href="%s" target="_blank"><img class="sitesetup_images" src="%s" alt="select theme"></a>';
 $content = sprintf(
 	$format
-	,'Introduction'
-	,'Select Theme'
+	,get_admin_url() .'/themes.php?noconflict=yeah'
 	,'http://www.123websites.com/images/signup/themes.jpg'
 );
 acf_add_local_field(array(
@@ -388,24 +387,33 @@ acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',
 		'type' => 'message',
-		'message' => '<h2>Verify Blog</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg">',
+		'message' => '<a href="'. get_admin_url() .'/edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_testimoniallink',
 		'type' => 'message',
-		'message' => '<h2>Verify Testimonial</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg">',
+		'message' => '<a href="'. get_admin_url() .'/admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '<h2>Verify Coupon</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg">',
+		'message' => '<a href="'. get_admin_url() . '/admin.php?page=testimonials-settings' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
 	));
 	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_msg_couponlink',
+		'parent' => 'group_sitesetup_4',
+		'key' => 'field_sitesetup_msg_godaddy',
 		'type' => 'message',
-		'message' => '<h2>Verify Domain</h2><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg">',
+		'message' => '<a href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
+	));
+
+
+	$custom_submit = '<input type="submit" accesskey="p" value="Publish Website" class="sitesetup-publish" name="publish">';
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_4',
+		'key' => 'field_sitesetup_msg_submit',
+		'type' => 'message',
+		'message' => $custom_submit,
 	));
 ?>

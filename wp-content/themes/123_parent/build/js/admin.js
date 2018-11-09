@@ -18,17 +18,21 @@ var Admin = {};
 			_doBuildNav : function(){
 				Admin.SiteSetup.sections.each(function(index){
 
-					if( index === 0){
-						var active = 'active';
-					} else {
-						var active = null;
-					}
-
+					var active = 'active';
 					if( index === 0 ){
-						var button = '<span id="'+index+'" class="'+active+'">Intro</span>';
+						var button = '<span id="'+index+'" class="'+active+'">1. Theme</span>';
 					}
-					else {
-						var button = '<span id="'+index+'" class="'+active+'">Page '+index+'</span>';
+					if( index === 1 ){
+						var button = '<span id="'+index+'" class="">2. Company Info</span>';
+					}
+					if( index === 2 ){
+						var button = '<span id="'+index+'" class="">3. Media</span>';
+					}
+					if( index === 3 ){
+						var button = '<span id="'+index+'" class="">4. Verify Content</span>';
+					}
+					if( index === 4 ){
+						var button = '<span id="'+index+'" class="">5. Finalize</span>';
 					}
 					
 					Admin.SiteSetup.pagination.append(button);
