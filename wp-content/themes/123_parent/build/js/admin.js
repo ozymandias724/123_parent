@@ -4,42 +4,50 @@ var Admin = {};
 
 	$(document).ready(function(){
 
-
 		Admin.SiteSetup = {
-
-			paginationWrapper : $('#acf-group_sitesetup_0'),
-
-			pagination : $('#setup-pagination span'),
-
 			sections : $('#acf-group_sitesetup_intro, #acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4, #acf-group_sitesetup_5'),
-
+			pagination : $('#setup-pagination'),
 			_init : function(){
 
 
-				// hide all the sections
+				Admin.SiteSetup.sections.addClass('setup-section--hidden');
+				Admin.SiteSetup.sections.first().removeClass('setup-section--hidden');
+				Admin.SiteSetup._doBuildNav();
+				Admin.SiteSetup.pagination.on('click', 'span', Admin.SiteSetup._clickedNavhandler);
+			},	
+			_doBuildNav : function(){
+				Admin.SiteSetup.sections.each(function(index){
+
+					if( index === 0){
+						var active = 'active';
+					} else {
+						var active = null;
+					}
+
+					if( index === 0 ){
+						var button = '<span id="'+index+'" class="'+active+'">Intro</span>';
+					}
+					else {
+						var button = '<span id="'+index+'" class="'+active+'">Page '+index+'</span>';
+					}
+					
+					Admin.SiteSetup.pagination.append(button);
+
+				});
+			},
+			_clickedNavhandler : function(e){
+				// wipe active status
+				Admin.SiteSetup.pagination.find('span').removeClass('active');
+				// add active status
+				$(this).addClass('active');
+				// determine
+				var index = $(this).index();
 				Admin.SiteSetup.sections.addClass('setup-section--hidden');
 
-				// add the visible class to the first section
-				Admin.SiteSetup.sections.first().removeClass('setup-section--hidden');
+				$(Admin.SiteSetup.sections[index]).removeClass('setup-section--hidden');
 
-
-				Admin.SiteSetup.pagination.on('click', Admin.SiteSetup._doPageHandler);
-
-			},
-			_doPageHandler : function(e){
-
-				if( $(e.target).hasClass('nextPage') ){
-						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
-						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').next();
-						$hideSection.addClass('setup-section--hidden');
-						$revealSection.removeClass('setup-section--hidden');
-				} else {
-						$hideSection = Admin.SiteSetup.sections.not('.setup-section--hidden');
-						$revealSection = Admin.SiteSetup.sections.not('.setup-section--hidden').prev();
-						$hideSection.addClass('setup-section--hidden');
-						$revealSection.removeClass('setup-section--hidden');
-				}
 			}
+
 		}
 		Admin.SiteSetup._init();
 

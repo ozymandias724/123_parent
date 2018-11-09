@@ -398,7 +398,7 @@ if( !function_exists('add_acf_fields') ){
 		/**
 		 * Message Field for HTML Insertion
 		 */
-		$the_pagination = '<div id="setup-pagination"><span>Prev Page</span><span class="nextPage">Next Page</span></div>';
+		$the_pagination = '<div id="setup-pagination"></div>';
 		acf_add_local_field(array(
 			'parent' => 'group_sitesetup_0',
 			'key' => 'field_sitesetup_msg_1',

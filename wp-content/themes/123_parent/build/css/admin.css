@@ -24,19 +24,28 @@
   #acf-group_sitesetup_0 #setup-pagination {
     display: block;
     text-align: center;
+    font-size: 0;
+    width: 100%;
   }
   #acf-group_sitesetup_0 #setup-pagination span {
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 20px;
-    padding: 10px 20px;
-    background-color: blue;
+    font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 255, 0.67);
+    display: inline-block;
+    margin: 0;
+    line-height: 3;
+    width: calc(100% / 7);
+    border: 1px solid black;
   }
   #acf-group_sitesetup_0 #setup-pagination span:hover {
-    background: green;
+    background-color: rgba(0, 0, 255, 0.34);
+  }
+  #acf-group_sitesetup_0 #setup-pagination span.active {
+    background-color: rgba(0, 128, 0, 0.67);
+  }
+  #acf-group_sitesetup_0 #setup-pagination span.active:hover {
+    background-color: rgba(0, 128, 0, 0.34);
   }
 
   #sitesetup {

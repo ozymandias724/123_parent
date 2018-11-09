@@ -40,17 +40,26 @@
 		#setup-pagination {
 			display: block;
 			text-align: center;
+			font-size: 0;
+			width: 100%;
 			span {
-				color: white;
-				display: inline-block;
-				vertical-align: middle;
-				margin: 0 20px;
-				padding: 10px 20px;
-				background-color: blue;
+				font-size: 18px;
 				font-weight: bold;
-				cursor: pointer;
+				color: white;
+				background-color: transparentize(blue, 0.33);
+				display: inline-block;
+				margin: 0;
+				line-height: 3;
+				width: calc(100% / 7);
+				border: 1px solid black;
 				&:hover {
-					background: green;
+					background-color: transparentize(blue, 0.66);
+				}
+				&.active {
+					background-color: transparentize(green, 0.33);
+					&:hover {
+						background-color: transparentize(green, 0.66);
+					}
 				}
 			}
 		}
