@@ -16,9 +16,7 @@
 /**
  * 	FusionTables...
  */
-
 	require_once('fusiontables/handler.php');
-
 /**
  * 	Pre_Setup Theme
  */
@@ -68,29 +66,41 @@ function modacf_adjust_labelInstructions($field){
 			$instructions = '';
 			# code...
 			break;
+		case 'sitesetup_socials':
+			$label = '7. Social Media';
+			# code...
+			break;
 		case 'sitesetup_logo':
 			# code...
 			$instructions = '';
 			break;
 		case 'sitesetup_address':
 			# code...
-		$label = 'Choose Address';
+		$label = '1. Choose Address';
 		$instructions = 'So the address you want on your new 123Website is,';
+			break;
+		case 'sitesetup_services_repeater':
+			$label = '2. Services';
+			# code...
 			break;
 		case 'sitesetup_email':
 			# code...
-		$label = 'Email';
+		$label = '4. Email';
 		$instructions = 'What\'s the best email address to reach you on?';
 			break;
 		case 'sitesetup_phone':
 			# code...
 		$instructions = 'And the phone number you want listed is ? ';
-		$label = 'Phone Number';
+		$label = '2. Phone Number';
 			break;
 		case 'sitesetup_phone_secondary':
 			# code...
-		$label = 'Secondary Phone Number';
+		$label = '3. Secondary Phone Number';
 		$instructions = 'Can I get a secondary number from you? Preferably a cell phone number?Our software will text message remind you for your appointment we set with your Website Consultant';
+			break;
+		case 'sitesetup_gallery_repeater':
+			$label = '11. Gallery';
+			# code...
 			break;
 		default:
 			# code...
@@ -143,11 +153,14 @@ function modacf_adjust_wrapper($field){
 }
 
 add_filter('acf/load_field/name=sitesetup_logo', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_services_repeater', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_hero_services', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_address', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_email', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_phone', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_phone_secondary', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_socials', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_gallery_repeater', 'modacf_adjust_labelInstructions');
 
 /**
  * update payment accepted checkbox fields w/ logo and fixed wrappers and a class

@@ -1606,7 +1606,7 @@ if( !function_exists('add_acf_fields') ){
 				////////////////////////
 				array(
 					'key' => 'field_akan8a8sskshb',
-					'label' => '<h2>Add new Social Media Icons</h2>',
+					'label' => 'Add new Social Media Icons',
 					'instructions' => 'add, rearrange and customize social media icons',
 					'name' => 'social-repeater',
 					'type' => 'repeater',

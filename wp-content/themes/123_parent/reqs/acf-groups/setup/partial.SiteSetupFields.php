@@ -14,7 +14,7 @@ acf_add_local_field(array(
 	'parent' => 'group_sitesetup_intro',
 	'key' => 'field_sitesetup_msg_intro_1',
 	'type' => 'message',
-	'label' => 'Setup Website Script',
+	'label' => '',
 	'message' => $content,
 ));
 
@@ -43,7 +43,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
 		'key' => 'field_sitesetup_address',
-		'label' => 'Choose Address',
+		'label' => '1. Choose Address',
 		'name' => 'sitesetup_address',
 		'type' => 'clone',
 		'clone' => array(
@@ -54,7 +54,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
 		'key' => 'field_sitesetup_phone_main',
-		'label' => 'Primary Phone #',
+		'label' => '2. Primary Phone #',
 		'name' => 'sitesetup_phone',
 		'type' => 'clone',
 		'instructions' => '',
@@ -96,7 +96,7 @@ acf_add_local_field(array(
 		'type' => 'message',
 		'message' => 'We will make sure these are visible on your new site so people will know which hours they can call for a live person or message you after hours through the site for information.',
 		'display' => 'normal',
-		'label' => 'Hours of Operation',
+		'label' => '5. Hours of Operation',
 	));
 
 
@@ -118,7 +118,7 @@ acf_add_local_field(array(
 		'type' => 'message',
 		'message' => 'We want to be able to show people how they can pay for your services or products. No one wants a client that needs your service but does not have the proper way to pay you, right? So what are the types of payments you except?',
 		'display' => 'normal',
-		'label' => 'Payment Types',
+		'label' => '6. Payment Types',
 	));
 
 	acf_add_local_field(array(
@@ -218,18 +218,12 @@ acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
 		'key' => 'field_sitesetup_socials',
 		'label' => 'Social Media',
-		'name' => 'sitesetup_social',
+		'name' => 'sitesetup_socials',
 		'type' => 'clone',
-		'instructions' => '',
-		'required' => 0,
-		'conditional_logic' => 0,
 		'clone' => array(
-			0 => 'field_kkas0nogknlak',
+			0 => 'field_akan8a8sskshb',
 		),
 		'display' => 'seamless',
-		'layout' => 'block',
-		'prefix_label' => 0,
-		'prefix_name' => 0,
 	));
 
 
@@ -239,7 +233,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_1',
-		'label' => 'Company Logo',
+		'label' => '1. Company Logo',
 		'name' => 'sitesetup_logo',
 		'type' => 'clone',
 		'clone' => array(
@@ -250,7 +244,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_areas',
-		'label' => 'Areas Served Hero',
+		'label' => '2. Areas Served Hero',
 		'name' => 'sitesetup_hero_areas',
 		'type' => 'clone',
 		'instructions' => '',
@@ -263,7 +257,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_contact',
-		'label' => 'Contact Hero',
+		'label' => '3. Contact Hero',
 		'name' => 'sitesetup_hero_contact',
 		'type' => 'clone',
 		'clone' => array(
@@ -274,7 +268,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_about',
-		'label' => 'About Hero',
+		'label' => '4. About Hero',
 		'name' => 'sitesetup_hero_about',
 		'type' => 'clone',
 		'clone' => array(
@@ -285,7 +279,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_blog',
-		'label' => 'Blog Hero',
+		'label' => '5. Blog Hero',
 		'name' => 'sitesetup_hero_blog',
 		'type' => 'clone',
 		'clone' => array(
@@ -296,7 +290,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_gallery',
-		'label' => 'Gallery Hero',
+		'label' => '6. Gallery Hero',
 		'name' => 'sitesetup_hero_gallery',
 		'type' => 'clone',
 		'clone' => array(
@@ -307,7 +301,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_services',
-		'label' => 'Services Hero',
+		'label' => '7. Services Hero',
 		'name' => 'sitesetup_hero_services',
 		'type' => 'clone',
 		'clone' => array(
@@ -318,7 +312,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_testimonials',
-		'label' => 'Testimonials Hero',
+		'label' => '8. Testimonials Hero',
 		'name' => 'sitesetup_hero_testimonials',
 		'type' => 'clone',
 		'clone' => array(
@@ -329,7 +323,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_location',
-		'label' => 'Location Hero',
+		'label' => '9. Location Hero',
 		'name' => 'sitesetup_hero_location',
 		'type' => 'clone',
 		'clone' => array(
@@ -340,7 +334,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_menu',
-		'label' => 'Menu Hero',
+		'label' => '10. Menu Hero',
 		'name' => 'sitesetup_hero_menu',
 		'type' => 'clone',
 		'clone' => array(
@@ -364,7 +358,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_areas_type',
-		'label' => 'Areas Served',
+		'label' => '1. Areas Served',
 		'name' => 'sitesetup_areas',
 		'type' => 'clone',
 		'clone' => array(
@@ -375,9 +369,9 @@ acf_add_local_field(array(
 
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_areas_repeater',
+		'key' => 'field_sitesetup_areas_repeater_zips',
 		'label' => 'Areas Served',
-		'name' => 'sitesetup_areas_repeater',
+		'name' => 'sitesetup_areas_repeater_zips',
 		'type' => 'clone',
 		'clone' => array(
 			0 => 'field_1',
@@ -385,8 +379,42 @@ acf_add_local_field(array(
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
+		'key' => 'field_sitesetup_areas_repeater_states',
+		'label' => 'Areas Served',
+		'name' => 'sitesetup_areas_repeater_states',
+		'type' => 'clone',
+		'clone' => array(
+			0 => 'field_09zcjxivohfasa',
+		),
+	));
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_3',
+		'key' => 'field_sitesetup_areas_repeater_counties',
+		'label' => 'Areas Served',
+		'name' => 'sitesetup_areas_repeater_counties',
+		'type' => 'clone',
+		'clone' => array(
+			0 => 'field_39qifdiuadiasadsf',
+		),
+	));
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_3',
+		'key' => 'field_sitesetup_areas_repeater_countries',
+		'label' => 'Areas Served',
+		'name' => 'sitesetup_areas_repeater_countries',
+		'type' => 'clone',
+		'clone' => array(
+			0 => 'field_70zcxovrghreafz',
+		),
+	));
+
+
+
+
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_services',
-		'label' => 'Services',
+		'label' => '2. Services',
 		'name' => 'sitesetup_services_repeater',
 		'type' => 'clone',
 		'clone' => array(
@@ -397,29 +425,29 @@ acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',
 		'type' => 'message',
-		'message' => '<a href="'. get_admin_url() .'/edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
+		'message' => '3. <a href="'. get_admin_url() .'/edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_testimoniallink',
 		'type' => 'message',
-		'message' => '<a href="'. get_admin_url() .'/admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
+		'message' => '4. <a href="'. get_admin_url() .'/admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '<a href="'. get_admin_url() . '/admin.php?page=testimonials-settings' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
+		'message' => '5. <a href="'. get_admin_url() . '/admin.php?page=testimonials-settings' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_4',
 		'key' => 'field_sitesetup_msg_godaddy',
 		'type' => 'message',
-		'message' => '<a href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
+		'message' => '1. <a href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
 	));
 
 
-	$custom_submit = '<input type="submit" accesskey="p" value="Publish Website" class="sitesetup-publish" name="publish">';
+	$custom_submit = '2. <input type="submit" accesskey="p" value="Publish Website" class="sitesetup-publish" name="publish">';
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_4',
 		'key' => 'field_sitesetup_msg_submit',
