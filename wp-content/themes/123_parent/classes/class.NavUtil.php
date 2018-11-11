@@ -68,7 +68,7 @@ class NavUtil
 			}
 		?>
 			<li class="<?php echo $prepend . "-item" ?>">
-				<a data-scroll class="<?php echo $prepend . '-item-link' ?>" href="<?php echo $link; ?>">
+				<a class="<?php echo $prepend . '-item-link' ?>" href="<?php echo $link; ?>">
 					<?php echo $title; ?>
 				</a>
 			</li>		
@@ -80,24 +80,26 @@ class NavUtil
 	public static function get_nav_links($prepend = 'navlinks' ){
 		$nav_format = '<li class="%s-item"><a class="%s-item-link" href="%s">%s</a></li>';
 		$nav = '<ul class="'.$prepend.'">';
-		foreach(NavUtil::$navItemData as $i => $navItem){
-			// vars
-			$title = NavUtil::$navItemData[$i]['title'];
-			$link = NavUtil::$navItemData[$i]['permalink'];
-			// toggle #hash nav
-			if( wp_get_theme()->Name == '123_three' || wp_get_theme()->Name == '123_one' ){
-				$link = get_site_url() . "/" . NavUtil::$activePageNames[$i];
-			} else {
-				$link = get_site_url() . "/#" . NavUtil::$activePageNames[$i];
-			}
+		if( !empty(NavUtil::$navItemData) ){
+			foreach(NavUtil::$navItemData as $i => $navItem){
+				// vars
+				$title = NavUtil::$navItemData[$i]['title'];
+				$link = NavUtil::$navItemData[$i]['permalink'];
+				// toggle #hash nav
+				if( wp_get_theme()->Name == '123_three' || wp_get_theme()->Name == '123_one' ){
+					$link = get_site_url() . "/" . NavUtil::$activePageNames[$i];
+				} else {
+					$link = get_site_url() . "/#" . NavUtil::$activePageNames[$i];
+				}
 
-			$nav .= sprintf(
-				$nav_format
-				,$prepend
-				,$prepend
-				,$link
-				,$title
-			);
+				$nav .= sprintf(
+					$nav_format
+					,$prepend
+					,$prepend
+					,$link
+					,$title
+				);
+			}
 		}
 		$nav .= '</ul>';
 		return $nav;

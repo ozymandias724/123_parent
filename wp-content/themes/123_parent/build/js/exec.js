@@ -22,7 +22,7 @@
 
 		Theme.Parallax._init();
 		
-		Theme.SmoothScroll._init();
+		// Theme.SmoothScroll._init();
 
 	});
 

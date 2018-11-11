@@ -156,8 +156,10 @@ class SetupTheme
 		// 
 		$fields = [];
 		$rows = get_field('addresses-repeater', 'option');
-		foreach($rows as $row){
-			array_push($fields, $row['addresses-gmap']);
+		if( !empty($rows) ){
+			foreach($rows as $row){
+				array_push($fields, $row['addresses-gmap']);
+			}
 		}
 		wp_localize_script( 'parent-main', 'ContactAddresses', $fields );
 		// 
