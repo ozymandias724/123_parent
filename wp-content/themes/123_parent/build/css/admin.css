@@ -1,4 +1,51 @@
 @media only screen {
+  .field_counter {
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: -1rem;
+    font-size: 2rem;
+  }
+
+  #setup-nextprev {
+    width: 100%;
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  #setup-nextprev span {
+    cursor: pointer;
+    color: white;
+    background-color: #0073AA;
+    padding: 15px 30px;
+    border-radius: 12px;
+    position: absolute;
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 0;
+    left: 15px;
+    font-size: 1.2rem;
+  }
+  #setup-nextprev span:last-child {
+    left: auto;
+    right: 15px;
+  }
+
+  #acf-group_sitesetup_intro .acf-label,
+#acf-group_sitesetup_0 .acf-label,
+#acf-group_sitesetup_1 .acf-label,
+#acf-group_sitesetup_2 .acf-label,
+#acf-group_sitesetup_3 .acf-label,
+#acf-group_sitesetup_4 .acf-label,
+#acf-group_sitesetup_5 .acf-label {
+    position: relative;
+  }
   #acf-group_sitesetup_intro.setup-section--hidden,
 #acf-group_sitesetup_0.setup-section--hidden,
 #acf-group_sitesetup_1.setup-section--hidden,

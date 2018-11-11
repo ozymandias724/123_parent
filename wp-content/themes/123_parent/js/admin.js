@@ -5,17 +5,38 @@ var Admin = {};
 	$(document).ready(function(){
 
 		Admin.SiteSetup = {
-			sections : $('#acf-group_sitesetup_intro, #acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4, #acf-group_sitesetup_5'),
+			sections : $('#acf-group_sitesetup_intro, #acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4'),
 			pagination : $('#setup-pagination'),
+			nextprev : $('#setup-nextprev span'),
 			_init : function(){
-
-
 				Admin.SiteSetup.sections.addClass('setup-section--hidden');
 				Admin.SiteSetup.sections.first().removeClass('setup-section--hidden');
 				Admin.SiteSetup._doBuildNav();
 				Admin.SiteSetup.pagination.on('click', 'span', Admin.SiteSetup._clickedNavhandler);
-			},	
+				Admin.SiteSetup.nextprev.on('click', Admin.SiteSetup._doNextPrev);
+			},
+			_doNextPrev : function(e){
+				var nextprev = $(e.target).data('name');
+				var currentPage = Admin.SiteSetup.sections.not('.setup-section--hidden');
+
+				var activeButton = Admin.SiteSetup.pagination.find('span.active');
+
+
+				activeButton.removeClass('active');
+
+				if( nextprev == 'prev' && currentPage[0] != Admin.SiteSetup.sections[0] ){
+					currentPage.addClass('setup-section--hidden');
+					currentPage.prev().removeClass('setup-section--hidden');
+					activeButton.prev().addClass('active');
+				}
+				if( nextprev == 'next' && currentPage[0] != Admin.SiteSetup.sections.last() ){
+					currentPage.addClass('setup-section--hidden');
+					currentPage.next().removeClass('setup-section--hidden');
+					activeButton.next().addClass('active');
+				}
+			},
 			_doBuildNav : function(){
+
 				Admin.SiteSetup.sections.each(function(index){
 
 					var active = 'active';
@@ -55,67 +76,6 @@ var Admin = {};
 		}
 		Admin.SiteSetup._init();
 
-
-
-
-		// Admin.SiteSetup = {
-
-		// 	form : $('#sitesetup'),
-		// 	formPages : $('#sitesetup section'),
-		// 	formPagination : $('#form-pagination span'),
-		// 	submitButton : $('#sitesetup-submit'),
-
-		// 	_init : function(){
-		// 		if( Admin.SiteSetup.form.length > 0 ){
-		// 			$(window).on('load', Admin.SiteSetup._buildFormPages);
-		// 			Admin.SiteSetup.formPagination.on('click', Admin.SiteSetup._changePageHandler);
-		// 			Admin.SiteSetup.form.on('submit', Admin.SiteSetup._submitHandler);
-		// 		}
-		// 	},
-		// 	_changePageHandler : function(e){
-		// 		// Clicked Next:
-		// 		if( $(this).hasClass('dashicons-arrow-right-alt') ){
-		// 			var current = Admin.SiteSetup.formPages.not('.js__sections--hidden');
-		// 			if( current.nextSibling !== null ){
-		// 				$(current).addClass('js__sections--hidden');
-		// 				$(current).next().removeClass('js__sections--hidden');
-		// 			}
-		// 		}
-		// 		else if( $(this).hasClass('dashicons-arrow-left-alt') ){
-		// 			var current = Admin.SiteSetup.formPages.not('.js__sections--hidden');
-		// 			if( current.previousSibling !== null ){
-		// 				$(current).addClass('js__sections--hidden');
-		// 				$(current).prev().removeClass('js__sections--hidden');
-		// 			}
-		// 		}
-		// 	},
-		// 	_buildFormPages : function(e){
-		// 		Admin.SiteSetup.formPages.each(function(){
-		// 			$(this).addClass('js__sections--hidden');
-		// 		});
-		// 		Admin.SiteSetup.formPages.first().removeClass('js__sections--hidden');
-		// 	},
-		// 	_submitHandler : function(e){
-		// 		e.preventDefault();
-		// 		$.post( ajaxurl , {
-		// 			// action hook in class.MultiSiteSetup.php
-		// 			action : 'do_site_setup',
-		// 			// Form Fields - To Translate to ACF Fields
-		// 			logo : Admin.SiteSetup.form.find('input[name=logo]').val(),
-		// 			addressone : Admin.SiteSetup.form.find('input[name=addressone]').val(),
-		// 			email : Admin.SiteSetup.form.find('input[name=email]').val(),
-
-		// 		}, Admin.SiteSetup._responseHandler);
-		// 	},
-		// 	_responseHandler : function(response){
-		// 		// console.log(JSON.parse(response));
-		// 		console.log(response);
-
-		// 	}
-
-		// }
-
-		// Admin.SiteSetup._init();
 
 
 

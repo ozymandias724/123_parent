@@ -1,6 +1,5 @@
 <?php 
 
-include_once( get_template_directory() . '/classes/class.CustomFields.php');
 include_once( get_template_directory() . '/fusiontables/handler.php');
 
 /*
@@ -24,12 +23,13 @@ add_action('acf/init', 'populate_setup_pages_choices');
 	Add Options Pages and Subpages
 */
 if( function_exists('acf_add_options_page') ) {
+
 	// Main Theme Settings
 	acf_add_options_page(array(
-		'page_title' 	=> '<h3>Sitewide Theme Settings</h3>',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'general-settings',
-		'capability'	=> 'read_private_posts',
+		'page_title' 	=> 'Setup Website',
+		'menu_title'	=> 'Setup Website',
+		'menu_slug' 	=> 'site-setup',
+		'capability'	=> 'manage_options',
 		'icon_url'      => 'dashicons-admin-settings',
 		'redirect'		=> false,
 		'position' 		=> 2,
@@ -38,14 +38,15 @@ if( function_exists('acf_add_options_page') ) {
 
 	// Main Theme Settings
 	acf_add_options_page(array(
-		'page_title' 	=> '<h3>Setup Site</h3>',
-		'menu_title'	=> '(ACF) Setup Site',
-		'menu_slug' 	=> 'site-setup',
-		'capability'	=> 'manage_options',
+		'page_title' 	=> '<h3>Sitewide Theme Settings</h3>',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'general-settings',
+		'capability'	=> 'read_private_posts',
 		'icon_url'      => 'dashicons-admin-settings',
 		'redirect'		=> false,
-		'position' 		=> 6,
+		'position' 		=> 3,
 	));
+
 
 
 
@@ -215,21 +216,12 @@ if( function_exists('acf_add_options_page') ) {
 if( !function_exists('add_acf_fields') ){
 	function add_acf_fields() {
 		$fth = new FusionTableHandler();
-
-
-		/**
-		 * Site Setup
-		 * 	Options Page and Fields
-		 */
+		
 		if( function_exists('acf_add_local_field_group') ):
 			include( __DIR__ . '/setup/partial.SiteSetupGroups.php' );
 			include( __DIR__ . '/setup/partial.SiteSetupFields.php' );
 		endif;
 
-
-		/**
-		 * 
-		 */
 		acf_add_local_field_group(array(
 			'key' => 'group_1oi3nlaosawooingk',
 			'title' => 'Edit Banner',
@@ -1145,6 +1137,7 @@ if( !function_exists('add_acf_fields') ){
 					'name' => 'general-logo',
 					'type' => 'image',
 					'return_format' => 'url',
+					'preview_size' => 'medium_large',
 					'instructions' => 'Use a light version or else it won\'t show up very well. This field is required. PNG or another web-friendly format with an alpha channel preferred.',
 					'conditional_logic' => array(
 						array(

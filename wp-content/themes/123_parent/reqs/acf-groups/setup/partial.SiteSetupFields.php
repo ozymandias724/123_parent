@@ -14,6 +14,7 @@ acf_add_local_field(array(
 	'parent' => 'group_sitesetup_intro',
 	'key' => 'field_sitesetup_msg_intro_1',
 	'type' => 'message',
+	'label' => 'Setup Website Script',
 	'message' => $content,
 ));
 
@@ -25,6 +26,14 @@ acf_add_local_field(array(
 	'key' => 'field_sitesetup_msg_1',
 	'type' => 'message',
 	'message' => $the_pagination,
+));
+$next_prev = '<div id="setup-nextprev"><span data-name="prev">Prev</span><span data-name="next">Next</span></div>';
+acf_add_local_field(array(
+	'parent' => 'group_sitesetup_5',
+	'key' => 'field_sitesetup_nextprev',
+	'type' => 'message',
+	'message' => $next_prev,
+
 ));
 
 
@@ -236,6 +245,7 @@ acf_add_local_field(array(
 		'clone' => array(
 			0 => 'field_2343135',
 		),
+		'display' => 'normal',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',

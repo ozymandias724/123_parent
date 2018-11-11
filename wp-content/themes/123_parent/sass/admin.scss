@@ -5,7 +5,15 @@
   -webkit-transform: $transforms;
           transform: $transforms;
 }
-
+@mixin justifyblocks {
+  text-align: justify;
+  font-size: 0;
+  &:after {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+  }
+}
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
@@ -15,6 +23,36 @@
 }
 @media only screen {
 
+	.field_counter {
+		position: absolute;
+		top: 50%;
+		@include transform(translateY(-50%));
+		left: -1rem;
+		font-size: 2rem;
+	}
+	#setup-nextprev {
+		width: 100%;
+		position: relative;
+		padding-bottom: 2rem;
+		span {
+			cursor: pointer;
+			color: white;
+			background-color: #0073AA;
+			padding: 15px 30px;
+			border-radius: 12px;
+			position: absolute;
+			@include transform(translateY(-50%));
+			top: 0;
+			left: 15px;
+			font-size: 1.2rem;
+			&:last-child{
+				left: auto;
+				right: 15px;
+			}
+
+		}
+	}
+
 	#acf-group_sitesetup_intro,
 	#acf-group_sitesetup_0,
 	#acf-group_sitesetup_1,
@@ -22,6 +60,9 @@
 	#acf-group_sitesetup_3,
 	#acf-group_sitesetup_4,
 	#acf-group_sitesetup_5 {
+		.acf-label {
+			position: relative;
+		}
 		&.setup-section--hidden {
 			display: none;
 		}

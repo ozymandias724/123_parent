@@ -2,8 +2,6 @@
 /**
  * 	Deactivate ACF Plugins if Installed, and use Integrated ACF
  */
-
-	include_once('classes/class.CustomFields.php');
 	require_once('reqs/localize-acf.php');
 /**
  * 	Verify Active Pages
@@ -33,7 +31,6 @@ include_once('classes/class.GooMaps.php');
 /**
  * 	Setup Theme :
  */
-require_once('classes/class.MultiSiteSetup.php');
 require_once('classes/class.Setup.php');
 include_once('classes/class.NavUtil.php');
 

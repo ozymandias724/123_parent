@@ -84,3 +84,12 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
 }
+@mixin justifyblocks {
+  text-align: justify;
+  font-size: 0;
+  &:after {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+  }
+}
