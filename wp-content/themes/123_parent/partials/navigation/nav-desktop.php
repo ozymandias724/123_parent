@@ -13,20 +13,9 @@
 	// get_logo
 	$logo_src = get_logo();
 
-	// (structure)
-	// header wrapper
-	// tint background overlay 1
-	// content wrapper overlay 2
-	// logo section
-	// nav section
-		// page links
-		// call to action
-		// phone number
-
-
 	do_action('123_before_desktop_nav');
 ?>
-<header class="header <?php echo $invertlogo .' '. $fadenav; ?>">
+<header class="header <?php echo $invertlogo .' '. $fadenav; ?>" data-scroll-header>
 
 
 	<?php if(!get_field('remove-topbar', 'option')): ?>

@@ -244,7 +244,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_areas',
-		'label' => '2. Areas Served Hero',
+		'label' => '2. Areas Served (Banner / Background)',
 		'name' => 'sitesetup_hero_areas',
 		'type' => 'clone',
 		'instructions' => '',
@@ -257,7 +257,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_contact',
-		'label' => '3. Contact Hero',
+		'label' => '3. Contact (Banner / Background)',
 		'name' => 'sitesetup_hero_contact',
 		'type' => 'clone',
 		'clone' => array(
@@ -268,7 +268,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_about',
-		'label' => '4. About Hero',
+		'label' => '4. About (Banner / Background)',
 		'name' => 'sitesetup_hero_about',
 		'type' => 'clone',
 		'clone' => array(
@@ -279,7 +279,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_blog',
-		'label' => '5. Blog Hero',
+		'label' => '5. Blog (Banner / Background)',
 		'name' => 'sitesetup_hero_blog',
 		'type' => 'clone',
 		'clone' => array(
@@ -290,7 +290,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_gallery',
-		'label' => '6. Gallery Hero',
+		'label' => '6. Gallery (Banner / Background)',
 		'name' => 'sitesetup_hero_gallery',
 		'type' => 'clone',
 		'clone' => array(
@@ -301,7 +301,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_services',
-		'label' => '7. Services Hero',
+		'label' => '7. Services (Banner / Background)',
 		'name' => 'sitesetup_hero_services',
 		'type' => 'clone',
 		'clone' => array(
@@ -312,7 +312,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_testimonials',
-		'label' => '8. Testimonials Hero',
+		'label' => '8. Testimonials (Banner / Background)',
 		'name' => 'sitesetup_hero_testimonials',
 		'type' => 'clone',
 		'clone' => array(
@@ -323,7 +323,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_location',
-		'label' => '9. Location Hero',
+		'label' => '9. Location (Banner / Background)',
 		'name' => 'sitesetup_hero_location',
 		'type' => 'clone',
 		'clone' => array(
@@ -334,7 +334,7 @@ acf_add_local_field(array(
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
 		'key' => 'field_sitesetup_hero_menu',
-		'label' => '10. Menu Hero',
+		'label' => '10. Menu (Banner / Background)',
 		'name' => 'sitesetup_hero_menu',
 		'type' => 'clone',
 		'clone' => array(
@@ -425,25 +425,25 @@ acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',
 		'type' => 'message',
-		'message' => '3. <a href="'. get_admin_url() .'/edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
+		'message' => '3. <a target="_blank" href="'. get_admin_url() .'/edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_testimoniallink',
 		'type' => 'message',
-		'message' => '4. <a href="'. get_admin_url() .'/admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
+		'message' => '4. <a target="_blank" href="'. get_admin_url() .'/admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '5. <a href="'. get_admin_url() . '/admin.php?page=testimonials-settings' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
+		'message' => '5. <a target="_blank" href="'. get_admin_url() . '/admin.php?page=testimonials-settings' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_4',
 		'key' => 'field_sitesetup_msg_godaddy',
 		'type' => 'message',
-		'message' => '1. <a href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
+		'message' => '1. <a target="_blank" href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
 	));
 
 

@@ -493,7 +493,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_afd9zx7',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'type' => 'image',
 					'return_format' => 'url',
 					'name' => 'areas-served-bg',
@@ -769,7 +769,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_3',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'company-bg',
 					'type' => 'image',
 					'return_format' => 'url',
@@ -800,7 +800,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_bdsh8f',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'general-coupons-bg',
 					'type' => 'image',
 					'preview_size' => 'medium',
@@ -832,7 +832,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 				'key' => 'field_15',
-				'label' => 'Hero Image',
+				'label' => 'Banner / Background Image',
 				'name' => 'general-blog-bg',
 				'type' => 'image',
 				'return_format' => 'url',
@@ -965,7 +965,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_5',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'gallery-bg',
 					'type' => 'image',
 					'return_format' => 'url',
@@ -1062,7 +1062,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_9',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'services-bg',
 					'type' => 'image',
 					'return_format' => 'url',
@@ -2228,7 +2228,7 @@ if( !function_exists('add_acf_fields') ){
 				),
 				array(
 					'key' => 'field_19',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'testimonials-bg',
 					'type' => 'image',
 					'preview_size' => 'medium',
@@ -2424,7 +2424,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_23',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'contact-bg',
 					'type' => 'image',
 					'preview_size' => 'medium',
@@ -2681,7 +2681,7 @@ if( !function_exists('add_acf_fields') ){
 			'fields' => array(
 				array(
 					'key' => 'field_71b12312',
-					'label' => 'Hero Image',
+					'label' => 'Banner / Background Image',
 					'name' => 'menu-bg',
 					'type' => 'image',
 					'return_format' => 'url',

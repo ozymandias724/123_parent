@@ -6,8 +6,13 @@ var Admin = {};
 
 		Admin.SiteSetup = {
 			sections : $('#acf-group_sitesetup_intro, #acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4'),
+
+			activeSectionIndex : undefined,
+
 			pagination : $('#setup-pagination'),
 			nextprev : $('#setup-nextprev span'),
+			nextPrevGroup : $('#acf-group_sitesetup_5'),
+
 			_init : function(){
 				Admin.SiteSetup.sections.addClass('setup-section--hidden');
 				Admin.SiteSetup.sections.first().removeClass('setup-section--hidden');
@@ -15,26 +20,63 @@ var Admin = {};
 				Admin.SiteSetup.pagination.on('click', 'span', Admin.SiteSetup._clickedNavhandler);
 				Admin.SiteSetup.nextprev.on('click', Admin.SiteSetup._doNextPrev);
 			},
-			_doNextPrev : function(e){
-				var nextprev = $(e.target).data('name');
-				var currentPage = Admin.SiteSetup.sections.not('.setup-section--hidden');
+			_trackSectionIndex : function(){
+				Admin.SiteSetup.sections.each(function(index, el){
+					if( !$(el).hasClass('setup-section--hidden') ){
+						Admin.SiteSetup.activeSectionIndex = index;
+					}
+				});
 
-				var activeButton = Admin.SiteSetup.pagination.find('span.active');
-
-
-				activeButton.removeClass('active');
-
-				if( nextprev == 'prev' && currentPage[0] != Admin.SiteSetup.sections[0] ){
-					currentPage.addClass('setup-section--hidden');
-					currentPage.prev().removeClass('setup-section--hidden');
-					activeButton.prev().addClass('active');
-				}
-				if( nextprev == 'next' && currentPage[0] != Admin.SiteSetup.sections.last() ){
-					currentPage.addClass('setup-section--hidden');
-					currentPage.next().removeClass('setup-section--hidden');
-					activeButton.next().addClass('active');
+				if( Admin.SiteSetup.activeSectionIndex == 4 ){
+					$('#acf-group_sitesetup_5').hide();
+				} else {
+					$('#acf-group_sitesetup_5').show();
 				}
 			},
+			/**
+			 * handle the prev/next buttons
+			 * @param  {event} e the click event object
+			 * @return {none}
+			 */
+			_doNextPrev : function(e){
+
+				// clicked prev or next
+				if( e.target.dataset.name == 'prev' || e.target.dataset.name == 'next' ){
+	
+					Admin.SiteSetup._trackSectionIndex();
+
+					// save visible page before click
+					var currentPage = Admin.SiteSetup.sections.not('.setup-section--hidden');
+					// save active button before click
+					var activeButton = Admin.SiteSetup.pagination.find('span.active');
+
+					// clicked prev
+					if( e.target.dataset.name == 'prev' && Admin.SiteSetup.activeSectionIndex != 0 ){
+						// clear active button
+						activeButton.removeClass('active');
+						// hide visible page
+						currentPage.addClass('setup-section--hidden');
+						// do prev
+						currentPage.prev().removeClass('setup-section--hidden');
+						activeButton.prev().addClass('active');
+					}
+					// clicked next
+					if( e.target.dataset.name == 'next' && Admin.SiteSetup.activeSectionIndex != 4 ){
+						// clear active button
+						activeButton.removeClass('active');
+						// hide visible page
+						currentPage.addClass('setup-section--hidden');
+						// do next
+						currentPage.next().removeClass('setup-section--hidden');
+						activeButton.next().addClass('active');
+					}
+					Admin.SiteSetup._trackSectionIndex();
+				}
+			},
+			/**
+			 * create the breadcrumb nav above the setup form
+			 * @return {null} appends html to acf message field
+			 */
 			_doBuildNav : function(){
 
 				Admin.SiteSetup.sections.each(function(index){
@@ -61,6 +103,9 @@ var Admin = {};
 				});
 			},
 			_clickedNavhandler : function(e){
+
+				Admin.SiteSetup._trackSectionIndex();
+
 				// wipe active status
 				Admin.SiteSetup.pagination.find('span').removeClass('active');
 				// add active status
@@ -70,6 +115,8 @@ var Admin = {};
 				Admin.SiteSetup.sections.addClass('setup-section--hidden');
 
 				$(Admin.SiteSetup.sections[index]).removeClass('setup-section--hidden');
+
+				Admin.SiteSetup._trackSectionIndex();
 
 			}
 
