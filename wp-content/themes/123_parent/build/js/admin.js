@@ -27,10 +27,15 @@ var Admin = {};
 					}
 				});
 
-				if( Admin.SiteSetup.activeSectionIndex == 4 ){
-					$('#acf-group_sitesetup_5').hide();
+				if( Admin.SiteSetup.activeSectionIndex == 0 ){
+					Admin.SiteSetup.nextPrevGroup.find('span[data-name="prev"]').hide();
 				} else {
-					$('#acf-group_sitesetup_5').show();
+					Admin.SiteSetup.nextPrevGroup.find('span[data-name="prev"]').show();
+				}
+				if( Admin.SiteSetup.activeSectionIndex == 4 ){
+					Admin.SiteSetup.nextPrevGroup.find('span[data-name="next"]').hide();
+				} else {
+					Admin.SiteSetup.nextPrevGroup.find('span[data-name="next"]').show();
 				}
 			},
 			/**
@@ -78,6 +83,8 @@ var Admin = {};
 			 * @return {null} appends html to acf message field
 			 */
 			_doBuildNav : function(){
+				
+				Admin.SiteSetup._trackSectionIndex();
 
 				Admin.SiteSetup.sections.each(function(index){
 
