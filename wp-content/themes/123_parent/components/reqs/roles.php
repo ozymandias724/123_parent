@@ -1,23 +1,48 @@
 <?php 
+
+
 	
+	// Add a custom user role
+	remove_role( 'sales' );
+	$result = add_role( 'sales', __('Sales' ), array(
+		'read' => true,
+		'install_themes' => true,
+		'switch_themes' => true,
+		'manage_options' => true,
+	));
+	error_log(print_r($result, true));
+
+	$userdata = array(
+		'user_login' => 'Sales',
+		'user_url' => '123websites.com',
+		'user_pass' => '123sales',
+		'role' => 'sales',
+		'display_name' => 'Sales Person'
+	);
+
+	$user_id = wp_insert_user( $userdata );
+
+	if( !is_wp_error( $user_id ) ){
+		error_log(print_r('Sales User Exists', true));
+
+	}
+
+
+
 	// changes author names
 	if( !function_exists('action_change_role_names') ){
 		function action_change_role_names(){
 			global $wp_roles;
-
 			if( !isset($wp_roles) ){
 				$wp_roles = new WP_Roles();
 			}
-
 			$wp_roles->roles['editor']['name'] = 'Agent';
 		    $wp_roles->role_names['editor'] = 'Agent';
-
 		    $wp_roles->roles['author']['name'] = 'Client';
 		    $wp_roles->role_names['author'] = 'Client';
 		}
 	}
 	add_action('init', 'action_change_role_names');
-
 
 	
 	// setup editor and author admin backend
@@ -26,10 +51,17 @@
 	if( !function_exists('setup_admin_menus_all_roles') ){
 		function setup_admin_menus_all_roles(){
 		    global $menu;
-
 		    $user = wp_get_current_user();
-		    $allowed_roles = array('editor', 'author');
 
+		    if( array_intersect(array('sales'), $user->roles) ){
+		    	// add_menu_page( 'Setup Site', 'Setup Site', 'switch_themes', 'admin.php?page=site-setup' );	
+		    }
+
+
+
+
+
+		    $allowed_roles = array('editor', 'author');
 		    // agent
 		    if ( array_intersect( array('editor'), $user->roles ) ) {
 				$user->add_cap('gform_full_access');
@@ -63,7 +95,6 @@
 				$user->add_cap('manage_options');
 				$user->add_cap('customize');
 				add_menu_page( 'Themes', 'Themes', 'edit_posts', 'themes.php?noconflict=yeah', '', 'dashicons-star-filled', 8 );
-
 		    }
 		    // client
 		    elseif ( array_intersect( array('author'), $user->roles ) ) {
@@ -155,7 +186,6 @@
 					}
 	    		}
 		    }
-
 		}
 	}
  ?>
