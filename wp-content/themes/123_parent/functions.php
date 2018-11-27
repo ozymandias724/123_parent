@@ -35,11 +35,16 @@ include_once('classes/class.NavUtil.php');
 /**
  * 	Organize this craziness ASAP
  */
+
+
+include_once('classes/class.UserRoles.php');
+// require_once('components/reqs/roles.php');
+
+
 require_once('PHPImage.php');
 require_once('components/reqs/color-helpers.php');
 require_once('components/reqs/misc-helpers.php');
 require_once('components/reqs/custompts.php');
-require_once('components/reqs/roles.php');
 require_once('components/reqs/resellers.php');
 require_once('components/reqs/footer-helpers.php');
 /**
