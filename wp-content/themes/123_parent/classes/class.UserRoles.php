@@ -17,6 +17,13 @@ class UserRoles
 
 		add_filter( 'login_redirect', array($this, 'redirect_sales_login'), 10, 3 );
 	}
+	/**
+	 * redirect sales user to the setup page
+	 * @param  [type] $redirect_to 
+	 * @param  [type] $request     
+	 * @param  [type] $user        
+	 * @return [type]              
+	 */		
 	function redirect_sales_login($redirect_to, $request, $user){
 		if( 'sales' == $user->data->user_nicename ){
 			$redirect_to =  admin_url('admin.php?page=site-setup');
@@ -220,13 +227,12 @@ class UserRoles
 	}
 	function do_adjust_sales_menu(){
 		global $menu;
-
 		foreach($menu as $i => $val){
 			$shown = array(
-				'site-setup'
+				'site-setup',
 			);
 			// remove every page except setup site
-			if( !in_array($val[2],$shown) ){
+			if( !in_array($val[2],$shown) && !empty($val[2]) ){
 				remove_menu_page($val[2]);
 			}
 		}
