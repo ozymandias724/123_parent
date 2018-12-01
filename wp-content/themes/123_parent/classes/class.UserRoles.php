@@ -1,96 +1,42 @@
 <?php 
 /**
- * Users and Roles Management
+ * 
  */
 class UserRoles
 {
 	function __construct()
 	{
-		$this->adjust_roles();
-		$this->adjust_users_menus();
-		$this->adjust_role_names();
-		$this->redirect_sales_user_admin();
+		$this->_init();
 	}
+	function _init(){
+		add_action('after_switch_theme', array($this, 'manage_roles'));
+		
+		add_action('after_switch_theme', array($this, 'manage_users'));
+		
+		$this->manage_admin_menu();
 
+		add_filter( 'login_redirect', array($this, 'redirect_sales_login'), 10, 3 );
+	}
+	function redirect_sales_login($redirect_to, $request, $user){
+		if( 'sales' == $user->data->user_nicename ){
+			$redirect_to =  admin_url('admin.php?page=site-setup');
+		}
+		return $redirect_to;
+	}
 	/**
-	 * [adjust_role_names description]
-	 * @return [type] [description]
+	 * calls functions that update specific roles
+	 * @return none
 	 */
-	function adjust_role_names(){
-		add_action( 'after_switch_theme', array($this, 'do_adjust_role_names') );
+	function manage_roles(){
+		$this->update_editor_role();
+		$this->update_author_role();
 	}
-	function adjust_roles(){
-		add_action('after_switch_theme', array($this, 'do_adjust_editor_role'));
-
-		add_action('after_switch_theme', array($this, 'do_add_sales_role'));
-
-		// ensure the sales user exists
-		if( !username_exists( 'sales' ) ){
-			$this->do_add_sales_user();
-		}
-	}
-	function do_add_sales_role(){
-		add_role( 'sales', __('Sales' ), array(
-			'read' => true,
-			'install_themes' => true,
-			'switch_themes' => true,
-			'manage_options' => true,
-		));
-	}
-	function do_add_sales_user(){
-
-		$userdata = array(
-			'user_login' => 'Sales',
-			'user_url' => '123websites.com',
-			'user_pass' => '123sales',
-			'role' => 'sales',
-			'display_name' => 'Sales Person'
-		);
-		wp_insert_user( $userdata );
-	}
-	function adjust_users_menus(){
-		$user = wp_get_current_user();
-		if( array_intersect(array('administrator'), $user->roles ) ){
-			add_action('admin_menu', array($this, 'do_adjust_admin_menu'));
-		}
-		else if( array_intersect(array('editor'), $user->roles ) ){
-			add_action('admin_menu', array($this, 'do_adjust_editor_menu'));
-		}
-		else if( array_intersect(array('author'), $user->roles ) ){
-			add_action('admin_menu', array($this, 'do_adjust_author_menu'));
-		}
-		else if( array_intersect(array('sales'), $user->roles ) ){
-			add_action('admin_menu', array($this, 'do_adjust_sales_menu'));
-		}	
-	}
-	function redirect_sales_user_admin(){
-
-		function your_login_redirect( $redirect_to, $request, $user )
-		{
-		    if ( is_array( $user->roles ) ) {
-		        if ( in_array( 'sales', $user->roles ) ) {
-		            return admin_url( 'admin.php?page=site-setup' );
-		        } else {
-		            return admin_url();
-		        }
-		    }
-		}
-		add_filter( 'login_redirect', 'your_login_redirect', 10, 3 );
-	}
-
-	function do_adjust_sales_menu(){
-		global $menu;
-		remove_menu_page('profile.php');
-		remove_menu_page('index.php');
-		remove_menu_page('themes.php');
-		remove_menu_page('tools.php');
-		remove_menu_page('options-general.php');
-		remove_menu_page('edit.php?post_type=acf-field-group');
-	}
-	function do_adjust_editor_role(){
-
+	/**
+	 * update the editor role
+	 * @return none
+	 */
+	function update_editor_role(){
 		$role = get_role( 'editor' );
-
 		$caps_to_add = array(
 			'ga_activate'
 			,'manage_options'
@@ -105,7 +51,6 @@ class UserRoles
 			,'customize'
 		);
 		$caps_to_remove = array();
-
 		foreach( $caps_to_add as $cap ){
 			$role->add_cap($cap);
 		}
@@ -113,8 +58,11 @@ class UserRoles
 			$role->remove_cap($cap);
 		}
 	}
-	function do_adjust_author_role(){
-
+	/**
+	 * update the author role
+	 * @return none
+	 */
+	function update_author_role(){
 		$role = get_role( 'author' );
 
 		$caps_to_add = array(
@@ -162,6 +110,41 @@ class UserRoles
 		}
 		foreach( $$caps_to_remove as $cap_to_remove ){
 			$role->remove_cap($cap);
+		}
+	}
+	/**
+	 * pre-configures required users
+	 * @return none
+	 */
+	function manage_users(){
+		if( !username_exists( 'sales' ) ){
+			$userdata = array(
+				'user_login' => 'Sales',
+				'user_url' => '123websites.com',
+				'user_pass' => '123sales',
+				'role' => 'editor',
+				'display_name' => 'Sales Person'
+			);
+			wp_insert_user( $userdata );
+		}
+	}
+	/**
+	 * calls functions that update users admin sidebar
+	 * @return none
+	 */
+	function manage_admin_menu(){
+		$user = wp_get_current_user();
+		if( array_intersect(array('administrator'), $user->roles ) ){
+			add_action('admin_menu', array($this, 'do_adjust_admin_menu'));
+		}
+		else if( array_intersect(array('editor'), $user->roles ) ){
+			add_action('admin_menu', array($this, 'do_adjust_editor_menu'));
+			if( 'sales' == $user->data->user_nicename ){
+				add_action( 'admin_init', array($this, 'do_adjust_sales_menu') );
+			}
+		}
+		else if( array_intersect(array('author'), $user->roles ) ){
+			add_action('admin_menu', array($this, 'do_adjust_author_menu'));
 		}
 	}
 	function do_adjust_admin_menu(){
@@ -235,19 +218,19 @@ class UserRoles
 		}
 		add_menu_page( 'Themes', 'Themes', 'edit_posts', 'themes.php?noconflict=yeah', '', 'dashicons-star-filled', 8 );
 	}
-	function do_adjust_role_names(){
-		// Get : global wp_roles
-		global $wp_roles;
-		if( !isset($wp_roles) ){
-			$wp_roles = new WP_Roles();
+	function do_adjust_sales_menu(){
+		global $menu;
+
+		foreach($menu as $i => $val){
+			$shown = array(
+				'site-setup'
+			);
+			// remove every page except setup site
+			if( !in_array($val[2],$shown) ){
+				remove_menu_page($val[2]);
+			}
 		}
-		$wp_roles->roles['editor']['name'] = 'Agent';
-		$wp_roles->role_names['editor'] = 'Agent';
-		$wp_roles->roles['author']['name'] = 'Client';
-		$wp_roles->role_names['author'] = 'Client';
 	}
 }
-
 	new UserRoles();
-
  ?>
