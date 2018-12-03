@@ -65,8 +65,8 @@ require_once('components/reqs/footer-helpers.php');
  */
 function modacf_adjust_labelInstructions($field){
 
-
 	switch ($field['name']) {
+	
 		case 'sitesetup_hero_services':
 			$instructions = '';
 			# code...
@@ -111,6 +111,18 @@ function modacf_adjust_labelInstructions($field){
 			# code...
 			break;
 	}
+
+	$items = array(
+		'sitesetup_areas_repeater_zips',
+		'sitesetup_areas_repeater_counties',
+		'sitesetup_areas_repeater_countries',
+		'sitesetup_areas_repeater_states'
+	);
+	if( in_array($field['name'], $items)){
+		$instructions = '';
+		$label = 'Areas Served Locations';
+	}
+
 
 	$field['sub_fields'][0]['instructions'] = $instructions;
 	$field['sub_fields'][0]['label'] = $label;
@@ -180,6 +192,10 @@ add_filter('acf/load_field/name=sitesetup_payment_paypal_tog', 'modacf_adjust_wr
 // adjust payment header script
 add_filter('acf/load_field/name=sitesetup_payment_msg', 'modacf_adjust_labelInstructions');
 add_filter('acf/load_field/name=sitesetup_hours', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_areas_repeater_zips', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_areas_repeater_countries', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_areas_repeater_counties', 'modacf_adjust_labelInstructions');
+add_filter('acf/load_field/name=sitesetup_areas_repeater_states', 'modacf_adjust_labelInstructions');
 
 
 

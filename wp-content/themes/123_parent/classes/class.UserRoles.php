@@ -227,13 +227,15 @@ class UserRoles
 	}
 	function do_adjust_sales_menu(){
 		global $menu;
-		foreach($menu as $i => $val){
-			$shown = array(
-				'site-setup',
-			);
-			// remove every page except setup site
-			if( !in_array($val[2],$shown) && !empty($val[2]) ){
-				remove_menu_page($val[2]);
+		if( !empty($menu)){
+			foreach($menu as $i => $val){
+				$shown = array(
+					'site-setup',
+				);
+				// remove every page except setup site
+				if( !in_array($val[2],$shown) && !empty($val[2]) ){
+					remove_menu_page($val[2]);
+				}
 			}
 		}
 	}
