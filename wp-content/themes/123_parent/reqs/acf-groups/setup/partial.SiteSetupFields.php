@@ -27,6 +27,7 @@ acf_add_local_field(array(
 	'message' => $content,
 ));
 
+// array of color picker fields to clone (in order)
 $cps = array(
 	'field_cpt4an89aason2kn'
 	,'field_cpt4paampi2k2ksnsil'
@@ -59,6 +60,7 @@ $cps = array(
 	,'field_29wfeauajhadfsk'
 	,'field_faauoiegwuf23'
 );
+// add all the color picker clones
 acf_add_local_field(array(
 
 	'key' => 'field_setup_clonecpts'
