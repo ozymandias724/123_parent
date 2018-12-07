@@ -27,6 +27,23 @@ acf_add_local_field(array(
 	'message' => $content,
 ));
 
+
+$theme_three = [
+	'field_cp_header-logopicker',
+	'field_cp_header-logotoggle',
+	'field_cp_button-bgpicker',
+	'field_cp_button-bgtoggle',
+	'field_cp_button-textpicker',
+	'field_cp_button-texttoggle',
+	'field_cp_footer-bgpicker',
+	'field_cp_footer-bgtoggle',
+	'field_cp_footer-headerspicker',
+	'field_cp_footer-headerstoggle',
+	'field_cp_footer-textpicker',
+	'field_cp_footer-texttoggle',
+];
+
+
 // array of color picker fields to clone (in order)
 $cps = array(
 	'field_cpt4an89aason2kn'
@@ -60,24 +77,18 @@ $cps = array(
 	,'field_29wfeauajhadfsk'
 	,'field_faauoiegwuf23'
 );
+if( wp_get_theme()['Name'] == '123_three' ){
+	$cps = array_merge($cps, $theme_three);
+}
+
 // add all the color picker clones
 acf_add_local_field(array(
-
 	'key' => 'field_setup_clonecpts'
 	,'name' => 'setup-clone-cpts'
 	,'type' => 'clone'
 	,'clone' => array_values($cps)
 	,'parent' => 'group_sitesetup_intro'
 ));
-
-
-
-
-
-
-
-
-
 
 $the_pagination = '<div id="setup-pagination"></div>';
 acf_add_local_field(array(

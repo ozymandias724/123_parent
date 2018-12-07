@@ -1187,10 +1187,13 @@ if( !function_exists('add_acf_fields') ){
 					'instructions' => 'This is the email that the contact form will be sent to.'
 					
 				),
-				/*
-					COLOR PICKERS
-					Theme 4 Specific First:
-				 */
+				/**
+				*	
+				*	
+				*	Color Pickers
+				*	
+				*	
+				**/
 				array(
 					'key' => 'field_padfh123ad',
 					'label' => '2. Colors',
@@ -1200,7 +1203,7 @@ if( !function_exists('add_acf_fields') ){
 					'name' => 'cp-t4-headers-text',
 					'key' => 'field_cpt4an89aason2kn',
 					'type' => 'color_picker',
-					'label' => 'Text Over Focus Image Headers<br><p class="admin_cp-label-caption">(Default: White)</p>',
+					'label' => 'Text Over Focus Image Headers',
 					'wrapper' => array(
 						'width' => 40
 					),
@@ -1416,7 +1419,7 @@ if( !function_exists('add_acf_fields') ){
 					'type' => 'color_picker',
 					'name' => 'navs-bg',
 					'wrapper' => array(
-						'width' => 25
+						'width' => 40
 					),
 				),
 				array(
@@ -1428,7 +1431,7 @@ if( !function_exists('add_acf_fields') ){
 					'ui_on_text' => 'On',
 					'ui_off_text' => 'Off',
 					'wrapper' => array(
-						'width' => 75
+						'width' => 60
 					),
 				),
 				array(
@@ -1437,7 +1440,7 @@ if( !function_exists('add_acf_fields') ){
 					'type' => 'color_picker',
 					'name' => 'navs-text',
 					'wrapper' => array(
-						'width' => 25
+						'width' => 40
 					),
 				),
 				array(
@@ -1449,7 +1452,7 @@ if( !function_exists('add_acf_fields') ){
 					'ui_on_text' => 'On',
 					'ui_off_text' => 'Off',
 					'wrapper' => array(
-						'width' => 75
+						'width' => 60
 					),
 				),
 				array(
@@ -1458,7 +1461,7 @@ if( !function_exists('add_acf_fields') ){
 					'type' => 'color_picker',
 					'name' => 'buttons-underlines',
 					'wrapper' => array(
-						'width' => 25
+						'width' => 40
 					),
 				),
 				array(
@@ -1470,7 +1473,7 @@ if( !function_exists('add_acf_fields') ){
 					'ui_on_text' => 'On',
 					'ui_off_text' => 'Off',
 					'wrapper' => array(
-						'width' => 75
+						'width' => 60
 					),
 				),
 				array(
@@ -1479,7 +1482,7 @@ if( !function_exists('add_acf_fields') ){
 					'type' => 'color_picker',
 					'name' => 'bold-title-text',
 					'wrapper' => array(
-						'width' => 25
+						'width' => 40
 					),
 				),
 				array(
@@ -1491,7 +1494,7 @@ if( !function_exists('add_acf_fields') ){
 					'ui_on_text' => 'On',
 					'ui_off_text' => 'Off',
 					'wrapper' => array(
-						'width' => 75
+						'width' => 60
 					),
 				),
 				array(
@@ -1500,7 +1503,7 @@ if( !function_exists('add_acf_fields') ){
 					'type' => 'color_picker',
 					'name' => 'sidebar-coupon-areasserved-bg',
 					'wrapper' => array(
-						'width' => 25
+						'width' => 40
 					),
 				),
 				array(
@@ -1512,7 +1515,7 @@ if( !function_exists('add_acf_fields') ){
 					'ui_on_text' => 'On',
 					'ui_off_text' => 'Off',
 					'wrapper' => array(
-						'width' => 75
+						'width' => 60
 					),
 				),
 				array(
@@ -1521,7 +1524,7 @@ if( !function_exists('add_acf_fields') ){
 					'type' => 'color_picker',
 					'name' => 'top-bottom-bg',
 					'wrapper' => array(
-						'width' => 25
+						'width' => 40
 					),
 				),
 				array(
@@ -1533,7 +1536,7 @@ if( !function_exists('add_acf_fields') ){
 					'ui_on_text' => 'On',
 					'ui_off_text' => 'Off',
 					'wrapper' => array(
-						'width' => 75
+						'width' => 60
 					),
 				),
 				array(
