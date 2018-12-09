@@ -12,7 +12,7 @@ class NavUtil
 	
 	function __construct()
 	{
-		add_action( 'acf/init', NavUtil::_init() );
+		add_action('acf/init', array($this, '_init'));
 	}
 		
 	function _init()
