@@ -1,4 +1,4 @@
-[<?php 
+<?php 
 /**
  * NavUtil handles config and render the main site nav
  */
