@@ -1,4 +1,4 @@
-<?php 
+[<?php 
 /**
  * NavUtil handles config and render the main site nav
  */
@@ -68,7 +68,7 @@ class NavUtil
 			}
 		?>
 			<li class="<?php echo $prepend . "-item" ?>">
-				<a class="<?php echo $prepend . '-item-link' ?>" href="<?php echo $link; ?>">
+				<a data-scroll class="<?php echo $prepend . '-item-link' ?>" href="<?php echo $link; ?>">
 					<?php echo $title; ?>
 				</a>
 			</li>		

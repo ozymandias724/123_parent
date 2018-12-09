@@ -27,7 +27,7 @@
 						break;
 					}
 			 ?>
-			<div class="fade fade-in services-grid-item<?php echo ($counter % 2 == 0) ? ' services-grid-item--invert' : ''; ?>">
+			<div class="fade fade-in services-grid-item">
 				<?php 
 					$image = get_sub_field('service-image', 'options');
 					$img_src = wp_get_attachment_image_url( $image['ID'], 'medium' );

@@ -180,8 +180,8 @@ add_filter('acf/load_field/name=sitesetup_socials', 'modacf_adjust_labelInstruct
 add_filter('acf/load_field/name=sitesetup_gallery_repeater', 'modacf_adjust_labelInstructions');
 
 /**
- * update payment accepted checkbox fields w/ logo and fixed wrappers and a class
- */
+* update payment accepted checkbox fields w/ logo and fixed wrappers and a class
+*/
 add_filter('acf/load_field/name=sitesetup_payment_mc_tog', 'modacf_adjust_wrapper');
 add_filter('acf/load_field/name=sitesetup_payment_visa_tog', 'modacf_adjust_wrapper');
 add_filter('acf/load_field/name=sitesetup_payment_amex_tog', 'modacf_adjust_wrapper');
@@ -254,8 +254,11 @@ if( wp_get_theme()->Name != '123_four' ){
 
 
 
-
 if( !function_exists('acf_set_custom_homepage')){
+	/**
+	 * [acf_set_custom_homepage description]
+	 * @return [type] [description]
+	 */
 	function acf_set_custom_homepage(){
 		// if field is selected, set options
 		if( !empty( get_field('field_8naniasm2jbnlaf', 'options') ) ){
@@ -775,7 +778,4 @@ if( !function_exists('return_areas_served_grid_items') ){
 		return $grid_items;
 	}
 }
-
-
-
 ?>

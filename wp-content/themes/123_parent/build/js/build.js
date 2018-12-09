@@ -2145,8 +2145,7 @@ var Theme = {};
 
 			_init : function(){
 				
-				$(window).on('breakpoint load', Theme.SmoothScroll._resizeHander);
-
+				// $(window).on('breakpoint load', Theme.SmoothScroll._resizeHander);
 				Theme.SmoothScroll.instance = new SmoothScroll('a[data-scroll]', {
 					header : '[data-scroll-header]',
 					speed : 800

@@ -2,7 +2,12 @@
 $themeName = wp_get_theme()->Name;
 if( $themeName == "123_four"){
 	$t4_title = '<h1 class="contact-contact-right-title contact-contact-left-locations-header">Send us a Message</h1>';
-	}
+}
+else{
+	$t4_title = '';
+}
+
+
  ?>
 <main class="contact main" id="contact">
 	

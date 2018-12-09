@@ -2,8 +2,8 @@
 /**
  * 
  */
-	$invertlogo = get_field('general-theme-invert-headerfooter-logo-colors', 'option') ? ' invertlogo' : '';
-	$fadenav = get_field('nav-fadein-toggle', 'option') ? ' removefadein' : '';
+	$invertlogo = ( get_field('general-theme-invert-headerfooter-logo-colors', 'option') ) ? ' invertlogo' : '';
+	$fadenav = ( get_field('nav-fadein-toggle', 'option') ) ? ' removefadein' : '';
 
 	// get req vars
 	// toggle remove topbar
