@@ -2,6 +2,7 @@
 	
 	// get name of reseller
 	$reseller_info = array_values(get_option( '123_parentcompany_info' ));
+
 	$format_reseller = '
 		<p class="footer-section-heading">Follow Us</p>
 		<h3><a target="_blank" href="%s" class="footer-webxlink">%s</a></h3>

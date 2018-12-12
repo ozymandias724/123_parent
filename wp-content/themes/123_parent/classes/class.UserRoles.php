@@ -117,7 +117,7 @@ class UserRoles
 		foreach( $caps_to_add as $cap ){
 			$role->add_cap($cap);
 		}
-		foreach( $$caps_to_remove as $cap_to_remove ){
+		foreach( $caps_to_remove as $cap_to_remove ){
 			$role->remove_cap($cap);
 		}
 	}
