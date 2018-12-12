@@ -1,7 +1,22 @@
 <?php 
+/**
+ *
+ */
+	$reseller_info = array_values(get_option( '123_parentcompany_info' ));
+	$format_reseller = '
+		<h2>Follow Us</h2>
+		<h3><a target="_blank" href="%s">%s</a></h3>
+	';
+	$content_reseller = sprintf(
+		$format_reseller
+		,$reseller_info[0]['url']
+		,$reseller_info[0]['name']
+	);
+
 	$logo_is_inverted = get_field('general-theme-invert-headerfooter-logo-colors', 'option');
  ?>
 <footer class="mobilefooter<?php echo $logo_is_inverted ? ' invertlogo' : ''; ?>">
+
 	<div class="mobilefooter-section">
 		<a href="<?php echo site_url(); ?>" class="mobilefooter-logo">
 			<img src="<?php echo get_logo(); ?>" class="mobilefooter-logo-image">
@@ -33,14 +48,17 @@
 				endif;
 			 ?>
 		</div>
-		<?php include locate_template( 'modules/sub-modules/social-icons.php' ); ?>		
+		
 	</div>
+
 	<div class="mobilefooter-section mobilefooter-section-pagelinks ">
 		<h2 class="mobilefooter-section-heading">Links</h2>
 		<?php 
 			NavUtil::render_nav_links('mobilefooter-pagelinks');
 		 ?>
-	</div>	
+	</div>
+
+
 	<div class="mobilefooter-section mobilefooter-section-payment ">
 		<h2 class="mobilefooter-section-heading">Payment</h2>
 		<?php 
@@ -88,41 +106,25 @@
 		 ?>
 	</div>
 	<?php 
-		//////////////
-		// Reseller //
-		//////////////
+	/**
+	 * 	Reseller
+	 */
 	 ?>
 	<div class="mobilefooter-section">
 		<div class="mobilefooter-copyright">
 			<?php 
-				$reseller_info = array_values(get_option( '123_parentcompany_info' ));
-				$logo_color = get_field('field_n0982nl23n5lkmad', 'options');
-				if( !empty($reseller_info) ) :
-					if($logo_color == 'light'){
-						$reseller_logo = $reseller_info[0]['lightlogo'];
-					} else if ( $logo_color == 'dark' ){
-						$reseller_logo = $reseller_info[0]['darklogo'];
-					}
-			 ?>
-					<span>Powered by </span>
-					<a target="_blank" class="mobilefooter-copyright-tclink" href="<?php echo $reseller_info[0]['url'] ?>"><?php echo $reseller_info[0]['name']; ?></a>
-					<br>
-			<?php 
-				endif;
+
+				echo $content_reseller;
+				include locate_template( 'modules/sub-modules/social-icons.php' );
 			 	if( !get_field('terms-disable', 'option') ) :
 			 ?>
+			 	<br>
 			 	<a class="mobilefooter-copyright-tclink" href="<?php echo site_url() ?>/terms">Terms &amp; Conditions</a> 
-			<?php endif; ?>
-			 <p>Copyright &copy; <?php echo Date('Y') ?></p>
+			 	<br>
+			<?php 
+				endif;
+			 ?>
+			<p>Copyright &copy; <?php echo Date('Y') ?></p>
 		</div>
 	</div>
-	<?php 
-		if ( !isset($reseller_info) ) :
-	 ?>
-		<a href="<?php echo $reseller_info['url']; ?>" class="mobilefooter-webxlink">
-			<img class="mobilefooter-webxlink-logo" src="<?php echo $reseller_logo; ?>" alt="">
-		</a>
-	<?php 
-		endif;
-	 ?>
 </footer>

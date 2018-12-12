@@ -60,11 +60,14 @@ if(!function_exists('register_parent_company_data')){
 		
 		else { $detected_reseller = 'demo'; }
 
+		// update the select field in theme settings (dont think its doing anything)
 		update_field('field_8sna0sklfjfa8nfja', $detected_reseller, 'options');
 
+		// set array of info for detected reseller
 		$resellers_options = array(
 			$detected_reseller => $resellers[$detected_reseller]
 		);
+		// set the db value to access this in the theme
 		update_option( '123_parentcompany_info', $resellers_options );
 	}
 }

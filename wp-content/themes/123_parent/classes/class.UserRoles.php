@@ -25,8 +25,10 @@ class UserRoles
 	 * @return [type]              
 	 */		
 	function redirect_sales_login($redirect_to, $request, $user){
-		if( 'sales' == $user->data->user_nicename ){
-			$redirect_to =  admin_url('admin.php?page=site-setup');
+		if( isset($user->roles) && is_array($user->roles) ){
+			if( 'sales' == $user->data->user_nicename ){
+				$redirect_to =  admin_url('admin.php?page=site-setup');
+			}
 		}
 		return $redirect_to;
 	}
@@ -195,6 +197,7 @@ class UserRoles
 		}
 	}
 	function do_adjust_author_menu(){
+		global $menu;
 		remove_menu_page( 'edit.php?post_type=page' );
 		remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		remove_menu_page( 'tools.php' );
@@ -206,6 +209,8 @@ class UserRoles
 		remove_menu_page( 'wppusher' );
 	}
 	function do_adjust_editor_menu(){
+		global $menu;
+
 		remove_menu_page( 'edit.php?post_type=page' );
 		remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		remove_menu_page( 'tools.php' );

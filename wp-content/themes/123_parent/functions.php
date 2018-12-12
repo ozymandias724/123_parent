@@ -38,6 +38,8 @@ include_once('classes/class.NavUtil.php');
 
 
 include_once('classes/class.UserRoles.php');
+
+// DEPRICATED
 // require_once('components/reqs/roles.php');
 
 
@@ -45,12 +47,14 @@ require_once('PHPImage.php');
 require_once('components/reqs/color-helpers.php');
 require_once('components/reqs/misc-helpers.php');
 require_once('components/reqs/custompts.php');
+
 require_once('components/reqs/resellers.php');
+include_once('classes/class.SiteConfig.php');
+// 
 require_once('components/reqs/footer-helpers.php');
 /**
  * 	Organize this craziness ASAP
  */
-
 
 
 

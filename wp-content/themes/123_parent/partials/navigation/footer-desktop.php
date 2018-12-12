@@ -1,17 +1,22 @@
 <?php 
-	///////////////////////////////////
-	// Parent Theme Footer (Updated) //
-	///////////////////////////////////
+	
+	// get name of reseller
+	$reseller_info = array_values(get_option( '123_parentcompany_info' ));
+	$format_reseller = '
+		<p class="footer-section-heading">Follow Us</p>
+		<h3><a target="_blank" href="%s" class="footer-webxlink">%s</a></h3>
+	';
+	$content_reseller = sprintf(
+		$format_reseller
+		,$reseller_info[0]['name']
+		,$reseller_info[0]['url']
+	);
+
 	$logo_is_inverted = get_field('general-theme-invert-headerfooter-logo-colors', 'option');
  ?>
  	
 <footer class="footer<?php echo $logo_is_inverted ? ' invertlogo' : ''; ?>">
  <div class="footer-wrap">
-	<?php 
-		////////////////////////
-		// Owner Contact Info //
-		////////////////////////
-	 ?>
 	<div class="footer-section">
 		<a href="<?php echo site_url(); ?>" class="footer-logo">
 			<figure>
@@ -36,22 +41,13 @@
 				 ?>
 			</div>
 		</div>
-		<?php include locate_template( 'modules/sub-modules/social-icons.php' ); ?>
 	</div>
-	<?php 
-		////////////////
-		// Page Links //
-		////////////////
-	 ?>
+	
 	<div class="footer-section footer-section-pagelinks">
 		<p class="footer-section-heading">Links</p>
 		 <?php NavUtil::render_nav_links('footer-pagelinks'); ?>
 	</div>	
-	<?php 
-		/////////////
-		// Payment //
-		/////////////
-	 ?>
+
 	<div class="footer-section footer-section-payment">
 		<div class="footer-payment">
 			<p class="footer-section-heading">Payment</p>
@@ -70,31 +66,17 @@
 			 ?>
 		</div>
 	</div>
-	<?php 	
-		///////////////////
-		// Reseller Logo //
-		///////////////////
-		$reseller_info = array_values(get_option( '123_parentcompany_info' ));
-		$logo_color = get_field('field_n0982nl23n5lkmad', 'options');
-		if( !empty($reseller_info) ) :
-			if($logo_color == 'light'){
-				$reseller_logo = $reseller_info[0]['lightlogo'];
-			} else if ( $logo_color == 'dark' ){
-				$reseller_logo = $reseller_info[0]['darklogo'];
-			}
-	 ?>
-		<div class="footer-section">
-		 	<a target="_blank" href="<?php echo $reseller_info[0]['url']; ?>" class="footer-webxlink">
-				<p class="footer-section-heading">Powered by</p>
-		 		<img class="footer-webxlink-logo" src="<?php echo $reseller_logo; ?>" alt="">
-		 	</a>
-		</div>
 
+	<div class="footer-section">
+		<?php 
+			echo $content_reseller;
+			include locate_template( 'modules/sub-modules/social-icons.php' );
+		 ?>
+	</div>
 	<?php 
-		endif;
-	////////////
-	// Badges //
-	////////////	
+	/**
+	 * Badges
+	 */
 	if( have_rows( 'field_o2be34tgashv', 'options' ) ) :
   	 ?>
  		<ul class="footer-badges">		
