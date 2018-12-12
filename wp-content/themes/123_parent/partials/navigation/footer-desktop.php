@@ -8,8 +8,8 @@
 	';
 	$content_reseller = sprintf(
 		$format_reseller
-		,$reseller_info[0]['name']
 		,$reseller_info[0]['url']
+		,$reseller_info[0]['name']
 	);
 
 	$logo_is_inverted = get_field('general-theme-invert-headerfooter-logo-colors', 'option');
