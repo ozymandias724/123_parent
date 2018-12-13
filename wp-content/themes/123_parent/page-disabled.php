@@ -12,7 +12,7 @@
 
 	$content_notice = sprintf(
 		$format_notice
-		,'<h1>'.$reseller_info[0]['name'].'</h1>'
+		,'<a href="'.$reseller_info[0]['url'].'"><h1>'.$reseller_info[0]['name'].'</h1></a>'
 	);
 	
 	get_header();

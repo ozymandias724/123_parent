@@ -3,15 +3,17 @@
  *
  */
 	$reseller_info = array_values(get_option( '123_parentcompany_info' ));
-	$format_reseller = '
-		<h2>Follow Us</h2>
-		<h3><a target="_blank" href="%s">%s</a></h3>
-	';
-	$content_reseller = sprintf(
-		$format_reseller
-		,$reseller_info[0]['url']
-		,$reseller_info[0]['name']
-	);
+    if( !empty($reseller_info) ) {
+	   	
+	   	$logo_color = get_field('field_n0982nl23n5lkmad', 'options');
+
+	    if($logo_color == 'light'){
+	        $reseller_logo = $reseller_info[0]['lightlogo'];
+	    }
+	    else if ( $logo_color == 'dark' ){
+	        $reseller_logo = $reseller_info[0]['darklogo'];
+    	}
+    }
 
 	$logo_is_inverted = get_field('general-theme-invert-headerfooter-logo-colors', 'option');
  ?>
@@ -75,11 +77,6 @@
 			echo "</ul>";
 		 ?>
 	</div>
-	<?php 	
-		////////////////////////////////////
-		// Custom Award Badges (repeater) //
-		////////////////////////////////////
-	 ?>
 	<div class="mobilefooter-section">
 	 	<?php 
 			if( have_rows( 'field_o2be34tgashv', 'options' ) ) :
@@ -112,19 +109,40 @@
 	 ?>
 	<div class="mobilefooter-section">
 		<div class="mobilefooter-copyright">
+			<h2 class="mobilefooter-section-heading">Follow Us</h2>
 			<?php 
-
-				echo $content_reseller;
 				include locate_template( 'modules/sub-modules/social-icons.php' );
-			 	if( !get_field('terms-disable', 'option') ) :
 			 ?>
-			 	<br>
-			 	<a class="mobilefooter-copyright-tclink" href="<?php echo site_url() ?>/terms">Terms &amp; Conditions</a> 
-			 	<br>
+			 <br>
+			<a href="<?= $reseller_info[0]['url']?>" target="_blank">
+				<img class="mobilefooter-webxlink-logo" src="<?= $reseller_logo; ?>">
+			</a>
+
 			<?php 
-				endif;
+				$format_copyright = '
+					<br>
+					<span class="mobilefooter-copyright">
+					Powered by <a href="%s" class="mobilefooter-copyright-tclink" target="_blank">%s</a>
+					%s
+					<br>
+					Copyright &copy; %s
+					</span>
+				';
+				$has_terms = 
+				( !get_field('terms-disable', 'option') ) 
+				? '<br><a href="'.site_url().'/terms" target="_blank" class="mobilefooter-copyright-tclink">Terms &amp; Conditions</a>'
+				: ''
+				; // end $has_terms
+				$content_copyright = sprintf(
+					$format_copyright
+					,$reseller_info[0]['url']
+					,$reseller_info[0]['name']
+					,$has_terms
+					,Date('Y')
+				);
+				echo $content_copyright;
 			 ?>
-			<p>Copyright &copy; <?php echo Date('Y') ?></p>
 		</div>
+
 	</div>
 </footer>

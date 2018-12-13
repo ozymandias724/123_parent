@@ -58,7 +58,7 @@ if(!function_exists('register_parent_company_data')){
 
 		else if ( strpos(ABSPATH, 'resellers/demo') !== false ) { $detected_reseller = 'demo'; }
 		
-		else { $detected_reseller = '123'; }
+		else { $detected_reseller = 'demo'; }
 
 		// update the select field in theme settings (dont think its doing anything)
 		update_field('field_8sna0sklfjfa8nfja', $detected_reseller, 'options');

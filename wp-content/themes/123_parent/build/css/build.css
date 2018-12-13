@@ -4084,13 +4084,16 @@ header.light .mobileheader-menus-contact-phone {
     font-size: 16px;
     color: white;
     text-decoration: none;
+    text-align: left;
   }
 
-  .footer-webxlink-logo {
+  img.footer-webxlink-logo {
+    display: inline-block;
     height: auto;
-    margin: 10px auto;
     width: 100%;
-    padding: 10px 0;
+    max-width: 75%;
+    object-fit: cover;
+    margin: 10px auto;
   }
 
   .footer-pagelinks {
@@ -4191,6 +4194,7 @@ footer.footer.light .footer-middlecolumn1-sitemap {
   }
 
   .mobilefooter-section {
+    max-width: 280px;
     margin: 20px auto;
     margin-bottom: 0;
     text-align: center;
