@@ -76,9 +76,6 @@
 		<?php 
 			include locate_template( 'modules/sub-modules/social-icons.php' );
 		 ?>
-		<a href="<?= $reseller_info[0]['url']?>" target="_blank">
-			<img class="footer-webxlink-logo" src="<?= $reseller_logo; ?>">
-		</a>
 	</div>
 	<?php 
 	/**

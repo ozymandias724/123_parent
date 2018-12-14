@@ -2001,11 +2001,11 @@ if( !function_exists('add_acf_fields') ){
 					'allow_null' => 1,
 					'label' => 'Choose Parent Company',
 					'choices' => array(
-						'webx' => 'WebX Websites',
-						'onenet' => '1 Network',
-						'2020' => '2020 Network',
-						'demo' => 'Demo'
+						'webx' => 'WebX Websites'
+						,'onenet' => '1 Network'
+						,'2020' => '2020 Network'
 						,'123' => '123'
+						// 'demo' => 'Demo'
 					),
 					'name' => 'webx-select',
 					'ui' => 1,

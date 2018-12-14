@@ -3,18 +3,6 @@
  *
  */
 	$reseller_info = array_values(get_option( '123_parentcompany_info' ));
-    if( !empty($reseller_info) ) {
-	   	
-	   	$logo_color = get_field('field_n0982nl23n5lkmad', 'options');
-
-	    if($logo_color == 'light'){
-	        $reseller_logo = $reseller_info[0]['lightlogo'];
-	    }
-	    else if ( $logo_color == 'dark' ){
-	        $reseller_logo = $reseller_info[0]['darklogo'];
-    	}
-    }
-
 	$logo_is_inverted = get_field('general-theme-invert-headerfooter-logo-colors', 'option');
  ?>
 <footer class="mobilefooter<?php echo $logo_is_inverted ? ' invertlogo' : ''; ?>">
@@ -114,10 +102,6 @@
 				include locate_template( 'modules/sub-modules/social-icons.php' );
 			 ?>
 			 <br>
-			<a href="<?= $reseller_info[0]['url']?>" target="_blank">
-				<img class="mobilefooter-webxlink-logo" src="<?= $reseller_logo; ?>">
-			</a>
-
 			<?php 
 				$format_copyright = '
 					<br>

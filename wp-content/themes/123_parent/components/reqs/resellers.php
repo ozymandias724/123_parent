@@ -38,14 +38,14 @@ if(!function_exists('register_parent_company_data')){
 				'darklogo' => 'http://123websites.com/images/partner-logos/123-dk.png',
 				'lightlogo' => 'http://123websites.com/images/partner-logos/123-lt.png',
 			],
-			'demo' => [
-				'name' => 'Demo',
-				'email'=> 'admin@demowebsites.com',
-				'phone' => '(123) 456-7890',
-				'url' => 'http://www.123websites.com',
-				'darklogo' => 'http://123websites.com/images/partner-logos/demo-dk.png',
-				'lightlogo' => 'http://123websites.com/images/partner-logos/demo-lt.png',
-			],
+			// 'demo' => [
+			// 	'name' => 'Demo',
+			// 	'email'=> 'admin@demowebsites.com',
+			// 	'phone' => '(123) 456-7890',
+			// 	'url' => 'http://www.123websites.com',
+			// 	'darklogo' => 'http://123websites.com/images/partner-logos/demo-dk.png',
+			// 	'lightlogo' => 'http://123websites.com/images/partner-logos/demo-lt.png',
+			// ],
 		);
 		$detected_reseller = '';
 		if ( strpos( ABSPATH, 'resellers/webx') !== false ){ $detected_reseller = 'webx';	}
@@ -56,9 +56,9 @@ if(!function_exists('register_parent_company_data')){
 		
 		else if ( strpos(ABSPATH, 'resellers/123') !== false ) { $detected_reseller = '123'; }
 
-		else if ( strpos(ABSPATH, 'resellers/demo') !== false ) { $detected_reseller = 'demo'; }
+		// else if ( strpos(ABSPATH, 'resellers/demo') !== false ) { $detected_reseller = 'demo'; }
 		
-		else { $detected_reseller = 'demo'; }
+		else { $detected_reseller = '123'; }
 
 		// update the select field in theme settings (dont think its doing anything)
 		update_field('field_8sna0sklfjfa8nfja', $detected_reseller, 'options');
