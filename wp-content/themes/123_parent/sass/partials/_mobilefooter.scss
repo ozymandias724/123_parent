@@ -119,7 +119,6 @@
 		color: white;
 	}
 
-
 	// Badges
 	.mobilefooter-badges {
 		margin: 10px auto;
@@ -137,48 +136,6 @@
 			height: 100%;
 			object-fit: contain;
 		}
-	}
-
-
-
-
-	// Payment
-	.mobilefooter-section-payment-types-type{
-		height: 40px;
-		background-repeat: no-repeat;
-		margin: 5px;
-		width: 60px;
-		background-position: 0 0;
-		display: inline-block;
-	    &.mastercard{
-	    	background-image: url('../../library/img/payment_types/mc.png');
-	    }
-		&.visa{
-			background-image: url('../../library/img/payment_types/visa.png');
-		}
-		&.amex{
-			background-image: url('../../library/img/payment_types/amex.png');
-		}
-		&.discover{
-			background-image: url('../../library/img/payment_types/discover.png');
-		}
-		&.paypal{
-			background-image: url('../../library/img/payment_types/pp.png');
-		}
-		&.cash{
-			background-image: url('../../library/img/payment_types/cash.png');
-		}
-		&.check{
-			background-image: url('../../library/img/payment_types/check.png');
-		}
-		&.hasimage{
-			background-image: none;
-		}
-	}
-	.mobilefooter-section-payment-types-type-image{
-		display: inline-block;
-		height: 100%;
-		width: auto;
 	}
 
 
@@ -203,13 +160,52 @@
 			@include filter(invert, 100%);
 		}
 	}
+
+
+
+	// PAYMENT TYPES
+	div.mobilefooter-section-payment,
+	div.footer-section-payment
+	{
+		// payment types images
+		> ul {
+			> li {
+				height: 40px;
+				background-repeat: no-repeat;
+				margin: 5px;
+				width: 60px;
+				background-position: 0 0;
+				display: inline-block;
+			    &.mastercard{
+			    	background-image: url('../../library/img/payment_types/mc.png');
+			    }
+				&.visa{
+					background-image: url('../../library/img/payment_types/visa.png');
+				}
+				&.amex{
+					background-image: url('../../library/img/payment_types/amex.png');
+				}
+				&.discover{
+					background-image: url('../../library/img/payment_types/discover.png');
+				}
+				&.paypal{
+					background-image: url('../../library/img/payment_types/pp.png');
+				}
+				&.cash{
+					background-image: url('../../library/img/payment_types/cash.png');
+				}
+				&.check{
+					background-image: url('../../library/img/payment_types/check.png');
+				}
+				&.hasimage{
+					background-image: none;
+				}
+			}
+		}
+	}
+
 }
-
-@media only screen and (min-width: $medium){
-
-
-}
-
+@media only screen and (min-width: $medium){}
 @media only screen and (min-width: $large){
 	.mobilefooter{
 		display: none;

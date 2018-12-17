@@ -4329,45 +4329,6 @@ footer.footer.light .footer-middlecolumn1-sitemap {
     object-fit: contain;
   }
 
-  .mobilefooter-section-payment-types-type {
-    height: 40px;
-    background-repeat: no-repeat;
-    margin: 5px;
-    width: 60px;
-    background-position: 0 0;
-    display: inline-block;
-  }
-  .mobilefooter-section-payment-types-type.mastercard {
-    background-image: url("../../library/img/payment_types/mc.png");
-  }
-  .mobilefooter-section-payment-types-type.visa {
-    background-image: url("../../library/img/payment_types/visa.png");
-  }
-  .mobilefooter-section-payment-types-type.amex {
-    background-image: url("../../library/img/payment_types/amex.png");
-  }
-  .mobilefooter-section-payment-types-type.discover {
-    background-image: url("../../library/img/payment_types/discover.png");
-  }
-  .mobilefooter-section-payment-types-type.paypal {
-    background-image: url("../../library/img/payment_types/pp.png");
-  }
-  .mobilefooter-section-payment-types-type.cash {
-    background-image: url("../../library/img/payment_types/cash.png");
-  }
-  .mobilefooter-section-payment-types-type.check {
-    background-image: url("../../library/img/payment_types/check.png");
-  }
-  .mobilefooter-section-payment-types-type.hasimage {
-    background-image: none;
-  }
-
-  .mobilefooter-section-payment-types-type-image {
-    display: inline-block;
-    height: 100%;
-    width: auto;
-  }
-
   footer.mobilefooter.light {
     background-color: #bcbcbc;
     color: black;
@@ -4386,6 +4347,48 @@ footer.mobilefooter.light .mobilefooter-copyright-tclink {
     -ms-filter: invert(100%);
     -o-filter: invert(100%);
     filter: invert(100%);
+  }
+
+  div.mobilefooter-section-payment > ul > li,
+div.footer-section-payment > ul > li {
+    height: 40px;
+    background-repeat: no-repeat;
+    margin: 5px;
+    width: 60px;
+    background-position: 0 0;
+    display: inline-block;
+  }
+  div.mobilefooter-section-payment > ul > li.mastercard,
+div.footer-section-payment > ul > li.mastercard {
+    background-image: url("../../library/img/payment_types/mc.png");
+  }
+  div.mobilefooter-section-payment > ul > li.visa,
+div.footer-section-payment > ul > li.visa {
+    background-image: url("../../library/img/payment_types/visa.png");
+  }
+  div.mobilefooter-section-payment > ul > li.amex,
+div.footer-section-payment > ul > li.amex {
+    background-image: url("../../library/img/payment_types/amex.png");
+  }
+  div.mobilefooter-section-payment > ul > li.discover,
+div.footer-section-payment > ul > li.discover {
+    background-image: url("../../library/img/payment_types/discover.png");
+  }
+  div.mobilefooter-section-payment > ul > li.paypal,
+div.footer-section-payment > ul > li.paypal {
+    background-image: url("../../library/img/payment_types/pp.png");
+  }
+  div.mobilefooter-section-payment > ul > li.cash,
+div.footer-section-payment > ul > li.cash {
+    background-image: url("../../library/img/payment_types/cash.png");
+  }
+  div.mobilefooter-section-payment > ul > li.check,
+div.footer-section-payment > ul > li.check {
+    background-image: url("../../library/img/payment_types/check.png");
+  }
+  div.mobilefooter-section-payment > ul > li.hasimage,
+div.footer-section-payment > ul > li.hasimage {
+    background-image: none;
   }
 }
 @media only screen and (min-width: 1025px) {
