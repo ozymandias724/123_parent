@@ -14,7 +14,7 @@
 	<?php else : ?>
 	<div class="home-hero-slides">
 		<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/library/img/home/slides/slide01.jpg');" class="home-hero-slides-slide"></div>
-		<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/library/img/home/slides/slide02.jpg');" class="home-hero-slides-slide"></div>
+		<div style="background-0image: url('<?php echo get_template_directory_uri(); ?>/library/img/home/slides/slide02.jpg');" class="home-hero-slides-slide"></div>
 		<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/library/img/home/slides/slide03.jpg');" class="home-hero-slides-slide"></div>
 		<div style="background-image: url('<?php echo get_template_directory_uri(); ?>/library/img/home/slides/slide04.jpg');" class="home-hero-slides-slide"></div>
 	</div>
@@ -22,6 +22,7 @@
 	<div class="home-hero-tint hero-tint"></div>
 </section>
 <?php 
+	die();
 	if( function_exists('render_subhero_quickquote') ){
 		render_subhero_quickquote();
 	}

@@ -1,8 +1,13 @@
 <?php 
 /**
- * 	Deactivate ACF Plugins if Installed, and use Integrated ACF
+ *	Requirements
  */
-	require_once('reqs/localize-acf.php');
+if( !function_exists('get_gmap_api_key') ){
+	function get_gmap_api_key(){
+		return 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY';
+	}
+}
+require_once('reqs/localize-acf.php');
 /**
  * 	Verify Active Pages
  */
@@ -20,11 +25,7 @@
 /**
  * 	Pre_Setup Theme
  */
-if( !function_exists('get_gmap_api_key') ){
-	function get_gmap_api_key(){
-		return 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY';
-	}
-}
+
 include_once('classes/class.GooMaps.php');
 /**
  * 	Setup Theme :
@@ -39,12 +40,9 @@ include_once('classes/class.NavUtil.php');
 
 include_once('classes/class.UserRoles.php');
 
-// DEPRICATED
-// require_once('components/reqs/roles.php');
 
 
 require_once('PHPImage.php');
-require_once('components/reqs/color-helpers.php');
 require_once('components/reqs/misc-helpers.php');
 require_once('components/reqs/custompts.php');
 
@@ -439,18 +437,50 @@ add_action('save_post', 'update_logo_text_image');
 
 if( !function_exists('do_update_logo_text_image') ){
 	function do_update_logo_text_image(){
+		function hex_to_rgb($hex){
+			$hex = str_replace("#", "", $hex);
+
+			if(strlen($hex) == 3) {
+			  $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+			  $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+			  $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+			} else {
+			  $r = hexdec(substr($hex,0,2));
+			  $g = hexdec(substr($hex,2,2));
+			  $b = hexdec(substr($hex,4,2));
+			}
+			$rgb = array($r, $g, $b);
+			//return implode(",", $rgb); // returns the rgb values separated by commas
+			return $rgb; // returns an array with the rgb values
+		}
+
+		$active_theme = wp_get_theme()->Name;
+		// if(  $active_theme == '123_three' ){
+
+		// }
+
 		$bg = get_template_directory() . '/library/img/logo-canvas.png';
 
 		$phpimg = new PHPImage();
 
 		$phpimg->setDimensionsFromImage($bg);
 		$phpimg->setQuality(9);
-		$phpimg->setFont(get_template_directory() . '/library/fonts/GothamHTF-Medium.ttf');
+		if(  $active_theme == '123_three' ){
+			$phpimg->setFont(get_stylesheet_directory() . '/library/fonts/Montserrat-Black.ttf');
+		} else {
+			$phpimg->setFont(get_template_directory() . '/library/fonts/GothamHTF-Medium.ttf');
+		}
 
 		$text_color = array(255, 255, 255);
 
-		if( get_field('navs-text-toggle', 'option') ){
-			$text_color = hex_to_rgb(get_field('navs-text', 'option'));
+		if(  $active_theme == '123_three' ){
+			if( get_field('add_extra_theme_colors_header-logotoggle', 'option') ){
+				$text_color = hex_to_rgb(get_field('add_extra_theme_colors_header-logopicker', 'option'));
+			}
+		} else {
+			if( get_field('navs-text-toggle', 'option') ){
+				$text_color = hex_to_rgb(get_field('navs-text', 'option'));
+			}
 		}
 
 		$phpimg->setTextColor($text_color);

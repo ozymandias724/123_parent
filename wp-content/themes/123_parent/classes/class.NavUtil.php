@@ -52,6 +52,9 @@ class NavUtil
 	 * @param  string $prepend [prepend the default classes]
 	 */
 	public static function render_nav_links($prepend = "navlinks"){
+		if( empty(NavUtil::$navItemData) ){
+			NavUtil::_init();
+		}
 		// wrapper
 		echo '<ul class="'.$prepend.'">';
 		// each link

@@ -124,5 +124,6 @@ public static function the_active_page_name($slug = ''){
 	echo $obj['post_title'];
 }
 
-} // End Pagedata Class
+}
+new Pagedata();
  ?>
