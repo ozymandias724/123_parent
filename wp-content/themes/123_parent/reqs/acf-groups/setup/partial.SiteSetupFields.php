@@ -1,165 +1,143 @@
 <?php 
-/**
-* Site Setup Fields
-*/
+	// Intro Group ('choose a theme')
+	$format = '<a href="%s" target="_blank"><img class="sitesetup_images" src="%s" alt="select theme"></a>';
+	$content = sprintf(
+		$format
+		,get_admin_url() .'themes.php?noconflict=yeah'
+		,'http://www.123websites.com/images/signup/themes.jpg'
+	);
 
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_intro',
+		'key' => 'field_sitesetup_msg_intro_1',
+		'type' => 'message',
+		'label' => '',
+		'message' => $content,
+	));
 
-// Intro Group ('choose a theme')
-$format = '<a href="%s" target="_blank"><img class="sitesetup_images" src="%s" alt="select theme"></a>';
-$content = sprintf(
-	$format
-	,get_admin_url() .'themes.php?noconflict=yeah'
-	,'http://www.123websites.com/images/signup/themes.jpg'
-);
-acf_add_local_field(array(
-	'parent' => 'group_sitesetup_intro',
-	'key' => 'field_sitesetup_msg_intro_1',
-	'type' => 'message',
-	'label' => '',
-	'message' => $content,
-));
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_intro',
+		'key' => 'field_sitesetup_msg_intro_1',
+		'type' => 'message',
+		'label' => '',
+		'message' => $content,
+	));
 
-acf_add_local_field(array(
-	'parent' => 'group_sitesetup_intro',
-	'key' => 'field_sitesetup_msg_intro_1',
-	'type' => 'message',
-	'label' => '',
-	'message' => $content,
-));
+	$theme_three = [
+		'field_cp_header-logopicker',
+		'field_cp_header-logotoggle',
+		'field_cp_button-bgpicker',
+		'field_cp_button-bgtoggle',
+		'field_cp_button-textpicker',
+		'field_cp_button-texttoggle',
+		'field_cp_footer-bgpicker',
+		'field_cp_footer-bgtoggle',
+		'field_cp_footer-headerspicker',
+		'field_cp_footer-headerstoggle',
+		'field_cp_footer-textpicker',
+		'field_cp_footer-texttoggle',
+	];
+	// array of color picker fields to clone (in order)
+	$cps = array(
+		'field_cpt4an89aason2kn'
+		,'field_cpt4paampi2k2ksnsil'
+		,'field_cpt4aoinadfin'
+		,'field_cpt42o3innasgin'
+		,'field_cpt4asoigngni2k'
+		,'field_cpt423lknsdaknasln2'
+		,'field_cpt4a23lk2lkn2ksk'
+		,'field_cpt4asdogng092jn'
+		,'field_cpt40s9jfo2mlkn'
+		,'field_cpt4askgna9s2n'
+		,'field_cpt4as09n2lknas'
+		,'field_cpt4asdnag098hn2j'
+		,'field_cpt4s0d9fn2oknal'
+		,'field_cpt4ni34aklngk'
+		,'field_cpt4s9aso2knl'
+		,'field_cpt4ang8gnlks'
+		,'field_cpt4agon2dg9naal'
+		,'field_cpt4ng9ksj2aksng'
+		,'field_8123afaasfdaef'
+		,'field_2137dfhash12'
+		,'field_21387fzadsf'
+		,'field_2137dfhaafwsh12'
+		,'field_hint_oi2n44akdfasd'
+		,'field_27fzzzzadsf'
+		,'field_21123zzzwsh12'
+		,'field_2zcvvvczsf'
+		,'field_21htjhwrew12'
+		,'field_2123asaf'
+		,'field_2czvdasfgsd'
+		,'field_29wfeauajhadfsk'
+		,'field_faauoiegwuf23'
+	);
+	
+	
 
+	// add all the color picker clones
+	acf_add_local_field(array(
+		'key' => 'field_setup_clonecpts'
+		,'name' => 'setup-clone-cpts'
+		,'type' => 'clone'
+		,'clone' => array_values($cps)
+		,'parent' => 'group_sitesetup_intro'
+	));
 
-$theme_three = [
-	'field_cp_header-logopicker',
-	'field_cp_header-logotoggle',
-	'field_cp_button-bgpicker',
-	'field_cp_button-bgtoggle',
-	'field_cp_button-textpicker',
-	'field_cp_button-texttoggle',
-	'field_cp_footer-bgpicker',
-	'field_cp_footer-bgtoggle',
-	'field_cp_footer-headerspicker',
-	'field_cp_footer-headerstoggle',
-	'field_cp_footer-textpicker',
-	'field_cp_footer-texttoggle',
-];
+	if( wp_get_theme()['Name'] == '123_three' ){
 
+		acf_add_local_field(array(
+			'key' => 'field_t3cps'
+			,'name' => 'setup-clone-cpts_3'
+			,'type' => 'clone'
+			// ,'clone' => array_values($theme_three)
+			,'clone' => array(
+				'field_123_colorpicker_wrapper'
+			)
+			,'parent' => 'group_sitesetup_intro'
+			,'display' => 'seamless'
+			,'label' => 'Theme 3'
+		));
+	}
 
-// array of color picker fields to clone (in order)
-$cps = array(
-	'field_cpt4an89aason2kn'
-	,'field_cpt4paampi2k2ksnsil'
-	,'field_cpt4aoinadfin'
-	,'field_cpt42o3innasgin'
-	,'field_cpt4asoigngni2k'
-	,'field_cpt423lknsdaknasln2'
-	,'field_cpt4a23lk2lkn2ksk'
-	,'field_cpt4asdogng092jn'
-	,'field_cpt40s9jfo2mlkn'
-	,'field_cpt4askgna9s2n'
-	,'field_cpt4as09n2lknas'
-	,'field_cpt4asdnag098hn2j'
-	,'field_cpt4s0d9fn2oknal'
-	,'field_cpt4ni34aklngk'
-	,'field_cpt4s9aso2knl'
-	,'field_cpt4ang8gnlks'
-	,'field_cpt4agon2dg9naal'
-	,'field_cpt4ng9ksj2aksng'
-	,'field_8123afaasfdaef'
-	,'field_2137dfhash12'
-	,'field_21387fzadsf'
-	,'field_2137dfhaafwsh12'
-	,'field_hint_oi2n44akdfasd'
-	,'field_27fzzzzadsf'
-	,'field_21123zzzwsh12'
-	,'field_2zcvvvczsf'
-	,'field_21htjhwrew12'
-	,'field_2123asaf'
-	,'field_2czvdasfgsd'
-	,'field_29wfeauajhadfsk'
-	,'field_faauoiegwuf23'
-);
-if( wp_get_theme()['Name'] == '123_three' ){
-	$cps = array_merge($cps, $theme_three);
-}
+	$the_pagination = '<div id="setup-pagination"></div>';
+	
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_0',
+		'key' => 'field_sitesetup_msg_1',
+		'type' => 'message',
+		'message' => $the_pagination,
+	));
 
-// add all the color picker clones
-acf_add_local_field(array(
-	'key' => 'field_setup_clonecpts'
-	,'name' => 'setup-clone-cpts'
-	,'type' => 'clone'
-	,'clone' => array_values($cps)
-	,'parent' => 'group_sitesetup_intro'
-));
-
-$the_pagination = '<div id="setup-pagination"></div>';
-acf_add_local_field(array(
-	'parent' => 'group_sitesetup_0',
-	'key' => 'field_sitesetup_msg_1',
-	'type' => 'message',
-	'message' => $the_pagination,
-));
-$next_prev = '<div id="setup-nextprev"><span data-name="prev">Prev</span><span data-name="next">Next</span></div>';
-acf_add_local_field(array(
-	'parent' => 'group_sitesetup_5',
-	'key' => 'field_sitesetup_nextprev',
-	'type' => 'message',
-	'message' => $next_prev,
-
-));
+	$next_prev = '<div id="setup-nextprev"><span data-name="prev">Prev</span><span data-name="next">Next</span></div>';
+	
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_5',
+		'key' => 'field_sitesetup_nextprev',
+		'type' => 'message',
+		'message' => $next_prev,
+	));
 
 
 /**
 * Page 1
 */
-	acf_add_local_field(array(
+	// page 1 clones
+	$clones = array(
+		'field_bdaa98'			// company address
+		,'field_8378888'		// company phone
+		,'field_8378ddf888'		// company fax
+		,'field_212o8afdh'		// company	email
+	);
+	
+	 acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_address',
-		'label' => '1. Choose Address',
-		'name' => 'sitesetup_address',
+		'key' => 'field_sitesetup_clones_2',
+		'label' => 'Clones 2',
+		'name' => 'sitesetup_clones_2',
 		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_bdaa98',
-		),
+		'clone' => $clones
 	));
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_phone_main',
-		'label' => '2. Primary Phone #',
-		'name' => 'sitesetup_phone',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_8378888',
-		),
-		'display' => 'seamless',
-		'layout' => 'block',
-	));
-
-	// phone secondary
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_phone_secondary',
-		'label' => 'Secondary Phone #',
-		'name' => 'sitesetup_phone_secondary',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_8378ddf888',
-		),
-		'display' => 'seamless',
-		'layout' => 'block',
-	));
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_email',
-		'label' => 'Company email',
-		'name' => 'sitesetup_email',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_212o8afdh',
-		),
-	));
+	
 
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
@@ -170,8 +148,6 @@ acf_add_local_field(array(
 		'label' => '5. Hours of Operation',
 	));
 
-
-	// hours of operation
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
 		'key' => 'field_sitesetup_hours',
@@ -191,307 +167,107 @@ acf_add_local_field(array(
 		'display' => 'normal',
 		'label' => '6. Payment Types',
 	));
-
+	
+	$clones = array(
+		'field_12hafhpwae'
+		,'field_12haf2dafhpwae'
+		,'field_12ha1212fhpwae'
+		,'field_12hafhpwazdffde'
+		,'field_12hafhp12398e'
+		,'field_odasf129873e'
+	);
+	
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_mc_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_mc_tog',
+		'key' => 'field_sitesetup_clones_2_a',
+		'label' => 'Payments',
+		'name' => 'sitesetup_clones_2_a',
 		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_12hafhpwae',
-		),
-		'display' => 'seamless',
-	));
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_visa_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_visa_tog',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_12hafhzapwae',
-		),
-		'display' => 'seamless',
+		'clone' => $clones
 	));
 
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_amex_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_amex_tog',
+		'key' => 'field_sitesetup_clones_2_b',
+		'label' => 'Socials',
+		'name' => 'sitesetup_clones_2_b',
 		'type' => 'clone',
-		'instructions' => '',
 		'clone' => array(
-			0 => 'field_12haf2dafhpwae',
-		),
-		'display' => 'seamless',
+			'field_akan8a8sskshb'
+		)
+		,'display' => 'seamless'
 	));
 
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_disc_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_disc_tog',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_12ha1212fhpwae',
-		),
-		'display' => 'seamless',
-	));
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_paypal_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_paypal_tog',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_12hafhpwazdffde',
-		),
-		'display' => 'seamless',
-	));
-
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_cash_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_cash_tog',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_12hafhp12398e',
-		),
-		'display' => 'seamless',
-	));
-
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_payment_check_tog',
-		'label' => 'Payment Types',
-		'name' => 'sitesetup_payment_check_tog',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_odasf129873e',
-		),
-		'display' => 'seamless',
-	));
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_1',
-		'key' => 'field_sitesetup_socials',
-		'label' => 'Social Media',
-		'name' => 'sitesetup_socials',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_akan8a8sskshb',
-		),
-		'display' => 'seamless',
-	));
-
-
-/**
-*	Page 2
-*/
+	/**
+	*	Page 2
+	*/
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_1',
-		'label' => '1. Company Logo',
-		'name' => 'sitesetup_logo',
+		'key' => 'field_sitesetup_clones_3_0',
+		'label' => 'Logo',
+		'name' => 'sitesetup_clones_3_0',
 		'type' => 'clone',
 		'clone' => array(
-			0 => 'field_2343135',
-		),
-		'display' => 'normal',
+			'field_2343135'
+		)
+		,'display' => 'seamless'
+	));
+	$clones = array(
+		// 'field_2343135' 	// site logo
+		'field_afd9zx7' 	// areas served banner
+		,'field_23'			// contact banner
+		,'field_bdsh8f'		// coupon banner
+		,'field_15'			// gen blog banner
+		,'field_5'			// gallery banner
+		,'field_71b12312'	// menu banner
+		,'field_9'			// services banner
+		,'field_19'			// testimonials banner
+		,'field_23'			// contact banner
+	);
+	acf_add_local_field(array(
+		'parent' => 'group_sitesetup_2',
+		'key' => 'field_sitesetup_clones_3',
+		'label' => '2. Choose Page Banners',
+		'instructions' => 'select an image for each pages hero/banner image'
+		,'name' => 'sitesetup_clones_3',
+		'type' => 'clone',
+		'clone' => array_values($clones)
+		,'display' => 'normal'
+		,'wrapper' => array(
+			'id' => 'payment_types'
+		)
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_areas',
-		'label' => '2. Areas Served (Banner / Background)',
-		'name' => 'sitesetup_hero_areas',
-		'type' => 'clone',
-		'instructions' => '',
-		'clone' => array(
-			0 => 'field_afd9zx7',
-		),
-		'display' => 'normal',
-		'layout' => 'block',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_contact',
-		'label' => '3. Contact (Banner / Background)',
-		'name' => 'sitesetup_hero_contact',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_23',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_about',
-		'label' => '4. About (Banner / Background)',
-		'name' => 'sitesetup_hero_about',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_bdsh8f',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_blog',
-		'label' => '5. Blog (Banner / Background)',
-		'name' => 'sitesetup_hero_blog',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_15',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_gallery',
-		'label' => '6. Gallery (Banner / Background)',
-		'name' => 'sitesetup_hero_gallery',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_5',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_services',
-		'label' => '7. Services (Banner / Background)',
-		'name' => 'sitesetup_hero_services',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_9',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_testimonials',
-		'label' => '8. Testimonials (Banner / Background)',
-		'name' => 'sitesetup_hero_testimonials',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_19',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_location',
-		'label' => '9. Location (Banner / Background)',
-		'name' => 'sitesetup_hero_location',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_23',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_hero_menu',
-		'label' => '10. Menu (Banner / Background)',
-		'name' => 'sitesetup_hero_menu',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_23',
-		),
-		'display' => 'normal',
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_2',
-		'key' => 'field_sitesetup_gallery',
+		'key' => 'field_sitesetup_clones_3_1',
 		'label' => 'Gallery',
-		'name' => 'sitesetup_gallery_repeater',
+		'name' => 'sitesetup_clones_3_1',
 		'type' => 'clone',
 		'clone' => array(
-			0 => 'field_6',
-		),
-	));
-/**
-*	Page 3
-*/
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_areas_type',
-		'label' => '1. Areas Served',
-		'name' => 'sitesetup_areas',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_89dsuahf',
-		),
-		'display' => 'normal'
+			'field_6'
+		)
+		,'display' => 'seamless'
 	));
 
+	// Page 4: Verify Content
+	$clones = array(
+		'field_89dsuahf'
+		,'field_1'
+		,'field_09zcjxivohfasa'
+		,'field_39qifdiuadiasadsf'
+		,'field_70zcxovrghreafz'
+		,'field_10'
+	);
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_areas_repeater_zips',
-		'label' => 'Areas Served',
-		'name' => 'sitesetup_areas_repeater_zips',
+		'key' => 'field_sitesetup_clones_4',
+		'label' => '1. Add / Verify Content',
+		'name' => 'sitesetup_clones_4',
 		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_1',
-		),
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_areas_repeater_states',
-		'label' => 'Areas Served',
-		'name' => 'sitesetup_areas_repeater_states',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_09zcjxivohfasa',
-		),
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_areas_repeater_counties',
-		'label' => 'Areas Served',
-		'name' => 'sitesetup_areas_repeater_counties',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_39qifdiuadiasadsf',
-		),
-	));
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_areas_repeater_countries',
-		'label' => 'Areas Served',
-		'name' => 'sitesetup_areas_repeater_countries',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_70zcxovrghreafz',
-		),
+		'clone' => array_values($clones)
+		,'display' => 'normal'
 	));
 
-
-
-
-	acf_add_local_field(array(
-		'parent' => 'group_sitesetup_3',
-		'key' => 'field_sitesetup_services',
-		'label' => '2. Services',
-		'name' => 'sitesetup_services_repeater',
-		'type' => 'clone',
-		'clone' => array(
-			0 => 'field_10',
-		),
-	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',

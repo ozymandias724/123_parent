@@ -1540,10 +1540,11 @@ if( !function_exists('add_acf_fields') ){
 					),
 				),
 				array(
-				     'key' => 'field_123_colorpicker_wrapper',
-				     'label' => '',
-				     'name' => 'add_extra_theme_colors',
-				     'type' => 'group',
+				     'key' => 'field_123_colorpicker_wrapper'
+				    ,'label' => ''
+				    ,'name' => 'add_extra_theme_colors'
+					,'type' => 'group'
+					,'display' => 'seamless'
 			    ),
 				// /////////////////////
 				// // Setup Pages Tab //

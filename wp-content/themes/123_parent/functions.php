@@ -130,94 +130,144 @@ function modacf_adjust_labelInstructions($field){
 	$field['sub_fields'][0]['label'] = $label;
 	return $field;
 }
-function modacf_adjust_wrapper($field){
 
-	
-	$field['sub_fields'][0]['wrapper'] = array(
-		'width' => '13',
-		'class' => 'sitesetup_payment_togs',
-		'id' => '',
-	);
-	// Use Images
-	$dir = get_template_directory_uri() . '/library/img/payment_types/';
-	switch ($field['sub_fields'][0]['name'] ) {
-		case 'mastercard':
-			$png_path = $dir . 'mc.png';
-			break;
-		case 'amex':
-			$png_path = $dir . 'amex.png';
-			break;
-		case 'cash':
-			$png_path = $dir . 'cash.png';
-			break;
-		case 'check':
-			$png_path = $dir . 'check.png';
-			break;	
-		case 'discover':
-			$png_path = $dir . 'discover.png';
-			break;
-		case 'paypal':
-			$png_path = $dir . 'pp.png';
-			break;
-		case 'visa':
-			$png_path = $dir . 'visa.png';
-			break;			
-		default:
-			# code...
-			break;
+
+// fix payment type clones appearance
+add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_payment_type_clones');
+function adjust_payment_type_clones($field){
+	$dir = get_template_directory_uri() . '/library/img/payment_types/';	
+	for ($i=0; $i < count($field['sub_fields']); $i++) { 
+		# code...
+		$field['sub_fields'][$i]['wrapper'] = array(
+			'width' => '13',
+			'class' => 'sitesetup_payment_togs',
+			'id' => '',
+		);
+		switch ($field['sub_fields'][$i]['name'] ) {
+			case 'mastercard':
+				$png_path = $dir . 'mc.png';
+				break;
+			case 'amex':
+				$png_path = $dir . 'amex.png';
+				break;
+			case 'cash':
+				$png_path = $dir . 'cash.png';
+				break;
+			case 'check':
+				$png_path = $dir . 'check.png';
+				break;	
+			case 'discover':
+				$png_path = $dir . 'discover.png';
+				break;
+			case 'paypal':
+				$png_path = $dir . 'pp.png';
+				break;
+			case 'visa':
+				$png_path = $dir . 'visa.png';
+				break;			
+			default:
+				# code...
+				break;
+		}
+		$png_string = '<img src="'.$png_path.'">';
+		$field['sub_fields'][$i]['label'] = $png_string;
 	}
-	$png_string = '<img src="'.$png_path.'">';
-	$field['sub_fields'][0]['label'] = $png_string;
 	return $field;
 }
 
-add_filter('acf/load_field/name=sitesetup_logo', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_services_repeater', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_hero_services', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_address', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_email', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_phone', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_phone_secondary', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_socials', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_gallery_repeater', 'modacf_adjust_labelInstructions');
+function adjust_company_info_clones($field){
 
-/**
-* update payment accepted checkbox fields w/ logo and fixed wrappers and a class
-*/
-add_filter('acf/load_field/name=sitesetup_payment_mc_tog', 'modacf_adjust_wrapper');
-add_filter('acf/load_field/name=sitesetup_payment_visa_tog', 'modacf_adjust_wrapper');
-add_filter('acf/load_field/name=sitesetup_payment_amex_tog', 'modacf_adjust_wrapper');
-add_filter('acf/load_field/name=sitesetup_payment_disc_tog', 'modacf_adjust_wrapper');
-add_filter('acf/load_field/name=sitesetup_payment_cash_tog', 'modacf_adjust_wrapper');
-add_filter('acf/load_field/name=sitesetup_payment_check_tog', 'modacf_adjust_wrapper');
-add_filter('acf/load_field/name=sitesetup_payment_paypal_tog', 'modacf_adjust_wrapper');
-// adjust payment header script
-add_filter('acf/load_field/name=sitesetup_payment_msg', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_hours', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_areas_repeater_zips', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_areas_repeater_countries', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_areas_repeater_counties', 'modacf_adjust_labelInstructions');
-add_filter('acf/load_field/name=sitesetup_areas_repeater_states', 'modacf_adjust_labelInstructions');
+	for ($i=0; $i < count($field['sub_fields']); $i++) { 
+		$instructions = null;
+		$label = null;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		switch ($field['sub_fields'][$i]['name']) {
+			// 2: Company Info
+			case 'social-address':
+				$label = '1. Choose Address';
+				$instructions = 'So the address you want on your new 123Website is,';
+				break;
+			case 'social-phone-number':
+				$instructions = 'And the phone number you want listed is ? ';
+				$label = '2. Phone Number';
+				break;
+			case 'social-fax-number':
+				$label = '3. Secondary Phone Number';
+				$instructions = 'Can I get a secondary number from you? Preferably a cell phone number?Our software will text message remind you for your appointment we set with your Website Consultant';
+				break;
+			case 'sitesetup_services_repeater':
+				$label = '2. Services';
+				break;
+			case 'company-email':
+				$label = '4. Email';
+				$instructions = 'What\'s the best email address to reach you on?';
+				break;
+			// 3: Media
+			case 'general-logo':
+				$label = '1. Choose Site Logo';
+				$instructions = '';
+				break;
+			case 'areas-served-bg':
+				$label = 'Areas Served';
+				$instructions = '';
+				break;
+			case 'contact-bg':
+				$label = 'Contact';
+				$instructions = '';
+				break;
+			case 'general-coupons-bg':
+				$label = 'Coupons';
+				$instructions = '';
+				break;
+			case 'general-blog-bg':
+				$label = 'Blog';
+				$instructions = '';
+				break;
+			case 'gallery-bg':
+				$label = 'Gallery';
+				$instructions = '';
+				break;
+			case 'menu-bg':
+				$label = 'Menu';
+				$instructions = '';
+				break;
+			case 'services-bg':
+				$label = 'Services';
+				$instructions = '';
+				break;
+			case 'testimonials-bg':
+				$label = 'Testimonials';
+				$instructions = '';
+				break;
+			case 'contact-bg':
+				$label = 'Contact';
+				$instructions = '';
+				break;
+			case 'gallery-repeater':
+				$label = '3. Setup Gallery Page';
+				break;
+			// 4?
+			case 'services-repeater':
+				$instructions = '';
+				break;
+			case 'social-repeater':
+				$label = '7. Social Media';
+				break;
+			default:
+				break;
+		}
+		( $label !== null ) ? $field['sub_fields'][$i]['label'] = $label : null;
+		( $label !== null ) ? $field['sub_fields'][$i]['__label'] = $label : null;
+		( $instructions !== null ) ? $field['sub_fields'][$i]['instructions'] = $instructions : null;
+	}
+	return $field;
+}
+add_filter('acf/load_field/key=field_sitesetup_clones_2', 'adjust_company_info_clones');
+add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_company_info_clones');
+add_filter('acf/load_field/key=field_sitesetup_clones_2_b', 'adjust_company_info_clones');
+add_filter('acf/load_field/key=field_sitesetup_clones_3', 'adjust_company_info_clones');
+add_filter('acf/load_field/key=field_sitesetup_clones_3_0', 'adjust_company_info_clones');
+add_filter('acf/load_field/key=field_sitesetup_clones_3_1', 'adjust_company_info_clones');
 
 
 
@@ -424,85 +474,7 @@ if( !function_exists('get_blog_image') ){
 		return $image_url;
 	}
 }
-// generates Logo text when logo type switch is set to text
-if( !function_exists('update_logo_text_image') ){
-	function update_logo_text_image(){
-		if( basename($_SERVER['REQUEST_URI']) == 'admin.php?page=general-settings' && get_field('logo-type-switch', 'option') == 'text' ){
-			do_update_logo_text_image();
-		}
-	}
-}
-add_action('save_post', 'update_logo_text_image');
 
-
-if( !function_exists('do_update_logo_text_image') ){
-	function do_update_logo_text_image(){
-		function hex_to_rgb($hex){
-			$hex = str_replace("#", "", $hex);
-
-			if(strlen($hex) == 3) {
-			  $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-			  $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-			  $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-			} else {
-			  $r = hexdec(substr($hex,0,2));
-			  $g = hexdec(substr($hex,2,2));
-			  $b = hexdec(substr($hex,4,2));
-			}
-			$rgb = array($r, $g, $b);
-			//return implode(",", $rgb); // returns the rgb values separated by commas
-			return $rgb; // returns an array with the rgb values
-		}
-
-		$active_theme = wp_get_theme()->Name;
-		// if(  $active_theme == '123_three' ){
-
-		// }
-
-		$bg = get_template_directory() . '/library/img/logo-canvas.png';
-
-		$phpimg = new PHPImage();
-
-		$phpimg->setDimensionsFromImage($bg);
-		$phpimg->setQuality(9);
-		if(  $active_theme == '123_three' ){
-			$phpimg->setFont(get_stylesheet_directory() . '/library/fonts/Montserrat-Black.ttf');
-		} else {
-			$phpimg->setFont(get_template_directory() . '/library/fonts/GothamHTF-Medium.ttf');
-		}
-
-		$text_color = array(255, 255, 255);
-
-		if(  $active_theme == '123_three' ){
-			if( get_field('add_extra_theme_colors_header-logotoggle', 'option') ){
-				$text_color = hex_to_rgb(get_field('add_extra_theme_colors_header-logopicker', 'option'));
-			}
-		} else {
-			if( get_field('navs-text-toggle', 'option') ){
-				$text_color = hex_to_rgb(get_field('navs-text', 'option'));
-			}
-		}
-
-		$phpimg->setTextColor($text_color);
-
-		$phpimg->text(get_field('site_title', 'option'), array(
-	        'fontSize' => 60, 
-	        'x' => 0,
-	        'y' => 0,
-	        'width' => 560,
-	        'height' => 128,
-	        'alignHorizontal' => 'center',
-	        'alignVertical' => 'center',
-	    ));
-
-		$phpimg->imagetrim();
-
-		$phpimg->setOutput('png');
-
-		$phpimg->save(wp_upload_dir()['basedir'] . '/logo-text.png');
-		chmod(wp_upload_dir()['basedir'] . '/logo-text.png', 0755);
-	}
-}
 
 // returns the logo based on the logo type switch set in Theme Settings > 1. Company Info
 if( !function_exists( 'get_logo' ) ){
@@ -668,24 +640,102 @@ if( !function_exists('remove_ga_flyout') ){
 	}
 }
 
+/**
+ * Logo Text Image Stuff
+ */
+// generates Logo text when logo type switch is set to text
+if( !function_exists('update_logo_text_image') ){
+	function update_logo_text_image(){
+		if( basename($_SERVER['REQUEST_URI']) == 'admin.php?page=general-settings' && get_field('logo-type-switch', 'option') == 'text' ){
+			do_update_logo_text_image();
+		}
+	}
+}
+add_action('save_post', 'update_logo_text_image');
+
+
+if( !function_exists('do_update_logo_text_image') ){
+	function do_update_logo_text_image(){
+		function hex_to_rgb($hex){
+			$hex = str_replace("#", "", $hex);
+
+			if(strlen($hex) == 3) {
+			  $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+			  $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+			  $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+			} else {
+			  $r = hexdec(substr($hex,0,2));
+			  $g = hexdec(substr($hex,2,2));
+			  $b = hexdec(substr($hex,4,2));
+			}
+			$rgb = array($r, $g, $b);
+			//return implode(",", $rgb); // returns the rgb values separated by commas
+			return $rgb; // returns an array with the rgb values
+		}
+
+		$active_theme = wp_get_theme()->Name;
+		// if(  $active_theme == '123_three' ){
+
+		// }
+
+		$bg = get_template_directory() . '/library/img/logo-canvas.png';
+
+		$phpimg = new PHPImage();
+
+		$phpimg->setDimensionsFromImage($bg);
+		$phpimg->setQuality(9);
+		if(  $active_theme == '123_three' ){
+			$phpimg->setFont(get_stylesheet_directory() . '/library/fonts/Montserrat-Black.ttf');
+		} else {
+			$phpimg->setFont(get_template_directory() . '/library/fonts/GothamHTF-Medium.ttf');
+		}
+
+		$text_color = array(255, 255, 255);
+
+		if(  $active_theme == '123_three' ){
+			if( get_field('add_extra_theme_colors_header-logotoggle', 'option') ){
+				$text_color = hex_to_rgb(get_field('add_extra_theme_colors_header-logopicker', 'option'));
+			}
+		} else {
+			if( get_field('navs-text-toggle', 'option') ){
+				$text_color = hex_to_rgb(get_field('navs-text', 'option'));
+			}
+		}
+
+		$phpimg->setTextColor($text_color);
+
+		$phpimg->text(get_field('site_title', 'option'), array(
+	        'fontSize' => 60, 
+	        'x' => 0,
+	        'y' => 0,
+	        'width' => 560,
+	        'height' => 128,
+	        'alignHorizontal' => 'center',
+	        'alignVertical' => 'center',
+	    ));
+
+		$phpimg->imagetrim();
+
+		$phpimg->setOutput('png');
+
+		$phpimg->save(wp_upload_dir()['basedir'] . '/logo-text.png');
+		chmod(wp_upload_dir()['basedir'] . '/logo-text.png', 0755);
+	}
+}
 // regenerate logo-text.png on push-to-deploy
 add_action( 'wppusher_theme_was_updated', function(){
 	if( function_exists( 'do_update_logo_text_image' )){
 		do_update_logo_text_image();
 	}
 });
-
 // regenerate logo-text.png on theme switch
 add_action( 'after_switch_theme', function(){
 	if( function_exists( 'do_update_logo_text_image' )){
 		do_update_logo_text_image();
 	}
 });
-
-
 // checks if logo-text.png exists in uploads dir if it doesn't then generate it
 add_action( 'after_setup_theme', 'check_logo_text_exists' );
-
 if( !function_exists('check_logo_text_exists') ){
 	function check_logo_text_exists(){
 		if( !file_exists(wp_upload_dir()['basedir'] . '/logo-text.png') ){
@@ -693,6 +743,9 @@ if( !function_exists('check_logo_text_exists') ){
 		}
 	}
 }
+// 
+// 
+// 
 
 if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) : 
 	function wpse_custom_wp_trim_excerpt($wpse_excerpt) {
