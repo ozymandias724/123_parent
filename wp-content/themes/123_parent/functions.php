@@ -1,64 +1,28 @@
 <?php 
-/**
- *	Requirements
- */
-if( !function_exists('get_gmap_api_key') ){
-	function get_gmap_api_key(){
-		return 'AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY';
-	}
-}
-require_once('reqs/localize-acf.php');
-/**
- * 	Verify Active Pages
- */
-	add_action('init', 'manage_page_requirements', 1);
-	require_once('classes/Pagedata.php');
-	if( !function_exists( 'manage_page_requirements' ) ){
-		function manage_page_requirements(){
-			new Pagedata();
-		}
-	}
-/**
- * 	FusionTables...
- */
-	require_once('fusiontables/handler.php');
-/**
- * 	Pre_Setup Theme
- */
-
+// built-in acf
+include_once('reqs/localize-acf.php');
+// acf handler for page publish/private status
+include_once('classes/Pagedata.php');
+// google map fusion tables
+include_once('fusiontables/handler.php');
+// google maps initialize
 include_once('classes/class.GooMaps.php');
-/**
- * 	Setup Theme :
- */
-require_once('classes/class.Setup.php');
+// general theme setup
+include_once('classes/class.Setup.php');
+// nav handler
 include_once('classes/class.NavUtil.php');
-
-/**
- * 	Organize this craziness ASAP
- */
-
-
+// custom users
 include_once('classes/class.UserRoles.php');
-
-
-
-require_once('PHPImage.php');
-require_once('components/reqs/misc-helpers.php');
-require_once('components/reqs/custompts.php');
-
-require_once('components/reqs/resellers.php');
-include_once('classes/class.SiteConfig.php');
-// 
-require_once('components/reqs/footer-helpers.php');
-/**
- * 	Organize this craziness ASAP
- */
-
-
-
-
-
-
+// php image (to be cut)
+include_once('PHPImage.php');
+// tbd
+include_once('components/reqs/misc-helpers.php');
+// custom post types
+include_once('components/reqs/custompts.php');
+// reseller stuff
+include_once('components/reqs/resellers.php');
+// footer stuff
+include_once('components/reqs/footer-helpers.php');
 
 /**
  * adjusting site-setup clone fields to have new instructions, labels, etc
@@ -130,10 +94,6 @@ function modacf_adjust_labelInstructions($field){
 	$field['sub_fields'][0]['label'] = $label;
 	return $field;
 }
-
-
-// fix payment type clones appearance
-add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_payment_type_clones');
 function adjust_payment_type_clones($field){
 	$dir = get_template_directory_uri() . '/library/img/payment_types/';	
 	for ($i=0; $i < count($field['sub_fields']); $i++) { 
@@ -174,7 +134,6 @@ function adjust_payment_type_clones($field){
 	}
 	return $field;
 }
-
 function adjust_company_info_clones($field){
 
 	for ($i=0; $i < count($field['sub_fields']); $i++) { 
@@ -193,7 +152,7 @@ function adjust_company_info_clones($field){
 				break;
 			case 'social-fax-number':
 				$label = '3. Secondary Phone Number';
-				$instructions = 'Can I get a secondary number from you? Preferably a cell phone number?Our software will text message remind you for your appointment we set with your Website Consultant';
+				$instructions = 'Can I get a secondary number from you? Preferably a cell phone number? Our software will text message remind you for your appointment we set with your Website Consultant';
 				break;
 			case 'sitesetup_services_repeater':
 				$label = '2. Services';
@@ -262,6 +221,7 @@ function adjust_company_info_clones($field){
 	}
 	return $field;
 }
+add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_payment_type_clones');
 add_filter('acf/load_field/key=field_sitesetup_clones_2', 'adjust_company_info_clones');
 add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_company_info_clones');
 add_filter('acf/load_field/key=field_sitesetup_clones_2_b', 'adjust_company_info_clones');
@@ -300,12 +260,6 @@ if( wp_get_theme()->Name != '123_four' ){
 		add_filter("acf/prepare_field/name=$field", "hide_the_acf_field");
 	}
 }
-
-
-
-
-
-
 if( !function_exists('acf_set_custom_homepage')){
 	/**
 	 * [acf_set_custom_homepage description]

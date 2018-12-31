@@ -2716,7 +2716,7 @@ if( !function_exists('add_acf_fields') ){
 	// update google map api key
 	if( !function_exists('set_acf_google_api_key') ){
 		function set_acf_google_api_key(){
-			acf_update_setting('google_api_key', get_gmap_api_key());
+			acf_update_setting('google_api_key','AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY');
 		}
 	}
 	// 
