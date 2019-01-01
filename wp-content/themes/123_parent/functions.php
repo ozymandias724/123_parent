@@ -413,8 +413,6 @@ if(!function_exists('the_bg')){
 }
 
 
-
-
 // gets the image for the blog post with the placeholder image as the fallback
 if( !function_exists('get_blog_image') ){	
 	function get_blog_image($post_id){
