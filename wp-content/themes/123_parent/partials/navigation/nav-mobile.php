@@ -30,3 +30,12 @@
 	<div class="mobileheader-tint"></div>
 </header>
 <?php do_action( '123_after_mobile_nav' ); ?>
+
+<?php 
+/**
+ * Remove action_123_after_mobile_nav from theme 3 and replace w/ conditional here
+ */
+if( wp_get_theme()->Name == '123_three' ){
+	include_once('includes/theme3.php');
+}
+ ?>
