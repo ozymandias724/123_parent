@@ -36,8 +36,9 @@
 	$fadein_class = (get_field('nav-fadein-toggle', 'option')) ? 'removefadein' : '';
  ?>
 <body <?php body_class([$invertlogo_class, $fadein_class]); ?>>
-	<?php 
-	if( $post->post_name !== 'disabled' ) : ?>
-		<?php get_template_part('partials/navigation/nav', 'desktop'); ?>
-		<?php get_template_part('partials/navigation/nav', 'mobile'); ?>
-	<?php endif; ?>
+<?php 
+	if( $post->post_name !== 'disabled' ) {
+		get_template_part('partials/navigation/nav', 'desktop');
+		get_template_part('partials/navigation/nav', 'mobile');
+	}
+?>

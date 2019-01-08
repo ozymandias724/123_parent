@@ -1,6 +1,24 @@
 <?php 
 
+
+function check_theme(){
+	$theme_header_style = '';
+
+	if( wp_get_theme()->Name == '123_four' ){
+		$theme_header_style = 'four';
+	}
+	if( wp_get_theme()->Name == '123_three' ){
+		$theme_header_style = 'three';
+	}
+	else {
+		$theme_header_style = 'one';
+	}
+	return $theme_header_style;
+};
+$verified_theme = check_theme();
+
 include_once( get_template_directory() . '/fusiontables/handler.php');
+
 
 /*
 	Populate Setup_Pages Repeater's Select Field Choices w/ Required Page Templates:
@@ -1573,6 +1591,44 @@ if( !function_exists('add_acf_fields') ){
 						'width' => '25',
 					),
 				),
+				// enable select header style
+				array(
+					'key' => 'field_settings_na8n2lknsa0g'
+					,'name' => 'enable-choose-header'
+					,'label' => 'Use Another Header Style?'
+					,'type' => 'true_false'
+					,'ui' => 1
+					,'ui_on_text' => 'Active'
+					,'ui_off_text' => 'Inactive'
+				),
+				// select a header style
+				array(
+					'key' => 'field_settings_oi23oitns9k'
+					,'name' => 'choose-header-style'
+					,'label' => 'Choose Header Style'
+					,'wrapper' => array(
+						'id' => 'choose-header'
+					)
+					,'type' => 'radio'
+					,'layout' => 'vertical'
+					,'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_settings_na8n2lknsa0g',
+								'operator' => '==',
+								'value' => 1,
+							)
+						)
+					)
+					,'choices' => array(
+						'one' => 'One'
+						,'two' => 'Two'
+						,'three' => 'Three'
+						,'four' => 'Four'
+					)
+					,'default_value' => $verified_theme
+				),
+				// 
 				array(
 					'key' => 'field_naaolkn23oin',
 					'type' => 'repeater',

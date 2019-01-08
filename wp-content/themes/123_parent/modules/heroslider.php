@@ -22,7 +22,6 @@
 	<div class="home-hero-tint hero-tint"></div>
 </section>
 <?php 
-	die();
 	if( function_exists('render_subhero_quickquote') ){
 		render_subhero_quickquote();
 	}

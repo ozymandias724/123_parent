@@ -272,33 +272,38 @@
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_bloglink',
 		'type' => 'message',
-		'message' => '3. <a target="_blank" href="'. get_admin_url() .'edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
+		'label' => '3.'
+		,'message' => '<a target="_blank" href="'. get_admin_url() .'edit.php' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/blog.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_testimoniallink',
 		'type' => 'message',
-		'message' => '4. <a target="_blank" href="'. get_admin_url() .'admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
+		'label' => '4.'
+		,'message' => '<a target="_blank" href="'. get_admin_url() .'admin.php?page=testimonials-settings/' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/testimonials.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_3',
 		'key' => 'field_sitesetup_msg_couponlink',
 		'type' => 'message',
-		'message' => '5. <a target="_blank" href="'. get_admin_url() . 'edit.php?post_type=coupon' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
+		'label' => '5.'
+		,'message' => '<a target="_blank" href="'. get_admin_url() . 'edit.php?post_type=coupon' .'"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/coupons.jpg"></a>',
 	));
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_4',
 		'key' => 'field_sitesetup_msg_godaddy',
 		'type' => 'message',
-		'message' => '1. <a target="_blank" href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
+		'label' => '1.'
+		,'message' => '<a target="_blank" href="https://www.godaddy.com/"><img class="sitesetup_images" src="http://www.123websites.com/images/signup/godaddy.jpg"></a>',
 	));
 
 
-	$custom_submit = '2. <input type="submit" accesskey="p" value="Publish Website" class="sitesetup-publish" name="publish">';
+	$custom_submit = '<input type="submit" accesskey="p" value="Publish Website" class="sitesetup-publish" name="publish">';
 	acf_add_local_field(array(
 		'parent' => 'group_sitesetup_4',
 		'key' => 'field_sitesetup_msg_submit',
 		'type' => 'message',
-		'message' => $custom_submit,
+		'label' => '2.'
+		,'message' => $custom_submit,
 	));
 ?>

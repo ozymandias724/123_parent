@@ -172,6 +172,29 @@
 
 
 
+	// style "choose header style" radio
+	// manually uses a built-in label to display a preview image
+	div#choose-header {
+		> .acf-input {
+			ul.acf-radio-list {
+				li {
+					margin: 0;
+					margin-bottom: 20px;
+					label {
+						&:after {
+							content: '';
+							display: block;
+							width: 100%;
+							background: url('http://placekitten.com/600/200');
+							background-size: cover;
+							background-position: center;
+							height: 140px;
+						}
+					}
+				}
+			}
+		}
+	} 
 
 
 
