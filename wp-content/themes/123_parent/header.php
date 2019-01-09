@@ -38,7 +38,7 @@
 <body <?php body_class([$invertlogo_class, $fadein_class]); ?>>
 <?php 
 	if( $post->post_name !== 'disabled' ) {
-		get_template_part('partials/navigation/nav', 'desktop');
-		get_template_part('partials/navigation/nav', 'mobile');
+		include('partials/navigation/header/nav-desktop.php');
+		include('partials/navigation/header/nav-mobile.php');
 	}
 ?>

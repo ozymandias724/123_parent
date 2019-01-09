@@ -1,9 +1,8 @@
 <?php 
 /**
- * 
+ *  THIS IS JUST A CUT PASTE OF THE PARENT NAV DESKTOP FILE
  */
 	$selected_header_style = get_field('field_settings_oi23oitns9k','options');
-	if( $selected_header_style == 'one' ) :
 
 	$invertlogo = ( get_field('general-theme-invert-headerfooter-logo-colors', 'option') ) ? ' invertlogo' : '';
 	$fadenav = ( get_field('nav-fadein-toggle', 'option') ) ? ' removefadein' : '';
@@ -36,13 +35,15 @@
 		
 		<div class="header-content-rightwrap">
 			<?php 
-				$desktop_social = '<nav class="header-content-menus-social">
-					<ul class="header-content-menus-social-menu">
-						<li class="header-content-menus-social-menu-item">
-							<a href="tel:' . get_the_phone('tel') . '" class="header-content-menus-social-menu-item-link">' . get_the_phone() . '</a>
-						</li>
-					</ul>
-				</nav>';
+				$desktop_social = '
+					<nav class="header-content-menus-social">
+						<ul class="header-content-menus-social-menu">
+							<li class="header-content-menus-social-menu-item">
+								<a href="tel:' . get_the_phone('tel') . '" class="header-content-menus-social-menu-item-link">' . get_the_phone() . '</a>
+							</li>
+						</ul>
+					</nav>
+				';
 			 ?>
 			<div class="header-content-menus">
 				<?php 
@@ -65,5 +66,4 @@
 </header>
 <?php 
 	do_action('123_after_desktop_nav');
-	endif;
- ?>
+ ?>	

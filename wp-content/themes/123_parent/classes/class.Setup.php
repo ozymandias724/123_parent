@@ -106,6 +106,12 @@ class SetupTheme
 	}
 	public static function enqueue_styles(){
 		wp_enqueue_style( 'parent' );
+
+		// conditionally load header css files
+		if( get_field('enable-choose-header', 'options') ){
+			$selected = get_field('choose-header-style', 'options');
+		}
+		wp_enqueue_style('child_header', get_template_directory_uri().'/partials/navigation/header/includes/theme-'.$selected.'.css');
 	}
 
 	// remove junk from the header
