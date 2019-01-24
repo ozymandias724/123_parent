@@ -24,6 +24,7 @@ include_once('components/reqs/resellers.php');
 // footer stuff
 include_once('components/reqs/footer-helpers.php');
 
+include_once('classes/class.Customizer.php');
 
 
 

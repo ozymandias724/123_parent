@@ -8,8 +8,10 @@ if( get_field('enable-choose-header', 'options') ){
 		case 'two':
 			include('includes/themes1_2.php');
 			break;
-		case 'three':
-			include('includes/theme3.php');
+			case 'three':
+			// include('includes/theme3.php'); // experimenting here
+			// include('includes/t3.php'); // experimenting here
+			include('includes/themes1_2.php');
 			break;
 		case 'four':
 			include('includes/theme4.php');
@@ -47,4 +49,5 @@ if( get_field('enable-choose-header', 'options') ){
 			break;
 	}
 }
+die();
 ?>

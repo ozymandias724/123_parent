@@ -27,8 +27,8 @@
 	<?php echo !empty(get_field('custom-css', 'option')) ? '<style type="text/css">' . get_field('custom-css', 'option') . '</style>' : ''; ?>
 	
 	<!-- color pickers in theme settings -->
-	<?php include( locate_template( 'partials/color-pickers.php' ) ); ?>
-	<?php do_action('123_after_color_pickers'); ?>
+	<?php // include( locate_template( 'partials/color-pickers.php' ) ); ?>
+	<?php // do_action('123_after_color_pickers'); ?>
 	
 </head>
 <?php 

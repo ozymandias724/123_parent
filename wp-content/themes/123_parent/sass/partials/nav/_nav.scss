@@ -1,0 +1,104 @@
+$navbg : $pink;
+@media only screen {
+
+    header.header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block;
+        z-index: 10;
+    }
+
+    .header-content {
+        display: flex;
+        margin: 0 auto;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1400px;
+        background-color: $light-grey;
+        > div,
+        > a {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        > div {
+            > div,
+            > a {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            > div {
+                > a {
+                    float: right;
+                }
+                > nav {
+                    clear: both;
+                    > ul {
+                        list-style-type: none;
+                        > li {
+                            margin-right: 15px;
+                            &:last-of-type { margin-right: 0; }
+                            display: inline-block;
+                            vertical-align: middle;
+                            > a {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        > a {
+            > img {
+                max-width: 240px;
+            }
+        }
+    }
+    
+    .opt__estimatebar {
+        background-color: $ink;
+        text-align: center;
+        color: white;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    
+    // (social c2a banner above everything)
+    #opt__topbanner {
+        height: 60px;
+        width: 100%;
+        position: relative;
+        background-color: $navbg;
+        > a {
+            display: inline-block;
+            height: 100%;
+            flex: 1;
+            margin-right: 30px;
+            color: white;
+            font-size: 1.8rem;
+            &:last-of-type{
+                margin-right: 0;
+            }
+            span,
+            i.fa {
+                line-height: inherit;
+                font-size: inherit;
+                display: inline-block;
+                top: 50%;
+                transform: translateY(-50%);
+                position: relative;
+            }
+
+            &.topbanner-quickquote {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: $ink;
+                padding: 0 30px;
+            }
+        }
+    }
+}
