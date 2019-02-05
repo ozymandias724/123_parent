@@ -1,5 +1,4 @@
 <?php 
-
 	/**
 	 * Optional - i.e. - opt__classname
 	 */
@@ -8,32 +7,33 @@
 	$gmap_query = '#'; // simple href to search for the addr
 	$num_display = get_the_phone();
 	$num_href = get_the_phone('tel');
-
 	$content_quotebtn = '';
+
 	if (!get_field('quickquote-disable', 'option')) {
 		$format_quotebtn = '
-				<a href="#" class="topbanner-quickquote">
-					<span>%s</span>
-					<i class="fa fa-angle-right"></i>
-				</a>
-			';
+			<a href="#" class="topbanner-quickquote">
+				<span>%s</span>
+				<i class="fa fa-angle-right"></i>
+			</a>
+		';
 		$content_quotebtn = sprintf(
 			$format_quotebtn,
 			get_field('quickquote-button-text', 'option')
 		);
 	}
+	
 	$format_socialtopbar = '
-			<div id="opt__topbanner">
-				<a href="%s" alt=""><i class="fa fa-map-marker"></i>
-					<span>%s</span>
-				</a>
-				<a href="%s">
-					<i class="fa fa-phone"></i>
-					<span>%s</span>
-				</a>
-				%s
-			</div>
-		';
+		<div id="opt__topbanner">
+			<a href="%s" alt=""><i class="fa fa-map-marker"></i>
+				<span>%s</span>
+			</a>
+			<a href="%s">
+				<i class="fa fa-phone"></i>
+				<span>%s</span>
+			</a>
+			%s
+		</div>
+	';
 	$content_socialtopbar = sprintf(
 		$format_socialtopbar,
 		$gmap_query,
@@ -91,57 +91,100 @@
 		,get_logo()
 		,get_bloginfo('sitename')
 	);
-
-
-
 	/**
 	 * check which style header to display
 	 */
-	$headerstyle = get_field('enable-choose-header', 'options');
-
-	if( !empty($headerstyle) ){
-		if( $headerstyle == 'one' ){}
-		
-		
-		if( $headerstyle == 'two' ){
-	
-		}
-		if( $headerstyle == 'three' ){}
-	}
-	
-	/**
-	 * Final Header
-	 */
-	$format_header = '
-		<header class="header %s %s">
-			%s
-			<div class="header-content">
-				%s
-				<div>
-					<div>
+	$custom_header_enabled = get_field('enable-choose-header', 'options');
+	if( !empty($custom_header_enabled) ){
+		$selected = get_field('choose-header-style', 'options');
+		switch ($selected) {
+			case 'one':
+				break;
+			case 'two':
+				$format_header = '
+					<header class="header %s %s">
 						%s
-						<nav>
+						<div class="header-content">
 							%s
-						</nav>
-					</div>
-					%s
-				</div>
-			</div>
-			<div class="header-tint %s"></div>
-		</header>
-	';
-	$content_header = sprintf(
-		$format_header
-		,$invertlogo
-		,$fadenav
-		,$content_topbar
-		,$content_logo
-		,$desktop_social
-		,NavUtil::get_nav_links('header-content-menus-pages-menu')
-		,$quickquote_desktop
-		,$topbar_class
-	);
+							<div>
+								<div>
+									%s
+									<nav>
+										%s
+									</nav>
+								</div>
+								%s
+							</div>
+						</div>
+						<div class="header-tint %s"></div>
+					</header>
+				';
+				$content_header = sprintf(
+					$format_header,
+					$invertlogo,
+					$fadenav,
+					$content_topbar,
+					$content_logo,
+					$desktop_social,
+					NavUtil::get_nav_links('header-content-menus-pages-menu'),
+					$quickquote_desktop,
+					$topbar_class
+				);
+				break;
+			case 'three':
+				$format_header = '
+					<header class="header %s %s">
+						%s
+						<div>
+							<div>
+							</div>
+						</div>
+					</header>
+				';
+				$content_header = sprintf(
+					$format_header
+					,$invertlogo
+					,$fadenav
+					,$content_socialtopbar
+					,$content_logo
+					
+				);
+				break;
+			case 'four':
+				break;
+			default:
+				# code...
+				break;
+		}
+	}
+	// Default Style Determined By Theme
+	else {
+		$name = wp_get_theme()->Name;
+		switch ($name) {
+			case '123_parent':
+				include('includes/themes1_2.php');
+				# code...
+				break;
+			case '123_one':
+				include('includes/themes1_2.php');
+				# code...
+				break;
+			case '123_two':
+				include('includes/themes1_2.php');
+				# code...
+				break;
+			case '123_three':
+				include('includes/theme3.php');
+				# code...
+				break;
+			case '123_four':
+				# code...
+				include('includes/theme4.php');
+				break;
+			default:
+				# code...
+				break;
+		}
 
-	// Print
-	echo $content_header;
+	}
 ?>
