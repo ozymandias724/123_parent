@@ -100,6 +100,7 @@
         if( $selected_header === 'one' ){
         }
         if( $selected_header === 'two' ){
+
             $format_header = '
                 <header class="header %s %s">
                     %s
@@ -118,6 +119,7 @@
                     <div class="header-tint %s"></div>
                 </header>
             ';
+            
             $content_header = sprintf(
                 $format_header
                 ,$invertlogo
@@ -140,6 +142,7 @@
                     </div>
                 </header>
             ';
+            
             $content_header = sprintf(
                 $format_header
                 ,$invertlogo
