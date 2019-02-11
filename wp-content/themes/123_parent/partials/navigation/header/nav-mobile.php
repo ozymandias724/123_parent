@@ -1,5 +1,4 @@
 <?php 
-	do_action( '123_before_mobile_nav' );
 	$invert = get_field('general-theme-invert-headerfooter-logo-colors', 'option') ? ' invertlogo' : '';
 	$fadein = get_field('nav-fadein-toggle', 'option') ? ' removefadein' : '';
  ?>
@@ -29,13 +28,3 @@
 	<!-- Overlay -->
 	<div class="mobileheader-tint"></div>
 </header>
-<?php do_action( '123_after_mobile_nav' ); ?>
-
-<?php 
-/**
- * Remove action_123_after_mobile_nav from theme 3 and replace w/ conditional here
- */
-if( wp_get_theme()->Name == '123_three' ){
-	include_once('includes/theme3.php');
-}
- ?>

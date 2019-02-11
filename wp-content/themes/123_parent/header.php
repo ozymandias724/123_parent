@@ -32,13 +32,12 @@
 	
 </head>
 <?php 
-	$invertlogo_class = (get_field('general-theme-invert-headerfooter-logo-colors', 'option')) ? 'invertlogo' : '';
-	$fadein_class = (get_field('nav-fadein-toggle', 'option')) ? 'removefadein' : '';
+    $theme_name = 'theme_' . wp_get_theme()->Name;
  ?>
-<body <?php body_class([$invertlogo_class, $fadein_class]); ?>>
+<body <?php body_class($theme_name); ?>>
 <?php 
 	if( $post->post_name !== 'disabled' ) {
 		include('partials/navigation/header/nav-desktop.php');
 		include('partials/navigation/header/nav-mobile.php');
-	}
+    }
 ?>

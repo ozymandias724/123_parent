@@ -3599,7 +3599,7 @@ footer .sociallinks-item {
     z-index: 10;
   }
 
-  .header-content {
+  header#opt_header_onetwo .header-content {
     display: flex;
     margin: 0 auto;
     flex-flow: row nowrap;
@@ -3608,52 +3608,54 @@ footer .sociallinks-item {
     max-width: 1400px;
     background-color: #dedddd;
   }
-  .header-content > div,
-.header-content > a {
+  header#opt_header_onetwo .header-content > div,
+header#opt_header_onetwo .header-content > a {
     display: inline-block;
     vertical-align: middle;
   }
-  .header-content > div > div,
-.header-content > div > a {
+  header#opt_header_onetwo .header-content > div > div,
+header#opt_header_onetwo .header-content > div > a {
     display: inline-block;
     vertical-align: middle;
   }
-  .header-content > div > div > a {
+  header#opt_header_onetwo .header-content > div > div > a {
     float: right;
+    font-size: 1.6rem;
   }
-  .header-content > div > div > nav {
+  header#opt_header_onetwo .header-content > div > div > nav {
     clear: both;
   }
-  .header-content > div > div > nav > ul {
+  header#opt_header_onetwo .header-content > div > div > nav > ul {
     list-style-type: none;
   }
-  .header-content > div > div > nav > ul > li {
+  header#opt_header_onetwo .header-content > div > div > nav > ul > li {
     margin-right: 15px;
     display: inline-block;
     vertical-align: middle;
   }
-  .header-content > div > div > nav > ul > li:last-of-type {
+  header#opt_header_onetwo .header-content > div > div > nav > ul > li:last-of-type {
     margin-right: 0;
   }
-  .header-content > a > img {
+  header#opt_header_onetwo .header-content > div > div > nav > ul > li > a {
+    font-size: 1.6rem;
+  }
+  header#opt_header_onetwo .header-content > a > img {
     max-width: 240px;
   }
-
-  .opt__estimatebar {
+  header#opt_header_onetwo .opt__estimatebar {
     background-color: #17181d;
     text-align: center;
     color: white;
     max-width: 1400px;
     margin: 0 auto;
   }
-
-  #opt__topbanner {
+  header#opt_header_onetwo #opt__topbanner {
     height: 60px;
     width: 100%;
     position: relative;
     background-color: #e33062;
   }
-  #opt__topbanner > a {
+  header#opt_header_onetwo #opt__topbanner > a {
     display: inline-block;
     height: 100%;
     flex: 1;
@@ -3661,11 +3663,11 @@ footer .sociallinks-item {
     color: white;
     font-size: 1.8rem;
   }
-  #opt__topbanner > a:last-of-type {
+  header#opt_header_onetwo #opt__topbanner > a:last-of-type {
     margin-right: 0;
   }
-  #opt__topbanner > a span,
-#opt__topbanner > a i.fa {
+  header#opt_header_onetwo #opt__topbanner > a span,
+header#opt_header_onetwo #opt__topbanner > a i.fa {
     line-height: inherit;
     font-size: inherit;
     display: inline-block;
@@ -3673,12 +3675,71 @@ footer .sociallinks-item {
     transform: translateY(-50%);
     position: relative;
   }
-  #opt__topbanner > a.topbanner-quickquote {
+  header#opt_header_onetwo #opt__topbanner > a.topbanner-quickquote {
     position: absolute;
     top: 0;
     right: 0;
     background-color: #17181d;
     padding: 0 30px;
+  }
+
+  header#opt_header_three > div.header-content > ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-right: 20px;
+  }
+  header#opt_header_three > div.header-content > ul > li:last-of-type > a {
+    margin-right: 0;
+  }
+  header#opt_header_three > div.header-content > ul > li > a {
+    margin-right: 10px;
+    font-size: 1.6rem;
+  }
+
+  header#opt_header_four {
+    color: white;
+  }
+  header#opt_header_four > nav > ul {
+    text-align: center;
+    width: 100%;
+    max-width: 1024px;
+    background-color: #df1d1d;
+    padding: 10px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+  header#opt_header_four > nav > ul > li {
+    flex: 1 0 auto;
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+  header#opt_header_four > div {
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header#opt_header_four > div > ul,
+header#opt_header_four > div > span {
+    flex: 1 1 auto;
+    font-size: 1.6rem;
+  }
+  header#opt_header_four > div > ul > li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  header#opt_header_four > div > ul > li > a {
+    display: inline-block;
+    padding: 5px;
+  }
+  header#opt_header_four > div > span > a > img {
+    max-width: 220px;
+    margin: 0 auto;
   }
 }
 @media only screen {
@@ -3834,7 +3895,7 @@ footer .sociallinks-item {
   }
 
   .mobileheader-menus-social-menu-item-link-icon {
-    color: #32A2AE;
+    color: #df1d1d;
   }
   .mobileheader-menus-social-menu-item-link-icon.fa-instagram {
     position: relative;
@@ -4343,7 +4404,7 @@ div.footer-section-payment > ul > li.hasimage {
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    background-color: #32A2AE;
+    background-color: #df1d1d;
     padding: 15px 20px;
     margin-top: 20px;
     display: inline-block;
@@ -4422,7 +4483,7 @@ div.footer-section-payment > ul > li.hasimage {
   .home-services-grid-item-header {
     text-align: left;
     padding: 5px 10px;
-    background-color: #32A2AE;
+    background-color: #df1d1d;
     font-family: "Gotham", "Helvetica", sans-serif;
   }
 
@@ -4750,7 +4811,7 @@ div.footer-section-payment > ul > li.hasimage {
 
   .company-employees-grid-item-socialcontainer-link {
     display: inline-block;
-    background-color: #32A2AE;
+    background-color: #df1d1d;
     text-align: center;
     width: 32px;
     height: 32px;
@@ -5482,7 +5543,7 @@ div.footer-section-payment > ul > li.hasimage {
   .blog-blog-sidebar-header {
     font-size: 1.8rem;
     color: black;
-    border-bottom: 2px solid #32A2AE;
+    border-bottom: 2px solid #df1d1d;
     background-color: transparent;
     display: inline-block;
     padding: 5px 0px;
@@ -5518,7 +5579,7 @@ div.footer-section-payment > ul > li.hasimage {
     font-size: 1.6rem;
     text-align: center;
     text-transform: uppercase;
-    background-color: #32A2AE;
+    background-color: #df1d1d;
     padding: 16px 10px;
     display: inline-block;
     vertical-align: bottom;
@@ -5694,7 +5755,7 @@ div.footer-section-payment > ul > li.hasimage {
     content: "";
     display: block;
     width: 100%;
-    border-bottom: 2px solid #32A2AE;
+    border-bottom: 2px solid #df1d1d;
     left: 50%;
     -moz-transform: translateX(-50%);
     -o-transform: translateX(-50%);
@@ -5905,7 +5966,7 @@ div.footer-section-payment > ul > li.hasimage {
 @media only print {
   .coupons-coupons-grid-item {
     padding: 20px;
-    background-color: #32A2AE;
+    background-color: #df1d1d;
     border: 4px dashed black;
     display: inline-block;
     width: calc(100% - 40px);
