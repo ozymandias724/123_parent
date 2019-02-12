@@ -53,7 +53,7 @@
     // 
     $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link">'.$num_display.'</a>';
     if( !empty($quotebtn_txt) ){
-        $quickquote = '<a href="#" data-scroll-ignore class="header-content-quickquote estimate-toggle button-quote">' . $quotebtn_txt . '</a>';
+        $quickquote = '<a href="#" class="site__button-quote">' . $quotebtn_txt . '</a>';
     }
     // 
     // 
@@ -76,8 +76,8 @@
     // 
     // 
     $format_logo = '
-		<a class="header-content-logo" href="%s">
-			<img src="%s" alt="%s" class="header-content-logo-image">
+		<a class="header-logo" href="%s">
+			<img src="%s" alt="%s">
 		</a>
 	';
 	$content_logo = sprintf(
@@ -158,19 +158,17 @@
             $format_header = '
                 <header class="header %s %s" id="opt_header_onetwo">
                     %s
-                    <div class="header-content">
-                        %s
+                    %s
+                    <div>
                         <div>
-                            <div>
-                                %s
-                                <nav>
-                                    %s
-                                </nav>
-                            </div>
                             %s
+                            <nav>
+                                %s
+                            </nav>
                         </div>
+                        %s
                     </div>
-                    <div class="header-tint %s"></div>
+                    <span class="header-tint %s"></span>
                 </header>
             ';
             
@@ -181,7 +179,7 @@
                 ,$content_topbar
                 ,$content_logo
                 ,$desktop_social
-                ,NavUtil::get_nav_links('header-content-menus-pages-menu')
+                ,NavUtil::get_nav_links()
                 ,$quickquote
                 ,$topbar_class
             );
@@ -196,7 +194,7 @@
                         %s
                         %s
                     </div>
-                    <div class="header-tint %s"></div>
+                    <span class="header-tint %s"></span>
                 </header>
             ';
 
