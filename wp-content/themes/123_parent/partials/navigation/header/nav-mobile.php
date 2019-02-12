@@ -32,9 +32,5 @@
         ,$content_social_icons
     );
 
-    echo $content_nav_mobile;
-    
-
-    // mobile nav
-    die();
+    echo $content_nav_mobile;    
  ?>

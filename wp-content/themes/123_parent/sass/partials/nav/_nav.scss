@@ -6,7 +6,7 @@ $tint : lightgrey;
 $nav_maxwidth : 1024px;
 $banner_height : 52px;
 
-@media only screen {
+@media only screen and (min-width: $bp__lg){
 
     // basics across all headers
     header.header {
@@ -210,10 +210,4 @@ $banner_height : 52px;
         }
     }
 
-}
-
-@media only screen and (max-width: $bp__lg){
-    header.header {
-        display: none;
-    }
 }
