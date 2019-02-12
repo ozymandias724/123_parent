@@ -1,8 +1,10 @@
-$navbg : $pink;
 $primary : #df1d1d;
 $black : black;
 $white : white;
-
+$accent : green;
+$tint : lightgrey;
+$nav_maxwidth : 1024px;
+$banner_height : 52px;
 @media only screen {
 
     // basics across all headers
@@ -11,13 +13,20 @@ $white : white;
         top: 0;
         left: 0;
         width: 100%;
+        padding: 0 30px;
         display: block;
         z-index: 10;
+        font-size: 1.4rem;
+        padding-top: $banner_height;
+        &.topbar-removed {
+            padding-top: 0;
+        }
         // 
         a.header-logo {
             display: inline-block;
+            padding: 15px 0;
             > img {
-                max-width: 200px;
+                max-width: 180px;
             }
         }
         // 
@@ -27,17 +36,38 @@ $white : white;
             flex-flow: row nowrap;
         }
         li.navlinks-item {
-
+            display: inline-block;
+            margin-right: 10px;
+            &:last-of-type {
+                margin-right: 0;
+            }
         }
         span.header-tint {
             display: inline-block;
-            visibility: hidden;
+            // visibility: hidden;
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            background-color: $tint;
+        }
+        a.site__button-quote {
+            background-color: $accent;
+            color: $white;
+            padding: 15px;
+            margin-left: 15px;
+        }
+        // banners above the header
+        .opt__estimatebar,
+        .opt__topbanner {
+            width: 100%;
+            height: $banner_height;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
         }
     }
 
@@ -63,60 +93,60 @@ $white : white;
             }
         }
         
-
-        
-        
+        // black free estimate bar above header
         .opt__estimatebar {
             background-color: $ink;
             text-align: center;
             color: white;
             max-width: 1400px;
             margin: 0 auto;
+            > a {
+                display: inline;
+                margin: 0 auto;
+            }
         }
 
-        // (social c2a banner above everything)
+    }
+
+    header#opt_header_three {
+        max-width: $nav_maxwidth;
+        left: 50%;
+        transform: translateX(-50%);
+
+        > .header-tint {
+            background-color: $white;
+        }
+        
+        // pink social bar above header
+        > div.header-content {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
         #opt__topbanner {
-            height: 60px;
-            width: 100%;
-            position: relative;
-            background-color: $navbg;
-
-            >a {
-                display: inline-block;
-                height: 100%;
-                flex: 1;
-                margin-right: 30px;
-                color: white;
-                font-size: 1.8rem;
-
-                &:last-of-type {
-                    margin-right: 0;
+            padding: 0 30px;
+            background-color: $pink;
+            height: $banner_height;
+            color: white;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            > span > a {
+                &:first-of-type {
+                    margin-right: 15px;
                 }
-
-                span,
-                i.fa {
-                    line-height: inherit;
-                    font-size: inherit;
-                    display: inline-block;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    position: relative;
-                }
-
-                &.topbanner-quickquote {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    background-color: $ink;
-                    padding: 0 30px;
-                }
+            }
+            > a {
+                background-color: $ink;
+                padding: 15px;
             }
         }
     }
 
-    header#opt_header_three {
 
-    }
 
     // header style four enabled
     header#opt_header_four {

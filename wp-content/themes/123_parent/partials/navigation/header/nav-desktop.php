@@ -26,16 +26,18 @@
 		);
     }
     // 
-    // 
+    // theme3 pink social bar above header
     $format_socialtopbar = '
 		<div id="opt__topbanner">
-			<a href="%s" alt=""><i class="fa fa-map-marker"></i>
-				<span>%s</span>
-			</a>
-			<a href="%s">
-				<i class="fa fa-phone"></i>
-				<span>%s</span>
-			</a>
+            <span>
+                <a href="%s" alt=""><i class="fa fa-map-marker"></i>
+                    <span>%s</span>
+                </a>
+                <a href="%s">
+                    <i class="fa fa-phone"></i>
+                    <span>%s</span>
+                </a>
+            </span>
 			%s
 		</div>
 	';
@@ -59,10 +61,14 @@
     // 
     $invertlogo = ( get_field('general-theme-invert-headerfooter-logo-colors', 'option') ) ? ' invertlogo' : '';
     $fadenav = ( get_field('nav-fadein-toggle', 'option') ) ? ' removefadein' : '';
+
+    
+    // if the topbar is disabled, set the 'topbar-removed' class
     $topbar_class = get_field('remove-topbar', 'option') ? ' topbar-removed' : '';
-    $headbar_txt = get_field('header-bar-text', 'option');
-    if( !empty($topbar_class && !empty($headbar_txt) ) ){
-        $topbar_text = get_field('header-bar-text', 'option');
+    // Text that appears in the 'topbar'
+    $topbar_text = get_field('header-bar-text', 'option');
+    // if we dont the topbar removed class, and we do have text, create the topbar
+    if( empty($topbar_class && !empty($topbar_text) ) ){
 		$format_topbar = '
 			<div class="opt__estimatebar">
 				<a href="">%s</a>
@@ -156,7 +162,7 @@
         if( $selected_header === 'one' || $selected_header === 'two' )
         {
             $format_header = '
-                <header class="header %s %s" id="opt_header_onetwo">
+                <header class="header %s %s %s" id="opt_header_onetwo">
                     %s
                     %s
                     <div>
@@ -176,19 +182,20 @@
                 $format_header
                 ,$invertlogo
                 ,$fadenav
+                ,$topbar_class
                 ,$content_topbar
                 ,$content_logo
                 ,$desktop_social
                 ,NavUtil::get_nav_links()
                 ,$quickquote
-                ,$topbar_class
+                ,$topbar_class // NOPE
             );
         }
 
         if( $selected_header === 'three' )
         {
             $format_header = '
-                <header class="header %s %s" id="opt_header_three">
+                <header class="header %s %s %s" id="opt_header_three">
                     %s
                     <div class="header-content">
                         %s
@@ -201,11 +208,12 @@
             $content_header = sprintf(
                 $format_header
                 ,$invertlogo
+                ,$topbar_class
                 ,$fadenav
                 ,$content_socialtopbar
                 ,$content_logo
                 ,NavUtil::get_nav_links()
-                ,$topbar_class
+                ,$topbar_class // NOPE
             );
         }
 
@@ -213,7 +221,7 @@
         {
           
             $format_header = '
-                <header class="%s %s header" id="opt_header_four">
+                <header class="%s %s %s header" id="opt_header_four">
                     <div>
                         %s
                         <span>
@@ -232,6 +240,7 @@
             $content_header = sprintf(
                 $format_header
                 ,$invertlogo
+                ,$topbar_class
                 ,$fadenav
                 ,$content_social_icons
                 ,site_url()
