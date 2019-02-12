@@ -5,11 +5,12 @@ $accent : green;
 $tint : lightgrey;
 $nav_maxwidth : 1024px;
 $banner_height : 52px;
+$bp__lg : 1280px;
 @media only screen {
 
     // basics across all headers
     header.header {
-        position: fixed;
+        position: fixed !important; // need to remove something from theme 3 that is effecting this
         top: 0;
         left: 0;
         width: 100%;
@@ -209,4 +210,10 @@ $banner_height : 52px;
         }
     }
 
+}
+
+@media only screen and (max-width: $bp__lg){
+    header.header {
+        display: none;
+    }
 }

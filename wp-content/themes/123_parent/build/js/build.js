@@ -2095,6 +2095,25 @@ var Theme = {};
 	
 	$(document).ready(function(){
 
+
+
+        Theme.Nav_Mobile = {
+
+            toggle : $('span.mobileheader-navicon'),
+            
+            _init : function(){
+                Theme.Nav_Mobile.toogle.on('click', Theme.Nav_Mobile._clickHandler);
+            },
+            _clickHandler : function(){
+                $('header.mobileheader').toggleClass('mobileheader--revealed');
+            }
+            
+        }
+        Theme.Nav_Mobile._init();
+        
+        
+        
+
 		Theme.Breakpoint = {
 			
 			name : '',

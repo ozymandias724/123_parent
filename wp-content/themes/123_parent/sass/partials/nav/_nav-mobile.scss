@@ -1,0 +1,106 @@
+@media only screen {
+    /** 
+    *
+    *   Styles
+    *
+    **/
+    header.mobileheader {
+        font-size: 1.6rem;
+        height: 72px;
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        a.header-logo {
+            display: inline-block;
+            padding: 10px 0;
+            max-height: 100%;
+            >img {
+                max-width: 120px;
+            }
+        }
+
+        ul.navlinks {
+            flex-flow: column nowrap;
+            li.navlinks-item {
+                margin-bottom: 5px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        >div>span.mobileheader-navicon {
+            i.fa {
+                font-size: 2rem;
+                display: none;
+            }
+
+            i.fa-navicon {
+                display: inline-block;
+            }
+        }
+
+        >div {
+            display: flex;
+            align-items: center;
+        }
+
+        >div:first-of-type {
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+
+        >div:last-of-type {
+            // display: none;
+            flex-flow: column nowrap;
+            justify-content: center;
+            text-align: center;
+            
+            > nav, div, ul {
+                margin: 15px 0;
+            }
+
+            // social media icons
+            > ul {
+                flex-flow: row nowrap;
+                > li {
+                    margin-right: 10px;
+                    font-size: 2rem;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+
+    }
+    /** 
+    *
+    *   Behavior 
+    *
+    **/
+    body {
+        background-color: pink;
+    }
+    header.mobileheader {
+        > div:last-of-type {
+            display: none;
+        }
+        &.mobileheader--revealed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+
+            > div:last-of-type {
+                display: block;
+            }
+        }
+    }
+
+}

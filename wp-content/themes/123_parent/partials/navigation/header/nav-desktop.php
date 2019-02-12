@@ -1,8 +1,8 @@
 <?php 
 /**
- * Desktop Nav
+ *  Desktop Nav
  * 
- * Setup Stuff...
+ *  Setup Stuff...
  */
     $gmap_query = '#'; // simple href to search for the addr // IDK
     $addr = get_master_address(); // supposedly easy to format (test plz)
@@ -51,8 +51,6 @@
     );
     // 
     // 
-    // 
-    // 
     $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link">'.$num_display.'</a>';
     if( !empty($quotebtn_txt) ){
         $quickquote = '<a href="#" class="site__button-quote">' . $quotebtn_txt . '</a>';
@@ -98,6 +96,8 @@
  */
     // check theme and custom header settings
     $enabled_theme = wp_get_theme()->Name;
+
+    $use_custom_header = get_field('enable-choose-header', 'options');
     $selected_header = get_field('choose-header-style', 'options');
     $content_header = '';
     $format_header = '';
@@ -156,7 +156,7 @@
     $content_social_icons .= '</ul>';
     
     // a custom header has been selected
-    if( !empty($selected_header) )
+    if( !empty($use_custom_header) )
     {
         
         if( $selected_header === 'one' || $selected_header === 'two' )
@@ -254,10 +254,105 @@
         }
 
     }
-    
-    echo $content_header;
+    // no custom header selected
+    else
+    {
+        
+        if( $enabled_theme === '123_one' || $enabled_theme === '123_two' || $enabled_theme === '123_parent' )
+        {
+            $format_header = '
+                <header class="header %s %s %s" id="opt_header_onetwo">
+                    %s
+                    %s
+                    <div>
+                        <div>
+                            %s
+                            <nav>
+                                %s
+                            </nav>
+                        </div>
+                        %s
+                    </div>
+                    <span class="header-tint %s"></span>
+                </header>
+            ';
+            
+            $content_header = sprintf(
+                $format_header
+                ,$invertlogo
+                ,$fadenav
+                ,$topbar_class
+                ,$content_topbar
+                ,$content_logo
+                ,$desktop_social
+                ,NavUtil::get_nav_links()
+                ,$quickquote
+                ,$topbar_class // NOPE
+            );
+        }
 
+        if( $enabled_theme === '123_three' )
+        {
+            $format_header = '
+                <header class="header %s %s %s" id="opt_header_three">
+                    %s
+                    <div class="header-content">
+                        %s
+                        %s
+                    </div>
+                    <span class="header-tint %s"></span>
+                </header>
+            ';
 
-    
-    die();
+            $content_header = sprintf(
+                $format_header
+                ,$invertlogo
+                ,$topbar_class
+                ,$fadenav
+                ,$content_socialtopbar
+                ,$content_logo
+                ,NavUtil::get_nav_links()
+                ,$topbar_class // NOPE
+            );
+        }
+
+        if( $enabled_theme === '123_four' )
+        {
+          
+            $format_header = '
+                <header class="%s %s %s header" id="opt_header_four">
+                    <div>
+                        %s
+                        <span>
+                            <a href="%s"><img src="%s" alt="%s"></a>
+                        </span>
+                        <span>
+                            <a href="%s">%s</a>
+                        </span>
+                    </div>
+                    <nav>
+                        %s
+                    </nav>
+                </header>
+            ';
+
+            $content_header = sprintf(
+                $format_header
+                ,$invertlogo
+                ,$topbar_class
+                ,$fadenav
+                ,$content_social_icons
+                ,site_url()
+                ,get_logo()
+                ,get_bloginfo('sitename')
+                ,$num_href
+                ,$num_display
+                ,NavUtil::get_nav_links()
+            );
+            
+        }
+        
+    }
+
+    echo $content_header; 
  ?>
