@@ -51,11 +51,11 @@ class SetupTheme
 
 	// Enqueue Scripts (hook)
 	public static function wp_enqueue_scripts(){
-	    SetupTheme::register_styles();
-	    SetupTheme::enqueue_styles();
 	    SetupTheme::register_javascript();
 	    SetupTheme::enqueue_javascript();
 	    SetupTheme::localize_javascript();
+	    SetupTheme::register_styles();
+	    SetupTheme::enqueue_styles();
 	}
 
 
@@ -93,7 +93,9 @@ class SetupTheme
     	wp_register_style( 'remote-override-child'
     		, "https://123websites.com/css-themes/${theme_name}.css"
     		, array('parent')
-    	);
+        );
+        
+        wp_register_style('leaflet', get_template_directory_uri() . '/css/leaflet.css');
 	}
 	// 
 	public static function enqueue_javascript(){
@@ -102,16 +104,21 @@ class SetupTheme
 		wp_enqueue_script('gstatic', 'https://www.gstatic.com/charts/loader.js');
 		// theme
 	    wp_enqueue_script( 'parent-main' );
-	    wp_enqueue_script( 'parent-exec' );
+        wp_enqueue_script( 'parent-exec' );
+        
+        // 
+
 	}
 	public static function enqueue_styles(){
 		wp_enqueue_style( 'parent' );
 
+        wp_enqueue_style('leaflet');
 		// conditionally load header css files
 		if( get_field('enable-choose-header', 'options') ){
 			$selected = get_field('choose-header-style', 'options');
 		}
-		wp_enqueue_style('child_header', get_template_directory_uri().'/partials/navigation/header/includes/theme-'.$selected.'.css');
+        wp_enqueue_style('child_header', get_template_directory_uri().'/partials/navigation/header/includes/theme-'.$selected.'.css');
+        
 	}
 
 	// remove junk from the header
