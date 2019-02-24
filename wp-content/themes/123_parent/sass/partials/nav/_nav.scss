@@ -1,12 +1,15 @@
 $primary : #df1d1d;
 $black : black;
+$second_black: #333333;
 $white : white;
 $accent : green;
 $tint : lightgrey;
+$blue: #32A2AE;
+$blue_darker: #257d87;
 $nav_maxwidth : 1024px;
 $banner_height : 52px;
-
-@media only screen and (min-width: $bp__lg){
+$bp__lg : 1280px;
+@media only screen {
 
     // basics across all headers
     header.header {
@@ -72,9 +75,8 @@ $banner_height : 52px;
         }
     }
 
-    
     header#opt_header_onetwo {
-
+        padding-top:40px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -82,9 +84,53 @@ $banner_height : 52px;
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
+            height:auto;
+            > div {
+                display: flex;
+                flex-flow: row nowrap;
+                flex-direction: column;
+                align-items: flex-end; 
+                height:100%;
+                > a {
+                    color: white;
+                    font-size: 2.5rem;
+                    text-decoration: none;
+                    position: relative;
+                    margin:10px 0px;
+                    border-bottom: 1px solid transparent;
+                    @include transition(border-bottom 0.3s);
+                    &:hover, 
+                    &:focus,
+                    &:active{
+                        border-bottom: 1px solid $white;
+                    }
+                }
+                > nav {
+                    > ul {
+                        > li {
+                            a {
+                                font-size: 1.4rem;
+                                color: white;
+                                text-transform: uppercase;
+                                border-bottom: 1px solid transparent;
+                                @include transition(border-bottom 0.3s);
+                                &:hover, 
+                                &:focus,
+                                &:active{
+                                    border-bottom: 1px solid $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            > a {
+                font-size:1.6rem;
+                text-transform: uppercase;
+            }
             > div {
                 > a {
-                    float: right;
+                    justify-content: flex-end;
                 }
                 > nav {
                     clear: both;
@@ -93,6 +139,27 @@ $banner_height : 52px;
             > a.site__button-quote {
                 flex: 0 0 auto;
             }
+        }
+        div {
+            &:last-of-type {
+                > a{
+                    &:last-child {
+                        font-size: 1.6rem;
+                        text-transform: uppercase;
+                        background-color: $blue;
+                        border-radius: 4px;
+                        @include transition(background-color 0.3s);
+                        &:hover,
+                        &:focus,
+                        &:active{
+                            background-color: $blue_darker;
+                        }
+                    }
+                }
+            }
+        }
+        > span {
+            background-color: #383838;
         }
         
         // black free estimate bar above header
@@ -104,7 +171,14 @@ $banner_height : 52px;
             margin: 0 auto;
             > a {
                 display: inline;
-                margin: 0 auto;
+                margin: 10px auto;
+                border-bottom: 1px solid transparent;
+                @include transition(border-bottom 0.3s);
+                &:hover, 
+                &:focus,
+                &:active{
+                    border-bottom: 1px solid $white;
+                }
             }
         }
 
@@ -114,6 +188,9 @@ $banner_height : 52px;
         max-width: $nav_maxwidth;
         left: 50%;
         transform: translateX(-50%);
+        max-width: 1230px;
+        margin: 0 auto;
+        padding:0px; 
 
         > .header-tint {
             background-color: $white;
@@ -125,25 +202,102 @@ $banner_height : 52px;
             flex-flow: row nowrap;
             align-items: center;
             justify-content: space-between;
+            padding:0 40px;
+            > ul {
+                > li {
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                    > a {
+                        border-bottom: 1px solid transparent;
+                        @include transition(border-bottom 0.3s);
+                        &:hover, 
+                        &:focus,
+                        &:active{
+                            border-bottom: 1px solid $black;
+                        }
+                    }
+                }
+            }
         }
         
         #opt__topbanner {
-            padding: 0 30px;
             background-color: $pink;
             height: $banner_height;
             color: white;
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-            justify-content: space-between;
-            > span > a {
-                &:first-of-type {
-                    margin-right: 15px;
+            padding: 0 40px;
+            justify-content: space-around;
+
+            > span {
+                display:flex;
+                flex: 10 0 auto;
+                height:100%;
+
+                a {
+                    flex: 1 0 auto;
+                    font-size:1.6rem;
+                    text-align: center;
+                    padding: 15px;
+                    > span {
+                        border-bottom: 1px solid transparent;
+                        @include transition(border-bottom 0.3s);
+                     
+                    }
+                    i {
+                        color: $black;
+                        margin-right:10px;
+                        font-size:2rem;
+                        @include transition(color 0.3s);
+                    }
+                    &:hover, 
+                    &:focus,
+                    &:active{
+                        span {
+                            border-bottom: 1px solid $white;
+                        }
+                        i {
+                            color: $white;
+                        }
+                    }
+                    
+
+                    &:last-child {
+                        text-align:left;
+                        flex:1 0 auto;
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-flow: row nowrap;
+                    }
+
+                    
                 }
             }
+                
             > a {
+                flex: 1 0 auto;
                 background-color: $ink;
                 padding: 15px;
+                height: 100%;
+                text-align: center;
+                font-size: 1.6rem;
+                text-transform:uppercase;
+                display: flex;
+                justify-content: space-around;
+                flex-flow: row nowrap;
+                @include transition(background-color 0.3s);
+                &:hover, 
+                &:focus,
+                &:active{
+                    background-color: $second_black;
+                }
+
+                i {
+                    color: $primary;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -153,62 +307,132 @@ $banner_height : 52px;
     // header style four enabled
     header#opt_header_four {
         color: $white;
-
-        >nav {
-            >ul {
-                text-align: center;
-                width: 100%;
-                max-width: 1024px;
-                background-color: $primary;
-                padding: 10px 0;
-                margin: 0 auto;
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-around;
-
-                >li {
-                    flex: 1 0 auto;
-                    display: inline-block;
-                    font-size: 1.6rem;
-                }
-            }
-        }
-
-        >div {
+        padding:0px;
+        >div{
             background-color: $black;
             text-align: center;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
             align-items: center;
-
-            >ul,
-            >span {
-                flex: 1 1 auto;
-                font-size: 1.6rem;
-            }
-
-            >ul {
-                >li {
+            >ul{
+                >li{
                     display: inline-block;
                     margin: 0 10px;
-
-                    >a {
+                    >a{
+                        font-size:16px;
+                        width:28px;
+                        height:28px; 
+                        border-radius:50%;
                         display: inline-block;
                         padding: 5px;
+                        overflow:hidden;
+                        color: $white;
+                        @include transition(background 0.3s, color 0.3s);
+                        &:hover, 
+                        &:active,
+                        &:focus{
+                            background: $white;
+                            color: $primary;
+                        }
                     }
                 }
+            }
+        }
+        >nav {
+            >ul {
+                position: relative;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 1018px;
+                background-color: $primary;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+
+                &:before,
+                &:after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: -70px;
+                    width: 100px;
+                    height: 100%;
+                    flex:0 1 auto;
+                    top: 0;
+                    background-color: $primary;
+                    @include transform(skewX(37deg));
+			        z-index: -1;
+                }
+                &:after {
+                    @include transform(skewX(-37deg));
+                    left: auto;
+                    right: -70px;
+                }
+                
+                >li {
+                    flex: 0 1 auto;
+                    display: inline-block;
+                    vertical-align:middle;
+                    >a {
+                        text-decoration: none;
+                        color: $white;
+                        text-transform: uppercase;
+                        margin: 0 15px;
+                        font-size: 13px;
+                        line-height: 4;
+                        letter-spacing: 1px;
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
+                        &:hover,
+                        &:active,
+                        &:focus{
+                            opacity:1;
+                        }
+                    }
+                }
+            }
+        }
+
+        >div {
+            >ul,
+            >span {
+                flex: 0 1 auto;
+                font-size: 1.6rem;
             }
 
             >span {
                 >a {
                     >img {
                         max-width: 220px;
-                        margin: 0 auto;
+                        padding: 7px 0px;
+                    }
+                }
+            }
+            span{
+                &:last-child{
+                    >a{
+                        font-weight: 400;
+                        font-size:16px;
+                        letter-spacing:1px;
+                        border-bottom: 1px solid transparent;
+                        @include transition(border-bottom 0.3s);
+                        &:hover,
+                        &:active,
+                        &:focus{
+                            border-bottom: 1px solid $white;
+                        }
                     }
                 }
             }
         }
     }
+}
 
+@media only screen and (max-width: $bp__lg){
+    header.header {
+        display: none; 
+
+    }
 }

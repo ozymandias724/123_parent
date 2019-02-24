@@ -2,9 +2,17 @@ var Theme = {};
 ;(function ( $, Theme, window, document, undefined ) {
 	
 	$(document).ready(function(){
+		Theme.Gustavo = {
+			_init : function(){
+				$().on('click', Theme.Gustavo._clickHandler);
+			},
+			_clickHandler : function(event){
+				
+			},
+		}
+		Theme.Gustavo._init();
 
-
-        Theme.Nav_Mobile = {
+        Theme.Nav_Mobile = { 
 
             toggle : $('span.mobileheader-navicon'),
             
