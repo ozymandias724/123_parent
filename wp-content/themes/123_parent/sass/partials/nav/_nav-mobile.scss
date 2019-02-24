@@ -1,12 +1,25 @@
+$primary : #df1d1d;
+$black : black;
+$second_black: #333333;
+$white : white;
+$accent : green;
+$tint : lightgrey;
+$blue: #32A2AE;
+$blue_darker: #257d87;
+$nav_maxwidth : 1024px;
+$banner_height : 52px;
+$bp__lg : 1280px;
+
 @media only screen {
-    header.header {
-        display: none;
-    }
     /** 
     *
     *   Styles
     *
     **/
+
+    header.header {
+        display: none;
+    }
     header.mobileheader {
         position: fixed;
         top: 0;
@@ -111,12 +124,4 @@
             }
         }
     }
-}
-@media only screen and (min-width: $bp__lg){
-    header.header {
-        display: flex;
-    }
-    header.mobileheader {
-        display: none;
-    } 
 }

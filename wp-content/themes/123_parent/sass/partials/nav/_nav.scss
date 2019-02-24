@@ -9,12 +9,16 @@ $blue_darker: #257d87;
 $nav_maxwidth : 1024px;
 $banner_height : 52px;
 $bp__lg : 1280px;
-@media only screen {
+@media only screen and (min-width: $bp__lg) {
 
+    header.mobileheader {
+        display: none;
+    }
     // basics across all headers
     header.header {
         position: fixed !important; // need to remove something from theme 3 that is effecting this
         top: 0;
+        display: block;
         left: 0;
         width: 100%;
         padding: 0 30px;
@@ -427,12 +431,5 @@ $bp__lg : 1280px;
                 }
             }
         }
-    }
-}
-
-@media only screen and (max-width: $bp__lg){
-    header.header {
-        display: none; 
-
     }
 }

@@ -2,6 +2,7 @@ var Theme = {};
 ;(function ( $, Theme, window, document, undefined ) {
 	
 	$(document).ready(function(){
+
 		Theme.Gustavo = {
 			_init : function(){
 				$().on('click', Theme.Gustavo._clickHandler);
@@ -10,7 +11,8 @@ var Theme = {};
 				
 			},
 		}
-		Theme.Gustavo._init();
+        Theme.Gustavo._init();
+        
 
         Theme.Nav_Mobile = { 
 
