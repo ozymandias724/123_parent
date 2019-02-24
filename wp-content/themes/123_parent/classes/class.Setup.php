@@ -95,7 +95,6 @@ class SetupTheme
     		, array('parent')
         );
         
-        wp_register_style('leaflet', get_template_directory_uri() . '/css/leaflet.css');
 	}
 	// 
 	public static function enqueue_javascript(){
@@ -111,14 +110,7 @@ class SetupTheme
 	}
 	public static function enqueue_styles(){
 		wp_enqueue_style( 'parent' );
-
-        wp_enqueue_style('leaflet');
 		// conditionally load header css files
-		if( get_field('enable-choose-header', 'options') ){
-			$selected = get_field('choose-header-style', 'options');
-		}
-        wp_enqueue_style('child_header', get_template_directory_uri().'/partials/navigation/header/includes/theme-'.$selected.'.css');
-        
 	}
 
 	// remove junk from the header
