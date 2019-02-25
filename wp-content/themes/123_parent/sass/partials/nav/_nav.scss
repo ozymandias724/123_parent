@@ -84,6 +84,7 @@ $bp__lg : 1280px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
         > div {
             display: flex;
             flex-flow: row nowrap;
@@ -101,12 +102,12 @@ $bp__lg : 1280px;
                     text-decoration: none;
                     position: relative;
                     margin:10px 0px;
-                    border-bottom: 1px solid transparent;
-                    @include transition(border-bottom 0.3s);
+                    opacity: 0.8;
+                    @include transition(opacity 0.3s);
                     &:hover, 
                     &:focus,
                     &:active{
-                        border-bottom: 1px solid $white;
+                        opacity: 1;
                     }
                 }
                 > nav {
@@ -116,12 +117,12 @@ $bp__lg : 1280px;
                                 font-size: 1.4rem;
                                 color: white;
                                 text-transform: uppercase;
-                                border-bottom: 1px solid transparent;
-                                @include transition(border-bottom 0.3s);
+                                opacity: 0.8;
+                                @include transition(opacity 0.3s);
                                 &:hover, 
                                 &:focus,
                                 &:active{
-                                    border-bottom: 1px solid $white;
+                                    opacity: 1;
                                 }
                             }
                         }
@@ -176,12 +177,12 @@ $bp__lg : 1280px;
             > a {
                 display: inline;
                 margin: 10px auto;
-                border-bottom: 1px solid transparent;
-                @include transition(border-bottom 0.3s);
+                opacity: 0.8;
+                @include transition(opacity 0.3s);
                 &:hover, 
                 &:focus,
                 &:active{
-                    border-bottom: 1px solid $white;
+                    opacity: 1;
                 }
             }
         }
@@ -207,17 +208,18 @@ $bp__lg : 1280px;
             align-items: center;
             justify-content: space-between;
             padding:0 40px;
+            box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
             > ul {
                 > li {
                     font-size: 1.6rem;
                     text-transform: uppercase;
                     > a {
-                        border-bottom: 1px solid transparent;
-                        @include transition(border-bottom 0.3s);
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
                         &:hover, 
                         &:focus,
                         &:active{
-                            border-bottom: 1px solid $black;
+                            opacity:1;
                         }
                     }
                 }
@@ -245,8 +247,8 @@ $bp__lg : 1280px;
                     text-align: center;
                     padding: 15px;
                     > span {
-                        border-bottom: 1px solid transparent;
-                        @include transition(border-bottom 0.3s);
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
                      
                     }
                     i {
@@ -259,7 +261,7 @@ $bp__lg : 1280px;
                     &:focus,
                     &:active{
                         span {
-                            border-bottom: 1px solid $white;
+                            opacity: 1;
                         }
                         i {
                             color: $white;
@@ -421,11 +423,12 @@ $bp__lg : 1280px;
                         font-size:16px;
                         letter-spacing:1px;
                         border-bottom: 1px solid transparent;
-                        @include transition(border-bottom 0.3s);
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
                         &:hover,
                         &:active,
                         &:focus{
-                            border-bottom: 1px solid $white;
+                            opacity: 1;
                         }
                     }
                 }
