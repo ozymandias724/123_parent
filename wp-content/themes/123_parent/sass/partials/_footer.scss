@@ -34,6 +34,32 @@
 					text-align: left;
 					width: 20%;
 					margin: 20px 4% 0 0;
+					&:nth-of-type(2),
+					&:nth-of-type(3),
+					&:nth-of-type(4){
+						p, 
+						h2 {
+							display: block;
+							font-size: 2.4rem;
+							color: white;
+							text-transform: capitalize;
+							position: relative;
+							margin: 20px 0;
+							padding: 5px 0;
+							font-weight: 400;
+							font-family: $body;
+							&:after {
+								position: absolute;
+								bottom: -2px;
+								left: 0;
+								width: 100%;
+								display: inline-block;
+								content: '';
+								border-bottom: 2px solid $light-grey;
+								@include transition(width 0.3s ease);
+							}
+						}
+					}
 					&:first-of-type {
 						width: 28%;
 					}
@@ -43,6 +69,14 @@
 					> div {
 						padding: 5px 0;
 						text-align: left;
+						> a, 
+						> div {
+							font-size: 1.3rem;
+							padding: 5px 0;
+							display: inline-block;
+							color: white;
+							text-decoration: none;
+						}
 					}
 					> a {
 						display: inline-block;
@@ -55,50 +89,6 @@
 		}
 	}
 
-	// Grid Item Heading
-	//BEING USED?
-	.footer-section-heading {
-		display: block;
-		font-size: 2.4rem;
-		color: white;
-		text-transform: capitalize;
-		position: relative;
-		margin: 20px 0;
-		padding: 5px 0;
-		font-weight: 400;
-		font-family: $body;
-		&:after {
-			position: absolute;
-			bottom: -2px;
-			left: 0;
-			width: 100%;
-			display: inline-block;
-			content: '';
-			border-bottom: 2px solid $light-grey;
-			@include transition(width 0.3s ease);
-		}
-	}
-	// Section 1
-	//BEING USED?
-	.footer-logo{
-
-	}
-	.footer-contactlinks-email,
-	.footer-contactlinks-fax,
-	.footer-contactlinks-address,
-	.footer-contactlinks-phone{
-		font-size: 1.3rem;
-		padding: 5px 0;
-		display: inline-block;
-		color: white;
-		text-decoration: none;
-	}
-	
-	// 
-	.footer-contactlinks{
-		font-size: 0;
-		padding-top: 10px;
-	}
 	// Reseller Logo
 	.footer-webxlink {
 		position: relative;
@@ -117,8 +107,6 @@
 		margin: 10px auto;
 	}
 
-	.footer-section-pagelinks {
-	}
 	.footer-pagelinks{
 		column-count: 2;
 		column-gap: 10px;

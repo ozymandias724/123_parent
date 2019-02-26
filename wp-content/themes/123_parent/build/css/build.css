@@ -3848,6 +3848,35 @@
         text-align: left;
         width: 20%;
         margin: 20px 4% 0 0; }
+        .footer > div:first-child > div:nth-of-type(2) p,
+        .footer > div:first-child > div:nth-of-type(2) h2, .footer > div:first-child > div:nth-of-type(3) p,
+        .footer > div:first-child > div:nth-of-type(3) h2, .footer > div:first-child > div:nth-of-type(4) p,
+        .footer > div:first-child > div:nth-of-type(4) h2 {
+          display: block;
+          font-size: 2.4rem;
+          color: white;
+          text-transform: capitalize;
+          position: relative;
+          margin: 20px 0;
+          padding: 5px 0;
+          font-weight: 400;
+          font-family: "Gotham", "Helvetica", sans-serif; }
+          .footer > div:first-child > div:nth-of-type(2) p:after,
+          .footer > div:first-child > div:nth-of-type(2) h2:after, .footer > div:first-child > div:nth-of-type(3) p:after,
+          .footer > div:first-child > div:nth-of-type(3) h2:after, .footer > div:first-child > div:nth-of-type(4) p:after,
+          .footer > div:first-child > div:nth-of-type(4) h2:after {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            display: inline-block;
+            content: '';
+            border-bottom: 2px solid #dedddd;
+            -webkit-transition: width 0.3s ease;
+            -moz-transition: width 0.3s ease;
+            -ms-transition: width 0.3s ease;
+            -o-transition: width 0.3s ease;
+            transition: width 0.3s ease; }
         .footer > div:first-child > div:first-of-type {
           width: 28%; }
         .footer > div:first-child > div:last-of-type {
@@ -3855,49 +3884,18 @@
         .footer > div:first-child > div > div {
           padding: 5px 0;
           text-align: left; }
+          .footer > div:first-child > div > div > a,
+          .footer > div:first-child > div > div > div {
+            font-size: 1.3rem;
+            padding: 5px 0;
+            display: inline-block;
+            color: white;
+            text-decoration: none; }
         .footer > div:first-child > div > a {
           display: inline-block;
           font-size: 16px;
           margin: 10px auto;
           padding: 5px 0; }
-
-  .footer-section-heading {
-    display: block;
-    font-size: 2.4rem;
-    color: white;
-    text-transform: capitalize;
-    position: relative;
-    margin: 20px 0;
-    padding: 5px 0;
-    font-weight: 400;
-    font-family: "Gotham", "Helvetica", sans-serif; }
-    .footer-section-heading:after {
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      display: inline-block;
-      content: '';
-      border-bottom: 2px solid #dedddd;
-      -webkit-transition: width 0.3s ease;
-      -moz-transition: width 0.3s ease;
-      -ms-transition: width 0.3s ease;
-      -o-transition: width 0.3s ease;
-      transition: width 0.3s ease; }
-
-  .footer-contactlinks-email,
-  .footer-contactlinks-fax,
-  .footer-contactlinks-address,
-  .footer-contactlinks-phone {
-    font-size: 1.3rem;
-    padding: 5px 0;
-    display: inline-block;
-    color: white;
-    text-decoration: none; }
-
-  .footer-contactlinks {
-    font-size: 0;
-    padding-top: 10px; }
 
   .footer-webxlink {
     position: relative;
