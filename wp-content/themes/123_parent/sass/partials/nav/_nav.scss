@@ -225,7 +225,6 @@ $bp__lg : 1280px;
                 }
             }
         }
-        
         #opt__topbanner {
             background-color: $pink;
             height: $banner_height;
@@ -235,21 +234,17 @@ $bp__lg : 1280px;
             align-items: center;
             padding: 0 40px;
             justify-content: space-around;
-
             > span {
                 display:flex;
                 flex: 10 0 auto;
                 height:100%;
-
+                align-items: center;
                 a {
-                    flex: 1 0 auto;
                     font-size:1.6rem;
                     text-align: center;
-                    padding: 15px;
                     > span {
                         opacity: 0.8;
                         @include transition(opacity 0.3s);
-                     
                     }
                     i {
                         color: $black;
@@ -267,20 +262,13 @@ $bp__lg : 1280px;
                             color: $white;
                         }
                     }
-                    
-
                     &:last-child {
                         text-align:left;
-                        flex:1 0 auto;
                         display: flex;
-                        justify-content: flex-start;
-                        flex-flow: row nowrap;
+                        margin: 0 auto;
                     }
-
-                    
                 }
             }
-                
             > a {
                 flex: 1 0 auto;
                 background-color: $ink;
@@ -289,20 +277,19 @@ $bp__lg : 1280px;
                 text-align: center;
                 font-size: 1.6rem;
                 text-transform:uppercase;
-                display: flex;
-                justify-content: space-around;
-                flex-flow: row nowrap;
+                align-items: center;
                 @include transition(background-color 0.3s);
                 &:hover, 
                 &:focus,
                 &:active{
                     background-color: $second_black;
                 }
-
                 i {
                     color: $primary;
                     font-size: 2rem;
                     font-weight: bold;
+                    position: relative;
+                    top: 1px;
                 }
             }
         }
