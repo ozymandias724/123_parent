@@ -3850,12 +3850,15 @@
         text-align: left;
         width: 20%;
         margin: 20px 4% 0 0;
-        flex: 1 0 auto; }
+        flex: 1 0 15%; }
         .footer > div:first-child > div:nth-of-type(2) > ul {
           column-count: 2;
           column-gap: 10px;
-          text-align: left; }
+          text-align: left;
+          display: flex;
+          flex-wrap: wrap; }
           .footer > div:first-child > div:nth-of-type(2) > ul > li {
+            flex: 1 0 50%;
             margin-bottom: 5px; }
             .footer > div:first-child > div:nth-of-type(2) > ul > li > a {
               color: white;
@@ -3864,6 +3867,9 @@
               padding: 5px 0;
               display: inline-block;
               font-size: 1.6rem; }
+        .footer > div:first-child > div:nth-of-type(3) > ul {
+          display: flex;
+          flex-flow: row wrap; }
         .footer > div:first-child > div:nth-of-type(2) p,
         .footer > div:first-child > div:nth-of-type(2) h2, .footer > div:first-child > div:nth-of-type(3) p,
         .footer > div:first-child > div:nth-of-type(3) h2, .footer > div:first-child > div:nth-of-type(4) p,
@@ -3894,9 +3900,8 @@
             -o-transition: width 0.3s ease;
             transition: width 0.3s ease; }
         .footer > div:first-child > div:first-of-type {
-          width: 28%;
           display: flex;
-          flex-flow: row wrap; }
+          flex-flow: column; }
         .footer > div:first-child > div:last-of-type {
           margin-right: 0; }
         .footer > div:first-child > div > div {
