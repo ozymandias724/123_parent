@@ -13,39 +13,50 @@
 }
 @media only screen and (min-width: $large){
 	// BG
-	.footer{
+	.footer {
 		display: block;
 		text-align: center;
 		background-color: $footer-grey;
 		color: white;
+		font-size: 0;
 		ul{
 			list-style: none;
 		}
-		font-size: 0;
-	}
-	.footer-wrap{
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 0px 40px;
-	}
-	// Grid Wrappers
-	.footer-section {
-		position: relative;
-		display: inline-block;
-		vertical-align: top;
-		text-align: left;
-		width: 20%;
-		margin: 20px 4% 0 0;
-	}
-	.footer-section {
-		&:first-of-type {
-			width: 28%;
+		> div{
+			&:first-child{
+				max-width: 1440px;
+				margin: 0 auto;
+				padding: 0px 40px;
+				> div {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					text-align: left;
+					width: 20%;
+					margin: 20px 4% 0 0;
+					&:first-of-type {
+						width: 28%;
+					}
+					&:last-of-type {
+						margin-right: 0;
+					}
+					> div {
+						padding: 5px 0;
+						text-align: left;
+					}
+					> a {
+						display: inline-block;
+						font-size: 16px;
+						margin: 10px auto;
+						padding: 5px 0;
+					}
+				}
+			}
 		}
-		&:last-of-type {
-			margin-right: 0;
-		}
 	}
+
 	// Grid Item Heading
+	//BEING USED?
 	.footer-section-heading {
 		display: block;
 		font-size: 2.4rem;
@@ -68,18 +79,9 @@
 		}
 	}
 	// Section 1
+	//BEING USED?
 	.footer-logo{
-		display: inline-block;
-		font-size: 16px;
-		margin: 10px auto;
-		padding: 5px 0;
-	}
-	.footer-logo-image{
-		
-	}
-	.footer-section-contactlinks {
-		padding: 5px 0;
-		text-align: left;
+
 	}
 	.footer-contactlinks-email,
 	.footer-contactlinks-fax,

@@ -3837,24 +3837,29 @@
     font-size: 0; }
     .footer ul {
       list-style: none; }
-
-  .footer-wrap {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0px 40px; }
-
-  .footer-section {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    text-align: left;
-    width: 20%;
-    margin: 20px 4% 0 0; }
-
-  .footer-section:first-of-type {
-    width: 28%; }
-  .footer-section:last-of-type {
-    margin-right: 0; }
+    .footer > div:first-child {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0px 40px; }
+      .footer > div:first-child > div {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        width: 20%;
+        margin: 20px 4% 0 0; }
+        .footer > div:first-child > div:first-of-type {
+          width: 28%; }
+        .footer > div:first-child > div:last-of-type {
+          margin-right: 0; }
+        .footer > div:first-child > div > div {
+          padding: 5px 0;
+          text-align: left; }
+        .footer > div:first-child > div > a {
+          display: inline-block;
+          font-size: 16px;
+          margin: 10px auto;
+          padding: 5px 0; }
 
   .footer-section-heading {
     display: block;
@@ -3879,16 +3884,6 @@
       -ms-transition: width 0.3s ease;
       -o-transition: width 0.3s ease;
       transition: width 0.3s ease; }
-
-  .footer-logo {
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px auto;
-    padding: 5px 0; }
-
-  .footer-section-contactlinks {
-    padding: 5px 0;
-    text-align: left; }
 
   .footer-contactlinks-email,
   .footer-contactlinks-fax,
