@@ -220,6 +220,9 @@
 		ul{
 			list-style: none;
 		}
+		p {
+			line-height:1.2; 
+		}
 		> div{
 			&:first-child{
 				max-width: 1440px;
@@ -294,6 +297,11 @@
 					}
 					&:last-of-type {
 						margin-right: 0;
+						> ul {
+							&:last-of-type{
+								margin-top:10px;
+							}
+						}
 					}
 					> div {
 						padding: 5px 0;
