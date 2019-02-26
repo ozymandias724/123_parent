@@ -3840,14 +3840,17 @@
     .footer > div:first-child {
       max-width: 1440px;
       margin: 0 auto;
-      padding: 0px 40px; }
+      padding: 0px 40px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between; }
       .footer > div:first-child > div {
         position: relative;
-        display: inline-block;
         vertical-align: top;
         text-align: left;
         width: 20%;
-        margin: 20px 4% 0 0; }
+        margin: 20px 4% 0 0;
+        flex: 1 0 auto; }
         .footer > div:first-child > div:nth-of-type(2) > ul {
           column-count: 2;
           column-gap: 10px;
@@ -3891,12 +3894,17 @@
             -o-transition: width 0.3s ease;
             transition: width 0.3s ease; }
         .footer > div:first-child > div:first-of-type {
-          width: 28%; }
+          width: 28%;
+          display: flex;
+          flex-flow: row wrap; }
         .footer > div:first-child > div:last-of-type {
           margin-right: 0; }
         .footer > div:first-child > div > div {
           padding: 5px 0;
-          text-align: left; }
+          text-align: left;
+          display: flex;
+          align-items: flex-start;
+          flex-flow: column; }
           .footer > div:first-child > div > div > a,
           .footer > div:first-child > div > div > div {
             font-size: 1.3rem;

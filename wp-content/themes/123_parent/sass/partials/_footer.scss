@@ -225,13 +225,16 @@
 				max-width: 1440px;
 				margin: 0 auto;
 				padding: 0px 40px;
-				> div {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				> div { 
 					position: relative;
-					display: inline-block;
 					vertical-align: top;
 					text-align: left;
 					width: 20%;
 					margin: 20px 4% 0 0;
+					flex: 1 0 auto;
 					&:nth-of-type(2){
 						> ul {
 							column-count: 2;
@@ -278,6 +281,8 @@
 					}
 					&:first-of-type {
 						width: 28%;
+						display:flex;
+						flex-flow: row wrap;
 					}
 					&:last-of-type {
 						margin-right: 0;
@@ -285,6 +290,9 @@
 					> div {
 						padding: 5px 0;
 						text-align: left;
+						display: flex;
+						align-items: flex-start;
+						flex-flow: column;
 						> a, 
 						> div {
 							font-size: 1.3rem;
