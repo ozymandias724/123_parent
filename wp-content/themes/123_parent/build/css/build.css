@@ -3959,6 +3959,56 @@
     justify-content: center; }
     .mobilefooter ul {
       list-style: none; }
+    .mobilefooter > div h2 {
+      display: block;
+      font-size: 2.4rem;
+      color: white;
+      text-transform: capitalize;
+      position: relative;
+      margin: 20px 0;
+      padding: 5px 0;
+      font-weight: 400;
+      font-family: "Gotham", "Helvetica", sans-serif; }
+      .mobilefooter > div h2:after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        display: inline-block;
+        content: '';
+        border-bottom: 2px solid #dedddd;
+        -webkit-transition: width 0.3s ease;
+        -moz-transition: width 0.3s ease;
+        -ms-transition: width 0.3s ease;
+        -o-transition: width 0.3s ease;
+        transition: width 0.3s ease; }
+    .mobilefooter > div > div {
+      margin-bottom: 0;
+      text-align: center; }
+    .mobilefooter > div:nth-of-type(1) > a {
+      text-align: center;
+      margin: 10px auto;
+      padding: 5px 0;
+      display: inline-block; }
+      .mobilefooter > div:nth-of-type(1) > a > img {
+        height: auto;
+        max-width: 200px;
+        object-fit: cover; }
+    .mobilefooter > div:nth-of-type(1) > div {
+      display: flex;
+      align-items: center;
+      flex-flow: column; }
+      .mobilefooter > div:nth-of-type(1) > div > a {
+        font-size: 16px;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 5px; }
+      .mobilefooter > div:nth-of-type(1) > div > div {
+        font-size: 1.8rem;
+        color: white;
+        display: inline-block;
+        padding: 10px 0 20px 0; }
     .mobilefooter > div:nth-of-type(1), .mobilefooter > div:nth-of-type(4) {
       flex: 1 0 100%; }
     .mobilefooter > div:nth-of-type(2), .mobilefooter > div:nth-of-type(3) {
@@ -3966,123 +4016,28 @@
       margin: 20px;
       text-align: left;
       width: 280px; }
-    .mobilefooter > div:nth-of-type(4) img {
-      width: 280px; }
-    .mobilefooter > div:nth-of-type(4) h2 {
+    .mobilefooter > div:nth-of-type(2) > ul {
+      max-width: 400px;
+      margin: 0 auto;
+      column-count: 2;
+      text-align: left; }
+      .mobilefooter > div:nth-of-type(2) > ul > li {
+        margin-bottom: 5px; }
+        .mobilefooter > div:nth-of-type(2) > ul > li > a {
+          color: white;
+          text-transform: capitalize;
+          text-decoration: none;
+          padding: 5px 0;
+          display: inline-block;
+          font-size: 1.6rem; }
+    .mobilefooter > div:nth-of-type(4) > div > ul > li > a {
+      display: inline-block;
+      margin: 5px auto; }
+      .mobilefooter > div:nth-of-type(4) > div > ul > li > a > img {
+        width: 280px; }
+    .mobilefooter > div:nth-of-type(4) > div h2 {
       width: 280px;
       margin: 20px auto; }
-
-  .mobilefooter-section {
-    margin-bottom: 0;
-    text-align: center; }
-
-  .mobilefooter-section-pagelinks,
-  .mobilefooter-section-payment {
-    vertical-align: top;
-    margin: 20px;
-    text-align: left;
-    width: 280px; }
-
-  .mobilefooter-section-heading {
-    display: block;
-    font-size: 2.4rem;
-    color: white;
-    text-transform: capitalize;
-    position: relative;
-    margin: 20px 0;
-    padding: 5px 0;
-    font-weight: 400;
-    font-family: "Gotham", "Helvetica", sans-serif; }
-    .mobilefooter-section-heading:after {
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      display: inline-block;
-      content: '';
-      border-bottom: 2px solid #dedddd;
-      -webkit-transition: width 0.3s ease;
-      -moz-transition: width 0.3s ease;
-      -ms-transition: width 0.3s ease;
-      -o-transition: width 0.3s ease;
-      transition: width 0.3s ease; }
-
-  .mobilefooter-logo {
-    text-align: center;
-    margin: 10px auto;
-    padding: 5px 0;
-    display: inline-block; }
-
-  .mobilefooter-logo-image {
-    height: auto;
-    max-width: 200px;
-    object-fit: cover; }
-
-  .mobilefooter-contactlinks {
-    font-size: 0; }
-
-  .mobilefooter-contactlinks-email,
-  .mobilefooter-contactlinks-fax,
-  .mobilefooter-contactlinks-phone {
-    font-size: 16px;
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    padding: 5px; }
-
-  .mobilefooter-contactlinks-address {
-    font-size: 1.8rem;
-    color: white;
-    display: inline-block;
-    padding: 10px 0 20px 0; }
-
-  .mobilefooter-pagelinks {
-    max-width: 400px;
-    margin: 0 auto;
-    column-count: 2;
-    text-align: left; }
-
-  .mobilefooter-pagelinks-item {
-    margin-bottom: 5px; }
-
-  .mobilefooter-pagelinks-item-link {
-    color: white;
-    text-transform: capitalize;
-    text-decoration: none;
-    padding: 5px 0;
-    display: inline-block;
-    font-size: 1.6rem; }
-
-  .mobilefooter-webxlink {
-    display: inline-block;
-    margin: 20px auto 0 auto; }
-
-  img.mobilefooter-webxlink-logo {
-    max-width: 200px; }
-
-  .mobilefooter-copyright a, .mobilefooter-copyright p {
-    margin: 5px auto; }
-  .mobilefooter-copyright a {
-    display: inline-block; }
-
-  .mobilefooter-copyright-tclink {
-    color: white; }
-
-  .mobilefooter-badges {
-    margin: 10px auto;
-    text-align: center; }
-
-  .mobilefooter-badges-badge {
-    margin: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    height: 64px;
-    overflow: hidden;
-    width: 64px; }
-    .mobilefooter-badges-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; }
 
   footer.mobilefooter.light {
     background-color: #bcbcbc;
@@ -4123,16 +4078,7 @@
       background-image: url("../../library/img/payment_types/discover.png"); }
     div.mobilefooter-section-payment > ul > li.paypal,
     div.footer-section-payment > ul > li.paypal {
-      background-image: url("../../library/img/payment_types/pp.png"); }
-    div.mobilefooter-section-payment > ul > li.cash,
-    div.footer-section-payment > ul > li.cash {
-      background-image: url("../../library/img/payment_types/cash.png"); }
-    div.mobilefooter-section-payment > ul > li.check,
-    div.footer-section-payment > ul > li.check {
-      background-image: url("../../library/img/payment_types/check.png"); }
-    div.mobilefooter-section-payment > ul > li.hasimage,
-    div.footer-section-payment > ul > li.hasimage {
-      background-image: none; } }
+      background-image: url("../../library/img/payment_types/pp.png"); } }
 @media only screen and (min-width: 1025px) {
   .mobilefooter {
     display: none; } }
