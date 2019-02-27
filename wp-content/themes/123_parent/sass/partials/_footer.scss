@@ -277,9 +277,35 @@ $color_white_not_transparent: rgba(255,255,255,1);
 						}
 					}
 					&:nth-of-type(3) {
-						> ul {
+						> ul { 
 							display: flex;
 							flex-flow: row wrap;
+							> li {
+								height: 40px; 
+								background-repeat: no-repeat;
+								margin: 5px;
+								width: 60px;
+								background-position: 0 0;
+								display: inline-block;
+								&:nth-of-type(1){
+									background-image: url('../../library/img/payment_types/mc.png');
+								}
+								&:nth-of-type(2){
+									> img {
+										display:none;
+									}
+									background-image: url('../../library/img/payment_types/visa.png');
+								}
+								&:nth-of-type(3){
+									background-image: url('../../library/img/payment_types/amex.png');
+								}
+								&:nth-of-type(4){
+									background-image: url('../../library/img/payment_types/discover.png');
+								}
+								&:nth-of-type(5){
+									background-image: url('../../library/img/payment_types/pp.png');
+								}
+							}
 						}
 					}
 					&:nth-of-type(2),

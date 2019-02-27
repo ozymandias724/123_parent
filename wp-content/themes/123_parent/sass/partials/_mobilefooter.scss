@@ -361,6 +361,9 @@ $color_white_not_transparent: rgba(255,255,255,1);
 							background-image: url('../../library/img/payment_types/mc.png');
 						}
 						&:nth-of-type(2){
+							> img {
+								display:none;
+							}
 							background-image: url('../../library/img/payment_types/visa.png');
 						}
 						&:nth-of-type(3){
