@@ -3952,7 +3952,7 @@
   .mobilefooter {
     text-align: center;
     background-color: #424343;
-    color: white;
+    color: #fff;
     padding: 40px 0;
     display: flex;
     flex-wrap: wrap;
@@ -3962,7 +3962,7 @@
     .mobilefooter > div h2 {
       display: block;
       font-size: 2.4rem;
-      color: white;
+      color: #fff;
       text-transform: capitalize;
       position: relative;
       margin: 20px 0;
@@ -3977,11 +3977,9 @@
         display: inline-block;
         content: '';
         border-bottom: 2px solid #dedddd;
+        transition: width 0.3s ease;
         -webkit-transition: width 0.3s ease;
-        -moz-transition: width 0.3s ease;
-        -ms-transition: width 0.3s ease;
-        -o-transition: width 0.3s ease;
-        transition: width 0.3s ease; }
+        -o-transition: width 0.3s ease; }
     .mobilefooter > div > div {
       margin-bottom: 0;
       text-align: center; }
@@ -4001,12 +3999,20 @@
       .mobilefooter > div:nth-of-type(1) > div > a {
         font-size: 16px;
         display: inline-block;
-        color: white;
+        color: #fff;
         text-decoration: none;
-        padding: 5px; }
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0);
+        transition: color 0.3s, background-color 0.3s;
+        -webkit-transition: color 0.3s, background-color 0.3s;
+        -o-transition: color 0.3s, background-color 0.3s; }
+        .mobilefooter > div:nth-of-type(1) > div > a:hover, .mobilefooter > div:nth-of-type(1) > div > a:active, .mobilefooter > div:nth-of-type(1) > div > a:focus {
+          color: #000;
+          background-color: white; }
       .mobilefooter > div:nth-of-type(1) > div > div {
         font-size: 1.8rem;
-        color: white;
+        color: #fff;
         display: inline-block;
         padding: 10px 0 20px 0; }
     .mobilefooter > div:nth-of-type(1), .mobilefooter > div:nth-of-type(4) {
@@ -4019,66 +4025,71 @@
     .mobilefooter > div:nth-of-type(2) > ul {
       max-width: 400px;
       margin: 0 auto;
-      column-count: 2;
-      text-align: left; }
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap; }
       .mobilefooter > div:nth-of-type(2) > ul > li {
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        flex: 0 1 50%; }
         .mobilefooter > div:nth-of-type(2) > ul > li > a {
-          color: white;
+          color: #fff;
           text-transform: capitalize;
           text-decoration: none;
-          padding: 5px 0;
+          padding: 5px 10px;
+          border-radius: 20px;
           display: inline-block;
-          font-size: 1.6rem; }
-    .mobilefooter > div:nth-of-type(4) > div > ul > li > a {
-      display: inline-block;
-      margin: 5px auto; }
-      .mobilefooter > div:nth-of-type(4) > div > ul > li > a > img {
-        width: 280px; }
+          font-size: 1.6rem;
+          background-color: rgba(255, 255, 255, 0);
+          transition: color 0.3s ,background-color 0.3s;
+          -webkit-transition: color 0.3s, background-color 0.3s;
+          -o-transition: color 0.3s, background-color 0.3s;
+          display: inline-flex;
+          width: 100%; }
+          .mobilefooter > div:nth-of-type(2) > ul > li > a:hover, .mobilefooter > div:nth-of-type(2) > ul > li > a:active, .mobilefooter > div:nth-of-type(2) > ul > li > a:focus {
+            color: #000;
+            background-color: white; }
+    .mobilefooter > div:nth-of-type(3) > ul {
+      display: flex;
+      flex-flow: row wrap; }
+      .mobilefooter > div:nth-of-type(3) > ul > li {
+        height: 40px;
+        background-repeat: no-repeat;
+        margin: 5px;
+        width: 60px;
+        background-position: 0 0;
+        display: inline-block; }
+        .mobilefooter > div:nth-of-type(3) > ul > li:nth-of-type(1) {
+          background-image: url("../../library/img/payment_types/mc.png"); }
+        .mobilefooter > div:nth-of-type(3) > ul > li:nth-of-type(2) {
+          background-image: url("../../library/img/payment_types/visa.png"); }
+        .mobilefooter > div:nth-of-type(3) > ul > li:nth-of-type(3) {
+          background-image: url("../../library/img/payment_types/amex.png"); }
+        .mobilefooter > div:nth-of-type(3) > ul > li:nth-of-type(4) {
+          background-image: url("../../library/img/payment_types/discover.png"); }
+        .mobilefooter > div:nth-of-type(3) > ul > li:nth-of-type(5) {
+          background-image: url("../../library/img/payment_types/pp.png"); }
+    .mobilefooter > div:nth-of-type(4) > div > ul {
+      display: flex;
+      justify-content: center;
+      flex-flow: wrap; }
+      .mobilefooter > div:nth-of-type(4) > div > ul > li > a {
+        display: inline-block;
+        margin: 5px auto; }
+        .mobilefooter > div:nth-of-type(4) > div > ul > li > a > img {
+          width: 280px; }
     .mobilefooter > div:nth-of-type(4) > div h2 {
       width: 280px;
       margin: 20px auto; }
 
   footer.mobilefooter.light {
     background-color: #bcbcbc;
-    color: black; }
-    footer.mobilefooter.light .mobilefooter-contactlinks-phone,
-    footer.mobilefooter.light .mobilefooter-contactlinks-fax,
-    footer.mobilefooter.light .mobilefooter-contactlinks-address,
-    footer.mobilefooter.light .mobilefooter-pagelinks-item-link,
-    footer.mobilefooter.light .mobilefooter-copyright-tclink {
-      color: black; }
+    color: #000; }
+    footer.mobilefooter.light > div > div:nth-of-type(1) > a {
+      color: #000; }
 
-  footer.mobilefooter.invertlogo .mobilefooter-logo-image {
+  footer.mobilefooter.invertlogo > div > a > img {
     -webkit-filter: invert(100%);
-    -moz-filter: invert(100%);
-    -ms-filter: invert(100%);
-    -o-filter: invert(100%);
-    filter: invert(100%); }
-
-  div.mobilefooter-section-payment > ul > li,
-  div.footer-section-payment > ul > li {
-    height: 40px;
-    background-repeat: no-repeat;
-    margin: 5px;
-    width: 60px;
-    background-position: 0 0;
-    display: inline-block; }
-    div.mobilefooter-section-payment > ul > li.mastercard,
-    div.footer-section-payment > ul > li.mastercard {
-      background-image: url("../../library/img/payment_types/mc.png"); }
-    div.mobilefooter-section-payment > ul > li.visa,
-    div.footer-section-payment > ul > li.visa {
-      background-image: url("../../library/img/payment_types/visa.png"); }
-    div.mobilefooter-section-payment > ul > li.amex,
-    div.footer-section-payment > ul > li.amex {
-      background-image: url("../../library/img/payment_types/amex.png"); }
-    div.mobilefooter-section-payment > ul > li.discover,
-    div.footer-section-payment > ul > li.discover {
-      background-image: url("../../library/img/payment_types/discover.png"); }
-    div.mobilefooter-section-payment > ul > li.paypal,
-    div.footer-section-payment > ul > li.paypal {
-      background-image: url("../../library/img/payment_types/pp.png"); } }
+    filter: invert(100%); } }
 @media only screen and (min-width: 1025px) {
   .mobilefooter {
     display: none; } }
