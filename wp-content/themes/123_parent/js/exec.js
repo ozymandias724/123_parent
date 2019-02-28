@@ -10,7 +10,7 @@
 
 		Theme.MobileNav._init();
 
-		Theme.DesktopNav._init();
+		//Theme.DesktopNav._init();
 		
 		Theme.HomeTestimonialsSlider._init();
 		

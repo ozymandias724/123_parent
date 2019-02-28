@@ -4,12 +4,38 @@ var Theme = {};
 	$(document).ready(function(){
 
 		Theme.Gustavo = {
+			tint : $(`.header-tint`),
+			estimate : $(`
+				.estimate-toggle, 
+				.topbanner-quickquote, 
+				.site__button-quote
+			`),
+			estimate_popup : $(`.estimate`),
+			estimate_close : $(`
+				.estimate.popupcontainer, .estimate-content-times.popupcontainer-times
+			`),
+
 			_init : function(){
-				$().on('click', Theme.Gustavo._clickHandler);
+				$(estimate).on(`click`, Theme.Gustavo._clickHandler); 
+
+				console.log(`Theme.Gustavo._init() is working`);
+
+				$(estimate_close).on(`click`,Theme.Gustavo._close_click_handler);
 			},
-			_clickHandler : function(event){
-				
+			_click_handler : function(event){
+				event.preventDefault();
+				Theme.Gustavo.estimate_popup.fadeIn(250); 
 			},
+			_close_popup : function(event){
+				if( $(event.target).hasClass(`estimate`) || 
+					$(event.target).hasClass(`estimate-content-times`) || 
+					$(event.target).hasClass(`topbanner-quickquote`) ||
+					$(event.target).hasClass(`site__button-quote`) 
+				){ 
+					event.preventDefault();
+					Theme.Gustavo.estimate_popup.fadeOut(250);	
+				} 
+			}
 		}
         Theme.Gustavo._init();
         
