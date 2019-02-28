@@ -247,6 +247,7 @@ class NavHandler
                         %s
                     </span>
                     <span>
+                        <p>Call us today:</p>
                         <a href="%s">%s</a>
                     </span>
                 </div>

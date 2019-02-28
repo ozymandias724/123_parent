@@ -38,7 +38,7 @@ else if( $use_custom_header == '1' ){
         echo $navHandler->header_four;
     }
     
-}
+} 
 
 die();
  ?>

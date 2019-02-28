@@ -5,6 +5,7 @@ $white : white;
 $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
+$gray: #909090;
 $blue_darker: #257d87;
 $nav_maxwidth : 1024px;
 $banner_height : 52px;
@@ -416,6 +417,93 @@ $bp__lg : 1280px;
                         &:active,
                         &:focus{
                             opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    header#opt_header_one{
+        padding:0px;
+        > div {
+            &:nth-of-type(1){
+                background-color: $black;
+                color: $white;
+                display: flex;
+                flex-flow: row nowrap; 
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 10%;
+
+                > a {
+                    flex:0 1 50%;
+                }
+                > span {
+                    &:nth-of-type(1){
+                        font-size:16px;
+                        flex: 0 1 22%;
+                        margin-right: 5%;
+                    }
+                    &:nth-of-type(2){ 
+                        flex: 0 1 15%;
+                        text-align: right;
+                        > p {
+                            font-size:14px;
+                            text-transform:uppercase;
+                            font-weight:500;
+                            color: $gray;
+                            text-align: right;
+                        }
+                        > a {
+                            font-size: 19px;
+                            font-weight:500;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                padding: 0 10%;
+                box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+                > nav {
+                    display:flex;
+                    height:58px;
+                    align-items:center;
+                    justify-content: space-between;
+                    > ul {
+                        > li {
+                            flex: 0 1 auto;
+                            margin-right:0px;
+                            > a {
+                                text-transform: uppercase;
+                                font-weight:500;
+                                color: $black;
+                                padding: 22px 5px;
+                            }
+                        }
+                    }
+                }
+                > ul {
+                    display: flex;
+                    list-style: none;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items:center;
+                    > li {
+                        flex: 1 0 auto;
+                        list-style:none;
+                        position:relative;
+                        padding: 22px 10%;
+                        &:last-of-type{
+                            padding-right:0;
+                        }                                                    
+                        > a {
+                            > i {
+                                font-size:15px;
+                            }
                         }
                     }
                 }
