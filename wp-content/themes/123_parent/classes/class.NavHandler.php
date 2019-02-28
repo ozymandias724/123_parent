@@ -3,9 +3,9 @@
 class NavHandler
 {
 
+    
+    
     public $header_one = '';
-    
-    
     public $header_two = '';
     public $header_three = '';
     public $header_four = '';
@@ -244,9 +244,38 @@ class NavHandler
         );
 
 
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_one">
+                <div>
+                    <a href="%s"><img src="%s" alt="%s"></a>
+                    <span>
+                        %s
+                    </span>
+                    <span>
+                        <a href="%s">%s</a>
+                    </span>
+                </div>
+                <div>
+                    <nav>
+                        %s
+                    </nav>
+                    %s
+                </div>
+            </header>
+        ';
         $this->header_one = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,site_url()
+            ,get_logo()
+            ,get_bloginfo('sitename')
+            ,$addr
+            ,$num_href
+            ,$num_display
+            ,NavUtil::get_nav_links()
+            ,$content_social_icons
         );
         
         

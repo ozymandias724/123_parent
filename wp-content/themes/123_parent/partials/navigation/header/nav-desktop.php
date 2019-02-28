@@ -25,8 +25,11 @@ if (  $use_custom_header != '1' ) {
 // use custom header
 else if( $use_custom_header == '1' ){
 
-    if( $selected_header === 'one' || $selected_header === 'two' ){
-        echo $navHandler->header_two;;
+    if( $selected_header === 'one' ){
+        echo $navHandler->header_one;
+    }
+    else if( $selected_header === 'two' ){
+        echo $navHandler->header_two;
     }
     else if( $selected_header === 'three' ){
         echo $navHandler->header_three;
@@ -34,6 +37,8 @@ else if( $use_custom_header == '1' ){
     else if( $selected_header === 'four' ){
         echo $navHandler->header_four;
     }
+    
 }
 
+die();
  ?>
