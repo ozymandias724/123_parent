@@ -218,9 +218,6 @@ class NavHandler
                 <div>
                     %s
                     <span>
-                        <a href="%s"><img src="%s" alt="%s"></a>
-                    </span>
-                    <span>
                         <a href="%s">%s</a>
                     </span>
                 </div>
@@ -235,9 +232,7 @@ class NavHandler
             ,$topbar_class
             ,$fadenav
             ,$content_social_icons
-            ,site_url()
-            ,get_logo()
-            ,get_bloginfo('sitename')
+            ,$content_logo
             ,$num_href
             ,$num_display
             ,NavUtil::get_nav_links()
@@ -247,7 +242,7 @@ class NavHandler
         $format_header = '
             <header class="%s %s %s header" id="opt_header_one">
                 <div>
-                    <a href="%s"><img src="%s" alt="%s"></a>
+                    %s
                     <span>
                         %s
                     </span>
@@ -268,9 +263,7 @@ class NavHandler
             ,$invertlogo
             ,$topbar_class
             ,$fadenav
-            ,site_url()
-            ,get_logo()
-            ,get_bloginfo('sitename')
+            ,$content_logo
             ,$addr
             ,$num_href
             ,$num_display
