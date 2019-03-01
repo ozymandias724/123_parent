@@ -3828,11 +3828,12 @@
       justify-content: space-between;
       padding: 0 10%; }
       header#opt_header_one > div:nth-of-type(1) > a {
-        flex: 0 1 50%; }
+        flex: 0 1 70%; }
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(1) {
         font-size: 16px;
-        flex: 0 1 26%;
+        flex: 0 1 15%;
         display: flex;
+        justify-content: flex-end;
         align-items: center; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(1):before {
           font-family: FontAwesome;
@@ -3841,23 +3842,23 @@
           padding: 6px 11px;
           margin-right: 10px;
           font-weight: 700;
-          color: #909090;
+          color: #32A2AE;
           border-radius: 100%;
-          border: 2px solid #909090; }
+          border: 3px solid #32A2AE; }
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) {
-        flex: 0 1 21%;
-        text-align: right;
+        flex: 0 1 15%;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        justify-content: flex-end; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2):before {
           font-family: FontAwesome;
           content: "\f095";
           display: block;
           padding: 6px 10px;
           font-weight: 700;
-          color: #909090;
+          color: #32A2AE;
           border-radius: 100%;
-          border: 2px solid #909090;
+          border: 3px solid #32A2AE;
           margin-left: 30px;
           margin-right: 10px; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > p {
@@ -3876,9 +3877,11 @@
           header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:hover, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:active, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:focus {
             opacity: 0.8; }
           header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a > span {
-            color: #909090;
+            color: #32A2AE;
             font-size: 14px;
-            text-transform: uppercase; }
+            text-transform: uppercase;
+            display: block;
+            text-align: left; }
     header#opt_header_one > div:nth-of-type(2) {
       background-color: white;
       display: flex;
@@ -3898,13 +3901,13 @@
             font-weight: 500;
             display: block;
             color: black;
-            padding: 22px 5px;
+            padding: 15px 10px;
             -webkit-transition: color 0.3s, background-color 0.3s;
             -o-transition: color 0.3s, background-color 0.3s;
             transition: color 0.3s, background-color 0.3s; }
             header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:hover, header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:active, header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:focus {
               color: white;
-              background-color: #909090; }
+              background-color: #32A2AE; }
       header#opt_header_one > div:nth-of-type(2) > ul {
         display: flex;
         list-style: none;
@@ -3921,13 +3924,11 @@
           header#opt_header_one > div:nth-of-type(2) > ul > li > a {
             border-radius: 100%;
             padding: 7px 10px;
-            background-color: rgba(255, 255, 255, 0);
-            -webkit-transition: color 0.3s, background-color 0.3s;
-            -o-transition: color 0.3s, background-color 0.3s;
-            transition: color 0.3s, background-color 0.3s; }
+            -webkit-transition: color 0.3s;
+            -o-transition: color 0.3s;
+            transition: color 0.3s; }
             header#opt_header_one > div:nth-of-type(2) > ul > li > a:hover, header#opt_header_one > div:nth-of-type(2) > ul > li > a:active, header#opt_header_one > div:nth-of-type(2) > ul > li > a:focus {
-              color: white;
-              background-color: #909090; }
+              color: #32A2AE; }
             header#opt_header_one > div:nth-of-type(2) > ul > li > a > i {
               font-size: 15px; } }
 @media only screen {
