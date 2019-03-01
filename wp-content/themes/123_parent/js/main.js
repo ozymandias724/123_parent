@@ -17,12 +17,24 @@ var Theme = {};
 
 				$(Theme.Gustavo.estimate_close).on("click",Theme.Gustavo._close_popup);
 
-				window.onscroll = function(){
-					Theme.Gustavo._header_layout_4_function(); 
-				}
-
 				if($(Theme.Gustavo.header_4).length){
+
+					window.onscroll = function(){
+						Theme.Gustavo._header_layout_4_function(); 
+					}
+
 					Theme.Gustavo.header_4_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+
+					if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
+						Theme.Gustavo.header_4_div_two.css({
+							"position" : "fixed" 
+						});
+					}else{
+						Theme.Gustavo.header_4_div_two.css({
+							"position" : "relative" 
+						});
+					}
+					
 				}
 
 			},
