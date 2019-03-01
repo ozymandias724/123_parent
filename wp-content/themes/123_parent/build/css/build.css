@@ -3487,7 +3487,7 @@
     display: none; }
 
   header.header {
-    position: fixed !important;
+    position: fixed;
     top: 0;
     display: block;
     left: 0;
@@ -3819,7 +3819,8 @@
 
   header#opt_header_one {
     padding: 0px;
-    display: block; }
+    display: block;
+    position: relative; }
     header#opt_header_one > div:nth-of-type(1) {
       background-color: black;
       color: white;
@@ -3843,9 +3844,9 @@
           padding: 6px 11px;
           margin-right: 10px;
           font-weight: 700;
-          color: #32A2AE;
+          color: #1a69a0;
           border-radius: 100%;
-          border: 3px solid #32A2AE; }
+          border: 3px solid #1a69a0; }
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) {
         flex: 0 1 19%;
         display: flex;
@@ -3857,9 +3858,9 @@
           display: block;
           padding: 6px 10px;
           font-weight: 700;
-          color: #32A2AE;
+          color: #1a69a0;
           border-radius: 100%;
-          border: 3px solid #32A2AE;
+          border: 3px solid #1a69a0;
           margin-left: 30px;
           margin-right: 10px; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > p {
@@ -3878,7 +3879,7 @@
           header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:hover, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:active, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:focus {
             opacity: 0.8; }
           header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a > span {
-            color: #32A2AE;
+            color: #1a69a0;
             font-size: 14px;
             text-transform: uppercase;
             display: block;
@@ -3888,6 +3889,9 @@
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
+      position: relative;
+      width: 100%;
+      top: 0;
       padding: 0 15%;
       box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5); }
       header#opt_header_one > div:nth-of-type(2) > nav {
@@ -3908,7 +3912,7 @@
             transition: color 0.3s, background-color 0.3s; }
             header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:hover, header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:active, header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:focus {
               color: white;
-              background-color: #32A2AE; }
+              background-color: #1a69a0; }
       header#opt_header_one > div:nth-of-type(2) > ul {
         display: flex;
         list-style: none;
@@ -3929,7 +3933,7 @@
             -o-transition: color 0.3s;
             transition: color 0.3s; }
             header#opt_header_one > div:nth-of-type(2) > ul > li > a:hover, header#opt_header_one > div:nth-of-type(2) > ul > li > a:active, header#opt_header_one > div:nth-of-type(2) > ul > li > a:focus {
-              color: #32A2AE; }
+              color: #1a69a0; }
             header#opt_header_one > div:nth-of-type(2) > ul > li > a > i {
               font-size: 15px; }
           header#opt_header_one > div:nth-of-type(2) > ul > li:last-of-type > a {

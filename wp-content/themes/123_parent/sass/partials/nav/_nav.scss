@@ -1,15 +1,18 @@
 $primary : #df1d1d;
 $black : black;
 $second_black: #333333;
-$white : white;
+$white : white; 
 $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
+$blue_infinity_carpet: #1a69a0;
 $gray: #909090;
 $blue_darker: #257d87;
 $nav_maxwidth : 1024px;
-$banner_height : 52px;
+$banner_height : 52px; 
 $bp__lg : 1280px;
+
+
 @media only screen and (min-width: $bp__lg) {
 
     header.mobileheader {
@@ -17,7 +20,7 @@ $bp__lg : 1280px;
     }
     // basics across all headers
     header.header {
-        position: fixed !important; // need to remove something from theme 3 that is effecting this
+        position:fixed; // need to remove something from theme 3 that is effecting this
         top: 0;
         display: block;
         left: 0;
@@ -431,6 +434,7 @@ $bp__lg : 1280px;
         // left: 50%;
         // transform: translateX(-50%);
         display: block;
+        position:relative;
         > div {
             &:nth-of-type(1){
                 background-color: $black;
@@ -460,9 +464,9 @@ $bp__lg : 1280px;
                             padding: 6px 11px;
                             margin-right: 10px;
                             font-weight: 700;
-                            color: $blue;
+                            color: $blue_infinity_carpet;
                             border-radius: 100%; 
-                            border: 3px solid $blue;
+                            border: 3px solid $blue_infinity_carpet;
                         }
                     }
                     &:nth-of-type(2){ 
@@ -477,16 +481,16 @@ $bp__lg : 1280px;
                             display: block;
                             padding: 6px 10px;
                             font-weight: 700;
-                            color: $blue;
+                            color: $blue_infinity_carpet;
                             border-radius: 100%;
-                            border: 3px solid $blue;
+                            border: 3px solid $blue_infinity_carpet;
                             margin-left: 30px;
                             margin-right:10px;
                         }
                         > p {
-                            font-size:14px;
-                            text-transform:uppercase;
-                            font-weight:500;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-weight: 500;
                             color: $gray;
                             text-align: right;
                         }
@@ -503,7 +507,7 @@ $bp__lg : 1280px;
                                 opacity:0.8;
                             }
                             > span {
-                                color:$blue; 
+                                color: $blue_infinity_carpet; 
                                 font-size:14px;
                                 text-transform:uppercase;
                                 display: block;
@@ -519,6 +523,9 @@ $bp__lg : 1280px;
                 flex-wrap: nowrap;
                 justify-content: space-between;
                 // padding: 0 2%;
+                position:relative;
+                width:100%;
+                top:0;
                 padding: 0 15%;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
                 > nav {
@@ -542,7 +549,7 @@ $bp__lg : 1280px;
                                 &:active,
                                 &:focus {
                                     color: $white;
-                                    background-color: $blue;
+                                    background-color: $blue_infinity_carpet;
                                 }
                             }
                         }
@@ -571,7 +578,7 @@ $bp__lg : 1280px;
                             &:hover,
                             &:active,
                             &:focus {
-                                color: $blue;
+                                color: $blue_infinity_carpet;
                             }
                             > i {
                                 font-size:15px;

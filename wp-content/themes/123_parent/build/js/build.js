@@ -2105,13 +2105,21 @@ var Theme = {};
 			estimate : $(".estimate-toggle, .topbanner-quickquote, .site_button-quote"),
 			estimate_popup : $(".estimate"),
 			estimate_close : $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
+			header_4 : $('header.header#opt_header_one'),
+			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
+			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
+			header_4_div_two_offset_top : $("header#opt_header_one > div:nth-of-type(2)").offset().top,
 
 			_init : function(){
-				$(".estimate-toggle, .topbanner-quickquote, .site_button-quote").on("click", Theme.Gustavo._clickHandler); 
+				$(Theme.Gustavo.estimate).on("click", Theme.Gustavo._click_handler); 
 
-				console.log("Theme.Gustavo._init() is working");
+				$(Theme.Gustavo.estimate_close).on("click",Theme.Gustavo._close_popup);
 
-				$(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times").on("click",Theme.Gustavo._close_popup);
+				window.onscroll = function(){
+					Theme.Gustavo._header_layout_4_function();
+				}
+				console.log(Theme.Gustavo.header_4_div_two_offset_top);
+
 			},
 			_click_handler : function(event){
 				event.preventDefault();
@@ -2126,7 +2134,20 @@ var Theme = {};
 					event.preventDefault();
 					Theme.Gustavo.estimate_popup.fadeOut(250);	
 				} 
-			}
+			},
+			_header_layout_4_function : function(){
+
+				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top - 10){
+					Theme.Gustavo.header_4_div_two.css({
+						"position" : "fixed" 
+					});
+				}else{
+					Theme.Gustavo.header_4_div_two.css({
+						"position" : "relative" 
+					});
+				}
+				
+			},
 		}
         Theme.Gustavo._init();  
         
