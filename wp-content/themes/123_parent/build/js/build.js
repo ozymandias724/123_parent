@@ -2108,7 +2108,6 @@ var Theme = {};
 			header_4 : $('header.header#opt_header_one'),
 			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
 			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
-			header_4_div_two_offset_top : $("header#opt_header_one > div:nth-of-type(2)").offset().top,
 
 			_init : function(){
 				$(Theme.Gustavo.estimate).on("click", Theme.Gustavo._click_handler); 
@@ -2116,7 +2115,7 @@ var Theme = {};
 				$(Theme.Gustavo.estimate_close).on("click",Theme.Gustavo._close_popup);
 
 				window.onscroll = function(){
-					Theme.Gustavo._header_layout_4_function();
+					Theme.Gustavo._header_layout_4_function(); 
 				}
 
 			},
@@ -2136,7 +2135,7 @@ var Theme = {};
 			},
 			_header_layout_4_function : function(){
 
-				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top - 10){
+				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two.offset().top - 10){
 					Theme.Gustavo.header_4_div_two.css({
 						"position" : "fixed" 
 					});
