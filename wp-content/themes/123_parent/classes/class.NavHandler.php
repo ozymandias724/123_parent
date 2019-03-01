@@ -244,11 +244,10 @@ class NavHandler
                 <div>
                     %s
                     <span>
-                        %s
+                        %s 
                     </span>
                     <span>
-                        <p>Call us today:</p>
-                        <a href="%s">%s</a>
+                        <a href="%s"><span>Call us today:</span> %s</a>
                     </span>
                 </div>
                 <div>

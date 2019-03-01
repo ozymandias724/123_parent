@@ -3831,11 +3831,35 @@
         flex: 0 1 50%; }
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(1) {
         font-size: 16px;
-        flex: 0 1 22%;
-        margin-right: 5%; }
+        flex: 0 1 26%;
+        display: flex;
+        align-items: center; }
+        header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(1):before {
+          font-family: FontAwesome;
+          content: "\f041";
+          display: block;
+          padding: 6px 11px;
+          margin-right: 10px;
+          font-weight: 700;
+          color: #909090;
+          border-radius: 100%;
+          border: 2px solid #909090; }
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) {
-        flex: 0 1 15%;
-        text-align: right; }
+        flex: 0 1 21%;
+        text-align: right;
+        display: flex;
+        align-items: center; }
+        header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2):before {
+          font-family: FontAwesome;
+          content: "\f095";
+          display: block;
+          padding: 6px 10px;
+          font-weight: 700;
+          color: #909090;
+          border-radius: 100%;
+          border: 2px solid #909090;
+          margin-left: 30px;
+          margin-right: 10px; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > p {
           font-size: 14px;
           text-transform: uppercase;
@@ -3845,7 +3869,12 @@
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a {
           font-size: 19px;
           font-weight: 500; }
+          header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a > span {
+            color: #909090;
+            font-size: 14px;
+            text-transform: uppercase; }
     header#opt_header_one > div:nth-of-type(2) {
+      background-color: white;
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
@@ -3863,7 +3892,13 @@
             text-transform: uppercase;
             font-weight: 500;
             color: black;
-            padding: 22px 5px; }
+            padding: 22px 5px;
+            -webkit-transition: color 0.3s, background-color 0.3s;
+            -o-transition: color 0.3s, background-color 0.3s;
+            transition: color 0.3s, background-color 0.3s; }
+            header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:hover, header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:active, header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a:focus {
+              color: white;
+              background-color: #909090; }
       header#opt_header_one > div:nth-of-type(2) > ul {
         display: flex;
         list-style: none;
