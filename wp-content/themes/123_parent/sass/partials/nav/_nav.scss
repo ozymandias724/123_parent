@@ -484,6 +484,15 @@ $bp__lg : 1280px;
                         > a {
                             font-size: 19px;
                             font-weight:500;
+                            -webkit-transition: opacity 0.3s;
+                            -o-transition: opacity 0.3s;
+                            transition: opacity 0.3s;
+                            opacity:1;
+                            &:hover,
+                            &:active,
+                            &:focus{
+                                opacity:0.8;
+                            }
                             > span {
                                 color:$gray; 
                                 font-size:14px;
@@ -502,16 +511,16 @@ $bp__lg : 1280px;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
                 > nav {
                     display:flex;
-                    height:58px;
                     align-items:center;
                     justify-content: space-between;
                     > ul {
-                        > li {
+                        > li { 
                             flex: 0 1 auto;
                             margin-right:0px;
                             > a {
                                 text-transform: uppercase;
                                 font-weight:500;
+                                display:block;
                                 color: $black;
                                 padding: 22px 5px;
                                 -webkit-transition: color 0.3s, background-color 0.3s;
@@ -537,11 +546,23 @@ $bp__lg : 1280px;
                         flex: 1 0 auto;
                         list-style:none;
                         position:relative;
-                        padding: 22px 10%;
+                        padding:2px;
                         &:last-of-type{
                             padding-right:0;
                         }                                                    
                         > a {
+                            border-radius:100%;
+                            padding: 7px 10px;
+                            background-color: rgba(255,255,255,0);
+                            -webkit-transition: color 0.3s, background-color 0.3s;
+                            -o-transition: color 0.3s, background-color 0.3s;
+                            transition: color 0.3s, background-color 0.3s;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: $white;
+                                background-color: $gray;
+                            }
                             > i {
                                 font-size:15px;
                             }

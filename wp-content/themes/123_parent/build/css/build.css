@@ -3868,7 +3868,13 @@
           text-align: right; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a {
           font-size: 19px;
-          font-weight: 500; }
+          font-weight: 500;
+          -webkit-transition: opacity 0.3s;
+          -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+          opacity: 1; }
+          header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:hover, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:active, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:focus {
+            opacity: 0.8; }
           header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a > span {
             color: #909090;
             font-size: 14px;
@@ -3882,7 +3888,6 @@
       box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5); }
       header#opt_header_one > div:nth-of-type(2) > nav {
         display: flex;
-        height: 58px;
         align-items: center;
         justify-content: space-between; }
         header#opt_header_one > div:nth-of-type(2) > nav > ul > li {
@@ -3891,6 +3896,7 @@
           header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a {
             text-transform: uppercase;
             font-weight: 500;
+            display: block;
             color: black;
             padding: 22px 5px;
             -webkit-transition: color 0.3s, background-color 0.3s;
@@ -3909,11 +3915,21 @@
           flex: 1 0 auto;
           list-style: none;
           position: relative;
-          padding: 22px 10%; }
+          padding: 2px; }
           header#opt_header_one > div:nth-of-type(2) > ul > li:last-of-type {
             padding-right: 0; }
-          header#opt_header_one > div:nth-of-type(2) > ul > li > a > i {
-            font-size: 15px; } }
+          header#opt_header_one > div:nth-of-type(2) > ul > li > a {
+            border-radius: 100%;
+            padding: 7px 10px;
+            background-color: rgba(255, 255, 255, 0);
+            -webkit-transition: color 0.3s, background-color 0.3s;
+            -o-transition: color 0.3s, background-color 0.3s;
+            transition: color 0.3s, background-color 0.3s; }
+            header#opt_header_one > div:nth-of-type(2) > ul > li > a:hover, header#opt_header_one > div:nth-of-type(2) > ul > li > a:active, header#opt_header_one > div:nth-of-type(2) > ul > li > a:focus {
+              color: white;
+              background-color: #909090; }
+            header#opt_header_one > div:nth-of-type(2) > ul > li > a > i {
+              font-size: 15px; } }
 @media only screen {
   .footer {
     display: none; }
