@@ -2118,6 +2118,10 @@ var Theme = {};
 					Theme.Gustavo._header_layout_4_function(); 
 				}
 
+				if($(Theme.Gustavo.header_4).length){
+					Theme.Gustavo.header_4_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+				}
+
 			},
 			_click_handler : function(event){
 				event.preventDefault();
@@ -2130,12 +2134,12 @@ var Theme = {};
 					$(event.target).hasClass("site__button-quote") 
 				){ 
 					event.preventDefault();
-					Theme.Gustavo.estimate_popup.fadeOut(250);	
+					Theme.Gustavo.estimate_popup.fadeOut(250);	 
 				} 
 			},
 			_header_layout_4_function : function(){
-
-				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two.offset().top - 10){
+				
+				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
 					Theme.Gustavo.header_4_div_two.css({
 						"position" : "fixed" 
 					});
