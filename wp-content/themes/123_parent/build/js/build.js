@@ -2118,7 +2118,6 @@ var Theme = {};
 				window.onscroll = function(){
 					Theme.Gustavo._header_layout_4_function();
 				}
-				console.log(Theme.Gustavo.header_4_div_two_offset_top);
 
 			},
 			_click_handler : function(event){
