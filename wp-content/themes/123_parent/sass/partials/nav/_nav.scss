@@ -440,23 +440,19 @@ $bp__lg : 1280px;
                 background-color: $black;
                 color: $white;
                 display: flex;
-                flex-flow: row nowrap; 
+                flex-flow: row nowrap;
                 align-items: center;
                 justify-content: space-between;
-                // padding: 0 2%;
                 padding: 0 15%;
-
-                > a {
-                    flex: 0 1 70%;
-                }
+                // padding: 0 2%;
                 > span {
                     &:nth-of-type(1){
                         font-size: 16px;
-                        // flex: 0 1 23%;
-                        flex: 0 1 21%;
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
+                        margin-left: auto;
+                        width: 225px;
                         &:before{
                             font-family: FontAwesome;
                             content: "\f041";
@@ -470,8 +466,6 @@ $bp__lg : 1280px;
                         }
                     }
                     &:nth-of-type(2){ 
-                        // flex: 0 1 25%;
-                        flex: 0 1 19%;
                         display: flex;
                         align-items: center;
                         justify-content: flex-end;
@@ -521,7 +515,7 @@ $bp__lg : 1280px;
                 background-color: $white;
                 display: flex;
                 flex-wrap: nowrap;
-                justify-content: space-between;
+                justify-content: space-between; 
                 // padding: 0 2%;
                 position:relative;
                 width:100%;
