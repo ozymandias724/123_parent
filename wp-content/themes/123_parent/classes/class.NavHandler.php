@@ -217,6 +217,7 @@ class NavHandler
             <header class="%s %s %s header" id="opt_header_four">
                 <div>
                     %s
+                    %s
                     <span>
                         <a href="%s">%s</a>
                     </span>
@@ -243,9 +244,7 @@ class NavHandler
             <header class="%s %s %s header" id="opt_header_one">
                 <div>
                     %s
-                    <span>
-                        %s
-                    </span>
+                    %s
                     <span>
                         <a href="%s">%s</a>
                     </span>
