@@ -1,209 +1,432 @@
+// @media only screen {
+// 	// bg
+// 	.mobilefooter{
+// 		text-align: center;
+// 		background-color: $footer-grey;
+// 		color: white;
+// 		ul{
+// 			list-style: none;
+// 		}
+// 		padding: 40px 0;
+// 	}
+// 	// grid item wrappers
+// 	.mobilefooter-section {
+// 		max-width: 280px;
+// 		margin: 20px auto;
+// 		margin-bottom: 0;
+// 		text-align: center;
+// 		display: block;
+// 	}
+// 	// specific sections
+// 	.mobilefooter-section-pagelinks,
+// 	.mobilefooter-section-payment {
+// 		display: inline-block;
+// 		vertical-align: top;
+// 		margin: 20px;
+// 		text-align: left;
+// 		width: 280px;
+// 	}
+// 	// 
+// 	.mobilefooter-section-heading {
+// 		display: block;
+// 		font-size: 2.4rem;
+// 		color: white;
+// 		text-transform: capitalize;
+// 		position: relative;
+// 		margin: 20px 0;
+// 		padding: 5px 0;
+// 		font-weight: 400;
+// 		font-family: $body;
+// 		&:after {
+// 			position: absolute;
+// 			bottom: -2px;
+// 			left: 0;
+// 			width: 100%;
+// 			display: inline-block;
+// 			content: '';
+// 			border-bottom: 2px solid $light-grey;
+// 			@include transition(width 0.3s ease);
+// 		}
+// 	}
+// 	// Logo
+// 	.mobilefooter-logo{
+// 		text-align: center;
+// 		margin: 10px auto;
+// 		padding: 5px 0;
+// 		display: inline-block;
+// 	}
+// 	.mobilefooter-logo-image{
+// 		height: auto;
+// 		max-width: 200px;
+// 		object-fit: cover;
+// 	}
+// 	// Site Contact Info
+// 	.mobilefooter-contactlinks{
+// 		font-size: 0;
+// 	}
+// 	.mobilefooter-contactlinks-email,
+// 	.mobilefooter-contactlinks-fax,
+// 	.mobilefooter-contactlinks-phone{
+// 		font-size: 16px;
+// 		display: inline-block;
+// 		color: white;
+// 		text-decoration: none;
+// 		padding: 5px;
+// 	}
+// 	.mobilefooter-contactlinks-address{
+// 		font-size: 1.8rem;
+// 		color: white;
+// 		display: inline-block;
+// 		padding: 10px 0 20px 0;
+// 	}
+// 	.mobilefooter-pagelinks{
+// 		max-width: 400px;
+// 		margin: 0 auto;
+// 		column-count: 2;
+// 		text-align: left;
+// 	}
+// 	.mobilefooter-pagelinks-item {
+// 		margin-bottom: 5px;
+// 	}
+// 	.mobilefooter-pagelinks-item-link{
+// 		color: white;
+// 		text-transform: capitalize;
+// 		text-decoration: none;
+// 		padding: 5px 0;
+// 		display: inline-block;
+// 		font-size: 1.6rem;
+// 	}
+	
+// 	.mobilefooter-webxlink{
+// 		display: inline-block;
+// 		margin: 20px auto 0 auto;
+// 	}
+
+// 	img.mobilefooter-webxlink-logo{
+// 		max-width: 200px; 
+// 	}
+// 	.mobilefooter-copyright {
+// 	 a, p {
+// 		margin: 5px auto;
+// 	 }
+// 	 a {
+// 	 	display: inline-block;
+// 	 }
+// 	}
+
+
+// 	.mobilefooter-copyright-tclink{
+// 		color: white;
+// 	}
+
+// 	// Badges
+// 	.mobilefooter-badges {
+// 		margin: 10px auto;
+// 		text-align: center;
+// 	}
+// 	.mobilefooter-badges-badge {
+// 		margin: 10px;
+// 		display: inline-block;
+// 		vertical-align: middle;
+// 		height: 64px;
+// 		overflow: hidden;
+// 		width: 64px;
+// 		img {
+// 			width: 100%;
+// 			height: 100%;
+// 			object-fit: contain;
+// 		}
+// 	}
+
+
+
+
+
+// 	// If Invert Is Checked
+
+// 	footer.mobilefooter.light{
+// 		background-color: $footer-bg;
+// 		color: black;
+// 		.mobilefooter-contactlinks-phone,
+// 		.mobilefooter-contactlinks-fax,
+// 		.mobilefooter-contactlinks-address,
+// 		.mobilefooter-pagelinks-item-link,
+// 		.mobilefooter-copyright-tclink{
+// 			color: black;
+// 		}
+// 	}
+// 	footer.mobilefooter.invertlogo{
+// 		.mobilefooter-logo-image{
+// 			@include filter(invert, 100%);
+// 		}
+// 	}
+
+
+
+// 	// PAYMENT TYPES
+// 	div.mobilefooter-section-payment,
+// 	div.footer-section-payment
+// 	{
+// 		// payment types images
+// 		> ul {
+// 			> li {
+// 				height: 40px;
+// 				background-repeat: no-repeat;
+// 				margin: 5px;
+// 				width: 60px;
+// 				background-position: 0 0;
+// 				display: inline-block;
+// 			    &.mastercard{
+// 			    	background-image: url('../../library/img/payment_types/mc.png');
+// 			    }
+// 				&.visa{
+// 					background-image: url('../../library/img/payment_types/visa.png');
+// 				}
+// 				&.amex{
+// 					background-image: url('../../library/img/payment_types/amex.png');
+// 				}
+// 				&.discover{
+// 					background-image: url('../../library/img/payment_types/discover.png');
+// 				}
+// 				&.paypal{
+// 					background-image: url('../../library/img/payment_types/pp.png');
+// 				}
+// 				&.cash{
+// 					background-image: url('../../library/img/payment_types/cash.png');
+// 				}
+// 				&.check{
+// 					background-image: url('../../library/img/payment_types/check.png');
+// 				}
+// 				&.hasimage{
+// 					background-image: none;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// }
+// @media only screen and (min-width: $medium){}
+// @media only screen and (min-width: $large){
+// 	.mobilefooter{
+// 		display: none;
+// 	}
+// }
+
+$white: #fff;
+$black: #000;
+$color_white_transparent: rgba(255,255,255,0);
+$color_white_not_transparent: rgba(255,255,255,1);
+
 @media only screen {
 	// bg
 	.mobilefooter{
 		text-align: center;
 		background-color: $footer-grey;
-		color: white;
+		color: $white;
+		padding: 40px 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		ul{
 			list-style: none;
 		}
-		padding: 40px 0;
-	}
-	// grid item wrappers
-	.mobilefooter-section {
-		max-width: 280px;
-		margin: 20px auto;
-		margin-bottom: 0;
-		text-align: center;
-		display: block;
-	}
-	// specific sections
-	.mobilefooter-section-pagelinks,
-	.mobilefooter-section-payment {
-		display: inline-block;
-		vertical-align: top;
-		margin: 20px;
-		text-align: left;
-		width: 280px;
-	}
-	// 
-	.mobilefooter-section-heading {
-		display: block;
-		font-size: 2.4rem;
-		color: white;
-		text-transform: capitalize;
-		position: relative;
-		margin: 20px 0;
-		padding: 5px 0;
-		font-weight: 400;
-		font-family: $body;
-		&:after {
-			position: absolute;
-			bottom: -2px;
-			left: 0;
-			width: 100%;
-			display: inline-block;
-			content: '';
-			border-bottom: 2px solid $light-grey;
-			@include transition(width 0.3s ease);
-		}
-	}
-	// Logo
-	.mobilefooter-logo{
-		text-align: center;
-		margin: 10px auto;
-		padding: 5px 0;
-		display: inline-block;
-	}
-	.mobilefooter-logo-image{
-		height: auto;
-		max-width: 200px;
-		object-fit: cover;
-	}
-	// Site Contact Info
-	.mobilefooter-contactlinks{
-		font-size: 0;
-	}
-	.mobilefooter-contactlinks-email,
-	.mobilefooter-contactlinks-fax,
-	.mobilefooter-contactlinks-phone{
-		font-size: 16px;
-		display: inline-block;
-		color: white;
-		text-decoration: none;
-		padding: 5px;
-	}
-	.mobilefooter-contactlinks-address{
-		font-size: 1.8rem;
-		color: white;
-		display: inline-block;
-		padding: 10px 0 20px 0;
-	}
-	.mobilefooter-pagelinks{
-		max-width: 400px;
-		margin: 0 auto;
-		column-count: 2;
-		text-align: left;
-	}
-	.mobilefooter-pagelinks-item {
-		margin-bottom: 5px;
-	}
-	.mobilefooter-pagelinks-item-link{
-		color: white;
-		text-transform: capitalize;
-		text-decoration: none;
-		padding: 5px 0;
-		display: inline-block;
-		font-size: 1.6rem;
-	}
-	
-	.mobilefooter-webxlink{
-		display: inline-block;
-		margin: 20px auto 0 auto;
-	}
-
-	img.mobilefooter-webxlink-logo{
-		max-width: 200px; 
-	}
-	.mobilefooter-copyright {
-	 a, p {
-		margin: 5px auto;
-	 }
-	 a {
-	 	display: inline-block;
-	 }
-	}
-
-
-	.mobilefooter-copyright-tclink{
-		color: white;
-	}
-
-	// Badges
-	.mobilefooter-badges {
-		margin: 10px auto;
-		text-align: center;
-	}
-	.mobilefooter-badges-badge {
-		margin: 10px;
-		display: inline-block;
-		vertical-align: middle;
-		height: 64px;
-		overflow: hidden;
-		width: 64px;
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-		}
-	}
-
-
-
-
-
-	// If Invert Is Checked
-
-	footer.mobilefooter.light{
-		background-color: $footer-bg;
-		color: black;
-		.mobilefooter-contactlinks-phone,
-		.mobilefooter-contactlinks-fax,
-		.mobilefooter-contactlinks-address,
-		.mobilefooter-pagelinks-item-link,
-		.mobilefooter-copyright-tclink{
-			color: black;
-		}
-	}
-	footer.mobilefooter.invertlogo{
-		.mobilefooter-logo-image{
-			@include filter(invert, 100%);
-		}
-	}
-
-
-
-	// PAYMENT TYPES
-	div.mobilefooter-section-payment,
-	div.footer-section-payment
-	{
-		// payment types images
-		> ul {
-			> li {
-				height: 40px;
-				background-repeat: no-repeat;
-				margin: 5px;
-				width: 60px;
-				background-position: 0 0;
-				display: inline-block;
-			    &.mastercard{
-			    	background-image: url('../../library/img/payment_types/mc.png');
-			    }
-				&.visa{
-					background-image: url('../../library/img/payment_types/visa.png');
+		> div {
+			h2 {
+				display: block;
+				font-size: 2.4rem;
+				color: $white;
+				text-transform: capitalize;
+				position: relative;
+				margin: 20px 0;
+				padding: 5px 0;
+				font-weight: 400;
+				font-family: $body;
+				&:after {
+					position: absolute;
+					bottom: -2px;
+					left: 0;
+					width: 100%;
+					display: inline-block;
+					content: '';
+					border-bottom: 2px solid $light-grey;
+					transition: width 0.3s ease;
+					-webkit-transition: width 0.3s ease;
+					-o-transition: width 0.3s ease;
 				}
-				&.amex{
-					background-image: url('../../library/img/payment_types/amex.png');
+			}
+			> div {
+				margin-bottom: 0;
+				text-align: center;
+			}
+			&:nth-of-type(1){
+				> a {
+					text-align: center;
+					margin: 10px auto;
+					padding: 5px 0;
+					display: inline-block;
+					> img {
+						height: auto;
+						max-width: 200px;
+						object-fit: cover;
+					}
 				}
-				&.discover{
-					background-image: url('../../library/img/payment_types/discover.png');
+				> div {
+					display: flex;
+					align-items: center;
+					flex-flow: column; 
+					> a {
+						font-size: 16px;
+						display: inline-block;
+						color: $white;
+						text-decoration: none;
+						padding: 5px 10px;
+						border-radius: 20px;
+						background-color: rgba(255, 255, 255, 0);
+						transition: color 0.3s, background-color 0.3s;
+						-webkit-transition: color 0.3s, background-color 0.3s;
+						-o-transition: color 0.3s, background-color 0.3s;
+						&:hover,
+						&:active,
+						&:focus {
+							color: $black;
+							background-color: $color_white_not_transparent;
+						}
+					}
+					> div {
+						font-size: 1.8rem;
+						color: $white;
+						display: inline-block;
+						padding: 10px 0 20px 0;
+					}
 				}
-				&.paypal{
-					background-image: url('../../library/img/payment_types/pp.png');
+			}
+			&:nth-of-type(1),
+			&:nth-of-type(4) {
+				flex:1 0 100%;
+			}
+			&:nth-of-type(2), 
+			&:nth-of-type(3){
+				vertical-align: top;
+				margin: 20px;
+				text-align: left;
+				width: 280px;
+			}
+			&:nth-of-type(2){
+				> ul {
+					max-width: 400px;
+					margin: 0 auto;
+					text-align: left;
+					display: flex;
+    				flex-wrap: wrap;
+					> li {
+						margin-bottom: 5px;
+						flex: 0 1 50%;
+						> a {
+							color: $white;
+							text-transform: capitalize;
+							text-decoration: none;
+							padding: 5px 10px;
+							border-radius:20px;
+							display: inline-block;
+							font-size: 1.6rem;
+							background-color: rgba(255, 255, 255, 0);
+							transition: color 0.3s ,background-color 0.3s;
+							-webkit-transition: color 0.3s, background-color 0.3s;
+							-o-transition: color 0.3s, background-color 0.3s;
+							display: inline-flex;
+							width: 100%;
+							&:hover,
+							&:active,
+							&:focus {
+								color:$black;
+								background-color: $color_white_not_transparent;
+							}
+						}
+					}
 				}
-				&.cash{
-					background-image: url('../../library/img/payment_types/cash.png');
+			}
+			&:nth-of-type(3){
+				// payment types images
+				> ul { 
+					display: flex;
+					flex-flow: row wrap;
+					> li {
+						height: 40px;
+						background-repeat: no-repeat;
+						margin: 5px;
+						width: 60px;
+						background-position: 0 0;
+						display: inline-block;
+						&:nth-of-type(1){
+							background-image: url('../../library/img/payment_types/mc.png');
+						}
+						&:nth-of-type(2){
+							> img {
+								display:none;
+							}
+							background-image: url('../../library/img/payment_types/visa.png');
+						}
+						&:nth-of-type(3){
+							background-image: url('../../library/img/payment_types/amex.png');
+						}
+						&:nth-of-type(4){
+							background-image: url('../../library/img/payment_types/discover.png');
+						}
+						&:nth-of-type(5){
+							background-image: url('../../library/img/payment_types/pp.png');
+						}
+					}
 				}
-				&.check{
-					background-image: url('../../library/img/payment_types/check.png');
-				}
-				&.hasimage{
-					background-image: none;
+			}
+			&:nth-of-type(4){
+				> div {
+					> ul {
+						display: flex;
+						justify-content: center;
+						flex-flow: wrap;
+						> li {
+							> a {
+								display: inline-block;
+								margin: 5px auto;
+								> img {
+									width:280px;
+								}
+							}
+						}
+					}
+					h2 {
+						width:280px; 
+						margin: 20px auto;
+					}
 				}
 			}
 		}
 	}
 
+	// If Invert Is Checked
+	footer.mobilefooter.light{
+		background-color: $footer-bg;
+		color: $black;
+		> div {
+			> div {
+				&:nth-of-type(1){
+					> a {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+	footer.mobilefooter.invertlogo{
+		> div {
+			> a {
+				> img {
+					-webkit-filter: invert(100%);
+            		filter: invert(100%)
+				}
+			}
+		}
+	}
 }
 @media only screen and (min-width: $medium){}
 @media only screen and (min-width: $large){

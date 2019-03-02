@@ -1,14 +1,18 @@
 $primary : #df1d1d;
 $black : black;
 $second_black: #333333;
-$white : white;
+$white : white; 
 $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
+$blue_infinity_carpet: #1a69a0;
+$gray: #909090;
 $blue_darker: #257d87;
 $nav_maxwidth : 1024px;
-$banner_height : 52px;
+$banner_height : 52px; 
 $bp__lg : 1280px;
+
+
 @media only screen and (min-width: $bp__lg) {
 
     header.mobileheader {
@@ -16,7 +20,7 @@ $bp__lg : 1280px;
     }
     // basics across all headers
     header.header {
-        position: fixed !important; // need to remove something from theme 3 that is effecting this
+        position:fixed; // need to remove something from theme 3 that is effecting this
         top: 0;
         display: block;
         left: 0;
@@ -84,6 +88,7 @@ $bp__lg : 1280px;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
         > div {
             display: flex;
             flex-flow: row nowrap;
@@ -101,12 +106,12 @@ $bp__lg : 1280px;
                     text-decoration: none;
                     position: relative;
                     margin:10px 0px;
-                    border-bottom: 1px solid transparent;
-                    @include transition(border-bottom 0.3s);
+                    opacity: 0.8;
+                    @include transition(opacity 0.3s);
                     &:hover, 
                     &:focus,
                     &:active{
-                        border-bottom: 1px solid $white;
+                        opacity: 1;
                     }
                 }
                 > nav {
@@ -116,12 +121,12 @@ $bp__lg : 1280px;
                                 font-size: 1.4rem;
                                 color: white;
                                 text-transform: uppercase;
-                                border-bottom: 1px solid transparent;
-                                @include transition(border-bottom 0.3s);
+                                opacity: 0.8;
+                                @include transition(opacity 0.3s);
                                 &:hover, 
                                 &:focus,
                                 &:active{
-                                    border-bottom: 1px solid $white;
+                                    opacity: 1;
                                 }
                             }
                         }
@@ -171,17 +176,17 @@ $bp__lg : 1280px;
             background-color: $ink;
             text-align: center;
             color: white;
-            max-width: 1400px;
+            width:100%;
             margin: 0 auto;
             > a {
                 display: inline;
                 margin: 10px auto;
-                border-bottom: 1px solid transparent;
-                @include transition(border-bottom 0.3s);
+                opacity: 0.8;
+                @include transition(opacity 0.3s);
                 &:hover, 
                 &:focus,
                 &:active{
-                    border-bottom: 1px solid $white;
+                    opacity: 1;
                 }
             }
         }
@@ -207,23 +212,23 @@ $bp__lg : 1280px;
             align-items: center;
             justify-content: space-between;
             padding:0 40px;
+            box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
             > ul {
                 > li {
                     font-size: 1.6rem;
                     text-transform: uppercase;
                     > a {
-                        border-bottom: 1px solid transparent;
-                        @include transition(border-bottom 0.3s);
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
                         &:hover, 
                         &:focus,
                         &:active{
-                            border-bottom: 1px solid $black;
+                            opacity:1;
                         }
                     }
                 }
             }
         }
-        
         #opt__topbanner {
             background-color: $pink;
             height: $banner_height;
@@ -233,21 +238,17 @@ $bp__lg : 1280px;
             align-items: center;
             padding: 0 40px;
             justify-content: space-around;
-
             > span {
                 display:flex;
                 flex: 10 0 auto;
                 height:100%;
-
+                align-items: center;
                 a {
-                    flex: 1 0 auto;
                     font-size:1.6rem;
                     text-align: center;
-                    padding: 15px;
                     > span {
-                        border-bottom: 1px solid transparent;
-                        @include transition(border-bottom 0.3s);
-                     
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
                     }
                     i {
                         color: $black;
@@ -259,26 +260,19 @@ $bp__lg : 1280px;
                     &:focus,
                     &:active{
                         span {
-                            border-bottom: 1px solid $white;
+                            opacity: 1;
                         }
                         i {
                             color: $white;
                         }
                     }
-                    
-
                     &:last-child {
                         text-align:left;
-                        flex:1 0 auto;
                         display: flex;
-                        justify-content: flex-start;
-                        flex-flow: row nowrap;
+                        margin: 0 auto;
                     }
-
-                    
                 }
             }
-                
             > a {
                 flex: 1 0 auto;
                 background-color: $ink;
@@ -287,20 +281,19 @@ $bp__lg : 1280px;
                 text-align: center;
                 font-size: 1.6rem;
                 text-transform:uppercase;
-                display: flex;
-                justify-content: space-around;
-                flex-flow: row nowrap;
+                align-items: center;
                 @include transition(background-color 0.3s);
                 &:hover, 
                 &:focus,
                 &:active{
                     background-color: $second_black;
                 }
-
                 i {
                     color: $primary;
                     font-size: 2rem;
                     font-weight: bold;
+                    position: relative;
+                    top: 1px;
                 }
             }
         }
@@ -421,11 +414,174 @@ $bp__lg : 1280px;
                         font-size:16px;
                         letter-spacing:1px;
                         border-bottom: 1px solid transparent;
-                        @include transition(border-bottom 0.3s);
+                        opacity: 0.8;
+                        @include transition(opacity 0.3s);
                         &:hover,
                         &:active,
                         &:focus{
-                            border-bottom: 1px solid $white;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    header#opt_header_one{
+        padding: 0px;
+        // max-width: 1230px;
+        // margin: 0 auto;
+        // left: 50%;
+        // transform: translateX(-50%);
+        display: block;
+        position:relative;
+        > div {
+            &:nth-of-type(1){
+                background-color: $black;
+                color: $white;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 15%;
+                // padding: 0 2%;
+                > span {
+                    &:nth-of-type(1){
+                        font-size: 16px;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        margin-left: auto;
+                        width: 225px;
+                        &:before{
+                            font-family: FontAwesome;
+                            content: "\f041";
+                            display: block;
+                            padding: 6px 11px;
+                            margin-right: 10px;
+                            font-weight: 700;
+                            color: $blue_infinity_carpet;
+                            border-radius: 100%; 
+                            border: 3px solid $blue_infinity_carpet;
+                        }
+                    }
+                    &:nth-of-type(2){ 
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        &:before{
+                            font-family: FontAwesome;
+                            content: "\f095";
+                            display: block;
+                            padding: 6px 10px;
+                            font-weight: 700;
+                            color: $blue_infinity_carpet;
+                            border-radius: 100%;
+                            border: 3px solid $blue_infinity_carpet;
+                            margin-left: 30px;
+                            margin-right:10px;
+                        }
+                        > p {
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-weight: 500;
+                            color: $gray;
+                            text-align: right;
+                        }
+                        > a {
+                            font-size: 19px;
+                            font-weight:500;
+                            -webkit-transition: opacity 0.3s;
+                            -o-transition: opacity 0.3s;
+                            transition: opacity 0.3s;
+                            opacity:1;
+                            &:hover,
+                            &:active,
+                            &:focus{
+                                opacity:0.8;
+                            }
+                            > span {
+                                color: $blue_infinity_carpet; 
+                                font-size:14px;
+                                text-transform:uppercase;
+                                display: block;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                background-color: $white;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between; 
+                // padding: 0 2%;
+                position:relative;
+                width:100%;
+                top:0;
+                padding: 0 15%;
+                box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+                > nav {
+                    display:flex;
+                    align-items:center;
+                    justify-content: space-between;
+                    > ul {
+                        > li { 
+                            flex: 0 1 auto;
+                            margin-right:0px;
+                            > a {
+                                text-transform: uppercase;
+                                font-weight:500;
+                                display:block;
+                                color: $black;
+                                padding: 15px 10px;
+                                -webkit-transition: color 0.3s, background-color 0.3s;
+                                -o-transition: color 0.3s, background-color 0.3s;
+                                transition: color 0.3s, background-color 0.3s;
+                                &:hover,
+                                &:active,
+                                &:focus {
+                                    color: $white;
+                                    background-color: $blue_infinity_carpet;
+                                }
+                            }
+                        }
+                    }
+                }
+                > ul {
+                    display: flex;
+                    list-style: none;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items:center;
+                    > li {
+                        flex: 1 0 auto;
+                        list-style:none;
+                        position:relative;
+                        padding:2px;
+                        &:last-of-type{
+                            padding-right:0;
+                        }                                                    
+                        > a {
+                            border-radius:100%;
+                            padding: 7px 10px;
+                            -webkit-transition: color 0.3s;
+                            -o-transition: color 0.3s;
+                            transition: color 0.3s;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: $blue_infinity_carpet;
+                            }
+                            > i {
+                                font-size:15px;
+                            }
+                        }
+                        &:last-of-type{
+                            > a {
+                                padding: 7px 0px 7px 10px;
+                           }
                         }
                     }
                 }

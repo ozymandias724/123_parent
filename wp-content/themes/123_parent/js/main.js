@@ -4,14 +4,69 @@ var Theme = {};
 	$(document).ready(function(){
 
 		Theme.Gustavo = {
+			tint : $(".header-tint"),
+			estimate : $(".estimate-toggle, .topbanner-quickquote, .site_button-quote"),
+			estimate_popup : $(".estimate"),
+			estimate_close : $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
+			header_4 : $('header.header#opt_header_one'),
+			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
+			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
+
 			_init : function(){
-				$().on('click', Theme.Gustavo._clickHandler);
+				$(Theme.Gustavo.estimate).on("click", Theme.Gustavo._click_handler); 
+
+				$(Theme.Gustavo.estimate_close).on("click",Theme.Gustavo._close_popup);
+
+				if($(Theme.Gustavo.header_4).length){
+
+					window.onscroll = function(){
+						Theme.Gustavo._header_layout_4_function(); 
+					}
+
+					Theme.Gustavo.header_4_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+
+					if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
+						Theme.Gustavo.header_4_div_two.css({
+							"position" : "fixed" 
+						});
+					}else{
+						Theme.Gustavo.header_4_div_two.css({
+							"position" : "relative" 
+						});
+					}
+					
+				}
+
 			},
-			_clickHandler : function(event){
+			_click_handler : function(event){
+				event.preventDefault();
+				Theme.Gustavo.estimate_popup.fadeIn(250); 
+			},
+			_close_popup : function(event){
+				if( $(event.target).hasClass("estimate") || 
+					$(event.target).hasClass("estimate-content-times") || 
+					$(event.target).hasClass("topbanner-quickquote") ||
+					$(event.target).hasClass("site__button-quote") 
+				){ 
+					event.preventDefault();
+					Theme.Gustavo.estimate_popup.fadeOut(250);	 
+				} 
+			},
+			_header_layout_4_function : function(){
+				
+				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
+					Theme.Gustavo.header_4_div_two.css({
+						"position" : "fixed" 
+					});
+				}else{
+					Theme.Gustavo.header_4_div_two.css({
+						"position" : "relative" 
+					});
+				}
 				
 			},
 		}
-        Theme.Gustavo._init();
+        Theme.Gustavo._init();  
         
 
         Theme.Nav_Mobile = { 
