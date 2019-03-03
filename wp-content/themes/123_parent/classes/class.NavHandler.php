@@ -1,19 +1,27 @@
 <?php 
-
+/**
+ *      NavHandler Class
+ */
 class NavHandler
 {
-
-    
-    
+    // Public Vars
     public $header_one = '';
     public $header_two = '';
     public $header_three = '';
     public $header_four = '';
+    public $header_five = '';
+    public $header_six = '';
+    public $header_seven = '';
+    public $header_eight = '';
+    public $header_nine = '';
+    public $header_ten = '';
 
-
+    // Constructor
     function __construct(){
         $this->_init();
     }
+
+    // Initialize
     function _init(){
         $gmap_query = '#'; // simple href to search for the addr // IDK
         $addr = get_master_address(); // supposedly easy to format (test plz)
@@ -83,8 +91,9 @@ class NavHandler
                 ,$topbar_text
             );
         }
-        // 
-        // 
+        /**
+         * Logo
+         */
         $format_logo = '
             <a class="header-logo" href="%s">
                 <img src="%s" alt="%s">
@@ -96,13 +105,9 @@ class NavHandler
             ,get_logo()
             ,get_bloginfo('sitename')
         );
-
-        $enabled_theme = wp_get_theme()->Name;
-        $use_custom_header = get_field('enable-choose-header', 'options');
-        $selected_header = get_field('choose-header-style', 'options');
-        $content_header = '';
-        $format_header = '';
-
+        /**
+         * 
+         */
 
         $field_social_icons = get_field('field_akan8a8sskshb', 'options');
         $content_social_icons = '<ul>';
@@ -155,11 +160,39 @@ class NavHandler
             }
         }
         $content_social_icons .= '</ul>';
-        $enabled_theme = wp_get_theme()->Name;
-        $use_custom_header = get_field('enable-choose-header', 'options');
-        $selected_header = get_field('choose-header-style', 'options');
 
+        // 1
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_one">
+                <div>
+                    %s
+                    %s
+                    <span>
+                        <a href="%s">%s</a>
+                    </span>
+                </div>
+                <div>
+                    <nav>
+                        %s
+                    </nav>
+                    %s
+                </div>
+            </header>
+        ';
+        $this->header_one = sprintf(
+            $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_logo
+            ,$addr
+            ,$num_href
+            ,$num_display
+            ,NavUtil::get_nav_links()
+            ,$content_social_icons
+        );
 
+        // 2
         $format_header = '
             <header class="header %s %s %s" id="opt_header_onetwo">
                 %s
@@ -190,7 +223,7 @@ class NavHandler
             ,$topbar_class // NOPE
         );
 
-
+        // 3
         $format_header = '
             <header class="header %s %s %s" id="opt_header_three">
                 %s
@@ -212,7 +245,7 @@ class NavHandler
             ,$topbar_class // NOPE
         );
     
-
+        // 4
         $format_header = '
             <header class="%s %s %s header" id="opt_header_four">
                 <div>
@@ -239,37 +272,41 @@ class NavHandler
             ,NavUtil::get_nav_links()
         );
 
-
-        $format_header = '
-            <header class="%s %s %s header" id="opt_header_one">
-                <div>
-                    %s
-                    %s
-                    <span>
-                        <a href="%s">%s</a>
-                    </span>
-                </div>
-                <div>
-                    <nav>
-                        %s
-                    </nav>
-                    %s
-                </div>
-            </header>
-        ';
-        $this->header_one = sprintf(
+        // 5
+        $format_header = '';
+        $this->header_five = sprintf(
             $format_header
-            ,$invertlogo
-            ,$topbar_class
-            ,$fadenav
-            ,$content_logo
-            ,$addr
-            ,$num_href
-            ,$num_display
-            ,NavUtil::get_nav_links()
-            ,$content_social_icons
         );
         
+        // 6
+        $format_header = '';
+        $this->header_six = sprintf(
+            $format_header
+        );
+        
+        // 7
+        $format_header = '';
+        $this->header_seven = sprintf(
+            $format_header
+        );
+
+        // 8
+        $format_header = '';
+        $this->header_eight = sprintf(
+            $format_header
+        );
+        
+        // 9
+        $format_header = '';
+        $this->header_nine = sprintf(
+            $format_header
+        );
+        
+        // 10
+        $format_header = '';
+        $this->header_ten = sprintf(
+            $format_header
+        );
         
     }
 }
