@@ -675,16 +675,15 @@ $bp__lg : 1280px;
                         background-color: $prestige_painters;
                         color: $white;
                         transition: color 0.1s, background-color 0.1s;
-                        -webkit-transition: color 0.1s, background-color 0.1s;
-                        -o-transition: color 0.1s, background-color 0.1s;
+                        -webkit-transition: color 0.1s;
+                        -o-transition: color 0.1s;
                         &:hover,
                         &:active,
                         &:focus {
-                            background-color: $black;
-                            color: $prestige_painters;
+                            color: $black;
                         }
                     }
-                }
+                } 
             }
             //Bottom bar of the header (logo and navigational menu)
             &:last-of-type {
