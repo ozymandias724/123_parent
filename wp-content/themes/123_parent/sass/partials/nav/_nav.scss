@@ -672,14 +672,16 @@ $bp__lg : 1280px;
                         text-transform: uppercase;
                         padding: 15px 15px;
                         font-weight: 500;
+                        background-color: $prestige_painters;
+                        color: $white;
                         transition: color 0.1s, background-color 0.1s;
                         -webkit-transition: color 0.1s, background-color 0.1s;
                         -o-transition: color 0.1s, background-color 0.1s;
                         &:hover,
                         &:active,
                         &:focus {
-                            background-color: $prestige_painters;
-                            color: $white;
+                            background-color: $black;
+                            color: $prestige_painters;
                         }
                     }
                 }
