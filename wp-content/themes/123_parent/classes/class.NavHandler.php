@@ -166,9 +166,9 @@ class NavHandler
             <header class="%s %s %s header" id="opt_header_one">
                 <div>
                     %s
-                    %s
+                    <span>%s</span>
                     <span>
-                        <a href="%s">%s</a>
+                        <a href="%s"><span>Call Us Today:</span> %s</a>
                     </span>
                 </div>
                 <div>
@@ -179,7 +179,7 @@ class NavHandler
                 </div>
             </header>
         ';
-        $this->header_one = sprintf(
+        $this->header_one = sprintf( 
             $format_header
             ,$invertlogo
             ,$topbar_class

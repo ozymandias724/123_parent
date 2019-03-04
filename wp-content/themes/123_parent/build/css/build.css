@@ -3828,7 +3828,7 @@
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between;
-      padding: 0 15%; }
+      padding: 0 10%; }
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(1) {
         font-size: 16px;
         display: flex;
@@ -3849,7 +3849,8 @@
       header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) {
         display: flex;
         align-items: center;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        margin-left: 5%; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2):before {
           font-family: FontAwesome;
           content: "\f095";
@@ -3861,18 +3862,12 @@
           border: 3px solid #1a69a0;
           margin-left: 30px;
           margin-right: 10px; }
-        header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > p {
-          font-size: 14px;
-          text-transform: uppercase;
-          font-weight: 500;
-          color: #909090;
-          text-align: right; }
         header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a {
           font-size: 19px;
           font-weight: 500;
-          -webkit-transition: opacity 0.1s;
-          -o-transition: opacity 0.1s;
-          transition: opacity 0.1s;
+          -webkit-transition: opacity 0.3s;
+          -o-transition: opacity 0.3s;
+          transition: opacity 0.3s;
           opacity: 1; }
           header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:hover, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:active, header#opt_header_one > div:nth-of-type(1) > span:nth-of-type(2) > a:focus {
             opacity: 0.8; }
@@ -3890,7 +3885,7 @@
       position: relative;
       width: 100%;
       top: 0;
-      padding: 0 15%;
+      padding: 0 10%;
       box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5); }
       header#opt_header_one > div:nth-of-type(2) > nav {
         display: flex;
@@ -3899,8 +3894,6 @@
         header#opt_header_one > div:nth-of-type(2) > nav > ul > li {
           flex: 0 1 auto;
           margin-right: 0px; }
-          header#opt_header_one > div:nth-of-type(2) > nav > ul > li:first-of-type > a {
-            margin-left: -10px; }
           header#opt_header_one > div:nth-of-type(2) > nav > ul > li > a {
             text-transform: uppercase;
             font-weight: 500;
