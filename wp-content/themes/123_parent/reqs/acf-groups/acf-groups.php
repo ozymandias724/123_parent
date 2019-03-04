@@ -1625,6 +1625,12 @@ if( !function_exists('add_acf_fields') ){
 						,'two' => 'Two'
 						,'three' => 'Three'
 						,'four' => 'Four'
+						,'five' => 'Five'
+						,'six' => 'Six'
+						,'seven' => 'Seven'
+						,'eight' => 'Eight'
+						,'nine' => 'Nine'
+						,'ten' => 'Ten'
 					)
 					,'default_value' => $verified_theme
 				),

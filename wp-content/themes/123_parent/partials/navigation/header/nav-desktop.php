@@ -37,8 +37,24 @@ else if( $use_custom_header == '1' ){
     else if( $selected_header === 'four' ){
         echo $navHandler->header_four;
     }
+    else if( $selected_header === 'five' ){
+        echo $navHandler->header_five;
+    }
+    else if( $selected_header === 'six' ){
+        echo $navHandler->header_six;
+    }
+    else if( $selected_header === 'seven' ){
+        echo $navHandler->header_seven;
+    }
+    else if( $selected_header === 'eight' ){
+        echo $navHandler->header_eight;
+    }
+    else if( $selected_header === 'nine' ){
+        echo $navHandler->header_nine;
+    }
+    else if( $selected_header === 'ten' ){
+        echo $navHandler->header_ten;
+    }
     
-} 
-
-//die();
+}
  ?>

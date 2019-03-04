@@ -41,7 +41,26 @@ class MyTheme_Customize
                 'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
                 'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
             )
-        );      
+        ); 
+        $wp_customize->add_setting(
+            'header_bgcolor', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+            array(
+                'default' => '#383838', //Default setting/value to save
+                'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+            )
+        );
+        
+        $wp_customize->add_setting(
+            'header_nav_bgcolor', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
+            array(
+                'default' => '#383838', //Default setting/value to save
+                'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+            )
+        ); 
             
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
         $wp_customize->add_control(new WP_Customize_Color_Control( //Instantiate the color control class
@@ -50,6 +69,28 @@ class MyTheme_Customize
             array(
                 'label' => __('Links (text)', '123_parent'), //Admin-visible name of the control
                 'settings' => 'link_textcolor', //Which setting to load and manipulate (serialized is okay)
+                'priority' => 10, //Determines the order this control appears in for the specified section
+                'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+            )
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Color_Control( //Instantiate the color control class
+            $wp_customize, //Pass the $wp_customize object (required)
+            '123_parent_header_bgcolor', //Set a unique ID for the control
+            array(
+                'label' => __('Header Background Color', '123_parent'), //Admin-visible name of the control
+                'settings' => 'header_bgcolor', //Which setting to load and manipulate (serialized is okay)
+                'priority' => 10, //Determines the order this control appears in for the specified section
+                'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+            )
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Color_Control( //Instantiate the color control class
+            $wp_customize, //Pass the $wp_customize object (required)
+            '123_parent_header_nav_bgcolor', //Set a unique ID for the control
+            array(
+                'label' => __('Nav Background Color', '123_parent'), //Admin-visible name of the control
+                'settings' => 'header_nav_bgcolor', //Which setting to load and manipulate (serialized is okay)
                 'priority' => 10, //Determines the order this control appears in for the specified section
                 'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
             )
@@ -75,9 +116,9 @@ class MyTheme_Customize
         ?>
       <!--Customizer CSS--> 
       <style type="text/css">
-           <?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#'); ?> 
-           <?php self::generate_css('body', 'background-color', 'background_color', '#'); ?> 
-           <?php self::generate_css('a', 'color', 'link_textcolor', null, ' !important'); ?>
+           <?php self::generate_css('html body a', 'color', 'link_textcolor', '#'); ?>
+           <?php self::generate_css('header.header > div:first-child', 'background-color', 'header_bgcolor', '#', ' !important'); ?>
+           <?php self::generate_css('header.header > nav > ul, header.header > nav > ul:before, header.header > nav > ul:after', 'background-color', 'header_nav_bgcolor', '#', ' !important'); ?>
       </style> 
       <!--/Customizer CSS-->
       <?php
@@ -99,9 +140,9 @@ class MyTheme_Customize
     {
         wp_enqueue_script(
             'mytheme-themecustomizer', // Give the script a unique ID
-            get_template_directory_uri() . '/assets/js/theme-customizer.js', // Define the path to the JS file
+            get_template_directory_uri() . '/js/customizer.js', // Define the path to the JS file
             array('jquery', 'customize-preview'), // Define dependencies
-            '', // Define a version (optional) 
+            null, // Define a version (optional) 
             true // Specify whether to put in footer (leave this true)
         );
     }
