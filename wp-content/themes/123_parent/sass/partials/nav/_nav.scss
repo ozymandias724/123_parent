@@ -429,10 +429,6 @@ $bp__lg : 1280px;
 
     header#opt_header_one{
         padding: 0px;
-        // max-width: 1230px;
-        // margin: 0 auto;
-        // left: 50%;
-        // transform: translateX(-50%);
         display: block;
         position:relative;
         > div {
@@ -444,7 +440,6 @@ $bp__lg : 1280px;
                 align-items: center;
                 justify-content: space-between;
                 padding: 0 15%;
-                // padding: 0 2%;
                 > span {
                     &:nth-of-type(1){
                         font-size: 16px;
@@ -491,9 +486,9 @@ $bp__lg : 1280px;
                         > a {
                             font-size: 19px;
                             font-weight:500;
-                            -webkit-transition: opacity 0.3s;
-                            -o-transition: opacity 0.3s;
-                            transition: opacity 0.3s;
+                            -webkit-transition: opacity 0.1s;
+                            -o-transition: opacity 0.1s;
+                            transition: opacity 0.1s;
                             opacity:1;
                             &:hover,
                             &:active,
@@ -516,7 +511,6 @@ $bp__lg : 1280px;
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: space-between; 
-                // padding: 0 2%;
                 position:relative;
                 width:100%;
                 top:0;
@@ -530,6 +524,11 @@ $bp__lg : 1280px;
                         > li { 
                             flex: 0 1 auto;
                             margin-right:0px;
+                            &:first-of-type{
+                                > a {
+                                    margin-left:-10px;
+                                }
+                            }
                             > a {
                                 text-transform: uppercase;
                                 font-weight:500;
