@@ -194,7 +194,7 @@ class NavHandler
 
         // 2
         $format_header = '
-            <header class="header %s %s %s" id="opt_header_onetwo">
+            <header class="header %s %s %s" id="opt_header_two">
                 %s
                 %s
                 <div>
@@ -273,9 +273,39 @@ class NavHandler
         );
 
         // 5
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_five">
+                <div>
+                    %s
+                    <div>
+                        <span><i class="fa fa-map-marker"></i>%s</span>
+                        <span>
+                            <i class="fa fa-phone"></i>
+                            <a href="%s">%s</a>
+                        </span>
+                        <a href="#" class="topbanner-quickquote">Quote</a> 
+                    </div>
+                </div>
+                <div>
+                    %s
+                    <nav>
+                        %s
+                    </nav>
+                </div>
+            </header>
+        ';
+
         $this->header_five = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_social_icons
+            ,$addr
+            ,$num_href
+            ,$num_display
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 6
