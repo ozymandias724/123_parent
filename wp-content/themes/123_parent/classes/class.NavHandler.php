@@ -278,10 +278,9 @@ class NavHandler
                 <div>
                     %s
                     <div>
-                        <span><i class="fa fa-map-marker"></i>%s</span>
+                        <span><i class="fa fa-map-marker"></i> %s</span>
                         <span>
-                            <i class="fa fa-phone"></i>
-                            <a href="%s">%s</a>
+                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
                         </span>
                         <a href="#" class="topbanner-quickquote">Quote</a> 
                     </div>
