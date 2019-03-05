@@ -737,21 +737,127 @@ $bp__lg : 1280px;
             //Top bar including (Address, phone number and social icons)
             &:first-of-type {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
+                padding: 0 5%;
                 background-color: $prestige_painters;
+                > div {
+                    height:50px;
+                    display: flex;
+                    align-items: center;
+                    > span {
+                        color: $white;
+                        font-size: 16px;
+                        //Icons for the address and phone number
+                        i {
+                            font-size: 18px;
+                            margin-right: 10px;
+                        }
+                        //Address text
+                        &:first-of-type {
+                            margin-right: 30px;
+                            > a {
+                                -webkit-transition: color 0.3s;
+                                -o-transition: color 0.3s;
+                                transition: color 0.3s;
+                                &:hover, 
+                                &:active,
+                                &:focus {
+                                   color: $black;
+                                }
+                            }
+                        }
+                        //Phone number text
+                        &:last-of-type {
+                            > a { 
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                //Social icons
+                > ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    > li {
+                        margin-left: 25px;
+                        font-size: 16px;
+                        color: $white;
+                        > a {
+                            -webkit-transition: color 0.3s;
+                            -o-transition: color 0.3s;
+                            transition: color 0.3s;
+                            &:hover, 
+                            &:active,
+                            &:focus {
+                               color: $black;
+                            }
+                        }
+                    }
+                }
             }
+            //Bottom part including logo and navigational menu and quote button
             &:last-of-type {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
+                padding:0 5%;
                 background-color: $white;
                 > a {
-                    padding: 0;
+                    padding: 10px 0;
                     > img {
                         width: auto;
                         max-width: none;
                         max-height: 70px;
+                    }
+                }
+                > div {
+                    display: flex;
+                    margin-right: -10px;
+                    > nav {
+                        display: flex;
+                        align-items: center;
+                        > ul {
+                            list-style: none;
+                            display: flex;
+                            margin-right: 10px;
+                            > li {
+                                padding: 0 10px;
+                                > a {
+                                    padding: 10px 0;
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                    font-weight: 500;
+                                    border-bottom: 2px solid rgba(233, 29, 98, 0);
+                                    -webkit-transition: border 0.3s;
+                                    -o-transition: border 0.3s;
+                                    transition: border 0.3s;
+                                    &:hover, 
+                                    &:active,
+                                    &:focus {
+                                        border-bottom: 2px solid rgba(233, 29, 98,1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    > a {
+                        padding: 10px 20px;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        border-radius: 20px;
+                        background-color: $prestige_painters;
+                        color: $white;
+                        -webkit-transition: color 0.3s;
+                        -o-transition: color 0.3s;
+                        transition: color 0.3s;
+                        &:hover, 
+                        &:active,
+                        &:focus {
+                            color: $black;
+                        }
                     }
                 }
             }

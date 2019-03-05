@@ -311,12 +311,14 @@ class NavHandler
         $format_header = '
             <header class="%s %s %s heaeder" id="opt_header_six">
                 <div>
-                    <span>
-                        <i class="fa fa-map-marker"></i> %s
-                    </span>
-                    <span>
-                        <a href="%s"><i class="fa fa-phone"></i> %s</a>
-                    </span>
+                    <div>
+                        <span>
+                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                        </span>
+                        <span>
+                            <i class="fa fa-map-marker"></i> %s
+                        </span>
+                    </div>
                     %s
                 </div>
                 <div>
@@ -335,9 +337,9 @@ class NavHandler
             ,$invertlogo
             ,$topbar_class
             ,$fadenav
-            ,$addr
             ,$num_href 
             ,$num_display
+            ,$addr
             ,$content_social_icons
             ,$content_logo
             ,NavUtil::get_nav_links()
