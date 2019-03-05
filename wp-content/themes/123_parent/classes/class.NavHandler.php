@@ -308,9 +308,39 @@ class NavHandler
         );
         
         // 6
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s heaeder" id="opt_header_six">
+                <div>
+                    <span>
+                        <i class="fa fa-map-marker"></i> %s
+                    </span>
+                    <span>
+                        <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                    </span>
+                    %s
+                </div>
+                <div>
+                    %s
+                    <div>
+                        <nav>
+                            %s
+                        </nav>
+                        <a href="#" class="topbanner-quickquote">Get A Quote</a>
+                    </div> 
+                </div>
+            </header>
+        ';
         $this->header_six = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$addr
+            ,$num_href 
+            ,$num_display
+            ,$content_social_icons
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 7
