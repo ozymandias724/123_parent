@@ -593,9 +593,11 @@ $bp__lg : 1280px;
 
     //Header Five scss
     header#opt_header_five {
+        z-index: 1000;
         padding: 0px;
         display: block;
-        position: relative;
+        position: fixed;
+        width: 100%;
         > div {
             //Top part of the header (social icons, address, phone number and quote button)
             &:first-of-type {
@@ -691,6 +693,8 @@ $bp__lg : 1280px;
                 justify-content: space-between;
                 flex-flow: row nowrap;
                 padding: 0 5%;
+                background-color: $white;
+                box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
                 > a {
                     padding: 0;
                     > img {
@@ -730,9 +734,11 @@ $bp__lg : 1280px;
 
     //Header 6
     header#opt_header_six {
+        z-index: 1000;
         padding: 0px;
         display: block;
-        position: relative;
+        position: fixed;
+        width: 100%;
         > div {
             //Top bar including (Address, phone number and social icons)
             &:first-of-type {
@@ -804,6 +810,7 @@ $bp__lg : 1280px;
                 align-items: center;
                 padding:0 5%;
                 background-color: $white;
+                box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
                 > a {
                     padding: 10px 0;
                     > img {
