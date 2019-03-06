@@ -3962,7 +3962,7 @@
             header#opt_header_five > div:first-of-type > ul > li > a > i {
               font-size: 16px; }
             header#opt_header_five > div:first-of-type > ul > li > a:hover, header#opt_header_five > div:first-of-type > ul > li > a:active, header#opt_header_five > div:first-of-type > ul > li > a:focus {
-              color: #E91D62; }
+              color: #e91d62; }
       header#opt_header_five > div:first-of-type > div {
         display: flex;
         justify-content: space-between;
@@ -3975,7 +3975,7 @@
           header#opt_header_five > div:first-of-type > div > span i {
             font-size: 16px;
             margin-right: 10px;
-            color: #E91D62; }
+            color: #e91d62; }
           header#opt_header_five > div:first-of-type > div > span:first-of-type {
             font-size: 14px;
             width: 285px; }
@@ -3987,7 +3987,7 @@
               -webkit-transition: color 0.3s;
               -o-transition: color 0.3s; }
               header#opt_header_five > div:first-of-type > div > span:last-of-type > a:hover, header#opt_header_five > div:first-of-type > div > span:last-of-type > a:active, header#opt_header_five > div:first-of-type > div > span:last-of-type > a:focus {
-                color: #E91D62; }
+                color: #e91d62; }
               header#opt_header_five > div:first-of-type > div > span:last-of-type > a > i {
                 -webkit-transform: rotate(90deg);
                 -o-transform: rotate(90deg);
@@ -3997,7 +3997,7 @@
           text-transform: uppercase;
           padding: 15px 15px;
           font-weight: 500;
-          background-color: #E91D62;
+          background-color: #e91d62;
           color: white;
           transition: color 0.1s, background-color 0.1s;
           -webkit-transition: color 0.1s;
@@ -4029,7 +4029,7 @@
         -webkit-transition: color 0.3s, background-color 0.3s;
         -o-transition: color 0.3s, background-color 0.3s; }
         header#opt_header_five > div:last-of-type > nav > ul > li > a:hover, header#opt_header_five > div:last-of-type > nav > ul > li > a:active, header#opt_header_five > div:last-of-type > nav > ul > li > a:focus {
-          background-color: #E91D62;
+          background-color: #e91d62;
           color: white; }
 
   header#opt_header_six {
@@ -4043,7 +4043,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 5%;
-      background-color: #E91D62; }
+      background-color: #e91d62; }
       header#opt_header_six > div:first-of-type > div {
         height: 50px;
         display: flex;
@@ -4120,13 +4120,84 @@
           text-transform: uppercase;
           font-weight: 500;
           border-radius: 20px;
-          background-color: #E91D62;
+          background-color: #e91d62;
           color: white;
           -webkit-transition: color 0.3s;
           -o-transition: color 0.3s;
           transition: color 0.3s; }
           header#opt_header_six > div:last-of-type > div > a:hover, header#opt_header_six > div:last-of-type > div > a:active, header#opt_header_six > div:last-of-type > div > a:focus {
-            color: black; } }
+            color: black; }
+
+  header#opt_header_seven {
+    padding: 0px;
+    position: fixed;
+    z-index: 1000;
+    display: block;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5); }
+    header#opt_header_seven > div:first-of-type {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: end; }
+      header#opt_header_seven > div:first-of-type > div > ul {
+        display: flex;
+        list-style: none; }
+        header#opt_header_seven > div:first-of-type > div > ul > li {
+          margin-right: 50%; }
+          header#opt_header_seven > div:first-of-type > div > ul > li > a > i {
+            -webkit-transition: color 0.3s;
+            -o-transition: color 0.3s;
+            transition: color 0.3s; }
+          header#opt_header_seven > div:first-of-type > div > ul > li > a:hover > i, header#opt_header_seven > div:first-of-type > div > ul > li > a:active > i, header#opt_header_seven > div:first-of-type > div > ul > li > a:focus > i {
+            color: black; }
+      header#opt_header_seven > div:first-of-type div, header#opt_header_seven > div:first-of-type span {
+        margin-top: 15px; }
+        header#opt_header_seven > div:first-of-type div i, header#opt_header_seven > div:first-of-type span i {
+          font-size: 18px;
+          color: #e91d62; }
+      header#opt_header_seven > div:first-of-type > span > a {
+        font-size: 18px;
+        color: black;
+        -webkit-transition: color 0.3s;
+        -o-transition: color 0.3s;
+        transition: color 0.3s; }
+        header#opt_header_seven > div:first-of-type > span > a:hover, header#opt_header_seven > div:first-of-type > span > a:active, header#opt_header_seven > div:first-of-type > span > a:focus {
+          color: #e91d62; }
+    header#opt_header_seven > div:last-of-type {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      align-items: center; }
+      header#opt_header_seven > div:last-of-type:before {
+        content: "";
+        position: relative;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 70%;
+        border-bottom: 2px solid #e91d62; }
+      header#opt_header_seven > div:last-of-type > nav {
+        display: flex;
+        align-items: center; }
+        header#opt_header_seven > div:last-of-type > nav > ul {
+          list-style: none;
+          display: flex; }
+          header#opt_header_seven > div:last-of-type > nav > ul > li {
+            padding: 25px 15px;
+            margin-right: 0px; }
+            header#opt_header_seven > div:last-of-type > nav > ul > li > a {
+              padding: 10px 0;
+              font-size: 14px;
+              text-transform: uppercase;
+              font-weight: 500;
+              -webkit-transition: border 0.3s;
+              -o-transition: border 0.3s;
+              transition: border 0.3s;
+              border-bottom: 2px solid rgba(0, 0, 0, 0); }
+              header#opt_header_seven > div:last-of-type > nav > ul > li > a:hover, header#opt_header_seven > div:last-of-type > nav > ul > li > a:active, header#opt_header_seven > div:last-of-type > nav > ul > li > a:focus {
+                border-bottom: 2px solid #e91d62; } }
 @media only screen {
   .footer {
     display: none; }

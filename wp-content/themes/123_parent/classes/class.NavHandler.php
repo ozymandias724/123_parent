@@ -309,7 +309,7 @@ class NavHandler
         
         // 6
         $format_header = '
-            <header class="%s %s %s heaeder" id="opt_header_six">
+            <header class="%s %s %s header" id="opt_header_six">
                 <div>
                     <div>
                         <span>
@@ -346,9 +346,34 @@ class NavHandler
         );
         
         // 7
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_seven">
+                <div>
+                    <div>
+                        %s
+                    </div>
+                    %s
+                    <span>
+                        <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                    </span>
+                </div>
+                <div>
+                    <nav>
+                        %s
+                    </nav>
+                </div>
+            </header>
+        ';
         $this->header_seven = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_social_icons
+            ,$content_logo
+            ,$num_href
+            ,$num_display
+            ,NavUtil::get_nav_links()
         );
 
         // 8

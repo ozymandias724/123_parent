@@ -6,7 +6,7 @@ $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
 $blue_infinity_carpet: #1a69a0;
-$prestige_painters: #E91D62;
+$prestige_painters: rgba(233, 29, 98, 1);
 $gray: #909090;
 $blue_darker: #257d87;
 $nav_maxwidth : 1024px;
@@ -864,6 +864,111 @@ $bp__lg : 1280px;
                         &:active,
                         &:focus {
                             color: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Header 7
+    header#opt_header_seven {
+        padding: 0px;
+        position: fixed;
+        z-index: 1000;
+        display: block;
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+        > div {
+            &:first-of-type{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                align-items: end;
+                > div {
+                    > ul {
+                        display: flex;
+                        list-style: none;
+                        > li {
+                            margin-right: 50%;
+                            > a {
+                                > i {
+                                    -webkit-transition: color 0.3s;
+                                    -o-transition: color 0.3s;
+                                    transition: color 0.3s;
+                                }
+                                &:hover,
+                                &:active,
+                                &:focus {
+                                    > i {
+                                        color: $black;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                div, span {
+                   margin-top: 15px; 
+                   i {
+                       font-size: 18px;
+                       color: $prestige_painters;
+                   }
+                }
+                > span {
+                    > a {
+                        font-size: 18px;
+                        color: $black;
+                        -webkit-transition: color 0.3s;
+                        -o-transition: color 0.3s;
+                        transition: color 0.3s;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: $prestige_painters;
+                        }
+                    }
+                }
+            }
+            &:last-of-type {
+                display: flex;
+                flex-flow: column;
+                justify-content: space-around;
+                align-items: center;
+                &:before {
+                    content: "";
+                    position: relative;
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 70%;  
+                    border-bottom: 2px solid $prestige_painters;
+                }
+                > nav {
+                    display: flex;
+                    align-items: center;
+                    > ul {
+                        list-style: none;
+                        display: flex;
+                        > li {
+                            padding: 25px 15px;
+                            margin-right: 0px;
+                            > a {
+                                padding: 10px 0;
+                                font-size: 14px;
+                                text-transform: uppercase;
+                                font-weight: 500;
+                                -webkit-transition: border 0.3s;
+                                -o-transition: border 0.3s;
+                                transition: border 0.3s;
+                                border-bottom: 2px solid rgba(0,0,0,0);
+                                &:hover, 
+                                &:active,
+                                &:focus {
+                                    border-bottom: 2px solid $prestige_painters;
+                                }
+                            }
                         }
                     }
                 }
