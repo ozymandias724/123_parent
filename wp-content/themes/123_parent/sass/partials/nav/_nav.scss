@@ -868,7 +868,7 @@ $bp__lg : 1280px;
                     }
                 }
             }
-        }
+        } 
     }
 
     //Header 7
@@ -881,91 +881,95 @@ $bp__lg : 1280px;
         background-color: $white;
         box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
         > div {
-            &:first-of-type{
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-around;
-                align-items: end;
-                > div {
-                    > ul {
-                        display: flex;
-                        list-style: none;
-                        > li {
-                            margin-right: 50%;
-                            > a {
-                                > i {
-                                    -webkit-transition: color 0.3s;
-                                    -o-transition: color 0.3s;
-                                    transition: color 0.3s;
-                                }
-                                &:hover,
-                                &:active,
-                                &:focus {
+            max-width: 1024px;
+            margin: 0 auto;
+            > div {
+                &:first-of-type{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: end;
+                    > div {
+                        > ul {
+                            display: flex;
+                            list-style: none;
+                            > li {
+                                margin-right: 50%;
+                                > a {
                                     > i {
-                                        color: $black;
+                                        -webkit-transition: color 0.3s;
+                                        -o-transition: color 0.3s;
+                                        transition: color 0.3s;
+                                    }
+                                    &:hover,
+                                    &:active,
+                                    &:focus {
+                                        > i {
+                                            color: $black;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                div, span {
-                   margin-top: 15px; 
-                   i {
-                       font-size: 18px;
-                       color: $prestige_painters;
-                   }
-                }
-                > span {
-                    > a {
-                        font-size: 18px;
-                        color: $black;
-                        -webkit-transition: color 0.3s;
-                        -o-transition: color 0.3s;
-                        transition: color 0.3s;
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            color: $prestige_painters;
+                    div, span {
+                       margin-top: 15px; 
+                       i {
+                           font-size: 18px;
+                           color: $prestige_painters;
+                       }
+                    }
+                    > span {
+                        > a {
+                            font-size: 18px;
+                            color: $black;
+                            -webkit-transition: color 0.3s;
+                            -o-transition: color 0.3s;
+                            transition: color 0.3s;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: $prestige_painters;
+                            }
                         }
                     }
                 }
-            }
-            &:last-of-type {
-                display: flex;
-                flex-flow: column;
-                justify-content: space-around;
-                align-items: center;
-                &:before {
-                    content: "";
-                    position: relative;
-                    left: 0;
-                    bottom: 0;
-                    height: 2px;
-                    width: 70%;  
-                    border-bottom: 2px solid $prestige_painters;
-                }
-                > nav {
+                &:last-of-type {
                     display: flex;
+                    flex-flow: column;
+                    justify-content: space-between;
                     align-items: center;
-                    > ul {
-                        list-style: none;
+                    &:before {
+                        content: "";
+                        position: relative;
+                        left: 0;
+                        bottom: 0;
+                        height: 2px;
+                        width: 100%;  
+                        border-bottom: 2px solid $prestige_painters;
+                    }
+                    > nav {
                         display: flex;
-                        > li {
-                            padding: 25px 15px;
-                            margin-right: 0px;
-                            > a {
-                                padding: 10px 0;
-                                font-size: 14px;
-                                text-transform: uppercase;
-                                font-weight: 500;
-                                -webkit-transition: color 0.3s;
-                                -o-transition: color 0.3s;
-                                transition: color 0.3s;
-                                &:hover, 
-                                &:active,
-                                &:focus {
-                                   color: $prestige_painters;
+                        align-items: center;
+                        > ul {
+                            list-style: none;
+                            display: flex;
+                            > li {
+                                padding: 25px 15px;
+                                margin-right: 0px;
+                                > a {
+                                    padding: 10px 0;
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                    font-weight: 500;
+                                    -webkit-transition: color 0.3s;
+                                    -o-transition: color 0.3s;
+                                    transition: color 0.3s;
+                                    &:hover, 
+                                    &:active,
+                                    &:focus {
+                                       color: $prestige_painters;
+                                    }
                                 }
                             }
                         }
@@ -973,6 +977,7 @@ $bp__lg : 1280px;
                 }
             }
         }
+
     }
 
 }

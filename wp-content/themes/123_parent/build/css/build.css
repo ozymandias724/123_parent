@@ -4136,67 +4136,70 @@
     width: 100%;
     background-color: white;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5); }
-    header#opt_header_seven > div:first-of-type {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-around;
-      align-items: end; }
-      header#opt_header_seven > div:first-of-type > div > ul {
+    header#opt_header_seven > div {
+      max-width: 1024px;
+      margin: 0 auto; }
+      header#opt_header_seven > div > div:first-of-type {
         display: flex;
-        list-style: none; }
-        header#opt_header_seven > div:first-of-type > div > ul > li {
-          margin-right: 50%; }
-          header#opt_header_seven > div:first-of-type > div > ul > li > a > i {
-            -webkit-transition: color 0.3s;
-            -o-transition: color 0.3s;
-            transition: color 0.3s; }
-          header#opt_header_seven > div:first-of-type > div > ul > li > a:hover > i, header#opt_header_seven > div:first-of-type > div > ul > li > a:active > i, header#opt_header_seven > div:first-of-type > div > ul > li > a:focus > i {
-            color: black; }
-      header#opt_header_seven > div:first-of-type div, header#opt_header_seven > div:first-of-type span {
-        margin-top: 15px; }
-        header#opt_header_seven > div:first-of-type div i, header#opt_header_seven > div:first-of-type span i {
-          font-size: 18px;
-          color: #e91d62; }
-      header#opt_header_seven > div:first-of-type > span > a {
-        font-size: 18px;
-        color: black;
-        -webkit-transition: color 0.3s;
-        -o-transition: color 0.3s;
-        transition: color 0.3s; }
-        header#opt_header_seven > div:first-of-type > span > a:hover, header#opt_header_seven > div:first-of-type > span > a:active, header#opt_header_seven > div:first-of-type > span > a:focus {
-          color: #e91d62; }
-    header#opt_header_seven > div:last-of-type {
-      display: flex;
-      flex-flow: column;
-      justify-content: space-around;
-      align-items: center; }
-      header#opt_header_seven > div:last-of-type:before {
-        content: "";
-        position: relative;
-        left: 0;
-        bottom: 0;
-        height: 2px;
-        width: 70%;
-        border-bottom: 2px solid #e91d62; }
-      header#opt_header_seven > div:last-of-type > nav {
-        display: flex;
-        align-items: center; }
-        header#opt_header_seven > div:last-of-type > nav > ul {
-          list-style: none;
-          display: flex; }
-          header#opt_header_seven > div:last-of-type > nav > ul > li {
-            padding: 25px 15px;
-            margin-right: 0px; }
-            header#opt_header_seven > div:last-of-type > nav > ul > li > a {
-              padding: 10px 0;
-              font-size: 14px;
-              text-transform: uppercase;
-              font-weight: 500;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: end; }
+        header#opt_header_seven > div > div:first-of-type > div > ul {
+          display: flex;
+          list-style: none; }
+          header#opt_header_seven > div > div:first-of-type > div > ul > li {
+            margin-right: 50%; }
+            header#opt_header_seven > div > div:first-of-type > div > ul > li > a > i {
               -webkit-transition: color 0.3s;
               -o-transition: color 0.3s;
               transition: color 0.3s; }
-              header#opt_header_seven > div:last-of-type > nav > ul > li > a:hover, header#opt_header_seven > div:last-of-type > nav > ul > li > a:active, header#opt_header_seven > div:last-of-type > nav > ul > li > a:focus {
-                color: #e91d62; } }
+            header#opt_header_seven > div > div:first-of-type > div > ul > li > a:hover > i, header#opt_header_seven > div > div:first-of-type > div > ul > li > a:active > i, header#opt_header_seven > div > div:first-of-type > div > ul > li > a:focus > i {
+              color: black; }
+        header#opt_header_seven > div > div:first-of-type div, header#opt_header_seven > div > div:first-of-type span {
+          margin-top: 15px; }
+          header#opt_header_seven > div > div:first-of-type div i, header#opt_header_seven > div > div:first-of-type span i {
+            font-size: 18px;
+            color: #e91d62; }
+        header#opt_header_seven > div > div:first-of-type > span > a {
+          font-size: 18px;
+          color: black;
+          -webkit-transition: color 0.3s;
+          -o-transition: color 0.3s;
+          transition: color 0.3s; }
+          header#opt_header_seven > div > div:first-of-type > span > a:hover, header#opt_header_seven > div > div:first-of-type > span > a:active, header#opt_header_seven > div > div:first-of-type > span > a:focus {
+            color: #e91d62; }
+      header#opt_header_seven > div > div:last-of-type {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center; }
+        header#opt_header_seven > div > div:last-of-type:before {
+          content: "";
+          position: relative;
+          left: 0;
+          bottom: 0;
+          height: 2px;
+          width: 100%;
+          border-bottom: 2px solid #e91d62; }
+        header#opt_header_seven > div > div:last-of-type > nav {
+          display: flex;
+          align-items: center; }
+          header#opt_header_seven > div > div:last-of-type > nav > ul {
+            list-style: none;
+            display: flex; }
+            header#opt_header_seven > div > div:last-of-type > nav > ul > li {
+              padding: 25px 15px;
+              margin-right: 0px; }
+              header#opt_header_seven > div > div:last-of-type > nav > ul > li > a {
+                padding: 10px 0;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 500;
+                -webkit-transition: color 0.3s;
+                -o-transition: color 0.3s;
+                transition: color 0.3s; }
+                header#opt_header_seven > div > div:last-of-type > nav > ul > li > a:hover, header#opt_header_seven > div > div:last-of-type > nav > ul > li > a:active, header#opt_header_seven > div > div:last-of-type > nav > ul > li > a:focus {
+                  color: #e91d62; } }
 @media only screen {
   .footer {
     display: none; }

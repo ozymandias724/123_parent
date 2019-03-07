@@ -348,19 +348,21 @@ class NavHandler
         // 7
         $format_header = '
             <header class="%s %s %s header" id="opt_header_seven">
-                <div>
+                <div> 
                     <div>
+                        <div>
+                            %s
+                        </div>
                         %s
+                        <span>
+                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                        </span>
                     </div>
-                    %s
-                    <span>
-                        <a href="%s"><i class="fa fa-phone"></i> %s</a>
-                    </span>
-                </div>
-                <div>
-                    <nav>
-                        %s
-                    </nav>
+                    <div>
+                        <nav>
+                            %s
+                        </nav>
+                    </div>
                 </div>
             </header>
         ';
