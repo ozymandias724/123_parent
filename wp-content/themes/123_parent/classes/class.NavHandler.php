@@ -376,12 +376,35 @@ class NavHandler
             ,$num_href
             ,$num_display
             ,NavUtil::get_nav_links()
-        );
+        ); 
 
         // 8
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_eight">
+                <div>
+                    <div>
+                        %s
+                    </div>
+                    <div>
+                        <div>
+                            <nav>
+                                %s
+                            </nav>
+                        </div>
+                        <div>
+                            Hello
+                        </div>
+                    </div>
+                </div>
+            </header>
+        ';
         $this->header_eight = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 9

@@ -4199,7 +4199,52 @@
                 -o-transition: color 0.3s;
                 transition: color 0.3s; }
                 header#opt_header_seven > div > div:last-of-type > nav > ul > li > a:hover, header#opt_header_seven > div > div:last-of-type > nav > ul > li > a:active, header#opt_header_seven > div > div:last-of-type > nav > ul > li > a:focus {
-                  color: #e91d62; } }
+                  color: #e91d62; }
+
+  header#opt_header_eight {
+    padding: 0px;
+    z-index: 19;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0; }
+    header#opt_header_eight > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1024px;
+      background-color: white;
+      box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+      padding: 0 30px;
+      margin: 0 auto; }
+      header#opt_header_eight > div > div:nth-of-type(1) > a {
+        padding: 0; }
+      header#opt_header_eight > div > div:nth-of-type(2) {
+        display: flex;
+        align-items: center; }
+        header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type {
+          margin-right: 16px; }
+          header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav {
+            display: flex;
+            justify-content: flex-end; }
+            header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav > ul {
+              display: flex;
+              flex-flow: row wrap; }
+              header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav > ul > li {
+                padding: 35px 0;
+                margin-right: 0; }
+                header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav > ul > li > a {
+                  text-transform: uppercase;
+                  font-size: 14px;
+                  padding: 35px 6px;
+                  transition: color 0.3s,background-color 0.3s;
+                  -webkit-transition: color 0.3s, background-color 0.3s;
+                  -o-transition: color 0.3s, background-color 0.3s; }
+                  header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav > ul > li > a:hover, header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav > ul > li > a:active, header#opt_header_eight > div > div:nth-of-type(2) > div:first-of-type > nav > ul > li > a:focus {
+                    background-color: #e91d62;
+                    color: white; } }
 @media only screen {
   .footer {
     display: none; }
