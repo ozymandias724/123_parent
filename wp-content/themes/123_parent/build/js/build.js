@@ -2109,12 +2109,13 @@ var Theme = {};
 			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
 			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
 			header_5_address_link : $(".google-search-address"),
+			header_5_address_text : $(".google-search-address").text(),
 
 			_init : function(){
 				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
 
 				$(Theme.Headers.estimate_close).on("click",Theme.Headers._close_popup);
-
+ 
 				if($(Theme.Headers.header_4).length){
 
 					window.onscroll = function(){
@@ -2167,7 +2168,7 @@ var Theme = {};
 			},
 			_header_5_address_link_click : function(event){
 				event.preventDefault();
-				//alert("address click handler");
+				window.open('https://google.com/search?q=' + Theme.Headers.header_5_address_text);
 			}
 		}
         Theme.Headers._init();  
