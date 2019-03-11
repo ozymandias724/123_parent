@@ -209,7 +209,6 @@ class NavHandler
                 <span class="header-tint %s"></span>
             </header>
         ';
-
         $this->header_two = sprintf(
             $format_header
             ,$invertlogo
@@ -277,8 +276,10 @@ class NavHandler
             <header class="%s %s %s header" id="opt_header_five">
                 <div>
                     %s
-                    <div>
-                        <span><i class="fa fa-map-marker"></i> %s</span>
+                    <div> 
+                        <span>
+                            <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                        </span>
                         <span>
                             <a href="%s"><i class="fa fa-phone"></i> %s</a>
                         </span>

@@ -1,14 +1,15 @@
 $primary : #df1d1d;
 $black : black;
 $second_black: #333333;
-$white : white; 
+$white_opacity_eight : rgba(255, 255, 255, 0.8);
+$white : rgba(255, 255, 255, 1); 
 $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
-$blue_infinity_carpet: #1a69a0;
-$prestige_painters: rgba(233, 29, 98, 1);
+$blue_infinity_carpet : #1a69a0;
+$prestige_painters : rgba(233, 29, 98, 1);
 $gray: #909090;
-$blue_darker: #257d87;
+$blue_darker : #257d87;
 $nav_maxwidth : 1024px;
 $banner_height : 52px; 
 $bp__lg : 1280px;
@@ -591,9 +592,9 @@ $bp__lg : 1280px;
         }
     }
 
-    //Header Five scss
+    //Header 5
     header#opt_header_five {
-        z-index: 1000;
+        z-index: 19;
         padding: 0px;
         display: block;
         position: fixed;
@@ -646,7 +647,17 @@ $bp__lg : 1280px;
                         }
                         &:first-of-type {
                             font-size: 14px;
-                            width: 285px;
+                            width: 288px;   
+                            > a {
+                                transition: color 0.3s;
+                                -webkit-transition: color 0.3s;
+                                -o-transition: color 0.3s;
+                                &:hover, 
+                                &:active,
+                                &:focus {
+                                    color: $prestige_painters;
+                                }
+                            }
                         }
                         &:last-of-type {
                             font-size: 14px;
@@ -674,14 +685,14 @@ $bp__lg : 1280px;
                         padding: 15px 15px;
                         font-weight: 500;
                         background-color: $prestige_painters;
-                        color: $white;
-                        transition: color 0.1s, background-color 0.1s;
+                        color: $white_opacity_eight;
+                        transition: color 0.1s;
                         -webkit-transition: color 0.1s;
                         -o-transition: color 0.1s;
                         &:hover,
                         &:active,
                         &:focus {
-                            color: $black;
+                            color: $white;
                         }
                     }
                 } 
@@ -1001,13 +1012,11 @@ $bp__lg : 1280px;
             margin: 0 auto;
             > div {
                 &:nth-of-type(1) { 
-                    //flex: 1 0 10%;
                     >a {
                         padding: 0;
                     }
                 }
                 &:nth-of-type(2) {
-                    //flex: 1 0 85%;
                     display: flex;
                     align-items: center;
                     > div {

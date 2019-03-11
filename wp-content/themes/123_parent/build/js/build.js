@@ -2100,44 +2100,47 @@ var Theme = {};
 	
 	$(document).ready(function(){
 
-		Theme.Gustavo = {
+		Theme.Headers = {
 			tint : $(".header-tint"),
-			estimate : $(".estimate-toggle, .topbanner-quickquote, .site_button-quote"),
+			estimate : $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
 			estimate_popup : $(".estimate"),
 			estimate_close : $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
 			header_4 : $('header.header#opt_header_one'),
 			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
 			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
+			header_5_address_link : $(".google-search-address"),
 
 			_init : function(){
-				$(Theme.Gustavo.estimate).on("click", Theme.Gustavo._click_handler); 
+				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
 
-				$(Theme.Gustavo.estimate_close).on("click",Theme.Gustavo._close_popup);
+				$(Theme.Headers.estimate_close).on("click",Theme.Headers._close_popup);
 
-				if($(Theme.Gustavo.header_4).length){
+				if($(Theme.Headers.header_4).length){
 
 					window.onscroll = function(){
-						Theme.Gustavo._header_layout_4_function(); 
+						Theme.Headers._header_layout_4_function(); 
 					}
 
-					Theme.Gustavo.header_4_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+					Theme.Headers.header_4_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
 
-					if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
-						Theme.Gustavo.header_4_div_two.css({
+					if(window.pageYOffset >= Theme.Headers.header_4_div_two_offset_top){
+						Theme.Headers.header_4_div_two.css({
 							"position" : "fixed" 
 						});
 					}else{
-						Theme.Gustavo.header_4_div_two.css({
+						Theme.Headers.header_4_div_two.css({
 							"position" : "relative" 
 						});
 					}
 					
 				}
 
+				$(Theme.Headers.header_5_address_link).on("click", Theme.Headers._header_5_address_link_click);
+
 			},
 			_click_handler : function(event){
 				event.preventDefault();
-				Theme.Gustavo.estimate_popup.fadeIn(250); 
+				Theme.Headers.estimate_popup.fadeIn(250); 
 			},
 			_close_popup : function(event){
 				if( $(event.target).hasClass("estimate") || 
@@ -2146,24 +2149,28 @@ var Theme = {};
 					$(event.target).hasClass("site__button-quote") 
 				){ 
 					event.preventDefault();
-					Theme.Gustavo.estimate_popup.fadeOut(250);	 
+					Theme.Headers.estimate_popup.fadeOut(250);	 
 				} 
 			},
 			_header_layout_4_function : function(){
 				
-				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
-					Theme.Gustavo.header_4_div_two.css({
+				if(window.pageYOffset >= Theme.Headers.header_4_div_two_offset_top){
+					Theme.Headers.header_4_div_two.css({
 						"position" : "fixed" 
 					});
 				}else{
-					Theme.Gustavo.header_4_div_two.css({
+					Theme.Headers.header_4_div_two.css({
 						"position" : "relative" 
 					});
 				}
 				
 			},
+			_header_5_address_link_click : function(event){
+				event.preventDefault();
+				//alert("address click handler");
+			}
 		}
-        Theme.Gustavo._init();  
+        Theme.Headers._init();  
         
 
         Theme.Nav_Mobile = { 
