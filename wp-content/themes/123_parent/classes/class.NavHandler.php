@@ -166,9 +166,9 @@ class NavHandler
             <header class="%s %s %s header" id="opt_header_one">
                 <div>
                     %s
-                    %s
+                    <span>%s</span>
                     <span>
-                        <a href="%s">%s</a>
+                        <a href="%s"><span>Call Us Today:</span> %s</a>
                     </span>
                 </div>
                 <div>
@@ -179,7 +179,7 @@ class NavHandler
                 </div>
             </header>
         ';
-        $this->header_one = sprintf(
+        $this->header_one = sprintf( 
             $format_header
             ,$invertlogo
             ,$topbar_class
@@ -194,7 +194,7 @@ class NavHandler
 
         // 2
         $format_header = '
-            <header class="header %s %s %s" id="opt_header_onetwo">
+            <header class="header %s %s %s" id="opt_header_two">
                 %s
                 %s
                 <div>
@@ -273,27 +273,138 @@ class NavHandler
         );
 
         // 5
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_five">
+                <div>
+                    %s
+                    <div>
+                        <span><i class="fa fa-map-marker"></i> %s</span>
+                        <span>
+                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                        </span>
+                        <a href="#" class="topbanner-quickquote">Quote</a> 
+                    </div>
+                </div>
+                <div>
+                    %s
+                    <nav>
+                        %s
+                    </nav>
+                </div>
+            </header>
+        ';
+
         $this->header_five = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_social_icons
+            ,$addr
+            ,$num_href
+            ,$num_display
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 6
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_six">
+                <div>
+                    <div>
+                        <span>
+                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                        </span>
+                        <span>
+                            <i class="fa fa-map-marker"></i> %s
+                        </span>
+                    </div>
+                    %s
+                </div>
+                <div>
+                    %s
+                    <div>
+                        <nav>
+                            %s
+                        </nav>
+                        <a href="#" class="topbanner-quickquote">Get A Quote</a>
+                    </div> 
+                </div>
+            </header>
+        ';
         $this->header_six = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$num_href 
+            ,$num_display
+            ,$addr
+            ,$content_social_icons
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 7
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_seven">
+                <div> 
+                    <div>
+                        <div>
+                            %s
+                        </div>
+                        %s
+                        <span>
+                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                        </span>
+                    </div>
+                    <div>
+                        <nav>
+                            %s
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        ';
         $this->header_seven = sprintf(
             $format_header
-        );
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_social_icons
+            ,$content_logo
+            ,$num_href
+            ,$num_display
+            ,NavUtil::get_nav_links()
+        ); 
 
         // 8
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_eight">
+                <div>
+                    <div>
+                        %s
+                    </div>
+                    <div>
+                        <div>
+                            <nav>
+                                %s
+                            </nav>
+                        </div>
+                        <div>
+                            Hello
+                        </div>
+                    </div>
+                </div>
+            </header>
+        ';
         $this->header_eight = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 9
