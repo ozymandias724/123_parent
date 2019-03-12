@@ -11,7 +11,12 @@ var Theme = {};
 			header_4 : $('header.header#opt_header_one'),
 			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
 			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
+<<<<<<< HEAD
 			header_5_address_link : $(".google-search-address"),
+=======
+			header_address_link : $(".google-search-address"),
+			header_address_text : $(".google-search-address").text(),
+>>>>>>> d02004f8a0df747bd2ecf1caab0e954042cdfefa
 
 			_init : function(){
 				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
@@ -38,7 +43,7 @@ var Theme = {};
 					
 				}
 
-				$(Theme.Headers.header_5_address_link).on("click", Theme.Headers._header_5_address_link_click);
+				$(Theme.Headers.header_address_link).on("click", Theme.Headers._header_address_link_click);
 
 			},
 			_click_handler : function(event){
@@ -68,9 +73,13 @@ var Theme = {};
 				}
 				
 			},
-			_header_5_address_link_click : function(event){
+			_header_address_link_click : function(event){
 				event.preventDefault();
+<<<<<<< HEAD
 				//alert("address click handler");
+=======
+				window.open('https://google.com/search?q=' + Theme.Headers.header_address_text);
+>>>>>>> d02004f8a0df747bd2ecf1caab0e954042cdfefa
 			}
 		}
         Theme.Headers._init();  

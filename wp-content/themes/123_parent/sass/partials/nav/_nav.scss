@@ -1,7 +1,6 @@
 $primary : #df1d1d;
 $black : black;
 $second_black: #333333;
-$white_opacity_eight : rgba(255, 255, 255, 0.8);
 $white : rgba(255, 255, 255, 1); 
 $accent : green;
 $tint : lightgrey;
@@ -10,6 +9,7 @@ $blue_infinity_carpet : #1a69a0;
 $prestige_painters : rgba(233, 29, 98, 1);
 $gray: #909090;
 $blue_darker : #257d87;
+$opacity_below_100 : 0.8;
 $nav_maxwidth : 1024px;
 $banner_height : 52px; 
 $bp__lg : 1280px;
@@ -85,59 +85,114 @@ $bp__lg : 1280px;
         }
     }
 
-    //Header One scss
+    //Header 1
     header#opt_header_one {
         padding: 0px;
         display: block;
         position:relative;
+        > div:nth-of-type(1), 
+        > div:nth-of-type(2) > nav > ul > li > a:hover, 
+        > div:nth-of-type(2) > nav > ul > li > a:active, 
+        > div:nth-of-type(2) > nav > ul > li > a:focus {
+            color: $white;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1):before,
+        > div:nth-of-type(1) > span:nth-of-type(2):before,
+        > div:nth-of-type(1) > span:nth-of-type(2) > a > span,
+        > div:nth-of-type(2) > ul > li > a:hover,
+        > div:nth-of-type(2) > ul > li > a:focus,
+        > div:nth-of-type(2) > ul > li > a:active {
+            color: $blue_infinity_carpet;
+        }
+        > div:nth-of-type(1), 
+        > div:nth-of-type(1) > span:nth-of-type(1),
+        > div:nth-of-type(1) > span:nth-of-type(2),
+        > div:nth-of-type(2), 
+        > div:nth-of-type(2) > nav,
+        > div:nth-of-type(2) > ul {
+            display: flex;
+        }
+        > div:nth-of-type(1), 
+        > div:nth-of-type(1) > span:nth-of-type(1),
+        > div:nth-of-type(1) > span:nth-of-type(2),
+        > div:nth-of-type(2) > nav,
+        > div:nth-of-type(2) > ul {
+            align-items: center;
+        }
+        > div:nth-of-type(1),
+        > div:nth-of-type(2), 
+        > div:nth-of-type(2) > nav,
+        > div:nth-of-type(2) > nav > ul {
+            justify-content: space-between;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1), 
+        > div:nth-of-type(1) > span:nth-of-type(2) {
+            justify-content: flex-end;
+        }
+        > div:nth-of-type(2) > ul > li > a > i, 
+        > div:nth-of-type(1) > span:nth-of-type(1) {
+            font-size: 16px;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1):before,
+        > div:nth-of-type(1) > span:nth-of-type(2):before {
+            font-family: FontAwesome;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1):before,
+        > div:nth-of-type(1) > span:nth-of-type(2):before,
+        > div:nth-of-type(1) > span:nth-of-type(2) > a > span,
+        > div:nth-of-type(2) > nav > ul > li > a {
+            display: block;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1) > a,
+        > div:nth-of-type(1) > span:nth-of-type(2) > a{
+            opacity: $opacity_below_100;
+            -webkit-transition: opacity 0.3s;
+            -o-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1) > a:hover, 
+        > div:nth-of-type(1) > span:nth-of-type(1) > a:active, 
+        > div:nth-of-type(1) > span:nth-of-type(1) > a:focus, 
+        > div:nth-of-type(1) > span:nth-of-type(2) > a:hover, 
+        > div:nth-of-type(1) > span:nth-of-type(2) > a:active, 
+        > div:nth-of-type(1) > span:nth-of-type(2) > a:focus {
+            opacity: 1;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(1):before,
+        > div:nth-of-type(1) > span:nth-of-type(2):before {
+            border-radius: 100%;
+            font-weight: 700;
+            border: 3px solid $blue_infinity_carpet;
+        }
+        > div:nth-of-type(1) > span:nth-of-type(2) > a > span,
+        > div:nth-of-type(2) > nav > ul > li > a {
+            text-transform: uppercase;
+        }
         > div {
             //Top part of the header (logo, address, phone)
-            &:nth-of-type(1){
+            &:nth-of-type(1) {
                 background-color: $black;
-                color: $white;
-                display: flex;
                 flex-flow: row nowrap;
-                align-items: center;
-                justify-content: space-between;
                 padding: 0 10%;
                 > span {
                     //Top bar address
-                    &:nth-of-type(1){
-                        font-size: 16px;
-                        display: flex;
-                        justify-content: flex-end;
-                        align-items: center;
+                    &:nth-of-type(1) {
                         margin-left: auto;
                         width: 230px;
                         //Address icon
-                        &:before{
-                            font-family: FontAwesome;
+                        &:before {
                             content: "\f041";
-                            display: block;
                             padding: 8px 14px;
                             margin-right: 10px;
-                            font-weight: 700;
-                            color: $blue_infinity_carpet;
-                            border-radius: 100%; 
-                            border: 3px solid $blue_infinity_carpet;
-                        }
+                        }                    
                     }
                     //Top bar phone number
-                    &:nth-of-type(2){ 
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                        margin-left:5%;
+                    &:nth-of-type(2) { 
+                        margin-left: 5%;
                         //Phone number icon
-                        &:before{
-                            font-family: FontAwesome;
+                        &:before {
                             content: "\f095";
-                            display: block;
                             padding: 10px 10px;
-                            font-weight: 700;
-                            color: $blue_infinity_carpet;
-                            border-radius: 100%;
-                            border: 3px solid $blue_infinity_carpet;
                             margin-left: 30px;
                             margin-right:10px;
                             -webkit-transform: rotate(90deg);
@@ -149,21 +204,9 @@ $bp__lg : 1280px;
                         > a {
                             font-size: 19px;
                             font-weight:500;
-                            -webkit-transition: opacity 0.3s;
-                            -o-transition: opacity 0.3s;
-                            transition: opacity 0.3s;
-                            opacity:1;
-                            &:hover,
-                            &:active,
-                            &:focus{
-                                opacity:0.8;
-                            }
                             //"Call Us Today" text
                             > span {
-                                color: $blue_infinity_carpet; 
-                                font-size:14px;
-                                text-transform:uppercase;
-                                display: block;
+                                font-size: 14px;
                                 text-align: left;
                             }
                         }
@@ -171,38 +214,27 @@ $bp__lg : 1280px;
                 }
             }
             //Lower part of header (navigational menu and social icons) 
-            &:nth-of-type(2){
+            &:nth-of-type(2) {
                 background-color: $white;
-                display: flex;
                 flex-wrap: nowrap;
-                justify-content: space-between;
-                position:relative;
-                width:100%;
-                top:0;
+                position: relative;
+                width: 100%;
+                top: 0;
                 padding: 0 10%;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
                 //Navigational menu items list
                 > nav {
-                    display:flex;
-                    align-items:center;
-                    justify-content: space-between;
                     > ul {
                         > li { 
                             flex: 0 1 auto;
                             margin-right:0px;
                             > a {
-                                text-transform: uppercase;
                                 font-weight:500;
-                                display:block;
                                 color: $black;
                                 padding: 15px 10px;
-                                -webkit-transition: color 0.3s, background-color 0.3s;
-                                -o-transition: color 0.3s, background-color 0.3s;
-                                transition: color 0.3s, background-color 0.3s;
                                 &:hover,
                                 &:active,
                                 &:focus {
-                                    color: $white;
                                     background-color: $blue_infinity_carpet;
                                 }
                             }
@@ -211,33 +243,20 @@ $bp__lg : 1280px;
                 }
                 //Social icons list
                 > ul {
-                    display: flex;
                     list-style: none;
                     flex-wrap: nowrap;
-                    justify-content: space-between;
-                    align-items:center;
                     > li {
                         flex: 1 0 auto;
-                        list-style:none;
-                        position:relative;
-                        padding:2px;
+                        position: relative;
+                        padding: 2px;
                         &:last-of-type{
                             padding-right:0;
-                        }                                                    
+                        }  
                         > a {
-                            border-radius:100%;
                             padding: 7px 10px;
                             -webkit-transition: color 0.3s;
                             -o-transition: color 0.3s;
                             transition: color 0.3s;
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                color: $blue_infinity_carpet;
-                            }
-                            > i {
-                                font-size:15px;
-                            }
                         }
                         &:last-of-type{
                             > a {
@@ -250,6 +269,7 @@ $bp__lg : 1280px;
         }
     }
 
+    //Header 2
     header#opt_header_two {
         padding-top:40px;
         display: flex;
@@ -273,14 +293,26 @@ $bp__lg : 1280px;
                     text-decoration: none;
                     position: relative;
                     margin:10px 0px;
-                    opacity: 0.8;
-                    @include transition(opacity 0.3s);
-                    &:hover, 
+                    opacity: $opacity_below_100;
+                    transition: opacity 0.3s;
+                    -webkit-transition: opacity 0.3s;
+                    -o-transition: opacity 0.3s;
+                    &:hover,  
                     &:focus,
                     &:active{
                         opacity: 1;
                     }
+                    //Phone number icon
+                    &:before{
+                        font-family: FontAwesome;
+                        content: "\f095";
+                        font-weight: 700;
+                        color: $white;
+                        border-radius: 100%;
+                        margin-right: 10px;
+                    }
                 }
+                //Menu items
                 > nav {
                     > ul {
                         > li {
@@ -288,8 +320,7 @@ $bp__lg : 1280px;
                                 font-size: 1.4rem;
                                 color: white;
                                 text-transform: uppercase;
-                                opacity: 0.8;
-                                @include transition(opacity 0.3s);
+                                opacity: $opacity_below_100;
                                 &:hover, 
                                 &:focus,
                                 &:active{
@@ -324,11 +355,14 @@ $bp__lg : 1280px;
                         text-transform: uppercase;
                         background-color: $blue;
                         border-radius: 4px;
-                        @include transition(background-color 0.3s);
+                        opacity: $opacity_below_100;
+                        -webkit-transition: opacity 0.3s;
+                        -o-transition: opacity 0.3s;
+                        transition: opacity 0.3s;
                         &:hover,
                         &:focus,
                         &:active{
-                            background-color: $blue_darker;
+                            opacity: 1;
                         }
                     }
                 }
@@ -338,7 +372,7 @@ $bp__lg : 1280px;
             background-color: #383838;
         }
         
-        // black free estimate bar above header
+        // Black free estimate bar above header
         .opt__estimatebar {
             background-color: $ink;
             text-align: center;
@@ -348,8 +382,10 @@ $bp__lg : 1280px;
             > a {
                 display: inline;
                 margin: 10px auto;
-                opacity: 0.8;
-                @include transition(opacity 0.3s);
+                opacity: $opacity_below_100;
+                transition: opacity 0.3s;
+                -webkit-transition: opacity 0.3s;
+                -o-transition: opacity 0.3s;
                 &:hover, 
                 &:focus,
                 &:active{
@@ -360,6 +396,7 @@ $bp__lg : 1280px;
 
     }
 
+    //Header 3
     header#opt_header_three {
         max-width: $nav_maxwidth;
         left: 50%;
@@ -385,8 +422,7 @@ $bp__lg : 1280px;
                     font-size: 1.6rem;
                     text-transform: uppercase;
                     > a {
-                        opacity: 0.8;
-                        @include transition(opacity 0.3s);
+                        opacity: $opacity_below_100;
                         &:hover, 
                         &:focus,
                         &:active{
@@ -414,18 +450,22 @@ $bp__lg : 1280px;
                     font-size:1.6rem;
                     text-align: center;
                     > span {
-                        opacity: 0.8;
-                        @include transition(opacity 0.3s);
+                        opacity: $opacity_below_100;
+                        -webkit-transition: opacity 0.3s;
+                        -o-transition: opacity 0.3s;
+                        transition: opacity 0.3s;
                     }
                     i {
                         color: $black;
                         margin-right:10px;
                         font-size:2rem;
-                        @include transition(color 0.3s);
+                        -webkit-transition: color 0.3s;
+                        -o-transition: color 0.3s;
+                        transition: color 0.3s;
                     }
                     &:hover, 
                     &:focus,
-                    &:active{
+                    &:active {
                         span {
                             opacity: 1;
                         }
@@ -449,7 +489,9 @@ $bp__lg : 1280px;
                 font-size: 1.6rem;
                 text-transform:uppercase;
                 align-items: center;
-                @include transition(background-color 0.3s);
+                transition: background-color 0.3s;
+                -webkit-transition: background-color 0.3s;
+                -o-transition: background-color 0.3s;
                 &:hover, 
                 &:focus,
                 &:active{
@@ -468,34 +510,36 @@ $bp__lg : 1280px;
 
 
 
-    // header style four enabled
+    //Header 4
     header#opt_header_four {
         color: $white;
         padding:0px;
-        >div{
+        > div {
             background-color: $black;
             text-align: center;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
             align-items: center;
-            >ul{
-                >li{ 
+            > ul  {
+                > li { 
                     display: inline-block;
                     margin: 0 10px;
-                    >a{
+                    > a {
                         font-size:16px;
                         width:28px;
                         height:28px; 
                         border-radius:50%;
                         display: inline-block;
                         padding: 5px;
-                        overflow:hidden;
+                        overflow: hidden;
                         color: $white;
-                        @include transition(background 0.3s, color 0.3s);
+                        transition: background 0.3s, color 0.3s;
+                        -webkit-transition: background 0.3s, color 0.3s;
+                        -o-transition: background 0.3s, color 0.3s;
                         &:hover, 
                         &:active,
-                        &:focus{
+                        &:focus {
                             background: $white;
                             color: $primary;
                         }
@@ -503,8 +547,8 @@ $bp__lg : 1280px;
                 }
             }
         }
-        >nav {
-            >ul {
+        > nav {
+            > ul {
                 position: relative;
                 margin: 0 auto;
                 width: 100%;
@@ -513,9 +557,8 @@ $bp__lg : 1280px;
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: space-around;
-
                 &:before,
-                &:after{
+                &:after {
                     content: "";
                     display: block;
                     position: absolute;
@@ -526,19 +569,23 @@ $bp__lg : 1280px;
                     flex:0 1 auto;
                     top: 0;
                     background-color: $primary;
-                    @include transform(skewX(37deg));
+                    -webkit-transform: skewX(37deg);
+                    transform: skewX(37deg);
+                    -o-transform: skewX(37deg);
 			        z-index: -1;
                 }
                 &:after {
-                    @include transform(skewX(-37deg));
+                    -webkit-transform: skewX(-37deg);
+                    transform: skewX(-37deg);
+                    -o-transform: skewX(-37deg);
                     left: auto;
                     right: -70px;
                 }
-                >li {
+                > li {
                     flex: 0 1 auto;
                     display: inline-block;
-                    vertical-align:middle;
-                    >a {
+                    vertical-align: middle;
+                    > a {
                         text-decoration: none;
                         color: $white;
                         text-transform: uppercase;
@@ -546,45 +593,53 @@ $bp__lg : 1280px;
                         font-size: 13px;
                         line-height: 4;
                         letter-spacing: 1px;
-                        opacity: 0.8;
-                        @include transition(opacity 0.3s);
+                        opacity: $opacity_below_100;
                         &:hover,
                         &:active,
-                        &:focus{
-                            opacity:1;
+                        &:focus {
+                            opacity: 1;
                         }
                     }
                 }
             }
         }
-        >div {
-            >ul,
-            >span {
+        > div {
+            > ul,
+            > span {
                 flex: 0 1 auto;
                 font-size: 1.6rem;
             }
-
-            >span {
-                >a {
-                    >img {
+            > span {
+                > a {
+                    > img {
                         max-width: 220px;
                         padding: 7px 0px;
                     }
                 }
             }
-            span{
+            span {
                 &:last-child{
-                    >a{
+                    > a {
                         font-weight: 400;
                         font-size:16px;
                         letter-spacing:1px;
                         border-bottom: 1px solid transparent;
-                        opacity: 0.8;
-                        @include transition(opacity 0.3s);
+                        opacity: $opacity_below_100;
+                        transition: opacity 0.3s;
+                        -webkit-transition: opacity 0.3s;
+                        -o-transition: opacity 0.3s;
                         &:hover,
                         &:active,
-                        &:focus{
+                        &:focus {
                             opacity: 1;
+                        }
+                        &:before {
+                            font-family: FontAwesome;
+                            content: "\f095";
+                            font-weight: 700;
+                            color: $white;
+                            border-radius: 100%;
+                            margin-right: 10px;
                         }
                     }
                 }
@@ -685,14 +740,15 @@ $bp__lg : 1280px;
                         padding: 15px 15px;
                         font-weight: 500;
                         background-color: $prestige_painters;
-                        color: $white_opacity_eight;
-                        transition: color 0.1s;
-                        -webkit-transition: color 0.1s;
-                        -o-transition: color 0.1s;
+                        color: $white;
+                        opacity: 0.9;
+                        transition: opacity 0.1s;
+                        -webkit-transition: opacity 0.1s;
+                        -o-transition: opacity 0.1s;
                         &:hover,
                         &:active,
                         &:focus {
-                            color: $white;
+                            opacity: 1;
                         }
                     }
                 } 
@@ -753,62 +809,82 @@ $bp__lg : 1280px;
         > div {
             //Top bar including (Address, phone number and social icons)
             &:first-of-type {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0 5%;
                 background-color: $prestige_painters;
+                width: 100%;
                 > div {
-                    height:50px;
                     display: flex;
+                    justify-content: space-around;
                     align-items: center;
-                    > span {
-                        color: $white;
-                        font-size: 16px;
-                        //Icons for the address and phone number
-                        i {
-                            font-size: 18px;
-                            margin-right: 10px;
-                        }
-                        //Address text
-                        &:first-of-type {
-                            margin-right: 30px;
-                            > a {
-                                -webkit-transition: color 0.3s;
-                                -o-transition: color 0.3s;
-                                transition: color 0.3s;
-                                &:hover, 
-                                &:active,
-                                &:focus {
-                                   color: $black;
+                    max-width: 1250px;
+                    background-color: $prestige_painters;
+                    margin: 0 auto;
+                    > div {
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        flex: 1 0 85%;
+                        > span {
+                            color: $white;
+                            font-size: 16px;
+                            //Icons for the address and phone number
+                            i {
+                                font-size: 18px;
+                                margin-right: 10px;
+                            }
+                            //Phone number
+                            &:first-of-type {
+                                margin-right: 30px;
+                                > a {
+                                    opacity: 0.9;
+                                    -webkit-transition: opacity 0.3s;
+                                    -o-transition: opacity 0.3s;
+                                    transition: opacity 0.3s;
+                                    color: $white;
+                                    &:hover, 
+                                    &:active,
+                                    &:focus {
+                                       opacity: 1;
+                                    }
+                                }
+                            }
+                            //Address
+                            &:last-of-type {
+                                > a {
+                                    opacity: 0.9;
+                                    -webkit-transition: opacity 0.3s;
+                                    -o-transition: opacity 0.3s;
+                                    transition: opacity 0.3s;
+                                    color: $white;
+                                    &:hover, 
+                                    &:active,
+                                    &:focus {
+                                       opacity: 1;
+                                    }
                                 }
                             }
                         }
-                        //Phone number text
-                        &:last-of-type {
-                            > a { 
-                                font-size: 16px;
-                            }
-                        }
                     }
-                }
-                //Social icons
-                > ul {
-                    list-style: none;
-                    display: flex;
-                    justify-content: space-between;
-                    > li {
-                        margin-left: 25px;
-                        font-size: 16px;
-                        color: $white;
-                        > a {
-                            -webkit-transition: color 0.3s;
-                            -o-transition: color 0.3s;
-                            transition: color 0.3s;
-                            &:hover, 
-                            &:active,
-                            &:focus {
-                               color: $black;
+                    //Social icons
+                    > ul {
+                        list-style: none;
+                        display: flex;
+                        justify-content: space-between;
+                        flex: 1 0 15%;
+                        > li {
+                            margin-left: 25px;
+                            font-size: 16px;
+                            color: $white;
+                            > a {
+                                opacity: 0.9;
+                                -webkit-transition: opacity 0.3s;
+                                -o-transition: opacity 0.3s;
+                                transition: opacity 0.3s;
+                                color: $white;
+                                &:hover, 
+                                &:active,
+                                &:focus {
+                                   opacity: 1;
+                                }
                             }
                         }
                     }
@@ -816,65 +892,68 @@ $bp__lg : 1280px;
             }
             //Bottom part including logo and navigational menu and quote button
             &:last-of-type {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding:0 5%;
                 background-color: $white;
+                width: 100%;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
-                > a {
-                    padding: 10px 0;
-                    > img {
-                        width: auto;
-                        max-width: none;
-                        max-height: 70px;
-                    }
-                }
                 > div {
                     display: flex;
-                    margin-right: -10px;
-                    > nav {
+                    justify-content: space-around;
+                    align-items: center;
+                    background-color: $white;
+                    max-width: 1280px;
+                    margin: 0 auto;
+                    > a {
+                        padding: 10px 0;
+                        > img {
+                            width: auto;
+                            max-width: none;
+                            max-height: 70px;
+                        }
+                    }
+                    > div {
                         display: flex;
-                        align-items: center;
-                        > ul {
-                            list-style: none;
+                        margin-right: -10px;
+                        > nav {
                             display: flex;
-                            margin-right: 10px;
-                            > li {
-                                padding: 0 10px;
-                                > a {
-                                    padding: 10px 0;
-                                    font-size: 14px;
-                                    text-transform: uppercase;
-                                    font-weight: 500;
-                                    border-bottom: 2px solid rgba(233, 29, 98, 0);
-                                    -webkit-transition: color 0.3s;
-                                    -o-transition: color 0.3s;
-                                    transition: color 0.3s;
-                                    &:hover, 
-                                    &:active,
-                                    &:focus {
-                                        border-bottom: 2px solid rgba(233, 29, 98,1);
+                            align-items: center;
+                            > ul {
+                                list-style: none;
+                                display: flex;
+                                margin-right: 10px;
+                                > li {
+                                    padding: 0 10px;
+                                    > a {
+                                        padding: 10px 0;
+                                        font-size: 14px;
+                                        text-transform: uppercase;
+                                        font-weight: 500;
+                                        border-bottom: 2px solid rgba(233, 29, 98, 0);
+                                        &:hover, 
+                                        &:active,
+                                        &:focus {
+                                            border-bottom: 2px solid rgba(233, 29, 98,1);
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    > a {
-                        padding: 10px 20px;
-                        font-size: 14px;
-                        text-transform: uppercase;
-                        font-weight: 500;
-                        border-radius: 20px;
-                        background-color: $prestige_painters;
-                        color: $white;
-                        -webkit-transition: color 0.3s;
-                        -o-transition: color 0.3s;
-                        transition: color 0.3s;
-                        &:hover, 
-                        &:active,
-                        &:focus {
-                            color: $black;
+                        > a {
+                            padding: 10px 20px;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-weight: 500;
+                            border-radius: 20px;
+                            background-color: $prestige_painters;
+                            color: $white;
+                            opacity: 0.9;
+                            -webkit-transition: opacity 0.3s;
+                            -o-transition: opacity 0.3s;
+                            transition: opacity 0.3s;
+                            &:hover, 
+                            &:active,
+                            &:focus {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -908,6 +987,8 @@ $bp__lg : 1280px;
                                 margin-right: 50%;
                                 > a {
                                     > i {
+                                        font-size: 18px;
+                                        color: $black;
                                         -webkit-transition: color 0.3s;
                                         -o-transition: color 0.3s;
                                         transition: color 0.3s;
@@ -916,7 +997,7 @@ $bp__lg : 1280px;
                                     &:active,
                                     &:focus {
                                         > i {
-                                            color: $black;
+                                            color: $prestige_painters;
                                         }
                                     }
                                 }
@@ -925,15 +1006,11 @@ $bp__lg : 1280px;
                     }
                     div, span {
                        margin-top: 15px; 
-                       i {
-                           font-size: 18px;
-                           color: $prestige_painters;
-                       }
                     }
                     > span {
+                        color: $black;
+                        font-size: 18px;
                         > a {
-                            font-size: 18px;
-                            color: $black;
                             -webkit-transition: color 0.3s;
                             -o-transition: color 0.3s;
                             transition: color 0.3s;
@@ -973,9 +1050,6 @@ $bp__lg : 1280px;
                                     font-size: 14px;
                                     text-transform: uppercase;
                                     font-weight: 500;
-                                    -webkit-transition: color 0.3s;
-                                    -o-transition: color 0.3s;
-                                    transition: color 0.3s;
                                     &:hover, 
                                     &:active,
                                     &:focus {
