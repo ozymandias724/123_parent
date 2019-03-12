@@ -22,7 +22,7 @@ $bp__lg : 1280px;
     }
     // basics across all headers
     header.header {
-        position:fixed; // need to remove something from theme 3 that is effecting this
+        position: fixed; // need to remove something from theme 3 that is effecting this
         top: 0;
         display: block;
         left: 0;
@@ -89,126 +89,81 @@ $bp__lg : 1280px;
     header#opt_header_one {
         padding: 0px;
         display: block;
-        position:relative;
-        > div:nth-of-type(1), 
-        > div:nth-of-type(2) > nav > ul > li > a:hover, 
-        > div:nth-of-type(2) > nav > ul > li > a:active, 
-        > div:nth-of-type(2) > nav > ul > li > a:focus {
-            color: $white;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1):before,
-        > div:nth-of-type(1) > span:nth-of-type(2):before,
-        > div:nth-of-type(1) > span:nth-of-type(2) > a > span,
-        > div:nth-of-type(2) > ul > li > a:hover,
-        > div:nth-of-type(2) > ul > li > a:focus,
-        > div:nth-of-type(2) > ul > li > a:active {
-            color: $blue_infinity_carpet;
-        }
-        > div:nth-of-type(1), 
-        > div:nth-of-type(1) > span:nth-of-type(1),
-        > div:nth-of-type(1) > span:nth-of-type(2),
-        > div:nth-of-type(2), 
-        > div:nth-of-type(2) > nav,
-        > div:nth-of-type(2) > ul {
-            display: flex;
-        }
-        > div:nth-of-type(1), 
-        > div:nth-of-type(1) > span:nth-of-type(1),
-        > div:nth-of-type(1) > span:nth-of-type(2),
-        > div:nth-of-type(2) > nav,
-        > div:nth-of-type(2) > ul {
-            align-items: center;
-        }
-        > div:nth-of-type(1),
-        > div:nth-of-type(2), 
-        > div:nth-of-type(2) > nav,
-        > div:nth-of-type(2) > nav > ul {
-            justify-content: space-between;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1), 
-        > div:nth-of-type(1) > span:nth-of-type(2) {
-            justify-content: flex-end;
-        }
-        > div:nth-of-type(2) > ul > li > a > i, 
-        > div:nth-of-type(1) > span:nth-of-type(1) {
-            font-size: 16px;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1):before,
-        > div:nth-of-type(1) > span:nth-of-type(2):before {
-            font-family: FontAwesome;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1):before,
-        > div:nth-of-type(1) > span:nth-of-type(2):before,
-        > div:nth-of-type(1) > span:nth-of-type(2) > a > span,
-        > div:nth-of-type(2) > nav > ul > li > a {
-            display: block;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1) > a,
-        > div:nth-of-type(1) > span:nth-of-type(2) > a{
-            opacity: $opacity_level_below_one;
-            -webkit-transition: opacity 0.3s;
-            -o-transition: opacity 0.3s;
-            transition: opacity 0.3s;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1) > a:hover, 
-        > div:nth-of-type(1) > span:nth-of-type(1) > a:active, 
-        > div:nth-of-type(1) > span:nth-of-type(1) > a:focus, 
-        > div:nth-of-type(1) > span:nth-of-type(2) > a:hover, 
-        > div:nth-of-type(1) > span:nth-of-type(2) > a:active, 
-        > div:nth-of-type(1) > span:nth-of-type(2) > a:focus {
-            opacity: 1;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(1):before,
-        > div:nth-of-type(1) > span:nth-of-type(2):before {
-            border-radius: 100%;
-            font-weight: 700;
-            border: 3px solid $blue_infinity_carpet;
-        }
-        > div:nth-of-type(1) > span:nth-of-type(2) > a > span,
-        > div:nth-of-type(2) > nav > ul > li > a {
-            text-transform: uppercase;
-        }
+        position: relative;
         > div {
             //Top part of the header (logo, address, phone)
             &:nth-of-type(1) {
                 background-color: $black;
-                flex-flow: row nowrap;
-                padding: 0 10%;
-                > span {
-                    //Top bar address
-                    &:nth-of-type(1) {
-                        margin-left: auto;
-                        width: 230px;
-                        //Address icon
-                        &:before {
-                            content: "\f041";
-                            padding: 8px 14px;
-                            margin-right: 10px;
-                        }                    
-                    }
-                    //Top bar phone number
-                    &:nth-of-type(2) { 
-                        margin-left: 5%;
-                        //Phone number icon
-                        &:before {
-                            content: "\f095";
-                            padding: 10px 10px;
-                            margin-left: 30px;
-                            margin-right:10px;
-                            -webkit-transform: rotate(90deg);
-                            -o-transform: rotate(90deg);
-                            transform: rotate(90deg);
-                            margin-top: 5px;
+                color: $white;
+                //Div inside top part of header
+                > div {
+                    > span {
+                        //Top bar address
+                        &:nth-of-type(1) {
+                            margin-left: auto;
+                            width: 230px;
+                            font-size: 16px;
+                            //Address icon
+                            &:before {
+                                content: "\f041";
+                                padding: 8px 14px;
+                                margin-right: 10px;
+                            }                    
                         }
-                        //Phone number link
-                        > a {
-                            font-size: 19px;
-                            font-weight:500;
-                            //"Call Us Today" text
-                            > span {
-                                font-size: 14px;
-                                text-align: left;
+                        //Top bar phone number
+                        &:nth-of-type(2) { 
+                            margin-left: 5%;
+                            //Phone number icon
+                            &:before {
+                                content: "\f095";
+                                padding: 10px 10px;
+                                margin-left: 30px;
+                                margin-right:10px;
+                                -webkit-transform: rotate(90deg);
+                                -o-transform: rotate(90deg);
+                                transform: rotate(90deg);
+                                margin-top: 5px;
                             }
+                            //Phone number link
+                            > a {
+                                //"Call Us Today" text
+                                > span {
+                                    font-size: 14px;
+                                    text-align: left;
+                                    color: $blue_infinity_carpet;
+                                    text-transform: uppercase;
+                                    display: block;
+                                    font-weight: 700;
+                                }
+                            }   
+                        }
+                        //Top address and phone number common scss
+                        &:nth-of-type(1), 
+                        &:nth-of-type(2) {
+                            align-items: center;
+                            display: flex;
+                            //Top address and phone number icons 
+                            &:before {
+                                color: $blue_infinity_carpet;
+                                border-radius: 100%;
+                                font-weight: 700;
+                                border: 3px solid $blue_infinity_carpet;
+                                display: block;
+                                font-family: FontAwesome;
+                            }
+                            //Top address and phone number links 
+                            > a {
+                                opacity: $opacity_level_below_one;
+                                -webkit-transition: opacity 0.3s;
+                                -o-transition: opacity 0.3s;
+                                transition: opacity 0.3s;
+                                //Top address and phone number links actions on hover, active and focus
+                                &:hover, 
+                                &:active, 
+                                &:focus {
+                                    opacity: 1;
+                                }
+                            }    
                         }
                     }
                 }
@@ -216,54 +171,87 @@ $bp__lg : 1280px;
             //Lower part of header (navigational menu and social icons) 
             &:nth-of-type(2) {
                 background-color: $white;
-                flex-wrap: nowrap;
-                position: relative;
-                width: 100%;
-                top: 0;
-                padding: 0 10%;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
-                //Navigational menu items list
-                > nav {
-                    > ul {
-                        > li { 
-                            flex: 0 1 auto;
-                            margin-right:0px;
-                            > a {
-                                font-weight:500;
-                                color: $black;
-                                padding: 15px 10px;
-                                &:hover,
-                                &:active,
-                                &:focus {
-                                    background-color: $blue_infinity_carpet;
+                top: 0;
+                > div {
+                    //Navigational menu 
+                    > nav {
+                        align-items: center;
+                        display: flex;
+                        flex: 1 0 85%;
+                        margin-left: -10px;
+                        text-transform: uppercase;
+                        //Navigational menu unordered list
+                        > ul {
+                            //Navigational menu list items
+                            > li { 
+                                margin-right: 0px;
+                                //Navigational menu list items links
+                                > a {
+                                    display: block;
+                                    font-weight: 500;
+                                    color: $black;
+                                    padding: 15px 10px;
+                                    //Navigational menu list items links actions on hover, active and focus
+                                    &:hover,
+                                    &:active,
+                                    &:focus {
+                                        background-color: $blue_infinity_carpet;
+                                        color: $white;
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                //Social icons list
-                > ul {
-                    list-style: none;
-                    flex-wrap: nowrap;
-                    > li {
+                    //Social icons underordered list
+                    > ul {
                         flex: 1 0 auto;
-                        position: relative;
-                        padding: 2px;
-                        &:last-of-type{
-                            padding-right:0;
-                        }  
-                        > a {
-                            padding: 7px 10px;
-                            -webkit-transition: color 0.3s;
-                            -o-transition: color 0.3s;
-                            transition: color 0.3s;
-                        }
-                        &:last-of-type{
+                        list-style: none;
+                        flex-wrap: nowrap;
+                        align-items: center;
+                        display: flex;
+                        //Social icons list items
+                        > li {
+                            flex: 1 0 auto;
+                            position: relative;
+                            padding: 2px;
+                            //Last social icon list item
+                            &:last-of-type{
+                                padding-right: 0;
+                                //Last social icon list item link
+                                > a {
+                                    padding: 7px 0px 7px 10px;
+                                }
+                            }  
+                            //Social icons list items actions on hover, active and focus
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                color: $blue_infinity_carpet;
+                            }
+                            //Social icons list items links
                             > a {
-                                padding: 7px 0px 7px 10px;
+                                padding: 7px 10px;
+                                -webkit-transition: color 0.3s;
+                                -o-transition: color 0.3s;
+                                transition: color 0.3s;
+                                font-size: 16px;
                             }
                         }
                     }
+                }
+            }
+            //Common scss of top part and bottom part of header
+            &:nth-of-type(1), 
+            &:nth-of-type(2) {
+                width: 100%;
+                > div {
+                    //Div inside lower part of header
+                    flex-wrap: nowrap;
+                    justify-content: space-around;
+                    display: flex;
+                    margin: 0 auto;
+                    max-width: $nav_maxwidth;
                 }
             }
         }

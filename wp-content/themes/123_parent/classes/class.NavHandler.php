@@ -165,17 +165,21 @@ class NavHandler
         $format_header = '
             <header class="%s %s %s header" id="opt_header_one">
                 <div>
-                    %s
-                    <span><a href="#" class="google-search-address">%s</a></span>
-                    <span>
-                        <a href="tel:%s"><span>Call Us Today:</span> %s</a>
-                    </span>
+                    <div>
+                        %s
+                        <span><a href="#" class="google-search-address">%s</a></span>
+                        <span>
+                            <a href="tel:%s"><span>Call Us Today:</span> %s</a>
+                        </span>
+                    </div>
                 </div>
                 <div>
-                    <nav>
+                    <div>
+                        <nav>
+                            %s  
+                        </nav>
                         %s
-                    </nav>
-                    %s
+                    </div>
                 </div>
             </header>
         ';
