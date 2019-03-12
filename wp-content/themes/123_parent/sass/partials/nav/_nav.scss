@@ -1,7 +1,7 @@
 $primary : #df1d1d;
 $black : black;
 $second_black: #333333;
-$white_opacity_eight : rgba(255, 255, 255, 0.8);
+$opacity_level_below_one : 0.8;
 $white : rgba(255, 255, 255, 1); 
 $accent : green;
 $tint : lightgrey;
@@ -685,14 +685,14 @@ $bp__lg : 1280px;
                         padding: 15px 15px;
                         font-weight: 500;
                         background-color: $prestige_painters;
-                        color: $white_opacity_eight;
-                        transition: color 0.1s;
-                        -webkit-transition: color 0.1s;
-                        -o-transition: color 0.1s;
+                        opacity: $opacity_level_below_one;
+                        transition: opacity 0.1s;
+                        -webkit-transition: opacity 0.1s;
+                        -o-transition: opacity 0.1s;
                         &:hover,
                         &:active,
                         &:focus {
-                            color: $white;
+                            opacity: 1;
                         }
                     }
                 } 
