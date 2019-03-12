@@ -166,9 +166,9 @@ class NavHandler
             <header class="%s %s %s header" id="opt_header_one">
                 <div>
                     %s
-                    <span>%s</span>
+                    <span><a href="#" class="google-search-address">%s</a></span>
                     <span>
-                        <a href="%s"><span>Call Us Today:</span> %s</a>
+                        <a href="tel:%s"><span>Call Us Today:</span> %s</a>
                     </span>
                 </div>
                 <div>
@@ -251,7 +251,7 @@ class NavHandler
                     %s
                     %s
                     <span>
-                        <a href="%s">%s</a>
+                        <a href="tel:%s">%s</a>
                     </span>
                 </div>
                 <nav>
@@ -281,7 +281,7 @@ class NavHandler
                             <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
                         </span>
                         <span>
-                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                            <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
                         </span>
                         <a href="#" class="topbanner-quickquote">Quote</a> 
                     </div>
@@ -312,24 +312,28 @@ class NavHandler
         $format_header = '
             <header class="%s %s %s header" id="opt_header_six">
                 <div>
-                    <div>
-                        <span>
-                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
-                        </span>
-                        <span>
-                            <i class="fa fa-map-marker"></i> %s
-                        </span>
+                    <div> 
+                        <div>
+                            <span>
+                                <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                            </span>
+                            <span>
+                                <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                            </span>
+                        </div>
+                        %s
                     </div>
-                    %s
                 </div>
                 <div>
-                    %s
                     <div>
-                        <nav>
-                            %s
-                        </nav>
-                        <a href="#" class="topbanner-quickquote">Get A Quote</a>
-                    </div> 
+                        %s
+                        <div>
+                            <nav>
+                                %s
+                            </nav>
+                            <a href="#" class="topbanner-quickquote">Get A Quote</a>
+                        </div> 
+                    </div>
                 </div>
             </header>
         ';
@@ -356,7 +360,7 @@ class NavHandler
                         </div>
                         %s
                         <span>
-                            <a href="%s"><i class="fa fa-phone"></i> %s</a>
+                            <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
                         </span>
                     </div>
                     <div>
