@@ -83,7 +83,7 @@ class NavHandler
         if( empty($topbar_class && !empty($topbar_text) ) ){
             $format_topbar = '
                 <div class="opt__estimatebar">
-                    <a href="">%s</a>
+                    <a href="#" class="topbanner-quickquote">%s</a>
                 </div>
             ';
             $content_topbar = sprintf(
