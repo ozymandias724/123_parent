@@ -229,12 +229,13 @@ class NavHandler
         // 3
         $format_header = '
             <header class="header %s %s %s" id="opt_header_three">
-                %s
-                <div class="header-content">
+                <div>
                     %s
-                    %s
+                    <div class="header-content">
+                        %s
+                        %s
+                    </div>
                 </div>
-                <span class="header-tint %s"></span>
             </header>
         ';
         $this->header_three = sprintf(
