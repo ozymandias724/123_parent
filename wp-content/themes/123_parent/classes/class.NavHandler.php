@@ -396,11 +396,9 @@ class NavHandler
                         %s
                     </div>
                     <div>
-                        <div>
-                            <nav>
-                                %s
-                            </nav>
-                        </div>
+                        <nav>
+                            %s
+                        </nav>
                     </div>
                 </div>
             </header>
