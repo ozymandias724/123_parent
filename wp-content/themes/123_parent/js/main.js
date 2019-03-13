@@ -1,7 +1,12 @@
 var Theme = {};
 ;(function ( $, Theme, window, document, undefined ) {
-	
 	$(document).ready(function(){
+
+
+        // FIX THIS LATER
+        var header_height = $('header').height();
+        $('main').css('margin-top', header_height);
+	
 
 		Theme.Gustavo = {
 			tint : $(".header-tint"),
