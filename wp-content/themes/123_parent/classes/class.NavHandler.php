@@ -283,7 +283,7 @@ class NavHandler
                     %s
                     <div> 
                         <span>
-                            <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                            <a href="javascript:;" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
                         </span>
                         <span>
                             <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
@@ -401,8 +401,8 @@ class NavHandler
                                 %s
                             </nav>
                         </div>
-                        <div>
-                            Hello
+                        <div> 
+                            <a href="javascript:;"><i class="fa fa-bars" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>

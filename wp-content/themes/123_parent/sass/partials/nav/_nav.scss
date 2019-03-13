@@ -28,7 +28,7 @@ $bp__lg : 1280px;
         width: 100%;
         padding: 0 30px;
         display: block;
-        z-index: 10;
+        z-index: 19;
         font-size: 1.4rem;
         padding-top: $banner_height;
         &.topbar-removed {
@@ -597,7 +597,7 @@ $bp__lg : 1280px;
                     left: -70px;
                     width: 100px;
                     height: 100%;
-                    flex:1 0 auto;
+                    flex: 1 0 auto;
                     top: 0;
                     background-color: $primary;
                     -webkit-transform: skewX(37deg);
@@ -619,7 +619,6 @@ $bp__lg : 1280px;
 
     //Header 5
     header#opt_header_five {
-        z-index: 19;
         padding: 0px;
         display: block;
         position: fixed;
@@ -1064,7 +1063,6 @@ $bp__lg : 1280px;
                     align-items: center;
                     > div {
                         &:first-of-type {
-                            margin-right: 16px;
                             > nav {
                                 display: flex;
                                 justify-content: flex-end;
@@ -1079,9 +1077,9 @@ $bp__lg : 1280px;
                                             font-weight: 500;
                                             font-size: 14px;
                                             padding: 35px 15px;
-                                            transition: color 0.3s,background-color 0.3s;
-                                            -webkit-transition: color 0.3s, background-color 0.3s;
-                                            -o-transition: color 0.3s, background-color 0.3s;
+                                            transition: color 0.1s,background-color 0.1s;
+                                            -webkit-transition: color 0.1s, background-color 0.1s;
+                                            -o-transition: color 0.1s, background-color 0.1s;
                                             &:hover,
                                             &:active,
                                             &:focus {
@@ -1090,6 +1088,15 @@ $bp__lg : 1280px;
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                        &:last-of-type {
+                            > a {
+                                > i {
+                                    padding: 25px 15px;
+                                    font-size: 30px;
+                                    margin-right: -10px;
                                 }
                             }
                         }
