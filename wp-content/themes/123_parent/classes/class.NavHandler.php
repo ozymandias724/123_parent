@@ -401,9 +401,6 @@ class NavHandler
                                 %s
                             </nav>
                         </div>
-                        <div> 
-                            <a href="javascript:;"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                        </div>
                     </div>
                 </div>
             </header>
