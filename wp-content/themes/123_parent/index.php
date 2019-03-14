@@ -1,7 +1,16 @@
 <?php 
 get_header();
+?>
+<main>
 
-include(locate_template( 'modules/heroslider.php' ));
+<?php
+// include(locate_template( 'modules/heroslider.php' ));
+include( 'modules/hero.php' );
+
+//die();
+?>
+</main>
+<?php
 
 if( have_rows( 'field_naaolkn23oin', 'options') ) :
 	$rowcount = 0;
@@ -9,9 +18,9 @@ if( have_rows( 'field_naaolkn23oin', 'options') ) :
 		// loop thru active pages repeater
 		the_row();$rowcount++;
 		// get the slug
-		$slug = get_sub_field('page-template') ?? null;
+		$slug = get_sub_field('page-template') ?? null; // REMOVE THESE NULL COALESCING OPERATORS ASAP!!!
 		// get the altname
-		$altname = get_sub_field('page-altname') ?? null;
+		$altname = get_sub_field('page-altname') ?? null; // REMOVE THESE NULL COALESCING OPERATORS ASAP!!!
 		
 		// certain sections have a 'breaker' image above them
 		// but shouldnt ever be below the hero

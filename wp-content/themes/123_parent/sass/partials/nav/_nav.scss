@@ -783,28 +783,26 @@ $bp__lg : 1280px;
 
     //Header 6
     header#opt_header_six {
-        z-index: 19;
         padding: 0px;
-        display: block;
-        position: fixed;
-        width: 100%;
         > div {
             //Top bar including (Address, phone number and social icons)
             &:first-of-type {
                 background-color: $prestige_painters;
                 width: 100%;
+                //First div element, parent of address and phone number section and social icons section
                 > div {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     max-width: 1250px;
-                    background-color: $prestige_painters;
                     margin: 0 auto;
+                    //Parent div element of address and phone number section
                     > div {
                         height: 50px;
                         display: flex;
                         align-items: center;
                         flex: 1 0 85%;
+                        //Both address and phone number inside this span element
                         > span {
                             color: $white;
                             font-size: 16px;
@@ -813,60 +811,27 @@ $bp__lg : 1280px;
                                 font-size: 18px;
                                 margin-right: 10px;
                             }
-                            //Phone number
+                            //Phone number span element
                             &:first-of-type {
                                 margin-right: 30px;
-                                > a {
-                                    opacity: 0.9;
-                                    -webkit-transition: opacity 0.3s;
-                                    -o-transition: opacity 0.3s;
-                                    transition: opacity 0.3s;
-                                    color: $white;
-                                    &:hover, 
-                                    &:active,
-                                    &:focus {
-                                       opacity: 1;
-                                    }
-                                }
-                            }
-                            //Address
-                            &:last-of-type {
-                                > a {
-                                    opacity: 0.9;
-                                    -webkit-transition: opacity 0.3s;
-                                    -o-transition: opacity 0.3s;
-                                    transition: opacity 0.3s;
-                                    color: $white;
-                                    &:hover, 
-                                    &:active,
-                                    &:focus {
-                                       opacity: 1;
-                                    }
-                                }
+                                //Phone number link   
                             }
                         }
                     }
-                    //Social icons
+                    //Social icons unordered list
                     > ul {
                         list-style: none;
                         display: flex;
                         justify-content: space-between;
                         flex: 1 0 15%;
+                        //Social icons unordered list items
                         > li {
                             margin-left: 25px;
                             font-size: 16px;
                             color: $white;
+                            //Social icons unordered list items links
                             > a {
-                                opacity: 0.9;
-                                -webkit-transition: opacity 0.3s;
-                                -o-transition: opacity 0.3s;
-                                transition: opacity 0.3s;
-                                color: $white;
-                                &:hover, 
-                                &:active,
-                                &:focus {
-                                   opacity: 1;
-                                }
+                                padding: 10px;
                             }
                         }
                     }
@@ -877,39 +842,47 @@ $bp__lg : 1280px;
                 background-color: $white;
                 width: 100%;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+                //Parent div element of logo, navigational menu and quote button sections
                 > div {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    background-color: $white;
                     max-width: 1280px;
                     margin: 0 auto;
+                    //Logo link
                     > a {
-                        padding: 10px 0;
+                        padding: 10px;
+                        flex: 1 0 auto;
+                        //Logo image inside link
                         > img {
                             width: auto;
                             max-width: none;
                             max-height: 70px;
                         }
                     }
+                    //Parent div element of navigational menu and quote button
                     > div {
                         display: flex;
-                        margin-right: -10px;
+                        margin-right: 5px;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        flex: 1 0 61%;
+                        //Navigational menu 
                         > nav {
                             display: flex;
                             align-items: center;
+                            //Navigational menu unordered list
                             > ul {
                                 list-style: none;
-                                display: flex;
-                                margin-right: 10px;
+                                //Navigational menu unordered list items
                                 > li {
-                                    padding: 0 10px;
+                                    margin-right: 15px;
+                                    //Navigational menu unordered list items links
                                     > a {
                                         padding: 10px 0;
-                                        font-size: 14px;
-                                        text-transform: uppercase;
-                                        font-weight: 500;
                                         border-bottom: 2px solid rgba(233, 29, 98, 0);
+                                        //Navigational menu unordered list items links actions on hover, active and focus
                                         &:hover, 
                                         &:active,
                                         &:focus {
@@ -919,25 +892,33 @@ $bp__lg : 1280px;
                                 }
                             }
                         }
+                        //Quote button link
                         > a {
                             padding: 10px 20px;
-                            font-size: 14px;
-                            text-transform: uppercase;
-                            font-weight: 500;
                             border-radius: 20px;
                             background-color: $prestige_painters;
-                            color: $white;
-                            opacity: 0.9;
-                            -webkit-transition: opacity 0.3s;
-                            -o-transition: opacity 0.3s;
-                            transition: opacity 0.3s;
-                            &:hover, 
-                            &:active,
-                            &:focus {
-                                opacity: 1;
-                            }
                         }
                     }
+                }
+            }
+            //Phone number and address links
+            &:first-of-type > div > div > span > a, 
+            //Social icons unordered list items links
+            &:first-of-type > div > ul > li > a,
+            //Quote button link
+            &:last-of-type > div > div > a {
+                opacity: $opacity_level_below_one;
+                -webkit-transition: opacity 0.3s;
+                -o-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+                color: $white;
+                //Phone number and address links actions on hover, active and focus
+                //Social icons unordered list items links actions on hover, active and focus
+                //Quote button link actions on hover, active and focus
+                &:hover, 
+                &:active,
+                &:focus {
+                    opacity: 1;
                 }
             }
         } 

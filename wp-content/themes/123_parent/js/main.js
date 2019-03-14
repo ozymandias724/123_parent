@@ -1,6 +1,5 @@
 var Theme = {};
 ;(function ( $, Theme, window, document, undefined ) {
-	
 	$(document).ready(function(){
 
 		Theme.Headers = {

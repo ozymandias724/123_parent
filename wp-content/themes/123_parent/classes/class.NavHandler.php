@@ -367,7 +367,7 @@ class NavHandler
                         <span>
                             <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
                         </span>
-                    </div>
+                    </div> 
                     <div>
                         <nav>
                             %s
