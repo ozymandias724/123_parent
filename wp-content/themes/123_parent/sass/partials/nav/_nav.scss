@@ -619,9 +619,7 @@ $bp__lg : 1280px;
     //Header 5
     header#opt_header_five {
         padding: 0px;
-        display: block;
-        position: fixed;
-        width: 100%;
+        //Sections inside header 5
         > div {
             //Top part of the header (social icons, address, phone number and quote button)
             &:first-of-type {
@@ -631,20 +629,24 @@ $bp__lg : 1280px;
                 flex-flow: row nowrap;
                 justify-content: space-between;
                 align-items: center;
-                padding:0 5%;
+                padding: 0 2%;
                 //Social icons items list
                 > ul {
                     list-style: none;
                     display: flex;
+                    //Social icons list items
                     > li {
-                        margin-right: 50%;
+                        margin-right: 30px;
+                        //Social icons list items links
                         > a {
                             transition: color 0.3s;
                             -webkit-transition: color 0.3s;
                             -o-transition: color 0.3s;
+                            //Social icons list items icons
                             > i {
                                 font-size: 16px;
                             }
+                            //Social icons list items links actions on hover, active and focus
                             &:hover, 
                             &:active,
                             &:focus {
@@ -653,21 +655,23 @@ $bp__lg : 1280px;
                         }
                     }
                 }
-                //Address, phone number and quote button
+                //Address, phone number and quote button section
                 > div {
                     display: flex;
                     justify-content: space-between;
-                    margin-right: -15px;
                     width: 585px;
+                    //Address and phone number in span element
                     > span {
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        //Address and phone number icon
                         i {
                             font-size: 16px;
                             margin-right: 10px;
                             color: $prestige_painters;
                         }
+                        //Address in span element
                         &:first-of-type {
                             font-size: 14px;
                             width: 288px;   
@@ -682,18 +686,22 @@ $bp__lg : 1280px;
                                 }
                             }
                         }
+                        //Phone number in span element
                         &:last-of-type {
                             font-size: 14px;
                             width: 135px;
+                            //Phone number link
                             > a {
                                 transition: color 0.3s;
                                 -webkit-transition: color 0.3s;
                                 -o-transition: color 0.3s;
+                                //Phone number link actions on hover, active, and focus
                                 &:hover, 
                                 &:active,
                                 &:focus {
                                     color: $prestige_painters;
                                 }
+                                //Phone number icon
                                 > i {
                                     -webkit-transform: rotate(90deg);
                                     -o-transform: rotate(90deg);
@@ -702,6 +710,7 @@ $bp__lg : 1280px;
                             }
                         }
                     }
+                    //Quote button link
                     > a {
                         font-size: 16px;
                         text-transform: uppercase;
@@ -712,6 +721,7 @@ $bp__lg : 1280px;
                         transition: opacity 0.1s;
                         -webkit-transition: opacity 0.1s;
                         -o-transition: opacity 0.1s;
+                        //Quote button link actions on hover, active and focus
                         &:hover,
                         &:active,
                         &:focus {
@@ -724,13 +734,14 @@ $bp__lg : 1280px;
             &:last-of-type {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
                 flex-flow: row nowrap;
-                padding: 0 5%;
                 background-color: $white;
                 box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+                padding: 0 2%;
+                //Logo link
                 > a {
-                    padding: 0;
+                    padding: 6px;
+                    //Logo link image
                     > img {
                         width: auto;
                         max-width: none;
@@ -739,19 +750,23 @@ $bp__lg : 1280px;
                 }
                 //Navigational menu with menu items
                 > nav {
+                    flex: 1 0 70%;
+                    display: flex;
+                    justify-content: flex-end;
+                    //Navigational menu unordered list
                     > ul {
+                        //Navigational menu unordered list items
                         > li {
-                            &:last-of-type {
-                                margin-right: -15px;
-                            }
+                            margin-right: 0;
+                            //Navigational menu unordered list items links 
                             > a {
-                                padding: 30px 15px;
-                                display: block;
+                                padding: 34px 15px;
                                 text-transform: uppercase;
                                 font-weight: 500;
-                                transition: color 0.3s, background-color 0.3s;
-                                -webkit-transition: color 0.3s, background-color 0.3s;
-                                -o-transition: color 0.3s, background-color 0.3s;
+                                transition: color 0.1s, background-color 0.1s;
+                                -webkit-transition: color 0.1s, background-color 0.1s;
+                                -o-transition: color 0.1s, background-color 0.1s;
+                                //Navigational menu unordered list items links actions on hover, active and focus
                                 &:hover,
                                 &:active,
                                 &:focus {
