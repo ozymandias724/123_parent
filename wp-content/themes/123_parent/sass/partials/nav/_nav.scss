@@ -927,69 +927,50 @@ $bp__lg : 1280px;
     //Header 7
     header#opt_header_seven {
         padding: 0px;
-        position: fixed;
-        z-index: 19;
-        display: block;
-        width: 100%;
         background-color: $white;
         box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+        //Parent div of top and bottom parts of header
         > div {
             max-width: 1024px;
             margin: 0 auto;
             > div {
-                &:first-of-type{
+                //Top part of header
+                &:first-of-type {
                     display: flex;
-                    flex-flow: row nowrap;
                     justify-content: space-between;
-                    align-items: end;
+                    font-size: 18px;
+                    color: $black;
+                    //Social icons parent div element
                     > div {
+                        //Social icons unordered list
                         > ul {
                             display: flex;
                             list-style: none;
+                            //Social icons unordered list items
                             > li {
-                                margin-right: 50%;
-                                > a {
-                                    > i {
-                                        font-size: 18px;
-                                        color: $black;
-                                        -webkit-transition: color 0.3s;
-                                        -o-transition: color 0.3s;
-                                        transition: color 0.3s;
-                                    }
-                                    &:hover,
-                                    &:active,
-                                    &:focus {
-                                        > i {
-                                            color: $prestige_painters;
-                                        }
-                                    }
-                                }
+                                margin-right: 20%;
                             }
                         }
                     }
+                    //Social icons and phone number sections
                     div, span {
                        margin-top: 15px; 
                     }
-                    > span {
-                        color: $black;
-                        font-size: 18px;
-                        > a {
-                            -webkit-transition: color 0.3s;
-                            -o-transition: color 0.3s;
-                            transition: color 0.3s;
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                color: $prestige_painters;
-                            }
-                        }
+                    //Image link
+                    > a {
+                        padding: 7px;
                     }
                 }
+                //Bottom part of header
                 &:last-of-type {
                     display: flex;
                     flex-flow: column;
                     justify-content: space-between;
                     align-items: center;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    //Line above navigational menu and below logo
                     &:before {
                         content: "";
                         position: relative;
@@ -999,33 +980,51 @@ $bp__lg : 1280px;
                         width: 100%;  
                         border-bottom: 2px solid $prestige_painters;
                     }
+                    //Navigational menu
                     > nav {
-                        display: flex;
-                        align-items: center;
+                        //Navigational menu unordered list
                         > ul {
                             list-style: none;
                             display: flex;
+                            height: 40px;
+                            align-items: center;
+                            //Navigational menu unordered list items
                             > li {
-                                padding: 25px 15px;
                                 margin-right: 0px;
-                                > a {
-                                    padding: 10px 0;
-                                    font-size: 14px;
-                                    text-transform: uppercase;
-                                    font-weight: 500;
-                                        &:hover, 
-                                    &:active,
-                                    &:focus {
-                                       color: $prestige_painters;
-                                    }
-                                }
                             }
                         }
                     }
                 }
+                //Social icons links
+                &:first-of-type > div > ul > li > a, 
+                //Phone number links
+                &:first-of-type > span > a, 
+                //Navigationa menu items links
+                &:last-of-type > nav > ul > li > a {
+                    padding: 10px;
+                }
+                //Social icons links
+                &:first-of-type > div > ul > li > a, 
+                //Phone number links
+                &:first-of-type > span > a, 
+                //Navigationa menu items links
+                &:last-of-type > nav > ul > li > a {
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $prestige_painters;
+                    }
+                }
+                //Social icons links
+                &:first-of-type > div > ul > li > a, 
+                //Phone number links
+                &:first-of-type > span > a {
+                    -webkit-transition: color 0.3s;
+                    -o-transition: color 0.3s;
+                    transition: color 0.3s;
+                }
             }
         }
-
     }
 
     //Header 8
