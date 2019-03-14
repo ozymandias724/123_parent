@@ -413,16 +413,69 @@ class NavHandler
         );
         
         // 9
-        $format_header = '';
+        $format_header = '
+        <header class="%s %s %s header" id="opt_header_nine">
+            <div>
+                <div> 
+                    <div>
+                        <span>
+                            <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                        </span>
+                        <span>
+                            <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                        </span>
+                    </div>
+                    %s
+                </div>
+            </div>
+            <div>
+                <div>
+                    %s
+                    <div>
+                        <nav>
+                            %s
+                        </nav>
+                        <a href="#" class="topbanner-quickquote">Get A Quote</a>
+                    </div> 
+                </div>
+            </div>
+        </header>
+        ';
         $this->header_nine = sprintf(
             $format_header
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$num_href 
+            ,$num_display
+            ,$addr
+            ,$content_social_icons
+            ,$content_logo
+            ,NavUtil::get_nav_links()
         );
         
         // 10
-        $format_header = '';
+        $format_header = '
+            <header class="%s %s %s header" id="opt_header_ten">
+                <div> 
+                    <div>
+                        <div>
+                            <a href="javascript:;"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        </div>
+                        %s
+                        %s
+                    </div>
+                </div>
+            </header> 
+        ';
         $this->header_ten = sprintf(
             $format_header
-        );
+            ,$invertlogo
+            ,$topbar_class
+            ,$fadenav
+            ,$content_logo
+            ,$content_social_icons
+        ); 
         
     }
 }
