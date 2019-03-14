@@ -1264,27 +1264,73 @@ $bp__lg : 1280px;
 
     //Header 10
     header#opt_header_ten {
-        background-color: $white;
+        background-color: $white; 
         padding: 0px;
         box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+        //Parent div element to apply max-width and center children elements of header
         > div {
             max-width: 1024px;
             margin: 0 auto;
+            //Parent div element of hamburger icon, logo and social icons
             > div {
                 display: flex;
-                justify-content: space-between;
-                font-size: 18px;
+                justify-content: space-around;
                 align-items: center;
-                > a {
-                    padding: 10px;
-                }
-                > ul {
-                    list-style: none;
-                    display: flex;
-                    > li {
+                font-size: 18px;
+                //Parent divs of hamburger icon and logo 
+                > div {
+                    //Hamburger icon div element
+                    &:nth-of-type(1){
+                        display: flex;
+                        justify-content: flex-start;
+                        font-size: 20px;
+                        //Hamburger icon link
+                        > a {
+                            padding: 10px;
+                        }
+                    }
+                    //Logo parent div
+                    &:nth-of-type(2) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        //Logo link
                         > a {
                             padding: 15px;
                         }
+                    }
+                }
+                //Social icons unordered list
+                > ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: flex-end;
+                    //Social icons unordered list
+                    > li {
+                        //Social icons unordered list items links
+                        > a {
+                            padding: 15px;
+                        }
+                    }
+                }
+                //Hamburger icon div element
+                > div:first-of-type,
+                //Logo link
+                > div:last-of-type, 
+                //Social icons unordered list
+                > ul {
+                    flex: 1 0 30%;
+                }
+                //Hamburger icon link and social icons unordered list
+                > div:first-of-type > a,
+                > ul > li > a {
+                    -webkit-transition: color 0.3s;
+                    -o-transition: color 0.3s;
+                    transition: color 0.3s;
+                    &:hover, 
+                    &:active, 
+                    &:focus {
+                        color: $prestige_painters;
                     }
                 }
             }
