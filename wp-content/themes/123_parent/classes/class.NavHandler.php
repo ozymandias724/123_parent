@@ -460,9 +460,14 @@ class NavHandler
                 <div> 
                     <div>
                         <div>
-                            <a href="javascript:;"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                            <!--<a href="javascript:;"><i class="fa fa-bars" aria-hidden="true"></i></a>-->
+                            <a href="javascript:;">
+                                <span></span>
+                                <span></span>
+                                <span></span> 
+                            </a>
                         </div>
-                        <div>
+                        <div> 
                             %s
                         </div>
                         %s

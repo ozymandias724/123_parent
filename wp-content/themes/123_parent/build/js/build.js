@@ -2179,11 +2179,14 @@ var Theme = {};
 			header_8_div_1 : $('header.header#opt_header_eight > div'),
 			header_address_link : $(".google-search-address"),
 			header_address_text : $(".google-search-address").text(),
+			header_10_hamburger_icon : $("header#opt_header_ten > div > div > div:first-of-type > a"),
 
 			_init : function(){
 				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
 
 				$(Theme.Headers.estimate_close).on("click",Theme.Headers._close_popup);
+
+				$(Theme.Headers.header_10_hamburger_icon).on("click", Theme.Headers._header_10_hamburger_icon_click);
 
 				if($(Theme.Headers.header_1).length){
 
@@ -2249,6 +2252,32 @@ var Theme = {};
 			_header_address_link_click : function(event){
 				event.preventDefault();
 				window.open('https://google.com/search?q=' + Theme.Headers.header_address_text);
+			},
+			_header_10_hamburger_icon_click : function(){
+				Theme.Headers.header_10_hamburger_icon_span_1 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(1)");
+				Theme.Headers.header_10_hamburger_icon_span_2 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(2)");
+				Theme.Headers.header_10_hamburger_icon_span_3 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(3)");
+				
+				//If header 10 hamburger icon link has class of ...
+				if(Theme.Headers.header_10_hamburger_icon.hasClass("header_10_hamburger_icon_changed")){
+					//Remove hamburger icon link class
+					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+					//Remove hamburger icon link spans classes
+					Theme.Headers.header_10_hamburger_icon_span_1.removeClass("header_10_hamburger_icon_span_1_change");
+					Theme.Headers.header_10_hamburger_icon_span_2.removeClass("header_10_hamburger_icon_span_2_change");
+					Theme.Headers.header_10_hamburger_icon_span_3.removeClass("header_10_hamburger_icon_span_3_change");
+
+				}else{
+					//Add hamburger icon link class
+					Theme.Headers.header_10_hamburger_icon.addClass("header_10_hamburger_icon_changed");
+					//Add hamburger icon link spans classes
+					Theme.Headers.header_10_hamburger_icon_span_1.addClass("header_10_hamburger_icon_span_1_change");
+					Theme.Headers.header_10_hamburger_icon_span_2.addClass("header_10_hamburger_icon_span_2_change");
+					Theme.Headers.header_10_hamburger_icon_span_3.addClass("header_10_hamburger_icon_span_3_change");
+				}
+
+				
+				
 			}
 		}
         Theme.Headers._init();  
