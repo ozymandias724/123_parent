@@ -1178,7 +1178,7 @@ $bp__lg : 1280px;
                     //Logo link
                     > a {
                         padding: 10px;
-                        flex: 1 0 auto;
+                        flex: 1 0 auto; 
                         //Logo image inside link
                         > img {
                             width: auto;
@@ -1207,12 +1207,13 @@ $bp__lg : 1280px;
                                     //Navigational menu unordered list items links
                                     > a {
                                         padding: 10px 0;
+                                        border-bottom: 2px solid rgba(255, 255, 255, 0);
                                         color: $white;
                                         //Navigational menu unordered list items links actions on hover, active and focus
                                         &:hover, 
                                         &:active,
                                         &:focus {
-                                            color: $prestige_painters;
+                                            border-bottom: 2px solid rgba(255, 255, 255, 1);
                                         }
                                     }
                                 }
@@ -1224,11 +1225,14 @@ $bp__lg : 1280px;
                             border-radius: 10px;
                             border: 2px solid $white;
                             color: $white;
+                            -webkit-transition: color 0.3s, border 0.3s;
+                            -o-transition: color 0.3s, border 0.3s;
+                            transition: color 0.3s, border 0.3s;
                             &:hover, 
                             &:active,
                             &:focus {
-                                color: $prestige_painters;
-                                border: 2px solid $prestige_painters;
+                                color: $black;
+                                border: 2px solid $black;
                             }
                         }
                     }
@@ -1244,15 +1248,12 @@ $bp__lg : 1280px;
             //Phone number and address links
             &:first-of-type > div > div > span > a, 
             //Social icons unordered list items links
-            &:first-of-type > div > ul > li > a,
-            //Quote button link
-            &:last-of-type > div > div > a {
+            &:first-of-type > div > ul > li > a {
                 -webkit-transition: opacity 0.3s;
                 -o-transition: opacity 0.3s;
                 transition: opacity 0.3s;
                 //Phone number and address links actions on hover, active and focus
                 //Social icons unordered list items links actions on hover, active and focus
-                //Quote button link actions on hover, active and focus
                 &:hover, 
                 &:active,
                 &:focus {

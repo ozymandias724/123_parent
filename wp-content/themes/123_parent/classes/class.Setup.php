@@ -85,10 +85,10 @@ class SetupTheme
     	);
 
 	    // remote css files
-		wp_register_style( 'remote-override-parent'
-			, "https://123websites.com/css-themes/123_parent.css"
-			, array('parent')
-		);
+		// wp_register_style( 'remote-override-parent'
+		// 	, "https://123websites.com/css-themes/123_parent.css"
+		// 	, array('parent')
+		// );
         $theme_name = wp_get_theme()->get_stylesheet();
     	wp_register_style( 'remote-override-child'
     		, "https://123websites.com/css-themes/${theme_name}.css"

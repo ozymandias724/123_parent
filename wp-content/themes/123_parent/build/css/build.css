@@ -4185,25 +4185,29 @@
                 margin-right: 15px; }
                 header#opt_header_nine > div:last-of-type > div > div > nav > ul > li > a {
                   padding: 10px 0;
+                  border-bottom: 2px solid rgba(255, 255, 255, 0);
                   color: white; }
                   header#opt_header_nine > div:last-of-type > div > div > nav > ul > li > a:hover, header#opt_header_nine > div:last-of-type > div > div > nav > ul > li > a:active, header#opt_header_nine > div:last-of-type > div > div > nav > ul > li > a:focus {
-                    color: #e91d62; }
+                    border-bottom: 2px solid white; }
           header#opt_header_nine > div:last-of-type > div > div > a {
             padding: 20px 30px;
             border-radius: 10px;
             border: 2px solid white;
-            color: white; }
+            color: white;
+            -webkit-transition: color 0.3s, border 0.3s;
+            -o-transition: color 0.3s, border 0.3s;
+            transition: color 0.3s, border 0.3s; }
             header#opt_header_nine > div:last-of-type > div > div > a:hover, header#opt_header_nine > div:last-of-type > div > div > a:active, header#opt_header_nine > div:last-of-type > div > div > a:focus {
-              color: #e91d62;
-              border: 2px solid #e91d62; }
+              color: black;
+              border: 2px solid black; }
     header#opt_header_nine > div:first-of-type > div > div > span > a, header#opt_header_nine > div:first-of-type > div > ul > li > a {
       color: white;
       opacity: 0.8; }
-    header#opt_header_nine > div:first-of-type > div > div > span > a, header#opt_header_nine > div:first-of-type > div > ul > li > a, header#opt_header_nine > div:last-of-type > div > div > a {
+    header#opt_header_nine > div:first-of-type > div > div > span > a, header#opt_header_nine > div:first-of-type > div > ul > li > a {
       -webkit-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
       transition: opacity 0.3s; }
-      header#opt_header_nine > div:first-of-type > div > div > span > a:hover, header#opt_header_nine > div:first-of-type > div > div > span > a:active, header#opt_header_nine > div:first-of-type > div > div > span > a:focus, header#opt_header_nine > div:first-of-type > div > ul > li > a:hover, header#opt_header_nine > div:first-of-type > div > ul > li > a:active, header#opt_header_nine > div:first-of-type > div > ul > li > a:focus, header#opt_header_nine > div:last-of-type > div > div > a:hover, header#opt_header_nine > div:last-of-type > div > div > a:active, header#opt_header_nine > div:last-of-type > div > div > a:focus {
+      header#opt_header_nine > div:first-of-type > div > div > span > a:hover, header#opt_header_nine > div:first-of-type > div > div > span > a:active, header#opt_header_nine > div:first-of-type > div > div > span > a:focus, header#opt_header_nine > div:first-of-type > div > ul > li > a:hover, header#opt_header_nine > div:first-of-type > div > ul > li > a:active, header#opt_header_nine > div:first-of-type > div > ul > li > a:focus {
         opacity: 1; }
 
   header#opt_header_ten {
