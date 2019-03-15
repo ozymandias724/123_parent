@@ -1282,16 +1282,11 @@ $bp__lg : 1280px;
                 > div {
                     //Hamburger icon div element
                     &:nth-of-type(1){
-                        // display: flex;
-                        // justify-content: flex-start;
-                        // font-size: 26px;
-                        // //Hamburger icon link
-                        // > a { 
-                        //     padding: 10px;
-                        // } 
                         display: flex;
+                        //Hamburger icon link
                         > a {
                             padding: 10px;
+                            //Hamburger icon link spans 
                             > span {
                                 display: block;
                                 width: 33px;
@@ -1304,9 +1299,11 @@ $bp__lg : 1280px;
                                 transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                                             background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                                             opacity 0.55s ease;
+                                //First span of hamburger icon link
                                 &:nth-of-type(1){
                                     transform-origin: 0% 0%;
                                 }
+                                //Second span of hamburger icon link
                                 &:nth-of-type(2){
                                     transform-origin: 0% 100%;
                                 }
