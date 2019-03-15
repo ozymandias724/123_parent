@@ -1283,9 +1283,9 @@ $bp__lg : 1280px;
                     &:nth-of-type(1){
                         display: flex;
                         justify-content: flex-start;
-                        font-size: 20px;
+                        font-size: 26px;
                         //Hamburger icon link
-                        > a {
+                        > a { 
                             padding: 10px;
                         }
                     }
@@ -1305,6 +1305,7 @@ $bp__lg : 1280px;
                     list-style: none;
                     display: flex;
                     justify-content: flex-end;
+                    margin-right: -10px;
                     //Social icons unordered list
                     > li {
                         //Social icons unordered list items links
@@ -1327,6 +1328,7 @@ $bp__lg : 1280px;
                     -webkit-transition: color 0.3s;
                     -o-transition: color 0.3s;
                     transition: color 0.3s;
+                    //Hamburger icon link and social icons unordered list actions on hover, active and focus
                     &:hover, 
                     &:active, 
                     &:focus {

@@ -468,7 +468,7 @@ class NavHandler
                         %s
                     </div>
                 </div>
-            </header> 
+            </header>
         ';
         $this->header_ten = sprintf(
             $format_header
@@ -477,6 +477,7 @@ class NavHandler
             ,$fadenav
             ,$content_logo
             ,$content_social_icons
+            ,NavUtil::get_nav_links()
         ); 
         
     }
