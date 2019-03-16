@@ -38,7 +38,7 @@ $bp__lg : 1280px;
         // 
         a.header-logo {
             display: inline-block;
-            padding: 15px 0;
+            padding: 15px;
             > img {
                 max-width: 180px;
             }
@@ -96,11 +96,15 @@ $bp__lg : 1280px;
                 color: $white;
                 //Div inside top part of header
                 > div {
+                    //Logo image parent link
+                    > a {
+                        padding: 15px;
+                    }
                     > span {
                         //Top bar address
                         &:nth-of-type(1) {
                             margin-left: auto;
-                            width: 230px;
+                            width: 250px;
                             font-size: 16px;
                             //Address icon
                             &:before {
@@ -152,6 +156,7 @@ $bp__lg : 1280px;
                             }
                             //Top address and phone number links 
                             > a {
+                                padding: 10px;
                                 opacity: $opacity_level_below_one;
                                 -webkit-transition: opacity 0.3s;
                                 -o-transition: opacity 0.3s;
@@ -218,9 +223,6 @@ $bp__lg : 1280px;
                             &:last-of-type{
                                 padding-right: 0;
                                 //Last social icon list item link
-                                > a {
-                                    padding: 7px 0px 7px 10px;
-                                }
                             }  
                             //Social icons list items actions on hover, active and focus
                             &:hover,
@@ -282,9 +284,9 @@ $bp__lg : 1280px;
                     font-size: 2.5rem;
                     text-decoration: none;
                     position: relative;
-                    margin: 10px 0px;
+                    padding: 10px 5px;
                     //Phone number icon
-                    &:before{
+                    &:before {
                         font-family: FontAwesome;
                         content: "\f095";
                         font-weight: 700;
@@ -302,6 +304,7 @@ $bp__lg : 1280px;
                             //Navigational menu unordered list items links 
                             > a {
                                 font-size: 1.4rem;
+                                padding: 5px;
                                 color: white;
                                 text-transform: uppercase;
                             }
@@ -337,7 +340,8 @@ $bp__lg : 1280px;
             > a {
                 font-size:1.6rem;
                 text-transform: uppercase;
-                margin: 10px auto;
+                margin: 0px auto;
+                padding: 10px;
             }
         }
         //Common scss 
@@ -378,7 +382,7 @@ $bp__lg : 1280px;
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: space-around;
-                    padding: 0 5.5%;
+                    padding: 0 3.5%;
                     //Section of address and phone number
                     > span {
                         display: flex;
@@ -387,6 +391,7 @@ $bp__lg : 1280px;
                         //Links of address and phone number
                         a {
                             font-size: 1.6rem;
+                            padding: 10px;
                             opacity: $opacity_level_below_one;
                             -webkit-transition: opacity 0.3s;
                             -o-transition: opacity 0.3s;
@@ -458,8 +463,10 @@ $bp__lg : 1280px;
                         > li {
                             font-size: 1.6rem;
                             text-transform: uppercase;
+                            margin-right: 0;
                             //Navigational menu unordered list items links
                             > a {
+                                padding: 7px;
                                 opacity: $opacity_level_below_one;
                                 //Navigational menu unordered list items links actions on hover, focus and active 
                                 &:hover, 
@@ -478,7 +485,7 @@ $bp__lg : 1280px;
     //Header 4
     header#opt_header_four {
         color: $white;
-        padding:0px;
+        padding: 0px;
         //Top part of header
         > div {
             background-color: $black;
@@ -495,11 +502,11 @@ $bp__lg : 1280px;
                 }
                 //Social icons list items
                 > li { 
-                    display: inline-block;
+                    display: inline-block; 
                     margin: 0 10px;
                     //Social icons list items links
                     > a {
-                        font-size:16px;
+                        font-size: 16px;
                         width: 28px;
                         height: 28px; 
                         border-radius:50%;
@@ -526,6 +533,7 @@ $bp__lg : 1280px;
                 &:last-child{
                     //Phone number link
                     > a {
+                        padding: 10px;
                         font-weight: 400;
                         font-size:16px;
                         letter-spacing:1px;
@@ -575,7 +583,7 @@ $bp__lg : 1280px;
                         text-decoration: none;
                         color: $white;
                         text-transform: uppercase;
-                        margin: 0 15px;
+                        padding: 10xpx;
                         font-size: 13px;
                         line-height: 4;
                         letter-spacing: 1px;
@@ -638,9 +646,10 @@ $bp__lg : 1280px;
                     display: flex;
                     //Social icons list items
                     > li {
-                        margin-right: 30px;
+                        margin-right: 10px;
                         //Social icons list items links
                         > a {
+                            padding: 10px;
                             transition: color 0.3s;
                             -webkit-transition: color 0.3s;
                             -o-transition: color 0.3s;
@@ -661,7 +670,7 @@ $bp__lg : 1280px;
                 > div {
                     display: flex;
                     justify-content: space-between;
-                    width: 585px;
+                    width: 50%;
                     //Address and phone number in span element
                     > span {
                         display: flex;
@@ -676,8 +685,9 @@ $bp__lg : 1280px;
                         //Address in span element
                         &:first-of-type {
                             font-size: 14px;
-                            width: 288px;   
+                            width: 308px;   
                             > a {
+                                padding: 10px;
                                 transition: color 0.3s;
                                 -webkit-transition: color 0.3s;
                                 -o-transition: color 0.3s;
@@ -691,9 +701,10 @@ $bp__lg : 1280px;
                         //Phone number in span element
                         &:last-of-type {
                             font-size: 14px;
-                            width: 135px;
+                            width: 160px;
                             //Phone number link
                             > a {
+                                padding: 10px;
                                 transition: color 0.3s;
                                 -webkit-transition: color 0.3s;
                                 -o-transition: color 0.3s;
@@ -808,6 +819,10 @@ $bp__lg : 1280px;
                         > span {
                             color: $white;
                             font-size: 16px;
+                            //Address and phone number links
+                            > a {
+                                padding: 10px;
+                            }
                             //Icons for the address and phone number
                             i {
                                 font-size: 18px;
@@ -815,7 +830,7 @@ $bp__lg : 1280px;
                             }
                             //Phone number span element
                             &:first-of-type {
-                                margin-right: 30px;
+                                margin-right: 10px;
                                 //Phone number link   
                             }
                         }
@@ -828,7 +843,6 @@ $bp__lg : 1280px;
                         flex: 1 0 15%;
                         //Social icons unordered list items
                         > li {
-                            margin-left: 25px;
                             font-size: 16px;
                             color: $white;
                             //Social icons unordered list items links
@@ -950,7 +964,9 @@ $bp__lg : 1280px;
                             list-style: none;
                             //Social icons unordered list items
                             > li {
-                                margin-right: 20%;
+                                > a {
+                                    padding: 10px;
+                                }
                             }
                         }
                     }
@@ -1133,15 +1149,14 @@ $bp__lg : 1280px;
                         > span {
                             color: $white;
                             font-size: 16px;
+                            //
+                            > a {
+                                padding: 10px;
+                            }
                             //Icons for the address and phone number
                             i {
                                 font-size: 18px;
                                 margin-right: 10px;
-                            }
-                            //Phone number span element
-                            &:first-of-type {
-                                margin-right: 30px;
-                                //Phone number link   
                             }
                         }
                     }
@@ -1153,7 +1168,6 @@ $bp__lg : 1280px;
                         flex: 1 0 15%;
                         //Social icons unordered list items
                         > li {
-                            margin-left: 25px;
                             font-size: 16px;
                             color: $white;
                             //Social icons unordered list items links
@@ -1170,15 +1184,13 @@ $bp__lg : 1280px;
                 width: 100%;
                 //Parent div element of logo, navigational menu and quote button sections
                 > div {
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    max-width: 1280px;
+                    max-width: 1262px;
                     margin: 0 auto;
+                    display: flex;
+                    align-items: center;
                     //Logo link
                     > a {
                         padding: 10px;
-                        flex: 1 0 auto; 
                         //Logo image inside link
                         > img {
                             width: auto;
@@ -1189,11 +1201,12 @@ $bp__lg : 1280px;
                     //Parent div element of navigational menu and quote button
                     > div {
                         display: flex;
+                        justify-content: flex-end;
                         margin-right: 5px;
                         font-size: 14px;
                         text-transform: uppercase;
                         font-weight: 500;
-                        flex: 1 0 64%;
+                        flex: 1 0 67%;
                         //Navigational menu 
                         > nav {
                             display: flex;
@@ -1270,91 +1283,118 @@ $bp__lg : 1280px;
         box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
         //Parent div element to apply max-width and center children elements of header
         > div {
-            max-width: 1024px;
-            margin: 0 auto;
-            //Parent div element of hamburger icon, logo and social icons
-            > div {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                font-size: 18px;
-                //Parent divs of hamburger icon and logo 
+            &:first-of-type {
+                max-width: 1024px;
+                margin: 0 auto;
+                //Parent div element of hamburger icon, logo and social icons
                 > div {
-                    //Hamburger icon div element
-                    &:nth-of-type(1){
-                        display: flex;
-                        //Hamburger icon link
-                        > a {
-                            padding: 10px;
-                            //Hamburger icon link spans 
-                            > span {
-                                display: block;
-                                width: 33px;
-                                height: 4px;
-                                position: relative;
-                                background: #000;
-                                border-radius: 3px;
-                                transform-origin: 4px 0px;
-                                transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                                            background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                                            opacity 0.55s ease;
-                                //First span of hamburger icon link
-                                &:nth-of-type(1){
-                                    transform-origin: 0% 0%;
-                                    margin-bottom: 4px;
-                                }
-                                //Second span of hamburger icon link
-                                &:nth-of-type(2){
-                                    transform-origin: 0% 100%;
-                                    margin-bottom: 4px; 
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-size: 18px;
+                    //Parent divs of hamburger icon and logo 
+                    > div {
+                        //Hamburger icon div element
+                        &:nth-of-type(1){
+                            display: flex;
+                            z-index: 21;
+                            //Hamburger icon link
+                            > a {
+                                padding: 10px;
+                                //Hamburger icon link spans 
+                                > span {
+                                    display: block;
+                                    width: 33px;
+                                    height: 4px;
+                                    position: relative;
+                                    background: #000;
+                                    border-radius: 3px;
+                                    transform-origin: 4px 0px;
+                                    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                                                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                                                opacity 0.55s ease;
+                                    //First span of hamburger icon link
+                                    &:nth-of-type(1){
+                                        transform-origin: 0% 0%;
+                                        margin-bottom: 4px;
+                                    }
+                                    //Second span of hamburger icon link
+                                    &:nth-of-type(2){
+                                        transform-origin: 0% 100%;
+                                        margin-bottom: 4px; 
+                                    }
                                 }
                             }
                         }
-                    }
-                    //Logo parent div
-                    &:nth-of-type(2) {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        //Logo link
-                        > a {
-                            padding: 15px;
+                        //Logo parent div
+                        &:nth-of-type(2) {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            //Logo link
+                            > a {
+                                padding: 15px;
+                            }
                         }
                     }
-                }
-                //Social icons unordered list
-                > ul {
-                    list-style: none;
-                    display: flex;
-                    justify-content: flex-end;
-                    margin-right: -10px;
                     //Social icons unordered list
-                    > li {
-                        //Social icons unordered list items links
-                        > a {
-                            padding: 15px;
+                    > ul {
+                        list-style: none;
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-right: -10px;
+                        //Social icons unordered list
+                        > li {
+                            //Social icons unordered list items links
+                            > a {
+                                padding: 15px;
+                            }
+                        }
+                    }
+                    //Hamburger icon div element
+                    > div:first-of-type,
+                    //Logo link
+                    > div:last-of-type, 
+                    //Social icons unordered list
+                    > ul {
+                        flex: 1 0 30%;
+                    }
+                    //Hamburger icon link and social icons unordered list
+                    > div:first-of-type > a,
+                    > ul > li > a {
+                        -webkit-transition: color 0.3s;
+                        -o-transition: color 0.3s;
+                        transition: color 0.3s;
+                        //Hamburger icon link and social icons unordered list actions on hover, active and focus
+                        &:hover, 
+                        &:active, 
+                        &:focus {
+                            color: $prestige_painters;
                         }
                     }
                 }
-                //Hamburger icon div element
-                > div:first-of-type,
-                //Logo link
-                > div:last-of-type, 
-                //Social icons unordered list
-                > ul {
-                    flex: 1 0 30%;
-                }
-                //Hamburger icon link and social icons unordered list
-                > div:first-of-type > a,
-                > ul > li > a {
-                    -webkit-transition: color 0.3s;
-                    -o-transition: color 0.3s;
-                    transition: color 0.3s;
-                    //Hamburger icon link and social icons unordered list actions on hover, active and focus
-                    &:hover, 
-                    &:active, 
-                    &:focus {
-                        color: $prestige_painters;
+            }
+            //Header 10 sidebar menu
+            &:last-of-type {
+                height: 100%;
+                width: 250px;
+                position: fixed;
+                z-index: 20;
+                top: 0;
+                left: 0;
+                background-color: gray;
+                overflow-x: hidden;
+                transition: 0.3s;
+                padding-top: 90px;
+                > nav {
+                    > ul {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        > li {
+                            > a {
+                                color: $white;
+                            }
+                        }
                     }
                 }
             }
@@ -1364,22 +1404,25 @@ $bp__lg : 1280px;
     //Additional classes
     //Sticky nav properties
     .sticky {
-        position : fixed !important;
-        top : 0 !important;
+        position: fixed !important;
+        top: 0 !important;
     }
 
-    //Header 10 hamburger icon link spans classes and properties
-    .header_10_hamburger_icon_span_1_change {
-        opacity: 1;
-        transform: rotate(45deg) translate(0px, -10px);
-        background: #232323;
-    }
-    .header_10_hamburger_icon_span_2_change {
-        transform: rotate(-45deg) translate(0px, 10px)
-    }
-    .header_10_hamburger_icon_span_3_change {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
+    //Header 10 classes and properties
+        //Hamburger icon link span 1
+        .header_10_hamburger_icon_span_1_change {
+            opacity: 1;
+            transform: rotate(45deg) translate(0px, -10px);
+            background: #232323;
+        }
+        //Hamburger icon link span 2
+        .header_10_hamburger_icon_span_2_change {
+            transform: rotate(-45deg) translate(0px, 10px)
+        }
+        //Hamburger icon link span 3
+        .header_10_hamburger_icon_span_3_change {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
 
 }

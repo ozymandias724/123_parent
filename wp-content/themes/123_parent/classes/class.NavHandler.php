@@ -473,6 +473,11 @@ class NavHandler
                         %s
                     </div>
                 </div>
+                <div class="header_10_sidebar_menu">
+                    <nav>
+                        %s
+                    </nav>
+                </div>
             </header>
         ';
         $this->header_ten = sprintf(
