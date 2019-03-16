@@ -2167,50 +2167,61 @@ var Theme = {};
 ;(function ( $, Theme, window, document, undefined ) {
 	$(document).ready(function(){
 
-
-        // FIX THIS LATER
-        var header_height = $('header').height();
-        $('main').css('margin-top', header_height);
-	
-
-		Theme.Gustavo = {
+		Theme.Headers = {
 			tint : $(".header-tint"),
-			estimate : $(".estimate-toggle, .topbanner-quickquote, .site_button-quote"),
+			estimate : $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
 			estimate_popup : $(".estimate"),
 			estimate_close : $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
-			header_4 : $('header.header#opt_header_one'),
-			header_4_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
-			header_4_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
+			header_1 : $('header.header#opt_header_one'),
+			header_1_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
+			header_1_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
+			header_8 : $('header.header#opt_header_eight'),
+			header_8_div_1 : $('header.header#opt_header_eight > div'),
+			header_address_link : $(".google-search-address"),
+			header_address_text : $(".google-search-address").text(),
+			header_10_hamburger_icon : $("header#opt_header_ten > div > div > div:first-of-type > a"),
 
 			_init : function(){
-				$(Theme.Gustavo.estimate).on("click", Theme.Gustavo._click_handler); 
+				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
 
-				$(Theme.Gustavo.estimate_close).on("click",Theme.Gustavo._close_popup);
+				$(Theme.Headers.estimate_close).on("click",Theme.Headers._close_popup);
 
-				if($(Theme.Gustavo.header_4).length){
+				$(Theme.Headers.header_10_hamburger_icon).on("click", Theme.Headers._header_10_hamburger_icon_click);
+
+				if($(Theme.Headers.header_1).length){
 
 					window.onscroll = function(){
-						Theme.Gustavo._header_layout_4_function(); 
+						Theme.Headers._header_layout_1_function(); 
 					}
 
-					Theme.Gustavo.header_4_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+					Theme.Headers.header_1_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
 
-					if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
-						Theme.Gustavo.header_4_div_two.css({
-							"position" : "fixed" 
-						});
+					if(window.pageYOffset >= Theme.Headers.header_1_div_two_offset_top){
+						Theme.Headers.header_1_div_two.addClass('sticky');
 					}else{
-						Theme.Gustavo.header_4_div_two.css({
-							"position" : "relative" 
-						});
+						Theme.Headers.header_1_div_two.removeClass('sticky');
 					}
 					
+				} else if($(Theme.Headers.header_8).length) {
+					window.onscroll = function(){
+						Theme.Headers._header_layout_8_function();
+					}
+
+					Theme.Headers.header_8_offset_top = $("header#opt_header_eight").offset().top;
+
+					if(window.pageYOffset >= Theme.Headers.header_8_offset_top){
+						Theme.Headers.header_8.addClass('sticky');
+					}else{
+						Theme.Headers.header_8.removeClass('sticky');
+					}
 				}
+
+				$(Theme.Headers.header_address_link).on("click", Theme.Headers._header_address_link_click);
 
 			},
 			_click_handler : function(event){
 				event.preventDefault();
-				Theme.Gustavo.estimate_popup.fadeIn(250); 
+				Theme.Headers.estimate_popup.fadeIn(250); 
 			},
 			_close_popup : function(event){
 				if( $(event.target).hasClass("estimate") || 
@@ -2219,24 +2230,57 @@ var Theme = {};
 					$(event.target).hasClass("site__button-quote") 
 				){ 
 					event.preventDefault();
-					Theme.Gustavo.estimate_popup.fadeOut(250);	 
+					Theme.Headers.estimate_popup.fadeOut(250);	 
 				} 
 			},
-			_header_layout_4_function : function(){
+			_header_layout_1_function : function(){
 				
-				if(window.pageYOffset >= Theme.Gustavo.header_4_div_two_offset_top){
-					Theme.Gustavo.header_4_div_two.css({
-						"position" : "fixed" 
-					});
+				if(window.pageYOffset >= Theme.Headers.header_1_div_two_offset_top){
+					Theme.Headers.header_1_div_two.addClass('sticky');
 				}else{
-					Theme.Gustavo.header_4_div_two.css({
-						"position" : "relative" 
-					});
+					Theme.Headers.header_1_div_two.removeClass('sticky');
 				}
 				
 			},
+			_header_layout_8_function : function(){
+				if(window.pageYOffset >= Theme.Headers.header_8_offset_top){
+					Theme.Headers.header_8.addClass('sticky');
+				}else{
+					Theme.Headers.header_8.removeClass('sticky');
+				}
+			},
+			_header_address_link_click : function(event){
+				event.preventDefault();
+				window.open('https://google.com/search?q=' + Theme.Headers.header_address_text);
+			},
+			_header_10_hamburger_icon_click : function(){
+				Theme.Headers.header_10_hamburger_icon_span_1 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(1)");
+				Theme.Headers.header_10_hamburger_icon_span_2 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(2)");
+				Theme.Headers.header_10_hamburger_icon_span_3 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(3)");
+				
+				//If header 10 hamburger icon link has class of ...
+				if(Theme.Headers.header_10_hamburger_icon.hasClass("header_10_hamburger_icon_changed")){
+					//Remove hamburger icon link class
+					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+					//Remove hamburger icon link spans classes
+					Theme.Headers.header_10_hamburger_icon_span_1.removeClass("header_10_hamburger_icon_span_1_change");
+					Theme.Headers.header_10_hamburger_icon_span_2.removeClass("header_10_hamburger_icon_span_2_change");
+					Theme.Headers.header_10_hamburger_icon_span_3.removeClass("header_10_hamburger_icon_span_3_change");
+
+				}else{
+					//Add hamburger icon link class
+					Theme.Headers.header_10_hamburger_icon.addClass("header_10_hamburger_icon_changed");
+					//Add hamburger icon link spans classes
+					Theme.Headers.header_10_hamburger_icon_span_1.addClass("header_10_hamburger_icon_span_1_change");
+					Theme.Headers.header_10_hamburger_icon_span_2.addClass("header_10_hamburger_icon_span_2_change");
+					Theme.Headers.header_10_hamburger_icon_span_3.addClass("header_10_hamburger_icon_span_3_change");
+				}
+
+				
+				
+			}
 		}
-        Theme.Gustavo._init();  
+        Theme.Headers._init();  
         
 
         Theme.Nav_Mobile = { 
