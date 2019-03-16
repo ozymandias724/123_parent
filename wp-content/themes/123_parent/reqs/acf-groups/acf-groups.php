@@ -240,78 +240,83 @@ if( !function_exists('add_acf_fields') ){
 			include( __DIR__ . '/setup/partial.SiteSetupFields.php' );
 		endif;
 
-		acf_add_local_field_group(array(
-			'key' => 'group_1oi3nlaosawooingk',
-			'title' => 'Edit Banner',
-			'fields' => array(
-				array(
-					'key' => 'field_8naniasm2jbnlaf',
-					'label' => 'Select the Home Page',
-					'instructions' => 'If you want a custom home page select it here; otherwise leave this blank or select the home page archive',
-					'name' => 'home-selectfrontpage',
-					'type' => 'post_object',
-					'post_type' => 'page',
-					'allow_null' => 1,
-				),
-				array(
-					'key' => 'field_2391274',
-					'label' => 'Slider Tagline',
-					'name' => 'home-hero-header-text',
-					'type' => 'text',
-					'instructions' => 'This is the text that appears on the homepage section',
-				),
-				array(
-					'key' => 'field_8czoivadhs',
-					'label' => 'Slider Tagline 2',
-					'name' => 'home-hero-header-text-2',
-					'type' => 'text',
-					'instructions' => 'Only used when the theme uses a 2nd line',
-				),
-				array(
-					'key' => 'field_14',
-					'label' => 'Slider Images',
-					'name' => 'general-home-slider',
-					'type' => 'repeater',
-					'button_label' => 'Add Slide',
-					'min' => 3,
-					'layout' => 'row',
-					'instructions' => 'You need a minimum of 3 slides or else the default images will be used instead.',
-					'sub_fields' => array(
-						array(
-							'key' => 'field_166',
-							'label' => 'Image',
-							'name' => 'general-home-slider-image',
-							'type' => 'image',
-							'preview_size' => 'medium',
-							'return_format' => 'url',
-						),
-					),
-				),
-				array(
-					'key' => 'field_98viozckg123',
-					'label' => 'Disable Slider Button?',
-					'type' => 'true_false',
-					'name' => 'disable-slider-button',
-					'ui' => true,
-				),
-				array(
-					'key' => 'field_oicvzzcvjbh123',
-					'label' => 'Slider Button Text',
-					'type' => 'text',
-					'name' => 'slider-button-text',
-					'instructions' => 'This is the text that appears in the botton on the slider. Keep it short & sweet: No more than a dozen characters or so. If left blank "Learn More" will be used as the default.'
-				),
-			),
-			'location' => array (
-				array (
-					array (
-						'param' => 'options_page',
-						'operator' => '==',
-						'value' => 'home-settings',
-					),
-				),
-			),
-		));
+		// acf_add_local_field_group(array(
+		// 	'key' => 'group_1oi3nlaosawooingk',
+		// 	'title' => 'Edit Banner',
+		// 	'fields' => array(
+		// 		array(
+		// 			'key' => 'field_8naniasm2jbnlaf',
+		// 			'label' => 'Select the Home Page',
+		// 			'instructions' => 'If you want a custom home page select it here; otherwise leave this blank or select the home page archive',
+		// 			'name' => 'home-selectfrontpage',
+		// 			'type' => 'post_object',
+		// 			'post_type' => 'page',
+		// 			'allow_null' => 1,
+		// 		),
+		// 		array(
+		// 			'key' => 'field_2391274',
+		// 			'label' => 'Slider Tagline',
+		// 			'name' => 'home-hero-header-text',
+		// 			'type' => 'text',
+		// 			'instructions' => 'This is the text that appears on the homepage section',
+		// 		),
+		// 		array(
+		// 			'key' => 'field_8czoivadhs',
+		// 			'label' => 'Slider Tagline 2',
+		// 			'name' => 'home-hero-header-text-2',
+		// 			'type' => 'text',
+		// 			'instructions' => 'Only used when the theme uses a 2nd line',
+		// 		),
+		// 		array(
+		// 			'key' => 'field_14',
+		// 			'label' => 'Slider Images',
+		// 			'name' => 'general-home-slider',
+		// 			'type' => 'repeater',
+		// 			'button_label' => 'Add Slide',
+		// 			'min' => 3,
+		// 			'layout' => 'row',
+		// 			'instructions' => 'You need a minimum of 3 slides or else the default images will be used instead.',
+		// 			'sub_fields' => array(
+		// 				array(
+		// 					'key' => 'field_166',
+		// 					'label' => 'Image',
+		// 					'name' => 'general-home-slider-image',
+		// 					'type' => 'image',
+		// 					'preview_size' => 'medium',
+		// 					'return_format' => 'url',
+		// 				),
+		// 			),
+		// 		),
+		// 		array(
+		// 			'key' => 'field_98viozckg123',
+		// 			'label' => 'Disable Slider Button?',
+		// 			'type' => 'true_false',
+		// 			'name' => 'disable-slider-button',
+		// 			'ui' => true,
+		// 		),
+		// 		array(
+		// 			'key' => 'field_oicvzzcvjbh123',
+		// 			'label' => 'Slider Button Text',
+		// 			'type' => 'text',
+		// 			'name' => 'slider-button-text',
+		// 			'instructions' => 'This is the text that appears in the botton on the slider. Keep it short & sweet: No more than a dozen characters or so. If left blank "Learn More" will be used as the default.'
+		// 		),
+		// 	),
+		// 	'location' => array (
+		// 		array (
+		// 			array (
+		// 				'param' => 'options_page',
+		// 				'operator' => '==',
+		// 				'value' => 'home-settings',
+		// 			),
+		// 		),
+		// 	),
+        // ));
+        
+
+
+
+        
 		/*
 			Areas Served Settings Fields
 		*/
