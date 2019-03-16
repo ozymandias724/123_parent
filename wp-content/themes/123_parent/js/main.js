@@ -2,6 +2,19 @@ var Theme = {};
 ;(function ( $, Theme, window, document, undefined ) {
 	$(document).ready(function(){
 
+
+
+        // push down the header
+        var header_height = $('header').height();
+        $('main').css('margin-top', header_height);
+        
+        
+        // test slick
+        $('.hero-bgimg').slick({
+            // 
+        });
+        
+
 		Theme.Headers = {
 			tint : $(".header-tint"),
 			estimate : $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),

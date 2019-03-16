@@ -64,7 +64,11 @@ class SetupTheme
 		wp_enqueue_style( 'remote-override-child' );
 	}
 
-
+    /**
+     * register javascript
+     *
+     * @return void
+     */
 	public static function register_javascript(){
 	    wp_register_script( 'parent-main'
 	    	, get_template_directory_uri() . '/build/js/build.js'
@@ -75,13 +79,26 @@ class SetupTheme
 	    	, get_template_directory_uri() . '/build/js/exec.js'
 	    	, false
 	    	, filemtime(get_template_directory() . '/build/js/exec.js')
-	    );
-	}
+        );
+    }
+
 	public static function register_styles(){
 	    wp_register_style( 'parent'
 	    	, get_template_directory_uri() . '/build/css/build.css'
-	    	, false
+            , false
 	    	, filemtime(get_template_directory() . '/build/css/build.css')
+        );
+        
+        wp_register_style( 'slick'
+	    	, get_template_directory_uri() . '/css/lib/slick.css'
+	    	, false
+	    	, filemtime(get_template_directory() . '/css/lib/slick.css')
+        );
+
+        wp_register_style( 'slick-theme'
+	    	, get_template_directory_uri() . '/css/lib/slick-theme.css'
+	    	, false
+	    	, filemtime(get_template_directory() . '/css/lib/slick-theme.css')
     	);
 
 	    //remote css files
@@ -109,8 +126,11 @@ class SetupTheme
 
 	}
 	public static function enqueue_styles(){
-		wp_enqueue_style( 'parent' );
+        wp_enqueue_style( 'parent' );
 		// conditionally load header css files
+        
+        wp_enqueue_style( 'slick' );
+        wp_enqueue_style( 'slick-theme' );
 	}
 
 	// remove junk from the header
