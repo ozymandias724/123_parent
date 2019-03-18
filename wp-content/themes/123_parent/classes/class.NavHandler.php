@@ -472,11 +472,14 @@ class NavHandler
                         %s
                     </div>
                 </div>
-                <div class="header_10_sidebar_menu">
+                <div class="header_sidebar_menu_1">
                     <nav>
                         %s
                     </nav>
-                </div>
+                    <div>
+                        <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                    </div>
+                </div> 
             </header>
         ';
         $this->header_ten = sprintf(
@@ -487,6 +490,8 @@ class NavHandler
             ,$content_logo
             ,$content_social_icons
             ,NavUtil::get_nav_links()
+            ,$num_href
+            ,$num_display 
         ); 
         
     }
