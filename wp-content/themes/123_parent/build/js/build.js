@@ -2211,6 +2211,7 @@ var Theme = {};
 			header_address_link : $(".google-search-address"),
 			header_address_text : $(".google-search-address").text(),
 			header_10_hamburger_icon : $("header#opt_header_ten > div > div > div:first-of-type > a"),
+			header_10_sidebar_menu : $(".header_10_sidebar_menu"),
 
 			_init : function(){
 				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
@@ -2298,6 +2299,8 @@ var Theme = {};
 					Theme.Headers.header_10_hamburger_icon_span_2.removeClass("header_10_hamburger_icon_span_2_change");
 					Theme.Headers.header_10_hamburger_icon_span_3.removeClass("header_10_hamburger_icon_span_3_change");
 
+					//Close sidebar navigational menu
+					Theme.Headers.header_10_sidebar_menu.removeClass("width-250px");
 				}else{
 					//Add hamburger icon link class
 					Theme.Headers.header_10_hamburger_icon.addClass("header_10_hamburger_icon_changed");
@@ -2305,6 +2308,9 @@ var Theme = {};
 					Theme.Headers.header_10_hamburger_icon_span_1.addClass("header_10_hamburger_icon_span_1_change");
 					Theme.Headers.header_10_hamburger_icon_span_2.addClass("header_10_hamburger_icon_span_2_change");
 					Theme.Headers.header_10_hamburger_icon_span_3.addClass("header_10_hamburger_icon_span_3_change");
+
+					//Open sidebar navigational menu
+					Theme.Headers.header_10_sidebar_menu.addClass("width-250px");
 				}
 
 				
