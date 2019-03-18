@@ -457,7 +457,7 @@ $bp__lg : 1280px;
                     flex-flow: row nowrap;
                     align-items: center;
                     justify-content: space-around;
-                    box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+                    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
                     //Navigational menu unordered list
                     > ul {
                         //Navigational menu unordered list items
@@ -1216,6 +1216,7 @@ $bp__lg : 1280px;
                             border: 2px solid $white;
                             color: $white;
                             transition: color 0.3s, border 0.3s;
+                            //Quote button link actions on hover, active and focus
                             &:hover, 
                             &:active,
                             &:focus {
@@ -1290,11 +1291,28 @@ $bp__lg : 1280px;
                                     &:nth-of-type(1){
                                         transform-origin: 0% 0%;
                                         margin-bottom: 4px;
+                                        //Hamburger icon link span 1
+                                        &.header_10_hamburger_icon_span_1_change {
+                                            opacity: 1;
+                                            transform: rotate(45deg) translate(0px, -10px);
+                                            background: #232323;
+                                        }
                                     }
                                     //Second span of hamburger icon link
                                     &:nth-of-type(2){
                                         transform-origin: 0% 100%;
                                         margin-bottom: 4px; 
+                                        //Hamburger icon link span 2                          
+                                        &.header_10_hamburger_icon_span_2_change {
+                                            transform: rotate(-45deg) translate(0px, 10px)
+                                        }
+                                    }
+                                    &:nth-of-type(3) {
+                                        //Hamburger icon link span 3
+                                        &.header_10_hamburger_icon_span_3_change {
+                                            opacity: 0;
+                                            transform: rotate(0deg) scale(0.2, 0.2);
+                                        }
                                     }
                                 }
                             }
@@ -1358,6 +1376,10 @@ $bp__lg : 1280px;
                 transition: 0.3s;
                 padding-top: 90px;
                 transition: width 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                //Header 10 Sidebar menu class
+                &.width-250px {
+                    width: 250px !important;
+                }
                 //Header 10 sidebar navigational menu
                 > nav {
                     //Header 10 sidebar navigational menu unordered list
@@ -1372,7 +1394,7 @@ $bp__lg : 1280px;
                             //Select all header 10 sidebar navigational list items except the last one
                             &:not(:last-of-type) {
                                 > a {
-                                    border-bottom: 1px solid $black;
+                                    border-bottom: 1px solid $gray;
                                 }
                             }
                             //Header 10 sidebar navigational menu unordered list items links 
@@ -1408,26 +1430,4 @@ $bp__lg : 1280px;
         position: fixed !important;
         top: 0 !important;
     }
-
-    //Header 10 classes and properties
-        //Hamburger icon link span 1
-        .header_10_hamburger_icon_span_1_change {
-            opacity: 1;
-            transform: rotate(45deg) translate(0px, -10px);
-            background: #232323;
-        }
-        //Hamburger icon link span 2
-        .header_10_hamburger_icon_span_2_change {
-            transform: rotate(-45deg) translate(0px, 10px)
-        }
-        //Hamburger icon link span 3
-        .header_10_hamburger_icon_span_3_change {
-            opacity: 0;
-            transform: rotate(0deg) scale(0.2, 0.2);
-        }
-        //Header 10 Sidebar menu class
-        .width-250px {
-            width: 250px !important;
-        }
-
 }

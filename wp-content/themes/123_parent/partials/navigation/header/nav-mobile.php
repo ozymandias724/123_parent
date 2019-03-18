@@ -4,13 +4,16 @@
         <header class="%s %s mobileheader" id="theme_name_maybe">
             <div>
                 %s
-                <span class="mobileheader-navicon"><i class="fa fa-navicon"></i><i class="fa fa-times"></i></span>
+                <a href="javascript:;">
+                    <span></span>
+                    <span></span>
+                    <span></span> 
+                </a>
             </div>
             <div>
                 <nav>
                     %s
                 </nav>
-
                 <div>
                     <a href="%s">%s</a>
                 </div>

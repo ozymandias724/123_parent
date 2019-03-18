@@ -2,6 +2,7 @@ $primary : #df1d1d;
 $black : black;
 $second_black: #333333;
 $white : white;
+$white_little_darker : #f8f8f8;
 $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
@@ -15,7 +16,7 @@ $bp__lg : 1280px;
     *
     *   Styles
     *
-    **/
+    **/  
 
     header.header {
         display: none;
@@ -26,10 +27,11 @@ $bp__lg : 1280px;
         top: 0;
         left: 0;
         width: 100%;
-        height: 72px;
-        color: $white;
+        height: 60px;
+        color: $black;
         font-size: 1.6rem;
         z-index: 19;
+        background-color: $white_little_darker;
         ul {
             list-style-type: none;
             display: flex;
@@ -39,7 +41,7 @@ $bp__lg : 1280px;
         a.header-logo {
             display: inline-block;
             padding: 10px 0;
-            >img {
+            > img {
                 max-width: 120px;
             }
         }
@@ -54,7 +56,7 @@ $bp__lg : 1280px;
             }
         }
 
-        >div>span.mobileheader-navicon {
+        > div > span.mobileheader-navicon {
             cursor: pointer;
             i.fa {
                 font-size: 2rem;
@@ -66,20 +68,67 @@ $bp__lg : 1280px;
             }
         }
 
-        >div {
+        > div {
             display: flex;
             align-items: center;
         }
 
-        // top bar w navicon
-        >div:first-of-type {
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 30px;
-            height: 52px;
+        > div {
+            //Top bar with hamburger icon
+            &:first-of-type {
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 30px;
+                height: 60px;
+                box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+                //Hamburger icon link
+                > a {
+                    padding: 10px;
+                    //Hamburger icon link spans 
+                    > span {
+                        display: block;
+                        width: 33px;
+                        height: 4px;
+                        position: relative;
+                        background: #000;
+                        border-radius: 3px;
+                        transform-origin: 4px 0px;
+                        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                                    opacity 0.55s ease;
+                        //First span of hamburger icon link
+                        &:nth-of-type(1){
+                            transform-origin: 0% 0%;
+                            margin-bottom: 4px;
+                            //Hamburger icon link span 1
+                            &.header_10_hamburger_icon_span_1_change {
+                                opacity: 1;
+                                transform: rotate(45deg) translate(0px, -10px);
+                                background: #232323;
+                            }
+                        }
+                        //Second span of hamburger icon link
+                        &:nth-of-type(2){
+                            transform-origin: 0% 100%;
+                            margin-bottom: 4px; 
+                            //Hamburger icon link span 2                          
+                            &.header_10_hamburger_icon_span_2_change {
+                                transform: rotate(-45deg) translate(0px, 10px)
+                            }
+                        }
+                        &:nth-of-type(3) {
+                            //Hamburger icon link span 3
+                            &.header_10_hamburger_icon_span_3_change {
+                                opacity: 0;
+                                transform: rotate(0deg) scale(0.2, 0.2);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        >div:last-of-type {
+        > :last-of-type {
             // display: none;
             flex-flow: column nowrap;
             justify-content: center;

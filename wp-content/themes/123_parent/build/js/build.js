@@ -2322,13 +2322,22 @@ var Theme = {};
 
         Theme.Nav_Mobile = { 
 
-            toggle : $('span.mobileheader-navicon'),
+			mobile_header : $("header.mobileheader"),
+			toggle : $('header.mobileheader > div:first-of-type > a'),
+			mobile_nav_hamburger_icon_span_1 : $("header.mobileheader > div:first-of-type > a > span:nth-of-type(1)"),
+			mobile_nav_hamburger_icon_span_2 : $("header.mobileheader > div:first-of-type > a > span:nth-of-type(2)"),
+			mobile_nav_hamburger_icon_span_3 : $("header.mobileheader > div:first-of-type > a > span:nth-of-type(3)"),
             
             _init : function(){
                 Theme.Nav_Mobile.toggle.on('click', Theme.Nav_Mobile._clickHandler);
             },
             _clickHandler : function(){
-                $('header.mobileheader').toggleClass('mobileheader--revealed');
+				Theme.Nav_Mobile.mobile_header.toggleClass('mobileheader--revealed');
+				if(!Theme.Nav_Mobile.mobile_header.hasClass("mobileheader--revealed")){
+					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_1.addClass("mobile_nav_hamburger_icon_span_1_change");
+				}else{
+					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_1.removeClass("mobile_nav_hamburger_icon_span_1_change");
+				}
             }
             
         }
