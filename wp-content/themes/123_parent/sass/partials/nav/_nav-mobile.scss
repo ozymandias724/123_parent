@@ -110,7 +110,7 @@ $opacity_level_below_one : 0.8;
     //Mobile nav sidebar
     .mobile_header_sidebar_menu_1 {
         height: 100%;
-        width: 0px;
+        width: 250px;
         position: fixed;
         z-index: 20;
         top: 0; 
@@ -118,10 +118,11 @@ $opacity_level_below_one : 0.8;
         background-color: $white_little_darker;
         overflow-x: hidden;
         padding-top: 90px;
-        transition: width 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        transform: translateX(-100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
         //Mobile nav Sidebar menu class
-        &.width-250px {
-            width: 250px !important;
+        &.sidebar-transform-x{
+            transform: translateX(0%);
         }
         //Mobile nav sidebar navigational menu
         > nav {

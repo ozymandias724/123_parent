@@ -40,11 +40,11 @@ var Theme = {};
 				//On resize of browser
 				window.onresize = function(){
 					//Remove header 10 sidebar menu width
-					Theme.Headers.header_10_sidebar_menu.removeClass("width-250px");
+					Theme.Headers.header_10_sidebar_menu.removeClass("sidebar-transform-x");
 					//Remove header 10 hamburger icon class
 					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
 					//Remove mobile nav sidebar menu width
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("width-250px");
+					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("sidebar-transform-x");
 					//Remove mobile nav hamburger icon class
 					Theme.Nav_Mobile.toggle.removeClass('mobile_nav_sidebar_menu_1');
 				}
@@ -129,7 +129,7 @@ var Theme = {};
 					Theme.Headers.header_10_hamburger_icon_span_3.addClass("header_10_hamburger_icon_span_3_change");
 
 					//Close sidebar navigational menu
-					Theme.Headers.header_10_sidebar_menu.addClass("width-250px");
+					Theme.Headers.header_10_sidebar_menu.addClass("sidebar-transform-x");
 				}else{
 					//Add hamburger icon link class
 					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
@@ -139,7 +139,7 @@ var Theme = {};
 					Theme.Headers.header_10_hamburger_icon_span_3.removeClass("header_10_hamburger_icon_span_3_change");
 
 					//Open sidebar navigational menu
-					Theme.Headers.header_10_sidebar_menu.removeClass("width-250px");
+					Theme.Headers.header_10_sidebar_menu.removeClass("sidebar-transform-x");
 				}
 
 				
@@ -167,13 +167,13 @@ var Theme = {};
 					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_1.addClass("mobile_nav_hamburger_icon_span_1_change");
 					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_2.addClass("mobile_nav_hamburger_icon_span_2_change");
 					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_3.addClass("mobile_nav_hamburger_icon_span_3_change");
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.addClass("width-250px");
+					Theme.Nav_Mobile.mobile_nav_sidebar_menu.addClass("sidebar-transform-x");
 				}else{
 					Theme.Nav_Mobile.toggle.removeClass('mobile_nav_sidebar_menu_1');
 					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_1.removeClass("mobile_nav_hamburger_icon_span_1_change");
 					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_2.removeClass("mobile_nav_hamburger_icon_span_2_change");
 					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_3.removeClass("mobile_nav_hamburger_icon_span_3_change");
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("width-250px");
+					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("sidebar-transform-x");
 				}
             }
             
