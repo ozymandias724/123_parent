@@ -29,7 +29,7 @@
         // hero type is static image
         if( $type == 'image' ){
             $format_hero = '
-                <div class="hero-bgimg" style="background-image: url(%s)">
+                <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
                     <div>
                         %s
                         %s
