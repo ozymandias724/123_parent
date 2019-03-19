@@ -1307,7 +1307,6 @@ $bp__lg : 1280px;
                                     display: block;
                                     width: 33px;
                                     height: 4px;
-                                    position: relative;
                                     background: #000;
                                     border-radius: 3px;
                                     transform-origin: 4px 0px;
@@ -1422,7 +1421,7 @@ $bp__lg : 1280px;
                         padding: 12px 12px 12px 0;
                         display: block;
                         margin: 0 auto;
-                        text-align: left;
+                        text-align: center;
                         text-transform: capitalize;
                         width: 70%;
                     }
@@ -1431,14 +1430,22 @@ $bp__lg : 1280px;
         }    
         //Telephone number parent div element
         > div {
+            display: flex;
             //Telephone number link
             > a {
                 display: block;
-                padding: 5px 5px 5px 0;
-                margin-top: 15px;
-                margin-left: 40px;
+                padding: 10px 15px 10px 15px;
+                border-radius: 20px;
+                text-align: center;
+                color: $white;
+                background-color: $black;
+                font-weight: 500;
+                margin: 15px auto 0;
+                > i {
+                    margin-right: 5px;
+                }
             }
-        }  
+        }    
         //Telephone number link
         > div > a,
         //Navigational menu unordered list items links

@@ -3456,18 +3456,27 @@
           display: block;
           margin: 0 auto;
           text-transform: capitalize;
-          width: 70%; }
-    .mobile_header_sidebar_menu_1 > div > a {
-      display: block;
-      padding: 5px 5px 5px 0;
-      margin-top: 15px;
-      margin-left: 40px; }
+          width: 70%;
+          text-align: center; }
+    .mobile_header_sidebar_menu_1 > div {
+      display: flex; }
+      .mobile_header_sidebar_menu_1 > div > a {
+        display: block;
+        padding: 10px 15px 10px 15px;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        background-color: black;
+        font-weight: 500;
+        margin: 15px auto 0; }
+        .mobile_header_sidebar_menu_1 > div > a > i {
+          margin-right: 5px; }
     .mobile_header_sidebar_menu_1 > ul {
       flex-flow: row nowrap;
       list-style-type: none;
       display: flex;
       margin-top: 15px;
-      margin-left: 30px; }
+      justify-content: center; }
       .mobile_header_sidebar_menu_1 > ul > li > a {
         padding: 10px; }
     .mobile_header_sidebar_menu_1 > ul > li > a,
@@ -4255,7 +4264,6 @@
               display: block;
               width: 33px;
               height: 4px;
-              position: relative;
               background: #000;
               border-radius: 3px;
               transform-origin: 4px 0px;
@@ -4324,14 +4332,22 @@
           padding: 12px 12px 12px 0;
           display: block;
           margin: 0 auto;
-          text-align: left;
+          text-align: center;
           text-transform: capitalize;
           width: 70%; }
-    .header_sidebar_menu_1 > div > a {
-      display: block;
-      padding: 5px 5px 5px 0;
-      margin-top: 15px;
-      margin-left: 40px; }
+    .header_sidebar_menu_1 > div {
+      display: flex; }
+      .header_sidebar_menu_1 > div > a {
+        display: block;
+        padding: 10px 15px 10px 15px;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        background-color: black;
+        font-weight: 500;
+        margin: 15px auto 0; }
+        .header_sidebar_menu_1 > div > a > i {
+          margin-right: 5px; }
     .header_sidebar_menu_1 > div > a,
     .header_sidebar_menu_1 > nav > ul > li > a {
       opacity: 0.8;

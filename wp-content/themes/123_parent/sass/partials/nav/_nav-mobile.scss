@@ -149,18 +149,27 @@ $opacity_level_below_one : 0.8;
                         margin: 0 auto;
                         text-transform: capitalize;
                         width: 70%;
+                        text-align: center;
                     }
                 }
             }
         }   
         //Telephone number parent div element
         > div {
+            display: flex;
             //Telephone number link
             > a {
                 display: block;
-                padding: 5px 5px 5px 0;
-                margin-top: 15px;
-                margin-left: 40px;
+                padding: 10px 15px 10px 15px;
+                border-radius: 20px;
+                text-align: center;
+                color: $white;
+                background-color: $black;
+                font-weight: 500;
+                margin: 15px auto 0;
+                > i {
+                    margin-right: 5px;
+                }
             }
         }    
         //Social icons unordered list 
@@ -169,7 +178,7 @@ $opacity_level_below_one : 0.8;
             list-style-type: none;
             display: flex;
             margin-top: 15px;
-            margin-left: 30px;
+            justify-content: center;
             //Social icons unordered list items
             > li {
                 //Social icons unordered list items links
