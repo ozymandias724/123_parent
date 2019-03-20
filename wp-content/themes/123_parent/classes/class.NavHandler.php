@@ -46,10 +46,10 @@ class NavHandler
         $format_socialtopbar = '
             <div id="opt__topbanner">
                 <span>
-                    <a href="%s" alt=""><i class="fa fa-map-marker"></i>
+                    <a href="%s" alt="Address button"><i class="fa fa-map-marker"></i>
                         <span>%s</span>
                     </a>
-                    <a href="%s">
+                    <a href="%s" title="Phone number button">
                         <i class="fa fa-phone"></i>
                         <span>%s</span>
                     </a>
@@ -65,9 +65,9 @@ class NavHandler
             $num_display,
             $content_quotebtn
         );
-        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number">'.$num_display.'</a>';
+        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button">'.$num_display.'</a>';
         if( !empty($quotebtn_txt) ){
-            $quickquote = '<a href="#" class="site__button-quote" title="Phone number">' . $quotebtn_txt . '</a>';
+            $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $quotebtn_txt . '</a>';
         }
         // 
         // 
