@@ -65,13 +65,15 @@
                 </a>
             </div>
             <div class="mobile_header_sidebar_menu_1">
-                <nav>
-                    %s
-                </nav>
-                <div>
-                    <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
-                </div>
-                %s
+				<div>
+					<nav>
+						%s
+					</nav>
+					<div>
+						<a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+					</div>
+					%s
+				</div>
             </div> 
         </header>
     ';

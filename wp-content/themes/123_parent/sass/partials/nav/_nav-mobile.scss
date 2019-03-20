@@ -35,53 +35,44 @@ $opacity_level_below_one : 0.8;
         z-index: 19;
         background-color: $white;
         > div {
-            //Top bar with hamburger icon
+            /*Top bar with hamburger icon*/
             &:first-of-type {
                 justify-content: space-between;
                 align-items: center;
                 padding: 0 30px;
                 height: 60px;
                 box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-                //Hamburger icon link
+                /*Hamburger icon link*/
                 > a {
                     padding: 20px;
                     top: 10px;
                     position: absolute;
-                    //When hamburger icon link has this class, apply the following classes to the span elements
+                    /*When hamburger icon link has this class, apply the following classes to the span elements*/
                     &.mobile_nav_sidebar_menu_1 {
                         > span {
-                            //First span of hamburger icon link
+                            /*First span of hamburger icon link*/
                             &:nth-of-type(1) {
-                                //Hamburger icon link span 1
-                                &.mobile_nav_hamburger_icon_span_1_change {
-                                    opacity: 1;
-                                    transform: rotate(45deg) translate(0px, -10px);
-                                    background: #232323;
-                                }
+								opacity: 1;
+								transform: rotate(45deg) translate(0px, -10px);
+								background: #232323;
                             }
-                            //Second span of hamburger icon link
+                            /*Second span of hamburger icon link*/
                             &:nth-of-type(2) {
-                                //Hamburger icon link span 2                          
-                                &.mobile_nav_hamburger_icon_span_2_change {
-                                    transform: rotate(-45deg) translate(0px, 10px)
-                                }
+                                transform: rotate(-45deg) translate(0px, 10px)
                             }
                             &:nth-of-type(3) {
-                                //Hamburger icon link span 3
-                                &.mobile_nav_hamburger_icon_span_3_change {
-                                    opacity: 0;
-                                    transform: rotate(0deg) scale(0.2, 0.2);
-                                }
+								opacity: 0;
+								transform: rotate(0deg) scale(0.2, 0.2);
                             }
                         }
                     }
-                    //Hamburger icon link spans 
+                    /*Hamburger icon link spans */
                     > span {
                         display: block;
                         width: 33px;
                         height: 4px;
                         position: absolute;
-                        background: #000;
+                        background: $black;
                         border-radius: 3px;
                         transform-origin: 4px 0px;
                         z-index: 21;
@@ -89,12 +80,12 @@ $opacity_level_below_one : 0.8;
                         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                                     background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                                     opacity 0.55s ease;
-                        //First span of hamburger icon link
+                        /*First span of hamburger icon link*/
                         &:nth-of-type(1) {
                             transform-origin: 0% 0%;
                             top: 12px;
                         }
-                        //Second span of hamburger icon link
+                        /*Second span of hamburger icon link*/
                         &:nth-of-type(2) {
                             transform-origin: 0% 100%;
                             top: 20px;
@@ -109,97 +100,106 @@ $opacity_level_below_one : 0.8;
     }
     //Mobile nav sidebar
     .mobile_header_sidebar_menu_1 {
-        height: 100%;
-        width: 250px;
-        position: fixed;
-        z-index: 20;
-        top: 0; 
-        font-size: 16px;
-        background-color: $white_little_darker;
-        overflow-x: hidden;
-        padding-top: 90px;
-        transform: translateX(-100%);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        //Mobile nav Sidebar menu class
-        &.sidebar-transform-x{
-            transform: translateX(0%);
-        }
-        //Mobile nav sidebar navigational menu
-        > nav {
-            //Mobile nav sidebar navigational menu unordered list
-            > ul {
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                //Mobile nav sidebar navigational menu unordered list items
-                > li {
-                    margin-right: 0; 
-                    width: 100%;
-                    //Select all Mobile nav sidebar navigational list items except the last one
-                    &:not(:last-of-type) {
-                        > a {
-                            border-bottom: 1px solid $tint;
-                        }
-                    }
-                    //Mobile nav  sidebar navigational menu unordered list items links 
-                    > a {
-                        color: $black;
-                        padding: 12px 12px 12px 0;
-                        display: block;
-                        margin: 0 auto;
-                        text-transform: capitalize;
-                        width: 70%;
-                        text-align: center;
-                    }
-                }
-            }
-        }   
-        //Telephone number parent div element
-        > div {
-            display: flex;
-            //Telephone number link
-            > a {
-                display: block;
-                padding: 10px 15px 10px 15px;
-                border-radius: 20px;
-                text-align: center;
-                color: $white;
-                background-color: $black;
-                font-weight: 500;
-                margin: 15px auto 0;
-                > i {
-                    margin-right: 5px;
-                }
-            }
-        }    
-        //Social icons unordered list 
-        > ul {
-            flex-flow: row nowrap;
-            list-style-type: none;
-            display: flex;
-            margin-top: 15px;
-            justify-content: center;
-            //Social icons unordered list items
-            > li {
-                //Social icons unordered list items links
-                > a {
-                    padding: 10px;
-                }
-            }
-        }
-        //Social icons unordered list items links
-        > ul > li > a,
-        //Telephone number link
-        > div > a,
-        //Mobile nav  sidebar navigational menu unordered list items links 
-        > nav > ul > li > a {
-            opacity: $opacity_level_below_one;
-            transition: opacity 0.3s;
-            &:hover,
-            &:active,
-            &:focus {
-                opacity: 1;
-            }
-        }
+		//Class to add to mobile sidebar when hamburger icon is clicked
+		&.mobile_sidebar_cover_all {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			// First div element in mobile sidebar to open when the above class is added
+			> div {
+				transform: translateX(0%);
+			}
+		}
+		// First div element in mobile sidebar
+		> div {
+			height: 100%;
+			width: 250px;
+			position: fixed;
+			z-index: 20;
+			top: 0; 
+			font-size: 16px;
+			background-color: $white_little_darker;
+			overflow-x: hidden;
+			padding-top: 90px;
+			transform: translateX(-100%);
+			transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+			> nav {
+				/*Mobile nav sidebar navigational menu unordered list*/
+				> ul {
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					/*Mobile nav sidebar navigational menu unordered list items*/
+					> li {
+						margin-right: 0; 
+						width: 100%;
+						/*Select all Mobile nav sidebar navigational list items except the last one*/
+						&:not(:last-of-type) {
+							> a {
+								border-bottom: 1px solid $tint;
+							}
+						}
+						/*Mobile nav  sidebar navigational menu unordered list items links*/
+						> a {
+							color: $black;
+							padding: 12px 12px 12px 0;
+							display: block;
+							margin: 0 auto;
+							text-transform: capitalize;
+							width: 70%;
+							text-align: center;
+						}
+					}
+				}
+			}   
+			/*Telephone number parent div element*/
+			> div {
+				display: flex;
+				/*Telephone number link*/
+				> a {
+					display: block;
+					padding: 10px 15px 10px 15px;
+					border-radius: 20px;
+					text-align: center;
+					color: $white;
+					background-color: $black;
+					font-weight: 500;
+					margin: 15px auto 0;
+					/*Telephone number link icon*/
+					> i {
+						margin-right: 5px;
+					}
+				}
+			}    
+			//Social icons unordered list 
+			> ul {
+				flex-flow: row nowrap;
+				list-style-type: none;
+				display: flex;
+				margin-top: 15px;
+				justify-content: center;
+				//Social icons unordered list items
+				> li {
+					//Social icons unordered list items links
+					> a {
+						padding: 10px;
+					}
+				}
+			}
+			//Social icons unordered list items links
+			> ul > li > a,
+			//Telephone number link
+			> div > a,
+			//Mobile nav  sidebar navigational menu unordered list items links 
+			> nav > ul > li > a {
+				opacity: $opacity_level_below_one;
+				transition: opacity 0.3s;
+				&:hover,
+				&:active,
+				&:focus {
+					opacity: 1;
+				}
+			}
+		}
     }
 }

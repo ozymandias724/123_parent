@@ -2203,15 +2203,16 @@ var Theme = {};
 			estimate : $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
 			estimate_popup : $(".estimate"),
 			estimate_close : $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
-			header_1 : $('header.header#opt_header_one'),
+			header_1 : $("header.header#opt_header_one"),
 			header_1_div_one : $("header#opt_header_one > div:nth-of-type(1)"),
 			header_1_div_two : $("header#opt_header_one > div:nth-of-type(2)"),
-			header_8 : $('header.header#opt_header_eight'),
-			header_8_div_1 : $('header.header#opt_header_eight > div'),
+			header_8 : $("header.header#opt_header_eight"),
+			header_8_div_1 : $("header.header#opt_header_eight > div"),
 			header_address_link : $(".google-search-address"),
 			header_address_text : $(".google-search-address").text(),
 			header_10_hamburger_icon : $("header#opt_header_ten > div > div > div:first-of-type > a"),
 			header_10_sidebar_menu : $(".header_sidebar_menu_1"),
+			header_10_outside : $(".header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten"),  
 
 			_init : function(){
 				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
@@ -2220,43 +2221,42 @@ var Theme = {};
 
 				$(Theme.Headers.header_10_hamburger_icon).on("click", Theme.Headers._header_10_hamburger_icon_click);
 
+				$(Theme.Headers.header_10_outside).on("click", Theme.Headers._header_10_sidebar_outside_click);
+
+				$(Theme.Headers.header_10_sidebar_menu).on("focusout", Theme.Headers._header_10_close_sidebar);
+
 				//On resize of browser
 				window.onresize = function(){
 					//Remove header 10 sidebar menu width
-					Theme.Headers.header_10_sidebar_menu.removeClass("sidebar-transform-x");
+					Theme.Headers.header_10_sidebar_menu.removeClass("header_sidebar_cover_all");
 					//Remove header 10 hamburger icon class
 					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+
 					//Remove mobile nav sidebar menu width
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("sidebar-transform-x");
+					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("mobile_sidebar_cover_all");
 					//Remove mobile nav hamburger icon class
-					Theme.Nav_Mobile.toggle.removeClass('mobile_nav_sidebar_menu_1');
+					Theme.Nav_Mobile.toggle.removeClass("mobile_nav_sidebar_menu_1");
 				}
 
 				if($(Theme.Headers.header_1).length){
-
 					window.onscroll = function(){
 						Theme.Headers._header_layout_1_function(); 
 					}
-
 					Theme.Headers.header_1_div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
-
 					if(window.pageYOffset >= Theme.Headers.header_1_div_two_offset_top){
-						Theme.Headers.header_1_div_two.addClass('sticky');
+						Theme.Headers.header_1_div_two.addClass("sticky");
 					}else{
-						Theme.Headers.header_1_div_two.removeClass('sticky');
+						Theme.Headers.header_1_div_two.removeClass("sticky");
 					}
-					
 				} else if($(Theme.Headers.header_8).length) {
 					window.onscroll = function(){
 						Theme.Headers._header_layout_8_function();
 					}
-
 					Theme.Headers.header_8_offset_top = $("header#opt_header_eight").offset().top;
-
 					if(window.pageYOffset >= Theme.Headers.header_8_offset_top){
-						Theme.Headers.header_8.addClass('sticky');
+						Theme.Headers.header_8.addClass("sticky");
 					}else{
-						Theme.Headers.header_8.removeClass('sticky');
+						Theme.Headers.header_8.removeClass("sticky");
 					}
 				}
 
@@ -2280,17 +2280,17 @@ var Theme = {};
 			_header_layout_1_function : function(){
 				
 				if(window.pageYOffset >= Theme.Headers.header_1_div_two_offset_top){
-					Theme.Headers.header_1_div_two.addClass('sticky');
+					Theme.Headers.header_1_div_two.addClass("sticky");
 				}else{
-					Theme.Headers.header_1_div_two.removeClass('sticky');
+					Theme.Headers.header_1_div_two.removeClass("sticky");
 				}
 				
 			},
 			_header_layout_8_function : function(){
 				if(window.pageYOffset >= Theme.Headers.header_8_offset_top){
-					Theme.Headers.header_8.addClass('sticky');
+					Theme.Headers.header_8.addClass("sticky");
 				}else{
-					Theme.Headers.header_8.removeClass('sticky');
+					Theme.Headers.header_8.removeClass("sticky");
 				}
 			},
 			_header_address_link_click : function(event){
@@ -2298,68 +2298,81 @@ var Theme = {};
 				window.open('https://google.com/search?q=' + Theme.Headers.header_address_text);
 			},
 			_header_10_hamburger_icon_click : function(){
-				Theme.Headers.header_10_hamburger_icon_span_1 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(1)");
-				Theme.Headers.header_10_hamburger_icon_span_2 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(2)");
-				Theme.Headers.header_10_hamburger_icon_span_3 = $("header#opt_header_ten > div > div > div:first-of-type > a > span:nth-of-type(3)");
 				
 				//If header 10 hamburger icon link has class of ...
 				if(!Theme.Headers.header_10_hamburger_icon.hasClass("header_10_hamburger_icon_changed")){
-					//Remove hamburger icon link class
-					Theme.Headers.header_10_hamburger_icon.addClass("header_10_hamburger_icon_changed");
-					//Remove hamburger icon link spans classes
-					Theme.Headers.header_10_hamburger_icon_span_1.addClass("header_10_hamburger_icon_span_1_change");
-					Theme.Headers.header_10_hamburger_icon_span_2.addClass("header_10_hamburger_icon_span_2_change");
-					Theme.Headers.header_10_hamburger_icon_span_3.addClass("header_10_hamburger_icon_span_3_change");
-
-					//Close sidebar navigational menu
-					Theme.Headers.header_10_sidebar_menu.addClass("sidebar-transform-x");
+					Theme.Headers._header_10_open_sidebar();
 				}else{
-					//Add hamburger icon link class
-					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
-					//Add hamburger icon link spans classes
-					Theme.Headers.header_10_hamburger_icon_span_1.removeClass("header_10_hamburger_icon_span_1_change");
-					Theme.Headers.header_10_hamburger_icon_span_2.removeClass("header_10_hamburger_icon_span_2_change");
-					Theme.Headers.header_10_hamburger_icon_span_3.removeClass("header_10_hamburger_icon_span_3_change");
-
-					//Open sidebar navigational menu
-					Theme.Headers.header_10_sidebar_menu.removeClass("sidebar-transform-x");
+					Theme.Headers._header_10_close_sidebar();
 				}
+				
+			},
+			_header_10_open_sidebar : function(){
+				//Remove hamburger icon link class
+				Theme.Headers.header_10_hamburger_icon.addClass("header_10_hamburger_icon_changed");
 
-				
-				
+				//Close sidebar navigational menu
+				Theme.Headers.header_10_sidebar_menu.addClass("header_sidebar_cover_all");
+			},
+			_header_10_close_sidebar : function(){
+				//Add hamburger icon link class
+				Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+
+				//Open sidebar navigational menu
+				Theme.Headers.header_10_sidebar_menu.removeClass("header_sidebar_cover_all");
+			},
+			_header_10_sidebar_outside_click : function(e){
+				if(e.target === this){
+					Theme.Headers._header_10_close_sidebar();
+				}
 			}
 		}
         Theme.Headers._init();  
         
 
         Theme.Nav_Mobile = { 
-
+			//Mobile header
 			mobile_header : $("header.mobileheader"),
+			//Mobile header sidebar menu
 			mobile_nav_sidebar_menu : $(".mobile_header_sidebar_menu_1"),
-			toggle : $('header.mobileheader > div:first-of-type > a'),
-			mobile_nav_hamburger_icon_span_1 : $("header.mobileheader > div:first-of-type > a > span:nth-of-type(1)"),
-			mobile_nav_hamburger_icon_span_2 : $("header.mobileheader > div:first-of-type > a > span:nth-of-type(2)"),
-			mobile_nav_hamburger_icon_span_3 : $("header.mobileheader > div:first-of-type > a > span:nth-of-type(3)"),
+			//Mobile header sidebar and mobile header first div element
+			mobile_sidebar_outside : $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
+			//Link which is the parent of the hamburger icons (spans)
+			toggle : $("header.mobileheader > div:first-of-type > a"),
             
             _init : function(){
-                Theme.Nav_Mobile.toggle.on('click', Theme.Nav_Mobile._clickHandler);
+				//When hamburger icon spans link is clicked
+                Theme.Nav_Mobile.toggle.on("click", Theme.Nav_Mobile._clickHandler);
+				Theme.Nav_Mobile.mobile_sidebar_outside.on("click", Theme.Nav_Mobile._outside_click_close_sidebar);
+				$(Theme.Nav_Mobile.mobile_nav_sidebar_menu).on("focusout", Theme.Nav_Mobile._close_sidebar);
             },
             _clickHandler : function(){
+				//If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
 				if(!Theme.Nav_Mobile.toggle.hasClass("mobile_nav_sidebar_menu_1")){
-					Theme.Nav_Mobile.toggle.addClass('mobile_nav_sidebar_menu_1');
-					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_1.addClass("mobile_nav_hamburger_icon_span_1_change");
-					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_2.addClass("mobile_nav_hamburger_icon_span_2_change");
-					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_3.addClass("mobile_nav_hamburger_icon_span_3_change");
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.addClass("sidebar-transform-x");
+					//Open sidebar
+					Theme.Nav_Mobile._open_sidebar();
 				}else{
-					Theme.Nav_Mobile.toggle.removeClass('mobile_nav_sidebar_menu_1');
-					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_1.removeClass("mobile_nav_hamburger_icon_span_1_change");
-					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_2.removeClass("mobile_nav_hamburger_icon_span_2_change");
-					Theme.Nav_Mobile.mobile_nav_hamburger_icon_span_3.removeClass("mobile_nav_hamburger_icon_span_3_change");
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("sidebar-transform-x");
+					//Close sidebar
+					Theme.Nav_Mobile._close_sidebar();
 				}
-            }
-            
+            },
+			_outside_click_close_sidebar : function(e){
+				if(e.target === this){
+					Theme.Nav_Mobile._close_sidebar();
+				}
+			},
+			_open_sidebar : function(){
+				//Hamburger icon link add class
+				Theme.Nav_Mobile.toggle.addClass("mobile_nav_sidebar_menu_1");
+				//Make the sidebar menu cover the whole page
+				Theme.Nav_Mobile.mobile_nav_sidebar_menu.addClass("mobile_sidebar_cover_all");
+			},
+			_close_sidebar : function(){
+				//Hamburger icon link remove class
+				Theme.Nav_Mobile.toggle.removeClass("mobile_nav_sidebar_menu_1");
+				//Make the sidebar menu to not cover the whole page
+				Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("mobile_sidebar_cover_all");
+			}
         }
         Theme.Nav_Mobile._init();
         
