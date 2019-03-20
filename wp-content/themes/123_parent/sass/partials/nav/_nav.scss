@@ -4,6 +4,7 @@ $second_black: #333333;
 $opacity_level_below_one : 0.8;
 $opacity_level_below_one_2 : 0.3;
 $white : rgba(255, 255, 255, 1);
+$white_little_darker : #f8f8f8;
 $black_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
 $accent : green;
 $tint : lightgrey;  
@@ -47,7 +48,6 @@ $bp__lg : 1280px;
         ul.navlinks {
             list-style-type: none;
             display: flex;
-            flex-flow: row nowrap;
         }
         li.navlinks-item {
             display: inline-block;
@@ -456,7 +456,7 @@ $bp__lg : 1280px;
                     flex-flow: row nowrap;
                     align-items: center;
                     justify-content: space-around;
-                    box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
+                    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
                     //Navigational menu unordered list
                     > ul {
                         //Navigational menu unordered list items
@@ -609,16 +609,12 @@ $bp__lg : 1280px;
                     flex: 1 0 auto;
                     top: 0;
                     background-color: $primary;
-                    -webkit-transform: skewX(37deg);
                     transform: skewX(37deg);
-                    -o-transform: skewX(37deg);
 			        z-index: -1;
                 }
                 //Shape after the navigational menu
                 &:after {
-                    -webkit-transform: skewX(-37deg);
                     transform: skewX(-37deg);
-                    -o-transform: skewX(-37deg);
                     left: auto;
                     right: -70px;
                 }
@@ -651,8 +647,6 @@ $bp__lg : 1280px;
                         > a {
                             padding: 10px;
                             transition: color 0.3s;
-                            -webkit-transition: color 0.3s;
-                            -o-transition: color 0.3s;
                             //Social icons list items icons
                             > i {
                                 font-size: 16px;
@@ -689,8 +683,6 @@ $bp__lg : 1280px;
                             > a {
                                 padding: 10px;
                                 transition: color 0.3s;
-                                -webkit-transition: color 0.3s;
-                                -o-transition: color 0.3s;
                                 &:hover, 
                                 &:active,
                                 &:focus {
@@ -706,8 +698,6 @@ $bp__lg : 1280px;
                             > a {
                                 padding: 10px;
                                 transition: color 0.3s;
-                                -webkit-transition: color 0.3s;
-                                -o-transition: color 0.3s;
                                 //Phone number link actions on hover, active, and focus
                                 &:hover, 
                                 &:active,
@@ -716,8 +706,6 @@ $bp__lg : 1280px;
                                 }
                                 //Phone number icon
                                 > i {
-                                    -webkit-transform: rotate(90deg);
-                                    -o-transform: rotate(90deg);
                                     transform: rotate(90deg);
                                 }
                             }
@@ -732,8 +720,6 @@ $bp__lg : 1280px;
                         background-color: $prestige_painters;
                         opacity: $opacity_level_below_one;
                         transition: opacity 0.1s;
-                        -webkit-transition: opacity 0.1s;
-                        -o-transition: opacity 0.1s;
                         //Quote button link actions on hover, active and focus
                         &:hover,
                         &:active,
@@ -777,8 +763,6 @@ $bp__lg : 1280px;
                                 text-transform: uppercase;
                                 font-weight: 500;
                                 transition: color 0.1s, background-color 0.1s;
-                                -webkit-transition: color 0.1s, background-color 0.1s;
-                                -o-transition: color 0.1s, background-color 0.1s;
                                 //Navigational menu unordered list items links actions on hover, active and focus
                                 &:hover,
                                 &:active,
@@ -924,8 +908,6 @@ $bp__lg : 1280px;
             //Quote button link
             &:last-of-type > div > div > a {
                 opacity: $opacity_level_below_one;
-                -webkit-transition: opacity 0.3s;
-                -o-transition: opacity 0.3s;
                 transition: opacity 0.3s;
                 color: $white;
                 //Phone number and address links actions on hover, active and focus
@@ -1037,8 +1019,6 @@ $bp__lg : 1280px;
                 &:first-of-type > div > ul > li > a, 
                 //Phone number links
                 &:first-of-type > span > a {
-                    -webkit-transition: color 0.3s;
-                    -o-transition: color 0.3s;
                     transition: color 0.3s;
                 }
             }
@@ -1060,9 +1040,7 @@ $bp__lg : 1280px;
             box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
             padding: 0 0 0 15px;
             margin: 0 auto;
-            -webkit-transition: width 0.3s;
             transition: width 0.3s;
-            -o-transition: width 0.3s;
             //Different parts of the header
             > div {
                 //Logo section
@@ -1089,8 +1067,6 @@ $bp__lg : 1280px;
                                     font-size: 14px;
                                     padding: 35px 15px;
                                     transition: color 0.1s,background-color 0.1s;
-                                    -webkit-transition: color 0.1s, background-color 0.1s;
-                                    -o-transition: color 0.1s, background-color 0.1s;
                                     position: relative;
                                     z-index: 0;
                                     //Navigation menu list items links bottom to top background
@@ -1238,9 +1214,8 @@ $bp__lg : 1280px;
                             border-radius: 10px;
                             border: 2px solid $white;
                             color: $white;
-                            -webkit-transition: color 0.3s, border 0.3s;
-                            -o-transition: color 0.3s, border 0.3s;
                             transition: color 0.3s, border 0.3s;
+                            //Quote button link actions on hover, active and focus
                             &:hover, 
                             &:active,
                             &:focus {
@@ -1262,8 +1237,6 @@ $bp__lg : 1280px;
             &:first-of-type > div > div > span > a, 
             //Social icons unordered list items links
             &:first-of-type > div > ul > li > a {
-                -webkit-transition: opacity 0.3s;
-                -o-transition: opacity 0.3s;
                 transition: opacity 0.3s;
                 //Phone number and address links actions on hover, active and focus
                 //Social icons unordered list items links actions on hover, active and focus
@@ -1301,12 +1274,39 @@ $bp__lg : 1280px;
                             //Hamburger icon link
                             > a {
                                 padding: 10px;
+                                //When hamburger icon link has this class, apply the following classes to the span elements
+                                &.header_10_hamburger_icon_changed {
+                                    > span {
+                                        //First span of hamburger icon link
+                                        &:nth-of-type(1){
+                                            //Hamburger icon link span 1
+                                            &.header_10_hamburger_icon_span_1_change {
+                                                opacity: 1;
+                                                transform: rotate(45deg) translate(0px, -10px);
+                                                background: #232323;
+                                            }
+                                        }
+                                        //Second span of hamburger icon link
+                                        &:nth-of-type(2){
+                                            //Hamburger icon link span 2                          
+                                            &.header_10_hamburger_icon_span_2_change {
+                                                transform: rotate(-45deg) translate(0px, 10px)
+                                            }
+                                        }
+                                        &:nth-of-type(3) {
+                                            //Hamburger icon link span 3
+                                            &.header_10_hamburger_icon_span_3_change {
+                                                opacity: 0;
+                                                transform: rotate(0deg) scale(0.2, 0.2);
+                                            }
+                                        }
+                                    }
+                                }
                                 //Hamburger icon link spans 
                                 > span {
                                     display: block;
                                     width: 33px;
                                     height: 4px;
-                                    position: relative;
                                     background: #000;
                                     border-radius: 3px;
                                     transform-origin: 4px 0px;
@@ -1362,38 +1362,12 @@ $bp__lg : 1280px;
                     //Hamburger icon link and social icons unordered list
                     > div:first-of-type > a,
                     > ul > li > a {
-                        -webkit-transition: color 0.3s;
-                        -o-transition: color 0.3s;
                         transition: color 0.3s;
                         //Hamburger icon link and social icons unordered list actions on hover, active and focus
                         &:hover, 
                         &:active, 
                         &:focus {
                             color: $prestige_painters;
-                        }
-                    }
-                }
-            }
-            //Header 10 sidebar menu
-            &:last-of-type {
-                height: 100%;
-                width: 250px;
-                position: fixed;
-                z-index: 20;
-                top: 0;
-                left: 0;
-                background-color: gray;
-                overflow-x: hidden;
-                transition: 0.3s;
-                padding-top: 90px;
-                > nav {
-                    > ul {
-                        display: flex;
-                        flex-flow: column nowrap;
-                        > li {
-                            > a {
-                                color: $white;
-                            }
                         }
                     }
                 }
@@ -1407,22 +1381,82 @@ $bp__lg : 1280px;
         position: fixed !important;
         top: 0 !important;
     }
-
-    //Header 10 classes and properties
-        //Hamburger icon link span 1
-        .header_10_hamburger_icon_span_1_change {
-            opacity: 1;
-            transform: rotate(45deg) translate(0px, -10px);
-            background: #232323;
+    //Header sidebar menu 1
+    .header_sidebar_menu_1 {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 20;
+        font-size: 16px;
+        top: 0;
+        background-color: $white_little_darker;
+        overflow-x: hidden;
+        padding-top: 90px;
+        transform: translateX(-100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        //Header 10 Sidebar menu class
+        &.sidebar-transform-x {
+            transform: translateX(0%);
         }
-        //Hamburger icon link span 2
-        .header_10_hamburger_icon_span_2_change {
-            transform: rotate(-45deg) translate(0px, 10px)
+        //Header 10 sidebar navigational menu
+        > nav {
+            //Header 10 sidebar navigational menu unordered list
+            > ul {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                //Header 10 sidebar navigational menu unordered list items
+                > li {
+                    margin-right: 0; 
+                    width: 100%;
+                    //Select all header 10 sidebar navigational list items except the last one
+                    &:not(:last-of-type) {
+                        > a {
+                            border-bottom: 1px solid $tint;
+                        }
+                    }
+                    //Header 10 sidebar navigational menu unordered list items links 
+                    > a {
+                        color: $black;
+                        padding: 12px 12px 12px 0;
+                        display: block;
+                        margin: 0 auto;
+                        text-align: center;
+                        text-transform: capitalize;
+                        width: 70%;
+                    }
+                }
+            }
+        }    
+        //Telephone number parent div element
+        > div {
+            display: flex;
+            //Telephone number link
+            > a {
+                display: block;
+                padding: 10px 15px 10px 15px;
+                border-radius: 20px;
+                text-align: center;
+                color: $white;
+                background-color: $black;
+                font-weight: 500;
+                margin: 15px auto 0;
+                > i {
+                    margin-right: 5px;
+                }
+            }
+        }    
+        //Telephone number link
+        > div > a,
+        //Navigational menu unordered list items links
+        > nav > ul > li > a {
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 1;
+            }
         }
-        //Hamburger icon link span 3
-        .header_10_hamburger_icon_span_3_change {
-            opacity: 0;
-            transform: rotate(0deg) scale(0.2, 0.2);
-        }
-
+    }
 }
