@@ -477,7 +477,7 @@ class NavHandler
 						<nav>
 							%s
 						</nav>
-						<div>
+						<div> 
 							<a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
 						</div>
 					</div>

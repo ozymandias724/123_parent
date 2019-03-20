@@ -4,7 +4,7 @@ $second_black: #333333;
 $opacity_level_below_one : 0.8;
 $opacity_level_below_one_2 : 0.3;
 $white : rgba(255, 255, 255, 1);
-$white_little_darker : #f8f8f8;
+$white_little_darker : #f1f1f1; 
 $black_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
 $accent : green;
 $tint : lightgrey;  
@@ -1383,7 +1383,8 @@ $bp__lg : 1280px;
             position: fixed;
             //First div element in sidebar when sidebar menu has the above class
 			> div {
-				transform: translateX(0%);
+                transform: translateX(0%);
+                box-shadow: -6px 0px 25px 0px $black;
 			}
 		}
 		/* First div element in sidebar */
@@ -1398,7 +1399,7 @@ $bp__lg : 1280px;
 			overflow-x: hidden;
 			padding-top: 90px;
 			transform: translateX(-100%);
-			transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+			transition: transform 0.25s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 			/*Header 10 sidebar navigational menu*/
 			> nav {
 				/*Header 10 sidebar navigational menu unordered list*/
