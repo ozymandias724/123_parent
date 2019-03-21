@@ -1,6 +1,7 @@
 $primary : #df1d1d;
 $black : black;
-$second_black: #333333;
+$second_black : #333333;
+$third_black : #383838;
 $opacity_level_below_one : 0.8;
 $opacity_level_below_one_2 : 0.3;
 $white : rgba(255, 255, 255, 1);
@@ -261,74 +262,18 @@ $bp__lg : 1280px;
 
     //Header 2
     header#opt_header_two {
-        padding-top: 40px;
-        display: flex;
         flex-flow: row nowrap;
+        padding: 0px;
         justify-content: space-between;
         box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
         //Common scss of top part of header and parent div of phone number, navigational menu and quick quote button 
         > div {
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            height: auto;
-            //Phone number and navigational menu 
-            > div {
+            &:last-of-type {
+                //Phone number and navigational menu 
                 display: flex;
                 flex-flow: row nowrap;
-                flex-direction: column;
-                align-items: flex-end; 
-                height: 100%;
-                //Phone number and icon link
-                > a {
-                    color: white;
-                    font-size: 2.5rem;
-                    text-decoration: none;
-                    position: relative;
-                    padding: 10px 5px;
-                    //Phone number icon
-                    &:before {
-                        font-family: FontAwesome;
-                        content: "\f095";
-                        font-weight: 700;
-                        color: $white;
-                        border-radius: 100%;
-                        margin-right: 10px;
-                    }
-                }
-                //Navigational menu
-                > nav {
-                    //Navigational menu unordered list
-                    > ul {
-                        //Navigational menu unordered list items
-                        > li {
-                            //Navigational menu unordered list items links 
-                            > a {
-                                font-size: 1.4rem;
-                                padding: 5px;
-                                color: white;
-                                text-transform: uppercase;
-                            }
-                        }
-                    }
-                }
+                background-color: $third_black;
             }
-            //Quote button on bottom part of header
-            &:last-of-type {
-                //Quote button link
-                > a {
-                    &:last-child {
-                        font-size: 1.6rem;
-                        text-transform: uppercase;
-                        background-color: $blue;
-                        border-radius: 4px;
-                    }
-                }
-            }
-        }
-        //Bottom part of header
-        > span {
-            background-color: #383838;
         }
         // Black free estimate bar above header
         .opt__estimatebar {
@@ -336,22 +281,21 @@ $bp__lg : 1280px;
             text-align: center;
             color: white;
             width:100%;
-            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             //Estimate bar above header link
             > a {
                 font-size:1.6rem;
                 text-transform: uppercase;
-                margin: 0px auto;
+                text-align: center;
                 padding: 10px;
             }
         }
         //Common scss 
         //Black free estimate bar above header
-        .opt__estimatebar,  
-        //Quote button on bottom part of header
-        div:last-of-type,
-        //Navigational menu list items
-        div > nav > ul > li {
+        .opt__estimatebar {
             //Direct links inside the above selector parents
             > a {
                 opacity: $opacity_level_below_one;

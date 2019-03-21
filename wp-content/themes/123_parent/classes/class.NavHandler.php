@@ -200,17 +200,18 @@ class NavHandler
         $format_header = '
             <header class="header %s %s %s" id="opt_header_two">
                 %s
-                %s
-                <div>
-                    <div>
-                        %s
-                        <nav>
-                            %s
-                        </nav>
-                    </div>
+                <div class="header-tint">  
                     %s
+                    <div>
+                        <div>
+                            %s
+                            <nav>
+                                %s
+                            </nav>
+                        </div>
+                        %s
+                    </div>
                 </div>
-                <span class="header-tint %s"></span>
             </header>
         ';
         $this->header_two = sprintf(
