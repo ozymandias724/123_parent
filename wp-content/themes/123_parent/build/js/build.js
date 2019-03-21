@@ -2283,9 +2283,7 @@ var Headers = {};
 
 					Headers.Desktop.Ten.outside.on("click", Headers.Desktop.Ten._outside_click);
 	
-					Headers.Desktop.Ten.sidebar_menu.on("blur", Headers.Desktop.Ten._close_sidebar);
-
-					Headers.Desktop.Ten.menu_links.on("click", Headers.Desktop.Ten._close_sidebar);					
+					Headers.Desktop.Ten.sidebar_menu.on("blur", Headers.Desktop.Ten._close_sidebar);				
 				},
 				_hamburger_icon_click : function(){
 					//If header 10 hamburger icon link has class of ...
