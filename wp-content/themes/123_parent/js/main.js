@@ -16,13 +16,16 @@ var Headers = {};
 				Headers.Desktop.Ten._init();
 				
 			},
+			
 			Address_Link : {
 				address_link : $(".google-search-address"),
 				address_text : $(".google-search-address").text(),
+
 				_init : function(){
 					event.preventDefault();
 					window.open('https://google.com/search?q=' + Headers.Desktop.Address_Link.address_text);
 				}
+
 			},
             One : {
 
@@ -90,7 +93,7 @@ var Headers = {};
 				
 			}, 
 			Ten : {
-
+				header : $("header#opt_header_ten"),
 				hamburger_icon : $("header#opt_header_ten > div > div > div:first-of-type > a"),
 				sidebar_menu : $(".header_sidebar_menu_1"), 
 				outside : $(".header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten"),
@@ -100,8 +103,18 @@ var Headers = {};
 
 					Headers.Desktop.Ten.outside.on("click", Headers.Desktop.Ten._outside_click);
 	
-					Headers.Desktop.Ten.sidebar_menu.on("blur", Headers.Desktop.Ten._close_sidebar);				
+					Headers.Desktop.Ten.sidebar_menu.on("blur", Headers.Desktop.Ten._close_sidebar);
+					
+					//On resize of browser
+					// window.onresize = function(){ 
+					// 	//Remove header 10 sidebar menu width
+					// 	Headers.Desktop.Ten.sidebar_menu.removeClass("header_sidebar_cover_all");
+					// 	//Remove header 10 hamburger icon class
+					// 	Headers.Desktop.Ten.hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+					// }
+
 				},
+
 				_hamburger_icon_click : function(){
 					//If header 10 hamburger icon link has class of ...
 					if(!Headers.Desktop.Ten.hamburger_icon.hasClass("header_10_hamburger_icon_changed")){
@@ -135,6 +148,80 @@ var Headers = {};
 		}
 		Headers.Desktop._init();
 
+		Hero = {
+			Padding : {
+
+				header_id : $("header").attr("id"),
+
+				header_height : $("header").height(),
+
+				mobile_header_height : $(".mobileheader").height(),
+
+				main : $(".mobileheader").next(),
+
+				_init : function(){
+					
+					//On init, if browser width is greater than 1280
+					if(window.innerWidth >= 1280){
+
+						Hero.Padding._header_function();
+
+					}else{
+
+						Hero.Padding._mobile_header_function();
+
+					}
+
+					//On resize, if browser width is greater than 1280 
+					window.addEventListener('resize', function(){
+
+						if(window.innerWidth >= 1280){
+
+							Hero.Padding._header_function();
+
+						}else{
+
+							Hero.Padding._mobile_header_function();
+
+						}
+					});
+					
+				},
+				_header_function : function(){
+
+					Hero.Padding.header_position = $("header").css("position");
+
+					console.log(Hero.Padding.header_id);
+
+					//If header has a position of fixed
+					if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four"){
+						
+						Hero.Padding.header_height = $("header").height();
+
+						Hero.Padding.main.css("padding-top", Hero.Padding.header_height);
+
+					
+					}else if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id === "opt_header_four"){
+						
+						Hero.Padding.header_first_div_height = $("header#opt_header_four > div").height();
+
+						Hero.Padding.main.css("padding-top", Hero.Padding.header_first_div_height);
+
+					}else{
+						
+						Hero.Padding.main.css("padding-top", "0");
+					}
+
+				},
+				_mobile_header_function : function(){
+					Hero.Padding.mobiler_header_height = $(".mobileheader").height();
+					Hero.Padding.main.css("padding-top", Hero.Padding.mobile_header_height);
+				}
+
+			},
+		}
+		Hero.Padding._init();
+
 		Theme.Headers = {
 			
 			tint : $(".header-tint"),
@@ -151,20 +238,13 @@ var Headers = {};
 
 				//On resize of browser
 				window.onresize = function(){
-					//Remove header 10 sidebar menu width
-					Theme.Headers.header_10_sidebar_menu.removeClass("header_sidebar_cover_all");
-					//Remove header 10 hamburger icon class
-					Theme.Headers.header_10_hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+					
 
 					//Remove mobile nav sidebar menu width
 					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("mobile_sidebar_cover_all");
 					//Remove mobile nav hamburger icon class
 					Theme.Nav_Mobile.toggle.removeClass("mobile_nav_sidebar_menu_1");
 				}
-
-
-
-				$(Theme.Headers.header_address_link).on("click", Theme.Headers._header_address_link_click);
 
 			},
 			_click_handler : function(event){
