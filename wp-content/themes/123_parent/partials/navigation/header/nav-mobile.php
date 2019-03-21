@@ -6,7 +6,7 @@
     $content_social_icons = '<ul>';
     $format_social_icons = '
         <li>
-            <a href="%s">
+            <a href="%s" title="Social icon button">
                 %s
             </a>
         </li>
@@ -58,20 +58,22 @@
         <header class="%s %s mobileheader" id="theme_name_maybe">
             <div>
                 %s
-                <a href="javascript:;">
+                <a href="javascript:;" title="3 Line menu icon button">
                     <span></span>
                     <span></span>
                     <span></span> 
                 </a>
             </div>
             <div class="mobile_header_sidebar_menu_1">
-                <nav>
-                    %s
-                </nav>
-                <div>
-                    <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
-                </div>
-                %s
+				<div>
+					<nav>
+						%s
+					</nav>
+					<div>
+						<a href="tel:%s" title="Phone number button">%s</a>
+					</div>
+					%s
+				</div>
             </div> 
         </header>
     ';

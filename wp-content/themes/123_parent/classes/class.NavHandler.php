@@ -31,7 +31,7 @@ class NavHandler
         $quotebtn_txt = get_field('quickquote-button-text', 'option');
         if( !empty($quotebtn_txt) ){
             $format_quotebtn = '
-                <a href="#" class="topbanner-quickquote">
+                <a href="#" class="topbanner-quickquote" title="Get a quote button">
                     <span>%s</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
@@ -46,10 +46,10 @@ class NavHandler
         $format_socialtopbar = '
             <div id="opt__topbanner">
                 <span>
-                    <a href="%s" alt=""><i class="fa fa-map-marker"></i>
+                    <a href="%s" alt="Address button"><i class="fa fa-map-marker"></i>
                         <span>%s</span>
                     </a>
-                    <a href="%s">
+                    <a href="%s" title="Phone number button">
                         <i class="fa fa-phone"></i>
                         <span>%s</span>
                     </a>
@@ -65,9 +65,9 @@ class NavHandler
             $num_display,
             $content_quotebtn
         );
-        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link">'.$num_display.'</a>';
+        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button">'.$num_display.'</a>';
         if( !empty($quotebtn_txt) ){
-            $quickquote = '<a href="#" class="site__button-quote">' . $quotebtn_txt . '</a>';
+            $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $quotebtn_txt . '</a>';
         }
         // 
         // 
@@ -83,7 +83,7 @@ class NavHandler
         if( empty($topbar_class && !empty($topbar_text) ) ){
             $format_topbar = '
                 <div class="opt__estimatebar">
-                    <a href="#" class="topbanner-quickquote">%s</a>
+                    <a href="#" class="topbanner-quickquote" title="Get a quote button">%s</a>
                 </div>
             ';
             $content_topbar = sprintf(
@@ -95,7 +95,7 @@ class NavHandler
          * Logo
          */
         $format_logo = '
-            <a class="header-logo" href="%s">
+            <a class="header-logo" href="%s" title="Logo button">
                 <img src="%s" alt="%s">
             </a>
         ';
@@ -113,7 +113,7 @@ class NavHandler
         $content_social_icons = '<ul>';
         $format_social_icons = '
             <li>
-                <a href="%s">
+                <a href="%s" title="Social icon button">
                     %s
                 </a>
             </li>
@@ -167,9 +167,9 @@ class NavHandler
                 <div>
                     <div>
                         %s
-                        <span><a href="#" class="google-search-address">%s</a></span>
+                        <span><a href="#" class="google-search-address" title="Address button">%s</a></span>
                         <span>
-                            <a href="tel:%s"><span>Call Us Today:</span> %s</a>
+                            <a href="tel:%s" title="Phone number button"><span>Call Us Today:</span> %s</a>
                         </span>
                     </div>
                 </div>
@@ -200,17 +200,18 @@ class NavHandler
         $format_header = '
             <header class="header %s %s %s" id="opt_header_two">
                 %s
-                %s
-                <div>
-                    <div>
-                        %s
-                        <nav>
-                            %s
-                        </nav>
-                    </div>
+                <div class="header-tint">  
                     %s
+                    <div>
+                        <div>
+                            %s
+                            <nav>
+                                %s
+                            </nav>
+                        </div>
+                        %s
+                    </div>
                 </div>
-                <span class="header-tint %s"></span>
             </header>
         ';
         $this->header_two = sprintf(
@@ -256,7 +257,7 @@ class NavHandler
                     %s
                     %s
                     <span>
-                        <a href="tel:%s">%s</a>
+                        <a href="tel:%s" title="Phone number button">%s</a>
                     </span>
                 </div>
                 <nav>
@@ -283,12 +284,12 @@ class NavHandler
                     %s
                     <div> 
                         <span>
-                            <a href="javascript:;" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                            <a href="javascript:;" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
                         </span>
                         <span>
-                            <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                            <a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
                         </span>
-                        <a href="#" class="topbanner-quickquote">Quote</a> 
+                        <a href="#" class="topbanner-quickquote" title="Get a quote button">Quote</a> 
                     </div>
                 </div>
                 <div>
@@ -320,10 +321,10 @@ class NavHandler
                     <div> 
                         <div>
                             <span>
-                                <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                                <a href="tel:%s"><i class="fa fa-phone" title="Phone number button"></i> %s</a>
                             </span>
                             <span>
-                                <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                                <a href="#" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
                             </span>
                         </div>
                         %s
@@ -336,7 +337,7 @@ class NavHandler
                             <nav>
                                 %s
                             </nav>
-                            <a href="#" class="topbanner-quickquote">Get A Quote</a>
+                            <a href="#" class="topbanner-quickquote" title="Get a quote button">Get A Quote</a>
                         </div> 
                     </div>
                 </div>
@@ -365,7 +366,7 @@ class NavHandler
                         </div>
                         %s
                         <span>
-                            <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                            <a href="tel:%s"><i class="fa fa-phone" title="Phone number button"></i> %s</a>
                         </span>
                     </div> 
                     <div>
@@ -419,10 +420,10 @@ class NavHandler
                 <div> 
                     <div>
                         <span>
-                            <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
+                            <a href="tel:%s"><i class="fa fa-phone" title="Phone number button"></i> %s</a>
                         </span>
                         <span>
-                            <a href="#" class="google-search-address"><i class="fa fa-map-marker"></i> %s</a>
+                            <a href="#" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
                         </span>
                     </div>
                     %s
@@ -435,7 +436,7 @@ class NavHandler
                         <nav>
                             %s
                         </nav>
-                        <a href="#" class="topbanner-quickquote">Get A Quote</a>
+                        <a href="#" class="topbanner-quickquote" title="Get a quote button">Get A Quote</a>
                     </div> 
                 </div>
             </div>
@@ -460,7 +461,7 @@ class NavHandler
                 <div> 
                     <div>
                         <div>
-                            <a href="javascript:;">
+                            <a href="javascript:;" title="3 Line menu icon button">
                                 <span></span>
                                 <span></span>
                                 <span></span> 
@@ -473,12 +474,14 @@ class NavHandler
                     </div>
                 </div>
                 <div class="header_sidebar_menu_1">
-                    <nav>
-                        %s
-                    </nav>
-                    <div>
-                        <a href="tel:%s"><i class="fa fa-phone"></i> %s</a>
-                    </div>
+					<div>
+						<nav>
+							%s
+						</nav>
+						<div> 
+							<a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
+						</div>
+					</div>
                 </div> 
             </header>
         ';

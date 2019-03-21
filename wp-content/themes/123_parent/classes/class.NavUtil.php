@@ -81,7 +81,7 @@ class NavUtil
 	}
 
 	public static function get_nav_links($prepend = 'navlinks' ){
-		$nav_format = '<li class="%s-item"><a class="%s-item-link" href="%s">%s</a></li>';
+		$nav_format = '<li class="%s-item"><a class="%s-item-link" href="%s" title="Navigational menu button">%s</a></li>';
 		$nav = '<ul class="'.$prepend.'">';
 		if( !empty(NavUtil::$navItemData) ){
 			foreach(NavUtil::$navItemData as $i => $navItem){

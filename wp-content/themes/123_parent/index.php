@@ -17,7 +17,8 @@
         $rowcount = 0;
         while( have_rows( 'field_naaolkn23oin', 'options') ) : 
             // loop thru active pages repeater
-            the_row();$rowcount++;
+            the_row();
+			$rowcount++;
             // get the slug
             $slug = get_sub_field('page-template') ?? null; // REMOVE THESE NULL COALESCING OPERATORS ASAP!!!
             // get the altname
