@@ -283,22 +283,26 @@ class NavHandler
         $format_header = '
             <header class="%s %s %s header" id="opt_header_five">
                 <div>
-                    %s
-                    <div> 
-                        <span>
-                            <a href="javascript:;" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
-                        </span>
-                        <span>
-                            <a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
-                        </span>
-                        <a href="#" class="topbanner-quickquote" title="Get a quote button">Quote</a> 
+                    <div>
+                        %s
+                        <div> 
+                            <span>
+                                <a href="javascript:;" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
+                            </span>
+                            <span>
+                                <a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
+                            </span>
+                            <a href="#" class="topbanner-quickquote" title="Get a quote button">Quote</a> 
+                        </div>
                     </div>
                 </div>
-                <div>
-                    %s
-                    <nav>
+                <div> 
+                    <div> 
                         %s
-                    </nav>
+                        <nav>
+                            %s
+                        </nav>
+                    </div>
                 </div>
             </header>
         ';
