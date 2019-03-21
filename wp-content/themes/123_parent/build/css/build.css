@@ -3650,32 +3650,33 @@ footer .sociallinks-item {
     z-index: 20;
     top: 0;
     font-size: 16px;
+    text-align: center;
     background-color: #f1f1f1;
     overflow-x: hidden;
-    padding-top: 90px;
+    padding-top: 60px;
     transform: translateX(-100%);
-    transition: transform 0.25s cubic-bezier(0.77, 0.2, 0.05, 1);
+    transition: transform 0.25s ease;
     /*Telephone number parent div element*/
   }
+  .mobile_header_sidebar_menu_1 > div > div, .mobile_header_sidebar_menu_1 > div > nav, .mobile_header_sidebar_menu_1 > div > ul {
+    margin-top: 30px;
+  }
   .mobile_header_sidebar_menu_1 > div > nav {
+    margin-top: 90px;
     /*Mobile nav sidebar navigational menu unordered list*/
   }
-  .mobile_header_sidebar_menu_1 > div > nav > ul {
+  .mobile_header_sidebar_menu_1 > div > nav > ul.navlinks {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     /*Mobile nav sidebar navigational menu unordered list items*/
   }
-  .mobile_header_sidebar_menu_1 > div > nav > ul > li {
+  .mobile_header_sidebar_menu_1 > div > nav > ul.navlinks > li {
     margin-right: 0;
     width: 100%;
-    /*Select all Mobile nav sidebar navigational list items except the last one*/
-    /*Mobile nav  sidebar navigational menu unordered list items links*/
   }
-  .mobile_header_sidebar_menu_1 > div > nav > ul > li:not(:last-of-type) > a {
+  .mobile_header_sidebar_menu_1 > div > nav > ul.navlinks > li > a {
     border-bottom: 1px solid lightgrey;
-  }
-  .mobile_header_sidebar_menu_1 > div > nav > ul > li > a {
     color: black;
     padding: 12px 12px 12px 0;
     display: block;
@@ -3685,24 +3686,22 @@ footer .sociallinks-item {
     text-align: center;
   }
   .mobile_header_sidebar_menu_1 > div > div {
-    display: flex;
+    display: inline-block;
     /*Telephone number link*/
   }
   .mobile_header_sidebar_menu_1 > div > div > a {
-    display: block;
+    display: inline-block;
     padding: 10px 15px 10px 15px;
     border-radius: 20px;
     text-align: center;
     color: white;
     background-color: black;
     font-weight: 500;
-    margin: 15px auto 0;
   }
   .mobile_header_sidebar_menu_1 > div > ul {
     flex-flow: row nowrap;
     list-style-type: none;
     display: flex;
-    margin-top: 15px;
     justify-content: center;
   }
   .mobile_header_sidebar_menu_1 > div > ul > li > a {
@@ -3723,6 +3722,7 @@ footer .sociallinks-item {
 .mobile_header_sidebar_menu_1 > div > nav > ul > li > a:active,
 .mobile_header_sidebar_menu_1 > div > nav > ul > li > a:focus {
     opacity: 1;
+    border-bottom: 1px solid black;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -4334,6 +4334,7 @@ header#opt_header_four > div > ul > span {
   header#opt_header_six > div:last-of-type > div > div {
     display: flex;
     margin-right: 5px;
+    justify-content: flex-end;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;

@@ -80,6 +80,12 @@ class NavUtil
 		echo "</ul>";
 	}
 
+    /**
+     * returns a formatted string of ul.navlinks > li.navlinks-item > a.navlinks-item-link or custom base class
+     *
+     * @param string $prepend
+     * @return string
+     */
 	public static function get_nav_links($prepend = 'navlinks' ){
 		$nav_format = '<li class="%s-item"><a class="%s-item-link" href="%s" title="Navigational menu button">%s</a></li>';
 		$nav = '<ul class="'.$prepend.'">';

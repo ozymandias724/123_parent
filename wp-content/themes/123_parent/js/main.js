@@ -1,8 +1,31 @@
 var Theme = {};
-;(function ( $, Theme, window, document, undefined ) {
+var Headers = {};
+;(function ( $, Theme, Headers, window, document, undefined ) {
 	$(document).ready(function(){
 
 
+        Headers.Mobile = {
+
+        }
+
+        Headers.Desktop = {
+
+            One : {
+
+                element : $(),
+
+                _method : function(){
+                    console.log( 'im a method you only need in header one!' );
+                }
+                
+            },
+            Two : {
+
+            }
+            
+        }
+
+        Headers.Desktop.One._method();
 
 		Theme.Headers = {
 			tint : $(".header-tint"),
@@ -29,7 +52,8 @@ var Theme = {};
 
 				$(Theme.Headers.header_10_outside).on("click", Theme.Headers._header_10_sidebar_outside_click);
 
-				$(Theme.Headers.header_10_sidebar_menu).on("focusout", Theme.Headers._header_10_close_sidebar);
+                $(Theme.Headers.header_10_sidebar_menu).on("blur", Theme.Headers._header_10_close_sidebar);
+                
 
 				//On resize of browser
 				window.onresize = function(){
@@ -135,6 +159,16 @@ var Theme = {};
 		}
         Theme.Headers._init();  
         
+
+
+
+
+
+
+
+
+
+
 
         Theme.Nav_Mobile = { 
 			//Mobile header
@@ -678,7 +712,7 @@ var Theme = {};
 
 	});
 
-})( jQuery, Theme, window, document );
+})( jQuery, Theme, Headers, window, document );
 
 
 var MapServer = {
