@@ -200,16 +200,18 @@ class NavHandler
         $format_header = '
             <header class="header %s %s %s" id="opt_header_two">
                 %s
-                <div class="header-tint">  
-                    %s
-                    <div>
-                        <div>
-                            %s
-                            <nav>
-                                %s
-                            </nav>
-                        </div>
+                <div> 
+                    <div class="header-tint">  
                         %s
+                        <div>
+                            <div>
+                                %s
+                                <nav>
+                                    %s
+                                </nav>
+                            </div>
+                            %s
+                        </div>
                     </div>
                 </div>
             </header>

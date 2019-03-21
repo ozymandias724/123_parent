@@ -3672,35 +3672,46 @@
     justify-content: space-between;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5); }
     header#opt_header_two > div:last-of-type {
-      display: flex;
-      flex-flow: row nowrap;
-      background-color: #383838;
-      justify-content: space-around; }
+      background-color: #383838; }
       header#opt_header_two > div:last-of-type > div {
-        color: white;
-        text-transform: uppercase;
         display: flex;
         flex-flow: row nowrap;
-        align-items: center; }
+        background-color: #383838;
+        justify-content: space-around;
+        max-width: 1190px;
+        margin: 0 auto; }
         header#opt_header_two > div:last-of-type > div > div {
+          color: white;
+          text-transform: uppercase;
           display: flex;
-          flex-flow: column nowrap;
-          justify-content: center; }
+          flex-flow: row nowrap;
+          align-items: center; }
+          header#opt_header_two > div:last-of-type > div > div > div {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-end;
+            height: 100%; }
+            header#opt_header_two > div:last-of-type > div > div > div > a {
+              text-align: right;
+              font-size: 24px;
+              padding: 15px 5px;
+              margin-right: -10px; }
+            header#opt_header_two > div:last-of-type > div > div > div > nav {
+              margin-right: -10px; }
+              header#opt_header_two > div:last-of-type > div > div > div > nav > ul {
+                display: flex;
+                flex-flow: row wrap; }
+                header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li {
+                  margin: 5px 0; }
+                  header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a {
+                    font-size: 14px;
+                    padding: 10px; }
           header#opt_header_two > div:last-of-type > div > div > a {
-            text-align: right;
-            font-size: 24px; }
-          header#opt_header_two > div:last-of-type > div > div > nav {
-            margin-right: -10px; }
-            header#opt_header_two > div:last-of-type > div > div > nav > ul > li {
-              margin-right: 0; }
-              header#opt_header_two > div:last-of-type > div > div > nav > ul > li > a {
-                font-size: 14px;
-                padding: 10px; }
-        header#opt_header_two > div:last-of-type > div > a {
-          background-color: #e91d62;
-          text-decoration: none;
-          font-size: 16px;
-          border-radius: 4px; }
+            background-color: #e91d62;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            text-align: center; }
     header#opt_header_two .opt__estimatebar {
       background-color: #17181d;
       text-align: center;
@@ -3715,13 +3726,25 @@
         font-size: 1.6rem;
         text-transform: uppercase;
         text-align: center;
-        padding: 8px; }
-    header#opt_header_two .opt__estimatebar > a {
+        padding: 10px; }
+    header#opt_header_two .opt__estimatebar > a,
+    header#opt_header_two > div:last-of-type > div > div > div > a,
+    header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a,
+    header#opt_header_two > div:last-of-type > div > div > a {
       opacity: 0.8;
       transition: opacity 0.3s;
       -webkit-transition: opacity 0.3s;
       -o-transition: opacity 0.3s; }
-      header#opt_header_two .opt__estimatebar > a:hover, header#opt_header_two .opt__estimatebar > a:focus, header#opt_header_two .opt__estimatebar > a:active {
+      header#opt_header_two .opt__estimatebar > a:hover, header#opt_header_two .opt__estimatebar > a:focus, header#opt_header_two .opt__estimatebar > a:active,
+      header#opt_header_two > div:last-of-type > div > div > div > a:hover,
+      header#opt_header_two > div:last-of-type > div > div > div > a:focus,
+      header#opt_header_two > div:last-of-type > div > div > div > a:active,
+      header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:hover,
+      header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:focus,
+      header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:active,
+      header#opt_header_two > div:last-of-type > div > div > a:hover,
+      header#opt_header_two > div:last-of-type > div > div > a:focus,
+      header#opt_header_two > div:last-of-type > div > div > a:active {
         opacity: 1; }
 
   header#opt_header_three {
