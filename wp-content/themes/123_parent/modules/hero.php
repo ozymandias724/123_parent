@@ -20,6 +20,8 @@
         $video = (!empty(get_field('hero_video', 'options')) ? get_field('hero_video', 'options') : '' );
         $static_image = (!empty(get_field('hero_static_image', 'options')) ? get_field('hero_static_image', 'options') : '' );
         $slider_images = (!empty(get_field('hero_slider_images', 'options')) ? get_field('hero_slider_images', 'options') : '' );
+        $hero_style = (!empty(get_field('choose_hero_style_without_the_logo', 'options')) ? get_field('choose_hero_style_without_the_logo', 'options') : '' );
+        $hero_logo_style = (!empty(get_field('choose_hero_style_with_the_logo', 'options')) ? get_field('choose_hero_style_with_the_logo', 'options') : '' );
         
 
         // open hero container
@@ -27,25 +29,62 @@
 
 
         // hero type is static image
-        if( $type == 'image' ){
-            $format_hero = '
-                <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
-                    <div>
-                        %s
-                        %s
-                        %s
-                    </div>
-                </div>
-            ';
-            $content_hero .= sprintf(
-                $format_hero
-                ,$static_image['url']
-                ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-                ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-                ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
-            );
-        }
+        if( $type == 'image'){
+        
+            // $format_hero = '
+            //     <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
+            //         <div>
+            //             %s
+            //             %s
+            //             %s
+            //         </div>
+            //     </div>
+            // ';
+            // $content_hero .= sprintf(
+            //     $format_hero
+            //     ,$static_image['url']
+            //     ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+            //     ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+            //     ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            // );
 
+            if(
+                $hero_style == 'hero_1' || 
+                $hero_style == 'hero_2' || 
+                $hero_style == 'hero_3' || 
+                $hero_style == 'hero_4'
+            ){
+                $format_hero = '
+                    <div class="hero-bgimg %s" style="background-image: url(%s)" id="hero_staticimage">
+                        <div>
+                            <div>
+                                %s
+                                %s
+                                %s
+                            </div>
+                        </div>
+                    </div>
+                ';
+                $content_hero .= sprintf(
+                    $format_hero
+                    ,$hero_style
+                    ,$static_image['url']
+                    ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+                    ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+                    ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+                );
+            }else if(isset($logo)){
+                $format_hero = '
+                    <div class="hero-bgimg logo" id="hero_staticimage">
+                        <div style="background-image: url(%s)"></div>
+                    </div>
+                ';
+                $content_hero .= sprintf(
+                    $format_hero
+                    ,$logo['url']
+                );
+            }
+        }
 
         // hero type is slider
         else if( $type == 'slider' ){
@@ -54,7 +93,6 @@
                 $format_hero
             );
         }
-
 
         // hero type is video
         else if( $type == 'video' ){

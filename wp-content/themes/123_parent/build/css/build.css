@@ -6343,28 +6343,117 @@
   .terms-header {
     padding-top: 180px; } }
 @media only screen {
-  section.hero .hero-bgimg {
+  section.hero .hero-bgimg.hero_1 {
     width: 100%;
     height: 94vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
     display: flex;
-    align-items: center;
     justify-content: center; }
-    section.hero .hero-bgimg > div {
-      padding: 15% 10% 0 10%;
-      text-align: center; }
-      section.hero .hero-bgimg > div > h2 {
-        font-size: 100px;
-        font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
-        letter-spacing: -4px; }
-      section.hero .hero-bgimg > div > p {
-        font-size: 24px;
-        margin: 20px 0 30px;
+    section.hero .hero-bgimg.hero_1 > div {
+      display: flex;
+      align-items: center;
+      position: relative;
+      transform: translateY(-50%);
+      top: 65%; }
+      section.hero .hero-bgimg.hero_1 > div > div {
+        text-align: center; }
+        section.hero .hero-bgimg.hero_1 > div > div > h2,
+        section.hero .hero-bgimg.hero_1 > div > div > p,
+        section.hero .hero-bgimg.hero_1 > div > div > a {
+          font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; }
+        section.hero .hero-bgimg.hero_1 > div > div > h2 {
+          font-size: 98px;
+          letter-spacing: -4px; }
+        section.hero .hero-bgimg.hero_1 > div > div > p {
+          font-size: 24px;
+          margin: 20px 0 30px; }
+        section.hero .hero-bgimg.hero_1 > div > div > a {
+          padding: 10px;
+          font-size: 18px;
+          background-color: #df1d1d;
+          padding: 11px 30px 15px;
+          border-radius: 30px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          line-height: 1;
+          color: #fff;
+          display: inline-block;
+          background-color: #df1d1d;
+          transition: background-color 0.25s;
+          left: 25%; }
+          section.hero .hero-bgimg.hero_1 > div > div > a:hover, section.hero .hero-bgimg.hero_1 > div > div > a:active, section.hero .hero-bgimg.hero_1 > div > div > a:focus {
+            background-color: #b21717; }
+  section.hero .hero-bgimg.hero_2 {
+    width: 100%;
+    height: 94vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; }
+    section.hero .hero-bgimg.hero_2 > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      transform: translateY(-50%);
+      top: 45%; }
+      section.hero .hero-bgimg.hero_2 > div > div {
+        text-align: center; }
+        section.hero .hero-bgimg.hero_2 > div > div > h2,
+        section.hero .hero-bgimg.hero_2 > div > div > p,
+        section.hero .hero-bgimg.hero_2 > div > div > a {
+          font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; }
+        section.hero .hero-bgimg.hero_2 > div > div > h2 {
+          font-size: 98px;
+          letter-spacing: -4px; }
+        section.hero .hero-bgimg.hero_2 > div > div > p {
+          font-size: 24px;
+          margin: 20px 0 30px; }
+        section.hero .hero-bgimg.hero_2 > div > div > a {
+          padding: 10px;
+          font-size: 18px;
+          background-color: #df1d1d;
+          padding: 11px 30px 15px;
+          border-radius: 30px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          line-height: 1;
+          color: #fff;
+          display: inline-block;
+          background-color: #df1d1d;
+          transition: background-color 0.25s;
+          left: 25%; }
+          section.hero .hero-bgimg.hero_2 > div > div > a:hover, section.hero .hero-bgimg.hero_2 > div > div > a:active, section.hero .hero-bgimg.hero_2 > div > div > a:focus {
+            background-color: #b21717; }
+  section.hero .hero-bgimg.hero_3 {
+    width: 100%;
+    height: 94vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+    section.hero .hero-bgimg.hero_3 > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      max-width: 1024px;
+      margin: 0 auto;
+      transform: translateY(-50%);
+      top: 45%; }
+      section.hero .hero-bgimg.hero_3 > div > div > h2,
+      section.hero .hero-bgimg.hero_3 > div > div > p,
+      section.hero .hero-bgimg.hero_3 > div > div > a {
         font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; }
-      section.hero .hero-bgimg > div > a {
+      section.hero .hero-bgimg.hero_3 > div > div > h2 {
+        font-size: 98px;
+        letter-spacing: -4px; }
+      section.hero .hero-bgimg.hero_3 > div > div > p {
+        font-size: 24px;
+        margin: 20px 0 30px; }
+      section.hero .hero-bgimg.hero_3 > div > div > a {
         padding: 10px;
         font-size: 18px;
         background-color: #df1d1d;
@@ -6377,9 +6466,60 @@
         display: inline-block;
         background-color: #df1d1d;
         transition: background-color 0.25s;
-        font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
         left: 25%; }
-        section.hero .hero-bgimg > div > a:hover, section.hero .hero-bgimg > div > a:active, section.hero .hero-bgimg > div > a:focus {
-          background-color: #b21717; } }
+        section.hero .hero-bgimg.hero_3 > div > div > a:hover, section.hero .hero-bgimg.hero_3 > div > div > a:active, section.hero .hero-bgimg.hero_3 > div > div > a:focus {
+          background-color: #b21717; }
+  section.hero .hero-bgimg.hero_4 {
+    width: 100%;
+    height: 94vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+    section.hero .hero-bgimg.hero_4 > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      max-width: 1024px;
+      margin: 0 auto;
+      transform: translateY(-50%);
+      top: 45%; }
+      section.hero .hero-bgimg.hero_4 > div > div {
+        text-align: right; }
+        section.hero .hero-bgimg.hero_4 > div > div > h2,
+        section.hero .hero-bgimg.hero_4 > div > div > p,
+        section.hero .hero-bgimg.hero_4 > div > div > a {
+          font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; }
+        section.hero .hero-bgimg.hero_4 > div > div > h2 {
+          font-size: 98px;
+          letter-spacing: -4px; }
+        section.hero .hero-bgimg.hero_4 > div > div > p {
+          font-size: 24px;
+          margin: 20px 0 30px; }
+        section.hero .hero-bgimg.hero_4 > div > div > a {
+          padding: 10px;
+          font-size: 18px;
+          background-color: #df1d1d;
+          padding: 11px 30px 15px;
+          border-radius: 30px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          line-height: 1;
+          color: #fff;
+          display: inline-block;
+          background-color: #df1d1d;
+          transition: background-color 0.25s;
+          left: 25%; }
+          section.hero .hero-bgimg.hero_4 > div > div > a:hover, section.hero .hero-bgimg.hero_4 > div > div > a:active, section.hero .hero-bgimg.hero_4 > div > div > a:focus {
+            background-color: #b21717; } }
+@media only screen and (max-width: 1280px) {
+  section.hero .hero-bgimg > div > div {
+    padding: 5%; }
+  section.hero .hero-bgimg.hero_4 > div {
+    margin: 0;
+    padding-right: 5%; }
+  section.hero .hero-bgimg.hero_3 > div {
+    margin: 0;
+    padding-left: 5%; } }
 
 /*# sourceMappingURL=build.css.map */
