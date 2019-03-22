@@ -485,7 +485,7 @@ class NavHandler
 							%s
 						</nav>
 						<div> 
-							<a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
+							<a href="tel:%s" title="Phone number button">%s</a>
 						</div>
 					</div>
                 </div> 

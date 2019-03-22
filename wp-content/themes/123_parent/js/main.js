@@ -5,8 +5,66 @@ var Headers = {};
 
 
         Headers.Mobile = {
+			
+			_init : function(){
+				Headers.Mobile.Sidebar._init();
+			},
 
-        }
+			Sidebar : {
+
+				//Mobile header sidebar menu
+				sidebar : $(".mobile_header_sidebar_menu_1"),
+				//Mobile header sidebar and mobile header first div element
+				outside : $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
+				//Link which is the parent of the hamburger icons (spans)
+				toggle : $("header.mobileheader > div:first-of-type > a"),
+
+				_init : function(){
+					
+					//When hamburger icon spans link is clicked
+					Headers.Mobile.Sidebar.toggle.on("click", Headers.Mobile.Sidebar._clickHandler);
+					Headers.Mobile.Sidebar.outside.on("click", Headers.Mobile.Sidebar._outside_click_close_sidebar);
+					Headers.Mobile.Sidebar.sidebar.on("blur", Headers.Mobile.Sidebar._close_sidebar);
+
+					//On resize of browser
+					window.addEventListener('resize', function(){
+						//Remove mobile nav sidebar menu width
+						Headers.Mobile.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+						//Remove mobile nav hamburger icon class
+						Headers.Mobile.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+					});
+
+				},
+				_clickHandler : function(){
+					//If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
+					if(!Headers.Mobile.Sidebar.toggle.hasClass("mobile_nav_sidebar_menu_1")){
+						//Open sidebar
+						Headers.Mobile.Sidebar._open_sidebar();
+					}else{
+						//Close sidebar
+						Headers.Mobile.Sidebar._close_sidebar();
+					}
+				},
+				_outside_click_close_sidebar : function(e){
+					if(e.target === this){
+						Headers.Mobile.Sidebar._close_sidebar();
+					}
+				},
+				_open_sidebar : function(){
+					//Hamburger icon link add class
+					Headers.Mobile.Sidebar.toggle.addClass("mobile_nav_sidebar_menu_1");
+					//Make the sidebar menu cover the whole page
+					Headers.Mobile.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
+				},
+				_close_sidebar : function(){
+					//Hamburger icon link remove class
+					Headers.Mobile.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+					//Make the sidebar menu to not cover the whole page
+					Headers.Mobile.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+				}
+			}
+		}
+		Headers.Mobile._init();
 
         Headers.Desktop = {
 			_init : function(){
@@ -94,24 +152,22 @@ var Headers = {};
 			}, 
 			Ten : {
 				header : $("header#opt_header_ten"),
-				hamburger_icon : $("header#opt_header_ten > div > div > div:first-of-type > a"),
-				sidebar_menu : $(".header_sidebar_menu_1"), 
+				hamburger_icon : $("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
+				sidebar : $(".header_sidebar_menu_1"), 
 				outside : $(".header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten"),
 
 				_init : function(){
+					
 					Headers.Desktop.Ten.hamburger_icon.on("click", Headers.Desktop.Ten._hamburger_icon_click);
 
 					Headers.Desktop.Ten.outside.on("click", Headers.Desktop.Ten._outside_click);
 	
-					Headers.Desktop.Ten.sidebar_menu.on("blur", Headers.Desktop.Ten._close_sidebar);
-					
-					//On resize of browser
-					// window.onresize = function(){ 
-					// 	//Remove header 10 sidebar menu width
-					// 	Headers.Desktop.Ten.sidebar_menu.removeClass("header_sidebar_cover_all");
-					// 	//Remove header 10 hamburger icon class
-					// 	Headers.Desktop.Ten.hamburger_icon.removeClass("header_10_hamburger_icon_changed");
-					// }
+					Headers.Desktop.Ten.sidebar.on("blur", Headers.Desktop.Ten._close_sidebar);
+
+					//On browser resize
+					window.addEventListener('resize', function(){
+						Headers.Desktop.Ten._close_sidebar();
+					});    
 
 				},
 
@@ -133,14 +189,14 @@ var Headers = {};
 					Headers.Desktop.Ten.hamburger_icon.removeClass("header_10_hamburger_icon_changed");
 
 					//Open sidebar navigational menu
-					Headers.Desktop.Ten.sidebar_menu.removeClass("header_sidebar_cover_all");
+					Headers.Desktop.Ten.sidebar.removeClass("header_sidebar_cover_all");
 				},
 				_open_sidebar : function(){
 					//Remove hamburger icon link class
 					Headers.Desktop.Ten.hamburger_icon.addClass("header_10_hamburger_icon_changed");
 
 					//Close sidebar navigational menu
-					Headers.Desktop.Ten.sidebar_menu.addClass("header_sidebar_cover_all");
+					Headers.Desktop.Ten.sidebar.addClass("header_sidebar_cover_all");
 				}
 
 			}
@@ -189,16 +245,17 @@ var Headers = {};
 				},
 				_header_function : function(){
 
+					//Get header position value
 					Hero.Padding.header_position = $("header").css("position");
 
-					//If header has a position of fixed
+					//If header has a position of fixed and not header 4
 					if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four"){
 						
 						Hero.Padding.header_height = $("header").height();
 
 						Hero.Padding.main.css("padding-top", Hero.Padding.header_height);
 
-					
+					//If header has a position of fixed and is header 4
 					}else if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id === "opt_header_four"){
 						
 						Hero.Padding.header_first_div_height = $("header#opt_header_four > div").height();
@@ -206,7 +263,7 @@ var Headers = {};
 						Hero.Padding.main.css("padding-top", Hero.Padding.header_first_div_height);
 
 					}else{
-						
+						//Do not adding padding-top to hero
 						Hero.Padding.main.css("padding-top", "0");
 					}
 
@@ -221,30 +278,17 @@ var Headers = {};
 		Hero.Padding._init();
 
 		Theme.Headers = {
-			
 			tint : $(".header-tint"),
 			estimate : $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
 			estimate_popup : $(".estimate"),
 			estimate_close : $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
-			
 
 			_init : function(){
-				$(Theme.Headers.estimate).on("click", Theme.Headers._click_handler); 
+				$(Headers.Mobile.estimate).on("click", Theme.Headers._click_handler); 
 
-				$(Theme.Headers.estimate_close).on("click",Theme.Headers._close_popup);
-                
-
-				//On resize of browser
-				window.onresize = function(){
-					
-
-					//Remove mobile nav sidebar menu width
-					Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("mobile_sidebar_cover_all");
-					//Remove mobile nav hamburger icon class
-					Theme.Nav_Mobile.toggle.removeClass("mobile_nav_sidebar_menu_1");
-				}
-
+				$(Headers.Mobile.estimate_close).on("click",Theme.Headers._close_popup);
 			},
+
 			_click_handler : function(event){
 				event.preventDefault();
 				Theme.Headers.estimate_popup.fadeIn(250); 
@@ -262,56 +306,7 @@ var Headers = {};
 
 		}
         Theme.Headers._init();  
-        
-
-        Theme.Nav_Mobile = { 
-			//Mobile header
-			mobile_header : $("header.mobileheader"),
-			//Mobile header sidebar menu
-			mobile_nav_sidebar_menu : $(".mobile_header_sidebar_menu_1"),
-			//Mobile header sidebar and mobile header first div element
-			mobile_sidebar_outside : $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
-			//Link which is the parent of the hamburger icons (spans)
-			toggle : $("header.mobileheader > div:first-of-type > a"),
-            
-            _init : function(){
-				//When hamburger icon spans link is clicked
-                Theme.Nav_Mobile.toggle.on("click", Theme.Nav_Mobile._clickHandler);
-				Theme.Nav_Mobile.mobile_sidebar_outside.on("click", Theme.Nav_Mobile._outside_click_close_sidebar);
-				$(Theme.Nav_Mobile.mobile_nav_sidebar_menu).on("blur", Theme.Nav_Mobile._close_sidebar);
-            },
-            _clickHandler : function(){
-				//If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
-				if(!Theme.Nav_Mobile.toggle.hasClass("mobile_nav_sidebar_menu_1")){
-					//Open sidebar
-					Theme.Nav_Mobile._open_sidebar();
-				}else{
-					//Close sidebar
-					Theme.Nav_Mobile._close_sidebar();
-				}
-            },
-			_outside_click_close_sidebar : function(e){
-				if(e.target === this){
-					Theme.Nav_Mobile._close_sidebar();
-				}
-			},
-			_open_sidebar : function(){
-				//Hamburger icon link add class
-				Theme.Nav_Mobile.toggle.addClass("mobile_nav_sidebar_menu_1");
-				//Make the sidebar menu cover the whole page
-				Theme.Nav_Mobile.mobile_nav_sidebar_menu.addClass("mobile_sidebar_cover_all");
-			},
-			_close_sidebar : function(){
-				//Hamburger icon link remove class
-				Theme.Nav_Mobile.toggle.removeClass("mobile_nav_sidebar_menu_1");
-				//Make the sidebar menu to not cover the whole page
-				Theme.Nav_Mobile.mobile_nav_sidebar_menu.removeClass("mobile_sidebar_cover_all");
-			}
-        }
-        Theme.Nav_Mobile._init();
-        
-        
-        
+    
 
 		Theme.Breakpoint = {
 			
@@ -468,127 +463,6 @@ var Headers = {};
 			}
 		}
 
-
-		Theme.MobileNav = {
-			currentDevice : null,
-			barTint : $('.mobileheader-bar-tint'),
-			menuToggle : $('.mobileheader-bar-menutoggle-icon'),
-			menuTint : $('.mobileheader-tint'),
-			menu : $('.mobileheader-menus'),
-			links : $('.mobileheader-menus-pages-menu-item-link'),
-			_init : function(){
-				$(window).on('resize load', Theme.MobileNav._resizeLoadHandler);
-				if(DisableNavTintFadein == 'false'){
-					$(window).on('scroll load', Theme.MobileNav._scrollHandler);	
-				}
-				Theme.MobileNav.menuToggle.on('click', Theme.MobileNav._menuToggleHandler);
-				Theme.MobileNav.links.on('click', Theme.MobileNav._closeMenu);
-			},
-			_resizeLoadHandler : function(e){
-				if(e.type == 'load'){
-					// phones
-					if($(window).width() < 641){
-						Theme.MobileNav.currentDevice = 'phone';
-						Theme.MobileNav._doPhones();
-					}
-					// tablet
-					else if($(window).width() < 1025 && $(window).width() > 640){
-						Theme.MobileNav.currentDevice = 'tablet';
-						Theme.MobileNav._doTablet();
-					}
-					// desktop
-					else{
-						Theme.MobileNav.currentDevice = 'desktop';
-						Theme.MobileNav._doDesktop();
-					}
-				}
-				// phones
-				if($(window).width() < 641 && Theme.MobileNav.currentDevice != 'phone'){
-					Theme.MobileNav.currentDevice = 'phone';
-					Theme.MobileNav._doPhones();
-				}
-				// tablet
-				else if( ($(window).width() < 1025 && $(window).width() > 640) && Theme.MobileNav.currentDevice != 'tablet' ){
-					Theme.MobileNav.currentDevice = 'tablet';
-					Theme.MobileNav._doTablet();
-				}
-				// desktop
-				else if($(window).width() >= 1025 && Theme.MobileNav.currentDevice != 'desktop'){
-					Theme.MobileNav.currentDevice = 'desktop';
-					Theme.MobileNav._doDesktop();
-				}
-			},
-			_doPhones : function(){
-
-			},
-			_doTablet : function(){
-
-			},
-			_doDesktop : function(){
-				Theme.MobileNav._closeMenu();
-			},
-			_map : function(n,i,o,r,t){return i>o?i>n?(n-i)*(t-r)/(o-i)+r:r:o>i?o>n?(n-i)*(t-r)/(o-i)+r:t:void 0;},
-			_scrollHandler : function(e){
-				Theme.MobileNav.barTint.css('opacity', Theme.MobileNav._map($(window).scrollTop(), 0, 100, 0, 1));
-			},
-			_menuToggleHandler : function(e){
-				if(Theme.MobileNav.menuToggle.hasClass('fa-bars')){
-					Theme.MobileNav._openMenu();
-				}
-				else{
-					Theme.MobileNav._closeMenu();
-				}
-			},
-			_closeMenu : function(){
-				Theme.MobileNav.menuToggle.removeClass('fa-times');
-				Theme.MobileNav.menuToggle.addClass('fa-bars');
-
-				Theme.MobileNav.menu.removeClass('mobileheader-menus--show');
-				Theme.MobileNav.menuTint.removeClass('mobileheader-tint--show');
-			},
-			_openMenu : function(){
-				Theme.MobileNav.menuToggle.removeClass('fa-bars');
-				Theme.MobileNav.menuToggle.addClass('fa-times');
-
-				Theme.MobileNav.menu.addClass('mobileheader-menus--show');
-				Theme.MobileNav.menuTint.addClass('mobileheader-tint--show');
-			},
-		}
-
-		/**
-		 * Desktop Nav Handler
-		 * @type {Object}
-		 */
-		Theme.DesktopNav = {
-			tint : $('.header-tint'),
-			estimate : $('.estimate-toggle'),
-			estimatePopup : $('.estimate'),
-			estimateClose : $('.estimate.popupcontainer, .estimate-content-times.popupcontainer-times'),
-			_init: function(){
-				if(DisableNavTintFadein == 'false'){
-					$(window).on('scroll load', Theme.DesktopNav._scrollLoadHandler);		
-				}
-				Theme.DesktopNav.estimate.click(Theme.DesktopNav._estimateClickHandler);
-				Theme.DesktopNav.estimateClose.click(Theme.DesktopNav._estimateCloseClickHandler);
-			},
-			_map : function(n,i,o,r,t){return i>o?i>n?(n-i)*(t-r)/(o-i)+r:r:o>i?o>n?(n-i)*(t-r)/(o-i)+r:t:void 0;},
-			_scrollLoadHandler : function(e){
-				Theme.DesktopNav.tint.css('opacity', Theme.DesktopNav._map($(window).scrollTop(), 0, 100, 0, 1));
-			},
-			_estimateClickHandler : function(e){
-				e.preventDefault();
-				Theme.DesktopNav.estimatePopup.fadeIn(250);
-			},
-			_estimateCloseClickHandler : function(e){
-				if($(e.target).hasClass('estimate') || $(e.target).hasClass('estimate-content-times')){
-					e.preventDefault();
-					Theme.DesktopNav.estimatePopup.fadeOut(250);	
-				}
-			}
-		}
-
-
-
 		Theme.HomeTestimonialsSlider = {
 			slides : $('.home-testimonials-grid-item'),
 			arrowLeft : $('.home-testimonials-arrows-left'),
@@ -651,35 +525,6 @@ var Headers = {};
 				$(Theme.HomeTestimonialsSlider.slides[Theme.HomeTestimonialsSlider.currentSlide]).fadeOut();
 				Theme.HomeTestimonialsSlider.currentSlide += amount;
 				$(Theme.HomeTestimonialsSlider.slides[Theme.HomeTestimonialsSlider.currentSlide]).fadeIn();
-			}
-		}
-
-		
-		
-
-		Theme.Topbar = {
-			link : $('.header-topbar-link'),
-			container : $('.topbar.popupcontainer'),
-			_init : function(){
-				if( Theme.Topbar.link.length > 0 ){	
-					Theme.Topbar.link.on('click', Theme.Topbar._clickHandler);
-				}
-				if( Theme.Topbar.container.length > 0 ){
-					Theme.Topbar.container.on('click', Theme.Topbar._containerClickHandler);
-				}
-			},
-			_containerClickHandler : function(e){
-				if($(e.target).hasClass('pa') || $(e.target).hasClass('popupcontainer') || $(e.target).hasClass('popupcontainer-times')){
-					Theme.Topbar.container.fadeOut(250);
-				}
-			},
-			_clickHandler : function(e){
-				e.preventDefault();
-				if(Theme.PA.container.css('display') == 'none'){
-					if( $(window).width() >= 1025 ){
-						Theme.Topbar.container.fadeIn(250);	
-					}
-				}
 			}
 		}
 

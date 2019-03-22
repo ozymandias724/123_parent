@@ -124,18 +124,18 @@ $opacity_level_below_one : 0.8;
 			overflow-x: hidden;
 			padding-top: 60px;
 			transform: translateX(-100%);
-            transition: transform 0.25s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             >div, >nav, >ul {
                 margin-top: 30px;
             }
 			> nav {
                 margin-top: 90px;
-				/*Mobile nav sidebar navigational menu unordered list*/
+				//Mobile nav sidebar navigational menu unordered list
 				> ul.navlinks {
 					display: flex;
 					flex-flow: column nowrap;
 					align-items: center;
-					/*Mobile nav sidebar navigational menu unordered list items*/
+					//Mobile nav sidebar navigational menu unordered list items
 					> li {
 						margin-right: 0; 
 						width: 100%;
@@ -153,11 +153,10 @@ $opacity_level_below_one : 0.8;
 					}
 				}
 			}   
-			/*Telephone number parent div element*/
+			// Telephone number parent div element
 			> div {
                 display: inline-block;
-                // margin: 0 auto;
-				/*Telephone number link*/
+				//Telephone number link
 				> a {
 					display: inline-block;
 					padding: 10px 15px 10px 15px;
@@ -173,7 +172,6 @@ $opacity_level_below_one : 0.8;
 				flex-flow: row nowrap;
 				list-style-type: none;
 				display: flex;
-				// margin-top: 15px;
 				justify-content: center;
 				//Social icons unordered list items
 				> li {
@@ -191,7 +189,19 @@ $opacity_level_below_one : 0.8;
 				}
 			}
 			//Telephone number link
-			> div > a,
+			> div > a {
+                opacity: $opacity_level_below_one;
+                transition: opacity 0.3s;
+                transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+                border: 1px solid $black;
+				&:hover,
+				&:active,
+				&:focus {
+                    opacity: 1;
+                    color: $black;
+                    background-color: rgba(0,0,0,0);
+				}
+            }
 			//Mobile nav sidebar navigational menu unordered list items links 
 			> nav > ul > li > a {
 				opacity: $opacity_level_below_one;
