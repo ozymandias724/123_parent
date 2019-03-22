@@ -2374,8 +2374,6 @@ var Headers = {};
 
 					Hero.Padding.header_position = $("header").css("position");
 
-					console.log(Hero.Padding.header_id);
-
 					//If header has a position of fixed
 					if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four"){
 						
