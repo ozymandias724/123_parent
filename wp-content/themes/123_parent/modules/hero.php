@@ -53,11 +53,16 @@
         // hero type is slider 
         else if( $type == 'slider' ){
 
+            // If slider_images variable is not empty
             if(!empty($slider_images)){
-                $content_slider_images = "<div>";
+                //Create slider content variable
+                $content_slider_images = "<div id='slick-images'>";
+                //For each slider image 
                 foreach($slider_images as $slider_key => $slider_value){
-                    $content_slider_images .= '<img src="'.$slider_value['url'].'" alt="'.$slider_value['alt'].'" />';
+                    //Concatenate img div as a background image with slider url and alt text
+                    $content_slider_images .= '<div style="background-image: url('.$slider_value['url'].'); "></div>';
                 }
+                //Close end tag of slider content 
                 $content_slider_images .= "</div>";
             }
 

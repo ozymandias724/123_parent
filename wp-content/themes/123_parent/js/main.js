@@ -282,8 +282,18 @@ var Headers = {};
 
 			Slider : {
 				_init : function(){
-
+					Hero.Slider._start_slick();
 				},
+				_start_slick : function(){
+					$('#slick-images').slick({
+						autoplay: true,
+						//adaptiveHeight: true,
+						arrows: false,
+						infinite: true,
+						mobileFirst: true,
+						slidesToShow: 1
+					  });
+				}
 			},
 		}
 		Hero._init();
