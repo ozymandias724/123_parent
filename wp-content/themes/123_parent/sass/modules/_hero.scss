@@ -2,60 +2,9 @@
 
 @media only screen {
 
-    section.hero {
-        .hero-bgimg.hero_1 {
-            width: 100%;
-            height: 94vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            > div {
-                display: flex;
-                align-items: center;
-                position: relative;
-                transform: translateY(-50%);
-                top: 65%;
-                > div {
-                    text-align: center;
-                    > h2, 
-                    > p, 
-                    > a {
-                        font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
-                    }
-                    > h2 { 
-                        font-size: 98px; 
-                        letter-spacing: -4px;
-                    }
-                    > p {
-                        font-size: 24px;
-                        margin: 20px 0 30px;
-                    }
-                    > a {
-                        padding: 10px;
-                        font-size: 18px;
-                        background-color: $primary;
-                        padding: 11px 30px 15px;
-                        border-radius: 30px;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        line-height: 1;
-                        color: $white;
-                        display: inline-block;
-                        background-color: $primary;
-                        transition: background-color 0.25s;
-                        left: 25%;
-                        &:hover,
-                        &:active, 
-                        &:focus {
-                            background-color: $second_primary;
-                        }
-                    }
-                }
-            }  
-        }
-        .hero-bgimg.hero_2 {
+    section.hero { 
+
+        .hero-bgimg {
             width: 100%;
             height: 94vh;
             background-size: cover;
@@ -71,6 +20,7 @@
                 transform: translateY(-50%);
                 top: 45%;
                 > div {
+                    padding: 10%;
                     text-align: center;
                     > h2, 
                     > p, 
@@ -107,134 +57,15 @@
                     }
                 }  
             }
-        }
-        .hero-bgimg.hero_3 {
-            width: 100%;
-            height: 94vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            > div {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                max-width: 1024px;
-                margin: 0 auto;
-                transform: translateY(-50%);
-                top: 45%;
-                > div {
-                    > h2, 
-                    > p, 
-                    > a {
-                        font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; 
-                    }
-                    > h2 { 
-                        font-size: 98px; 
-                        letter-spacing: -4px;
-                    }
-                    > p {
-                        font-size: 24px;
-                        margin: 20px 0 30px;
-                    }
-                    > a {
-                        padding: 10px;
-                        font-size: 18px;
-                        background-color: $primary;
-                        padding: 11px 30px 15px;
-                        border-radius: 30px;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        line-height: 1;
-                        color: $white;
-                        display: inline-block;
-                        background-color: $primary;
-                        transition: background-color 0.25s;
-                        left: 25%;
-                        &:hover,
-                        &:active, 
-                        &:focus {
-                            background-color: $second_primary;
-                        }
-                    }
-                }  
-            }
-        }
-        .hero-bgimg.hero_4 {
-            width: 100%;
-            height: 94vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            > div {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                max-width: 1024px;
-                margin: 0 auto;
-                transform: translateY(-50%);
-                top: 45%;
-                > div {
-                    text-align: right; 
-                    > h2, 
-                    > p, 
-                    > a {
-                        font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
-                    }
-                    > h2 { 
-                        font-size: 98px; 
-                        letter-spacing: -4px;
-                    }
-                    > p {
-                        font-size: 24px;
-                        margin: 20px 0 30px;
-                    }
-                    > a {
-                        padding: 10px;
-                        font-size: 18px;
-                        background-color: $primary;
-                        padding: 11px 30px 15px;
-                        border-radius: 30px;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        line-height: 1;
-                        color: $white;
-                        display: inline-block;
-                        background-color: $primary;
-                        transition: background-color 0.25s;
-                        left: 25%;
-                        &:hover,
-                        &:active, 
-                        &:focus {
-                            background-color: $second_primary;
-                        }
-                    }
-                }
-            }  
         }
     } 
     
 
-    @media only screen and (max-width: $bp__lg) {
-        
+    @media only screen and (min-width: $bp__lg) {
         section.hero {
             .hero-bgimg > div > div {
-                padding: 5%;
+                padding: 0;
             }
-            .hero-bgimg.hero_4 {
-                > div {
-                    margin: 0;
-                    padding-right: 5%;
-                }
-            }
-            .hero-bgimg.hero_3 {
-                > div {
-                    margin: 0;
-                    padding-left: 5%;
-                }
-            }
-
         }
     }  
 }
