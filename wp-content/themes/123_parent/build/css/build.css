@@ -6392,11 +6392,13 @@
           left: 25%; }
           section.hero #hero_staticimage > div > div > a:hover, section.hero #hero_staticimage > div > div > a:active, section.hero #hero_staticimage > div > div > a:focus {
             background-color: #b21717; }
-  section.hero #hero_slider > div > div:first-of-type .slick-slide > div > div {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; }
+  section.hero #hero_slider > div > div:first-of-type {
+    height: 100vh; }
+    section.hero #hero_slider > div > div:first-of-type .slick-slide > div > div {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
   section.hero #hero_slider > div > div:last-of-type {
     text-align: center;
     position: absolute;
