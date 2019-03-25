@@ -4,7 +4,67 @@
 
     section.hero { 
 
-        .hero-bgimg {
+        #hero_staticimage {
+            width: 100%; 
+            height: 94vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            > div {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                transform: translateY(-50%);
+                top: 45%;
+                > div {
+                    text-align: center;
+                    > h2, 
+                    > p, 
+                    > a {
+                        font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
+                    }
+                    > h2 { 
+                        font-size: 90px; 
+                        letter-spacing: -4px;
+                    }
+                    > img {
+                        margin: 35px auto 0;
+                        object-fit: cover;
+                        height: auto;
+                        width: 100%;
+                        max-width: 180px;
+                    }
+                    > p {
+                        font-size: 24px;
+                        margin: 20px 0 30px;
+                    }
+                    > a {
+                        padding: 10px;
+                        font-size: 18px;
+                        background-color: $primary;
+                        padding: 11px 30px 15px;
+                        border-radius: 30px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        line-height: 1;
+                        color: $white;
+                        display: inline-block;
+                        background-color: $primary;
+                        transition: background-color 0.25s;
+                        left: 25%;
+                        &:hover,
+                        &:active, 
+                        &:focus {
+                            background-color: $second_primary;
+                        }
+                    }
+                }  
+            }
+        }
+        #hero_slider {
             width: 100%;
             height: 94vh;
             background-size: cover;
@@ -20,7 +80,6 @@
                 transform: translateY(-50%);
                 top: 45%;
                 > div {
-                    padding: 10%;
                     text-align: center;
                     > h2, 
                     > p, 
@@ -28,8 +87,15 @@
                         font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
                     }
                     > h2 { 
-                        font-size: 98px; 
+                        font-size: 90px; 
                         letter-spacing: -4px;
+                    }
+                    > img {
+                        margin: 35px auto 0;
+                        object-fit: cover;
+                        height: auto;
+                        width: 100%;
+                        max-width: 180px;
                     }
                     > p {
                         font-size: 24px;
@@ -63,8 +129,11 @@
 
     @media only screen and (min-width: $bp__lg) {
         section.hero {
-            .hero-bgimg > div > div {
+            #hero_staticimage > div > div {
                 padding: 0;
+                > h2 {
+                    font-size: 98px;
+                }
             }
         }
     }  

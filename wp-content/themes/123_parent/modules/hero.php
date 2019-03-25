@@ -43,7 +43,7 @@
                 $format_hero
                 ,$static_image['url']
                 ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-                ,( !empty($logo) ) ? '<div style="background-image: url('.$logo['url'].')"></div>' : ''
+                ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
                 ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
                 ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
             );
@@ -52,9 +52,35 @@
 
         // hero type is slider 
         else if( $type == 'slider' ){
-            $format_hero = '';
+
+            if(!empty($slider_images)){
+                $content_slider_images = "<div>";
+                foreach($slider_images as $slider_key => $slider_value){
+                    $content_slider_images .= '<img src="'.$slider_value['url'].'" alt="'.$slider_value['alt'].'" />';
+                }
+                $content_slider_images .= "</div>";
+            }
+
+            $format_hero = '
+                <div class=hero-bgslider" id="hero_slider">
+                    <div>
+                        %s
+                        <div>
+                            %s
+                            %s
+                            %s
+                            %s
+                        </div>
+                    </div>
+                </div>
+            ';
             $content_hero .= sprintf(
                 $format_hero
+                ,( !empty($content_slider_images) ) ? $content_slider_images : ''
+                ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+                ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
+                ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+                ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
             );
         }
 

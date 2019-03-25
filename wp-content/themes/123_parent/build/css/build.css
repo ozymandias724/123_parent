@@ -6343,7 +6343,7 @@
   .terms-header {
     padding-top: 180px; } }
 @media only screen {
-  section.hero .hero-bgimg {
+  section.hero #hero_staticimage {
     width: 100%;
     height: 94vh;
     background-size: cover;
@@ -6351,27 +6351,32 @@
     background-repeat: no-repeat;
     display: flex;
     justify-content: center; }
-    section.hero .hero-bgimg > div {
+    section.hero #hero_staticimage > div {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       position: relative;
       transform: translateY(-50%);
       top: 45%; }
-      section.hero .hero-bgimg > div > div {
-        padding: 10%;
+      section.hero #hero_staticimage > div > div {
         text-align: center; }
-        section.hero .hero-bgimg > div > div > h2,
-        section.hero .hero-bgimg > div > div > p,
-        section.hero .hero-bgimg > div > div > a {
+        section.hero #hero_staticimage > div > div > h2,
+        section.hero #hero_staticimage > div > div > p,
+        section.hero #hero_staticimage > div > div > a {
           font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; }
-        section.hero .hero-bgimg > div > div > h2 {
-          font-size: 98px;
+        section.hero #hero_staticimage > div > div > h2 {
+          font-size: 90px;
           letter-spacing: -4px; }
-        section.hero .hero-bgimg > div > div > p {
+        section.hero #hero_staticimage > div > div > img {
+          margin: 35px auto 0;
+          object-fit: cover;
+          height: auto;
+          width: 100%;
+          max-width: 180px; }
+        section.hero #hero_staticimage > div > div > p {
           font-size: 24px;
           margin: 20px 0 30px; }
-        section.hero .hero-bgimg > div > div > a {
+        section.hero #hero_staticimage > div > div > a {
           padding: 10px;
           font-size: 18px;
           background-color: #df1d1d;
@@ -6385,10 +6390,61 @@
           background-color: #df1d1d;
           transition: background-color 0.25s;
           left: 25%; }
-          section.hero .hero-bgimg > div > div > a:hover, section.hero .hero-bgimg > div > div > a:active, section.hero .hero-bgimg > div > div > a:focus {
+          section.hero #hero_staticimage > div > div > a:hover, section.hero #hero_staticimage > div > div > a:active, section.hero #hero_staticimage > div > div > a:focus {
+            background-color: #b21717; }
+  section.hero #hero_slider {
+    width: 100%;
+    height: 94vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; }
+    section.hero #hero_slider > div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      transform: translateY(-50%);
+      top: 45%; }
+      section.hero #hero_slider > div > div {
+        text-align: center; }
+        section.hero #hero_slider > div > div > h2,
+        section.hero #hero_slider > div > div > p,
+        section.hero #hero_slider > div > div > a {
+          font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif; }
+        section.hero #hero_slider > div > div > h2 {
+          font-size: 90px;
+          letter-spacing: -4px; }
+        section.hero #hero_slider > div > div > img {
+          margin: 35px auto 0;
+          object-fit: cover;
+          height: auto;
+          width: 100%;
+          max-width: 180px; }
+        section.hero #hero_slider > div > div > p {
+          font-size: 24px;
+          margin: 20px 0 30px; }
+        section.hero #hero_slider > div > div > a {
+          padding: 10px;
+          font-size: 18px;
+          background-color: #df1d1d;
+          padding: 11px 30px 15px;
+          border-radius: 30px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          line-height: 1;
+          color: #fff;
+          display: inline-block;
+          background-color: #df1d1d;
+          transition: background-color 0.25s;
+          left: 25%; }
+          section.hero #hero_slider > div > div > a:hover, section.hero #hero_slider > div > div > a:active, section.hero #hero_slider > div > div > a:focus {
             background-color: #b21717; } }
 @media only screen and (min-width: 1280px) {
-  section.hero .hero-bgimg > div > div {
-    padding: 0; } }
+  section.hero #hero_staticimage > div > div {
+    padding: 0; }
+    section.hero #hero_staticimage > div > div > h2 {
+      font-size: 98px; } }
 
 /*# sourceMappingURL=build.css.map */

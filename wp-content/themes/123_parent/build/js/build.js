@@ -2388,6 +2388,11 @@ var Headers = {};
 		Headers.Desktop._init();
 
 		Hero = {
+			_init : function(){
+				Hero.Padding._init();
+				Hero.Slider._init();
+			},
+
 			Padding : {
 
 				header_id : $("header").attr("id"),
@@ -2457,8 +2462,14 @@ var Headers = {};
 				}
 
 			},
+
+			Slider : {
+				_init : function(){
+
+				},
+			},
 		}
-		Hero.Padding._init();
+		Hero._init();
 
 		Theme.Headers = {
 			tint : $(".header-tint"),
