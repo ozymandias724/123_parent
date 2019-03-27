@@ -64,7 +64,7 @@ var Headers = {};
 				}
 			}
 		}
-		Headers.Mobile._init();
+		
 
         Headers.Desktop = {
 			_init : function(){
@@ -80,9 +80,12 @@ var Headers = {};
 				address_text : $(".google-search-address").text(),
 
 				_init : function(){
+					Headers.Desktop.Address_Link.address_link.on("click", Headers.Desktop.Address_Link._open_google_search);
+				},
+				_open_google_search : function(e){
 					event.preventDefault();
 					window.open('https://google.com/search?q=' + Headers.Desktop.Address_Link.address_text);
-				}
+				},
 
 			},
             One : {
@@ -202,7 +205,7 @@ var Headers = {};
 			}
             
 		}
-		Headers.Desktop._init();
+		
 
 		Hero = {
 			_init : function(){
@@ -281,22 +284,29 @@ var Headers = {};
 			},
 
 			Slider : {
+				slick_slider : $("#slick-images"),
+				rand : Math.floor( Math.random() * $(".img-slick").length ), 
+
 				_init : function(){
-					Hero.Slider._start_slick();
+					Hero.Slider._start_slider();
 				},
-				_start_slick : function(){
-					$('#slick-images').slick({
-						autoplay: true,
-						//adaptiveHeight: true,
-						arrows: false,
-						infinite: true,
-						mobileFirst: true,
-						slidesToShow: 1
-					  });
+				_start_slider : function(){
+					$("#slick-images").slick({
+						autoplay : false
+						,adaptiveHeight : true
+						,arrows : true
+						,infinite : true
+						,mobileFirst : true
+						,slidesToShow : 1
+						,fade : true
+						,initialSlide : Hero.Slider.rand
+						,nextArrow : '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>' 
+						,prevArrow : '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>' 
+					});
 				}
 			},
 		}
-		Hero._init();
+		
 
 		Theme.Headers = {
 			tint : $(".header-tint"),
@@ -427,128 +437,6 @@ var Headers = {};
 			},
 		}
 
-
-		Theme.HeroSlider = {
-			// slide on screen time in ms
-			screenTime : 4500,
-
-			slidesContainer : $('.home-hero-slides'),
-			slides : $('.home-hero-slides-slide'),
-			currentSlide : 0,
-			currentlyAnimating : false,
-			
-			_init : function(st){
-				
-				if(st !== undefined) Theme.HeroSlider.screenTime = st;
-			
-				Theme.HeroSlider.slidesContainer.on('NEXT_HEROSLIDE', function(e){
-					Theme.HeroSlider._nextSlide();
-				});
-
-				Theme.HeroSlider._animateCurrentSlide();
-			},	
-			_animateCurrentSlide : function(){
-				$(Theme.HeroSlider.slides[Theme.HeroSlider.currentSlide]).animate(
-					{
-						textIndent : 1,
-					}, 
-					{
-						duration : Theme.HeroSlider.screenTime,
-						progress : function(animation, progress, remaining){
-							if(remaining <= 450 && Theme.HeroSlider.currentlyAnimating != true){
-								Theme.HeroSlider.slidesContainer.trigger('NEXT_HEROSLIDE');
-								Theme.HeroSlider.currentlyAnimating = true;
-							}
-						},
-						complete : function(){
-							Theme.HeroSlider.currentlyAnimating = false;
-						},
-					}
-				);
-			},
-			_nextSlide : function(){
-				// grab old currentslide
-				var previousSlide = Theme.HeroSlider.currentSlide;
-				// update currentslide
-				if(Theme.HeroSlider.currentSlide == $(Theme.HeroSlider.slides).length - 1){
-					Theme.HeroSlider.currentSlide = 0;
-				}
-				else{
-					Theme.HeroSlider.currentSlide++;
-				}
-				// fade slides
-				$(Theme.HeroSlider.slides[previousSlide]).fadeOut(Theme.HeroSlider.fadeSpeed);
-				$(Theme.HeroSlider.slides[Theme.HeroSlider.currentSlide]).fadeIn(Theme.HeroSlider.fadeSpeed);
-				// animate next slide
-				Theme.HeroSlider._animateCurrentSlide();
-			}
-		}
-
-		Theme.HomeTestimonialsSlider = {
-			slides : $('.home-testimonials-grid-item'),
-			arrowLeft : $('.home-testimonials-arrows-left'),
-			arrowRight : $('.home-testimonials-arrows-right'),
-			arrows : $('.home-testimonials-arrows i'),
-			slideMax : null,
-			currentSlide : 0,
-			_init : function(){
-				if($('.home-testimonials').length > 0){
-					// if there are slides
-					if(Theme.HomeTestimonialsSlider.slides.length != 0){
-						Theme.HomeTestimonialsSlider.slideMax = Theme.HomeTestimonialsSlider.slides.length - 1;
-						// if 1 slide
-						if(Theme.HomeTestimonialsSlider.slideMax == 0){
-							Theme.HomeTestimonialsSlider.arrows.addClass('grey');
-						}
-						Theme.HomeTestimonialsSlider.arrows.on('click', Theme.HomeTestimonialsSlider._arrowsClickHandler);	
-					}
-					else{
-						$('.home-testimonials').hide();
-					}
-				}
-			},
-			_arrowsClickHandler : function(e){
-				if(e.target == Theme.HomeTestimonialsSlider.arrowLeft[0]){
-					if(Theme.HomeTestimonialsSlider.currentSlide != 0){
-						Theme.HomeTestimonialsSlider._updateCurrentSlide(-1);
-					}
-				}
-				if(e.target == Theme.HomeTestimonialsSlider.arrowRight[0]){
-					if(Theme.HomeTestimonialsSlider.currentSlide != Theme.HomeTestimonialsSlider.slideMax){
-						Theme.HomeTestimonialsSlider._updateCurrentSlide(1);	
-					}
-				}
-				// if more than 3 slides
-				if(Theme.HomeTestimonialsSlider.slideMax >= 2){
-					if(Theme.HomeTestimonialsSlider.currentSlide == 0){
-						Theme.HomeTestimonialsSlider.arrowLeft.addClass('grey');
-					}
-					else if(Theme.HomeTestimonialsSlider.currentSlide != 0 && Theme.HomeTestimonialsSlider.currentSlide != Theme.HomeTestimonialsSlider.slideMax){
-						Theme.HomeTestimonialsSlider.arrows.removeClass('grey');	
-					}
-					else if(Theme.HomeTestimonialsSlider.currentSlide == Theme.HomeTestimonialsSlider.slideMax){
-						Theme.HomeTestimonialsSlider.arrowRight.addClass('grey');	
-					}	
-				}
-				// if 2 slides
-				if(Theme.HomeTestimonialsSlider.slideMax == 1){
-					if(Theme.HomeTestimonialsSlider.currentSlide == 0){
-						Theme.HomeTestimonialsSlider.arrowLeft.addClass('grey');
-						Theme.HomeTestimonialsSlider.arrowRight.removeClass('grey');
-					}
-					else{
-						Theme.HomeTestimonialsSlider.arrowRight.addClass('grey');
-						Theme.HomeTestimonialsSlider.arrowLeft.removeClass('grey');	
-					}
-				}
-			},
-			_updateCurrentSlide : function(amount){
-				$(Theme.HomeTestimonialsSlider.slides[Theme.HomeTestimonialsSlider.currentSlide]).fadeOut();
-				Theme.HomeTestimonialsSlider.currentSlide += amount;
-				$(Theme.HomeTestimonialsSlider.slides[Theme.HomeTestimonialsSlider.currentSlide]).fadeIn();
-			}
-		}
-
 		Theme.PA = {
 			container : $('.pa.popupcontainer'),
 			submit : $('.pa.popupcontainer input[type="submit"]'),
@@ -673,208 +561,6 @@ var Headers = {};
 	});
 
 })( jQuery, Theme, Headers, window, document );
-
-
-var MapServer = {
-	types : ['StatesServed', 'AreasServed', 'CountiesServed', 'CountriesServed'],
-	activeAreasServedMap : '',
-	activeAreasServedMapData : null,
-	_init : function(){
-		MapServer.types.forEach(function(el){
-			try {
-				if(eval(el)){
-					MapServer.activeAreasServedMap = el;
-					MapServer.activeAreasServedMapData = eval(el);
-					MapServer._buildAreasServedMap();
-				}
-			} catch(err){
-				// console.log(err);
-			}
-		});
-		if( document.querySelector('.contact-hero-map') !== null ){
-			MapServer._buildContactMap();
-		}
-	},
-	_buildContactMap : function(){
-		var element =  document.querySelector('.contact-hero-map');
-		var latlangs = [];
-		ContactAddresses.forEach(function(el, index, parent){
-			latlangs.push({lat: Number(el.lat), lng: Number(el.lng)});
-		});
-		// build bounds & make center of map coords
-		var bounds  = new google.maps.LatLngBounds();
-		var map_center = [];
-		var x = 0;
-		var y = 0;
-		var map = new google.maps.Map(element, {
-		  zoom: 28,
-		  mapTypeId: 'roadmap',
-		  disableDefaultUI: true,
-		  gestureHandling: 'none',
-		  styles: [
-		  	{
-		  		featureType: 'all',
-		  		elementType: 'all',
-		  		stylers: [
-		  			{saturation: -100}
-		  		]
-		  	}
-		  ],
-		});
-		latlangs.forEach(function(el){
-			x += Number(el.lat);
-			y += Number(el.lng);
-			var marker = new google.maps.Marker({
-			  position: el,
-			  map: map,
-			});	
-			bounds.extend(el);
-		});
-		map_center[0] = x / latlangs.length;
-		map_center[1] = y / latlangs.length;
-		map.setCenter({lat: map_center[0], lng: map_center[1]});
-		google.maps.event.addListener(map, 'zoom_changed', function() {
-			zoomChangeBoundsListener = 
-				google.maps.event.addListener(map, 'bounds_changed', function(event) {
-					if (this.getZoom() > 15 && this.initialZoom == true) {
-						// Change max/min zoom here
-						this.setZoom(15);
-						this.initialZoom = false;
-					}
-				google.maps.event.removeListener(zoomChangeBoundsListener);
-			});
-		});
-		map.initialZoom = true;
-		// zoom to bounds
-		if(latlangs.length > 1){
-			map.fitBounds(bounds);
-			var listener = google.maps.event.addListener(map, "idle", function() { 
-			  map.setZoom(map.getZoom() - 1); 
-			  google.maps.event.removeListener(listener); 
-			});
-			
-		}	
-		map.panToBounds(bounds);
-	},
-	_buildAreasServedMap : function(){
-
-		if( MapServer.activeAreasServedMap == 'AreasServed' ){
-
-			setupMap(AreasServed);
-			
-			function setupMap(latlangs){
-
-				// build bounds & make center of map coords
-				bounds  = new google.maps.LatLngBounds();
-				for(var i = 0; i < latlangs.length; i++){
-					bounds.extend(latlangs[i]);
-				}
-
-				// build map
-				map = new google.maps.Map(document.querySelectorAll('.areas-served-hero-map')[0], {
-					zoom: 11,
-					center: bounds.getCenter(),
-					gestureHandling: 'none',
-					mapTypeId: 'roadmap',
-					disableDefaultUI: true,
-					styles: [
-					{
-						featureType: 'all',
-						elementType: 'all',
-						stylers: [
-							{saturation: -100}
-						]
-					}
-				],
-				});
-				// add circles
-				latlangs.forEach(function(currentValue, i, arr){
-					var cityCircle = new google.maps.Circle({
-						strokeColor: '#FF0000',
-						strokeOpacity: 0.8,
-						strokeWeight: 2,
-						fillColor: '#FF0000',
-						fillOpacity: 0.35,
-						map: map,
-						center: latlangs[i],
-						radius: 9000,
-					});
-					var marker = new google.maps.Marker({
-						position: latlangs[i],
-						map: map,
-					});
-				});
-				// zoom to bounds
-				if(latlangs.length > 1){
-					map.fitBounds(bounds);	
-				}	
-				map.panToBounds(bounds);
-			}
-		}
-		else{
-			var bounds  = new google.maps.LatLngBounds();
-			MapServer.activeAreasServedMapData.forEach(function(el){
-				JSON.parse(el.geometry).forEach(function(polygon){
-					polygon.forEach(function(latlng){
-						latlng['lat'] = parseFloat(latlng['lat']);
-						latlng['lng'] = parseFloat(latlng['lng']);
-						bounds.extend(latlng);
-					});
-				});
-			});
-			var map = new google.maps.Map(document.querySelectorAll('.areas-served-hero-map')[0], {
-				zoom: 11,
-				center: bounds.getCenter(),
-				gestureHandling: 'none',
-				mapTypeId: 'roadmap',
-				disableDefaultUI: true,
-				styles: [
-					{
-						featureType: 'all',
-						elementType: 'all',
-						stylers: [
-							{saturation: -100}
-						]
-					}
-				],
-			});
-
-			if( MapServer.activeAreasServedMap == 'StatesServed' ){
-				map.fitBounds(bounds, 0);
-			}
-			else if( MapServer.activeAreasServedMap == 'CountiesServed' ){
-				map.fitBounds(bounds, -50);
-			}
-			else if( MapServer.activeAreasServedMap == 'CountriesServed' ){
-				map.fitBounds(bounds, -150);
-			}
-
-			var polygons = [];
-			MapServer.activeAreasServedMapData.forEach(function(el){
-				JSON.parse(el.geometry).forEach(function(polygon){
-					var mapped = polygon.map(function(latlng){
-						latlng['lat'] = parseFloat(latlng['lat']);
-						latlng['lng'] = parseFloat(latlng['lng']);
-						return latlng;
-					});
-
-					var gmapPoly = new google.maps.Polygon({
-						paths: mapped,
-						strokeColor: '#FF0000',
-			            strokeOpacity: 0,
-			            strokeWeight: 2,
-			            fillColor: '#FF0000',
-			            fillOpacity: 0.5
-					});	
-					gmapPoly.setMap(map);
-				});
-			});
-		}
-	},
-};
-
-console.log('about to load the google map?');
-google.maps.event.addDomListener(window, "load", MapServer._init);
 
 // why does this need to be here
 window.Theme = Theme;

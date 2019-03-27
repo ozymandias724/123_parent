@@ -67,6 +67,28 @@
 
         #hero_slider {
             > div {
+                #slick-images {
+                    .slick-dots li button:before {
+                        font-size: 10px;
+                    }
+                    .slick-prev {
+                        left: 12%;
+                    } 
+                    .slick-next {
+                        right: 12%;
+                    }
+                    .slick-prev, .slick-next {
+                        z-index: 18;
+                        &:before {
+                            display: none;
+                        }
+                        > i {
+                            font-size: 50px;
+                            z-index: 18;
+                            color: black;
+                        }
+                    }
+                }
                 > div {
                     &:first-of-type {
                         height: 100vh; 
@@ -137,9 +159,17 @@
     @media only screen and (min-width: $bp__lg) {
         section.hero {
             #hero_staticimage > div > div {
-                padding: 0;
+                //padding: 0;
                 > h2 {
                     font-size: 98px;
+                }
+            }
+            #hero_slider > div #slick-images {
+                .slick-prev {
+                    left: 23.5%;
+                } 
+                .slick-next {
+                    right: 23.5%;
                 }
             }
         }

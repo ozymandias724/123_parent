@@ -6392,6 +6392,20 @@
           left: 25%; }
           section.hero #hero_staticimage > div > div > a:hover, section.hero #hero_staticimage > div > div > a:active, section.hero #hero_staticimage > div > div > a:focus {
             background-color: #b21717; }
+  section.hero #hero_slider > div #slick-images .slick-dots li button:before {
+    font-size: 10px; }
+  section.hero #hero_slider > div #slick-images .slick-prev {
+    left: 12%; }
+  section.hero #hero_slider > div #slick-images .slick-next {
+    right: 12%; }
+  section.hero #hero_slider > div #slick-images .slick-prev, section.hero #hero_slider > div #slick-images .slick-next {
+    z-index: 18; }
+    section.hero #hero_slider > div #slick-images .slick-prev:before, section.hero #hero_slider > div #slick-images .slick-next:before {
+      display: none; }
+    section.hero #hero_slider > div #slick-images .slick-prev > i, section.hero #hero_slider > div #slick-images .slick-next > i {
+      font-size: 50px;
+      z-index: 18;
+      color: black; }
   section.hero #hero_slider > div > div:first-of-type {
     height: 100vh; }
     section.hero #hero_slider > div > div:first-of-type .slick-slide > div > div {
@@ -6438,9 +6452,11 @@
       section.hero #hero_slider > div > div:last-of-type > a:hover, section.hero #hero_slider > div > div:last-of-type > a:active, section.hero #hero_slider > div > div:last-of-type > a:focus {
         background-color: #b21717; } }
 @media only screen and (min-width: 1280px) {
-  section.hero #hero_staticimage > div > div {
-    padding: 0; }
-    section.hero #hero_staticimage > div > div > h2 {
-      font-size: 98px; } }
+  section.hero #hero_staticimage > div > div > h2 {
+    font-size: 98px; }
+  section.hero #hero_slider > div #slick-images .slick-prev {
+    left: 23.5%; }
+  section.hero #hero_slider > div #slick-images .slick-next {
+    right: 23.5%; } }
 
 /*# sourceMappingURL=build.css.map */

@@ -60,7 +60,7 @@
                 //For each slider image 
                 foreach($slider_images as $slider_key => $slider_value){
                     //Concatenate img div as a background image with slider url and alt text
-                    $content_slider_images .= '<div style="background-image: url('.$slider_value['url'].'); "></div>';
+                    $content_slider_images .= '<div class="img-slick" style="background-image: url('.$slider_value['url'].'); "></div>';
                 }
                 //Close end tag of slider content 
                 $content_slider_images .= "</div>";

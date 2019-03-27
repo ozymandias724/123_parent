@@ -2,13 +2,15 @@
 
 	$(document).ready(function(){
 
+		Headers.Desktop._init();
+
+		Hero._init();
+
+		Headers.Mobile._init();
+
 		Theme.Breakpoint._init();
 
 		Theme.FadeEffects._init();
-
-		Theme.HeroSlider._init();
-		
-		Theme.HomeTestimonialsSlider._init();
 		
 		Theme.PA._init();
 
