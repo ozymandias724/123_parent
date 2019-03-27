@@ -256,11 +256,13 @@ class NavHandler
         $format_header = '
             <header class="%s %s %s header" id="opt_header_four">
                 <div>
-                    %s
-                    %s
-                    <span>
-                        <a href="tel:%s" title="Phone number button">%s</a>
-                    </span>
+                    <div>
+                        %s
+                        %s
+                        <span>
+                            <a href="tel:%s" title="Phone number button">%s</a>
+                        </span>
+                    </div>
                 </div>
                 <nav>
                     %s

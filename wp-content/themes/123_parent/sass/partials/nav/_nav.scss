@@ -16,7 +16,7 @@ $blue_infinity_carpet : #1a69a0;
 $prestige_painters : #e91d62;
 $gray: #909090;
 $blue_darker : #257d87;
-$nav_maxwidth : 1024px;
+$nav_maxwidth : 1262px;
 $banner_height : 52px;  
 $bp__lg : 1280px;
 
@@ -278,7 +278,7 @@ $bp__lg : 1280px;
                     flex-flow: row nowrap;
                     background-color: $third_black;
                     justify-content: space-around;
-                    max-width: 1190px;
+                    max-width: $nav_maxwidth;
                     margin: 0 auto;
                     //Parent div element of phone number, nav and quote button
                     > div {
@@ -379,7 +379,7 @@ $bp__lg : 1280px;
         padding: 0px; 
         //DIV parent of top part and bottom part of header
         > div {
-            max-width: 1230px;
+            max-width: $nav_maxwidth;
             margin: 0 auto;
             > div {
                 //Top part of header
@@ -496,73 +496,77 @@ $bp__lg : 1280px;
         //Top part of header
         > div {
             background-color: $black;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-            align-items: center;
-            > ul  {
-                //Social icons underordered list and phone number section
-                > ul,
-                > span {
-                    flex: 0 1 auto;
-                    font-size: 1.6rem;
-                }
-                //Social icons list items
-                > li { 
-                    display: inline-block; 
-                    margin: 0 10px;
-                    //Social icons list items links
-                    > a {
-                        font-size: 16px;
-                        width: 28px;
-                        height: 28px; 
-                        border-radius:50%;
-                        display: inline-block;
-                        padding: 5px;
-                        text-align: center;
-                        overflow: hidden;
-                        color: $white;
-                        transition: background 0.3s, color 0.3s;
-                        -webkit-transition: background 0.3s, color 0.3s;
-                        -o-transition: background 0.3s, color 0.3s;
-                        //Social icons list items links actions on hover, active and focus 
-                        &:hover, 
-                        &:active,
-                        &:focus {
-                            background: $white;
-                            color: $primary;
+            > div {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 auto;
+                max-width: $nav_maxwidth;
+                > ul  {
+                    //Social icons underordered list and phone number section
+                    > ul,
+                    > span {
+                        flex: 0 1 auto;
+                        font-size: 1.6rem;
+                    }
+                    //Social icons list items
+                    > li { 
+                        display: inline-block; 
+                        margin: 0 10px;
+                        //Social icons list items links
+                        > a {
+                            font-size: 16px;
+                            width: 28px;
+                            height: 28px; 
+                            border-radius:50%;
+                            display: inline-block;
+                            padding: 5px;
+                            text-align: center;
+                            overflow: hidden;
+                            color: $white;
+                            transition: background 0.3s, color 0.3s;
+                            -webkit-transition: background 0.3s, color 0.3s;
+                            -o-transition: background 0.3s, color 0.3s;
+                            //Social icons list items links actions on hover, active and focus 
+                            &:hover, 
+                            &:active,
+                            &:focus {
+                                background: $white;
+                                color: $primary;
+                            }
                         }
                     }
                 }
-            }
-            //Phone number
-            span {
-                &:last-child{
-                    //Phone number link
-                    > a {
-                        padding: 10px;
-                        font-weight: 400;
-                        font-size:16px;
-                        letter-spacing:1px;
-                        border-bottom: 1px solid transparent;
-                        opacity: $opacity_level_below_one;
-                        transition: opacity 0.3s;
-                        -webkit-transition: opacity 0.3s;
-                        -o-transition: opacity 0.3s;
-                        //Phone number link actions on hover, active and focus
-                        &:hover,
-                        &:active,
-                        &:focus {
-                            opacity: 1;
-                        }
-                        //Phone number link left side icon
-                        &:before {
-                            font-family: FontAwesome;
-                            content: "\f095";
-                            font-weight: 700;
-                            color: $white;
-                            border-radius: 100%;
-                            margin-right: 10px;
+                //Phone number
+                span {
+                    &:last-child{
+                        //Phone number link
+                        > a {
+                            padding: 10px;
+                            font-weight: 400;
+                            font-size:16px;
+                            letter-spacing:1px;
+                            border-bottom: 1px solid transparent;
+                            opacity: $opacity_level_below_one;
+                            transition: opacity 0.3s;
+                            -webkit-transition: opacity 0.3s;
+                            -o-transition: opacity 0.3s;
+                            //Phone number link actions on hover, active and focus
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                opacity: 1;
+                            }
+                            //Phone number link left side icon
+                            &:before {
+                                font-family: FontAwesome;
+                                content: "\f095";
+                                font-weight: 700;
+                                color: $white;
+                                border-radius: 100%;
+                                margin-right: 10px;
+                            }
                         }
                     }
                 }
@@ -943,7 +947,7 @@ $bp__lg : 1280px;
         box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
         //Parent div of top and bottom parts of header
         > div {
-            max-width: 1024px;
+            max-width: $nav_maxwidth;
             margin: 0 auto;
             > div {
                 //Top part of header
@@ -1049,7 +1053,7 @@ $bp__lg : 1280px;
         > div {
             display: flex;
             justify-content: space-between;
-            max-width: 1200px;
+            max-width: $nav_maxwidth;
             background-color: $white;
             box-shadow: 0 5px 10px -5px rgba(0,0,0,0.5);
             padding: 0 0 0 15px;
@@ -1127,7 +1131,7 @@ $bp__lg : 1280px;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    max-width: 1250px;
+                    max-width: $nav_maxwidth;
                     margin: 0 auto;
                     //Parent div element of address and phone number section
                     > div {
@@ -1228,13 +1232,15 @@ $bp__lg : 1280px;
                             border-radius: 10px;
                             border: 2px solid $white;
                             color: $white;
-                            transition: color 0.3s, border 0.3s;
+                            background-color: rgba(255,255,255, 0);
+                            transition: color 0.3s, border 0.3s, background-color 0.3s;
                             //Quote button link actions on hover, active and focus
                             &:hover, 
                             &:active,
                             &:focus {
                                 color: $black;
                                 border: 2px solid $black;
+                                background-color: rgba(255,255,255, 0.1);
                             }
                         }
                     }
@@ -1271,7 +1277,7 @@ $bp__lg : 1280px;
         // Parent div element to apply max-width and center children elements of header 
         > div {
             &:first-of-type {
-                max-width: 1024px;
+                max-width: $nav_maxwidth;
                 margin: 0 auto;
                 // Parent div element of hamburger icon, logo and social icons 
                 > div {

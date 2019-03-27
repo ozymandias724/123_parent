@@ -2440,16 +2440,19 @@ var Headers = {};
 					Hero.Padding.header_position = $("header").css("position");
 
 					//If header has a position of fixed and not header 4
-					if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four"){
+					if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four" && Hero.Padding.header_id !== "opt_header_nine"){
 						
 						Hero.Padding.header_height = $("header").height();
 
 						Hero.Padding.main.css("padding-top", Hero.Padding.header_height);
 
 					//If header has a position of fixed and is header 4
-					}else if(Hero.Padding.header_position === "fixed" && Hero.Padding.header_id === "opt_header_four"){
-						
-						Hero.Padding.header_first_div_height = $("header#opt_header_four > div").height();
+					}else if(
+						Hero.Padding.header_position === "fixed" && 
+						Hero.Padding.header_id === "opt_header_four" || 
+						Hero.Padding.header_id === "opt_header_nine"
+					){
+						Hero.Padding.header_first_div_height = $("header#"+Hero.Padding.header_id+" > div").height();
 
 						Hero.Padding.main.css("padding-top", Hero.Padding.header_first_div_height);
 
@@ -2469,24 +2472,42 @@ var Headers = {};
 			Slider : {
 				slick_slider : $("#slick-images"),
 				rand : Math.floor( Math.random() * $(".img-slick").length ), 
+				slick_pause : $("#slick-pause"),
+				slick_play : $("#slick-play"),
 
 				_init : function(){
 					Hero.Slider._start_slider();
+					Hero.Slider.slick_pause.on("click", Hero.Slider._pause_slider); 
+					Hero.Slider.slick_play.on("click", Hero.Slider._play_slider); 
 				},
 				_start_slider : function(){
 					$("#slick-images").slick({
-						autoplay : false
+						autoplay : true
 						,adaptiveHeight : true
 						,arrows : true
 						,infinite : true
 						,mobileFirst : true
 						,slidesToShow : 1
 						,fade : true
+						,pauseOnHover : false
+						,pauseOnFocus : false
 						,initialSlide : Hero.Slider.rand
 						,nextArrow : '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>' 
 						,prevArrow : '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>' 
 					});
-				}
+				},
+				_pause_slider : function(){
+					Hero.Slider.slick_slider.slick("slickPause");
+					Hero.Slider.slick_pause.fadeOut(100, function(){
+						Hero.Slider.slick_play.fadeIn(100);
+					});
+				},
+				_play_slider : function(){
+					Hero.Slider.slick_slider.slick("slickPlay");
+					Hero.Slider.slick_play.fadeOut(100, function(){
+						Hero.Slider.slick_pause.fadeIn(100);
+					}); 
+				},
 			},
 		}
 		

@@ -76,6 +76,8 @@
                             %s
                             %s
                         </div>
+                        <a href="javascript:;" id="slick-pause"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                        <a href="javascript:;" id="slick-play"><i class="fa fa-play" aria-hidden="true"></i></a>
                     </div>
                 </div>
             ';

@@ -72,20 +72,38 @@
                         font-size: 10px;
                     }
                     .slick-prev {
-                        left: 12%;
+                        left: 0;
+                        > i {
+                            left: 5%;
+                        }
                     } 
                     .slick-next {
-                        right: 12%;
+                        right: 0;
+                        > i {
+                            right: 5%;
+                        }
                     }
                     .slick-prev, .slick-next {
                         z-index: 18;
+                        width: 25%; 
+                        height: 100%;
                         &:before {
                             display: none;
                         }
                         > i {
-                            font-size: 50px;
+                            font-size: 40px;
                             z-index: 18;
                             color: black;
+                            opacity: 0;
+                            position: absolute;
+                            transition: opacity 0.2s;
+                        }
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            > i {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -150,7 +168,24 @@
                             }
                         }
                     } 
+                }
+                #slick-pause,
+                #slick-play {
+                    text-align: center;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    > i {
+                        font-size: 25px;
+                        padding: 5px;
+                    }
                 } 
+                #slick-play {
+                    display:none;
+                }
+                #slick-pause {
+                    margin-left: -2px;
+                }
             }
         }
     } 
@@ -159,17 +194,20 @@
     @media only screen and (min-width: $bp__lg) {
         section.hero {
             #hero_staticimage > div > div {
-                //padding: 0;
                 > h2 {
                     font-size: 98px;
                 }
             }
             #hero_slider > div #slick-images {
                 .slick-prev {
-                    left: 23.5%;
+                    > i {
+                        left: 70%;
+                    }
                 } 
                 .slick-next {
-                    right: 23.5%;
+                    > i {
+                        right: 70%;
+                    }
                 }
             }
         }
