@@ -2184,7 +2184,7 @@ window.Element&&!Element.prototype.closest&&(Element.prototype.closest=function(
 var Theme = {};
 var Headers = {};
 ;(function ( $, Theme, Headers, window, document, undefined ) {
-	$(document).ready(function(){
+	$(document).ready(function(){ 
 
 
         Headers.Mobile = {
@@ -2212,7 +2212,7 @@ var Headers = {};
 					//On resize of browser
 					window.addEventListener('resize', function(){
 						//Remove mobile nav sidebar menu width
-						Headers.Mobile.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+						Headers.Mobile.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all"); 	
 						//Remove mobile nav hamburger icon class
 						Headers.Mobile.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
 					});
@@ -2482,19 +2482,19 @@ var Headers = {};
 				},
 				_start_slider : function(){
 					$("#slick-images").slick({
-						autoplay : true
+						autoplay : Boolean(hero_fields.hero_slider_autoplay)
 						,adaptiveHeight : true
-						,arrows : true
+						,arrows : true 
 						,infinite : true
 						,mobileFirst : true
 						,slidesToShow : 1
-						,fade : true
-						,autoplaySpeed : 5000
-						,pauseOnHover : false
+						,fade : Boolean(hero_fields.hero_slider_fade) 
+						,autoplaySpeed :  hero_fields.hero_slider_speed
+						,pauseOnHover : false 
 						,pauseOnFocus : false
-						,initialSlide : Hero.Slider.rand
+						,initialSlide : Boolean(hero_fields.hero_slider_random) ? Hero.Slider.rand : ''
 						,nextArrow : '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>' 
-						,prevArrow : '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>' 
+						,prevArrow : '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>'   
 					});
 				},
 				_pause_slider : function(){

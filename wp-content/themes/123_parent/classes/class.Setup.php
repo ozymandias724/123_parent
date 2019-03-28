@@ -221,11 +221,11 @@ class SetupTheme
 			if( !empty($fields) ){
 				foreach($fields as $field){
 					array_push($fields_array, $field['country']['value']);
-				}
+				} 
 			}
-			$fth = new FusionTableHandler();
+			$fth = new FusionTableHandler(); 
 			wp_localize_script( 'parent-main', 'CountriesServed', $fth->get_countries_geometry($fields_array) );
-		}
+		} 
 
 		wp_localize_script('parent-main', 'PopupTimes', array(
 			'short' => !empty( get_field('popuptime-short', 'option') ) ? get_field('popuptime-short', 'option') : 30,
@@ -238,6 +238,16 @@ class SetupTheme
 			'ishome' => (is_home()) ? 'true' : 'false',
 		);
 		wp_localize_script('parent-main', 'wphelpers', $wphelpers);
+
+		//Pass acf fields from Hero section to main.js
+		wp_localize_script('parent-main', 'hero_fields', array(
+            //'title' => get_field('hero_title', 'options')
+			'hero_slider_speed' => 5000,
+			'hero_slider_fade' => true,
+			'hero_slider_random' => true,
+			'hero_slider_autoplay' => true 
+		)); 
+
 		// end localize scripts
 	}
 
