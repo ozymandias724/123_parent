@@ -306,6 +306,7 @@ var Headers = {};
 						,mobileFirst : true
 						,slidesToShow : 1
 						,fade : true
+						,autoplaySpeed : 5000
 						,pauseOnHover : false
 						,pauseOnFocus : false
 						,initialSlide : Hero.Slider.rand

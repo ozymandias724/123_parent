@@ -51,7 +51,7 @@
         }
 
         // hero type is slider 
-        else if( $type == 'slider' ){
+        else if( $type == 'slider' ){  
 
             // If slider_images variable is not empty
             if(!empty($slider_images)){
@@ -76,8 +76,8 @@
                             %s
                             %s
                         </div>
-                        <a href="javascript:;" id="slick-pause"><i class="fa fa-pause" aria-hidden="true"></i></a>
-                        <a href="javascript:;" id="slick-play"><i class="fa fa-play" aria-hidden="true"></i></a>
+                        <a href="javascript:;" id="slick-pause" title="Pause slider button"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                        <a href="javascript:;" id="slick-play" title="Play slider button"><i class="fa fa-play" aria-hidden="true"></i></a>
                     </div>
                 </div>
             ';
