@@ -231,6 +231,8 @@
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
+                width: auto;
+                height: 100vh;
             }
             //First div inside hero section
             > div {
@@ -313,11 +315,18 @@
                     #video_pause {
                         margin-left: -2px;
                     }
-                }
+                } 
             }
 
         }
     } 
+
+    @media only screen and (min-width: 1160px){
+        section.hero #hero_video video {
+            width: 100vw;
+            height: auto;
+        }
+    }
     
 
     @media only screen and (min-width: $bp__lg) {

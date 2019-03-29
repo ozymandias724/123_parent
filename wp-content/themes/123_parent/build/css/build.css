@@ -6472,7 +6472,9 @@
       position: relative;
       top: 0;
       left: 50%;
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      width: auto;
+      height: 100vh; }
     section.hero #hero_video > div:first-of-type {
       text-align: center;
       position: absolute;
@@ -6528,6 +6530,10 @@
         display: none; }
       section.hero #hero_video > div:last-of-type #video_pause {
         margin-left: -2px; } }
+@media only screen and (min-width: 1160px) {
+  section.hero #hero_video video {
+    width: 100vw;
+    height: auto; } }
 @media only screen and (min-width: 1280px) {
   section.hero #hero_staticimage > div > div > h2 {
     font-size: 98px; } }
