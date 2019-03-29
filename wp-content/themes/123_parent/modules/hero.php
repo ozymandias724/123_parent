@@ -60,7 +60,7 @@
                 //For each slider image 
                 foreach($slider_images as $slider_key => $slider_value){
                     //Concatenate img div as a background image with slider url and alt text
-                    $content_slider_images .= '<div class="img-slick" style="background-image: url('.$slider_value['url'].'); "></div>';
+                    $content_slider_images .= '<div class="img-slick" style="background-image: url('.$slider_value['url'].'); " alt="'.$slider_value['alt'].'"></div>';
                 }
                 //Close end tag of slider content 
                 $content_slider_images .= "</div>";
@@ -93,14 +93,36 @@
 
         // hero type is video
         else if( $type == 'video' ){
-            $format_hero = '';
+            $format_hero = '
+                <div id="hero_video">
+                    <video id="video_tag" autoplay muted loop title="%s"> 
+                        <source src="%s" type="video/mp4">
+                    </video>
+                    <div>
+                        %s
+                        %s
+                        %s
+                        %s
+                    </div>
+                    <div>
+                        <a href="javascript:;" id="video_pause" title="Pause video button"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                        <a href="javascript:;" id="video_play" title="Play video button"><i class="fa fa-play" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            ';
             $content_hero .= sprintf(
                 $format_hero
+                ,( !empty($video) ) ? $video['title'] : ''
+                ,( !empty($video) ) ? $video['url'] : ''
+                ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+                ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
+                ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+                ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
             );
         }
 
         // close hero container
-        $content_hero .= '</section>';
+        $content_hero .= '</section>'; 
     }
 
     // echo hero

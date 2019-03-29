@@ -2394,6 +2394,7 @@ var Headers = {};
 			_init : function(){
 				Hero.Padding._init();
 				Hero.Slider._init();
+				Hero.Video._init();
 			},
 
 			Padding : {
@@ -2510,6 +2511,29 @@ var Headers = {};
 					}); 
 				},
 			},
+
+			Video : {
+				video : $("#video_tag"),
+				pause_button : $("#video_pause"),
+				play_button : $("#video_play"),
+
+				_init : function(){
+					Hero.Video.pause_button.on("click", Hero.Video._pause_video);
+					Hero.Video.play_button.on("click", Hero.Video._play_video);
+				},
+				_pause_video : function(){
+					Hero.Video.video.get(0).pause();
+					Hero.Video.pause_button.fadeOut(100, function(){
+						Hero.Video.play_button.fadeIn(100);
+					});
+				},
+				_play_video : function(){
+					Hero.Video.video.get(0).play();
+					Hero.Video.play_button.fadeOut(100, function(){
+						Hero.Video.pause_button.fadeIn(100);
+					});
+				}
+			}
 		}
 		
 
