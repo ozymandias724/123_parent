@@ -13,13 +13,16 @@
     else {
 
         // get all fields (options table)
-        $logo = (!empty(get_field('hero_logo', 'options')) ? get_field('hero_logo', 'options') : '' );
-        $title = (!empty(get_field('hero_title', 'options')) ? get_field('hero_title', 'options') : '' );
-        $tagline = (!empty(get_field('hero_tagline', 'options')) ? get_field('hero_tagline', 'options') : '' );
-        $button = (!empty(get_field('hero_button', 'options')) ? get_field('hero_button', 'options') : '' );
-        $video = (!empty(get_field('hero_video', 'options')) ? get_field('hero_video', 'options') : '' );
-        $static_image = (!empty(get_field('hero_static_image', 'options')) ? get_field('hero_static_image', 'options') : '' );
-        $slider_images = (!empty(get_field('hero_slider_images', 'options')) ? get_field('hero_slider_images', 'options') : '' );
+        $foreground = (!empty(get_field('hero_foreground', 'options')) ? get_field('hero_foreground', 'options') : '' );
+        $background = (!empty(get_field('hero_background', 'options')) ? get_field('hero_background', 'options') : '' );
+        // foreground
+        $logo = (!empty($foreground['hero_logo']) ) ? $foreground['hero_logo'] : '';
+        $test = (!empty($foreground['hero_title']) ) ? $foreground['hero_title'] : '';
+        $tagline = (!empty($foreground['tagline']) ) ? $foreground['tagline'] : '';
+        $button = (!empty($foreground['hero_button']) ) ? $foreground['hero_button'] : '';
+        // background
+        $static_image = (!empty($background['hero_static_image']) ? $background['hero_static_image'] : '' );
+        $slider_images = (!empty($background['hero_slider_images']) ? $background['hero_slider_images'] : '' );
         
         // open hero container
         $content_hero = '<section class="hero">';
@@ -93,6 +96,11 @@
 
         // hero type is video
         else if( $type == 'video' ){
+
+            if( !empty($background['hero_video']) ){
+                $video_url = $background['hero_video'];
+            }
+            
             $format_hero = '
                 <div id="hero_video">
                     <video id="video_tag" autoplay muted loop title="%s"> 
@@ -112,8 +120,8 @@
             ';
             $content_hero .= sprintf(
                 $format_hero
-                ,( !empty($video) ) ? $video['title'] : ''
-                ,( !empty($video) ) ? $video['url'] : ''
+                ,( !empty($title) ) ? $title : ''
+                ,( !empty($video_url) ) ? $video_url['url'] : ''
                 ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
                 ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
                 ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''

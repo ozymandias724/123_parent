@@ -79,6 +79,17 @@
             > div {
                 //Slick slider 
                 #slick-images {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparentize(black, 0.5);
+                        // z-index: -1;
+                    }
                     //Slick dots list items icons
                     .slick-dots li button:before {
                         font-size: 10px;
