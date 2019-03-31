@@ -1,26 +1,31 @@
 <?php 
+
 // built-in acf
 include_once('reqs/localize-acf.php');
+
 // acf handler for page publish/private status
 include_once('classes/Pagedata.php');
-// google map fusion tables
-include_once('fusiontables/handler.php');
-// google maps initialize
-include_once('classes/class.GooMaps.php');
+
 // general theme setup
 include_once('classes/class.Setup.php');
 // nav handler
 include_once('classes/class.NavUtil.php');
+
 // custom users
 include_once('classes/class.UserRoles.php');
+
 // php image (to be cut)
 include_once('PHPImage.php');
+
 // tbd
 include_once('components/reqs/misc-helpers.php');
+
 // custom post types
 include_once('components/reqs/custompts.php');
+
 // reseller stuff
 include_once('components/reqs/resellers.php');
+
 // footer stuff
 include_once('components/reqs/footer-helpers.php');
 
@@ -777,49 +782,49 @@ if( !function_exists('wpdocs_custom_excerpt_length')){
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
-if( !function_exists('return_areas_served_grid_items') ){
-	function return_areas_served_grid_items(){
-		$grid_items = array();
-		switch ( get_field('areas_served_select', 'options') ) {
-			case 'zips':
-				# code...
-				$rows = get_field('locations', 'option'); 
-				foreach($rows as $index => $row) {	
-					$address_explosion = explode(',', $row['zip']['address']);
-					$address_slice = array_slice($address_explosion, count($address_explosion) - 3);
-					$city_name = $address_slice[0];
-					$state_name = $address_slice[1];
-					$grid_items[$index]['header'] = $city_name . ', ' . $state_name;
-					$grid_items[$index]['image']['id'] = $row['area-image']['id'];
-				}
-				break;
-			case 'states':
-				# code...
-				$rows = get_field('states', 'option');
-				foreach($rows as $index => $row) {
-					$grid_items[$index]['header'] = $row['state']['label'];
-					$grid_items[$index]['image']['id'] = $row['image']['id'];
-				}
-				break;
-			case 'countries':
-				# code...
-				$rows = get_field('countries', 'option');
-				foreach($rows as $index => $row) {
-					$grid_items[$index]['header'] = $row['country']['label'];
-					$grid_items[$index]['image']['id'] = $row['country_image']['id'];
-				}
-				break;
-			case 'counties':
-				# code...
-				$rows = get_field('counties', 'option');
-				foreach($rows as $index => $row) {
-					preg_match_all('/(.*)(?=\,)/', $row['county']['address'], $matches);
-					$grid_items[$index]['header'] = $matches[0][0];
-					$grid_items[$index]['image']['id'] = $row['image']['id'];
-				}
-				break;
-		}
-		return $grid_items;
-	}
-}
+// if( !function_exists('return_areas_served_grid_items') ){
+// 	function return_areas_served_grid_items(){
+// 		$grid_items = array();
+// 		switch ( get_field('areas_served_select', 'options') ) {
+// 			case 'zips':
+// 				# code...
+// 				$rows = get_field('locations', 'option'); 
+// 				foreach($rows as $index => $row) {	
+// 					$address_explosion = explode(',', $row['zip']['address']);
+// 					$address_slice = array_slice($address_explosion, count($address_explosion) - 3);
+// 					$city_name = $address_slice[0];
+// 					$state_name = $address_slice[1];
+// 					$grid_items[$index]['header'] = $city_name . ', ' . $state_name;
+// 					$grid_items[$index]['image']['id'] = $row['area-image']['id'];
+// 				}
+// 				break;
+// 			case 'states':
+// 				# code...
+// 				$rows = get_field('states', 'option');
+// 				foreach($rows as $index => $row) {
+// 					$grid_items[$index]['header'] = $row['state']['label'];
+// 					$grid_items[$index]['image']['id'] = $row['image']['id'];
+// 				}
+// 				break;
+// 			case 'countries':
+// 				# code...
+// 				$rows = get_field('countries', 'option');
+// 				foreach($rows as $index => $row) {
+// 					$grid_items[$index]['header'] = $row['country']['label'];
+// 					$grid_items[$index]['image']['id'] = $row['country_image']['id'];
+// 				}
+// 				break;
+// 			case 'counties':
+// 				# code...
+// 				$rows = get_field('counties', 'option');
+// 				foreach($rows as $index => $row) {
+// 					preg_match_all('/(.*)(?=\,)/', $row['county']['address'], $matches);
+// 					$grid_items[$index]['header'] = $matches[0][0];
+// 					$grid_items[$index]['image']['id'] = $row['image']['id'];
+// 				}
+// 				break;
+// 		}
+// 		return $grid_items;
+// 	}
+// }
 ?>

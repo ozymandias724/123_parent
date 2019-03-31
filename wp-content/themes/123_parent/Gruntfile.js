@@ -1,117 +1,157 @@
-module.exports = function(grunt) {
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+// get the grunt class
+const grunt = require('grunt');
+// get the node sass implementation (cuz the ruby one is SLOW AF)
+const sass = require('node-sass');
+// auto-load all the grunt tasks passed into the initConfig func
+require('load-grunt-tasks')(grunt);
+
+// pass settings into grunt
+grunt.initConfig({
     sass: {
-      dist: {
-        files: {
-          'build/css/build.css' : 'sass/main.scss',
+        options: {
+            implementation: sass,
+            sourceMap: true,
         },
-      },
-      login: {
-        files: {
-          'build/css/login.css' : 'sass/login.scss',
+        main: {
+            files: {
+                '__build/_css/main.css': '__pre/_sass/main.scss',
+            },
         },
-      },
-      admin: {
-        files: {
-          'build/css/admin.css' : 'sass/admin.scss',
+        admin: {
+            files: {
+                '__build/_css/_conditional/admin.css': '__pre/_sass/_conditional/admin.scss',
+            },
         },
-      },
-    },
-    concat: {
-      options: {
-        separator: ';\n',
-      },
-      buildjs: {
-        src: [
-          'js_vendor/jquery-1.12.4.min.js', 
-          'js_vendor/geoxml3.js',
-          'js_vendor/*.js',
-          'js/main.js'
-        ],
-        dest: 'build/js/build.js',
-      },
-      execjs :{
-        src: ['js/exec.js'],
-        dest: 'build/js/exec.js',
-      },
-      adminjs: {
-        src: ['js/admin.js'],
-        dest: 'build/js/admin.js'
-      },
-      css: {
-        src: ['node_modules/font-awesome/css/font-awesome.css', 'build/css/build.css'],
-        dest: 'build/css/build.css'
-      },
-    },
-    copy : {
-      main: {
-        files: [{
-          expand: true,
-          src: ['node_modules/font-awesome/fonts/*'],
-          dest: 'build/fonts',
-          flatten: true,
-        }],
-      },
-    },
-    uglify : {
-      build : {
-        files: {
-          'build/js/build.js' : ['build/js/build.js'],
-          'build/js/admin.js' : ['build/js/admin.js'],
-          'build/js/exec.js' : ['build/js/exec.js']
+        login: {
+            files: {
+                '__build/_css/_conditional/login.css': '__pre/_sass/_conditional/login.scss',
+            },
         }
-      }
     },
-    cssmin : {
-      build: {
-        files: [{
-          expand: true,
-          cwd: 'build/css',
-          src: ['*.css', '!*.min.css'],
-          dest: 'build/css',
-          ext: '.css'
-        }]
-      }
+    autoprefixer: {
+        options: {
+            browsers: [
+                "> 1%",
+            ],
+        },
+        main: {
+            src: '__build/_css/main.css',
+            dest: '__build/_css/main.css',
+        },
+        admin: {
+            src: '__build/_css/_conditional/admin.css',
+            dest: '__build/_css/_conditional/admin.css',
+        },
+        login: {
+            src: '__build/_css/_conditional/login.css',
+            dest: '__build/_css/_conditional/login.css',
+        },
     },
     watch: {
-      sass: {
-        files: ['sass/**/*.scss'],
-        tasks: ['sass', 'concat:css'],
-        options: {
-          livereload : 35729
+        sass: {
+            files: ['__build/_sass/**/*.scss'],
+            tasks: ['sass'],
+            options: {
+                livereload: 35729
+            },
         },
-      },
-      js: {
-        files: ['js/**/*.js'],
-        tasks: ['concat:buildjs', 'concat:adminjs', 'concat:execjs'],
-        options: {
-          livereload : 35729
+        js: {
+            files: ['__build/_js/**/*.js'],
+            tasks: ['browserify'],
+            options: {
+                livereload: 35729
+            },
         },
-      },
-      php: {
-        files: ['**/*.php'],
-        options: {
-          livereload : 35729
+        php: {
+            files: ['**/*.php'],
+            options: {
+                livereload: 35729
+            },
         },
-      },
-      options: {
-        style: 'expanded',
-        compass: true,
-      },
+        options: {
+            style: 'expanded',
+            compass: true,
+        },
     },
-  });
-
-  
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  grunt.registerTask('default', ['sass', 'concat', 'copy', 'watch']);
-  grunt.registerTask('slim', ['sass', 'concat', 'copy', 'cssmin', 'uglify']);
-
-};
+    browserify: {
+        main: {
+            files: {
+                '__build/_js/main.js': ['__pre/_js/main.js']
+            },
+            options: {
+                transform: [
+                    [
+                        "babelify", {
+                            presets: ["@babel/env"]
+                        }
+                    ]
+                ],
+                browserifyOptions: {
+                    // Embed source map for tests
+                    debug: true
+                },
+                sourceMaps: true
+            }
+        },
+        login: {
+            files: {
+                '__build/_js/_conditional/login.js': ['__pre/_js/_conditional/login.js']
+            },
+            options: {
+                transform: [
+                    [
+                        "babelify", {
+                            presets: ["@babel/env"]
+                        }
+                    ]
+                ],
+                browserifyOptions: {
+                    // Embed source map for tests
+                    debug: true
+                },
+                sourceMaps: true
+            }
+        },
+        admin: {
+            files: {
+                '__build/_js/_conditional/admin.js': ['__pre/_js/_conditional/admin.js']
+            },
+            options: {
+                transform: [
+                    [
+                        "babelify", {
+                            presets: ["@babel/env"]
+                        }
+                    ]
+                ],
+                browserifyOptions: {
+                    // Embed source map for tests
+                    debug: true
+                },
+                sourceMaps: true
+            }
+        }  
+    },
+    exorcise: {
+        bundle: {
+            options: {},
+            files: {
+                '__build/_js/main.js.map': ['__build/_js/main.js'],
+            }
+        },
+        admin: {
+            options: {},
+            files: {
+                '__build/_js/_conditional/admin.js.map': ['__build/_js/_conditional/admin.js'],
+            }
+        },
+        login: {
+            options: {},
+            files: {
+                '__build/_js/_conditional/login.js.map': ['__build/_js/_conditional/login.js'],
+            }
+        },
+    }
+});
+// register the default task
+grunt.registerTask('default', ['sass', 'autoprefixer', 'browserify', 'exorcise', 'watch']);
