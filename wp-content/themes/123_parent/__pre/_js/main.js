@@ -242,7 +242,6 @@ Theme.FadeEffects._init();
 Hero = {
     _init: function () {
         Hero.Padding._init();
-        Hero.Slider._init();
         Hero.Video._init();
     },
 
@@ -319,47 +318,6 @@ Hero = {
 
     },
 
-    Slider: {
-        slick_slider: $("#slick-images"),
-        slick_pause: $("#slick-pause"),
-        slick_play: $("#slick-play"),
-
-        _init: function () {
-            Hero.Slider._start_slider();
-            Hero.Slider.slick_pause.on("click", Hero.Slider._pause_slider);
-            Hero.Slider.slick_play.on("click", Hero.Slider._play_slider);
-        },
-        _start_slider: function () {
-            // $("#slick_slider").slick({
-                // autoplay: Boolean(hero_fields.hero_slider_autoplay),
-                // // adaptiveHeight: true,
-                // arrows: true,
-                // infinite: true,
-                // // mobileFirst: true,
-                // slidesToShow: 1,
-                // fade: Boolean(hero_fields.hero_slider_fade),
-                // autoplaySpeed: hero_fields.hero_slider_speed,
-                // pauseOnHover: false,
-                // pauseOnFocus: false,
-                // initialSlide: Boolean(hero_fields.hero_slider_random) ? Hero.Slider.rand : '',
-                // nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>',
-                // prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>'
-            // });
-        },
-        _pause_slider: function () {
-            Hero.Slider.slick_slider.slick("slickPause");
-            Hero.Slider.slick_pause.fadeOut(100, function () {
-                Hero.Slider.slick_play.fadeIn(100);
-            });
-        },
-        _play_slider: function () {
-            Hero.Slider.slick_slider.slick("slickPlay");
-            Hero.Slider.slick_play.fadeOut(100, function () {
-                Hero.Slider.slick_pause.fadeIn(100);
-            });
-        },
-    },
-
     Video: {
         video: $("#video_tag"),
         pause_button: $("#video_pause"),
@@ -383,7 +341,7 @@ Hero = {
         }
     }
 }
-// Hero._init();
+Hero._init();
 
 Theme.Headers = {
     tint: $(".header-tint"),

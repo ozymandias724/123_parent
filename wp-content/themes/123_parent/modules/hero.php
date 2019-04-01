@@ -64,7 +64,7 @@
 
             foreach( $slider_images as $i => $rec )
             {
-                $return_slider .= '<div><img src="'.$rec['url'].'"></div>';
+                $return_slider .= '<div><img class="slick_slider_img" src="'.$rec['url'].'"></div>';
             }
 
             $return_slider .= '</div>';
