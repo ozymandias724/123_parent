@@ -7,20 +7,7 @@ if (Pagedata::is_active_page('gallery')) :
 <main class="gallery main" id="gallery">
 
 
-	<section class="gallery-hero  hero">
-		<div class="gallery-hero-text hero-text">
-			<h1 class="fade fade-in gallery-hero-text-header hero-text-header">
-				<?php Pagedata::the_active_page_name('gallery'); ?>
-			</h1>
-			<?php 
-				if( get_field('gallery-subtitle', 'options') ) :
-			 ?>
-			<div class="gallery-hero-text-subtitle">
-				<?php the_field('gallery-subtitle', 'options') ?>
-			 </div>
-			<?php endif; ?>
-		</div>
-	</section>
+	<?php include( get_template_directory() . '/partials/banner.php'); ?>
 
 
 

@@ -12,13 +12,7 @@ else{
 <main class="contact main" id="contact">
 	
 
-	<section class="contact-hero  hero">
-		<div class="contact-hero-text hero-text">
-			<h1 class="fade fade-up contact-hero-text-header hero-text-header"><?php Pagedata::the_active_page_name('contact'); ?></h1>
-		</div>
-		<div class="contact-hero-tint hero-tint"></div>
-		<div class="contact-hero-map"></div>
-	</section>
+    <?php include( get_template_directory() . '/partials/banner.php'); ?>
 
 
 	<section class="fade fade-up contact-contact  section">

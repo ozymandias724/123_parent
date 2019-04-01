@@ -1,14 +1,8 @@
 <main class="company main" id="company">
-	<section class="company-hero hero ">
-		<div class="company-hero-text hero-text">
-			<h1 class="fade fade-in company-hero-text-header hero-text-header">
-				<?php Pagedata::the_active_page_name('company'); ?>
-			</h1>
-			<?php 
-				$selected_option = get_field('company-page-option-toggle', 'option');
-			?>
-		</div>
-	</section>
+    
+    
+    <?php include( get_template_directory() . '/partials/banner.php'); ?>
+
 
 
 

@@ -6,15 +6,9 @@ if (Pagedata::is_active_page('blog')) :
 ?>
 <main class="blog main" id="blog">
 	
-	<section class="blog-hero  hero">
-		<div class="blog-hero-text hero-text">
-			<h1 class="fade fade-in blog-hero-text-header hero-text-header">
-				<?php Pagedata::the_active_page_name('blog'); ?>
-			</h1>
-		</div>
-	</section>
+    <?php include( get_template_directory() . '/partials/banner.php'); ?>
 
-
+    
 	<section class="fade fade-in  blog-blog">
 		<?php 
 		$the_query = new WP_Query(array(

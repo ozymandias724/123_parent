@@ -13,7 +13,7 @@
 		if(have_rows('services-repeater', 'option')) : $i = 0;
 			if( is_home() ) :
 	 ?>
-				<h1 class="fade fade-in services-header hero-text-header"><?php Pagedata::the_active_page_name('services'); ?></h1>';
+				<h1 class="fade fade-in services-header hero-text-header"><?php Pagedata::the_active_page_name('services'); ?></h1>
 		<?php 
 			endif;
 		 ?>

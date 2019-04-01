@@ -1,3 +1,26 @@
+// Do Get Nested Variables
+@function getVar($v, $ks...) {
+    @each $k in $ks {
+        $v: map-get($v, $k);
+    }
+
+    @return $v;
+}
+
+
+// breakpoints
+
+$bp:(ultra : 1440px, large : 1280px, medium : 960px, small : 640px, tiny : 480px);
+
+$colors: (
+    black : (
+        dark : rgba(255, 255, 255, 1)
+        ,light : rgba(255, 255, 255, 0.5)
+    )
+);
+
+
+
 // breakpoints
 
 $medium: 641px;
@@ -36,7 +59,9 @@ $footer-bg: #bcbcbc;
 
 
 // fonts
-$header: 'Gotham Black', 'Impact', sans-serif;
-$body: 'Gotham', 'Helvetica', sans-serif;
-
-
+$header: 'Gotham Black',
+'Impact',
+sans-serif;
+$body: 'Gotham',
+'Helvetica',
+sans-serif;

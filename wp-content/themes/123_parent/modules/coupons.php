@@ -1,11 +1,5 @@
 <main class="coupons main" id="coupons">
-	<section class="coupons-hero  hero">
-		<div class="coupons-hero-text hero-text">
-			<h1 class="fade fade-in coupons-hero-text-header hero-text-header">
-				<?php Pagedata::the_active_page_name('coupons'); ?>
-			</h1>
-		</div>
-	</section>
+    <?php include( get_template_directory() . '/partials/banner.php'); ?>
 	<section class="coupons-coupons  section">
 		<?php 
 		
