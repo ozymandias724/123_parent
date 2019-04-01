@@ -1,0 +1,204 @@
+$black: #000;
+$white: #fff;
+$color_white_transparent: rgba(255,255,255,0);
+$color_white_not_transparent: rgba(255,255,255,1);
+
+@media only screen {
+	.footer{
+		display: none;
+	}
+	.footer-middlecolumn1-sitemap{
+		display: none;
+	}
+	.footer-copyright{
+		display: none;
+	}
+}	
+@media only screen and (min-width: $medium){
+}
+@media only screen and (min-width: $large){
+	// BG
+	.footer {
+		display: block;
+		text-align: center;
+		background-color: $footer-grey;
+		color: $white;
+		font-size: 0;
+		ul{
+			list-style: none;
+		}
+		p {
+			line-height:1.2; 
+		}
+		> div{
+			&:first-child {
+				max-width: 1440px;
+				margin: 0 auto;
+				padding: 0px 40px;
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				> div { 
+					position: relative;
+					vertical-align: top;
+					text-align: left;
+					width: 20%;
+					margin: 20px 4% 0 0;
+					flex: 0 1 22%;
+					&:nth-of-type(2) {
+						> ul {
+							column-count: 2;
+							column-gap: 10px;
+							text-align: left;
+							display: flex;
+							flex-wrap: wrap;
+							> li {
+								flex: 0 1 50%;
+								margin-bottom: 5px;
+								> a {
+									color: $white;
+									text-transform: capitalize;
+									text-decoration: none;
+									background-color: $color_white_transparent;
+									transition: color 0.3s ,background-color 0.3s;
+									-webkit-transition: color 0.3s, background-color 0.3s;
+									-o-transition: color 0.3s, background-color 0.3s;
+									border-radius:20px;
+									padding: 5px 10px;
+									font-size: 1.6rem;
+									display:inline-flex;
+									width:100%;
+									&:hover,
+									&:active,
+									&:focus {
+										color: $black;
+										background-color: $color_white_not_transparent;
+									}
+								}
+							}
+						}
+					}
+					&:nth-of-type(3) {
+						> ul { 
+							display: flex;
+							flex-flow: row wrap;
+							> li {
+								height: 40px; 
+								background-repeat: no-repeat;
+								margin: 5px;
+								width: 60px;
+								background-position: 0 0;
+								display: inline-block;
+								&:nth-of-type(1){
+									background-image: url('../../library/img/payment_types/mc.png');
+								}
+								&:nth-of-type(2){
+									> img {
+										display:none;
+									}
+									background-image: url('../../library/img/payment_types/visa.png');
+								}
+								&:nth-of-type(3){
+									background-image: url('../../library/img/payment_types/amex.png');
+								}
+								&:nth-of-type(4){
+									background-image: url('../../library/img/payment_types/discover.png');
+								}
+								&:nth-of-type(5){
+									background-image: url('../../library/img/payment_types/pp.png');
+								}
+							}
+						}
+					}
+					&:nth-of-type(2),
+					&:nth-of-type(3),
+					&:nth-of-type(4) {
+						p, 
+						h2 {
+							display: block;
+							font-size: 2.4rem;
+							color: $white;
+							text-transform: capitalize;
+							position: relative;
+							margin: 20px 0;
+							padding: 5px 0;
+							font-weight: 400;
+							font-family: $body;
+							&:after {
+								position: absolute;
+								bottom: -2px;
+								left: 0;
+								width: 100%; 
+								display: inline-block;
+								content: '';
+								border-bottom: 2px solid $light-grey;
+							}
+						}
+					}
+					&:first-of-type {
+						display:flex;
+						flex-flow: column;
+					}
+					&:last-of-type {
+						margin-right: 0;
+						> ul {
+							&:last-of-type{
+								margin-top:10px;
+							}
+						}
+					}
+					> div {
+						padding: 5px 0;
+						text-align: left;
+						display: flex;
+						align-items: flex-start;
+						flex-flow: column;
+						> a {
+							width: 60%;
+							background-color: $color_white_transparent;
+							transition: color 0.3s, background-color 0.3s;
+							-webkit-transition: color 0.3s, background-color 0.3s;
+							-o-transition: color 0.3s, background-color 0.3s;
+							&:hover,
+							&:active,
+							&:focus {
+								color:$black;
+								background-color: $color_white_not_transparent;
+							}
+						}
+						> a, 
+						> div {
+							font-size: 1.3rem;
+							color: #fff;
+							text-decoration: none;
+							border-radius: 20px;
+							display: inline-flex;
+							margin: 2px;
+							line-height: 1.5;
+							padding: 5px 10px;
+						}
+					}
+					> a {
+						display: inline-block;
+						font-size: 16px;
+						margin: 10px auto;
+						padding: 5px 0;
+					}
+				}
+			}
+		}
+	}
+	body {
+		> div { 
+			&:last-of-type {
+				color: $white;
+				font-size: 1.3rem;
+				text-align: center;
+				padding: 10px 0;
+				width: 100%;
+				background-color: $footer-grey;
+				display: block;
+			}
+		}
+	}
+}

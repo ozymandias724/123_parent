@@ -1,0 +1,58 @@
+@media only screen {
+/**
+ *	Assuming (verify this) 'base 10 fonts' via html { font-size: 62.5%; } 
+ *	Currently in @link reqs/_reset.scss
+ */
+ 	// Element Based
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $header;
+		line-height: 1.2;
+	}
+	body {
+		font-family: $body;
+	}
+	p,
+	.copy-tf {
+		font-size: 1.6rem;
+		line-height: 1.4;
+	}
+	/**
+	 * 	Header Styles
+	 */
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: $header;
+		&.display-tf {
+			font-family: $body;
+			font-weight: 300;
+		}
+	}
+	h1,
+	.h1 {
+		font-size: calc(2.5rem / 0.625);
+	}
+	h2,
+	.h2 {
+		font-size: calc(2rem / 0.625);
+	}
+	h3,
+	.h3 {
+		font-size: calc(1.75rem / 0.625);
+	}
+	h4,
+	.h4 {
+		font-size: calc(1.5rem / 0.625);
+	}
+	h5,
+	.h5 {
+		font-size: calc(1.25rem / 0.625);
+	}
+	h6,
+	.h6 {
+		font-size: calc(1rem / 0.625);
+	}
+
+	.clearfix {
+		@include clearfix;
+	}
+}

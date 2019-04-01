@@ -17,8 +17,8 @@
         $background = (!empty(get_field('hero_background', 'options')) ? get_field('hero_background', 'options') : '' );
         // foreground
         $logo = (!empty($foreground['hero_logo']) ) ? $foreground['hero_logo'] : '';
-        $test = (!empty($foreground['hero_title']) ) ? $foreground['hero_title'] : '';
-        $tagline = (!empty($foreground['tagline']) ) ? $foreground['tagline'] : '';
+        $title = (!empty($foreground['hero_title']) ) ? $foreground['hero_title'] : '';
+        $tagline = (!empty($foreground['hero_tagline']) ) ? $foreground['hero_tagline'] : '';
         $button = (!empty($foreground['hero_button']) ) ? $foreground['hero_button'] : '';
         // background
         $static_image = (!empty($background['hero_static_image']) ? $background['hero_static_image'] : '' );
