@@ -4,7 +4,7 @@
  */
 if (Pagedata::is_active_page('blog')) :
 ?>
-<main class="blog main" id="blog">
+<section class="blog main" id="blog">
 	
     <?php include( get_template_directory() . '/partials/banner.php'); ?>
 
@@ -44,5 +44,5 @@ if (Pagedata::is_active_page('blog')) :
 		<a href="<?php echo site_url('blog'); ?>" class="blog-blog-seemore global-recentposts-viewall button-viewall">View All</a>
 	</section>
 	
-</main>
+</section>
 <?php endif; ?>

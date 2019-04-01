@@ -1,4 +1,4 @@
-// Do Get Nested Variables
+// get nested variables
 @function getVar($v, $ks...) {
     @each $k in $ks {
         $v: map-get($v, $k);
@@ -7,16 +7,19 @@
     @return $v;
 }
 
-
 // breakpoints
+$bp : (
+    ultra : 1440px,
+    large : 1280px,
+    medium : 960px,
+    small : 640px,
+    tiny : 480px
+);
 
-$bp:(ultra : 1440px, large : 1280px, medium : 960px, small : 640px, tiny : 480px);
-
-$colors: (
-    black : (
-        dark : rgba(255, 255, 255, 1)
-        ,light : rgba(255, 255, 255, 0.5)
-    )
+$colors : (
+    primary : green,
+    secondary : blue,
+    accent : pink 
 );
 
 

@@ -25,10 +25,10 @@
         $slider_images = (!empty($background['hero_slider_images']) ? $background['hero_slider_images'] : '' );
         
         // open hero container
-        $content_hero = '<section class="hero">';
+        $content_hero = '<section class="hero" id="hero_'.$type.'">';
 
         // hero type is static image
-        if( $type == 'image'){
+        if( $type == 'image' && !empty($static_image)){
     
             $format_hero = '
                 <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
@@ -53,47 +53,47 @@
 
         }
 
-        // hero type is slider 
-        else if( $type == 'slider' ){  
 
-            // If slider_images variable is not empty
-            if(!empty($slider_images)){
-                //Create slider content variable
-                $content_slider_images = "<div id='slick-images'>";
-                //For each slider image 
-                foreach($slider_images as $slider_key => $slider_value){
-                    //Concatenate img div as a background image with slider url and alt text
-                    $content_slider_images .= '<div class="img-slick" style="background-image: url('.$slider_value['url'].'); " alt="'.$slider_value['alt'].'"></div>';
-                }
-                //Close end tag of slider content 
-                $content_slider_images .= "</div>";
+
+        // slider
+        else if($type == 'slider' && !empty($slider_images))
+        {  
+            // open return string
+            $return_slider = '<div id="slick_slider">';
+
+            foreach( $slider_images as $i => $rec ){
+                $return_slider .= '<div><img src="'.$rec['url'].'"></div>';
             }
 
+            $return_slider .= '</div>';
+            
             $format_hero = '
-                <div class=hero-bgslider" id="hero_slider">
-                    <div>
-                        %s
-                        <div>
-                            %s
-                            %s
-                            %s
-                            %s
-                        </div>
-                        <a href="javascript:;" id="slick-pause" title="Pause slider button"><i class="fa fa-pause" aria-hidden="true"></i></a>
-                        <a href="javascript:;" id="slick-play" title="Play slider button"><i class="fa fa-play" aria-hidden="true"></i></a>
-                    </div>
+                %s
+                <div class="hero_foreground">
+                    %s
+                    %s
+                    %s
+                    %s
                 </div>
+                <a href="javascript:;" id="slick-pause" title="Pause slider button"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                <a href="javascript:;" id="slick-play" title="Play slider button"><i class="fa fa-play" aria-hidden="true"></i></a>
             ';
             $content_hero .= sprintf(
                 $format_hero
-                ,( !empty($content_slider_images) ) ? $content_slider_images : ''
+                ,( !empty($return_slider) ) ? $return_slider : ''
                 ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
                 ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
                 ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
                 ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
             );
         }
+        // /slider
 
+
+
+        // 
+        // 
+        // 
         // hero type is video
         else if( $type == 'video' ){
 
