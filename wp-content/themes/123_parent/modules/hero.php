@@ -34,7 +34,7 @@
             $format_hero = '
                 <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
                     <div>
-                        <div>
+                        <div class="hero_foreground">
                             %s
                             %s
                             %s
@@ -54,8 +54,6 @@
 
         }
 
-
-
         // slider
         else if($type == 'slider' && !empty($slider_images))
         {  
@@ -73,12 +71,10 @@
                 %s
                 <div class="hero_foreground">
                     %s
+                    %s    
                     %s
                     %s
-                    %s
-                </div>
-                <a href="javascript:;" id="slick-pause" title="Pause slider button"><i class="fas fa-pause" aria-hidden="true"></i></a>
-                <a href="javascript:;" id="slick-play" title="Play slider button"><i class="fas fa-play" aria-hidden="true"></i></a>
+                </div> 
             ';
             $content_hero .= sprintf(
                 $format_hero
@@ -105,15 +101,11 @@
                     <video id="video_tag" autoplay muted loop title="%s"> 
                         <source src="%s" type="video/mp4">
                     </video>
-                    <div>
+                    <div class="hero_foreground">
                         %s
                         %s
                         %s
                         %s
-                    </div>
-                    <div>
-                        <a href="javascript:;" id="video_pause" title="Pause video button"><i class="fa fa-pause" aria-hidden="true"></i></a>
-                        <a href="javascript:;" id="video_play" title="Play video button"><i class="fa fa-play" aria-hidden="true"></i></a>
                     </div>
                 </div>
             ';
