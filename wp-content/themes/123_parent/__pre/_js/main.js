@@ -4,6 +4,13 @@ var Hero = {};
 var Headers = {};
 import slick from 'slick-carousel-browserify';
 
+$('#slick_slider').slick();
+
+
+
+
+
+
 Headers.Desktop = {
     _init: function () {
         Headers.Desktop.Address_Link._init();
@@ -315,21 +322,21 @@ Hero = {
             Hero.Slider.slick_play.on("click", Hero.Slider._play_slider);
         },
         _start_slider: function () {
-            $("#slick-images").slick({
-                autoplay: Boolean(hero_fields.hero_slider_autoplay),
-                adaptiveHeight: true,
-                arrows: true,
-                infinite: true,
-                mobileFirst: true,
-                slidesToShow: 1,
-                fade: Boolean(hero_fields.hero_slider_fade),
-                autoplaySpeed: hero_fields.hero_slider_speed,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                initialSlide: Boolean(hero_fields.hero_slider_random) ? Hero.Slider.rand : '',
-                nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>',
-                prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>'
-            });
+            // $("#slick_slider").slick({
+                // autoplay: Boolean(hero_fields.hero_slider_autoplay),
+                // // adaptiveHeight: true,
+                // arrows: true,
+                // infinite: true,
+                // // mobileFirst: true,
+                // slidesToShow: 1,
+                // fade: Boolean(hero_fields.hero_slider_fade),
+                // autoplaySpeed: hero_fields.hero_slider_speed,
+                // pauseOnHover: false,
+                // pauseOnFocus: false,
+                // initialSlide: Boolean(hero_fields.hero_slider_random) ? Hero.Slider.rand : '',
+                // nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>',
+                // prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>'
+            // });
         },
         _pause_slider: function () {
             Hero.Slider.slick_slider.slick("slickPause");
@@ -368,7 +375,7 @@ Hero = {
         }
     }
 }
-Hero._init();
+// Hero._init();
 
 Theme.Headers = {
     tint: $(".header-tint"),
