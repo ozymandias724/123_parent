@@ -4,11 +4,20 @@ var Hero = {};
 var Headers = {};
 import slick from 'slick-carousel-browserify';
 
-$('#slick_slider').slick();
+var rand = Math.floor(Math.random() * $(".img-slick").length);
 
-
-
-
+$('#slick_slider').slick({
+    autoplay : Boolean(hero_fields.autoplay)
+    ,adaptiveHeight : true
+    ,arrows : true
+    ,fade : Boolean(hero_fields.fade)
+    ,autoplaySpeed : hero_fields.speed
+    ,pauseOnHover : false
+    ,pauseOnFocus : false
+    ,initialSlider : Boolean(hero_fields.random) ? rand : ''
+    ,nextArrow : '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>'
+    ,prevArrow : '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>'
+});
 
 
 Headers.Desktop = {
@@ -312,7 +321,6 @@ Hero = {
 
     Slider: {
         slick_slider: $("#slick-images"),
-        rand: Math.floor(Math.random() * $(".img-slick").length),
         slick_pause: $("#slick-pause"),
         slick_play: $("#slick-play"),
 

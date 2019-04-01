@@ -1,109 +1,132 @@
 @media only screen {
 
-
-
     section.hero {
         overflow: hidden;
+        height: 100vh;
     }
     
-    section.hero#hero_image {}
+    section.hero#hero_image {        
+        //First div of hero image with 
+        > #hero_staticimage {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            //Second div and parent of title, logo, subtitle and button
+            > div {
+                display: flex;
+                align-items: center;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            //Third div and common scss of title, logo, subtitle and button
+            > div > div {
+                text-align: center;
+                font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
+            }
+            //Title
+            > div > div > h2 {
+                font-size: 90px;
+                letter-spacing: -4px;
+                line-height: 1em;
+            }
+            //Logo
+            > div > div > img {
+                max-width: 180px;
+                margin: 35px auto 0;
+            }
+            //Subtitle
+            > div > div > p {
+                font-size: 24px;
+                margin: 20px 0 30px;
+                line-height: 1em;
+            }
+            //Button
+            > div > div > a {
+                padding: 10px;
+                font-size: 18px;
+                padding: 11px 30px 15px;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                line-height: 1em; 
+                color: $white;
+                display: inline-block;
+                background-color: $primary;
+                transition: background-color 0.25s;
+            }
+            //Button actions on hover, focus and active
+            > div > div > a:hover, 
+            > div > div > a:focus, 
+            > div > div > a:active {
+                background-color: $second_primary;
+            }
+        }
+    }
 
     section.hero#hero_slider {
-
         #slick_slider {
+            .slick-slide > img {
+                object-fit: cover;    
+            }
+            //Previous slider image button
+            .slick-prev {
+                left: 0;
+            }
+            //Previous slider image button icon
+            .slick-prev > i {
+                left: 5%;
+            } 
+            //Next slider image button
+            .slick-next {
+                right: 0;
+            }
+            //Next slider image button icon
+            .slick-next > i {
+                right: 5%;
+            }
+            .slick-prev, 
+            .slick-next {
+                width: 25%; 
+                height: 100%;
+                z-index: 18;
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                display: none;
+            }
+            .slick-prev i,
+            .slick-next i {
+                font-size: 40px;
+                z-index: 18;
+                color: $black;
+                opacity: 0;
+                position: absolute;
+                transition: opacity 0.2s;
+            }
+            //Previous and next slider image button icons actions on hover, active and focus
+            .slick-prev:hover,
+            .slick-prev:active,
+            .slick-prev:focus,
 
-            .slick_slider-slide {
-
-                > img {
-                    object-fit: cover;    
+            .slick-next:hover,
+            .slick-next:active,
+            .slick-next:focus {
+                > i {
+                    opacity: 0.8;
                 }
             }
-            
         }
         
     }
 
-    section.hero#hero_video {}
+    section.hero#hero_video {
 
-
-
-
+    }
 }
-
-
-
-// everything below this is not good enough
-
-//     section.hero { 
-//         //Hero with static image 
-//         #hero_staticimage {
-//             width: 100%; 
-//             height: 94vh; 
-//             background-size: cover;
-//             background-position: center;
-//             background-repeat: no-repeat;
-//             display: flex;
-//             justify-content: center;
-//             //First div inside hero section
-//             > div {
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: flex-start;
-//                 position: relative;
-//                 transform: translateY(-50%);
-//                 top: 45%;
-//                 //Second div inside hero section
-//                 > div {
-//                     text-align: center;
-//                     //Header title, subtitle and button
-//                     > h2, 
-//                     > p, 
-//                     > a {
-//                         font-family: 'Futura-Bold', 'Trebuchet MS',Arial,sans-serif;
-//                     }
-//                     //Header title
-//                     > h2 { 
-//                         font-size: 90px; 
-//                         letter-spacing: -4px;
-//                     }
-//                     //Logo image
-//                     > img {
-//                         margin: 35px auto 0;
-//                         object-fit: cover;
-//                         height: auto;
-//                         width: 100%;
-//                         max-width: 180px;
-//                     }
-//                     //Subtitle text
-//                     > p {
-//                         font-size: 24px;
-//                         margin: 20px 0 30px;
-//                     }
-//                     //Button link
-//                     > a {
-//                         padding: 10px;
-//                         font-size: 18px;
-//                         background-color: $primary;
-//                         padding: 11px 30px 15px;
-//                         border-radius: 30px;
-//                         text-transform: uppercase;
-//                         letter-spacing: 1px;
-//                         line-height: 1;
-//                         color: $white;
-//                         display: inline-block;
-//                         background-color: $primary;
-//                         transition: background-color 0.25s;
-//                         left: 25%;
-//                         //Button link actions on hover, active and focus
-//                         &:hover,
-//                         &:active, 
-//                         &:focus {
-//                             background-color: $second_primary;
-//                         }
-//                     }
-//                 }  
-//             }
-//         }
 
 //         //Hero slider
 //         #hero_slider {
@@ -122,10 +145,6 @@
 //                         height: 100%;
 //                         background-color: transparentize(black, 0.5);
 //                         // z-index: -1;
-//                     }
-//                     //Slick dots list items icons
-//                     .slick-dots li button:before {
-//                         font-size: 10px;
 //                     }
 //                     //Previous slider image button
 //                     .slick-prev {

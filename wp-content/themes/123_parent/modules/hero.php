@@ -28,7 +28,8 @@
         $content_hero = '<section class="hero" id="hero_'.$type.'">';
 
         // hero type is static image
-        if( $type == 'image' && !empty($static_image)){
+        if( $type == 'image' && !empty($static_image))
+        {
     
             $format_hero = '
                 <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
@@ -61,7 +62,8 @@
             // open return string
             $return_slider = '<div id="slick_slider">';
 
-            foreach( $slider_images as $i => $rec ){
+            foreach( $slider_images as $i => $rec )
+            {
                 $return_slider .= '<div><img src="'.$rec['url'].'"></div>';
             }
 
@@ -75,8 +77,8 @@
                     %s
                     %s
                 </div>
-                <a href="javascript:;" id="slick-pause" title="Pause slider button"><i class="fa fa-pause" aria-hidden="true"></i></a>
-                <a href="javascript:;" id="slick-play" title="Play slider button"><i class="fa fa-play" aria-hidden="true"></i></a>
+                <a href="javascript:;" id="slick-pause" title="Pause slider button"><i class="fas fa-pause" aria-hidden="true"></i></a>
+                <a href="javascript:;" id="slick-play" title="Play slider button"><i class="fas fa-play" aria-hidden="true"></i></a>
             ';
             $content_hero .= sprintf(
                 $format_hero
@@ -89,15 +91,12 @@
         }
         // /slider
 
-
-
-        // 
-        // 
-        // 
         // hero type is video
-        else if( $type == 'video' ){
+        else if( $type == 'video' )
+        {
 
-            if( !empty($background['hero_video']) ){
+            if( !empty($background['hero_video']) )
+            {
                 $video_url = $background['hero_video'];
             }
             
@@ -135,4 +134,5 @@
 
     // echo hero
     echo $content_hero;
+    
  ?>

@@ -132,10 +132,10 @@ class SetupTheme
 		//Pass acf fields from Hero section to main.js
 		wp_localize_script('main', 'hero_fields', array(
             //'title' => get_field('hero_title', 'options')
-			'hero_slider_speed' => 5000,
-			'hero_slider_fade' => true,
-			'hero_slider_random' => true,
-			'hero_slider_autoplay' => true 
+			'speed' => 5000,
+			'fade' => true,
+			'random' => true,
+			'autoplay' => false 
 		)); 
 		// end localize scripts
 	}
