@@ -1,0 +1,212 @@
+@media only screen {
+	.blog-blog{
+		padding: 20px;
+	}
+	.blog-blog-pagination{
+		*{
+			color: black;
+			font-family: $body;
+			font-size: 2rem;
+			font-weight: 500;
+			padding: 0 10px;
+			&.current{
+				font-weight: normal;
+			}
+		}
+	}
+	
+	.blog-blog-pagination-linkcontainer{
+		display: inline-block;
+		a{
+			color: black;
+			font-weight: normal;
+			margin: 0 20px;
+		}
+	}
+	.blog-blog-grid-item{
+		margin: 0 auto;
+	}
+	.blog-blog-grid-item-textcontainer {
+		padding: 20px;
+	}
+	.blog-blog-grid-item-textcontainer-header{
+		background-color: transparent;
+		font-size: 2rem;
+		font-family: $body;
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: black;
+		text-align: left;
+		font-weight: 900;
+	}
+	.main--hasbg{
+		.blog-blog-grid-item-textcontainer-header{
+			color: white;
+		}
+	}
+	.blog-blog-grid-item-textcontainer-date{
+		font-size: 1.4rem;
+		text-align: left;
+	}
+	.blog-blog-grid-item-textcontainer-description{
+		text-align: left;
+		font-size: 1.7rem;
+		line-height: 1.7;
+		margin: 20px auto;
+	}
+	.blog-blog-grid-item-textcontainer-permalink{
+		font-size: 1.6rem;
+		text-decoration: none;
+		color: black;
+		text-transform: uppercase;
+		display: inline-block;
+		padding-left: 10px;
+		font-weight: bold;
+	}
+	.blog-blog-grid-item-socialcontainer{
+		text-align: left;
+	}
+	.blog-blog-grid-item-socialcontainer-header{
+		font-family: $body;
+		font-size: 1.6rem;
+		font-weight: 500;
+	}
+	.blog-blog-sidebar{
+		display: none;
+	}
+	.blog-blog-seemore{
+		position: relative;
+		margin: 40px auto;
+	}
+}
+
+@media only screen and (min-width: $medium){
+	.blog-blog-grid{
+		max-width: 720px;
+		font-size: 0;
+		text-align: center;
+		position: relative;
+		// left: calc(50% + 20px);
+		// @include transform(translateX(-50%));
+	}
+	#blog{
+		.blog-blog-grid{
+			// left: 0;
+			margin: 0 auto;
+			// @include transform(translateX(0));
+		}
+		.blog-blog-grid-item{
+			margin: 0;
+		}
+	}
+	.blog-blog-grid-item{
+		width: calc(100% - 20px);
+		max-width: none;
+		margin: 10px;
+		display: inline-block;
+		box-sizing: border-box;
+	}
+	.blog-blog-grid-item-textcontainer{
+		text-align: left;
+	}
+	.blog-blog-grid-item-textcontainer-header{
+		font-size: 3rem;
+	}
+}
+
+@media only screen and (min-width: $nav_desktop){
+	.blog-blog{
+		width: 100%;
+		max-width: 1002px;
+		margin: 0 auto;
+		font-size: 0;
+		box-sizing: border-box;
+	}
+	.blog-blog-grid{
+		left: 0;
+		@include transform(none);
+		width: 70%;
+		
+		max-width: none;
+		display: inline-block;
+		margin: 0;
+	}
+	.blog-blog-sidebar{
+		display: inline-block;
+		text-align: left;
+		font-size: 1.6rem;
+		width: calc(30% - 20px);
+		vertical-align: top;
+		padding: 20px;
+		margin-top: 20px;
+		margin-left: 20px;
+		background-color: transparentize(black, 0.9);
+	}
+	.blog-blog-sidebar-header{
+		font-size: 1.8rem;
+		color: black;
+		border-bottom: 2px solid $primary;
+		background-color: transparent;
+		display: inline-block;
+		padding: 5px 0px;
+		font-family: $body;
+		font-weight: 500;
+		margin: 10px auto;
+	}
+
+	/* 
+		Blog SideBar 
+	*/
+	.blog-blog-sidebar-list {
+		list-style-type: none;
+	}
+	.blog-blog-sidebar-list-item {
+		&:last-of-type {
+			.blog-blog-sidebar-list-item-link {
+				border-bottom: none;
+			}
+		}
+	}
+	.blog-blog-sidebar-list-item-link {
+		display: inline-block;
+		padding: 5px 0;
+		border-bottom: 1px solid transparentize(black, 0.5);
+		font-family: $body;
+		font-weight: normal;
+		color: black;
+		text-decoration: none;
+		font-size: 1.6rem;
+		margin-top: 5px;
+	}
+
+	a.blog-blog-sidebar-quickquote{
+		font-size: 1.6rem;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: $primary;
+		padding: 16px 10px;
+		display: inline-block;
+		vertical-align: bottom;
+		position: relative;
+		bottom: 4px;
+		margin-left: 0px;
+		margin-top: 20px;
+		font-weight: normal;
+		color: white;
+		text-decoration: none;
+		border-radius: 6px;
+	}
+	.blog-blog-grid-item{
+		width: 100%;
+		max-width: 1330px;
+		margin: 0;
+	}
+	.blog-blog-grid-item-textcontainer-date{
+	}
+	.blog-blog-grid-item-textcontainer{
+		width: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

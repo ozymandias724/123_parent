@@ -80,10 +80,10 @@
 			}
 			$content_badges .= '</ul>';
 		}
-		$handle = new GooMaps();
+		// $handle = new GooMaps();
 		$address = get_field('social-address', 'options')['address'];
-		$geocodedArray = $handle->geocode($address);
-		$formattedAddress = $handle->formatAddress($geocodedArray[2]);
+		// $geocodedArray = $handle->geocode($address);
+		// $formattedAddress = $handle->formatAddress($geocodedArray[2]);
 		$reseller_info = array_values(get_option( '123_parentcompany_info' ));
 	    if( !empty($reseller_info) ) {
 		   	

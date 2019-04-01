@@ -1,0 +1,88 @@
+@media only screen {
+    .gform_body {
+        ul {
+            list-style: none;
+        }
+    }
+
+    .gform_body,
+    .gform_footer {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .gfield_required {
+        display: none;
+    }
+
+    .ginput_container input,
+    .ginput_container textarea {
+        width: 100%;
+        font-size: 1.6rem;
+        background-color: #e0e0e0;
+        border: 1px solid #ababab;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        resize: none;
+
+        &:focus {
+            outline-color: $primary;
+        }
+
+        @include placeholder() {
+            color: #666;
+        }
+    }
+
+    .gfield_description.validation_message {
+        color: #ff5555;
+    }
+
+    .gform_footer {
+        input[type='submit'] {
+            color: white;
+            background-color: $primary;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            font-size: 1.8rem;
+            -webkit-appearance: none;
+            appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            border: none;
+            width: 100%;
+            font-weight: normal;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .gforms_confirmation_message {
+        padding-top: 5px;
+    }
+
+    .gform_confirmation_message {
+        font-size: 1.6rem;
+    }
+
+    .gform_wrapper form {
+        position: relative;
+    }
+
+
+
+    body img.gform_ajax_spinner {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include transform(translate(100%, -50%));
+    }
+}
+
+@media only screen and (min-width: $medium) {}
+
+@media only screen and (min-width: $large) {}

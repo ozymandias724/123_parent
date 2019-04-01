@@ -60,6 +60,9 @@ class SetupTheme
      * @return void
      */
 	public static function register_javascript(){
+
+        wp_deregister_script('jquery');
+        
 	    wp_register_script( 'main'
 	    	, get_template_directory_uri() . '/__build/_js/main.js'
 	    	, false

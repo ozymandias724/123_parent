@@ -49,14 +49,14 @@ grunt.initConfig({
     },
     watch: {
         sass: {
-            files: ['__build/_sass/**/*.scss'],
+            files: ['__pre/_sass/**/*.scss'],
             tasks: ['sass'],
             options: {
                 livereload: 35729
             },
         },
         js: {
-            files: ['__build/_js/**/*.js'],
+            files: ['__pre/_js/**/*.js'],
             tasks: ['browserify'],
             options: {
                 livereload: 35729

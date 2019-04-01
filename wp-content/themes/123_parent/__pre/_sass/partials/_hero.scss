@@ -1,0 +1,406 @@
+@media only screen {
+
+    section.hero {
+
+        //Hero with static image 
+        #hero_staticimage {
+            width: 100%;
+            height: 94vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+
+            //First div inside hero section
+            >div {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                transform: translateY(-50%);
+                top: 45%;
+
+                //Second div inside hero section
+                >div {
+                    text-align: center;
+
+                    //Header title, subtitle and button
+                    >h2,
+                    >p,
+                    >a {
+                        font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
+                    }
+
+                    //Header title
+                    >h2 {
+                        font-size: 90px;
+                        letter-spacing: -4px;
+                    }
+
+                    //Logo image
+                    >img {
+                        margin: 35px auto 0;
+                        object-fit: cover;
+                        height: auto;
+                        width: 100%;
+                        max-width: 180px;
+                    }
+
+                    //Subtitle text
+                    >p {
+                        font-size: 24px;
+                        margin: 20px 0 30px;
+                    }
+
+                    //Button link
+                    >a {
+                        padding: 10px;
+                        font-size: 18px;
+                        background-color: $primary;
+                        padding: 11px 30px 15px;
+                        border-radius: 30px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        line-height: 1;
+                        color: $white;
+                        display: inline-block;
+                        background-color: $primary;
+                        transition: background-color 0.25s;
+                        left: 25%;
+
+                        //Button link actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background-color: $second_primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Hero slider
+        #hero_slider {
+
+            //First div inside the hero slider section
+            >div {
+
+                //Slick slider 
+                #slick-images {
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: transparentize(black, 0.5);
+                        // z-index: -1;
+                    }
+
+                    //Slick dots list items icons
+                    .slick-dots li button:before {
+                        font-size: 10px;
+                    }
+
+                    //Previous slider image button
+                    .slick-prev {
+                        //Previous slider image button icon
+                        left: 0;
+
+                        >i {
+                            left: 5%;
+                        }
+                    }
+
+                    //Next slider image button
+                    .slick-next {
+                        right: 0;
+
+                        //Next slider image button icon
+                        >i {
+                            right: 5%;
+                        }
+                    }
+
+                    //Previous and next slider image buttons
+                    .slick-prev,
+                    .slick-next {
+                        z-index: 18;
+                        width: 25%;
+                        height: 100%;
+
+                        //Previous and next slider image buttons default icon
+                        &:before {
+                            display: none;
+                        }
+
+                        //Added previous and next slider image buttons icons
+                        >i {
+                            font-size: 40px;
+                            z-index: 18;
+                            color: $black;
+                            opacity: 0;
+                            position: absolute;
+                            transition: opacity 0.2s;
+                        }
+
+                        //Previous and next slider image button icons actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            >i {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+
+                //Second div child of hero slider section
+                >div {
+
+                    //Slick slides
+                    .slick-slide {
+                        height: 100vh;
+
+                        >div {
+
+                            //Div with background image of slide
+                            >div {
+                                height: 100vh;
+                                background-size: cover;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                            }
+                        }
+                    }
+
+                    //Title, logo, subtitle and button
+                    &:last-of-type {
+                        text-align: center;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                        top: 50%;
+                        left: 50%;
+
+                        //Title, subtitle and button link
+                        >h2,
+                        >p,
+                        >a {
+                            font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
+                        }
+
+                        //Title
+                        >h2 {
+                            font-size: 90px;
+                            letter-spacing: -4px;
+                        }
+
+                        //Logo
+                        >img {
+                            margin: 35px auto 0;
+                            object-fit: cover;
+                            height: auto;
+                            width: 100%;
+                            max-width: 180px;
+                        }
+
+                        //subtitle 
+                        >p {
+                            font-size: 24px;
+                            margin: 20px 0 30px;
+                        }
+
+                        //Button link
+                        >a {
+                            padding: 10px;
+                            font-size: 18px;
+                            background-color: $primary;
+                            padding: 11px 30px 15px;
+                            border-radius: 30px;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            line-height: 1;
+                            color: $white;
+                            display: inline-block;
+                            background-color: $primary;
+                            transition: background-color 0.25s;
+                            left: 25%;
+
+                            //Button link actions on hover, active and focus
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                background-color: $second_primary;
+                            }
+                        }
+                    }
+                }
+
+                //Pause and play buttons
+                #slick-pause,
+                #slick-play {
+                    text-align: center;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    //Pause and play buttons icons
+                    >i {
+                        font-size: 25px;
+                        padding: 5px;
+                    }
+                }
+
+                //Play button
+                #slick-play {
+                    display: none;
+                }
+
+                //Pause button
+                #slick-pause {
+                    margin-left: -2px;
+                }
+            }
+        }
+
+        //Hero Video
+        #hero_video {
+            overflow: hidden;
+            margin-bottom: 30px;
+
+            //Video element
+            video {
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+                height: 100vh;
+            }
+
+            //First div inside hero section
+            >div {
+                &:first-of-type {
+                    //Title, logo, subtitle and button
+                    text-align: center;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+
+                    //Title, subtitle and button link
+                    >h2,
+                    >p,
+                    >a {
+                        font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
+                    }
+
+                    //Title
+                    >h2 {
+                        font-size: 90px;
+                        letter-spacing: -4px;
+                    }
+
+                    //Logo
+                    >img {
+                        margin: 35px auto 0;
+                        object-fit: cover;
+                        height: auto;
+                        width: 100%;
+                        max-width: 180px;
+                    }
+
+                    //subtitle 
+                    >p {
+                        font-size: 24px;
+                        margin: 20px 0 30px;
+                    }
+
+                    //Button link
+                    >a {
+                        padding: 10px;
+                        font-size: 18px;
+                        background-color: $primary;
+                        padding: 11px 30px 15px;
+                        border-radius: 30px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        line-height: 1;
+                        color: $white;
+                        display: inline-block;
+                        background-color: $primary;
+                        transition: background-color 0.25s;
+                        left: 25%;
+
+                        //Button link actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background-color: $second_primary;
+                        }
+                    }
+                }
+
+                //Parent div of pause and play buttons
+                &:last-of-type {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: 10px;
+
+                    //Pause and play buttons
+                    #video_pause,
+                    #video_play {
+                        text-align: center;
+                        color: $black;
+
+                        //Pause and play buttons icons
+                        >i {
+                            font-size: 25px;
+                            padding: 5px;
+                        }
+                    }
+
+                    //Play button
+                    #video_play {
+                        display: none;
+                    }
+
+                    //Pause button
+                    #video_pause {
+                        margin-left: -2px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media only screen and (min-width: 1160px) {
+        section.hero #hero_video video {
+            width: 100vw;
+            height: auto;
+        }
+    }
+
+
+    @media only screen and (min-width: $bp__lg) {
+
+        //Hero section
+        section.hero {
+
+            //Static image hero
+            #hero_staticimage>div>div {
+
+                //Title
+                >h2 {
+                    font-size: 98px;
+                }
+            }
+        }
+    }
+}
