@@ -17,8 +17,6 @@ function check_theme(){
 };
 $verified_theme = check_theme();
 
-include_once( get_template_directory() . '/fusiontables/handler.php');
-
 
 /*
 	Populate Setup_Pages Repeater's Select Field Choices w/ Required Page Templates:
@@ -233,86 +231,10 @@ if( function_exists('acf_add_options_page') ) {
 
 if( !function_exists('add_acf_fields') ){
 	function add_acf_fields() {
-		$fth = new FusionTableHandler();
-		
 		if( function_exists('acf_add_local_field_group') ):
 			include( __DIR__ . '/setup/partial.SiteSetupGroups.php' );
 			include( __DIR__ . '/setup/partial.SiteSetupFields.php' );
 		endif;
-
-		// acf_add_local_field_group(array(
-		// 	'key' => 'group_1oi3nlaosawooingk',
-		// 	'title' => 'Edit Banner',
-		// 	'fields' => array(
-		// 		array(
-		// 			'key' => 'field_8naniasm2jbnlaf',
-		// 			'label' => 'Select the Home Page',
-		// 			'instructions' => 'If you want a custom home page select it here; otherwise leave this blank or select the home page archive',
-		// 			'name' => 'home-selectfrontpage',
-		// 			'type' => 'post_object',
-		// 			'post_type' => 'page',
-		// 			'allow_null' => 1,
-		// 		),
-		// 		array(
-		// 			'key' => 'field_2391274',
-		// 			'label' => 'Slider Tagline',
-		// 			'name' => 'home-hero-header-text',
-		// 			'type' => 'text',
-		// 			'instructions' => 'This is the text that appears on the homepage section',
-		// 		),
-		// 		array(
-		// 			'key' => 'field_8czoivadhs',
-		// 			'label' => 'Slider Tagline 2',
-		// 			'name' => 'home-hero-header-text-2',
-		// 			'type' => 'text',
-		// 			'instructions' => 'Only used when the theme uses a 2nd line',
-		// 		),
-		// 		array(
-		// 			'key' => 'field_14',
-		// 			'label' => 'Slider Images',
-		// 			'name' => 'general-home-slider',
-		// 			'type' => 'repeater',
-		// 			'button_label' => 'Add Slide',
-		// 			'min' => 3,
-		// 			'layout' => 'row',
-		// 			'instructions' => 'You need a minimum of 3 slides or else the default images will be used instead.',
-		// 			'sub_fields' => array(
-		// 				array(
-		// 					'key' => 'field_166',
-		// 					'label' => 'Image',
-		// 					'name' => 'general-home-slider-image',
-		// 					'type' => 'image',
-		// 					'preview_size' => 'medium',
-		// 					'return_format' => 'url',
-		// 				),
-		// 			),
-		// 		),
-		// 		array(
-		// 			'key' => 'field_98viozckg123',
-		// 			'label' => 'Disable Slider Button?',
-		// 			'type' => 'true_false',
-		// 			'name' => 'disable-slider-button',
-		// 			'ui' => true,
-		// 		),
-		// 		array(
-		// 			'key' => 'field_oicvzzcvjbh123',
-		// 			'label' => 'Slider Button Text',
-		// 			'type' => 'text',
-		// 			'name' => 'slider-button-text',
-		// 			'instructions' => 'This is the text that appears in the botton on the slider. Keep it short & sweet: No more than a dozen characters or so. If left blank "Learn More" will be used as the default.'
-		// 		),
-		// 	),
-		// 	'location' => array (
-		// 		array (
-		// 			array (
-		// 				'param' => 'options_page',
-		// 				'operator' => '==',
-		// 				'value' => 'home-settings',
-		// 			),
-		// 		),
-		// 	),
-        // ));
-        
 
 
 
@@ -390,7 +312,7 @@ if( !function_exists('add_acf_fields') ){
 							'ui' => true,
 							'return_format' => 'array',
 							'required' => true,
-							'choices' => $fth->get_states_for_acf_select(),
+							// 'choices' => $fth->get_states_for_acf_select(),
 							'wrapper' => array(
 								'width' => 20,
 							),
@@ -468,7 +390,7 @@ if( !function_exists('add_acf_fields') ){
 							'ui' => true,
 							'return_format' => 'array',
 							'required' => true,
-							'choices' => $fth->get_countries_for_acf_select(),
+							// 'choices' => $fth->get_countries_for_acf_select(),
 							'wrapper' => array(
 								'width' => 20,
 							),
@@ -2779,13 +2701,6 @@ if( !function_exists('add_acf_fields') ){
 	}
 }
 
-// Customizations
-	// update google map api key
-	if( !function_exists('set_acf_google_api_key') ){
-		function set_acf_google_api_key(){
-			acf_update_setting('google_api_key','AIzaSyBOKWaxjiKG_kyx9exUfs32OFb8fwEqVBY');
-		}
-	}
 	// 
 	if( !function_exists('my_acf_input_admin_footer') ){
 		function my_acf_input_admin_footer() {
@@ -2912,7 +2827,6 @@ if( !function_exists('add_acf_fields') ){
 
 // Hooks
 	add_action('acf/init', 'add_acf_fields', 1);
-	add_action('acf/init', 'set_acf_google_api_key', 2);
 	add_action('acf/input/admin_footer', 'my_acf_input_admin_footer');
 	add_action('acf/update_value/key=field_npy320af', 'acf_update_site_title', 10, 3);
 	add_action('acf/update_value/key=field_npy320zdfa1212af', 'acf_update_tagline', 10, 3);
