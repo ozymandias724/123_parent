@@ -36,7 +36,7 @@
             // img is empty, we have fa
             else if( !empty($fa) ){
                 $icon_url = '';
-                $fa_icon = '<i class="fa '.$fa.'"></i>';
+                $fa_icon = '<i class="fab '.$fa.'"></i>';
             }
             // img and fa are empty
             // something went wrong...

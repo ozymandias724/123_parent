@@ -1,0 +1,128 @@
+//Header 2
+header#opt_header_two {
+    flex-flow: row nowrap;
+    padding: 0px;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+
+    //Select top and bottom part of header
+    >div {
+
+        //Lower part of header
+        &:last-of-type {
+            background-color: $third_black;
+
+            //Phone number and navigational menu 
+            >div {
+                display: flex;
+                flex-flow: row nowrap;
+                background-color: $third_black;
+                justify-content: space-around;
+                max-width: $nav_maxwidth;
+                margin: 0 auto;
+
+                //Parent div element of phone number, nav and quote button
+                >div {
+                    color: $white;
+                    text-transform: uppercase;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+
+                    //Sections of phone number and nav bar
+                    >div {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        align-items: flex-end;
+                        height: 100%;
+
+                        //Phone number link
+                        >a {
+                            text-align: right;
+                            font-size: 24px;
+                            padding: 15px 5px;
+                            margin-right: -10px;
+                        }
+
+                        //Menu items navigation element
+                        >nav {
+                            margin-right: -10px;
+
+                            //Menu items unordered list
+                            >ul {
+                                display: flex;
+                                flex-flow: row wrap;
+
+                                //Menu items unordered list items
+                                >li {
+                                    margin: 5px 0;
+
+                                    //Menu items unordered list items links
+                                    >a {
+                                        font-size: 14px;
+                                        padding: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    //Quote button link
+                    >a {
+                        background-color: $prestige_painters;
+                        text-decoration: none;
+                        font-size: 16px;
+                        border-radius: 4px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    // Black free estimate bar above header
+    .opt__estimatebar {
+        background-color: $ink;
+        text-align: center;
+        color: white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: auto;
+
+        //Estimate bar above header link
+        >a {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+    //Black free estimate bar 
+    .opt__estimatebar,
+    //Phone number
+    >div:last-of-type>div>div>div,
+    //Nav bar
+    >div:last-of-type>div>div>div>nav>ul>li,
+    //Quote button
+    >div:last-of-type>div>div {
+
+        //Direct links inside the above selector parents
+        >a {
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+            -webkit-transition: opacity 0.3s;
+            -o-transition: opacity 0.3s;
+
+            //Actions on hover, focus and active of selected elements links above
+            &:hover,
+            &:focus,
+            &:active {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -33,7 +33,7 @@ class NavHandler
             $format_quotebtn = '
                 <a href="#" class="topbanner-quickquote" title="Get a quote button">
                     <span>%s</span>
-                    <i class="fa fa-angle-right"></i>
+                    <i class="fas fa-angle-right"></i>
                 </a>
             ';
             $content_quotebtn = sprintf(
@@ -46,11 +46,11 @@ class NavHandler
         $format_socialtopbar = '
             <div id="opt__topbanner">
                 <span>
-                    <a href="%s" alt="Address button"><i class="fa fa-map-marker"></i>
+                    <a href="%s" alt="Address button"><i class="fas fa-map-marker-alt"></i>
                         <span>%s</span>
                     </a>
                     <a href="%s" title="Phone number button">
-                        <i class="fa fa-phone"></i>
+                        <i class="fab fa-phone"></i>
                         <span>%s</span>
                     </a>
                 </span>
@@ -65,7 +65,7 @@ class NavHandler
             $num_display,
             $content_quotebtn
         );
-        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button"><i class="fa fa-phone"></i> '.$num_display.'</a>';
+        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button"><i class="fab fa-phone"></i> '.$num_display.'</a>';
         if( !empty($quotebtn_txt) ){
             $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $quotebtn_txt . '</a>';
         }
@@ -143,7 +143,7 @@ class NavHandler
                 // img is empty, we have fa
                 else if( !empty($fa) ){
                     $icon_url = '';
-                    $fa_icon = '<i class="fa '.$fa.'"></i>';
+                    $fa_icon = '<i class="fab '.$fa.'"></i>';
                 }
                 // img and fa are empty
                 // something went wrong...
@@ -289,10 +289,10 @@ class NavHandler
                         %s
                         <div> 
                             <span>
-                                <a href="javascript:;" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
+                                <a href="javascript:;" class="google-search-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
                             </span>
                             <span>
-                                <a href="tel:%s" title="Phone number button"><i class="fa fa-phone"></i> %s</a>
+                                <a href="tel:%s" title="Phone number button"><i class="fas fa-phone"></i> %s</a>
                             </span>
                             <a href="#" class="topbanner-quickquote" title="Get a quote button">Quote</a> 
                         </div>
@@ -332,7 +332,7 @@ class NavHandler
                                 <a href="tel:%s"><i class="fa fa-phone" title="Phone number button"></i> %s</a>
                             </span>
                             <span>
-                                <a href="#" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
+                                <a href="#" class="google-search-address" title="Address button"><i class="fa fa-map-marker-alt"></i> %s</a>
                             </span>
                         </div>
                         %s
@@ -374,7 +374,7 @@ class NavHandler
                         </div>
                         %s
                         <span>
-                            <a href="tel:%s"><i class="fa fa-phone" title="Phone number button"></i> %s</a>
+                            <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
                         </span>
                     </div> 
                     <div>
@@ -428,10 +428,10 @@ class NavHandler
                 <div> 
                     <div>
                         <span>
-                            <a href="tel:%s"><i class="fa fa-phone" title="Phone number button"></i> %s</a>
+                            <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
                         </span>
                         <span>
-                            <a href="#" class="google-search-address" title="Address button"><i class="fa fa-map-marker"></i> %s</a>
+                            <a href="#" class="google-search-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
                         </span>
                     </div>
                     %s

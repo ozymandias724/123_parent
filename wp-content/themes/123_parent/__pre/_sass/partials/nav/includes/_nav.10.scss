@@ -1,0 +1,136 @@
+ header#opt_header_ten {
+     background-color: $white;
+     padding: 0px;
+     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+
+     // Parent div element to apply max-width and center children elements of header 
+     >div {
+         &:first-of-type {
+             max-width: $nav_maxwidth;
+             margin: 0 auto;
+
+             // Parent div element of hamburger icon, logo and social icons 
+             >div {
+                 display: flex;
+                 justify-content: space-around;
+                 align-items: center;
+                 font-size: 18px;
+
+                 // Parent divs of hamburger icon and logo  
+                 >div {
+
+                     // Hamburger icon div element 
+                     &:nth-of-type(1) {
+                         display: flex;
+                         z-index: 21;
+
+                         //Hamburger icon link
+                         >a {
+                             padding: 10px;
+
+                             // When hamburger icon link has this class, apply the following classes to the span elements 
+                             &.header_10_hamburger_icon_changed {
+                                 >span {
+
+                                     // First span of hamburger icon link 
+                                     &:nth-of-type(1) {
+                                         opacity: 1;
+                                         transform: rotate(45deg) translate(0px, -10px);
+                                         background: #232323;
+                                     }
+
+                                     // Second span of hamburger icon link 
+                                     &:nth-of-type(2) {
+                                         transform: rotate(-45deg) translate(0px, 10px);
+                                     }
+
+                                     // Third span of hamburger icon link 
+                                     &:nth-of-type(3) {
+                                         opacity: 0;
+                                         transform: rotate(0deg) scale(0.2, 0.2);
+                                     }
+                                 }
+                             }
+
+                             // Hamburger icon link spans 
+                             >span {
+                                 display: block;
+                                 width: 33px;
+                                 height: 4px;
+                                 background: #000;
+                                 border-radius: 3px;
+                                 transform-origin: 4px 0px;
+                                 transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                                     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                                     opacity 0.55s ease;
+
+                                 // First span of hamburger icon link 
+                                 &:nth-of-type(1) {
+                                     transform-origin: 0% 0%;
+                                     margin-bottom: 4px;
+                                 }
+
+                                 // Second span of hamburger icon link 
+                                 &:nth-of-type(2) {
+                                     transform-origin: 0% 100%;
+                                     margin-bottom: 4px;
+                                 }
+                             }
+                         }
+                     }
+
+                     //Logo parent div
+                     &:nth-of-type(2) {
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+
+                         //Logo link
+                         >a {
+                             padding: 15px;
+                         }
+                     }
+                 }
+
+                 //Social icons unordered list
+                 >ul {
+                     list-style: none;
+                     display: flex;
+                     justify-content: flex-end;
+                     margin-right: -10px;
+
+                     //Social icons unordered list
+                     >li {
+
+                         //Social icons unordered list items links
+                         >a {
+                             padding: 15px;
+                         }
+                     }
+                 }
+
+                 //Hamburger icon div element
+                 >div:first-of-type,
+                 //Logo link
+                 >div:last-of-type,
+                 //Social icons unordered list
+                 >ul {
+                     flex: 1 0 30%;
+                 }
+
+                 //Hamburger icon link and social icons unordered list
+                 >div:first-of-type>a,
+                 >ul>li>a {
+                     transition: color 0.3s;
+
+                     //Hamburger icon link and social icons unordered list actions on hover, active and focus
+                     &:hover,
+                     &:active,
+                     &:focus {
+                         color: $prestige_painters;
+                     }
+                 }
+             }
+         }
+     }
+ }

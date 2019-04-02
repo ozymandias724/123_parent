@@ -1,0 +1,174 @@
+header#opt_header_nine {
+    padding: 0px;
+
+    >div {
+
+        //Top bar including (Address, phone number and social icons)
+        &:first-of-type {
+            background-color: $prestige_painters;
+            width: 100%;
+
+            //First div element, parent of address and phone number section and social icons section
+            >div {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                max-width: $nav_maxwidth;
+                margin: 0 auto;
+
+                //Parent div element of address and phone number section
+                >div {
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    flex: 1 0 85%;
+
+                    //Both address and phone number inside this span element
+                    >span {
+                        color: $white;
+                        font-size: 16px;
+
+                        //
+                        >a {
+                            padding: 10px;
+                        }
+
+                        //Icons for the address and phone number
+                        i {
+                            font-size: 18px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                //Social icons unordered list
+                >ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    flex: 1 0 15%;
+
+                    //Social icons unordered list items
+                    >li {
+                        font-size: 16px;
+                        color: $white;
+
+                        //Social icons unordered list items links
+                        >a {
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Bottom part including logo and navigational menu and quote button
+        &:last-of-type {
+            background-color: $black_and_opacity_level_below_one;
+            width: 100%;
+
+            //Parent div element of logo, navigational menu and quote button sections
+            >div {
+                max-width: 1262px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+
+                //Logo link
+                >a {
+                    padding: 10px;
+
+                    //Logo image inside link
+                    >img {
+                        width: auto;
+                        max-width: none;
+                        max-height: 70px;
+                    }
+                }
+
+                //Parent div element of navigational menu and quote button
+                >div {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 5px;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    flex: 1 0 67%;
+
+                    //Navigational menu 
+                    >nav {
+                        display: flex;
+                        align-items: center;
+
+                        //Navigational menu unordered list
+                        >ul {
+                            list-style: none;
+
+                            //Navigational menu unordered list items
+                            >li {
+                                margin-right: 15px;
+
+                                //Navigational menu unordered list items links
+                                >a {
+                                    padding: 10px 0;
+                                    border-bottom: 2px solid rgba(255, 255, 255, 0);
+                                    color: $white;
+
+                                    //Navigational menu unordered list items links actions on hover, active and focus
+                                    &:hover,
+                                    &:active,
+                                    &:focus {
+                                        border-bottom: 2px solid rgba(255, 255, 255, 1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    //Quote button link
+                    >a {
+                        padding: 20px 30px;
+                        border-radius: 10px;
+                        border: 2px solid $white;
+                        color: $white;
+                        background-color: rgba(255, 255, 255, 0);
+                        transition: color 0.3s, border 0.3s, background-color 0.3s;
+
+                        //Quote button link actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: $black;
+                            border: 2px solid $black;
+                            background-color: rgba(255, 255, 255, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+
+        //Phone number and address links
+        &:first-of-type>div>div>span>a,
+        //Social icons unordered list items links
+        &:first-of-type>div>ul>li>a {
+            color: $white;
+            opacity: $opacity_level_below_one;
+        }
+
+        //Phone number and address links
+        &:first-of-type>div>div>span>a,
+        //Social icons unordered list items links
+        &:first-of-type>div>ul>li>a {
+            transition: opacity 0.3s;
+
+            //Phone number and address links actions on hover, active and focus
+            //Social icons unordered list items links actions on hover, active and focus
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+}

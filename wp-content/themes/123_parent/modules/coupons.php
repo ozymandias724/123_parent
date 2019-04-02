@@ -1,4 +1,4 @@
-<main class="coupons main" id="coupons">
+<div class="coupons main" id="coupons">
     <?php include( get_template_directory() . '/partials/banner.php'); ?>
 	<section class="coupons-coupons  section">
 		<?php 
@@ -59,4 +59,4 @@
 		
 		<?php endif; ?>
 	</section>
-</main>
+</div>
