@@ -289,7 +289,7 @@ Hero = {
             Hero.Padding.header_position = $("header").css("position");
 
             //If header has a position of fixed and not header 4
-            if (Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four" && Hero.Padding.header_id !== "opt_header_nine") {
+            if (Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four" && Hero.Padding.header_id !== "opt_header_nine" && Hero.Padding.header_id !== "opt_header_three") {
 
                 Hero.Padding.header_height = $("header").height();
 
