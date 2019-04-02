@@ -17,7 +17,7 @@
 						<img class="sociallinks-item-link-icon" src="<?php echo $img; ?>" alt="">
 					<?php endif; ?>
 					<?php if ( $img == false && $fa != "") : ?>
-						<i class="sociallinks-item-link-icon fa <?php echo $fa; ?>"></i>
+						<i class="sociallinks-item-link-icon fab <?php echo $fa; ?>"></i>
 					<?php endif; ?>
 					<?php 
 						if ( $img == false && $fa == "" && $url != "") :

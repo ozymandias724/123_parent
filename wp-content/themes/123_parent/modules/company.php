@@ -1,9 +1,6 @@
-<main class="company main" id="company">
-    
+<div class="company main" id="company">
     
     <?php include( get_template_directory() . '/partials/banner.php'); ?>
-
-
 
 
 	<?php if($selected_option == 'option1'): 
@@ -70,4 +67,4 @@
 	</section>
 	<?php endif; ?>
 	<?php endif; ?>
-</main>
+</div>

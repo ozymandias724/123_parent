@@ -8,7 +8,7 @@
 		$limit = 3;
 	}
  ?>
-<main class="services main" id="services">
+<div class="services main" id="services">
 	<?php 
 		if(have_rows('services-repeater', 'option')) : $i = 0;
 			if( is_home() ) :
@@ -65,4 +65,4 @@
 			 ?>
 	</div>
 	<?php endif; ?>
-</main>
+</div>

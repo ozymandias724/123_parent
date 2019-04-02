@@ -34,15 +34,15 @@ class SetupTheme
 	 * Enqueue Login Scripts on login_enqueue_scripts
 	 */
 	public static function enqueue_login_scripts(){
-        wp_enqueue_script( 'login', get_template_directory_uri() . '/__build/_js/login.js' );
-        wp_enqueue_style('login', get_template_directory_uri() . '/__build/_css/login.css' ); 
+        wp_enqueue_script( 'login', get_template_directory_uri() . '/__build/_js/_conditional/login.js' );
+        wp_enqueue_style('login', get_template_directory_uri() . '/__build/_css/_conditional/login.css' ); 
 	}
 	/**
 	 * Enqueue Admin Scripts (on admin_enqueue_scripts)
 	 */
 	public static function enqueue_admin_scripts(){
-		wp_enqueue_script( 'admin', get_template_directory_uri() . '/__build/_js/admin.js' );
-		wp_enqueue_style( 'admin', get_template_directory_uri() . '/__build/_css/admin.css' );
+		wp_enqueue_script( 'admin', get_template_directory_uri() . '/__build/_js/_conditional/admin.js' );
+		wp_enqueue_style( 'admin', get_template_directory_uri() . '/__build/_css/_conditional/admin.css' );
 	}
 
 	// Enqueue Scripts (hook)

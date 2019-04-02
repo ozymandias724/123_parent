@@ -1,0 +1,160 @@
+header#opt_header_four {
+    color: $white;
+    padding: 0px;
+
+    //Top part of header
+    >div {
+        background-color: $black;
+
+        >div {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: $nav_maxwidth;
+
+            >ul {
+
+                //Social icons underordered list and phone number section
+                >ul,
+                >span {
+                    flex: 0 1 auto;
+                    font-size: 1.6rem;
+                }
+
+                //Social icons list items
+                >li {
+                    display: inline-block;
+                    margin: 0 10px;
+
+                    //Social icons list items links
+                    >a {
+                        font-size: 16px;
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        display: inline-block;
+                        padding: 5px;
+                        text-align: center;
+                        overflow: hidden;
+                        color: $white;
+                        transition: background 0.3s, color 0.3s;
+                        -webkit-transition: background 0.3s, color 0.3s;
+                        -o-transition: background 0.3s, color 0.3s;
+
+                        //Social icons list items links actions on hover, active and focus 
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background: $white;
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+
+            //Phone number
+            span {
+                &:last-child {
+
+                    //Phone number link
+                    >a {
+                        padding: 10px;
+                        font-weight: 400;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        border-bottom: 1px solid transparent;
+                        opacity: $opacity_level_below_one;
+                        transition: opacity 0.3s;
+                        -webkit-transition: opacity 0.3s;
+                        -o-transition: opacity 0.3s;
+
+                        //Phone number link actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            opacity: 1;
+                        }
+
+                        //Phone number link left side icon
+                        &:before {
+                            font-family: FontAwesome;
+                            content: "\f095";
+                            font-weight: 700;
+                            color: $white;
+                            border-radius: 100%;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //Bottom part of header and navigational menu
+    >nav {
+
+        //Navigational menu unordered list
+        >ul {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1018px;
+            background-color: $primary;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+
+            //Navigational menu list items
+            >li {
+                flex: 0 1 auto;
+                display: inline-block;
+                vertical-align: middle;
+
+                //Navigational menu list items links 
+                >a {
+                    text-decoration: none;
+                    color: $white;
+                    text-transform: uppercase;
+                    padding: 10px;
+                    font-size: 13px;
+                    line-height: 4;
+                    letter-spacing: 1px;
+                    opacity: $opacity_level_below_one;
+
+                    //Navigational menu list items links actions on hover, active and focus
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            //Shapes before and after the navigational menu
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -70px;
+                width: 100px;
+                height: 100%;
+                flex: 1 0 auto;
+                top: 0;
+                background-color: $primary;
+                transform: skewX(37deg);
+                z-index: -1;
+            }
+
+            //Shape after the navigational menu
+            &:after {
+                transform: skewX(-37deg);
+                left: auto;
+                right: -70px;
+            }
+        }
+    }
+}

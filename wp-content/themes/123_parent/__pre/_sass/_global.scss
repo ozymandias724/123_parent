@@ -4,6 +4,10 @@
         font-size: 1.4rem;
         line-height: 2.2rem;
         font-weight: 400;
+        font-family: "Lato", sans-serif; 
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: "Montserrat", serif;
     }
     
 	a {
@@ -51,77 +55,8 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-	}
-	.main--hasbg{
-		.company-wysiwyg,
-		.hero-text-subheader,
-		.services-services-grid-item-wrapper,
-		.gallery-galleries-gallery-header,
-		.menu-menu-grid-category-header,
-		.menu-menu-grid-category-description,
-		.blog-blog{
-			color: white;
-			position: relative;
-			z-index: 2;
-		}
-		.gallery-galleries,
-		.company-employees-grid,
-		.services-services-grid,
-		.menu-menu,
-		.coupons-coupons, 
-		.testimonials-testimonials,
-		.areas-served-areas{
-			position: relative;
-			z-index: 2;
-		}
-		.main-tint{
-			@include gradient-vertical(rgba(0,0,0,0.75), rgba(0,0,0,0.2));
-			display: block;
-		}
-	}
-	// .main{
-	// 	.hero-text-header{
-	// 		&:after{
-	// 			content: '';
-	// 			border-bottom: 4px solid $primary;
-	// 			width: 100%;
-	// 			position: relative;
-	// 			display: block;
-	// 			top: 10px;
-	// 		}
-	// 	}
-	// 	.areas-served-hero-text-header,
-	// 	.contact-hero-text-header{
-	// 		&:after{
-	// 			border-bottom: none;
-	// 		}
-	// 	}
-	// }
-	// .main-tint{
-	// 	display: none;
-	// }
-	// .section{
-	// 	text-align: center;
-	// 	padding: 20px;
-	// }
-	// .section-header{
-	// 	display: inline-block;
-	// 	border-bottom: 4px solid $primary;
-	// 	padding: 10px 0;
-	// }	
-	// .hero{
-	// 	background-size: cover;
-	// 	background-repeat: no-repeat;
-	// 	width: 100%;
-	// 	height: 20vh;
-	// 	position: relative;
-	// 	overflow: hidden;
-	// }
-	// .hero-text{
-	// 	z-index: 1;
-	// 	width: 100%;
-	// 	text-align: center;
-	// }
+    }
+    
 	.page.blog,
 	.page.coupons{
 		.hero{
@@ -135,20 +70,12 @@
 	.coupons-hero,
 	.blog-hero{
 		overflow: hidden;
-		.hero-text{
-			// left: 50%;
-			// @include transform(translate(-50%, -50%));
-		}
 		.hero-text-header{
 			font-size: 5rem;
 		}
 	}
 	.hero-text {
-		// position: absolute;
-		// top: 50%;
 		width: 100%;
-		// left: 0;
-		// @include transform(translate(0, -50%));
 	}
 	.hero-text-header{
 		font-size: 3.6rem;

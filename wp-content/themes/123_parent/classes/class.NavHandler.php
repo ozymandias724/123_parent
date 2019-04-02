@@ -65,7 +65,7 @@ class NavHandler
             $num_display,
             $content_quotebtn
         );
-        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button"><i class="fa fa-phone"></i> '.$num_display.'</a>';
+        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button"><i class="fab fa-phone"></i> '.$num_display.'</a>';
         if( !empty($quotebtn_txt) ){
             $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $quotebtn_txt . '</a>';
         }
@@ -143,7 +143,7 @@ class NavHandler
                 // img is empty, we have fa
                 else if( !empty($fa) ){
                     $icon_url = '';
-                    $fa_icon = '<i class="fa '.$fa.'"></i>';
+                    $fa_icon = '<i class="fab '.$fa.'"></i>';
                 }
                 // img and fa are empty
                 // something went wrong...
