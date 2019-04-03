@@ -270,36 +270,8 @@ if( wp_get_theme()->Name != '123_four' ){
 		add_filter("acf/prepare_field/name=$field", "hide_the_acf_field");
 	}
 }
-if( !function_exists('acf_set_custom_homepage')){
-	/**
-	 * [acf_set_custom_homepage description]
-	 * @return [type] [description]
-	 */
-	function acf_set_custom_homepage(){
-		// if field is selected, set options
-		if( !empty( get_field('field_8naniasm2jbnlaf', 'options') ) ){
-			$selected_page = get_field('field_8naniasm2jbnlaf', 'options');
-			update_option( 'page_on_front', $selected_page->ID );
-			update_option( 'show_on_front', 'page' );
-			// if selected page is not blog, use blog for posts page
-			if( $selected_page->post_title != 'Blog' ){
-				$page_for_posts = get_page_by_title( 'Blog' );
-				update_option( 'page_for_posts', $page_for_posts->ID );
-			}
-			// if selected page is blog page, set nothing as the posts page 
-			else {
-				update_option( 'page_for_posts', 0);
-			}
-		}
-		// if field is not selected, reset options
-		else {
-			update_option( 'page_on_front', 0);
-			update_option( 'show_on_front', 'posts' );
-			update_option( 'page_for_posts', 0);
-		}
-	}
-	add_action( 'init', 'acf_set_custom_homepage', 99 );
-}
+
+
 
 
 // adds the training ad dashboard widget
@@ -399,29 +371,6 @@ if( !function_exists('remove_admin_dashboard_widgets') ){
 	}
 }
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets', 20 );
-
-
-////////////////////////////////////////////////////////////////
-// Render Parallax Background Image by Slug or ACF Field Name //
-////////////////////////////////////////////////////////////////
-if(!function_exists('the_bg')){
-	function the_bg($slug, $useslug = true){
-		if(!$useslug){
-			$bg = get_field($slug, 'option');
-		}
-		else{
-			$bg = get_field($slug . '-bg', 'option');	
-		}
-		$output = '';
-		if( !empty($bg) ){
-			$output .= '<div class="parallax">';
-			$output .=     '<img class="parallax-image" src="' . $bg . '">';
-			$output .= '</div>';
-			echo $output;
-		}
-	}
-}
-
 
 // gets the image for the blog post with the placeholder image as the fallback
 if( !function_exists('get_blog_image') ){	
@@ -780,51 +729,4 @@ if( !function_exists('wpdocs_custom_excerpt_length')){
 	}
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
-
-// if( !function_exists('return_areas_served_grid_items') ){
-// 	function return_areas_served_grid_items(){
-// 		$grid_items = array();
-// 		switch ( get_field('areas_served_select', 'options') ) {
-// 			case 'zips':
-// 				# code...
-// 				$rows = get_field('locations', 'option'); 
-// 				foreach($rows as $index => $row) {	
-// 					$address_explosion = explode(',', $row['zip']['address']);
-// 					$address_slice = array_slice($address_explosion, count($address_explosion) - 3);
-// 					$city_name = $address_slice[0];
-// 					$state_name = $address_slice[1];
-// 					$grid_items[$index]['header'] = $city_name . ', ' . $state_name;
-// 					$grid_items[$index]['image']['id'] = $row['area-image']['id'];
-// 				}
-// 				break;
-// 			case 'states':
-// 				# code...
-// 				$rows = get_field('states', 'option');
-// 				foreach($rows as $index => $row) {
-// 					$grid_items[$index]['header'] = $row['state']['label'];
-// 					$grid_items[$index]['image']['id'] = $row['image']['id'];
-// 				}
-// 				break;
-// 			case 'countries':
-// 				# code...
-// 				$rows = get_field('countries', 'option');
-// 				foreach($rows as $index => $row) {
-// 					$grid_items[$index]['header'] = $row['country']['label'];
-// 					$grid_items[$index]['image']['id'] = $row['country_image']['id'];
-// 				}
-// 				break;
-// 			case 'counties':
-// 				# code...
-// 				$rows = get_field('counties', 'option');
-// 				foreach($rows as $index => $row) {
-// 					preg_match_all('/(.*)(?=\,)/', $row['county']['address'], $matches);
-// 					$grid_items[$index]['header'] = $matches[0][0];
-// 					$grid_items[$index]['image']['id'] = $row['image']['id'];
-// 				}
-// 				break;
-// 		}
-// 		return $grid_items;
-// 	}
-// }
 ?>
