@@ -1,5 +1,5 @@
 @media only screen {
-
+    //Hero section
     section.hero {
         overflow: hidden;
         height: 90vh;
@@ -50,7 +50,7 @@
             }
         }
     }
-    
+    // Hero Image
     section.hero#hero_image {        
         //First div of hero image 
         > #hero_staticimage {
@@ -60,69 +60,73 @@
             background-position: center;
         }
     }
-
+    // Hero Slider
     section.hero#hero_slider {
-        #slick_slider {
-            .slick-slide > img {
-                object-fit: cover; 
-                position: relative;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                height: 90vh;
-            }
-            //Previous slider image button 
-            .slick-prev {
-                left: 0;
-            }
-            //Previous slider image button icon
-            .slick-prev > i {
-                left: 5%; 
-            } 
-            //Next slider image button
-            .slick-next { 
-                right: 0; 
-            }
-            //Next slider image button icon
-            .slick-next > i {
-                right: 5%;
-            }
-            .slick-prev, 
-            .slick-next {
-                width: 25%; 
-                height: 100%;
-                z-index: 18;
-            }
-            .slick-prev:before,
-            .slick-next:before {
-                display: none;
-            }
-            .slick-prev i,
-            .slick-next i {
-                font-size: 40px;
-                z-index: 18;
-                color: $black;
-                opacity: 0;
-                position: absolute;
-                transition: opacity 0.2s;
-            }
-            //Previous and next slider image button icons actions on hover, active and focus
-            .slick-prev:hover,
-            .slick-prev:active,
-            .slick-prev:focus,
-
-            .slick-next:hover,
-            .slick-next:active,
-            .slick-next:focus {
-                > i {
-                    opacity: 0.8;
-                }
-            }
+        // Slider images
+        .slick-slide > img {
+            object-fit: cover; 
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 90vh;
+        }
+        //Previous slider image button 
+        .slick-prev {
+            left: 0;
+        }
+        //Previous slider image button icon
+        .slick-prev > i {
+            left: 5%; 
         } 
-    }
+        //Next slider image button
+        .slick-next { 
+            right: 0; 
+        }
+        //Next slider image button icon
+        .slick-next > i {
+            right: 5%;
+        }
+        // Previous and next button
+        .slick-prev, 
+        .slick-next {
+            width: 25%; 
+            height: 100%;
+            z-index: 18;
+        }
+        // Previous and next button before pseudo element
+        .slick-prev:before,
+        .slick-next:before {
+            display: none;
+        }
+        // Previous and next button icons
+        .slick-prev i,
+        .slick-next i {
+            font-size: 40px;
+            z-index: 18;
+            color: $black;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 0.2s;
+        }
+        // Previous and next slider image button icons actions on hover, active and focus
+        .slick-prev:hover,
+        .slick-prev:active,
+        .slick-prev:focus,
 
+        .slick-next:hover,
+        .slick-next:active,
+        .slick-next:focus {
+            // Previous and next slider icons actions on hover, active and focus
+            > i {
+                opacity: 0.8;
+            }
+        }
+    }
+    // Hero Video
     section.hero#hero_video {
         overflow: hidden;
+        // Video 
         video {
             position: relative;
             top: 0;
@@ -135,7 +139,8 @@
 }
 
 @media only screen and (min-width: 1160px){
-    section.hero #hero_video video {
+    // Hero Video
+    section.hero#hero_video video {
         width: 100vw;
         height: auto;
     }
