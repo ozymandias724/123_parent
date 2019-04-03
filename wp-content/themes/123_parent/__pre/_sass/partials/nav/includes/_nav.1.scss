@@ -1,16 +1,13 @@
 @media only screen {
-
     //Header 1
     header#opt_header_one {
         padding: 0px;
         display: block;
         position: relative;
         font-family: 'Montserrat', sans-serif;
-        
         //Common scss for top part and bottom part of header
         > div {
             width: 100%;
-
             //Common scss of top part and bottom part of header first div 
             > div {
                 flex-wrap: nowrap;
@@ -19,20 +16,17 @@
                 margin: 0 auto;
                 max-width: $nav_maxwidth;
             }
-    
             //Top part of header
             &:nth-of-type(1) {
                 background-color: $black;
                 color: $white;
             }
-    
             //Span elements inside top part of header
             &:nth-of-type(1) > div > span:nth-of-type(1),
             &:nth-of-type(1) > div > span:nth-of-type(2) {
                 align-items: center;
                 display: flex;
             }
-    
             //Before pseudo of span elements inside top part of header
             &:nth-of-type(1) > div > span:before {
                 color: $blue_infinity_carpet;
@@ -42,7 +36,6 @@
                 display: block;
                 font-family: 'Font Awesome 5 Free';
             }
-    
             //Links of span elements inside top part of header
             &:nth-of-type(1) > div > span > a {
                 padding: 5px;
@@ -51,38 +44,32 @@
                 -o-transition: opacity 0.3s;
                 transition: opacity 0.3s;
             }
-    
             //Links actions on hover, active and focus of span elements inside top part of header
             &:nth-of-type(1) > div > span > a:hover,
             &:nth-of-type(1) > div > span > a:active,
             &:nth-of-type(1) > div > span > a:focus {
                 opacity: 1;
             }
-    
             //Logo
             &:nth-of-type(1) > div > a {
                 padding: 15px;
             }
-    
             //Address span element
             &:nth-of-type(1) > div > span:nth-of-type(1) {
                 margin-left: auto;
                 width: 280px;
                 font-size: 16px;
             }
-    
             //Address span element before pseudo element
             &:nth-of-type(1) > div > span:nth-of-type(1):before {
                 content: "\f3c5";
                 padding: 8px 14px;
                 margin-right: 10px;
             }
-    
             //Phone number span element
             &:nth-of-type(1) > div > span:nth-of-type(2) {
                 margin-left: 5%;
             }
-    
             //Phone number span element before pseudo element
             &:nth-of-type(1) > div > span:nth-of-type(2):before {
                 content: "\f095";
@@ -94,7 +81,6 @@
                 transform: rotate(90deg);
                 margin-top: 5px;
             }
-
             //Phone number link span element
             &:nth-of-type(1) > div > span:nth-of-type(2) > a > span {
                 font-size: 14px;
@@ -104,14 +90,12 @@
                 display: block;
                 font-weight: 700;
             }
-
             //Lower part of header (navigational menu and social icons) 
             &:nth-of-type(2) {
                 background-color: $white;
                 box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
                 top: 0; 
-            }
-            
+            }       
             //Navigational menu
             &:nth-of-type(2) > div > nav {
                 align-items: center;
@@ -120,7 +104,6 @@
                 text-transform: uppercase;
                 padding: 0 5px;
             }
-
             //Navigational menu links
             &:nth-of-type(2) > div > nav > ul > li > a {
                 display: block;
@@ -128,7 +111,6 @@
                 color: $black;
                 padding: 15px 10px;
             }
-
             //Navigational menu actions on hover, active and focus
             &:nth-of-type(2) > div > nav > ul > li > a:hover, 
             &:nth-of-type(2) > div > nav > ul > li > a:active,
@@ -136,12 +118,10 @@
                 background-color: $blue_infinity_carpet;
                 color: $white;
             }
-    
             //Navigational menu list items
             &:nth-of-type(2) > div > nav > ul > li {
                 margin-right: 0px;
             }
-
             //Social icons underordered list
             &:nth-of-type(2) > div > ul {
                 flex: 1 0 auto;
@@ -150,14 +130,12 @@
                 align-items: center;
                 display: flex;
             }
-    
             //Social icons list items
             &:nth-of-type(2) > div > ul > li {
                 flex: 1 0 auto;
                 position: relative;
                 padding: 2px;
             }
-    
             //Social icons list items links
             &:nth-of-type(2) > div > ul > li > a {
                 padding: 7px 10px;
@@ -166,14 +144,12 @@
                 transition: color 0.3s;
                 font-size: 16px;
             }
-            
             //Social icons list items actions on hover, active and focus
             &:nth-of-type(2) > div > ul > li > a:hover,
             &:nth-of-type(2) > div > ul > li > a:active,
             &:nth-of-type(2) > div > ul > li > a:focus {
                 color: $blue_infinity_carpet;
             }
-    
             //Last social icon list item
             &:nth-of-type(2) > div > ul > li:last-of-type {
                 padding-right: 0;
