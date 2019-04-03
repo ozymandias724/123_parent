@@ -41,7 +41,7 @@
  ?>
 <section id="mod_gallery">
 <?php 
-
+    print_r($fields);
     echo $return_gallery_one;
 
 ?>

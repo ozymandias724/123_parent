@@ -40,8 +40,6 @@
             &:nth-of-type(1) > div > span > a {
                 padding: 5px;
                 opacity: $opacity_level_below_one;
-                -webkit-transition: opacity 0.3s;
-                -o-transition: opacity 0.3s;
                 transition: opacity 0.3s;
             }
             //Links actions on hover, active and focus of span elements inside top part of header
@@ -76,8 +74,6 @@
                 padding: 10px 10px;
                 margin-left: 30px;
                 margin-right: 10px;
-                -webkit-transform: rotate(90deg);
-                -o-transform: rotate(90deg);
                 transform: rotate(90deg);
                 margin-top: 5px;
             }
@@ -139,8 +135,6 @@
             //Social icons list items links
             &:nth-of-type(2) > div > ul > li > a {
                 padding: 7px 10px;
-                -webkit-transition: color 0.3s;
-                -o-transition: color 0.3s;
                 transition: color 0.3s;
                 font-size: 16px;
             }
@@ -153,8 +147,7 @@
             //Last social icon list item
             &:nth-of-type(2) > div > ul > li:last-of-type {
                 padding-right: 0;
-            }
-    
+            }    
         }
     }
 }
