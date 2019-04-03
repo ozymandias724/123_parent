@@ -21,7 +21,7 @@ include_once('PHPImage.php');
 include_once('components/reqs/misc-helpers.php');
 
 // custom post types
-include_once('components/reqs/custompts.php');
+include_once( 'classes/class.customposts.php' );
 
 // reseller stuff
 include_once('components/reqs/resellers.php');

@@ -9,14 +9,15 @@
     $args = array(
         'posts_per_page' => 1
         ,'post_type' => 'page'
-        ,'pagename' => 'reviews'
+        ,'pagename' => 'about'
     );
     $res = get_posts($args);
 
     // get the gallery page fields
     $fields = get_fields($res[0]);
+
  ?>
-<section id="mod_reviews">
+<section id="mod_about">
 <?php 
     echo '<h2>'.$res[0]->post_title.'</h2>';
  ?>

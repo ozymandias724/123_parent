@@ -8,21 +8,21 @@ class Pagedata
 	function _init(){
 		// get the active pages and store it as a variable
 		Pagedata::$active_pages = get_field('field_naaolkn23oin', 'options');
-		Pagedata::ensure_required_pages_exist();
+		// Pagedata::ensure_required_pages_exist();
 	}
 	// slug => [ title, template]
 	public static $required_pages = array(
-		'areas-served' => [
+		'locations' => [
 			'title' => 'Areas Served',
-			'template' => 'areas-served.php'
+			'template' => 'locations.php'
 		],
 		'blog' => [
 			'title' => 'Blog',
 			'template' => 'blog.php'
 		],
-		'company' => [
-			'title' => 'Company',
-			'template' => 'company.php'
+		'about' => [
+			'title' => 'About',
+			'template' => 'about.php'
 		],
 		'contact' => [
 			'title' => 'Contact',
@@ -52,9 +52,9 @@ class Pagedata
 			'title' => 'Terms and Conditions',
 			'template' => false
 		],
-		'testimonials' => [
+		'reviews' => [
 			'title' => 'Testimonials',
-			'template' => 'testimonials.php'
+			'template' => 'reviews.php'
 		],
 	);
 	public static function ensure_required_pages_exist(){
