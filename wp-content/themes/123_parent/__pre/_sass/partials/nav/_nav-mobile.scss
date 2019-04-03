@@ -36,6 +36,7 @@ $opacity_level_below_one : 0.8;
         font-size: 1.6rem;
         z-index: 19;
         background-color: $white;
+        // Div elements inside header element
         > div {
             // Top bar with hamburger icon
             &:first-of-type {
@@ -97,9 +98,9 @@ $opacity_level_below_one : 0.8;
             }
         }
     }
-    //Mobile nav sidebar
+    // Mobile nav sidebar
     .mobile_header_sidebar_menu_1 {
-		//Class to add to mobile sidebar when hamburger icon is clicked
+		// Class to add to mobile sidebar when hamburger icon is clicked
 		&.mobile_sidebar_cover_all {
 			width: 100%;
 			height: 100%;
@@ -124,9 +125,10 @@ $opacity_level_below_one : 0.8;
             padding-top: 60px;
             transform: translateX(-100%);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
+        } 
+        // Telephone number
         > div > div,
-        > div > nav, 
+        // Social media icons
         > div > ul {
             margin-top: 30px;
         }
@@ -134,13 +136,13 @@ $opacity_level_below_one : 0.8;
         > div > nav {
             margin-top: 90px;
         }
-        //Mobile nav sidebar navigational menu unordered list
+        // Mobile nav sidebar navigational menu unordered list
         > div > nav > ul.navlinks {
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
         }
-        //Mobile nav sidebar navigational menu unordered list items
+        // Mobile nav sidebar navigational menu unordered list items
         > div > nav > ul.navlinks > li {
             margin-right: 0; 
             width: 100%;
@@ -160,7 +162,7 @@ $opacity_level_below_one : 0.8;
         > div > div {
             display: inline-block;
         }
-        //Telephone number link
+        // Telephone number link
         > div > div > a {
             display: inline-block;
             padding: 10px 15px 10px 15px;
@@ -170,14 +172,14 @@ $opacity_level_below_one : 0.8;
             background-color: $black;
             font-weight: 500;
         }
-        //Social icons unordered list 
+        // Social icons unordered list 
         > div > ul {
             flex-flow: row nowrap;
             list-style-type: none;
             display: flex;
             justify-content: center;
         }
-        //Social icons unordered list items links
+        // Social icons unordered list items links
         > div > ul > li > a {
             border-bottom: 1px solid $black_opacity_none;
             padding: 10px;
@@ -189,7 +191,7 @@ $opacity_level_below_one : 0.8;
                 border-bottom: 1px solid $gray;
             }
         }
-        //Telephone number link
+        // Telephone number link
         > div > div > a {
             opacity: $opacity_level_below_one;
             background-color: $black;
@@ -204,7 +206,7 @@ $opacity_level_below_one : 0.8;
                 background-color: $black_opacity_none;
             }
         }
-        //Mobile nav sidebar navigational menu unordered list items links 
+        // Mobile nav sidebar navigational menu unordered list items links 
         > div > nav > ul > li > a {
             opacity: $opacity_level_below_one;
             transition: opacity 0.3s;

@@ -37,7 +37,7 @@ $bp__lg : 1280px;
         z-index: 19;
         font-size: 1.4rem;
         padding-top: $banner_height;
-        //Logo link
+        // Logo link
         a.header-logo {
             display: inline-block;
             padding: 15px;
@@ -46,20 +46,21 @@ $bp__lg : 1280px;
                 max-width: 180px;
             }
         }
-        //Navigational menu unordered list
+        // Navigational menu unordered list
         ul.navlinks {
             list-style-type: none;
             display: flex;
-        }//Navigational menu unordered list items
+        }
+        // Navigational menu unordered list items
         li.navlinks-item {
             display: inline-block;
             margin-right: 10px;
-            //Last navigational menu unordered list item
+            // Last navigational menu unordered list item
             &:last-of-type {
                 margin-right: 0;
             }
         }
-        //Header tint
+        // Header tint
         span.header-tint {
             display: inline-block;
             position: absolute;
@@ -70,14 +71,14 @@ $bp__lg : 1280px;
             z-index: -1;
             background-color: $tint;
         }
-        //Quote button
+        // Quote button
         a.site__button-quote {
             background-color: $accent;
             color: $white;
             padding: 15px;
             margin-left: 15px;
         }
-        // banners above the header
+        // Banners above the header
         .opt__estimatebar,
         .opt__topbanner {
             width: 100%;
@@ -118,13 +119,13 @@ $bp__lg : 1280px;
     }
     // Header 10 sidebar menu
     .header_sidebar_menu_1 {
-        //Class to add to sidebar when it is opened
+        // Class to add to sidebar when it is opened
         &.header_sidebar_cover_all {
             width: 100%;
             height: 100%;
             position: fixed;
         }
-        //First div element in sidebar when sidebar menu has the above class
+        // First div element in sidebar when sidebar menu has the above class
         &.header_sidebar_cover_all > div {
             transform: translateX(0%);
             box-shadow: -6px 0px 25px 0px $black;
@@ -143,8 +144,9 @@ $bp__lg : 1280px;
             transform: translateX(-100%);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        // Navigational menu
+        // Telephone number
         > div > div,
+        // Social media icons
         > div > ul {
             margin-top: 30px;
         }
@@ -183,12 +185,12 @@ $bp__lg : 1280px;
                 border-bottom: 1px solid $black;
             }
         }
-        //Telephone number parent div element
+        // Telephone number parent div element
         > div > div {
             display: block;
             text-align: center;
         }
-        //Telephone number link
+        // Telephone number link
         > div > div > a {
             display: inline-block;
             padding: 10px 15px 10px 15px;

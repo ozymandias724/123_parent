@@ -17,32 +17,32 @@
     // get the gallery page fields
     $fields = get_fields($res[0]);
 
-    // if status is 1, (possibly)
-
+    // If status is 1, (possibly)
+ 
     // check type
     if( $fields['type'] == 'one' ){
         
-        $format_gallery_one = '<li>%s</li>';
+        $format_gallery_one = '<li><img src="%s" /></li>';
         
-        $return_gallery_one = '<h2>'.$fields['gallery_one']['heading'].'</h2><ul>';
+        $return_gallery_one = '<div><h2>'.$fields['gallery_one']['heading'].'</h2><ul>';
         
         foreach( $fields['gallery_one']['images'] as $i => $image ){
             $return_gallery_one .= sprintf(
                 $format_gallery_one
-                ,$i
+                ,$image['url']
             );
 
         }
 
-        $return_gallery_one .= '</ul>';
+        $return_gallery_one .= '</ul></div>';
         
-    }
+    } 
  
  ?>
 <section id="mod_gallery">
 <?php 
-    print_r($fields);
+    //print_r($fields);
     echo $return_gallery_one;
 
 ?>
-</section>
+</section> 

@@ -1,3 +1,54 @@
 @media only screen {
-    
+    // Gallery section 
+    section#mod_gallery {
+        max-width: 1262px;
+        margin: 0 auto;
+        text-align: center;
+        > div {
+            // Unordered list 
+            > ul {
+                display: flex;
+                flex-flow: row wrap;
+                list-style: none;
+                // Unordered list items
+                > li {
+                    flex: 1 0 auto;
+                    margin: 10px;
+                }
+                // Unordered list div elements
+                > li > img {
+                    width: 100%; 
+                    min-height: 320px;
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 500px){
+        // Gallery section 
+        section#mod_gallery {
+            > div {
+                // Unordered list 
+                > ul {
+                    > li {
+                        flex: 1 0 48%;
+                        max-width: 48%;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 769px){
+        // Gallery section 
+        section#mod_gallery {
+            > div {
+                // Unordered list 
+                > ul {
+                    > li {
+                        flex: 1 0 31%;
+                        max-width: 31%;
+                    }
+                }
+            }
+        }
+    }
 }
