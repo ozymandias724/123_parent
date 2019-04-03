@@ -37,7 +37,7 @@
 <body <?php body_class($theme_name); ?>>
 <?php 
 	if( $post->post_name !== 'disabled' ) {
-		include('partials/navigation/header/nav-desktop.php');
-		include('partials/navigation/header/nav-mobile.php');
+		include('parts/nav/header/nav-desktop.php');
+		include('parts/nav/header/nav-mobile.php');
     }
 ?>

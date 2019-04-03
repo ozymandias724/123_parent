@@ -8,7 +8,7 @@ class Pagedata
 	function _init(){
 		// get the active pages and store it as a variable
 		Pagedata::$active_pages = get_field('field_naaolkn23oin', 'options');
-		// Pagedata::ensure_required_pages_exist();
+		Pagedata::ensure_required_pages_exist();
 	}
 	// slug => [ title, template]
 	public static $required_pages = array(

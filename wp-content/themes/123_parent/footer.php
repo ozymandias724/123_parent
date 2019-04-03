@@ -146,8 +146,8 @@
 			,get_the_fax()
 		);
 		// include mobile/desktop footers
-		include('partials/navigation/footer/footer-mobile.php');
-		include('partials/navigation/footer/footer-desktop.php');
+		include('parts/nav/footer/footer-mobile.php');
+		include('parts/nav/footer/footer-desktop.php');
 	}
 
 	if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
