@@ -11,17 +11,28 @@
                 margin: 15px 0;
             }
             // Unordered list 
+            // > ul {
+            //     display: block;
+            //     list-style: none;
+            //     width: 100%;
+            //     margin: 0 auto;
+            // }
             > ul {
-                display: flex;
-                flex-wrap: wrap;
                 list-style: none;
-                justify-content: flex-start;
+                display: flex;
+                margin: 0 auto;
+                flex-flow: row wrap;
             }
             // Unordered list items
+            // > ul > li {
+            //     padding: 5px 10px;
+            //     display: inline-block;
+                
+            // }
             > ul > li {
                 padding: 10px;
+                flex: 1;
                 width: 100%;
-                
             }
             // Unordered list div elements
             > ul > li > div {
@@ -33,29 +44,19 @@
             }
         }
     }
-
-    @media only screen and (min-width: 647px){
-        // Gallery section unordered list items
+    @media only screen and (min-width: 624px){
         section#mod_gallery > div > ul > li {
-            flex: 0 1 50%;
+            width: 50%;
         }
     }
-
-    @media only screen and (min-width: 1000px){
-        // Gallery section unordered list items
+    @media only screen and (min-width: 940px){
         section#mod_gallery > div > ul > li {
-            flex: 0 1 33%;
+            width: 33%;
         }
     }
-    
-    @media only screen and (min-width: 1260px){
-        // Gallery section unordered list
-        section#mod_gallery > div > ul {
-            justify-content: space-between;
-        }
-        // Gallery section unordered list items
+    @media only screen and (min-width: 1200px){
         section#mod_gallery > div > ul > li {
-            flex: 0 1 23%;
+            width: 25%;
         }
     }
 }
