@@ -14,14 +14,12 @@ var rand = Math.floor(Math.random() * (0, _jquery.default)(".img-slick").length)
 (0, _jquery.default)('#slick_slider').slick({
   autoplay: Boolean(hero_fields.autoplay),
   adaptiveHeight: true,
-  arrows: true,
+  arrows: false,
   fade: Boolean(hero_fields.fade),
   autoplaySpeed: hero_fields.speed,
   pauseOnHover: false,
   pauseOnFocus: false,
-  initialSlider: Boolean(hero_fields.random) ? rand : '',
-  nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>',
-  prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>'
+  initialSlider: Boolean(hero_fields.random) ? rand : ''
 });
 Headers.Desktop = {
   _init: function _init() {

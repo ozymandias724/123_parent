@@ -22,7 +22,7 @@
     // check type
     if( $fields['type'] == 'one' ){
         
-        $format_gallery_one = '<li><img src="%s" /></li>';
+        $format_gallery_one = '<li><div style="background-image:url(%s);" /></li>';
         
         $return_gallery_one = '<div><h2>'.$fields['gallery_one']['heading'].'</h2><ul>';
         

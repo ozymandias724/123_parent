@@ -135,7 +135,7 @@ class SetupTheme
 			'speed' => 5000,
 			'fade' => true,
 			'random' => true,
-			'autoplay' => false 
+			'autoplay' => true 
 		)); 
 		// end localize scripts
 	}

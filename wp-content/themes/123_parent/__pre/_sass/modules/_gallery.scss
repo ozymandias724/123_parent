@@ -5,50 +5,58 @@
         margin: 0 auto;
         text-align: center;
         > div {
+            // Text heading 
+            > h2 {
+                font-size: 32px; 
+                margin: 15px 0;
+            }
             // Unordered list 
             > ul {
                 display: flex;
-                flex-flow: row wrap;
+                flex-wrap: wrap;
                 list-style: none;
-                // Unordered list items
-                > li {
-                    flex: 1 0 auto;
-                    margin: 10px;
-                }
-                // Unordered list div elements
-                > li > img {
-                    width: 100%; 
-                    min-height: 320px;
-                }
+                justify-content: flex-start;
+            }
+            // Unordered list items
+            > ul > li {
+                padding: 10px;
+                width: 100%;
+                
+            }
+            // Unordered list div elements
+            > ul > li > div {
+                min-width: 295px;
+                min-height: 295px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
         }
     }
-    @media only screen and (min-width: 500px){
-        // Gallery section 
-        section#mod_gallery {
-            > div {
-                // Unordered list 
-                > ul {
-                    > li {
-                        flex: 1 0 48%;
-                        max-width: 48%;
-                    }
-                }
-            }
+
+    @media only screen and (min-width: 647px){
+        // Gallery section unordered list items
+        section#mod_gallery > div > ul > li {
+            flex: 0 1 50%;
         }
     }
-    @media only screen and (min-width: 769px){
-        // Gallery section 
-        section#mod_gallery {
-            > div {
-                // Unordered list 
-                > ul {
-                    > li {
-                        flex: 1 0 31%;
-                        max-width: 31%;
-                    }
-                }
-            }
+
+    @media only screen and (min-width: 1000px){
+        // Gallery section unordered list items
+        section#mod_gallery > div > ul > li {
+            flex: 0 1 33%;
+        }
+    }
+    
+    @media only screen and (min-width: 1260px){
+        // Gallery section unordered list
+        section#mod_gallery > div > ul {
+            justify-content: space-between;
+        }
+        // Gallery section unordered list items
+        section#mod_gallery > div > ul > li {
+            flex: 0 1 23%;
         }
     }
 }
+
