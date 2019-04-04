@@ -3765,18 +3765,31 @@
       font-size: 32px;
       margin: 15px 0; }
     section#mod_gallery > div > ul {
-      display: block;
       list-style: none;
-      width: 100%;
-      margin: 0 auto; }
+      display: flex;
+      margin: 0 auto;
+      flex-flow: row wrap; }
     section#mod_gallery > div > ul > li {
-      padding: 5px 10px;
-      display: inline-block; }
+      padding: 10px;
+      flex: 1;
+      width: 100%; }
     section#mod_gallery > div > ul > li > div {
       min-width: 295px;
       min-height: 295px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat; } }
+
+@media only screen and (min-width: 624px) {
+  section#mod_gallery > div > ul > li {
+    width: 50%; } }
+
+@media only screen and (min-width: 940px) {
+  section#mod_gallery > div > ul > li {
+    width: 33%; } }
+
+@media only screen and (min-width: 1200px) {
+  section#mod_gallery > div > ul > li {
+    width: 25%; } }
 
 /*# sourceMappingURL=main.css.map */
