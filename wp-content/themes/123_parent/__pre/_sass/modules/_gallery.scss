@@ -12,15 +12,15 @@
             }
             // Unordered list 
             > ul {
-                display: flex;
-                flex-wrap: wrap;
+                display: block;
                 list-style: none;
-                justify-content: flex-start;
+                width: 100%;
+                margin: 0 auto;
             }
             // Unordered list items
             > ul > li {
-                padding: 10px;
-                width: 100%;
+                padding: 5px 10px;
+                display: inline-block;
                 
             }
             // Unordered list div elements
@@ -31,31 +31,6 @@
                 background-position: center;
                 background-repeat: no-repeat;
             }
-        }
-    }
-
-    @media only screen and (min-width: 647px){
-        // Gallery section unordered list items
-        section#mod_gallery > div > ul > li {
-            flex: 0 1 50%;
-        }
-    }
-
-    @media only screen and (min-width: 1000px){
-        // Gallery section unordered list items
-        section#mod_gallery > div > ul > li {
-            flex: 0 1 33%;
-        }
-    }
-    
-    @media only screen and (min-width: 1260px){
-        // Gallery section unordered list
-        section#mod_gallery > div > ul {
-            justify-content: space-between;
-        }
-        // Gallery section unordered list items
-        section#mod_gallery > div > ul > li {
-            flex: 0 1 23%;
         }
     }
 }
