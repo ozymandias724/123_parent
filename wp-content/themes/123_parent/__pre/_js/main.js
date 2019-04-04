@@ -23,8 +23,7 @@ Headers.Desktop = {
         Headers.Desktop.One._init();
         Headers.Desktop.Eight._init();
         Headers.Desktop.Ten._init();
-        
-
+    
     },
 
     Address_Link: {
@@ -54,7 +53,7 @@ Headers.Desktop = {
                 window.onscroll = function () {
 
                     Headers.Desktop.One._sticky_header();
-
+                    
                 }
 
                 Headers.Desktop.One._sticky_header();
