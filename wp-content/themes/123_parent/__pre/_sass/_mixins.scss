@@ -1,47 +1,43 @@
 @import '__OLD/_mixins.scss';
+
+// recommended to use vw, should work tho
+// width, cols, gutter, square
 @mixin gridLayout($w, $c, $g, $s) {
     text-align: center;
-
     & ul {
         text-align: left;
         width: $w;
         margin: 0 auto 0 auto;
         display: inline-block;
         @include clearFix;
-
         &>li {
             $d: colWidth($w, $c, $g);
             width: $d;
             height: auto;
             float: left;
-
             div.image,
             div.neu__bgimg {
                 @if $s==true {
                     height: $d
                 }
             }
-
-            p {
-                &>span {
-                    display: block;
-                }
-
-                margin: 0 0 20px 0;
-            }
-
             &:nth-child(n+1) {
                 // this will reset each child before applying to the target
                 margin: 0 $g $g 0;
             }
-
             &:nth-child(#{$c}n) {
                 margin: 0 0 $g 0;
+            }
+            // stylistic stuff
+            p {
+                &>span {
+                    display: block;
+                }
+                margin: 0 0 20px 0;
             }
         }
     }
 }
-
 // this will set column widths for grid items
 @function colWidth($w, $c, $g) {
     @return (($w - (($c - 1) * $g)) / $c);
