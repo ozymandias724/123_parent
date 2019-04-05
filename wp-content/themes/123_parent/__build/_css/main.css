@@ -3706,7 +3706,7 @@
       left: 50%;
       width: 100%; }
       section.hero .hero_foreground h2 {
-        font-size: 78px;
+        font-size: 50px;
         line-height: 1em; }
       section.hero .hero_foreground img {
         max-width: 180px;
@@ -3752,6 +3752,10 @@
       transform: translateX(-50%);
       width: auto;
       height: 90vh; } }
+
+@media only screen and (min-width: 768px) {
+  section.hero .hero_foreground > h2 {
+    font-size: 78px; } }
 
 @media only screen and (min-width: 1160px) {
   section.hero#hero_video video {
