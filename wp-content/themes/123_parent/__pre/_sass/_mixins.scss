@@ -21,8 +21,7 @@
             width: $d;
             height: auto;
             float: left;
-            div.image,
-            div.neu__bgimg {
+            div.image {
                 @if $s==true {
                     height: $d
                 }
@@ -33,13 +32,6 @@
             }
             &:nth-child(#{$c}n) {
                 margin: 0 0 $g 0;
-            }
-            // stylistic stuff
-            p {
-                &>span {
-                    display: block;
-                }
-                margin: 0 0 20px 0;
             }
         }
     }

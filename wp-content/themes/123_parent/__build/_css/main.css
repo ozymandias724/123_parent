@@ -3769,19 +3769,91 @@
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
+        width: 80vw;
+        height: auto;
+        float: left; }
+        section#mod_gallery > div ul > li:nth-child(n+1) {
+          margin: 0 2vw 2vw 0; }
+        section#mod_gallery > div ul > li:nth-child(1n) {
+          margin: 0 0 2vw 0; }
+    section#mod_gallery > div > h2 {
+      font-size: 30px;
+      margin: 15px 0; }
+    section#mod_gallery > div .image {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
+    section#mod_gallery > div > ul {
+      list-style: none; } }
+
+@media only screen and (min-width: 550px) {
+  section#mod_gallery > div {
+    text-align: center; }
+    section#mod_gallery > div ul {
+      text-align: left;
+      width: 80vw;
+      margin: 0 auto 0 auto;
+      display: inline-block; }
+      section#mod_gallery > div ul:after {
+        content: "";
+        display: table;
+        clear: both; }
+      section#mod_gallery > div ul > li {
+        width: 39vw;
+        height: auto;
+        float: left; }
+        section#mod_gallery > div ul > li div.image {
+          height: 39vw; }
+        section#mod_gallery > div ul > li:nth-child(n+1) {
+          margin: 0 2vw 2vw 0; }
+        section#mod_gallery > div ul > li:nth-child(2n) {
+          margin: 0 0 2vw 0; } }
+
+@media only screen and (min-width: 768px) {
+  section#mod_gallery > div {
+    text-align: center; }
+    section#mod_gallery > div ul {
+      text-align: left;
+      width: 80vw;
+      margin: 0 auto 0 auto;
+      display: inline-block; }
+      section#mod_gallery > div ul:after {
+        content: "";
+        display: table;
+        clear: both; }
+      section#mod_gallery > div ul > li {
         width: 25.3333333333vw;
         height: auto;
         float: left; }
-        section#mod_gallery > div ul > li div.image,
-        section#mod_gallery > div ul > li div.neu__bgimg {
+        section#mod_gallery > div ul > li div.image {
           height: 25.3333333333vw; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
           margin: 0 2vw 2vw 0; }
         section#mod_gallery > div ul > li:nth-child(3n) {
-          margin: 0 0 2vw 0; }
-        section#mod_gallery > div ul > li p {
-          margin: 0 0 20px 0; }
-          section#mod_gallery > div ul > li p > span {
-            display: block; } }
+          margin: 0 0 2vw 0; } }
+
+@media only screen and (min-width: 940px) {
+  section#mod_gallery > div {
+    text-align: center; }
+    section#mod_gallery > div ul {
+      text-align: left;
+      width: 80vw;
+      margin: 0 auto 0 auto;
+      display: inline-block; }
+      section#mod_gallery > div ul:after {
+        content: "";
+        display: table;
+        clear: both; }
+      section#mod_gallery > div ul > li {
+        width: 18.5vw;
+        height: auto;
+        float: left; }
+        section#mod_gallery > div ul > li div.image {
+          height: 18.5vw; }
+        section#mod_gallery > div ul > li:nth-child(n+1) {
+          margin: 0 2vw 2vw 0; }
+        section#mod_gallery > div ul > li:nth-child(4n) {
+          margin: 0 0 2vw 0; } }
 
 /*# sourceMappingURL=main.css.map */
