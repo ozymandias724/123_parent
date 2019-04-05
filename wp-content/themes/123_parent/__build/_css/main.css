@@ -1010,7 +1010,7 @@
     text-align: center;
     background-color: #f1f1f1;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding: 60px 0;
     transform: translateX(-100%);
     transition: transform 0.25s ease, box-shadow 0.25s ease; }
   .mobile_header_sidebar_menu_1 > div > div,
@@ -1238,12 +1238,15 @@
       justify-content: space-around;
       max-width: 1262px;
       margin: 0 auto; }
+    header#opt_header_two > div:last-of-type > div > a {
+      margin-right: auto; }
     header#opt_header_two > div:last-of-type > div > div {
       color: white;
       text-transform: uppercase;
       display: flex;
       flex-flow: row nowrap;
-      align-items: center; }
+      align-items: center;
+      margin-right: 15px; }
     header#opt_header_two > div:last-of-type > div > div > div {
       display: flex;
       flex-flow: column nowrap;
@@ -1348,7 +1351,8 @@
         font-size: 2rem;
         font-weight: bold;
         position: relative;
-        top: 1px; }
+        top: 2px;
+        left: 5px; }
       header#opt_header_three > div > div:first-of-type > a {
         flex: 1 0 10%;
         background-color: #17181d;
@@ -1870,9 +1874,7 @@
       background-color: rgba(255, 255, 255, 0);
       transition: color 0.3s, border 0.3s, background-color 0.3s; }
       header#opt_header_nine > div:last-of-type > div > div > a:hover, header#opt_header_nine > div:last-of-type > div > div > a:active, header#opt_header_nine > div:last-of-type > div > div > a:focus {
-        color: black;
-        border: 2px solid black;
-        background-color: rgba(255, 255, 255, 0.1); }
+        background-color: rgba(0, 0, 0, 0.2); }
     header#opt_header_nine > div:first-of-type > div > div > span > a,
     header#opt_header_nine > div:first-of-type > div > ul > li > a {
       color: white;
@@ -3773,11 +3775,10 @@
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
-          margin: 0 2vw 2vw 0; }
+          margin: 0 1.5vw 1.5vw 0; }
         section#mod_gallery > div ul > li:nth-child(1n) {
-          margin: 0 0 2vw 0; }
+          margin: 0 0 1.5vw 0; }
     section#mod_gallery > div > h2 {
-      font-size: 30px;
       margin: 15px 0; }
     section#mod_gallery > div .image {
       height: 250px;
@@ -3800,15 +3801,15 @@
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
-        width: 39vw;
+        width: 39.25vw;
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li div.image {
-          height: 39vw; }
+          height: 39.25vw; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
-          margin: 0 2vw 2vw 0; }
+          margin: 0 1.5vw 1.5vw 0; }
         section#mod_gallery > div ul > li:nth-child(2n) {
-          margin: 0 0 2vw 0; } }
+          margin: 0 0 1.5vw 0; } }
 
 @media only screen and (min-width: 768px) {
   section#mod_gallery > div {
@@ -3823,22 +3824,22 @@
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
-        width: 25.3333333333vw;
+        width: 25.6666666667vw;
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li div.image {
-          height: 25.3333333333vw; }
+          height: 25.6666666667vw; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
-          margin: 0 2vw 2vw 0; }
+          margin: 0 1.5vw 1.5vw 0; }
         section#mod_gallery > div ul > li:nth-child(3n) {
-          margin: 0 0 2vw 0; } }
+          margin: 0 0 1.5vw 0; } }
 
-@media only screen and (min-width: 940px) {
+@media only screen and (min-width: 1281px) {
   section#mod_gallery > div {
     text-align: center; }
     section#mod_gallery > div ul {
       text-align: left;
-      width: 80vw;
+      width: 65vw;
       margin: 0 auto 0 auto;
       display: inline-block; }
       section#mod_gallery > div ul:after {
@@ -3846,14 +3847,14 @@
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
-        width: 18.5vw;
+        width: 15.125vw;
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li div.image {
-          height: 18.5vw; }
+          height: 15.125vw; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
-          margin: 0 2vw 2vw 0; }
+          margin: 0 1.5vw 1.5vw 0; }
         section#mod_gallery > div ul > li:nth-child(4n) {
-          margin: 0 0 2vw 0; } }
+          margin: 0 0 1.5vw 0; } }
 
 /*# sourceMappingURL=main.css.map */

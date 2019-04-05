@@ -20,6 +20,10 @@
                 max-width: $nav_maxwidth;
                 margin: 0 auto;
             }
+            // Logo 
+            &:last-of-type > div > a {
+                margin-right: auto;
+            }
             //Parent div element of phone number, nav and quote button
             &:last-of-type > div > div {
                 color: $white;
@@ -27,6 +31,7 @@
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
+                margin-right: 15px;
             }
             //Sections of phone number and nav bar
             &:last-of-type > div > div > div {

@@ -5,11 +5,10 @@
         > div {
             $w : 80vw;
             $c : 1;
-            $g : 2vw;
+            $g : 1.5vw;
             $s : false;
             @include gridLayout($w, $c, $g, $s);
             > h2 {
-                font-size: 30px;
                 margin: 15px 0;
             }
             .image {
@@ -33,7 +32,7 @@
         > div {
             $w : 80vw;
             $c : 2;
-            $g : 2vw;
+            $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
@@ -48,22 +47,22 @@
         > div {
             $w : 80vw;
             $c : 3;
-            $g : 2vw;
+            $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
         
     }
-}
+} 
 
-@media only screen and (min-width: 940px){
+@media only screen and (min-width: 1281px){
     // Gallery section 
     section#mod_gallery {
         
         > div {
-            $w : 80vw;
+            $w : 65vw;
             $c : 4;
-            $g : 2vw;
+            $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }

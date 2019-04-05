@@ -280,12 +280,12 @@ Hero = {
 
         },
         _header_function: function () {
-
+            // 
             //Get header position value
             Hero.Padding.header_position = $("header").css("position");
 
-            //If header has a position of fixed and not header 4
-            if (Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_four" && Hero.Padding.header_id !== "opt_header_nine" && Hero.Padding.header_id !== "opt_header_three") {
+            //If header has a position of fixed and not header 1, 4, 9 or 3
+            if (Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_one" && Hero.Padding.header_id !== "opt_header_four" && Hero.Padding.header_id !== "opt_header_nine" && Hero.Padding.header_id !== "opt_header_three") {
 
                 Hero.Padding.header_height = $("header").height();
 
@@ -294,6 +294,7 @@ Hero = {
                 //If header has a position of fixed and is header 4
             } else if (
                 Hero.Padding.header_position === "fixed" &&
+                Hero.Padding.header_id === "opt_header_one" ||
                 Hero.Padding.header_id === "opt_header_four" ||
                 Hero.Padding.header_id === "opt_header_nine"
             ) {
