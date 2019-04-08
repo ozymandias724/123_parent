@@ -17,207 +17,191 @@ $('#slick_slider').slick({
     ,initialSlider : Boolean(hero_fields.random) ? rand : ''
 });
 
-Headers.Desktop = {
+
+Theme.Open_Address = {
+
+    address_link: $(".google-search-address"),
+    address_text: $(".google-search-address").text(),
+
+    _init : function(){
+        Theme.Open_Address.address_link.on("click", Theme.Open_Address._open_google_search);
+    },
+    _open_google_search: function (e) {
+        event.preventDefault();
+        window.open('https://google.com/search?q=' + Theme.Open_Address.address_text);
+    },
+
+},
+Theme.Open_Address._init(); 
+
+
+Headers.One = {
+
+    header: $("header.header#opt_header_one"),
+    div_two: $("header#opt_header_one > div:nth-of-type(2)"),
+
+    _init: function(){
+
+        if ($(Headers.One.header).length) {
+            Headers.One.div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+            window.onscroll = function () {
+                Headers.One._sticky_header();
+            }
+            Headers.One._sticky_header();
+        }
+    },
+
+    _sticky_header: function () {
+
+        if (window.pageYOffset >= Headers.One.div_two_offset_top) {
+            Headers.One.div_two.addClass("sticky");
+        } else {
+            Headers.One.div_two.removeClass("sticky");
+        }
+
+    },
+
+},
+Headers.One._init();
+
+
+Headers.Eight = {
+
+    header: $("header.header#opt_header_eight"),
+
     _init: function () {
-        Headers.Desktop.Address_Link._init();
-        Headers.Desktop.One._init();
-        Headers.Desktop.Eight._init();
-        Headers.Desktop.Ten._init();
+
+        if ($(Headers.Eight.header).length) {
+            Headers.Eight.offset_top = Headers.Eight.header.offset().top;
+            window.onscroll = function () {
+                Headers.Eight._sticky_header();
+            }
+            Headers.Eight._sticky_header();
+        }
+
+    },
+    _sticky_header: function () {
+
+        if (window.pageYOffset >= Headers.Eight.offset_top) {
+            Headers.Eight.header.addClass("sticky");
+        } else {
+            Headers.Eight.header.removeClass("sticky");
+        }
+
+    },
+
+},
+Headers.Eight._init();
+
+
+Headers.Ten = {
+    header: $("header#opt_header_ten"),
+    hamburger_icon: $("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
+    sidebar: $(".header_sidebar_menu_1"),
+    outside: $(".header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten"),
+
+    _init: function () {
+
+        Headers.Ten.hamburger_icon.on("click", Headers.Ten._hamburger_icon_click);
+
+        Headers.Ten.outside.on("click", Headers.Ten._outside_click);
+
+        Headers.Ten.sidebar.on("blur", Headers.Ten._close_sidebar);
+
+        //On browser resize
+        window.addEventListener('resize', function () {
+            Headers.Ten._close_sidebar();
+        });
+
+    },
+
+    _hamburger_icon_click: function () {
+        //If header 10 hamburger icon link has class of ...
+        if (!Headers.Ten.hamburger_icon.hasClass("header_10_hamburger_icon_changed")) {
+            Headers.Ten._open_sidebar();
+        } else {
+            Headers.Ten._close_sidebar();
+        }
+    },
+    _outside_click: function (e) {
+        if (e.target === this) {
+            Headers.Ten._close_sidebar();
+        }
+    },
+    _close_sidebar: function () {
+        //Add hamburger icon link class
+        Headers.Ten.hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+
+        //Open sidebar navigational menu
+        Headers.Ten.sidebar.removeClass("header_sidebar_cover_all");
+    },
+    _open_sidebar: function () {
+        //Remove hamburger icon link class
+        Headers.Ten.hamburger_icon.addClass("header_10_hamburger_icon_changed");
+
+        //Close sidebar navigational menu
+        Headers.Ten.sidebar.addClass("header_sidebar_cover_all");
+    }
+
+}
+Headers.Ten._init();
+
+
+Headers.Sidebar = {
+
+    //Mobile header sidebar menu
+    sidebar: $(".mobile_header_sidebar_menu_1"),
+    //Mobile header sidebar and mobile header first div element
+    outside: $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
+    //Link which is the parent of the hamburger icons (spans)
+    toggle: $("header.mobileheader > div:first-of-type > a"),
+
+    _init: function () {
+
+        //When hamburger icon spans link is clicked
+        Headers.Sidebar.toggle.on("click", Headers.Sidebar._clickHandler);
+        Headers.Sidebar.outside.on("click", Headers.Sidebar._outside_click_close_sidebar);
+        Headers.Sidebar.sidebar.on("blur", Headers.Sidebar._close_sidebar);
+
+        //On resize of browser
+        window.addEventListener('resize', function () {
+            //Remove mobile nav sidebar menu width
+            Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+            //Remove mobile nav hamburger icon class
+            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+        });
+
+    },
+    _clickHandler: function () {
+        //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
+        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar_menu_1")) {
+            //Open sidebar
+            Headers.Sidebar._open_sidebar();
+        } else {
+            //Close sidebar
+            Headers.Sidebar._close_sidebar();
+        }
+    },
+    _outside_click_close_sidebar: function (e) {
+        if (e.target === this) {
+            Headers.Sidebar._close_sidebar();
+        }
+    },
+    _open_sidebar: function () {
+        //Hamburger icon link add class
+        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar_menu_1");
+        //Make the sidebar menu cover the whole page
+        Headers.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
+    },
+    _close_sidebar: function () {
+        //Hamburger icon link remove class
+        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+        //Make the sidebar menu to not cover the whole page
+        Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+    }
     
-    },
-
-    Address_Link: {
-        address_link: $(".google-search-address"),
-        address_text: $(".google-search-address").text(),
-
-        _init: function () {
-            Headers.Desktop.Address_Link.address_link.on("click", Headers.Desktop.Address_Link._open_google_search);
-        },
-        _open_google_search: function (e) {
-            event.preventDefault();
-            window.open('https://google.com/search?q=' + Headers.Desktop.Address_Link.address_text);
-        },
-
-    },
-    One: {
-
-        header: $("header.header#opt_header_one"),
-        div_two: $("header#opt_header_one > div:nth-of-type(2)"),
-
-        _init: function () {
-
-            if ($(Headers.Desktop.One.header).length) {
-
-                Headers.Desktop.One.div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
-
-                window.onscroll = function () {
-
-                    Headers.Desktop.One._sticky_header();
-                    
-                }
-
-                Headers.Desktop.One._sticky_header();
-
-            }
-        },
-        _sticky_header: function () {
-
-            if (window.pageYOffset >= Headers.Desktop.One.div_two_offset_top) {
-
-                Headers.Desktop.One.div_two.addClass("sticky");
-
-            } else {
-
-                Headers.Desktop.One.div_two.removeClass("sticky");
-
-            }
-
-        },
-
-    },
-    Eight: {
-
-        header: $("header.header#opt_header_eight"),
-
-        _init: function () {
-
-            if ($(Headers.Desktop.Eight.header).length) {
-
-                Headers.Desktop.Eight.offset_top = Headers.Desktop.Eight.header.offset().top;
-
-                window.onscroll = function () {
-                    Headers.Desktop.Eight._sticky_header();
-                }
-                Headers.Desktop.Eight._sticky_header();
-
-            }
-
-        },
-        _sticky_header: function () {
-
-            if (window.pageYOffset >= Headers.Desktop.Eight.offset_top) {
-                Headers.Desktop.Eight.header.addClass("sticky");
-            } else {
-                Headers.Desktop.Eight.header.removeClass("sticky");
-            }
-
-        },
-
-    },
-    Ten: {
-        header: $("header#opt_header_ten"),
-        hamburger_icon: $("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
-        sidebar: $(".header_sidebar_menu_1"),
-        outside: $(".header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten"),
-
-        _init: function () {
-
-            Headers.Desktop.Ten.hamburger_icon.on("click", Headers.Desktop.Ten._hamburger_icon_click);
-
-            Headers.Desktop.Ten.outside.on("click", Headers.Desktop.Ten._outside_click);
-
-            Headers.Desktop.Ten.sidebar.on("blur", Headers.Desktop.Ten._close_sidebar);
-
-            //On browser resize
-            window.addEventListener('resize', function () {
-                Headers.Desktop.Ten._close_sidebar();
-            });
-
-        },
-
-        _hamburger_icon_click: function () {
-            //If header 10 hamburger icon link has class of ...
-            if (!Headers.Desktop.Ten.hamburger_icon.hasClass("header_10_hamburger_icon_changed")) {
-                Headers.Desktop.Ten._open_sidebar();
-            } else {
-                Headers.Desktop.Ten._close_sidebar();
-            }
-        },
-        _outside_click: function (e) {
-            if (e.target === this) {
-                Headers.Desktop.Ten._close_sidebar();
-            }
-        },
-        _close_sidebar: function () {
-            //Add hamburger icon link class
-            Headers.Desktop.Ten.hamburger_icon.removeClass("header_10_hamburger_icon_changed");
-
-            //Open sidebar navigational menu
-            Headers.Desktop.Ten.sidebar.removeClass("header_sidebar_cover_all");
-        },
-        _open_sidebar: function () {
-            //Remove hamburger icon link class
-            Headers.Desktop.Ten.hamburger_icon.addClass("header_10_hamburger_icon_changed");
-
-            //Close sidebar navigational menu
-            Headers.Desktop.Ten.sidebar.addClass("header_sidebar_cover_all");
-        }
-
-    }
-
 }
-Headers.Desktop._init();
-Headers.Mobile = {
-
-    _init: function () {
-        Headers.Mobile.Sidebar._init();
-    },
-
-    Sidebar: {
-
-        //Mobile header sidebar menu
-        sidebar: $(".mobile_header_sidebar_menu_1"),
-        //Mobile header sidebar and mobile header first div element
-        outside: $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
-        //Link which is the parent of the hamburger icons (spans)
-        toggle: $("header.mobileheader > div:first-of-type > a"),
-
-        _init: function () {
-
-            //When hamburger icon spans link is clicked
-            Headers.Mobile.Sidebar.toggle.on("click", Headers.Mobile.Sidebar._clickHandler);
-            Headers.Mobile.Sidebar.outside.on("click", Headers.Mobile.Sidebar._outside_click_close_sidebar);
-            Headers.Mobile.Sidebar.sidebar.on("blur", Headers.Mobile.Sidebar._close_sidebar);
-
-            //On resize of browser
-            window.addEventListener('resize', function () {
-                //Remove mobile nav sidebar menu width
-                Headers.Mobile.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
-                //Remove mobile nav hamburger icon class
-                Headers.Mobile.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
-            });
-
-        },
-        _clickHandler: function () {
-            //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
-            if (!Headers.Mobile.Sidebar.toggle.hasClass("mobile_nav_sidebar_menu_1")) {
-                //Open sidebar
-                Headers.Mobile.Sidebar._open_sidebar();
-            } else {
-                //Close sidebar
-                Headers.Mobile.Sidebar._close_sidebar();
-            }
-        },
-        _outside_click_close_sidebar: function (e) {
-            if (e.target === this) {
-                Headers.Mobile.Sidebar._close_sidebar();
-            }
-        },
-        _open_sidebar: function () {
-            //Hamburger icon link add class
-            Headers.Mobile.Sidebar.toggle.addClass("mobile_nav_sidebar_menu_1");
-            //Make the sidebar menu cover the whole page
-            Headers.Mobile.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
-        },
-        _close_sidebar: function () {
-            //Hamburger icon link remove class
-            Headers.Mobile.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
-            //Make the sidebar menu to not cover the whole page
-            Headers.Mobile.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
-        }
-    }
-}
-Headers.Mobile._init();
+Headers.Sidebar._init();
 
 Theme.FadeEffects = {
     elements: $('.fade-up, .fade-left, .fade-right, .fade-in'),
@@ -235,126 +219,103 @@ Theme.FadeEffects = {
 
 Theme.FadeEffects._init();
 
-Hero = {
+
+Hero.Padding_Top = {
+
+    header_id: $("header").attr("id"),
+
+    header_height: $("header").height(),
+
+    mobile_header_height: $(".mobileheader").height(),
+
+    main: $(".mobileheader").next(),
+
+
     _init: function () {
-        Hero.Padding._init();
-        Hero.Video._init();
-    },
+        //On init, if browser width is greater than 1280
+        if (window.innerWidth >= 1280) {
 
-    Padding: {
+            Hero.Padding_Top._header_function();
 
-        header_id: $("header").attr("id"),
+        } else {
 
-        header_height: $("header").height(),
+            Hero.Padding_Top._mobile_header_function();
 
-        mobile_header_height: $(".mobileheader").height(),
+        }
 
-        main: $(".mobileheader").next(),
+        //On resize, if browser width is greater than 1280 
+        window.addEventListener('resize', function () {
 
-        _init: function () {
-
-            //On init, if browser width is greater than 1280
             if (window.innerWidth >= 1280) {
 
-                Hero.Padding._header_function();
+                Hero.Padding_Top._header_function();
 
             } else {
 
-                Hero.Padding._mobile_header_function();
+                Hero.Padding_Top._mobile_header_function();
 
             }
+        });
+    },
 
-            //On resize, if browser width is greater than 1280 
-            window.addEventListener('resize', function () {
+    _header_function: function () {
+        // 
+        //Get header position value
+        Hero.Padding_Top.header_position = $("header").css("position");
 
-                if (window.innerWidth >= 1280) {
+        //If header has a position of fixed and not header 1, 4, 9 or 3
+        if (
+            Hero.Padding_Top.header_position === "fixed" && 
+            Hero.Padding_Top.header_id !== "opt_header_one" && 
+            Hero.Padding_Top.header_id !== "opt_header_four" && 
+            Hero.Padding_Top.header_id !== "opt_header_nine" && 
+            Hero.Padding_Top.header_id !== "opt_header_three") {
 
-                    Hero.Padding._header_function();
+            Hero.Padding_Top.header_height = $("header").height();
 
-                } else {
+            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
 
-                    Hero.Padding._mobile_header_function();
+        //If header has a position of fixed and is either header 1, 4, or 9
+        } else if (
+            Hero.Padding_Top.header_position === "fixed" &&
+            Hero.Padding_Top.header_id === "opt_header_one" ||
+            Hero.Padding_Top.header_id === "opt_header_four" ||
+            Hero.Padding_Top.header_id === "opt_header_nine"
+        ) {
+            Hero.Padding_Top.header_first_div_height = $("header#" + Hero.Padding_Top.header_id + " > div").height();
 
-                }
-            });
+            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_first_div_height);
 
-        },
-        _header_function: function () {
-            // 
-            //Get header position value
-            Hero.Padding.header_position = $("header").css("position");
-
-            //If header has a position of fixed and not header 1, 4, 9 or 3
-            if (Hero.Padding.header_position === "fixed" && Hero.Padding.header_id !== "opt_header_one" && Hero.Padding.header_id !== "opt_header_four" && Hero.Padding.header_id !== "opt_header_nine" && Hero.Padding.header_id !== "opt_header_three") {
-
-                Hero.Padding.header_height = $("header").height();
-
-                Hero.Padding.main.css("padding-top", Hero.Padding.header_height);
-
-                //If header has a position of fixed and is header 4
-            } else if (
-                Hero.Padding.header_position === "fixed" &&
-                Hero.Padding.header_id === "opt_header_one" ||
-                Hero.Padding.header_id === "opt_header_four" ||
-                Hero.Padding.header_id === "opt_header_nine"
-            ) {
-                Hero.Padding.header_first_div_height = $("header#" + Hero.Padding.header_id + " > div").height();
-
-                Hero.Padding.main.css("padding-top", Hero.Padding.header_first_div_height);
-
-            } else {
-                //Do not adding padding-top to hero
-                Hero.Padding.main.css("padding-top", "0");
-            }
-
-        },
-        _mobile_header_function: function () {
-            Hero.Padding.mobiler_header_height = $(".mobileheader").height();
-            Hero.Padding.main.css("padding-top", Hero.Padding.mobile_header_height);
+        } else {
+            //Do not adding padding-top to hero
+            Hero.Padding_Top.main.css("padding-top", "0");
         }
 
     },
-
-    Video: {
-        video: $("#video_tag"),
-        pause_button: $("#video_pause"),
-        play_button: $("#video_play"),
-
-        _init: function () {
-            Hero.Video.pause_button.on("click", Hero.Video._pause_video);
-            Hero.Video.play_button.on("click", Hero.Video._play_video);
-        },
-        _pause_video: function () {
-            Hero.Video.video.get(0).pause();
-            Hero.Video.pause_button.fadeOut(100, function () {
-                Hero.Video.play_button.fadeIn(100);
-            });
-        },
-        _play_video: function () {
-            Hero.Video.video.get(0).play();
-            Hero.Video.play_button.fadeOut(100, function () {
-                Hero.Video.pause_button.fadeIn(100);
-            });
-        }
+    _mobile_header_function: function () {
+        Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
+        Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
     }
-}
-Hero._init();
 
-Theme.Headers = {
+},
+Hero.Padding_Top._init();
+
+
+Theme.Estimate = {
     tint: $(".header-tint"),
     estimate: $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
     estimate_popup: $(".estimate"),
     estimate_close: $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
 
     _init: function () {
-        $(Headers.Mobile.estimate).on("click", Theme.Headers._click_handler);
+        $(Theme.Estimate.estimate).on("click", Theme.Estimate._click_handler);
 
-        $(Headers.Mobile.estimate_close).on("click", Theme.Headers._close_popup);
+        $(Theme.Estimate.estimate_close).on("click", Theme.Estimate._close_popup);
     },
 
     _click_handler: function (event) {
         event.preventDefault();
-        Theme.Headers.estimate_popup.fadeIn(250);
+        Theme.Estimate.estimate_popup.fadeIn(250);
     },
     _close_popup: function (event) {
         if ($(event.target).hasClass("estimate") ||
@@ -363,12 +324,13 @@ Theme.Headers = {
             $(event.target).hasClass("site__button-quote")
         ) {
             event.preventDefault();
-            Theme.Headers.estimate_popup.fadeOut(250);
+            Theme.Estimate.estimate_popup.fadeOut(250);
         }
     },
 
 }
-Theme.Headers._init();
+Theme.Estimate._init();
+
 
 Theme.PA = {
     container: $('.pa.popupcontainer'),
