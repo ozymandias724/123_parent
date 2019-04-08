@@ -2,7 +2,6 @@
     //Hero section
     section.hero {
         overflow: hidden;
-        height: 90vh;
         //Hero Foreground
         .hero_foreground {
             font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
@@ -51,7 +50,8 @@
         }
     }
     // Hero Image
-    section.hero#hero_image {        
+    section.hero#hero_image {     
+        height: 90vh;   
         //First div of hero image 
         > #hero_staticimage {
             height: 100%;
@@ -62,8 +62,11 @@
     }
     // Hero Slider
     section.hero#hero_slider {
+        #slick_slider {
+            margin-bottom: 0;
+        }
         // Slider images
-        .slick-slide > img {
+        .slick_slider_img {
             object-fit: cover; 
             position: relative;
             top: 0;
@@ -75,6 +78,7 @@
     // Hero Video
     section.hero#hero_video {
         overflow: hidden;
+        height: 90vh;
         // Video 
         video {
             position: relative;

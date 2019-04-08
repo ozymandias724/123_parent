@@ -83,7 +83,7 @@
         ,$fadenav
         ,$invertlogo
         ,$content_logo
-        ,NavUtil::get_nav_links()
+        ,_get_site_nav()
         ,$num_href
         ,$num_display
         ,$content_social_icons

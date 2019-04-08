@@ -18,7 +18,7 @@
  ?>
 <section id="mod_menu">
 <?php 
-    echo '<h2>'.$res[0]->post_title.'</h2>';
+    echo get_section_banner($res[0]->post_title);
  ?>
 </section>
 <?php 

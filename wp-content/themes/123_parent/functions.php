@@ -8,8 +8,6 @@ include_once('classes/Pagedata.php');
 
 // general theme setup
 include_once('classes/class.Setup.php');
-// nav handler
-include_once('classes/class.NavUtil.php');
 
 // custom users
 include_once('classes/class.UserRoles.php');
@@ -17,14 +15,8 @@ include_once('classes/class.UserRoles.php');
 // php image (to be cut)
 include_once('PHPImage.php');
 
-// tbd
-include_once('components/reqs/misc-helpers.php');
-
 // custom post types
 include_once( 'classes/class.customposts.php' );
-
-// reseller stuff
-include_once('components/reqs/resellers.php');
 
 // footer stuff
 include_once('components/reqs/footer-helpers.php');
@@ -34,244 +26,61 @@ include_once('classes/class.Customizer.php');
 include_once('classes/class.NavHandler.php');
 
 
-/**
- * adjusting site-setup clone fields to have new instructions, labels, etc
- * @param  array $field 'this' field passed by add_filter
- * @return array        the edited field
- */
-function modacf_adjust_labelInstructions($field){
-
-	switch ($field['name']) {
-	
-		case 'sitesetup_hero_services':
-			$instructions = '';
-			# code...
-			break;
-		case 'sitesetup_socials':
-			$label = '7. Social Media';
-			# code...
-			break;
-		case 'sitesetup_logo':
-			# code...
-			$instructions = '';
-			break;
-		case 'sitesetup_address':
-			# code...
-		$label = '1. Choose Address';
-		$instructions = 'So the address you want on your new 123Website is,';
-			break;
-		case 'sitesetup_services_repeater':
-			$label = '2. Services';
-			# code...
-			break;
-		case 'sitesetup_email':
-			# code...
-		$label = '4. Email';
-		$instructions = 'What\'s the best email address to reach you on?';
-			break;
-		case 'sitesetup_phone':
-			# code...
-		$instructions = 'And the phone number you want listed is ? ';
-		$label = '2. Phone Number';
-			break;
-		case 'sitesetup_phone_secondary':
-			# code...
-		$label = '3. Secondary Phone Number';
-		$instructions = 'Can I get a secondary number from you? Preferably a cell phone number?Our software will text message remind you for your appointment we set with your Website Consultant';
-			break;
-		case 'sitesetup_gallery_repeater':
-			$label = '11. Gallery';
-			# code...
-			break;
-		default:
-			# code...
-			break;
-	}
-
-	$items = array(
-		'sitesetup_areas_repeater_zips',
-		'sitesetup_areas_repeater_counties',
-		'sitesetup_areas_repeater_countries',
-		'sitesetup_areas_repeater_states'
-	);
-	if( in_array($field['name'], $items)){
-		$instructions = '';
-		$label = 'Areas Served Locations';
-	}
 
 
-	$field['sub_fields'][0]['instructions'] = $instructions;
-	$field['sub_fields'][0]['label'] = $label;
-	return $field;
-}
-function adjust_payment_type_clones($field){
-	$dir = get_template_directory_uri() . '/library/img/payment_types/';	
-	for ($i=0; $i < count($field['sub_fields']); $i++) { 
-		# code...
-		$field['sub_fields'][$i]['wrapper'] = array(
-			'width' => '13',
-			'class' => 'sitesetup_payment_togs',
-			'id' => '',
-		);
-		switch ($field['sub_fields'][$i]['name'] ) {
-			case 'mastercard':
-				$png_path = $dir . 'mc.png';
-				break;
-			case 'amex':
-				$png_path = $dir . 'amex.png';
-				break;
-			case 'cash':
-				$png_path = $dir . 'cash.png';
-				break;
-			case 'check':
-				$png_path = $dir . 'check.png';
-				break;	
-			case 'discover':
-				$png_path = $dir . 'discover.png';
-				break;
-			case 'paypal':
-				$png_path = $dir . 'pp.png';
-				break;
-			case 'visa':
-				$png_path = $dir . 'visa.png';
-				break;			
-			default:
-				# code...
-				break;
-		}
-		$png_string = '<img src="'.$png_path.'">';
-		$field['sub_fields'][$i]['label'] = $png_string;
-	}
-	return $field;
-}
-function adjust_company_info_clones($field){
-
-	for ($i=0; $i < count($field['sub_fields']); $i++) { 
-		$instructions = null;
-		$label = null;
-
-		switch ($field['sub_fields'][$i]['name']) {
-			// 2: Company Info
-			case 'social-address':
-				$label = '1. Choose Address';
-				$instructions = 'So the address you want on your new 123Website is,';
-				break;
-			case 'social-phone-number':
-				$instructions = 'And the phone number you want listed is ? ';
-				$label = '2. Phone Number';
-				break;
-			case 'social-fax-number':
-				$label = '3. Secondary Phone Number';
-				$instructions = 'Can I get a secondary number from you? Preferably a cell phone number? Our software will text message remind you for your appointment we set with your Website Consultant';
-				break;
-			case 'sitesetup_services_repeater':
-				$label = '2. Services';
-				break;
-			case 'company-email':
-				$label = '4. Email';
-				$instructions = 'What\'s the best email address to reach you on?';
-				break;
-			// 3: Media
-			case 'general-logo':
-				$label = '1. Choose Site Logo';
-				$instructions = '';
-				break;
-			case 'areas-served-bg':
-				$label = 'Areas Served';
-				$instructions = '';
-				break;
-			case 'contact-bg':
-				$label = 'Contact';
-				$instructions = '';
-				break;
-			case 'general-coupons-bg':
-				$label = 'Coupons';
-				$instructions = '';
-				break;
-			case 'general-blog-bg':
-				$label = 'Blog';
-				$instructions = '';
-				break;
-			case 'gallery-bg':
-				$label = 'Gallery';
-				$instructions = '';
-				break;
-			case 'menu-bg':
-				$label = 'Menu';
-				$instructions = '';
-				break;
-			case 'services-bg':
-				$label = 'Services';
-				$instructions = '';
-				break;
-			case 'testimonials-bg':
-				$label = 'Testimonials';
-				$instructions = '';
-				break;
-			case 'contact-bg':
-				$label = 'Contact';
-				$instructions = '';
-				break;
-			case 'gallery-repeater':
-				$label = '3. Setup Gallery Page';
-				break;
-			// 4?
-			case 'services-repeater':
-				$instructions = '';
-				break;
-			case 'social-repeater':
-				$label = '7. Social Media';
-				break;
-			default:
-				break;
-		}
-		( $label !== null ) ? $field['sub_fields'][$i]['label'] = $label : null;
-		( $label !== null ) ? $field['sub_fields'][$i]['__label'] = $label : null;
-		( $instructions !== null ) ? $field['sub_fields'][$i]['instructions'] = $instructions : null;
-	}
-	return $field;
-}
-add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_payment_type_clones');
-add_filter('acf/load_field/key=field_sitesetup_clones_2', 'adjust_company_info_clones');
-add_filter('acf/load_field/key=field_sitesetup_clones_2_a', 'adjust_company_info_clones');
-add_filter('acf/load_field/key=field_sitesetup_clones_2_b', 'adjust_company_info_clones');
-add_filter('acf/load_field/key=field_sitesetup_clones_3', 'adjust_company_info_clones');
-add_filter('acf/load_field/key=field_sitesetup_clones_3_0', 'adjust_company_info_clones');
-add_filter('acf/load_field/key=field_sitesetup_clones_3_1', 'adjust_company_info_clones');
-
-
-
-if( !function_exists( 'hide_the_acf_field' ) ){
-	function hide_the_acf_field( $field ){
-		return false;
-	}
-}
-// hide theme 4 specific acf fields here:
-$cp_t4_fields = [
-	'cp-t4-accent-bg',
-	'cp-t4-accent-bg-toggle',
-	'cp-t4-accent-text',
-	'cp-t4-accent-text-toggle',
-	'cp-t4-site-bg',
-	'cp-t4-site-bg-toggle',
-	'cp-t4-site-bg-text',
-	'cp-t4-site-bg-text-toggle',
-	'cp-t4-general-text',
-	'cp-t4-general-text-toggle',
-	'cp-t4-element-bg',
-	'cp-t4-element-bg-toggle',
-	'cp-t4-element-bg-text',
-	'cp-t4-element-bg-text-toggle',
-	'cp-t4-element-bg-dark',
-	'cp-t4-element-bg-dark-toggle'
-];
-if( wp_get_theme()->Name != '123_four' ){
-	foreach ($cp_t4_fields as $field) {
-		add_filter("acf/prepare_field/name=$field", "hide_the_acf_field");
-	}
+function _get_site_nav($pre = 'navlinks'){
+    $return_nav = '';
+    $page = get_page_by_path('home-page', OBJECT, 'page');
+    $fields = get_fields($page->ID);
+    $longscroll = $fields['long_scroll'];
+    $sections = $fields['sections'];
+    // if long scroll is enabled
+    if (!empty($longscroll) && !empty($sections) ) {
+        $return_nav = '<ul class="'.$pre.'">';
+        $format_nav_item = '
+            <li class="'.$pre.'-item"><a class="'.$pre.'-item-link" href="%s" title="Scroll to the %s section">%s</a></li>
+        ';
+        // each page object reference module
+        foreach($sections as $section){
+            $section = $section['section'];
+            // create the nav
+            $href = '#mod_'.$section->post_name;
+            $title = $section->post_title;
+            $return_nav .= sprintf(
+                $format_nav_item
+                ,$href
+                ,$title
+                ,$title
+            );
+        }
+        $return_nav .= '</ul>';
+        return $return_nav;
+    }
+    // if long scroll is disabled
+    else {
+        # code...
+    }
 }
 
 
+function get_section_banner($title, $text = ''){
+
+    $title = ( !empty($title) ) ? $title : $post->post_title;
+    $text = ( !empty($text) ) ? $text : '';
+    
+    $format_banner = '
+        <section class="banner">
+            %s
+            %s
+        </section>
+    ';
+    $return_banner .= sprintf(
+        $format_banner
+        ,'<h1>'.$title.'</h1>'
+        ,( !empty($text) ) ? '<h3>'.$text.'</h3>' : ''
+    );
+    return $return_banner;
+}
 
 
 // adds the training ad dashboard widget
@@ -372,20 +181,6 @@ if( !function_exists('remove_admin_dashboard_widgets') ){
 }
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets', 20 );
 
-// gets the image for the blog post with the placeholder image as the fallback
-if( !function_exists('get_blog_image') ){	
-	function get_blog_image($post_id){
-		$image_url = '';
-		if( !empty( wp_get_attachment_url( get_post_thumbnail_id($post_id) ) ) ){
-			$image_url = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
-		}
-		else{
-			$image_url = get_field('featured-placeholder', 'option');
-		}
-		return $image_url;
-	}
-}
-
 
 // returns the logo based on the logo type switch set in Theme Settings > 1. Company Info
 if( !function_exists( 'get_logo' ) ){
@@ -398,37 +193,6 @@ if( !function_exists( 'get_logo' ) ){
 		}
 	}
 }
-add_action('init', 'myprefix_unregister_tags');
-
-
-
-// removes Post's tag taxonomy
-if( !function_exists('myprefix_unregister_tags') ){
-	function myprefix_unregister_tags() {
-	    unregister_taxonomy_for_object_type('post_tag', 'post');
-	}
-}
-add_action('admin_menu', 'wpse_233129_admin_menu_items');
-
-
-// rearranges position and name of Posts
-if( !function_exists('wpse_233129_admin_menu_items') ){
-	function wpse_233129_admin_menu_items() {
-	    global $menu;
-	    $menu[5][0] = 'Blog Posts';
-	    foreach ( $menu as $key => $value ) {
-	        if ( 'edit.php' == $value[2] ) {
-	            $oldkey = $key;
-	        }
-	    }
-	    // change Posts menu position in the backend
-	    $newkey = 83; // use whatever index gets you the position you want
-	    // if this key is in use you will write over a menu item!
-	    $menu[$newkey]=$menu[$oldkey];
-	    unset($menu[$oldkey]);
-	}
-}
-
 
 
 // sets a notice of site being disabled

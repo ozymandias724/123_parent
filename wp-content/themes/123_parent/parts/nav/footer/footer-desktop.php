@@ -23,7 +23,7 @@
 		
 		<div class="footer-section footer-section-pagelinks">
 			<p class="footer-section-heading">Links</p>
-			 <?php NavUtil::render_nav_links('footer-pagelinks'); ?>
+			 <?php echo _get_site_nav('footer-pagelinks'); ?>
 		</div>	
 
 		<div class="footer-section footer-section-payment">

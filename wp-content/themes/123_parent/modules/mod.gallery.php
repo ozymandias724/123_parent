@@ -20,9 +20,9 @@
     // If status is 1, (possibly)
  
     // check type
-    if( $fields['type'] == 'one' ){
+    if( $fields['type'] == 'one' ){ 
         
-        $format_gallery_one = '<li><div class="image" style="background-image:url(%s);" /></li>';
+        $format_gallery_one = '<li><div class="image" style="background-image:url(%s);"></div></li>';
         
         $return_gallery_one = '<div><h2>'.$fields['gallery_one']['heading'].'</h2><ul>';
         
@@ -38,11 +38,10 @@
         
     } 
  
- ?>
+?>
 <section id="mod_gallery">
 <?php 
-
+    echo get_section_banner($res[0]->post_title);
     echo $return_gallery_one;
-
 ?>
-</section> 
+</section>

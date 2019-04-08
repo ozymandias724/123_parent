@@ -23,11 +23,11 @@ class SetupTheme
 	public static function after_setup_theme(){
 		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
+        register_nav_menu( 'main-nav', 'Main Navigation' );
 	}
 	// 
 	public static function init(){
 		add_post_type_support( 'page', 'excerpt' );
-		register_nav_menu( 'main-nav', 'Main Navigation' );
 	}
 
 	/**

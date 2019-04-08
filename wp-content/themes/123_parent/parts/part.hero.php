@@ -3,8 +3,9 @@
  * Partial
  * Hero Section
  */
+    $fields = get_fields($post->ID);
     // detect hero type
-    $type = get_field('choose_hero_type', 'options');
+    $type = $fields['choose_hero_type'];
     // a hero is either not selected, or no hero is selected
     if( $type == 'none' || empty($type) ){
         $content_hero = '';        
@@ -13,8 +14,8 @@
     else {
 
         // get all fields (options table)
-        $foreground = (!empty(get_field('hero_foreground', 'options')) ? get_field('hero_foreground', 'options') : '' );
-        $background = (!empty(get_field('hero_background', 'options')) ? get_field('hero_background', 'options') : '' );
+        $foreground = (!empty(get_field('hero_foreground')) ? get_field('hero_foreground') : '' );
+        $background = (!empty(get_field('hero_background')) ? get_field('hero_background') : '' );
         // foreground
         $logo = (!empty($foreground['hero_logo']) ) ? $foreground['hero_logo'] : '';
         $title = (!empty($foreground['hero_title']) ) ? $foreground['hero_title'] : '';
