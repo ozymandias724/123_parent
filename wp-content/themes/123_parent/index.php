@@ -16,6 +16,7 @@
 
     foreach ($res as $rec) {
         if( !empty($rec['page-template']) ){
+            
             include locate_template( 'modules/' . $rec['page-template'] . '.php' );
         }
     }

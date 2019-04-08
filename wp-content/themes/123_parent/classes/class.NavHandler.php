@@ -193,7 +193,7 @@ class NavHandler
             ,$addr
             ,$num_href
             ,$num_display
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
             ,$content_social_icons
         );
 
@@ -225,7 +225,7 @@ class NavHandler
             ,$content_topbar
             ,$content_logo
             ,$desktop_social
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
             ,$quickquote
             ,$topbar_class // NOPE
         );
@@ -249,7 +249,7 @@ class NavHandler
             ,$fadenav
             ,$content_socialtopbar
             ,$content_logo
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
             ,$topbar_class // NOPE
         );
     
@@ -279,7 +279,7 @@ class NavHandler
             ,$content_logo
             ,$num_href
             ,$num_display
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
         );
 
         // 5
@@ -320,7 +320,7 @@ class NavHandler
             ,$num_href
             ,$num_display
             ,$content_logo
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
         );
         
         // 6
@@ -362,7 +362,7 @@ class NavHandler
             ,$addr
             ,$content_social_icons
             ,$content_logo
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
         );
         
         // 7
@@ -395,7 +395,7 @@ class NavHandler
             ,$content_logo
             ,$num_href
             ,$num_display
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
         ); 
 
         // 8
@@ -419,7 +419,7 @@ class NavHandler
             ,$topbar_class
             ,$fadenav
             ,$content_logo
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
         );
         
         // 9
@@ -461,7 +461,7 @@ class NavHandler
             ,$addr
             ,$content_social_icons
             ,$content_logo
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
         );
         
         // 10
@@ -501,7 +501,7 @@ class NavHandler
             ,$fadenav
             ,$content_logo
             ,$content_social_icons
-            ,NavUtil::get_nav_links()
+            ,_get_site_nav()
             ,$num_href
             ,$num_display 
         ); 

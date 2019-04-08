@@ -15,10 +15,25 @@
 
     // get the gallery page fields
     $fields = get_fields($res[0]);
+
+
+    $args = array(
+        'post_type' => 'areas-served'
+        ,'posts_per_page' => -1
+    );
+    $locations = get_posts($args);
+
+    foreach( $locations as $location){
+
+        $location_fields = get_fields($location);
+
+    }
+
+    
  ?>
 <section id="mod_locations">
 <?php 
-    echo '<h2>'.$res[0]->post_title.'</h2>';
+    echo get_section_banner($res[0]->post_title);
  ?>
 </section>
 <?php 

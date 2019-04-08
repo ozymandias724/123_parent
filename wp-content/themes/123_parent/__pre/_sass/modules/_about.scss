@@ -1,0 +1,62 @@
+@media only screen {
+
+    // Gallery section 
+    section#mod_about {
+
+        >div {
+            $w: 80vw;
+            $c: 1;
+            $g: 1.5vw;
+            $s: false;
+            @include gridLayout($w, $c, $g, $s);
+
+            >h2 {
+                margin: 15px 0;
+            }
+
+            .image {
+                height: 250px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            >ul {
+                list-style: none;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 550px) {
+
+    // Gallery section 
+    section#mod_about {
+
+        >div {
+            $w: 80vw;
+            $c: 2;
+            $g: 1.5vw;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    // Gallery section 
+    section#mod_about {
+
+        >div {
+            $w: 80vw;
+            $c: 3;
+            $g: 1.5vw;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+
+    }
+}

@@ -1,15 +1,12 @@
 @media only screen {
 
     body {
-        font-size: 1.4rem;
-        line-height: 2.2rem;
-        font-weight: 400;
         font-family: "Lato", sans-serif; 
     }
     h1,h2,h3,h4,h5,h6 {
         font-family: "Montserrat", serif;
     }
-    
+
 	a {
 		text-decoration: none;
 		color: inherit;
@@ -29,6 +26,69 @@
         margin-top: 100px;
 	}
 
+
+
+    // GRID STUFF
+
+    @media only screen {
+
+        // Gallery section 
+
+        div.site_grid {
+            $w: 80vw;
+            $c: 1;
+            $g: 1.5vw;
+            $s: false;
+            @include gridLayout($w, $c, $g, $s);
+
+            >h2 {
+                margin: 15px 0;
+            }
+
+            .image {
+                height: 250px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            >ul {
+                list-style: none;
+            }
+        }
+
+    }
+
+    @media only screen and (min-width: 550px) {
+
+        // Gallery section 
+
+        div.site_grid {
+            $w: 80vw;
+            $c: 2;
+            $g: 1.5vw;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        // Gallery section 
+
+        div.site_grid {
+            $w: 80vw;
+            $c: 3;
+            $g: 1.5vw;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+
+    }
+    
+    
+    
 
 	
 	/* 

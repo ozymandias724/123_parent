@@ -16,10 +16,33 @@
     // get the gallery page fields
     $fields = get_fields($res[0]);
 
+    // 
+    // 
+    // 
+
+    $format_staff_member = '<li><div class="image" style="background-image:url(%s);" /></li>';
+    
+    $return_staff_grid = '<div><ul>';
+    
+    foreach( $fields['staff_members'] as $rec ){
+
+        $rec_fields = get_fields($rec['staff_member']->ID);
+        
+        $return_staff_grid .= sprintf(
+            $format_staff_member
+            ,$rec_fields['image']['url']
+        );
+
+    }
+
+    $return_staff_grid .= '</ul></div>';
+    
  ?>
 <section id="mod_about">
 <?php 
-    echo '<h2>'.$res[0]->post_title.'</h2>';
+    echo get_section_banner($res[0]->post_title);
+    echo $return_staff_grid;
+    
  ?>
 </section>
 <?php 

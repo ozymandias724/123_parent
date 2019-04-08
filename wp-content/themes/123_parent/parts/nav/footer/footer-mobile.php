@@ -14,7 +14,7 @@
 	<div class="mobilefooter-section mobilefooter-section-pagelinks ">
 		<h2 class="mobilefooter-section-heading">Links</h2>
 		<?php 
-			NavUtil::render_nav_links('mobilefooter-pagelinks');
+			echo _get_site_nav('mobilefooter-pagelinks');
 		 ?>
 	</div>
 
@@ -30,7 +30,7 @@
 			<?php echo $content_badges; ?>
 			<h2 class="mobilefooter-section-heading">Follow Us</h2>
 			<?php 
-				include locate_template( 'modules/sub-modules/social-icons.php' );
+				include_once( get_template_directory() . '/modules/sub-modules/social-icons.php');
 			 ?>
 			 <br>
 			<?php 

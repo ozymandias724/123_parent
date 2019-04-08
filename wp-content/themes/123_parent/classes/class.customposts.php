@@ -17,6 +17,108 @@ class CustomPosts
 
     function _register_post_types(){
 
+
+        $labels = array(
+            'name'               => _x( 'Testimonials', 'post type general name', '123_parent' ),
+            'singular_name'      => _x( 'Testimonial', 'post type singular name', '123_parent' ),
+            'menu_name'          => _x( 'Testimonials', 'admin menu', '123_parent' ),
+            'name_admin_bar'     => _x( 'Testimonial', 'add new on admin bar', '123_parent' ),
+            'add_new'            => _x( 'Add New', 'Testimonial', '123_parent' ),
+            'add_new_item'       => __( 'Add New Testimonial', '123_parent' ),
+            'new_item'           => __( 'New Testimonial', '123_parent' ),
+            'edit_item'          => __( 'Edit Testimonial', '123_parent' ),
+            'view_item'          => __( 'View Testimonial', '123_parent' ),
+            'all_items'          => __( 'All Testimonials', '123_parent' ),
+            'search_items'       => __( 'Search Testimonials', '123_parent' ),
+            'parent_item_colon'  => __( 'Parent Testimonials:', '123_parent' ),
+            'not_found'          => __( 'No Testimonials found.', '123_parent' ),
+            'not_found_in_trash' => __( 'No Testimonials found in Trash.', '123_parent' )
+        );
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __( 'Description.', '123_parent' ),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+        );
+        register_post_type('testimonials', $args);
+        
+
+        $labels = array(
+            'name'               => _x( 'Areas Served', 'post type general name', '123_parent' ),
+            'singular_name'      => _x( 'Area Served', 'post type singular name', '123_parent' ),
+            'menu_name'          => _x( 'Areas Served', 'admin menu', '123_parent' ),
+            'name_admin_bar'     => _x( 'Area Served', 'add new on admin bar', '123_parent' ),
+            'add_new'            => _x( 'Add New', 'Area Served', '123_parent' ),
+            'add_new_item'       => __( 'Add New Area Served', '123_parent' ),
+            'new_item'           => __( 'New Area Served', '123_parent' ),
+            'edit_item'          => __( 'Edit Area Served', '123_parent' ),
+            'view_item'          => __( 'View Area Served', '123_parent' ),
+            'all_items'          => __( 'All Areas Served', '123_parent' ),
+            'search_items'       => __( 'Search Areas Served', '123_parent' ),
+            'parent_item_colon'  => __( 'Parent Areas Served:', '123_parent' ),
+            'not_found'          => __( 'No Areas Served found.', '123_parent' ),
+            'not_found_in_trash' => __( 'No Areas Served found in Trash.', '123_parent' )
+        );
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __( 'Description.', '123_parent' ),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+        );
+        register_post_type('areas-served', $args);
+        
+        
+        
+        $labels = array(
+            'name'               => _x( 'Services', 'post type general name', '123_parent' ),
+            'singular_name'      => _x( 'Service', 'post type singular name', '123_parent' ),
+            'menu_name'          => _x( 'Services', 'admin menu', '123_parent' ),
+            'name_admin_bar'     => _x( 'Service', 'add new on admin bar', '123_parent' ),
+            'add_new'            => _x( 'Add New', 'Service', '123_parent' ),
+            'add_new_item'       => __( 'Add New Service', '123_parent' ),
+            'new_item'           => __( 'New Service', '123_parent' ),
+            'edit_item'          => __( 'Edit Service', '123_parent' ),
+            'view_item'          => __( 'View Service', '123_parent' ),
+            'all_items'          => __( 'All Services', '123_parent' ),
+            'search_items'       => __( 'Search Services', '123_parent' ),
+            'parent_item_colon'  => __( 'Parent Services:', '123_parent' ),
+            'not_found'          => __( 'No Services found.', '123_parent' ),
+            'not_found_in_trash' => __( 'No Services found in Trash.', '123_parent' )
+        );
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __( 'Description.', '123_parent' ),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+        );
+        register_post_type('services', $args);
+        
+        
+
         $labels = array(
             'name'               => _x( 'Staff Members', 'post type general name', '123_parent' ),
             'singular_name'      => _x( 'Staff Member', 'post type singular name', '123_parent' ),
@@ -41,7 +143,6 @@ class CustomPosts
             'show_ui'            => true,
             'show_in_menu'       => true,
             'query_var'          => true,
-            // 'rewrite'            => array( 'slug' => 'staff-member' ),
             'capability_type'    => 'post',
             'has_archive'        => true,
             'hierarchical'       => false,

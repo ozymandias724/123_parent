@@ -6,6 +6,9 @@ import slick from 'slick-carousel-browserify';
 
 var rand = Math.floor(Math.random() * $(".img-slick").length);
 
+
+
+
 $('#slick_slider').slick({
     autoplay : Boolean(hero_fields.autoplay)
     ,adaptiveHeight : true
@@ -18,13 +21,38 @@ $('#slick_slider').slick({
 });
 
 Headers.Desktop = {
-    _init: function () {
+    
+    /**
+     * Vars
+     */
+    navlinks : $('ul.navlinks'),
+
+    /**
+     * Init
+     */
+    _init: function(){
+
+        $(Headers.Desktop.navlinks).on('click', 'a.navlinks-item-link',Headers.Desktop._doClickNavLink);
+        
+        // please comment these
         Headers.Desktop.Address_Link._init();
         Headers.Desktop.One._init();
         Headers.Desktop.Eight._init();
         Headers.Desktop.Ten._init();
-    
     },
+    _doClickNavLink : function(e){
+        e.preventDefault();
+        let hash = $(this)[0].hash;
+        let headerHeight = $('header').height();
+        let targetOffset = $(hash).offset().top;
+
+        $(window).scrollTop( targetOffset - headerHeight );
+        
+    },
+
+    /**
+     * misc objects
+     */
 
     Address_Link: {
         address_link: $(".google-search-address"),
@@ -157,6 +185,11 @@ Headers.Desktop = {
 
 }
 Headers.Desktop._init();
+
+
+
+
+
 Headers.Mobile = {
 
     _init: function () {

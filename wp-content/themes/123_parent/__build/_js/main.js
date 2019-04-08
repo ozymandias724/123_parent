@@ -22,7 +22,17 @@ var rand = Math.floor(Math.random() * (0, _jquery.default)(".img-slick").length)
   initialSlider: Boolean(hero_fields.random) ? rand : ''
 });
 Headers.Desktop = {
+  /**
+   * Vars
+   */
+  navlinks: (0, _jquery.default)('ul.navlinks'),
+
+  /**
+   * Init
+   */
   _init: function _init() {
+    (0, _jquery.default)(Headers.Desktop.navlinks).on('click', 'a.navlinks-item-link', Headers.Desktop._doClickNavLink); // please comment these
+
     Headers.Desktop.Address_Link._init();
 
     Headers.Desktop.One._init();
@@ -31,6 +41,17 @@ Headers.Desktop = {
 
     Headers.Desktop.Ten._init();
   },
+  _doClickNavLink: function _doClickNavLink(e) {
+    e.preventDefault();
+    var hash = (0, _jquery.default)(this)[0].hash;
+    var headerHeight = (0, _jquery.default)('header').height();
+    var targetOffset = (0, _jquery.default)(hash).offset().top;
+    (0, _jquery.default)(window).scrollTop(targetOffset - headerHeight);
+  },
+
+  /**
+   * misc objects
+   */
   Address_Link: {
     address_link: (0, _jquery.default)(".google-search-address"),
     address_text: (0, _jquery.default)(".google-search-address").text(),
