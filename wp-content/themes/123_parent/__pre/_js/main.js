@@ -6,16 +6,22 @@ import slick from 'slick-carousel-browserify';
 
 var rand = Math.floor(Math.random() * $(".img-slick").length);
 
-$('#slick_slider').slick({
-    autoplay : Boolean(hero_fields.autoplay)
-    ,adaptiveHeight : true
-    ,arrows : false
-    ,fade : Boolean(hero_fields.fade)
-    ,autoplaySpeed : hero_fields.speed 
-    ,pauseOnHover : false
-    ,pauseOnFocus : false
-    ,initialSlider : Boolean(hero_fields.random) ? rand : ''
-});
+
+Theme.Slick = {
+    _init : function(){
+        $('#slick_slider').slick({
+            autoplay : Boolean(hero_fields.autoplay)
+            ,adaptiveHeight : true
+            ,arrows : false
+            ,fade : Boolean(hero_fields.fade)
+            ,autoplaySpeed : hero_fields.speed 
+            ,pauseOnHover : false
+            ,pauseOnFocus : false
+            ,initialSlider : Boolean(hero_fields.random) ? rand : ''
+        });
+    }
+}
+Theme.Slick._init();
 
 
 Theme.Open_Address = {
@@ -37,7 +43,6 @@ Theme.Open_Address._init();
 Headers.One = {
 
     header: $("header.header#opt_header_one"),
-    div_two: $("header#opt_header_one > div:nth-of-type(2)"),
 
     _init: function(){
 
@@ -50,7 +55,7 @@ Headers.One = {
         }
     },
 
-    _sticky_header: function () {
+    _sticky_header: function() {
 
         if (window.pageYOffset >= Headers.One.div_two_offset_top) {
             Headers.One.div_two.addClass("sticky");
@@ -94,10 +99,11 @@ Headers.Eight._init();
 
 
 Headers.Ten = {
+
     header: $("header#opt_header_ten"),
     hamburger_icon: $("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
     sidebar: $(".header_sidebar_menu_1"),
-    outside: $(".header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten"),
+    outside: $('.header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten'),
 
     _init: function () {
 
@@ -202,8 +208,11 @@ Headers.Sidebar = {
 }
 Headers.Sidebar._init();
 
+
 Theme.FadeEffects = {
+
     elements: $('.fade-up, .fade-left, .fade-right, .fade-in'),
+
     _resizeLoadScrollHandler: function () {
         for (var i = 0; i < Theme.FadeEffects.elements.length; i++) {
             if ($(window).scrollTop() + $(window).height() > $(Theme.FadeEffects.elements[i]).offset().top) {
@@ -215,50 +224,39 @@ Theme.FadeEffects = {
         $(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
     },
 }
-
 Theme.FadeEffects._init();
 
 
 Hero.Padding_Top = {
 
     header_id: $("header").attr("id"),
-
     header_height: $("header").height(),
-
     mobile_header_height: $(".mobileheader").height(),
-
     main: $(".mobileheader").next(),
 
-
     _init: function () {
+
         //On init, if browser width is greater than 1280
         if (window.innerWidth >= 1280) {
-
             Hero.Padding_Top._header_function();
-
         } else {
-
             Hero.Padding_Top._mobile_header_function();
-
         }
 
         //On resize, if browser width is greater than 1280 
         window.addEventListener('resize', function () {
 
             if (window.innerWidth >= 1280) {
-
                 Hero.Padding_Top._header_function();
-
             } else {
-
                 Hero.Padding_Top._mobile_header_function();
-
             }
+
         });
     },
 
     _header_function: function () {
-        // 
+        
         //Get header position value
         Hero.Padding_Top.header_position = $("header").css("position");
 
