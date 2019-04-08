@@ -168,7 +168,7 @@ class NavHandler
                 <div>
                     <div>
                         %s
-                        <span><a href="#" class="google-address" title="Address button">%s</a></span>
+                        <span><a href="javascript:;" class="google-address" title="Address button">%s</a></span>
                         <span>
                             <a href="tel:%s" title="Phone number button"><span>Call Us Today:</span> %s</a>
                         </span>
@@ -288,7 +288,7 @@ class NavHandler
                 <div>
                     <div>
                         %s
-                        <div> 
+                        <div>  
                             <span>
                                 <a href="javascript:;" class="google-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
                             </span>
@@ -333,7 +333,7 @@ class NavHandler
                                 <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
                             </span>
                             <span>
-                                <a href="#" class="google-address" title="Address button"><i class="fa fa-map-marker-alt"></i> %s</a>
+                                <a href="javascript:;" class="google-address" title="Address button"><i class="fa fa-map-marker-alt"></i> %s</a>
                             </span>
                         </div>
                         %s
@@ -432,7 +432,7 @@ class NavHandler
                             <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
                         </span>
                         <span>
-                            <a href="#" class="google-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
+                            <a href="javascript:;" class="google-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
                         </span>
                     </div>
                     %s

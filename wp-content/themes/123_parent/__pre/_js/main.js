@@ -20,14 +20,13 @@ $('#slick_slider').slick({
 
 Theme.Open_Address = {
 
-    address_link: $(".google-address"),
+    address_link: $(".google-address"), 
     address_text: $(".google-address").text(),
 
     _init : function(){
         Theme.Open_Address.address_link.on("click", Theme.Open_Address._open_google_search);
     },
-    _open_google_search: function (e) {
-        event.preventDefault();
+    _open_google_search: function () {
         window.open('https://google.com/search?q=' + Theme.Open_Address.address_text);
     },
 
