@@ -24,6 +24,113 @@ Theme.Slick = {
 Theme.Slick._init();
 
 
+Theme.CookieMonster = {
+    _init: function () {
+        if (DisableTimedPopup === 'false') {
+            // Theme.CookieMonster._deleteCookie('ad_firsttime');
+            // Theme.CookieMonster._deleteCookie('ad_notset');
+
+            // if there's no cookies ie. first time on the site
+            if (Theme.CookieMonster._cookieExists('ad_notset') == false && Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_firsttime') == false) {
+                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false);
+            }
+            // if the other cookies don't exist then listen for the expiration of the firstitme cookie
+            if (Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_notset') == false) {
+                Theme.CookieMonster._listenCookieExpire('ad_firsttime', Theme.CookieMonster._firstTimeExpire);
+            }
+        }
+    },
+    _listenCookieExpire: function (cookieName, callback) {
+        var si = setInterval(function () {
+            if (Theme.CookieMonster._cookieExists(cookieName) === false) {
+                clearInterval(si);
+                return callback();
+            }
+        }, 100);
+    },
+    _setCookie: function (cname, cvalue, ctime, days) {
+        var d = new Date();
+        // if days is set to false use seconds
+        if (days == undefined || days) {
+            days = true;
+            d.setTime(d.getTime() + (ctime * 24 * 60 * 60 * 1000));
+        } else if (days == false) {
+            d.setTime(d.getTime() + (ctime * 1000));
+        }
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    },
+    _getCookieValue: function (cname) {
+        var nameEQ = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    },
+    _cookieExists: function (cname) {
+        if (Theme.CookieMonster._getCookieValue(cname) != null) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    _deleteCookie: function (name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    },
+    _firstTimeExpire: function () {
+        Theme.PA._showPA();
+    },
+}
+
+
+
+Theme.Parallax = {
+    strength: 25,
+    stronger: 175,
+    imagesections: $('.parallax-image'),
+    _init: function () {
+        $(window).on('resize scroll load', Theme.Parallax._resizeLoadScrollHandler);
+    },
+    _map: function (n, i, o, r, t) {
+        return i > o ? i > n ? (n - i) * (t - r) / (o - i) + r : r : o > i ? o > n ? (n - i) * (t - r) / (o - i) + r : t : void 0;
+    },
+    _getAmount: function (el, strength) {
+        var windowcenter = $(window).scrollTop() + ($(window).height() / 2);
+        var sectioncenter = $(el).offset().top + ($(el).height() / 2);
+        var sectiondelta = windowcenter - sectioncenter;
+        var scale = Theme.Parallax._map(sectiondelta, 0, $(window).height(), 0, strength);
+        return -50 + scale + '%';
+    },
+    _resizeLoadScrollHandler: function () {
+        for (var i = 0; i < Theme.Parallax.imagesections.length; i++) {
+            $(Theme.Parallax.imagesections[i]).css('transform', 'translate3d(-50%, ' + Theme.Parallax._getAmount(Theme.Parallax.imagesections[i], Theme.Parallax.strength) + ',0)');
+        }
+    }
+}
+
+
+
+Theme.FadeEffects = {
+
+    elements: $('.fade-up, .fade-left, .fade-right, .fade-in'),
+
+    _resizeLoadScrollHandler: function () {
+        for (var i = 0; i < Theme.FadeEffects.elements.length; i++) {
+            if ($(window).scrollTop() + $(window).height() > $(Theme.FadeEffects.elements[i]).offset().top) {
+                $(Theme.FadeEffects.elements[i]).removeClass('fade-up fade-left fade-right fade-in');
+            }
+        }
+    },
+    _init: function () {
+        $(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
+    },
+}
+Theme.FadeEffects._init();
+
+
 Theme.Open_Address = {
 
     address_link: $(".google-address"), 
@@ -36,8 +143,75 @@ Theme.Open_Address = {
         window.open('https://google.com/search?q=' + Theme.Open_Address.address_text);
     },
 
-},
-Theme.Open_Address._init(); 
+}
+Theme.Open_Address._init();
+
+
+Theme.Estimate = {
+    tint: $(".header-tint"),
+    estimate: $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
+    estimate_popup: $(".estimate"),
+    estimate_close: $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
+
+    _init: function () {
+        $(Theme.Estimate.estimate).on("click", Theme.Estimate._click_handler);
+
+        $(Theme.Estimate.estimate_close).on("click", Theme.Estimate._close_popup);
+    },
+
+    _click_handler: function (event) {
+        event.preventDefault();
+        Theme.Estimate.estimate_popup.fadeIn(250);
+    },
+    _close_popup: function (event) {
+        if ($(event.target).hasClass("estimate") ||
+            $(event.target).hasClass("estimate-content-times") ||
+            $(event.target).hasClass("topbanner-quickquote") ||
+            $(event.target).hasClass("site__button-quote")
+        ) {
+            event.preventDefault();
+            Theme.Estimate.estimate_popup.fadeOut(250);
+        }
+    },
+
+}
+
+
+
+Theme.PA = {
+    container: $('.pa.popupcontainer'),
+    submit: $('.pa.popupcontainer input[type="submit"]'),
+    _init: function () {
+        if (Theme.PA.container.length > 0) {
+            Theme.PA.container.click(Theme.PA._clickHandler);
+        }
+    },
+    _clickHandler: function (e) {
+        if ($(e.target).hasClass('pa') || $(e.target).hasClass('popupcontainer-times')) {
+            if ($(e.target).has('.ginput_container').length == 0) {
+                Theme.CookieMonster._setCookie('ad_set', 'active', 30, true);
+                Theme.CookieMonster._deleteCookie('ad_notset');
+                Theme.CookieMonster._deleteCookie('ad_firsttime');
+                Theme.PA.container.off('click');
+            }
+            Theme.PA._hidePA();
+        }
+    },
+    _hidePA: function () {
+        Theme.PA.container.fadeOut(250);
+        if (Theme.CookieMonster._cookieExists('ad_set') == false) {
+            Theme.CookieMonster._setCookie('ad_notset', 'active', parseInt(PopupTimes.long), false);
+            Theme.CookieMonster._listenCookieExpire('ad_notset', Theme.CookieMonster._firstTimeExpire);
+        }
+    },
+    _showPA: function () {
+        if (Theme.PA.container.length > 0 && $(window).width() >= 1025) {
+            if (Theme.PA.container.css('display') == 'none') {
+                Theme.PA.container.fadeIn(250);
+            }
+        }
+    }
+}
 
 
 Headers.One = {
@@ -65,7 +239,7 @@ Headers.One = {
 
     },
 
-},
+}
 Headers.One._init();
 
 
@@ -94,7 +268,7 @@ Headers.Eight = {
 
     },
 
-},
+}
 Headers.Eight._init();
 
 
@@ -209,24 +383,6 @@ Headers.Sidebar = {
 Headers.Sidebar._init();
 
 
-Theme.FadeEffects = {
-
-    elements: $('.fade-up, .fade-left, .fade-right, .fade-in'),
-
-    _resizeLoadScrollHandler: function () {
-        for (var i = 0; i < Theme.FadeEffects.elements.length; i++) {
-            if ($(window).scrollTop() + $(window).height() > $(Theme.FadeEffects.elements[i]).offset().top) {
-                $(Theme.FadeEffects.elements[i]).removeClass('fade-up fade-left fade-right fade-in');
-            }
-        }
-    },
-    _init: function () {
-        $(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
-    },
-}
-Theme.FadeEffects._init();
-
-
 Hero.Padding_Top = {
 
     header_id: $("header").attr("id"),
@@ -278,7 +434,7 @@ Hero.Padding_Top = {
             Hero.Padding_Top.header_id === "opt_header_one" ||
             Hero.Padding_Top.header_id === "opt_header_four" ||
             Hero.Padding_Top.header_id === "opt_header_nine"
-        ) {
+        ) { 
             Hero.Padding_Top.header_first_div_height = $("header#" + Hero.Padding_Top.header_id + " > div").height();
 
             Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_first_div_height);
@@ -296,156 +452,3 @@ Hero.Padding_Top = {
 
 },
 Hero.Padding_Top._init();
-
-
-Theme.Estimate = {
-    tint: $(".header-tint"),
-    estimate: $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
-    estimate_popup: $(".estimate"),
-    estimate_close: $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
-
-    _init: function () {
-        $(Theme.Estimate.estimate).on("click", Theme.Estimate._click_handler);
-
-        $(Theme.Estimate.estimate_close).on("click", Theme.Estimate._close_popup);
-    },
-
-    _click_handler: function (event) {
-        event.preventDefault();
-        Theme.Estimate.estimate_popup.fadeIn(250);
-    },
-    _close_popup: function (event) {
-        if ($(event.target).hasClass("estimate") ||
-            $(event.target).hasClass("estimate-content-times") ||
-            $(event.target).hasClass("topbanner-quickquote") ||
-            $(event.target).hasClass("site__button-quote")
-        ) {
-            event.preventDefault();
-            Theme.Estimate.estimate_popup.fadeOut(250);
-        }
-    },
-
-}
-Theme.Estimate._init();
-
-
-Theme.PA = {
-    container: $('.pa.popupcontainer'),
-    submit: $('.pa.popupcontainer input[type="submit"]'),
-    _init: function () {
-        if (Theme.PA.container.length > 0) {
-            Theme.PA.container.click(Theme.PA._clickHandler);
-        }
-    },
-    _clickHandler: function (e) {
-        if ($(e.target).hasClass('pa') || $(e.target).hasClass('popupcontainer-times')) {
-            if ($(e.target).has('.ginput_container').length == 0) {
-                Theme.CookieMonster._setCookie('ad_set', 'active', 30, true);
-                Theme.CookieMonster._deleteCookie('ad_notset');
-                Theme.CookieMonster._deleteCookie('ad_firsttime');
-                Theme.PA.container.off('click');
-            }
-            Theme.PA._hidePA();
-        }
-    },
-    _hidePA: function () {
-        Theme.PA.container.fadeOut(250);
-        if (Theme.CookieMonster._cookieExists('ad_set') == false) {
-            Theme.CookieMonster._setCookie('ad_notset', 'active', parseInt(PopupTimes.long), false);
-            Theme.CookieMonster._listenCookieExpire('ad_notset', Theme.CookieMonster._firstTimeExpire);
-        }
-    },
-    _showPA: function () {
-        if (Theme.PA.container.length > 0 && $(window).width() >= 1025) {
-            if (Theme.PA.container.css('display') == 'none') {
-                Theme.PA.container.fadeIn(250);
-            }
-        }
-    }
-}
-
-
-Theme.CookieMonster = {
-    _init: function () {
-        if (DisableTimedPopup === 'false') {
-            // Theme.CookieMonster._deleteCookie('ad_firsttime');
-            // Theme.CookieMonster._deleteCookie('ad_notset');
-
-            // if there's no cookies ie. first time on the site
-            if (Theme.CookieMonster._cookieExists('ad_notset') == false && Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_firsttime') == false) {
-                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false);
-            }
-            // if the other cookies don't exist then listen for the expiration of the firstitme cookie
-            if (Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_notset') == false) {
-                Theme.CookieMonster._listenCookieExpire('ad_firsttime', Theme.CookieMonster._firstTimeExpire);
-            }
-        }
-    },
-    _listenCookieExpire: function (cookieName, callback) {
-        var si = setInterval(function () {
-            if (Theme.CookieMonster._cookieExists(cookieName) === false) {
-                clearInterval(si);
-                return callback();
-            }
-        }, 100);
-    },
-    _setCookie: function (cname, cvalue, ctime, days) {
-        var d = new Date();
-        // if days is set to false use seconds
-        if (days == undefined || days) {
-            days = true;
-            d.setTime(d.getTime() + (ctime * 24 * 60 * 60 * 1000));
-        } else if (days == false) {
-            d.setTime(d.getTime() + (ctime * 1000));
-        }
-        var expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + "; " + expires;
-    },
-    _getCookieValue: function (cname) {
-        var nameEQ = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-    },
-    _cookieExists: function (cname) {
-        if (Theme.CookieMonster._getCookieValue(cname) != null) {
-            return true;
-        } else {
-            return false;
-        }
-    },
-    _deleteCookie: function (name) {
-        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    },
-    _firstTimeExpire: function () {
-        Theme.PA._showPA();
-    },
-};
-
-Theme.Parallax = {
-    strength: 25,
-    stronger: 175,
-    imagesections: $('.parallax-image'),
-    _init: function () {
-        $(window).on('resize scroll load', Theme.Parallax._resizeLoadScrollHandler);
-    },
-    _map: function (n, i, o, r, t) {
-        return i > o ? i > n ? (n - i) * (t - r) / (o - i) + r : r : o > i ? o > n ? (n - i) * (t - r) / (o - i) + r : t : void 0;
-    },
-    _getAmount: function (el, strength) {
-        var windowcenter = $(window).scrollTop() + ($(window).height() / 2);
-        var sectioncenter = $(el).offset().top + ($(el).height() / 2);
-        var sectiondelta = windowcenter - sectioncenter;
-        var scale = Theme.Parallax._map(sectiondelta, 0, $(window).height(), 0, strength);
-        return -50 + scale + '%';
-    },
-    _resizeLoadScrollHandler: function () {
-        for (var i = 0; i < Theme.Parallax.imagesections.length; i++) {
-            $(Theme.Parallax.imagesections[i]).css('transform', 'translate3d(-50%, ' + Theme.Parallax._getAmount(Theme.Parallax.imagesections[i], Theme.Parallax.strength) + ',0)');
-        }
-    }
-}
