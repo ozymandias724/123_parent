@@ -24,16 +24,16 @@
     
     $return_staff_grid = '<div><ul>';
     
-    foreach( $fields['staff_members'] as $rec ){
+    // foreach( $fields['staff_members'] as $rec ){
 
-        $rec_fields = get_fields($rec['staff_member']->ID);
+    //     $rec_fields = get_fields($rec['staff_member']->ID);
         
-        $return_staff_grid .= sprintf(
-            $format_staff_member
-            ,$rec_fields['image']['url']
-        );
+    //     $return_staff_grid .= sprintf(
+    //         $format_staff_member
+    //         ,$rec_fields['image']['url']
+    //     );
 
-    }
+    // }
 
     $return_staff_grid .= '</ul></div>';
     
