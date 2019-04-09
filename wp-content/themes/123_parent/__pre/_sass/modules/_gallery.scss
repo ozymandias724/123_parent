@@ -1,12 +1,45 @@
 @media only screen {
     // Gallery section 
     section#mod_gallery {
-        #tabbed_gallery > div h3 {
+        #tabbed_gallery > div {
+            margin-bottom: 25px;
+            color: #C2C2C2;
+            max-width: 1280px;
+            margin: 0 auto 25px;
+            > h3 {
+                display: block;
+                margin: 10px 5px;
+                text-transform: uppercase;
+                padding: 10px 0;
+            }
+            > h3 > a {
+                padding: 10px 15px;
+                border-radius: 20px;
+                background-color: transparent;
+                border: 2px solid #C2C2C2;
+            }
+            > h3 > a.active_gallery,
+            > h3 > a:active,
+            > h3 > a:focus {
+                background-color: #d8761f;
+                color: #fff;
+                border: 2px solid #d8761f;
+            }
+            > h3 > a:hover {
+                background-color: #C2C2C2;
+                color: #fff;
+                border: 2px solid #C2C2C2;
+            }
+        }
+        #tabbed_gallery > ul {
+            display: none;
+        }
+        #tabbed_gallery > ul.active_gallery_ul {
             display: inline-block;
         }
         > div {
             $w : 80vw;
-            $c : 1;
+            $c : 2;
             $g : 1.5vw;
             $s : false;
             @include gridLayout($w, $c, $g, $s);
@@ -14,7 +47,7 @@
                 margin: 15px 0;
             }
             .image {
-                height: 250px; 
+                height: 200px; 
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -30,7 +63,9 @@
 @media only screen and (min-width: 550px){
     // Gallery section 
     section#mod_gallery {
-        
+        #tabbed_gallery > div > h3 {
+            display: inline-block;
+        }
         > div {
             $w : 80vw;
             $c : 2;
@@ -60,7 +95,6 @@
 @media only screen and (min-width: 1281px){
     // Gallery section 
     section#mod_gallery {
-        
         > div {
             $w : 65vw;
             $c : 4;

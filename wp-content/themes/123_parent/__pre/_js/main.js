@@ -177,7 +177,6 @@ Theme.Estimate = {
 }
 
 
-
 Theme.PA = {
     container: $('.pa.popupcontainer'),
     submit: $('.pa.popupcontainer input[type="submit"]'),
@@ -212,6 +211,38 @@ Theme.PA = {
         }
     }
 }
+
+
+Theme.Gallery = {
+
+    link : $("#tabbed_gallery > div > h3 > a"),
+    active_link_text : $("a.active_gallery").text(),
+    image_galleries : $("#tabbed_gallery ul"),
+
+    _init : function(){
+        Theme.Gallery.link.on("click", Theme.Gallery._link_click);  
+    },
+
+    _link_click : function(e){
+        Theme.Gallery.link_text = e.target.classList[0];
+        Theme.Gallery.link.each(function(){
+            if($(this).hasClass(Theme.Gallery.link_text)){
+                $(this).addClass('active_gallery');
+            }else{
+                $(this).removeClass('active_gallery');
+            }
+        });
+        Theme.Gallery.image_galleries.each(function(){
+            if($(this).hasClass(Theme.Gallery.link_text)){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
+    }
+
+}
+Theme.Gallery._init();
 
 
 Headers.One = {

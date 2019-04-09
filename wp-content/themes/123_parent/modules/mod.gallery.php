@@ -38,29 +38,36 @@
         
     } else if($fields['type'] == 'tabbed'){
 
-        $format_gallery = '<h3>%s</h3>';
+        $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
         $return_gallery = '<div id="tabbed_gallery"><div>';
-
+        
+        $count = 0;
         foreach($fields['tabbed_gallery'] as $tab){
             $return_gallery .= sprintf(
                 $format_gallery
+                ,strtolower(str_replace(' ', '', $tab['tab_title'])) 
+                ,($count === 0 ? "active_gallery" : "")
                 ,$tab['tab_title']
             );
+            $count++;
         }
 
         $return_gallery .= '</div>';
 
         $gallery_list = '';
 
+        $count = 0;
         foreach($fields['tabbed_gallery'] as $tab){
-            $gallery = '<ul class="'.str_replace(' ', '', $tab['tab_title']).'">';  
+            $gallery = '<ul class="'.strtolower(str_replace(' ', '', $tab['tab_title'])). ' ' .($count === 0 ? "active_gallery_ul" : "").'">';  
             foreach($tab['images'] as $image){
                 $gallery .= '<li><div class="image" style="background-image:url('.$image['url'].');"></div></li>';
             }
             $gallery .= '</ul>';
             $gallery_list .=  $gallery;
+            $count++;
         }
+        
 
         $return_gallery .= $gallery_list;
 

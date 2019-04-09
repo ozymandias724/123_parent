@@ -3863,7 +3863,34 @@
       font-size: 2.4rem; } }
 
 @media only screen {
-  section#mod_gallery #tabbed_gallery > div h3 {
+  section#mod_gallery #tabbed_gallery > div {
+    margin-bottom: 25px;
+    color: #C2C2C2;
+    max-width: 1280px;
+    margin: 0 auto 25px; }
+    section#mod_gallery #tabbed_gallery > div > h3 {
+      display: block;
+      margin: 10px 5px;
+      text-transform: uppercase;
+      padding: 10px 0; }
+    section#mod_gallery #tabbed_gallery > div > h3 > a {
+      padding: 10px 15px;
+      border-radius: 20px;
+      background-color: transparent;
+      border: 2px solid #C2C2C2; }
+    section#mod_gallery #tabbed_gallery > div > h3 > a.active_gallery,
+    section#mod_gallery #tabbed_gallery > div > h3 > a:active,
+    section#mod_gallery #tabbed_gallery > div > h3 > a:focus {
+      background-color: #d8761f;
+      color: #fff;
+      border: 2px solid #d8761f; }
+    section#mod_gallery #tabbed_gallery > div > h3 > a:hover {
+      background-color: #C2C2C2;
+      color: #fff;
+      border: 2px solid #C2C2C2; }
+  section#mod_gallery #tabbed_gallery > ul {
+    display: none; }
+  section#mod_gallery #tabbed_gallery > ul.active_gallery_ul {
     display: inline-block; }
   section#mod_gallery > div {
     text-align: center; }
@@ -3877,17 +3904,17 @@
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
-        width: 80vw;
+        width: 39.25vw;
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
           margin: 0 1.5vw 1.5vw 0; }
-        section#mod_gallery > div ul > li:nth-child(1n) {
+        section#mod_gallery > div ul > li:nth-child(2n) {
           margin: 0 0 1.5vw 0; }
     section#mod_gallery > div > h2 {
       margin: 15px 0; }
     section#mod_gallery > div .image {
-      height: 250px;
+      height: 200px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat; }
@@ -3895,6 +3922,8 @@
       list-style: none; } }
 
 @media only screen and (min-width: 550px) {
+  section#mod_gallery #tabbed_gallery > div > h3 {
+    display: inline-block; }
   section#mod_gallery > div {
     text-align: center; }
     section#mod_gallery > div ul {
