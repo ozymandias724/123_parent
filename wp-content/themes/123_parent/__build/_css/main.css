@@ -442,7 +442,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       div.site_grid ul:after {
         content: "";
         display: table;
@@ -472,7 +473,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       div.site_grid ul:after {
         content: "";
         display: table;
@@ -495,7 +497,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       div.site_grid ul:after {
         content: "";
         display: table;
@@ -3863,34 +3866,39 @@
       font-size: 2.4rem; } }
 
 @media only screen {
-  section#mod_gallery #tabbed_gallery > div {
-    margin-bottom: 25px;
+  section#mod_gallery #tabbed_gallery {
+    min-height: 90vh; }
+  section#mod_gallery #tabbed_gallery > div:first-of-type {
+    text-align: center;
     color: #C2C2C2;
-    max-width: 1280px;
-    margin: 0 auto 25px; }
-    section#mod_gallery #tabbed_gallery > div > h3 {
-      display: block;
-      margin: 10px 5px;
+    width: 80vw;
+    margin: 0 auto 25px;
+    border-bottom: 2px solid #494d50; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 {
+      margin: 5px 4px 0;
       text-transform: uppercase;
-      padding: 10px 0; }
-    section#mod_gallery #tabbed_gallery > div > h3 > a {
+      padding: 10px 0;
+      display: inline-block; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a {
       padding: 10px 15px;
-      border-radius: 20px;
-      background-color: transparent;
-      border: 2px solid #C2C2C2; }
-    section#mod_gallery #tabbed_gallery > div > h3 > a.active_gallery,
-    section#mod_gallery #tabbed_gallery > div > h3 > a:active,
-    section#mod_gallery #tabbed_gallery > div > h3 > a:focus {
-      background-color: #d8761f;
+      background-color: #494d50;
       color: #fff;
-      border: 2px solid #d8761f; }
-    section#mod_gallery #tabbed_gallery > div > h3 > a:hover {
+      position: relative;
+      top: 2px; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a.active_gallery,
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:active,
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:focus {
+      background-color: #fff;
+      color: #d8761f;
+      border-top: 2px solid #494d50;
+      border-left: 2px solid #494d50;
+      border-right: 2px solid #494d50; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:hover {
       background-color: #C2C2C2;
-      color: #fff;
-      border: 2px solid #C2C2C2; }
-  section#mod_gallery #tabbed_gallery > ul {
+      color: #fff; }
+  section#mod_gallery #tabbed_gallery > div:last-of-type > ul {
     display: none; }
-  section#mod_gallery #tabbed_gallery > ul.active_gallery_ul {
+  section#mod_gallery #tabbed_gallery > div:last-of-type > ul.active_gallery_ul {
     display: inline-block; }
   section#mod_gallery > div {
     text-align: center; }
@@ -3898,7 +3906,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_gallery > div ul:after {
         content: "";
         display: table;
@@ -3922,15 +3931,16 @@
       list-style: none; } }
 
 @media only screen and (min-width: 550px) {
-  section#mod_gallery #tabbed_gallery > div > h3 {
-    display: inline-block; }
+  section#mod_gallery #tabbed_gallery > div:first-of-type {
+    text-align: left; }
   section#mod_gallery > div {
     text-align: center; }
     section#mod_gallery > div ul {
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_gallery > div ul:after {
         content: "";
         display: table;
@@ -3953,7 +3963,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_gallery > div ul:after {
         content: "";
         display: table;
@@ -3969,24 +3980,27 @@
         section#mod_gallery > div ul > li:nth-child(3n) {
           margin: 0 0 1.5vw 0; } }
 
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 1000px) {
+  section#mod_gallery #tabbed_gallery > div:first-of-type {
+    width: 60vw; }
   section#mod_gallery > div {
     text-align: center; }
     section#mod_gallery > div ul {
       text-align: left;
-      width: 65vw;
+      width: 60vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_gallery > div ul:after {
         content: "";
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
-        width: 15.125vw;
+        width: 13.875vw;
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li div.image {
-          height: 15.125vw; }
+          height: 13.875vw; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
           margin: 0 1.5vw 1.5vw 0; }
         section#mod_gallery > div ul > li:nth-child(4n) {
@@ -3999,7 +4013,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_about > div ul:after {
         content: "";
         display: table;
@@ -4029,7 +4044,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_about > div ul:after {
         content: "";
         display: table;
@@ -4052,7 +4068,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_about > div ul:after {
         content: "";
         display: table;
@@ -4075,7 +4092,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_reviews > div ul:after {
         content: "";
         display: table;
@@ -4105,7 +4123,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_reviews > div ul:after {
         content: "";
         display: table;
@@ -4128,7 +4147,8 @@
       text-align: left;
       width: 80vw;
       margin: 0 auto 0 auto;
-      display: inline-block; }
+      display: inline-block;
+      list-style: none; }
       section#mod_reviews > div ul:after {
         content: "";
         display: table;

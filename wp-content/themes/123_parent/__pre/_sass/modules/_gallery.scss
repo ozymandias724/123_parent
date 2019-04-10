@@ -1,40 +1,76 @@
 @media only screen {
     // Gallery section 
     section#mod_gallery {
-        #tabbed_gallery > div {
-            margin-bottom: 25px;
+        #tabbed_gallery {
+            min-height: 90vh; 
+        }
+        //Tabbed Pills
+        // #tabbed_gallery > div:first-of-type {
+            // color: #C2C2C2;
+            // margin: 0 auto 25px;
+        //     > h3 {
+        //         display: block;
+        //         margin: 10px 5px;
+        //         text-transform: uppercase;
+        //         padding: 10px 0;
+        //     }
+        //     > h3 > a {
+        //         padding: 10px 15px;
+        //         border-radius: 20px;
+        //         background-color: transparent;
+        //         border: 2px solid #C2C2C2;
+        //     }
+        //     > h3 > a.active_gallery,
+        //     > h3 > a:active,
+        //     > h3 > a:focus {
+        //         background-color: #d8761f;
+        //         color: #fff;
+        //         border: 2px solid #d8761f;
+        //     }
+        //     > h3 > a:hover {
+        //         background-color: #C2C2C2;
+        //         color: #fff;
+        //         border: 2px solid #C2C2C2;
+        //     }
+        // }
+        //Tabbed Classic
+        #tabbed_gallery > div:first-of-type {
+            text-align: center;
             color: #C2C2C2;
-            max-width: 1280px;
+            width: 80vw;
             margin: 0 auto 25px;
+            border-bottom: 2px solid #494d50;
             > h3 {
-                display: block;
-                margin: 10px 5px;
+                margin: 5px 4px 0;
                 text-transform: uppercase;
                 padding: 10px 0;
+                display: inline-block;
             }
             > h3 > a {
                 padding: 10px 15px;
-                border-radius: 20px;
-                background-color: transparent;
-                border: 2px solid #C2C2C2;
+                background-color: #494d50;
+                color: #fff;
+                position: relative;
+                top: 2px;
             }
             > h3 > a.active_gallery,
             > h3 > a:active,
             > h3 > a:focus {
-                background-color: #d8761f;
-                color: #fff;
-                border: 2px solid #d8761f;
+                background-color: #fff;
+                color: #d8761f;
+                border-top: 2px solid #494d50;
+                border-left: 2px solid #494d50;
+                border-right: 2px solid #494d50;
             }
             > h3 > a:hover {
                 background-color: #C2C2C2;
                 color: #fff;
-                border: 2px solid #C2C2C2;
             }
         }
-        #tabbed_gallery > ul {
+        #tabbed_gallery > div:last-of-type > ul {
             display: none;
         }
-        #tabbed_gallery > ul.active_gallery_ul {
+        #tabbed_gallery > div:last-of-type > ul.active_gallery_ul {
             display: inline-block;
         }
         > div {
@@ -63,8 +99,8 @@
 @media only screen and (min-width: 550px){
     // Gallery section 
     section#mod_gallery {
-        #tabbed_gallery > div > h3 {
-            display: inline-block;
+        #tabbed_gallery > div:first-of-type {
+            text-align: left;
         }
         > div {
             $w : 80vw;
@@ -92,11 +128,14 @@
     }
 } 
 
-@media only screen and (min-width: 1281px){
+@media only screen and (min-width: 1000px){
+    section#mod_gallery #tabbed_gallery > div:first-of-type {
+        width: 60vw;
+    }
     // Gallery section 
     section#mod_gallery {
         > div {
-            $w : 65vw;
+            $w : 60vw;
             $c : 4;
             $g : 1.5vw;
             $s : true;
