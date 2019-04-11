@@ -3874,26 +3874,27 @@
     margin: 0 auto; }
   section#mod_gallery #tabbed_gallery > div:first-of-type {
     text-align: center;
-    color: #C2C2C2;
     width: 20vw; }
     section#mod_gallery #tabbed_gallery > div:first-of-type > h3 {
       display: block;
-      border-bottom: 1.5px solid #c2c2c2;
       margin-right: 15px;
       font-size: 14px; }
     section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a {
       padding: 10px 15px;
-      transition: all 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
       display: block;
-      color: #484848; }
+      color: #484848;
+      border-bottom: 1px solid #C2C2C2; }
     section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a.active_gallery,
     section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:active,
     section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:focus {
       color: #fff;
-      background-color: #d8761f; }
+      background-color: #d8761f;
+      border-bottom: 1px solid #d8761f; }
     section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:hover {
       background-color: #dbdbdb;
-      color: #484848; }
+      color: #484848;
+      border-bottom: 1px solid transparent; }
   section#mod_gallery #tabbed_gallery > div:last-of-type {
     width: 80vw; }
   section#mod_gallery #tabbed_gallery > div:last-of-type > ul {

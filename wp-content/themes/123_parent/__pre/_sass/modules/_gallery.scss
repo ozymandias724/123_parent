@@ -86,30 +86,31 @@
         }
         #tabbed_gallery > div:first-of-type {
             text-align: center;
-            color: #C2C2C2;
             width: 20vw;
             > h3 {
                 display: block;
-                border-bottom: 1.5px solid #c2c2c2;
                 margin-right: 15px;
                 font-size: 14px;
-            
             }
             > h3 > a {
                 padding: 10px 15px;
-                transition: all 0.3s ease-in-out;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
                 display: block;
                 color: #484848;
+                border-bottom: 1px solid #C2C2C2;
             }
             > h3 > a.active_gallery,
             > h3 > a:active, 
             > h3 > a:focus {
                 color: #fff;
                 background-color: #d8761f;
+                border-bottom: 1px solid #d8761f;
             }
             > h3 > a:hover {
                 background-color: #dbdbdb;
                 color: #484848;
+                border-bottom: 1px solid transparent;
+
             }
         }
         #tabbed_gallery > div:last-of-type {
