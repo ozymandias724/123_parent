@@ -3868,42 +3868,38 @@
 @media only screen {
   section#mod_gallery #tabbed_gallery {
     min-height: 90vh; }
+  section#mod_gallery #tabbed_gallery {
+    display: flex;
+    width: 65vw;
+    margin: 0 auto; }
+  section#mod_gallery #tabbed_gallery > div:first-of-type {
+    text-align: center;
+    color: #C2C2C2;
+    width: 20vw; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 {
+      display: block;
+      border-bottom: 1.5px solid #c2c2c2;
+      margin-right: 15px;
+      font-size: 14px; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a {
+      padding: 10px 15px;
+      transition: all 0.3s ease-in-out;
+      display: block;
+      color: #484848; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a.active_gallery,
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:active,
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:focus {
+      color: #fff;
+      background-color: #d8761f; }
+    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:hover {
+      background-color: #dbdbdb;
+      color: #484848; }
+  section#mod_gallery #tabbed_gallery > div:last-of-type {
+    width: 80vw; }
   section#mod_gallery #tabbed_gallery > div:last-of-type > ul {
     display: none; }
   section#mod_gallery #tabbed_gallery > div:last-of-type > ul.active_gallery_ul {
     display: inline-block; }
-  section#mod_gallery #tabbed_gallery > div:first-of-type {
-    text-align: center;
-    color: #C2C2C2;
-    width: 80vw;
-    margin: 0 auto 25px;
-    border-bottom: 2px solid #c6c7ca; }
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 {
-      margin: 5px 4px 0;
-      text-transform: uppercase;
-      padding: 10px 0;
-      display: inline-block;
-      transition: all 0.3s ease 0.3s; }
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a {
-      padding: 10px 15px;
-      background-color: #c6c7ca;
-      color: #818181;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px; }
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a.active_gallery,
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:active,
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:focus {
-      background-color: #fff;
-      color: #d8761f;
-      border-top: 2px solid #c6c7ca;
-      border-left: 2px solid #c6c7ca;
-      border-right: 2px solid #c6c7ca; }
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:hover {
-      background-color: #555658;
-      color: #fff; }
-    section#mod_gallery #tabbed_gallery > div:first-of-type > h3.active_tab {
-      position: relative;
-      top: 2px; }
   section#mod_gallery > div {
     text-align: center; }
     section#mod_gallery > div ul {
@@ -3924,8 +3920,6 @@
           margin: 0 1.5vw 1.5vw 0; }
         section#mod_gallery > div ul > li:nth-child(2n) {
           margin: 0 0 1.5vw 0; }
-    section#mod_gallery > div > h2 {
-      margin: 15px 0; }
     section#mod_gallery > div .image {
       height: 200px;
       background-size: cover;
@@ -3991,7 +3985,7 @@
     text-align: center; }
     section#mod_gallery > div ul {
       text-align: left;
-      width: 60vw;
+      width: 50vw;
       margin: 0 auto 0 auto;
       display: inline-block;
       list-style: none; }
@@ -4000,14 +3994,14 @@
         display: table;
         clear: both; }
       section#mod_gallery > div ul > li {
-        width: 13.875vw;
+        width: 15.6666666667vw;
         height: auto;
         float: left; }
         section#mod_gallery > div ul > li div.image {
-          height: 13.875vw; }
+          height: 15.6666666667vw; }
         section#mod_gallery > div ul > li:nth-child(n+1) {
           margin: 0 1.5vw 1.5vw 0; }
-        section#mod_gallery > div ul > li:nth-child(4n) {
+        section#mod_gallery > div ul > li:nth-child(3n) {
           margin: 0 0 1.5vw 0; } }
 
 @media only screen {

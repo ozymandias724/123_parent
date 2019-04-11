@@ -38,7 +38,7 @@
         
     } else if($fields['type'] == 'tabbed'){
 
-        $format_gallery = '<h3 class="%s"><a class="%s %s" href="javascript:;">%s</a></h3>';
+        $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
         $return_gallery = '<div id="tabbed_gallery"><div>';
         
@@ -46,7 +46,6 @@
         foreach($fields['tabbed_gallery'] as $tab){
             $return_gallery .= sprintf(
                 $format_gallery
-                ,($count === 0 ? "active_tab" : "")
                 ,strtolower(str_replace(' ', '', $tab['tab_title'])) 
                 ,($count === 0 ? "active_gallery" : "")
                 ,$tab['tab_title']

@@ -4,10 +4,11 @@
         #tabbed_gallery {
             min-height: 90vh; 
         }
+
         //Tabbed Pills
         // #tabbed_gallery > div:first-of-type {
-            // color: #C2C2C2;
-            // margin: 0 auto 25px;
+        //     color: #C2C2C2;
+        //     margin: 0 auto 25px;
         //     > h3 {
         //         display: block;
         //         margin: 10px 5px;
@@ -33,98 +34,101 @@
         //         border: 2px solid #C2C2C2;
         //     }
         // }
+
         //Tabbed Classic
         // #tabbed_gallery > div:first-of-type {
         //     text-align: center;
         //     color: #C2C2C2;
         //     width: 80vw;
         //     margin: 0 auto 25px;
-        //     border-bottom: 2px solid #494d50;
+        //     border-bottom: 2px solid #c6c7ca;
         //     > h3 {
-        //         margin: 5px 4px 0;
+        //         margin: 5px 2px 0;
         //         text-transform: uppercase;
         //         padding: 10px 0;
         //         display: inline-block;
         //     }
         //     > h3 > a {
         //         padding: 10px 15px;
-        //         background-color: #494d50;
-        //         color: #fff;
+        //         background-color: #c6c7ca;
+        //         color: #818181;
+        //         border-top-left-radius: 5px;
+        //         border-top-right-radius: 5px;
+        //         transition: all 0.3s ease-in-out;
         //         position: relative;
         //         top: 2px;
         //     }
         //     > h3 > a.active_gallery,
-        //     > h3 > a:active,
+        //     > h3 > a:active, 
         //     > h3 > a:focus {
         //         background-color: #fff;
         //         color: #d8761f;
-        //         border-top: 2px solid #494d50;
-        //         border-left: 2px solid #494d50;
-        //         border-right: 2px solid #494d50;
+        //         border-top: 2px solid #c6c7ca;
+        //         border-left: 2px solid #c6c7ca;
+        //         border-right: 2px solid #c6c7ca;
         //     }
         //     > h3 > a:hover {
-        //         background-color: #C2C2C2;
         //         color: #fff;
+        //         background: #d6d8db;
+        //         background: -moz-linear-gradient(top, #d6d8db 0%, #c6c7ca 100%);
+        //         background: -moz-linear-gradient(top, #d6d8db 0%, #aaabad 100%);
+        //         background: -webkit-linear-gradient(top, #d6d8db 0%,#aaabad 100%); 
+        //         background: linear-gradient(to bottom, #d6d8db 0%,#aaabad 100%); 
+        //         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d8db', endColorstr='#aaabad',GradientType=0 ); 
         //     }
-            // > h3.active_tab {
-            //     position: relative;
-            //     top: 2px;
-            // }
         // }
+
+        //Tabbed Side Menu
+        #tabbed_gallery {
+            display: flex;
+            width: 65vw;
+            margin: 0 auto;
+        }
+        #tabbed_gallery > div:first-of-type {
+            text-align: center;
+            color: #C2C2C2;
+            width: 20vw;
+            > h3 {
+                display: block;
+                border-bottom: 1.5px solid #c2c2c2;
+                margin-right: 15px;
+                font-size: 14px;
+            
+            }
+            > h3 > a {
+                padding: 10px 15px;
+                transition: all 0.3s ease-in-out;
+                display: block;
+                color: #484848;
+            }
+            > h3 > a.active_gallery,
+            > h3 > a:active, 
+            > h3 > a:focus {
+                color: #fff;
+                background-color: #d8761f;
+            }
+            > h3 > a:hover {
+                background-color: #dbdbdb;
+                color: #484848;
+            }
+        }
+        #tabbed_gallery > div:last-of-type {
+            width: 80vw;
+        }
         #tabbed_gallery > div:last-of-type > ul {
             display: none;
         }
         #tabbed_gallery > div:last-of-type > ul.active_gallery_ul {
             display: inline-block;
         }
-        //Tabbed Side Menu
-        #tabbed_gallery > div:first-of-type {
-            text-align: center;
-            color: #C2C2C2;
-            width: 80vw;
-            margin: 0 auto 25px;
-            border-bottom: 2px solid #c6c7ca;
-            > h3 {
-                margin: 5px 4px 0;
-                text-transform: uppercase;
-                padding: 10px 0;
-                display: inline-block;
-                transition: all 0.3s ease 0.3s;
-            }
-            > h3 > a {
-                padding: 10px 15px;
-                background-color: #c6c7ca;
-                color: #818181;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-            }
-            > h3 > a.active_gallery,
-            > h3 > a:active,
-            > h3 > a:focus {
-                background-color: #fff;
-                color: #d8761f;
-                border-top: 2px solid #c6c7ca;
-                border-left: 2px solid #c6c7ca;
-                border-right: 2px solid #c6c7ca;
-            }
-            > h3 > a:hover {
-                background-color: #555658;
-                color: #fff;
-            }
-            > h3.active_tab {
-                position: relative;
-                top: 2px;
-            }
-        }
+
+        // Gallery for Tabbed Pills, Tabbed Classic and Tabbed Side Menu
         > div {
             $w : 80vw;
             $c : 2;
             $g : 1.5vw;
             $s : false;
             @include gridLayout($w, $c, $g, $s);
-            > h2 {
-                margin: 15px 0;
-            }
             .image {
                 height: 200px; 
                 background-size: cover;
@@ -145,6 +149,7 @@
         #tabbed_gallery > div:first-of-type {
             text-align: left;
         }
+        // Gallery 
         > div {
             $w : 80vw;
             $c : 2;
@@ -160,6 +165,7 @@
     // Gallery section 
     section#mod_gallery {
         
+        // Gallery
         > div {
             $w : 80vw;
             $c : 3;
@@ -175,16 +181,27 @@
     section#mod_gallery #tabbed_gallery > div:first-of-type {
         width: 60vw;
     }
-    // Gallery section 
+
+    // Gallery section for Tabbed Pills and Tabbed Classic
+    // section#mod_gallery {
+    //     > div {
+    //         $w : 60vw;
+    //         $c : 4;
+    //         $g : 1.5vw;
+    //         $s : true;
+    //         @include gridLayout($w, $c, $g, $s);
+    //     } 
+    // }
+
+    //Gallery section for Tabbed Side Menu
     section#mod_gallery {
         > div {
-            $w : 60vw;
-            $c : 4;
+            $w : 50vw;
+            $c : 3;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
-        }
-        
+        } 
     }
 }
 
