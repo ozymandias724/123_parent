@@ -221,10 +221,8 @@ Theme.Gallery = {
     Theme.Gallery.link.each(function () {
       if ((0, _jquery.default)(this).hasClass(Theme.Gallery.link_text)) {
         (0, _jquery.default)(this).addClass('active_gallery');
-        (0, _jquery.default)(this).parent().addClass('active_tab');
       } else {
         (0, _jquery.default)(this).removeClass('active_gallery');
-        (0, _jquery.default)(this).parent().removeClass('active_tab');
       }
     });
     Theme.Gallery.image_galleries.each(function () {

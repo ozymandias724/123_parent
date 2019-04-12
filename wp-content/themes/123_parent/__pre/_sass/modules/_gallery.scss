@@ -5,7 +5,7 @@
             min-height: 90vh; 
         }
 
-        //Tabbed Pills
+        // Tabbed Pills
         // #tabbed_gallery > div:first-of-type {
         //     color: #C2C2C2;
         //     margin: 0 auto 25px;
@@ -35,7 +35,7 @@
         //     }
         // }
 
-        //Tabbed Classic
+        // Tabbed Classic
         // #tabbed_gallery > div:first-of-type {
         //     text-align: center;
         //     color: #C2C2C2;
@@ -78,7 +78,7 @@
         //     }
         // }
 
-        //Tabbed Side Menu
+        // Tabbed Side Menu
         #tabbed_gallery {
             display: flex;
             margin: 0 auto;
@@ -210,8 +210,6 @@
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-
-
         
     }
 } 
@@ -244,6 +242,8 @@
     #tabbed_gallery > div:first-of-type h3 {
         margin-right: 15px;
     }
+
+    // Tabbed Side Menu
     section#mod_gallery {
         > div {
             $w : 50vw;

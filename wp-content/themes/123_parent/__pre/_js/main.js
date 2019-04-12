@@ -86,7 +86,6 @@ Theme.CookieMonster = {
 }
 
 
-
 Theme.Parallax = {
     strength: 25,
     stronger: 175,
@@ -110,7 +109,6 @@ Theme.Parallax = {
         }
     }
 }
-
 
 
 Theme.FadeEffects = {
@@ -228,10 +226,8 @@ Theme.Gallery = {
         Theme.Gallery.link.each(function(){
             if($(this).hasClass(Theme.Gallery.link_text)){
                 $(this).addClass('active_gallery');
-                $(this).parent().addClass('active_tab');
             }else{
                 $(this).removeClass('active_gallery');
-                $(this).parent().removeClass('active_tab');
             }
         });
         Theme.Gallery.image_galleries.each(function(){
