@@ -117,10 +117,10 @@
         #tabbed_gallery > div:last-of-type {
             width: 80vw;
         }
-        #tabbed_gallery > div:last-of-type > ul {
+        #tabbed_gallery > div:last-of-type > .gallery_list {
             display: none;
         }
-        #tabbed_gallery > div:last-of-type > ul.active_gallery_ul {
+        #tabbed_gallery > div:last-of-type > .gallery_list.active_gallery_list {
             display: inline-block;
         }
 
@@ -215,7 +215,8 @@
 } 
 
 @media only screen and (min-width: 1000px){
-    // Tabbed Pills and Tabbed Classic
+
+    // Tabbed Pills and Tabbed Classic 
     // section#mod_gallery #tabbed_gallery > div:first-of-type {
     //     width: 60vw;
     // }

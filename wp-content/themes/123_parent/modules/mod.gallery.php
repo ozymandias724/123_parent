@@ -56,10 +56,10 @@
         $return_gallery .= '</div>'; 
 
         $gallery_list = '<div>';
-
+ 
         $count = 0;
         foreach($fields['tabbed_gallery'] as $tab){
-            $gallery = '<ul class="'.strtolower(str_replace(' ', '', $tab['tab_title'])). ' ' .($count === 0 ? "active_gallery_ul" : "").'">';  
+            $gallery = '<ul class="gallery_list '.strtolower(str_replace(' ', '', $tab['tab_title'])). ' ' .($count === 0 ? "active_gallery_list" : "").'">';  
             foreach($tab['images'] as $image){
                 $gallery .= '<li><div class="image" style="background-image:url('.$image['url'].');"></div></li>';
             }

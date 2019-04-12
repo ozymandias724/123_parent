@@ -212,7 +212,7 @@ Theme.PA = {
 Theme.Gallery = {
   link: (0, _jquery.default)("#tabbed_gallery > div > h3 > a"),
   active_link_text: (0, _jquery.default)("a.active_gallery").text(),
-  image_galleries: (0, _jquery.default)("#tabbed_gallery ul"),
+  image_galleries: (0, _jquery.default)(".gallery_list"),
   _init: function _init() {
     Theme.Gallery.link.on("click", Theme.Gallery._link_click);
   },

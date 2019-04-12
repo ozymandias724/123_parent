@@ -215,7 +215,7 @@ Theme.Gallery = {
 
     link : $("#tabbed_gallery > div > h3 > a"),
     active_link_text : $("a.active_gallery").text(),
-    image_galleries : $("#tabbed_gallery ul"),
+    image_galleries : $(".gallery_list"), 
 
     _init : function(){
         Theme.Gallery.link.on("click", Theme.Gallery._link_click);  
