@@ -557,6 +557,10 @@ img {
     font-family: "Lato", sans-serif;
   }
 
+  main {
+    font-size: 0;
+  }
+
   h1,
 h2,
 h3,
@@ -2394,9 +2398,6 @@ section.hero .hero_foreground a:active {
     background-color: #b21717;
   }
 
-  section.hero#hero_image {
-    height: 90vh;
-  }
   section.hero#hero_image > #hero_staticimage {
     height: 100%;
     background-repeat: no-repeat;
@@ -2413,20 +2414,27 @@ section.hero .hero_foreground a:active {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 90vh;
   }
 
   section.hero#hero_video {
-    overflow: hidden;
-    height: 90vh;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+  }
+  section.hero#hero_video .hero_video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   section.hero#hero_video video {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
     width: auto;
-    height: 90vh;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -2438,14 +2446,8 @@ section.hero .hero_foreground a:active {
     font-size: 32px;
   }
 }
-@media only screen and (min-width: 1160px) {
-  section.hero#hero_video video {
-    width: 100vw;
-    height: auto;
-  }
-}
 @media only screen {
-  section.banner {
+  .banner {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border-bottom: 1px solid gray;
@@ -2453,10 +2455,10 @@ section.hero .hero_foreground a:active {
     padding: 60px 0;
     text-align: center;
   }
-  section.banner > h1 {
+  .banner > h1 {
     font-size: 5rem;
   }
-  section.banner > h3 {
+  .banner > h3 {
     margin-top: 30px;
     font-size: 2.4rem;
   }
@@ -2645,7 +2647,7 @@ section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:focus {
   }
   section#mod_gallery > div ul {
     text-align: left;
-    width: 50vw;
+    width: 80vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -2656,12 +2658,12 @@ section#mod_gallery #tabbed_gallery > div:first-of-type > h3 > a:focus {
     clear: both;
   }
   section#mod_gallery > div ul > li {
-    width: 15.6666666667vw;
+    width: 25.6666666667vw;
     height: auto;
     float: left;
   }
   section#mod_gallery > div ul > li div.image {
-    height: 15.6666666667vw;
+    height: 25.6666666667vw;
   }
   section#mod_gallery > div ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;

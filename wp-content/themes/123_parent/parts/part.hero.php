@@ -98,16 +98,16 @@
             }
             
             $format_hero = '
-                <div id="hero_video">
+                <div class="hero_video-container">
                     <video id="video_tag" autoplay muted loop title="%s"> 
                         <source src="%s" type="video/mp4">
                     </video>
-                    <div class="hero_foreground">
-                        %s
-                        %s
-                        %s
-                        %s
-                    </div>
+                </div>
+                <div class="hero_foreground">
+                    %s
+                    %s
+                    %s
+                    %s
                 </div>
             ';
             $content_hero .= sprintf(

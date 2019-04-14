@@ -49,9 +49,9 @@
             }
         }
     }
+
     // Hero Image
     section.hero#hero_image {     
-        height: 90vh;   
         //First div of hero image 
         > #hero_staticimage {
             height: 100%;
@@ -72,21 +72,25 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            height: 90vh;
         }
     }
     // Hero Video
     section.hero#hero_video {
-        overflow: hidden;
-        height: 90vh;
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        .hero_video-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
         // Video 
         video {
-            position: relative;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            min-width: 100%;
+            min-height: 100%;
             width: auto;
-            height: 90vh;
+            height: auto;
+            @include centerer;
         }
     }
 }
@@ -105,8 +109,6 @@
 @media only screen and (min-width: 1160px){
     // Hero Video
     section.hero#hero_video video {
-        width: 100vw;
-        height: auto;
     }
 }
 

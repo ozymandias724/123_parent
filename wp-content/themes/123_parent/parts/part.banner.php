@@ -9,10 +9,10 @@
         $text = ( !empty($text) ) ? $text : '';
         
         $format_banner = '
-            <section class="banner">
+            <div class="banner">
                 %s
                 %s
-            </section>
+            </div>
         ';
         $return_banner .= sprintf(
             $format_banner

@@ -1,3 +1,5 @@
+// gets nested variables
+// i.e., getVar($type, nested key, nested value);
 @function getVar($v, $ks...) {
     @each $k in $ks {
         $v: map-get($v, $k);
@@ -5,6 +7,12 @@
 
     @return $v;
 }
+
+$colors : (
+    primary : green,
+    secondary : blue,
+    accent : pink
+);
 
 $bp : (
     ultra : 1440px,
@@ -14,11 +22,7 @@ $bp : (
     tiny : 480px
 );
 
-$colors : (
-    primary : green,
-    secondary : blue,
-    accent : pink
-);
+
 
 // fonts
 $header: 'Gotham Black','Impact',sans-serif;
