@@ -1,4 +1,4 @@
-white: #fff;
+$white: #fff;
 $black: #000;
 $color_white_transparent: rgba(255, 255, 255, 0);
 $color_white_not_transparent: rgba(255, 255, 255, 1);
@@ -9,7 +9,7 @@ $color_white_not_transparent: rgba(255, 255, 255, 1);
     .mobilefooter {
         text-align: center;
         background-color: $footer-grey;
-        color: white;
+        color: $white;
         padding: 40px 0;
         display: flex;
         flex-wrap: wrap;
@@ -23,7 +23,7 @@ $color_white_not_transparent: rgba(255, 255, 255, 1);
             h2 {
                 display: block;
                 font-size: 2.4rem;
-                color: white;
+                color: $white;
                 text-transform: capitalize;
                 position: relative;
                 margin: 20px 0;
@@ -72,7 +72,7 @@ $color_white_not_transparent: rgba(255, 255, 255, 1);
                     >a {
                         font-size: 16px;
                         display: inline-block;
-                        color: white;
+                        color: $white;
                         text-decoration: none;
                         padding: 5px 10px;
                         border-radius: 20px;
@@ -91,7 +91,7 @@ $color_white_not_transparent: rgba(255, 255, 255, 1);
 
                     >div {
                         font-size: 1.8rem;
-                        color: white;
+                        color: $white;
                         display: inline-block;
                         padding: 10px 0 20px 0;
                     }
@@ -124,7 +124,7 @@ $color_white_not_transparent: rgba(255, 255, 255, 1);
                         flex: 0 1 50%;
 
                         >a {
-                            color: white;
+                            color: $white;
                             text-transform: capitalize;
                             text-decoration: none;
                             padding: 5px 10px;

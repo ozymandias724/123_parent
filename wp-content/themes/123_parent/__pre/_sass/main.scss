@@ -1,67 +1,32 @@
-//////////////////////////
-// global & reset stuff //
-//////////////////////////
-@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
-@import '../../node_modules/slick-carousel-browserify/slick/slick.scss';
-@import '../../node_modules/slick-carousel-browserify/slick/slick-theme.scss';
+// NPM Libs
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'; // bake in font awesome
+@import '../../node_modules/slick-carousel-browserify/slick/slick.scss';    // bane in slick 
+@import '../../node_modules/slick-carousel-browserify/slick/slick-theme.scss';  // bake in slicks basic styles
+// Libs
 
-@import "fonts", "vars", "mixins";
-
-
-// Reset / Normalize
-@import "reqs/reset";
-
-@import "global";
-// 
-@import "fadeeffects";
-@import "gform";
-@import "pages/404";
-@import "parallax";
-@import "global-recent_posts";
-@import "global-contact";
-@import "global-popups";
-@import "global-sociallinks";
+// Site
+@import 'site/fonts';   // font declarations
+@import 'site/vars';    // variables
+@import 'site/mixins';  // mixins
+@import "site/reset";   // reset/normalize
+@import 'site/elems';   // soft-restyle for specific elements to match brand (text-dectoration, object fit, etc)
+@import 'site/base';    // soft-restyle for larger features and components to match brand (general layout, grid styles, etc)
+@import 'site/anim';    // animation and transition classes and such
 
 
-@import "partials/nav/nav-mobile";
-@import "partials/nav/nav-desktop";
-@import "partials/footer";
-@import "partials/mobilefooter";
+// partials
+@import "partials/nav-mobile";      // mobile nav
+@import "partials/nav-desktop";     // desktop nav
+@import "partials/footer-mobile";   // mobile footer
+@import "partials/footer-desktop";  // desktop footer
 
-@import "pages/home-slider";
-@import "pages/home-hero";
-@import "pages/home-services";
-@import "pages/home-testimonials";
-@import "pages/home-areasserved";
+// parts
+@import "parts/hero";       // hero
+@import 'parts/banner';     // longscroll banners
 
-@import "pages/company-wysiwyg";
-@import "pages/company-employees";
 
-@import "pages/areas-served";
-
-@import "pages/gallery";
-
-@import "pages/services";
-
-@import "pages/blog";
-
-@import "pages/testimonials";
-
-@import "pages/contact";
-
-@import "pages/coupons";
-
-@import "pages/single";
-
-@import "pages/menu";
-
-@import "pages/disabled";
-
-@import "pages/terms-and-conditions";
-
-@import "parts/hero";
-@import 'parts/banner';
-
-@import "modules/gallery";
-@import "modules/about";
-@import "modules/reviews";
+// Long Scroll Modules
+// These features only appear if the site is using a 'long scroll' i.e., 1 pager
+@import "modules/gallery";      // gallery module
+@import "modules/about";        // about / company module
+@import "modules/reviews";      // reviews / testimonials module

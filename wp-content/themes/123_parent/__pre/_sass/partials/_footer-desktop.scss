@@ -1,5 +1,5 @@
 $black: #000;
-white: #fff;
+$white: #fff;
 $color_white_transparent: rgba(255,255,255,0);
 $color_white_not_transparent: rgba(255,255,255,1);
 
@@ -22,7 +22,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 		display: block;
 		text-align: center;
 		background-color: $footer-grey;
-		color: white;
+		color: $white;
 		font-size: 0;
 		ul{
 			list-style: none;
@@ -56,7 +56,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 								flex: 0 1 50%;
 								margin-bottom: 5px;
 								> a {
-									color: white;
+									color: $white;
 									text-transform: capitalize;
 									text-decoration: none;
 									background-color: $color_white_transparent;
@@ -117,7 +117,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 						h2 {
 							display: block;
 							font-size: 2.4rem;
-							color: white;
+							color: $white;
 							text-transform: capitalize;
 							position: relative;
 							margin: 20px 0;
@@ -191,7 +191,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 	body {
 		> div { 
 			&:last-of-type {
-				color: white;
+				color: $white;
 				font-size: 1.3rem;
 				text-align: center;
 				padding: 10px 0;
