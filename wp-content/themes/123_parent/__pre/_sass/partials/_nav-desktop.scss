@@ -1,0 +1,235 @@
+$second_primary : #b21717;
+$black : black;
+$black_opacity_none : rgba(0, 0, 0, 0);
+$second_black : #333333;
+$third_black : #383838;
+$opacity_level_below_one : 0.8;
+$opacity_level_below_one_2 : 0.3;
+$black_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
+$accent : green;
+$tint : lightgrey;
+$blue: #32A2AE;
+$blue: #32A2AE;
+$blue_infinity_carpet : #1a69a0;
+$prestige_painters : #e91d62;
+$gray: #909090;
+$blue_darker : #257d87;
+$nav_maxwidth : 1262px;
+$banner_height : 52px;
+$bp__lg : 1280px;
+
+@media only screen and (min-width: $bp__lg) {
+
+    // Mobile Header
+    header.mobileheader {
+        display: none;
+    }
+
+    // Basics across all headers
+    header.header {
+        position: fixed; // need to remove something from theme 3 that is effecting this
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 30px;
+        display: block;
+        z-index: 19;
+        font-size: 1.4rem;
+        padding-top: $banner_height;
+
+        // Logo link
+        a.header-logo {
+            display: inline-block;
+            padding: 15px;
+
+            //Logo image
+            >img {
+                max-width: 180px;
+            }
+        }
+
+        // Navigational menu unordered list
+        ul.navlinks {
+            list-style-type: none;
+            display: flex;
+        }
+
+        // Navigational menu unordered list items
+        li.navlinks-item {
+            display: inline-block;
+            margin-right: 10px;
+
+            // Last navigational menu unordered list item
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        // Header tint
+        span.header-tint {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: $tint;
+        }
+
+        // Quote button
+        a.site__button-quote {
+            background-color: $accent;
+            color: white;
+            padding: 15px;
+            margin-left: 15px;
+        }
+
+        // Banners above the header
+        .opt__estimatebar,
+        .opt__topbanner {
+            width: 100%;
+            height: $banner_height;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    // 
+    @import './includes/nav.1';
+    // 
+    @import './includes/nav.2';
+    // 
+    @import './includes/nav.3';
+    // 
+    @import './includes/nav.4';
+    // 
+    @import './includes/nav.5';
+    // 
+    @import './includes/nav.6';
+    // 
+    @import './includes/nav.7';
+    // 
+    @import './includes/nav.8';
+    // 
+    @import './includes/nav.9';
+    // 
+    @import './includes/nav.10';
+
+    // Additional classes
+    // Sticky nav properties
+    .sticky {
+        position: fixed !important;
+        top: 0 !important;
+    }
+
+    // Header 10 sidebar menu
+    .header_sidebar_menu_1 {
+
+        // Class to add to sidebar when it is opened
+        &.header_sidebar_cover_all {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+        }
+
+        // First div element in sidebar when sidebar menu has the above class
+        &.header_sidebar_cover_all>div {
+            transform: translateX(0%);
+            box-shadow: -6px 0px 25px 0px $black;
+        }
+
+        // First div element in sidebar 
+        >div {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 20;
+            font-size: 16px;
+            top: 0;
+            background-color: white;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transform: translateX(-100%);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        // Telephone number
+        >div>div,
+        // Social media icons
+        >div>ul {
+            margin-top: 30px;
+        }
+
+        // Navigational menu
+        >div>nav {
+            margin-top: 90px;
+        }
+
+        // Navigational menu unordered list
+        >div>nav>ul {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+        }
+
+        // Navigational menu unordered list items
+        >div>nav>ul>li {
+            margin-right: 0;
+            width: 100%;
+        }
+
+        // Navigational menu unordered list items links 
+        >div>nav>ul>li>a {
+            border-bottom: 1px solid $tint;
+            color: $black;
+            padding: 12px 12px 12px 0;
+            display: block;
+            margin: 0 auto;
+            text-transform: capitalize;
+            width: 70%;
+            text-align: center;
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+
+            // Actions on hover, active and focus
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 1;
+                border-bottom: 1px solid $black;
+            }
+        }
+
+        // Telephone number parent div element
+        >div>div {
+            display: block;
+            text-align: center;
+        }
+
+        // Telephone number link
+        >div>div>a {
+            display: inline-block;
+            padding: 10px 15px 10px 15px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            background-color: $black;
+            font-weight: 500;
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s, background-color 0.3s, color 0.3s;
+            border: 1px solid $black;
+
+            // Actions on hover, active and focus
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 1;
+                color: $black;
+                background-color: $black_opacity_none;
+            }
+        }
+    }
+}

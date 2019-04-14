@@ -1,0 +1,25 @@
+@function getVar($v, $ks...) {
+    @each $k in $ks {
+        $v: map-get($v, $k);
+    }
+
+    @return $v;
+}
+
+$bp : (
+    ultra : 1440px,
+    large : 1280px,
+    medium : 960px,
+    small : 640px,
+    tiny : 480px
+);
+
+$colors : (
+    primary : green,
+    secondary : blue,
+    accent : pink
+);
+
+// fonts
+$header: 'Gotham Black','Impact',sans-serif;
+$body: 'Gotham','Helvetica',sans-serif;

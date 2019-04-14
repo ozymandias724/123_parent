@@ -1,0 +1,162 @@
+@media only screen {
+    //Header 5
+    header#opt_header_five {
+        padding: 0px;
+        //Sections inside header 5
+        > div {
+            //Parent of Top part of the header (social icons, address, phone number and quote button)
+            &:first-of-type {
+                background-color: $black;
+            }
+            //Top part of the header (social icons, address, phone number and quote button)
+            &:first-of-type > div {
+                color: white;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            //Social icons items list
+            &:first-of-type > div > ul {
+                list-style: none;
+                display: flex;
+            }
+            //Social icons items list items
+            &:first-of-type > div > ul > li {
+                margin-right: 10px;
+            }
+            //Social icons list items links
+            &:first-of-type > div > ul > li > a {
+                padding: 10px;
+                transition: color 0.3s;
+                //Social icons list items icons
+                > i {
+                    font-size: 16px;
+                }
+            }
+            //Address, phone number and quote button section
+            &:first-of-type > div > div {
+                display: flex;
+                justify-content: space-between;
+            }
+            //Address and phone number in span element
+            &:first-of-type > div > div > span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                //Address and phone number icon
+                > i {
+                    font-size: 16px;
+                    margin-right: 10px;
+                    color: $prestige_painters;
+                }
+            }
+            //Address span element
+            &:first-of-type > div > div > span:first-of-type {
+                font-size: 14px;
+                width: 308px;
+            }
+            //Address link
+            &:first-of-type > div > div > span:first-of-type > a {
+                padding: 10px;
+                transition: color 0.3s;
+            }
+            //Address link actions on hover, active and focus
+            &:first-of-type > div > div > span:first-of-type > a:hover,
+            &:first-of-type > div > div > span:first-of-type > a:active, 
+            &:first-of-type > div > div > span:first-of-type > a:focus, 
+            
+            //Phone number link actions on hover, active and focus
+            &:first-of-type > div > div > span:last-of-type > a:hover,
+            &:first-of-type > div > div > span:last-of-type > a:active,
+            &:first-of-type > div > div > span:last-of-type > a:focus,
+
+            //Social icons list items links actions on hover, active and focus
+            &:first-of-type > div > ul > li > a:hover,
+            &:first-of-type > div > ul > li > a:active,
+            &:first-of-type > div > ul > li > a:focus
+            {
+                color: $prestige_painters;
+            }
+            //Phone number in span element
+            &:first-of-type > div > div > span:last-of-type {
+                font-size: 14px;
+                width: 160px;
+            }
+            //Phone number link
+            &:first-of-type > div > div > span:last-of-type > a {
+                padding: 10px;
+                transition: color 0.3s;
+            }
+            //Phone number link icon
+            &:first-of-type > div > div > span:last-of-type > a > i {
+                transform: rotate(90deg);
+            }
+            //Quote button
+            &:first-of-type > div > div > a {
+                font-size: 16px;
+                text-transform: uppercase;
+                padding: 15px 15px;
+                font-weight: 500;
+                background-color: $prestige_painters;
+                opacity: $opacity_level_below_one;
+                transition: opacity 0.1s;
+            }
+            //Quote button actions on hover, active and focus
+            &:first-of-type > div > div > a:hover, 
+            &:first-of-type > div > div > a:active,
+            &:first-of-type > div > div > a:focus {
+                opacity: 1;
+            }
+            //Parent of Bottom bar of the header (logo and navigational menu)
+            &:last-of-type {
+                background-color: white;
+                box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+            }
+             //Bottom bar of the header (logo and navigational menu)
+            &:last-of-type > div {
+                display: flex;
+                align-items: center;
+                flex-flow: row nowrap;
+                margin: 0 auto;
+                max-width: 1200px;
+                justify-content: space-between;
+            }
+            //Logo link
+            &:last-of-type > div > a {
+                padding: 6px;
+            }
+            //Logo link image
+            &:last-of-type > div > a > img {
+                width: auto;
+                max-width: none;
+                max-height: 70px;
+            }
+            //Navigational menu unordered list
+            &:last-of-type > div > nav > ul {
+                display: block;
+            }
+            //Navigational menu unordered list items
+            &:last-of-type > div > nav > ul > li {
+                margin-right: 0;
+            }
+            //Navigational menu unordered list items links
+            &:last-of-type > div > nav > ul > li > a {
+                padding: 35px 15px;
+                text-transform: uppercase;
+                font-weight: 500;
+                transition: color 0.1s, background-color 0.1s;
+                display: block;
+            }
+            //Navigational menu unordered list items links actions on hover, active and focus
+            &:last-of-type > div > nav > ul > li > a:hover, 
+            &:last-of-type > div > nav > ul > li > a:active, 
+            &:last-of-type > div > nav > ul > li > a:focus { 
+                background-color: $prestige_painters;
+                color: white;
+            }
+        }
+    }
+}

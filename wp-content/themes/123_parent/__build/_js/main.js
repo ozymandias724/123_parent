@@ -5,15 +5,15 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 var _slickCarouselBrowserify = _interopRequireDefault(require("slick-carousel-browserify"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Theme = {};
 var Hero = {};
 var Headers = {};
-var rand = Math.floor(Math.random() * (0, _jquery.default)(".img-slick").length);
+var rand = Math.floor(Math.random() * (0, _jquery["default"])(".img-slick").length);
 Theme.Slick = {
   _init: function _init() {
-    (0, _jquery.default)('#slick_slider').slick({
+    (0, _jquery["default"])('#slick_slider').slick({
       autoplay: Boolean(hero_fields.autoplay),
       adaptiveHeight: true,
       arrows: false,
@@ -35,7 +35,7 @@ Theme.CookieMonster = {
       // Theme.CookieMonster._deleteCookie('ad_notset');
       // if there's no cookies ie. first time on the site
       if (Theme.CookieMonster._cookieExists('ad_notset') == false && Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_firsttime') == false) {
-        Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false);
+        Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes["short"]), false);
       } // if the other cookies don't exist then listen for the expiration of the firstitme cookie
 
 
@@ -98,47 +98,47 @@ Theme.CookieMonster = {
 Theme.Parallax = {
   strength: 25,
   stronger: 175,
-  imagesections: (0, _jquery.default)('.parallax-image'),
+  imagesections: (0, _jquery["default"])('.parallax-image'),
   _init: function _init() {
-    (0, _jquery.default)(window).on('resize scroll load', Theme.Parallax._resizeLoadScrollHandler);
+    (0, _jquery["default"])(window).on('resize scroll load', Theme.Parallax._resizeLoadScrollHandler);
   },
   _map: function _map(n, i, o, r, t) {
     return i > o ? i > n ? (n - i) * (t - r) / (o - i) + r : r : o > i ? o > n ? (n - i) * (t - r) / (o - i) + r : t : void 0;
   },
   _getAmount: function _getAmount(el, strength) {
-    var windowcenter = (0, _jquery.default)(window).scrollTop() + (0, _jquery.default)(window).height() / 2;
-    var sectioncenter = (0, _jquery.default)(el).offset().top + (0, _jquery.default)(el).height() / 2;
+    var windowcenter = (0, _jquery["default"])(window).scrollTop() + (0, _jquery["default"])(window).height() / 2;
+    var sectioncenter = (0, _jquery["default"])(el).offset().top + (0, _jquery["default"])(el).height() / 2;
     var sectiondelta = windowcenter - sectioncenter;
 
-    var scale = Theme.Parallax._map(sectiondelta, 0, (0, _jquery.default)(window).height(), 0, strength);
+    var scale = Theme.Parallax._map(sectiondelta, 0, (0, _jquery["default"])(window).height(), 0, strength);
 
     return -50 + scale + '%';
   },
   _resizeLoadScrollHandler: function _resizeLoadScrollHandler() {
     for (var i = 0; i < Theme.Parallax.imagesections.length; i++) {
-      (0, _jquery.default)(Theme.Parallax.imagesections[i]).css('transform', 'translate3d(-50%, ' + Theme.Parallax._getAmount(Theme.Parallax.imagesections[i], Theme.Parallax.strength) + ',0)');
+      (0, _jquery["default"])(Theme.Parallax.imagesections[i]).css('transform', 'translate3d(-50%, ' + Theme.Parallax._getAmount(Theme.Parallax.imagesections[i], Theme.Parallax.strength) + ',0)');
     }
   }
 };
 Theme.FadeEffects = {
-  elements: (0, _jquery.default)('.fade-up, .fade-left, .fade-right, .fade-in'),
+  elements: (0, _jquery["default"])('.fade-up, .fade-left, .fade-right, .fade-in'),
   _resizeLoadScrollHandler: function _resizeLoadScrollHandler() {
     for (var i = 0; i < Theme.FadeEffects.elements.length; i++) {
-      if ((0, _jquery.default)(window).scrollTop() + (0, _jquery.default)(window).height() > (0, _jquery.default)(Theme.FadeEffects.elements[i]).offset().top) {
-        (0, _jquery.default)(Theme.FadeEffects.elements[i]).removeClass('fade-up fade-left fade-right fade-in');
+      if ((0, _jquery["default"])(window).scrollTop() + (0, _jquery["default"])(window).height() > (0, _jquery["default"])(Theme.FadeEffects.elements[i]).offset().top) {
+        (0, _jquery["default"])(Theme.FadeEffects.elements[i]).removeClass('fade-up fade-left fade-right fade-in');
       }
     }
   },
   _init: function _init() {
-    (0, _jquery.default)(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
+    (0, _jquery["default"])(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
   }
 };
 
 Theme.FadeEffects._init();
 
 Theme.Open_Address = {
-  address_link: (0, _jquery.default)(".google-address"),
-  address_text: (0, _jquery.default)(".google-address").text(),
+  address_link: (0, _jquery["default"])(".google-address"),
+  address_text: (0, _jquery["default"])(".google-address").text(),
   _init: function _init() {
     Theme.Open_Address.address_link.on("click", Theme.Open_Address._open_google_search);
   },
@@ -150,36 +150,36 @@ Theme.Open_Address = {
 Theme.Open_Address._init();
 
 Theme.Estimate = {
-  tint: (0, _jquery.default)(".header-tint"),
-  estimate: (0, _jquery.default)(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
-  estimate_popup: (0, _jquery.default)(".estimate"),
-  estimate_close: (0, _jquery.default)(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
+  tint: (0, _jquery["default"])(".header-tint"),
+  estimate: (0, _jquery["default"])(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
+  estimate_popup: (0, _jquery["default"])(".estimate"),
+  estimate_close: (0, _jquery["default"])(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
   _init: function _init() {
-    (0, _jquery.default)(Theme.Estimate.estimate).on("click", Theme.Estimate._click_handler);
-    (0, _jquery.default)(Theme.Estimate.estimate_close).on("click", Theme.Estimate._close_popup);
+    (0, _jquery["default"])(Theme.Estimate.estimate).on("click", Theme.Estimate._click_handler);
+    (0, _jquery["default"])(Theme.Estimate.estimate_close).on("click", Theme.Estimate._close_popup);
   },
   _click_handler: function _click_handler(event) {
     event.preventDefault();
     Theme.Estimate.estimate_popup.fadeIn(250);
   },
   _close_popup: function _close_popup(event) {
-    if ((0, _jquery.default)(event.target).hasClass("estimate") || (0, _jquery.default)(event.target).hasClass("estimate-content-times") || (0, _jquery.default)(event.target).hasClass("topbanner-quickquote") || (0, _jquery.default)(event.target).hasClass("site__button-quote")) {
+    if ((0, _jquery["default"])(event.target).hasClass("estimate") || (0, _jquery["default"])(event.target).hasClass("estimate-content-times") || (0, _jquery["default"])(event.target).hasClass("topbanner-quickquote") || (0, _jquery["default"])(event.target).hasClass("site__button-quote")) {
       event.preventDefault();
       Theme.Estimate.estimate_popup.fadeOut(250);
     }
   }
 };
 Theme.PA = {
-  container: (0, _jquery.default)('.pa.popupcontainer'),
-  submit: (0, _jquery.default)('.pa.popupcontainer input[type="submit"]'),
+  container: (0, _jquery["default"])('.pa.popupcontainer'),
+  submit: (0, _jquery["default"])('.pa.popupcontainer input[type="submit"]'),
   _init: function _init() {
     if (Theme.PA.container.length > 0) {
       Theme.PA.container.click(Theme.PA._clickHandler);
     }
   },
   _clickHandler: function _clickHandler(e) {
-    if ((0, _jquery.default)(e.target).hasClass('pa') || (0, _jquery.default)(e.target).hasClass('popupcontainer-times')) {
-      if ((0, _jquery.default)(e.target).has('.ginput_container').length == 0) {
+    if ((0, _jquery["default"])(e.target).hasClass('pa') || (0, _jquery["default"])(e.target).hasClass('popupcontainer-times')) {
+      if ((0, _jquery["default"])(e.target).has('.ginput_container').length == 0) {
         Theme.CookieMonster._setCookie('ad_set', 'active', 30, true);
 
         Theme.CookieMonster._deleteCookie('ad_notset');
@@ -196,13 +196,13 @@ Theme.PA = {
     Theme.PA.container.fadeOut(250);
 
     if (Theme.CookieMonster._cookieExists('ad_set') == false) {
-      Theme.CookieMonster._setCookie('ad_notset', 'active', parseInt(PopupTimes.long), false);
+      Theme.CookieMonster._setCookie('ad_notset', 'active', parseInt(PopupTimes["long"]), false);
 
       Theme.CookieMonster._listenCookieExpire('ad_notset', Theme.CookieMonster._firstTimeExpire);
     }
   },
   _showPA: function _showPA() {
-    if (Theme.PA.container.length > 0 && (0, _jquery.default)(window).width() >= 1025) {
+    if (Theme.PA.container.length > 0 && (0, _jquery["default"])(window).width() >= 1025) {
       if (Theme.PA.container.css('display') == 'none') {
         Theme.PA.container.fadeIn(250);
       }
@@ -210,26 +210,26 @@ Theme.PA = {
   }
 };
 Theme.Gallery = {
-  link: (0, _jquery.default)("#tabbed_gallery > div > h3 > a"),
-  active_link_text: (0, _jquery.default)("a.active_gallery").text(),
-  image_galleries: (0, _jquery.default)(".gallery_list"),
+  link: (0, _jquery["default"])("#tabbed_gallery > div > h3 > a"),
+  active_link_text: (0, _jquery["default"])("a.active_gallery").text(),
+  image_galleries: (0, _jquery["default"])(".gallery_list"),
   _init: function _init() {
     Theme.Gallery.link.on("click", Theme.Gallery._link_click);
   },
   _link_click: function _link_click(e) {
     Theme.Gallery.link_text = e.target.classList[0];
     Theme.Gallery.link.each(function () {
-      if ((0, _jquery.default)(this).hasClass(Theme.Gallery.link_text)) {
-        (0, _jquery.default)(this).addClass('active_gallery');
+      if ((0, _jquery["default"])(this).hasClass(Theme.Gallery.link_text)) {
+        (0, _jquery["default"])(this).addClass('active_gallery');
       } else {
-        (0, _jquery.default)(this).removeClass('active_gallery');
+        (0, _jquery["default"])(this).removeClass('active_gallery');
       }
     });
     Theme.Gallery.image_galleries.each(function () {
-      if ((0, _jquery.default)(this).hasClass(Theme.Gallery.link_text)) {
-        (0, _jquery.default)(this).show();
+      if ((0, _jquery["default"])(this).hasClass(Theme.Gallery.link_text)) {
+        (0, _jquery["default"])(this).show();
       } else {
-        (0, _jquery.default)(this).hide();
+        (0, _jquery["default"])(this).hide();
       }
     });
   }
@@ -238,10 +238,10 @@ Theme.Gallery = {
 Theme.Gallery._init();
 
 Headers.One = {
-  header: (0, _jquery.default)("header.header#opt_header_one"),
+  header: (0, _jquery["default"])("header.header#opt_header_one"),
   _init: function _init() {
-    if ((0, _jquery.default)(Headers.One.header).length) {
-      Headers.One.div_two_offset_top = (0, _jquery.default)("header#opt_header_one > div:nth-of-type(2)").offset().top;
+    if ((0, _jquery["default"])(Headers.One.header).length) {
+      Headers.One.div_two_offset_top = (0, _jquery["default"])("header#opt_header_one > div:nth-of-type(2)").offset().top;
 
       window.onscroll = function () {
         Headers.One._sticky_header();
@@ -262,9 +262,9 @@ Headers.One = {
 Headers.One._init();
 
 Headers.Eight = {
-  header: (0, _jquery.default)("header.header#opt_header_eight"),
+  header: (0, _jquery["default"])("header.header#opt_header_eight"),
   _init: function _init() {
-    if ((0, _jquery.default)(Headers.Eight.header).length) {
+    if ((0, _jquery["default"])(Headers.Eight.header).length) {
       Headers.Eight.offset_top = Headers.Eight.header.offset().top;
 
       window.onscroll = function () {
@@ -286,10 +286,10 @@ Headers.Eight = {
 Headers.Eight._init();
 
 Headers.Ten = {
-  header: (0, _jquery.default)("header#opt_header_ten"),
-  hamburger_icon: (0, _jquery.default)("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
-  sidebar: (0, _jquery.default)(".header_sidebar_menu_1"),
-  outside: (0, _jquery.default)('.header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten'),
+  header: (0, _jquery["default"])("header#opt_header_ten"),
+  hamburger_icon: (0, _jquery["default"])("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
+  sidebar: (0, _jquery["default"])(".header_sidebar_menu_1"),
+  outside: (0, _jquery["default"])('.header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten'),
   _init: function _init() {
     Headers.Ten.hamburger_icon.on("click", Headers.Ten._hamburger_icon_click);
     Headers.Ten.outside.on("click", Headers.Ten._outside_click);
@@ -330,11 +330,11 @@ Headers.Ten._init();
 
 Headers.Sidebar = {
   //Mobile header sidebar menu
-  sidebar: (0, _jquery.default)(".mobile_header_sidebar_menu_1"),
+  sidebar: (0, _jquery["default"])(".mobile_header_sidebar_menu_1"),
   //Mobile header sidebar and mobile header first div element
-  outside: (0, _jquery.default)(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
+  outside: (0, _jquery["default"])(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
   //Link which is the parent of the hamburger icons (spans)
-  toggle: (0, _jquery.default)("header.mobileheader > div:first-of-type > a"),
+  toggle: (0, _jquery["default"])("header.mobileheader > div:first-of-type > a"),
   _init: function _init() {
     //When hamburger icon spans link is clicked
     Headers.Sidebar.toggle.on("click", Headers.Sidebar._clickHandler);
@@ -380,10 +380,10 @@ Headers.Sidebar = {
 Headers.Sidebar._init();
 
 Hero.Padding_Top = {
-  header_id: (0, _jquery.default)("header").attr("id"),
-  header_height: (0, _jquery.default)("header").height(),
-  mobile_header_height: (0, _jquery.default)(".mobileheader").height(),
-  main: (0, _jquery.default)(".mobileheader").next(),
+  header_id: (0, _jquery["default"])("header").attr("id"),
+  header_height: (0, _jquery["default"])("header").height(),
+  mobile_header_height: (0, _jquery["default"])(".mobileheader").height(),
+  main: (0, _jquery["default"])(".mobileheader").next(),
   _init: function _init() {
     //On init, if browser width is greater than 1280
     if (window.innerWidth >= 1280) {
@@ -403,13 +403,13 @@ Hero.Padding_Top = {
   },
   _header_function: function _header_function() {
     //Get header position value
-    Hero.Padding_Top.header_position = (0, _jquery.default)("header").css("position"); //If header has a position of fixed and not header 1, 4, 9 or 3
+    Hero.Padding_Top.header_position = (0, _jquery["default"])("header").css("position"); //If header has a position of fixed and not header 1, 4, 9 or 3
 
     if (Hero.Padding_Top.header_position === "fixed" && Hero.Padding_Top.header_id !== "opt_header_one" && Hero.Padding_Top.header_id !== "opt_header_four" && Hero.Padding_Top.header_id !== "opt_header_nine" && Hero.Padding_Top.header_id !== "opt_header_three") {
-      Hero.Padding_Top.header_height = (0, _jquery.default)("header").height();
+      Hero.Padding_Top.header_height = (0, _jquery["default"])("header").height();
       Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height); //If header has a position of fixed and is either header 1, 4, or 9
     } else if (Hero.Padding_Top.header_position === "fixed" && Hero.Padding_Top.header_id === "opt_header_one" || Hero.Padding_Top.header_id === "opt_header_four" || Hero.Padding_Top.header_id === "opt_header_nine") {
-      Hero.Padding_Top.header_first_div_height = (0, _jquery.default)("header#" + Hero.Padding_Top.header_id + " > div").height();
+      Hero.Padding_Top.header_first_div_height = (0, _jquery["default"])("header#" + Hero.Padding_Top.header_id + " > div").height();
       Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_first_div_height);
     } else {
       //Do not adding padding-top to hero
@@ -417,14 +417,14 @@ Hero.Padding_Top = {
     }
   },
   _mobile_header_function: function _mobile_header_function() {
-    Hero.Padding_Top.mobiler_header_height = (0, _jquery.default)(".mobileheader").height();
+    Hero.Padding_Top.mobiler_header_height = (0, _jquery["default"])(".mobileheader").height();
     Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
   }
 }, Hero.Padding_Top._init();
 
 },{"jquery":2,"slick-carousel-browserify":3}],2:[function(require,module,exports){
 /*!
- * jQuery JavaScript Library v3.3.1
+ * jQuery JavaScript Library v3.4.0
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -434,7 +434,7 @@ Hero.Padding_Top = {
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2018-01-20T17:24Z
+ * Date: 2019-04-10T19:48Z
  */
 ( function( global, factory ) {
 
@@ -516,20 +516,33 @@ var isWindow = function isWindow( obj ) {
 	var preservedScriptAttributes = {
 		type: true,
 		src: true,
+		nonce: true,
 		noModule: true
 	};
 
-	function DOMEval( code, doc, node ) {
+	function DOMEval( code, node, doc ) {
 		doc = doc || document;
 
-		var i,
+		var i, val,
 			script = doc.createElement( "script" );
 
 		script.text = code;
 		if ( node ) {
 			for ( i in preservedScriptAttributes ) {
-				if ( node[ i ] ) {
-					script[ i ] = node[ i ];
+
+				// Support: Firefox 64+, Edge 18+
+				// Some browsers don't support the "nonce" property on scripts.
+				// On the other hand, just using `getAttribute` is not enough as
+				// the `nonce` attribute is reset to an empty string whenever it
+				// becomes browsing-context connected.
+				// See https://github.com/whatwg/html/issues/2369
+				// See https://html.spec.whatwg.org/#nonce-attributes
+				// The `node.getAttribute` check was added for the sake of
+				// `jQuery.globalEval` so that it can fake a nonce-containing node
+				// via an object.
+				val = node[ i ] || node.getAttribute && node.getAttribute( i );
+				if ( val ) {
+					script.setAttribute( i, val );
 				}
 			}
 		}
@@ -554,7 +567,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.3.1",
+	version = "3.4.0",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -683,25 +696,28 @@ jQuery.extend = jQuery.fn.extend = function() {
 
 			// Extend the base object
 			for ( name in options ) {
-				src = target[ name ];
 				copy = options[ name ];
 
+				// Prevent Object.prototype pollution
 				// Prevent never-ending loop
-				if ( target === copy ) {
+				if ( name === "__proto__" || target === copy ) {
 					continue;
 				}
 
 				// Recurse if we're merging plain objects or arrays
 				if ( deep && copy && ( jQuery.isPlainObject( copy ) ||
 					( copyIsArray = Array.isArray( copy ) ) ) ) {
+					src = target[ name ];
 
-					if ( copyIsArray ) {
-						copyIsArray = false;
-						clone = src && Array.isArray( src ) ? src : [];
-
+					// Ensure proper type for the source value
+					if ( copyIsArray && !Array.isArray( src ) ) {
+						clone = [];
+					} else if ( !copyIsArray && !jQuery.isPlainObject( src ) ) {
+						clone = {};
 					} else {
-						clone = src && jQuery.isPlainObject( src ) ? src : {};
+						clone = src;
 					}
+					copyIsArray = false;
 
 					// Never move original objects, clone them
 					target[ name ] = jQuery.extend( deep, clone, copy );
@@ -754,9 +770,6 @@ jQuery.extend( {
 	},
 
 	isEmptyObject: function( obj ) {
-
-		/* eslint-disable no-unused-vars */
-		// See https://github.com/eslint/eslint/issues/6125
 		var name;
 
 		for ( name in obj ) {
@@ -766,8 +779,8 @@ jQuery.extend( {
 	},
 
 	// Evaluates a script in a global context
-	globalEval: function( code ) {
-		DOMEval( code );
+	globalEval: function( code, options ) {
+		DOMEval( code, { nonce: options && options.nonce } );
 	},
 
 	each: function( obj, callback ) {
@@ -923,14 +936,14 @@ function isArrayLike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v2.3.3
+ * Sizzle CSS Selector Engine v2.3.4
  * https://sizzlejs.com/
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright JS Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://js.foundation/
  *
- * Date: 2016-08-08
+ * Date: 2019-04-08
  */
 (function( window ) {
 
@@ -964,6 +977,7 @@ var i,
 	classCache = createCache(),
 	tokenCache = createCache(),
 	compilerCache = createCache(),
+	nonnativeSelectorCache = createCache(),
 	sortOrder = function( a, b ) {
 		if ( a === b ) {
 			hasDuplicate = true;
@@ -1025,8 +1039,7 @@ var i,
 
 	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
 	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
-
-	rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+	rdescend = new RegExp( whitespace + "|>" ),
 
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
@@ -1047,6 +1060,7 @@ var i,
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
+	rhtml = /HTML$/i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
 
@@ -1101,9 +1115,9 @@ var i,
 		setDocument();
 	},
 
-	disabledAncestor = addCombinator(
+	inDisabledFieldset = addCombinator(
 		function( elem ) {
-			return elem.disabled === true && ("form" in elem || "label" in elem);
+			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
 		},
 		{ dir: "parentNode", next: "legend" }
 	);
@@ -1216,18 +1230,22 @@ function Sizzle( selector, context, results, seed ) {
 
 			// Take advantage of querySelectorAll
 			if ( support.qsa &&
-				!compilerCache[ selector + " " ] &&
-				(!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
+				!nonnativeSelectorCache[ selector + " " ] &&
+				(!rbuggyQSA || !rbuggyQSA.test( selector )) &&
 
-				if ( nodeType !== 1 ) {
-					newContext = context;
-					newSelector = selector;
-
-				// qSA looks outside Element context, which is not what we want
-				// Thanks to Andrew Dupont for this workaround technique
-				// Support: IE <=8
+				// Support: IE 8 only
 				// Exclude object elements
-				} else if ( context.nodeName.toLowerCase() !== "object" ) {
+				(nodeType !== 1 || context.nodeName.toLowerCase() !== "object") ) {
+
+				newSelector = selector;
+				newContext = context;
+
+				// qSA considers elements outside a scoping root when evaluating child or
+				// descendant combinators, which is not what we want.
+				// In such cases, we work around the behavior by prefixing every selector in the
+				// list with an ID selector referencing the scope context.
+				// Thanks to Andrew Dupont for this technique.
+				if ( nodeType === 1 && rdescend.test( selector ) ) {
 
 					// Capture the context ID, setting it first if necessary
 					if ( (nid = context.getAttribute( "id" )) ) {
@@ -1249,17 +1267,16 @@ function Sizzle( selector, context, results, seed ) {
 						context;
 				}
 
-				if ( newSelector ) {
-					try {
-						push.apply( results,
-							newContext.querySelectorAll( newSelector )
-						);
-						return results;
-					} catch ( qsaError ) {
-					} finally {
-						if ( nid === expando ) {
-							context.removeAttribute( "id" );
-						}
+				try {
+					push.apply( results,
+						newContext.querySelectorAll( newSelector )
+					);
+					return results;
+				} catch ( qsaError ) {
+					nonnativeSelectorCache( selector, true );
+				} finally {
+					if ( nid === expando ) {
+						context.removeAttribute( "id" );
 					}
 				}
 			}
@@ -1423,7 +1440,7 @@ function createDisabledPseudo( disabled ) {
 					// Where there is no isDisabled, check manually
 					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
-						disabledAncestor( elem ) === disabled;
+						inDisabledFieldset( elem ) === disabled;
 			}
 
 			return elem.disabled === disabled;
@@ -1480,10 +1497,13 @@ support = Sizzle.support = {};
  * @returns {Boolean} True iff elem is a non-HTML XML node
  */
 isXML = Sizzle.isXML = function( elem ) {
-	// documentElement is verified for cases where it doesn't yet exist
-	// (such as loading iframes in IE - #4833)
-	var documentElement = elem && (elem.ownerDocument || elem).documentElement;
-	return documentElement ? documentElement.nodeName !== "HTML" : false;
+	var namespace = elem.namespaceURI,
+		docElem = (elem.ownerDocument || elem).documentElement;
+
+	// Support: IE <=8
+	// Assume HTML when documentElement doesn't yet exist, such as inside loading iframes
+	// https://bugs.jquery.com/ticket/4833
+	return !rhtml.test( namespace || docElem && docElem.nodeName || "HTML" );
 };
 
 /**
@@ -1905,11 +1925,8 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		setDocument( elem );
 	}
 
-	// Make sure that attribute selectors are quoted
-	expr = expr.replace( rattributeQuotes, "='$1']" );
-
 	if ( support.matchesSelector && documentIsHTML &&
-		!compilerCache[ expr + " " ] &&
+		!nonnativeSelectorCache[ expr + " " ] &&
 		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
 		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
 
@@ -1923,7 +1940,9 @@ Sizzle.matchesSelector = function( elem, expr ) {
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
 			}
-		} catch (e) {}
+		} catch (e) {
+			nonnativeSelectorCache( expr, true );
+		}
 	}
 
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
@@ -2382,7 +2401,7 @@ Expr = Sizzle.selectors = {
 		"contains": markFunction(function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
-				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+				return ( elem.textContent || getText( elem ) ).indexOf( text ) > -1;
 			};
 		}),
 
@@ -2521,7 +2540,11 @@ Expr = Sizzle.selectors = {
 		}),
 
 		"lt": createPositionalPseudo(function( matchIndexes, length, argument ) {
-			var i = argument < 0 ? argument + length : argument;
+			var i = argument < 0 ?
+				argument + length :
+				argument > length ?
+					length :
+					argument;
 			for ( ; --i >= 0; ) {
 				matchIndexes.push( i );
 			}
@@ -3571,18 +3594,18 @@ jQuery.each( {
 		return siblings( elem.firstChild );
 	},
 	contents: function( elem ) {
-        if ( nodeName( elem, "iframe" ) ) {
-            return elem.contentDocument;
-        }
+		if ( typeof elem.contentDocument !== "undefined" ) {
+			return elem.contentDocument;
+		}
 
-        // Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-        // Treat the template element as a regular one in browsers that
-        // don't support it.
-        if ( nodeName( elem, "template" ) ) {
-            elem = elem.content || elem;
-        }
+		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
+		// Treat the template element as a regular one in browsers that
+		// don't support it.
+		if ( nodeName( elem, "template" ) ) {
+			elem = elem.content || elem;
+		}
 
-        return jQuery.merge( [], elem.childNodes );
+		return jQuery.merge( [], elem.childNodes );
 	}
 }, function( name, fn ) {
 	jQuery.fn[ name ] = function( until, selector ) {
@@ -4891,6 +4914,22 @@ var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
 
 var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
+var documentElement = document.documentElement;
+
+
+
+	var isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem );
+		},
+		composed = { composed: true };
+
+	// Check attachment across shadow DOM boundaries when possible (gh-3504)
+	if ( documentElement.attachShadow ) {
+		isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem ) ||
+				elem.getRootNode( composed ) === elem.ownerDocument;
+		};
+	}
 var isHiddenWithinTree = function( elem, el ) {
 
 		// isHiddenWithinTree might be called from jQuery#filter function;
@@ -4905,7 +4944,7 @@ var isHiddenWithinTree = function( elem, el ) {
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
-			jQuery.contains( elem.ownerDocument, elem ) &&
+			isAttached( elem ) &&
 
 			jQuery.css( elem, "display" ) === "none";
 	};
@@ -4947,7 +4986,8 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
 
 		// Starting value computation is required for potential unit mismatches
-		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
+		initialInUnit = elem.nodeType &&
+			( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
@@ -5094,7 +5134,7 @@ jQuery.fn.extend( {
 } );
 var rcheckableType = ( /^(?:checkbox|radio)$/i );
 
-var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]+)/i );
+var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]*)/i );
 
 var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 
@@ -5166,7 +5206,7 @@ function setGlobalEval( elems, refElements ) {
 var rhtml = /<|&#?\w+;/;
 
 function buildFragment( elems, context, scripts, selection, ignored ) {
-	var elem, tmp, tag, wrap, contains, j,
+	var elem, tmp, tag, wrap, attached, j,
 		fragment = context.createDocumentFragment(),
 		nodes = [],
 		i = 0,
@@ -5230,13 +5270,13 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			continue;
 		}
 
-		contains = jQuery.contains( elem.ownerDocument, elem );
+		attached = isAttached( elem );
 
 		// Append to fragment
 		tmp = getAll( fragment.appendChild( elem ), "script" );
 
 		// Preserve script evaluation history
-		if ( contains ) {
+		if ( attached ) {
 			setGlobalEval( tmp );
 		}
 
@@ -5279,8 +5319,6 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 	div.innerHTML = "<textarea>x</textarea>";
 	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
 } )();
-var documentElement = document.documentElement;
-
 
 
 var
@@ -5296,8 +5334,19 @@ function returnFalse() {
 	return false;
 }
 
+// Support: IE <=9 - 11+
+// focus() and blur() are asynchronous, except when they are no-op.
+// So expect focus to be synchronous when the element is already active,
+// and blur to be synchronous when the element is not already active.
+// (focus and blur are always synchronous in other supported browsers,
+// this just defines when we can count on it).
+function expectSync( elem, type ) {
+	return ( elem === safeActiveElement() ) === ( type === "focus" );
+}
+
 // Support: IE <=9 only
-// See #13393 for more info
+// Accessing document.activeElement can throw unexpectedly
+// https://bugs.jquery.com/ticket/13393
 function safeActiveElement() {
 	try {
 		return document.activeElement;
@@ -5597,9 +5646,10 @@ jQuery.event = {
 			while ( ( handleObj = matched.handlers[ j++ ] ) &&
 				!event.isImmediatePropagationStopped() ) {
 
-				// Triggered event must either 1) have no namespace, or 2) have namespace(s)
-				// a subset or equal to those in the bound event (both can have no namespace).
-				if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
+				// If the event is namespaced, then each handler is only invoked if it is
+				// specially universal or its namespaces are a superset of the event's.
+				if ( !event.rnamespace || handleObj.namespace === false ||
+					event.rnamespace.test( handleObj.namespace ) ) {
 
 					event.handleObj = handleObj;
 					event.data = handleObj.data;
@@ -5723,39 +5773,53 @@ jQuery.event = {
 			// Prevent triggered image.load events from bubbling to window.load
 			noBubble: true
 		},
-		focus: {
-
-			// Fire native event if possible so blur/focus sequence is correct
-			trigger: function() {
-				if ( this !== safeActiveElement() && this.focus ) {
-					this.focus();
-					return false;
-				}
-			},
-			delegateType: "focusin"
-		},
-		blur: {
-			trigger: function() {
-				if ( this === safeActiveElement() && this.blur ) {
-					this.blur();
-					return false;
-				}
-			},
-			delegateType: "focusout"
-		},
 		click: {
 
-			// For checkbox, fire native event so checked state will be right
-			trigger: function() {
-				if ( this.type === "checkbox" && this.click && nodeName( this, "input" ) ) {
-					this.click();
-					return false;
+			// Utilize native event to ensure correct state for checkable inputs
+			setup: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Claim the first handler
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) &&
+					dataPriv.get( el, "click" ) === undefined ) {
+
+					// dataPriv.set( el, "click", ... )
+					leverageNative( el, "click", returnTrue );
 				}
+
+				// Return false to allow normal processing in the caller
+				return false;
+			},
+			trigger: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Force setup before triggering a click
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) &&
+					dataPriv.get( el, "click" ) === undefined ) {
+
+					leverageNative( el, "click" );
+				}
+
+				// Return non-false to allow normal event-path propagation
+				return true;
 			},
 
-			// For cross-browser consistency, don't fire native .click() on links
+			// For cross-browser consistency, suppress native .click() on links
+			// Also prevent it if we're currently inside a leveraged native-event stack
 			_default: function( event ) {
-				return nodeName( event.target, "a" );
+				var target = event.target;
+				return rcheckableType.test( target.type ) &&
+					target.click && nodeName( target, "input" ) &&
+					dataPriv.get( target, "click" ) ||
+					nodeName( target, "a" );
 			}
 		},
 
@@ -5771,6 +5835,85 @@ jQuery.event = {
 		}
 	}
 };
+
+// Ensure the presence of an event listener that handles manually-triggered
+// synthetic events by interrupting progress until reinvoked in response to
+// *native* events that it fires directly, ensuring that state changes have
+// already occurred before other listeners are invoked.
+function leverageNative( el, type, expectSync ) {
+
+	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
+	if ( !expectSync ) {
+		jQuery.event.add( el, type, returnTrue );
+		return;
+	}
+
+	// Register the controller as a special universal handler for all event namespaces
+	dataPriv.set( el, type, false );
+	jQuery.event.add( el, type, {
+		namespace: false,
+		handler: function( event ) {
+			var notAsync, result,
+				saved = dataPriv.get( this, type );
+
+			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
+
+				// Interrupt processing of the outer synthetic .trigger()ed event
+				if ( !saved ) {
+
+					// Store arguments for use when handling the inner native event
+					saved = slice.call( arguments );
+					dataPriv.set( this, type, saved );
+
+					// Trigger the native event and capture its result
+					// Support: IE <=9 - 11+
+					// focus() and blur() are asynchronous
+					notAsync = expectSync( this, type );
+					this[ type ]();
+					result = dataPriv.get( this, type );
+					if ( saved !== result || notAsync ) {
+						dataPriv.set( this, type, false );
+					} else {
+						result = undefined;
+					}
+					if ( saved !== result ) {
+
+						// Cancel the outer synthetic event
+						event.stopImmediatePropagation();
+						event.preventDefault();
+						return result;
+					}
+
+				// If this is an inner synthetic event for an event with a bubbling surrogate
+				// (focus or blur), assume that the surrogate already propagated from triggering the
+				// native event and prevent that from happening again here.
+				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
+				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
+				// less bad than duplication.
+				} else if ( ( jQuery.event.special[ type ] || {} ).delegateType ) {
+					event.stopPropagation();
+				}
+
+			// If this is a native event triggered above, everything is now in order
+			// Fire an inner synthetic event with the original arguments
+			} else if ( saved ) {
+
+				// ...and capture the result
+				dataPriv.set( this, type, jQuery.event.trigger(
+
+					// Support: IE <=9 - 11+
+					// Extend with the prototype to reset the above stopImmediatePropagation()
+					jQuery.extend( saved.shift(), jQuery.Event.prototype ),
+					saved,
+					this
+				) );
+
+				// Abort handling of the native event
+				event.stopImmediatePropagation();
+			}
+		}
+	} );
+}
 
 jQuery.removeEvent = function( elem, type, handle ) {
 
@@ -5884,6 +6027,7 @@ jQuery.each( {
 	shiftKey: true,
 	view: true,
 	"char": true,
+	code: true,
 	charCode: true,
 	key: true,
 	keyCode: true,
@@ -5929,6 +6073,33 @@ jQuery.each( {
 		return event.which;
 	}
 }, jQuery.event.addProp );
+
+jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateType ) {
+	jQuery.event.special[ type ] = {
+
+		// Utilize native event if possible so blur/focus sequence is correct
+		setup: function() {
+
+			// Claim the first handler
+			// dataPriv.set( this, "focus", ... )
+			// dataPriv.set( this, "blur", ... )
+			leverageNative( this, type, expectSync );
+
+			// Return false to allow normal processing in the caller
+			return false;
+		},
+		trigger: function() {
+
+			// Force setup before trigger
+			leverageNative( this, type );
+
+			// Return non-false to allow normal event-path propagation
+			return true;
+		},
+
+		delegateType: delegateType
+	};
+} );
 
 // Create mouseenter/leave events using mouseover/out and event-time checks
 // so that event delegation works in jQuery.
@@ -6180,11 +6351,13 @@ function domManip( collection, args, callback, ignored ) {
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl ) {
-								jQuery._evalUrl( node.src );
+							if ( jQuery._evalUrl && !node.noModule ) {
+								jQuery._evalUrl( node.src, {
+									nonce: node.nonce || node.getAttribute( "nonce" )
+								} );
 							}
 						} else {
-							DOMEval( node.textContent.replace( rcleanScript, "" ), doc, node );
+							DOMEval( node.textContent.replace( rcleanScript, "" ), node, doc );
 						}
 					}
 				}
@@ -6206,7 +6379,7 @@ function remove( elem, selector, keepData ) {
 		}
 
 		if ( node.parentNode ) {
-			if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
+			if ( keepData && isAttached( node ) ) {
 				setGlobalEval( getAll( node, "script" ) );
 			}
 			node.parentNode.removeChild( node );
@@ -6224,7 +6397,7 @@ jQuery.extend( {
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
 		var i, l, srcElements, destElements,
 			clone = elem.cloneNode( true ),
-			inPage = jQuery.contains( elem.ownerDocument, elem );
+			inPage = isAttached( elem );
 
 		// Fix IE cloning issues
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
@@ -6520,8 +6693,10 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
 		// Support: IE 9 only
 		// Detect overflow:scroll screwiness (gh-3699)
+		// Support: Chrome <=64
+		// Don't get tricked when zoom affects offsetWidth (gh-4029)
 		div.style.position = "absolute";
-		scrollboxSizeVal = div.offsetWidth === 36 || "absolute";
+		scrollboxSizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
 
 		documentElement.removeChild( container );
 
@@ -6592,7 +6767,7 @@ function curCSS( elem, name, computed ) {
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+		if ( ret === "" && !isAttached( elem ) ) {
 			ret = jQuery.style( elem, name );
 		}
 
@@ -6648,29 +6823,12 @@ function addGetHookIf( conditionFn, hookFn ) {
 }
 
 
-var
+var cssPrefixes = [ "Webkit", "Moz", "ms" ],
+	emptyStyle = document.createElement( "div" ).style,
+	vendorProps = {};
 
-	// Swappable if display is none or starts with table
-	// except "table", "table-cell", or "table-caption"
-	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
-	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
-	rcustomProp = /^--/,
-	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
-	cssNormalTransform = {
-		letterSpacing: "0",
-		fontWeight: "400"
-	},
-
-	cssPrefixes = [ "Webkit", "Moz", "ms" ],
-	emptyStyle = document.createElement( "div" ).style;
-
-// Return a css property mapped to a potentially vendor prefixed property
+// Return a vendor-prefixed property or undefined
 function vendorPropName( name ) {
-
-	// Shortcut for names that are not vendor prefixed
-	if ( name in emptyStyle ) {
-		return name;
-	}
 
 	// Check for vendor prefixed names
 	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),
@@ -6684,15 +6842,32 @@ function vendorPropName( name ) {
 	}
 }
 
-// Return a property mapped along what jQuery.cssProps suggests or to
-// a vendor prefixed property.
+// Return a potentially-mapped jQuery.cssProps or vendor prefixed property
 function finalPropName( name ) {
-	var ret = jQuery.cssProps[ name ];
-	if ( !ret ) {
-		ret = jQuery.cssProps[ name ] = vendorPropName( name ) || name;
+	var final = jQuery.cssProps[ name ] || vendorProps[ name ];
+
+	if ( final ) {
+		return final;
 	}
-	return ret;
+	if ( name in emptyStyle ) {
+		return name;
+	}
+	return vendorProps[ name ] = vendorPropName( name ) || name;
 }
+
+
+var
+
+	// Swappable if display is none or starts with table
+	// except "table", "table-cell", or "table-caption"
+	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
+	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
+	rcustomProp = /^--/,
+	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
+	cssNormalTransform = {
+		letterSpacing: "0",
+		fontWeight: "400"
+	};
 
 function setPositiveNumber( elem, value, subtract ) {
 
@@ -6765,7 +6940,10 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 			delta -
 			extra -
 			0.5
-		) );
+
+		// If offsetWidth/offsetHeight is unknown, then we can't determine content-box scroll gutter
+		// Use an explicit zero to avoid NaN (gh-3964)
+		) ) || 0;
 	}
 
 	return delta;
@@ -6775,9 +6953,16 @@ function getWidthOrHeight( elem, dimension, extra ) {
 
 	// Start with computed style
 	var styles = getStyles( elem ),
+
+		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
+		// Fake content-box until we know it's needed to know the true value.
+		boxSizingNeeded = !support.boxSizingReliable() || extra,
+		isBorderBox = boxSizingNeeded &&
+			jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+		valueIsBorderBox = isBorderBox,
+
 		val = curCSS( elem, dimension, styles ),
-		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-		valueIsBorderBox = isBorderBox;
+		offsetProp = "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 );
 
 	// Support: Firefox <=54
 	// Return a confounding non-pixel value or feign ignorance, as appropriate.
@@ -6788,22 +6973,29 @@ function getWidthOrHeight( elem, dimension, extra ) {
 		val = "auto";
 	}
 
-	// Check for style in case a browser which returns unreliable values
-	// for getComputedStyle silently falls back to the reliable elem.style
-	valueIsBorderBox = valueIsBorderBox &&
-		( support.boxSizingReliable() || val === elem.style[ dimension ] );
 
 	// Fall back to offsetWidth/offsetHeight when value is "auto"
 	// This happens for inline elements with no explicit setting (gh-3571)
 	// Support: Android <=4.1 - 4.3 only
 	// Also use offsetWidth/offsetHeight for misreported inline dimensions (gh-3602)
-	if ( val === "auto" ||
-		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) {
+	// Support: IE 9-11 only
+	// Also use offsetWidth/offsetHeight for when box sizing is unreliable
+	// We use getClientRects() to check for hidden/disconnected.
+	// In those cases, the computed value can be trusted to be border-box
+	if ( ( !support.boxSizingReliable() && isBorderBox ||
+		val === "auto" ||
+		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) &&
+		elem.getClientRects().length ) {
 
-		val = elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ];
+		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
-		// offsetWidth/offsetHeight provide border-box values
-		valueIsBorderBox = true;
+		// Where available, offsetWidth/offsetHeight approximate border box dimensions.
+		// Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
+		// retrieved value as a content box dimension.
+		valueIsBorderBox = offsetProp in elem;
+		if ( valueIsBorderBox ) {
+			val = elem[ offsetProp ];
+		}
 	}
 
 	// Normalize "" and auto
@@ -6849,6 +7041,13 @@ jQuery.extend( {
 		"flexGrow": true,
 		"flexShrink": true,
 		"fontWeight": true,
+		"gridArea": true,
+		"gridColumn": true,
+		"gridColumnEnd": true,
+		"gridColumnStart": true,
+		"gridRow": true,
+		"gridRowEnd": true,
+		"gridRowStart": true,
 		"lineHeight": true,
 		"opacity": true,
 		"order": true,
@@ -6904,7 +7103,9 @@ jQuery.extend( {
 			}
 
 			// If a number was passed in, add the unit (except for certain CSS properties)
-			if ( type === "number" ) {
+			// The isCustomProp check can be removed in jQuery 4.0 when we only auto-append
+			// "px" to a few hardcoded values.
+			if ( type === "number" && !isCustomProp ) {
 				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 			}
 
@@ -7004,18 +7205,29 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 		set: function( elem, value, extra ) {
 			var matches,
 				styles = getStyles( elem ),
-				isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-				subtract = extra && boxModelAdjustment(
-					elem,
-					dimension,
-					extra,
-					isBorderBox,
-					styles
-				);
+
+				// Only read styles.position if the test has a chance to fail
+				// to avoid forcing a reflow.
+				scrollboxSizeBuggy = !support.scrollboxSize() &&
+					styles.position === "absolute",
+
+				// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-3991)
+				boxSizingNeeded = scrollboxSizeBuggy || extra,
+				isBorderBox = boxSizingNeeded &&
+					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+				subtract = extra ?
+					boxModelAdjustment(
+						elem,
+						dimension,
+						extra,
+						isBorderBox,
+						styles
+					) :
+					0;
 
 			// Account for unreliable border-box dimensions by comparing offset* to computed and
 			// faking a content-box to get border and padding (gh-3699)
-			if ( isBorderBox && support.scrollboxSize() === styles.position ) {
+			if ( isBorderBox && scrollboxSizeBuggy ) {
 				subtract -= Math.ceil(
 					elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
 					parseFloat( styles[ dimension ] ) -
@@ -7183,9 +7395,9 @@ Tween.propHooks = {
 			// Use .style if available and use plain properties where available.
 			if ( jQuery.fx.step[ tween.prop ] ) {
 				jQuery.fx.step[ tween.prop ]( tween );
-			} else if ( tween.elem.nodeType === 1 &&
-				( tween.elem.style[ jQuery.cssProps[ tween.prop ] ] != null ||
-					jQuery.cssHooks[ tween.prop ] ) ) {
+			} else if ( tween.elem.nodeType === 1 && (
+					jQuery.cssHooks[ tween.prop ] ||
+					tween.elem.style[ finalPropName( tween.prop ) ] != null ) ) {
 				jQuery.style( tween.elem, tween.prop, tween.now + tween.unit );
 			} else {
 				tween.elem[ tween.prop ] = tween.now;
@@ -8892,6 +9104,10 @@ jQuery.param = function( a, traditional ) {
 				encodeURIComponent( value == null ? "" : value );
 		};
 
+	if ( a == null ) {
+		return "";
+	}
+
 	// If an array was passed in, assume that it is an array of form elements.
 	if ( Array.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
 
@@ -9394,12 +9610,14 @@ jQuery.extend( {
 						if ( !responseHeaders ) {
 							responseHeaders = {};
 							while ( ( match = rheaders.exec( responseHeadersString ) ) ) {
-								responseHeaders[ match[ 1 ].toLowerCase() ] = match[ 2 ];
+								responseHeaders[ match[ 1 ].toLowerCase() + " " ] =
+									( responseHeaders[ match[ 1 ].toLowerCase() + " " ] || [] )
+										.concat( match[ 2 ] );
 							}
 						}
-						match = responseHeaders[ key.toLowerCase() ];
+						match = responseHeaders[ key.toLowerCase() + " " ];
 					}
-					return match == null ? null : match;
+					return match == null ? null : match.join( ", " );
 				},
 
 				// Raw string
@@ -9788,7 +10006,7 @@ jQuery.each( [ "get", "post" ], function( i, method ) {
 } );
 
 
-jQuery._evalUrl = function( url ) {
+jQuery._evalUrl = function( url, options ) {
 	return jQuery.ajax( {
 		url: url,
 
@@ -9798,7 +10016,16 @@ jQuery._evalUrl = function( url ) {
 		cache: true,
 		async: false,
 		global: false,
-		"throws": true
+
+		// Only evaluate the response if it is successful (gh-4126)
+		// dataFilter is not invoked for failure responses, so using it instead
+		// of the default converter is kludgy but it works.
+		converters: {
+			"text script": function() {}
+		},
+		dataFilter: function( response ) {
+			jQuery.globalEval( response, options );
+		}
 	} );
 };
 
@@ -10081,24 +10308,21 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function( s ) {
 
-	// This transport only deals with cross domain requests
-	if ( s.crossDomain ) {
+	// This transport only deals with cross domain or forced-by-attrs requests
+	if ( s.crossDomain || s.scriptAttrs ) {
 		var script, callback;
 		return {
 			send: function( _, complete ) {
-				script = jQuery( "<script>" ).prop( {
-					charset: s.scriptCharset,
-					src: s.url
-				} ).on(
-					"load error",
-					callback = function( evt ) {
+				script = jQuery( "<script>" )
+					.attr( s.scriptAttrs || {} )
+					.prop( { charset: s.scriptCharset, src: s.url } )
+					.on( "load error", callback = function( evt ) {
 						script.remove();
 						callback = null;
 						if ( evt ) {
 							complete( evt.type === "error" ? 404 : 200, evt.type );
 						}
-					}
-				);
+					} );
 
 				// Use native DOM manipulation to avoid our domManip AJAX trickery
 				document.head.appendChild( script[ 0 ] );

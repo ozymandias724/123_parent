@@ -1,7 +1,17 @@
 // get the grunt class
 const grunt = require('grunt');
-// get the node sass implementation (cuz the ruby one is SLOW AF)
-const sass = require('node-sass');
+const sass = require("sass");
+const Fiber = require("fibers");
+sass.render({
+    file: "__pre/_sass/main.scss",
+    importer: function (url, prev, done) {
+        // ...
+    },
+    fiber: Fiber
+}, function (err, result) {
+    // ...
+});
+
 // auto-load all the grunt tasks passed into the initConfig func
 require('load-grunt-tasks')(grunt);
 
@@ -130,7 +140,7 @@ grunt.initConfig({
                 },
                 sourceMaps: true
             }
-        }  
+        }
     },
     exorcise: {
         bundle: {

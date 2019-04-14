@@ -1,0 +1,130 @@
+@media only screen {
+    header#opt_header_four {
+        color: white;
+        padding: 0px;
+        //Top part of header
+        > div {
+            background-color: $black;
+            //First div of top part of header
+            > div {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 auto;
+                max-width: $nav_maxwidth;
+            }
+            //Social icons underordered list and phone number section
+            > div > ul, 
+            > div > span {
+                flex: 0 1 auto;
+                font-size: 1.6rem;
+            }
+            //Social icons list items
+            > div > ul > li {
+                display: inline-block;
+                margin: 0 10px;
+            }
+            //Social icons list items links
+            > div > ul > li > a {
+                font-size: 16px;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: inline-block;
+                padding: 5px;
+                text-align: center;
+                overflow: hidden;
+                color: white;
+                transition: color 0.3s;
+            }
+            //Social icons list items links actions on hover, active and focus 
+            > div > ul > li > a:hover,
+            > div > ul > li > a:active,
+            > div > ul > li > a:focus {
+                color: getVar($colors, primary);
+            }
+            //Phone number link
+            > div > span:last-child > a {
+                padding: 10px;
+                font-weight: 400;
+                font-size: 16px;
+                letter-spacing: 1px;
+                border-bottom: 1px solid transparent;
+                opacity: $opacity_level_below_one;
+                transition: opacity 0.3s;
+            }
+            //Phone number link actions on hover, active and focus
+            > div > span:last-child > a:hover,
+            > div > span:last-child > a:active,
+            > div > span:last-child > a:focus {
+                opacity: 1;
+            }
+            //Phone number link left side icon
+            > div > span:last-child > a:before {
+                font-family: 'Font Awesome 5 Free';
+                content: "\f095";
+                font-weight: 700;
+                color: white;
+                border-radius: 100%;
+                margin-right: 10px;
+            }
+        }
+        //Navigational menu unordered list
+        > nav > ul {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1018px;
+            background-color: getVar($colors, primary);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+        //Navigational menu list items
+        > nav > ul > li {
+            flex: 0 1 auto;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        //Navigational menu list items links 
+        > nav > ul > li > a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 10px;
+            font-size: 13px;
+            line-height: 4;
+            letter-spacing: 1px;
+            opacity: $opacity_level_below_one;
+        }
+        //Navigational menu list items links actions on hover, active and focus
+        > nav > ul > li > a:hover,
+        > nav > ul > li > a:active,
+        > nav > ul > li > a:focus {
+            opacity: 1;
+        }
+        //Shapes before and after the navigational menu
+        > nav > ul:before,
+        > nav > ul:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -70px;
+            width: 100px;
+            height: 100%;
+            flex: 1 0 auto;
+            top: 0;
+            background-color: getVar($colors, primary);
+            transform: skewX(37deg);
+            z-index: -1;
+        }
+        //Shape after the navigational menu
+        > nav > ul:after {
+            transform: skewX(-37deg);
+            left: auto;
+            right: -70px;
+        }
+    }
+}

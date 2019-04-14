@@ -1,0 +1,56 @@
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// recommended to use vw, should work tho
+// width, cols, gutter, square
+@mixin gridLayout($w, $c, $g, $s) {
+    text-align: center;
+
+    & ul {
+        text-align: left;
+        width: $w;
+        margin: 0 auto 0 auto;
+        display: inline-block;
+        list-style: none;
+        @include clearfix;
+
+        &>li {
+            $d: colWidth($w, $c, $g);
+            width: $d;
+            height: auto;
+            float: left;
+
+            div.image {
+                @if $s==true {
+                    height: $d
+                }
+            }
+
+            &:nth-child(n+1) {
+                // this will reset each child before applying to the target
+                margin: 0 $g $g 0;
+            }
+
+            &:nth-child(#{$c}n) {
+                margin: 0 0 $g 0;
+            }
+        }
+    }
+}
+
+// this will set column widths for grid items
+@function colWidth($w, $c, $g) {
+    @return (($w - (($c - 1) * $g)) / $c);
+}
