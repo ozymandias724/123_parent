@@ -2399,7 +2399,7 @@ section.hero .hero_foreground a:active {
   }
 
   section.hero#hero_image > #hero_staticimage {
-    height: 100%;
+    height: 90vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2819,7 +2819,7 @@ section#mod_gallery #standard_gallery > ul {
   }
   section#mod_gallery #standard_gallery ul {
     text-align: left;
-    width: 65vw;
+    width: 60vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -2830,12 +2830,12 @@ section#mod_gallery #standard_gallery > ul {
     clear: both;
   }
   section#mod_gallery #standard_gallery ul > li {
-    width: 15.125vw;
+    width: 13.875vw;
     height: auto;
     float: left;
   }
   section#mod_gallery #standard_gallery ul > li div.image {
-    height: 15.125vw;
+    height: 13.875vw;
   }
   section#mod_gallery #standard_gallery ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
@@ -3046,6 +3046,164 @@ section#mod_gallery #standard_gallery > ul {
   }
   section#mod_reviews > div ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
+  }
+}
+@media only screen {
+  section#mod_menu #menu_section {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  section#mod_menu #menu_section > #menu_tabs_pills {
+    color: #c2c2c2;
+    margin: 0 auto 25px auto;
+    text-align: center;
+  }
+  section#mod_menu #menu_section > #menu_tabs_pills > h3 {
+    display: block;
+    margin: 10px 5px;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  section#mod_menu #menu_section > #menu_tabs_pills > h3 > a {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid #c2c2c2;
+    color: #484848;
+  }
+  section#mod_menu #menu_section > #menu_tabs_pills > h3 > a.active_tab,
+section#mod_menu #menu_section > #menu_tabs_pills > h3 > a:active,
+section#mod_menu #menu_section > #menu_tabs_pills > h3 > a:focus {
+    background-color: #d8761f;
+    color: #fff;
+    border: 2px solid #d8761f;
+  }
+  section#mod_menu #menu_section > #menu_tabs_pills > h3 > a:hover {
+    background-color: #c2c2c2;
+    color: #fff;
+    border: 2px solid #c2c2c2;
+  }
+  section#mod_menu #menu_section > div:last-of-type > h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 44px;
+    font-family: sans-serif;
+    margin: 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  section#mod_menu #menu_section > div:last-of-type > h2:before {
+    border-top: 2px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80vw;
+    z-index: -1;
+  }
+  section#mod_menu #menu_section > div:last-of-type > h2 > span {
+    background: #fff;
+    padding: 0 15px;
+  }
+  section#mod_menu #menu_section > div:last-of-type .menu_list,
+section#mod_menu #menu_section > div:last-of-type .menu_title {
+    display: none;
+  }
+  section#mod_menu #menu_section > div:last-of-type .menu_list.active_menu_list {
+    display: inline-block;
+  }
+  section#mod_menu #menu_section > div:last-of-type .menu_title.active_menu_title {
+    display: block;
+  }
+  section#mod_menu #menu_section > div:last-of-type {
+    text-align: center;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul {
+    text-align: left;
+    width: 80vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul > li {
+    width: 80vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul > li:nth-child(n+1) {
+    margin: 0 3vw 3vw 0;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul > li:nth-child(1n) {
+    margin: 0 0 3vw 0;
+  }
+  section#mod_menu #menu_section > div:last-of-type > ul {
+    list-style: none;
+  }
+  section#mod_menu #menu_section > div:last-of-type > ul > li > h3 {
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 3px solid #d8761f;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  section#mod_menu #menu_section > div:last-of-type > ul > li > h3 > span {
+    color: #aaabad;
+    font-weight: 600;
+  }
+  section#mod_menu #menu_section > div:last-of-type > ul > li > p {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #aaabad;
+  }
+}
+@media only screen and (min-width: 768px) {
+  section#mod_menu #menu_section {
+    max-width: 65vw;
+  }
+
+  section#mod_menu #menu_section > #menu_tabs_pills > h3 {
+    display: inline-block;
+  }
+
+  section#mod_menu #menu_section > div:last-of-type > h2:before {
+    width: 59vw;
+  }
+
+  section#mod_menu #menu_section > div:last-of-type {
+    text-align: center;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul {
+    text-align: left;
+    width: 59vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul > li {
+    width: 28vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul > li:nth-child(n+1) {
+    margin: 0 3vw 3vw 0;
+  }
+  section#mod_menu #menu_section > div:last-of-type ul > li:nth-child(2n) {
+    margin: 0 0 3vw 0;
   }
 }
 

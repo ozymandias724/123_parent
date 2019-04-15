@@ -240,6 +240,46 @@ Theme.Gallery = {
 }
 Theme.Gallery._init();
 
+Theme.Menu = {
+    link : $("#menu_section > div:first-of-type > h3 > a"),
+    active_link_text : $("#menu_section a.active_tab").text(),
+    menu_list : $(".menu_list"), 
+    menu_title : $(".menu_title"),
+
+    _init : function(){
+        Theme.Menu.link.on("click", Theme.Menu._link_click);  
+    },
+
+    _link_click : function(e){
+        Theme.Menu.link_text = e.target.classList[0];
+        // Tab Link
+        Theme.Menu.link.each(function(){
+            if($(this).hasClass(Theme.Menu.link_text + "_tab")){
+                $(this).addClass('active_tab');
+            }else{
+                $(this).removeClass('active_tab');
+            }
+        });
+        // Menu Title
+        Theme.Menu.menu_title.each(function(){
+            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_title")){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
+        // Menu List
+        Theme.Menu.menu_list.each(function(){
+            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_list")){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
+    }    
+}
+Theme.Menu._init();
+
 
 Headers.One = {
 

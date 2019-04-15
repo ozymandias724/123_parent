@@ -1,0 +1,126 @@
+$accent_color : #d8761f;
+$gray_four : #aaabad;
+
+@media only screen {    
+    section#mod_menu #menu_section {
+        max-width: 80vw;
+        margin: 0 auto;
+        // Menu Tabbed Pills 
+        > #menu_tabs_pills {
+            color: $gray_one;
+            margin: 0 auto 25px auto;
+            text-align: center;
+            > h3 {
+                display: block;
+                margin: 10px 5px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                font-size: 14px;
+            }
+            > h3 > a {
+                padding: 10px 15px;
+                border-radius: 20px;
+                background-color: transparent;
+                border: 2px solid $gray_one;
+                color: $gray_two;
+            }
+            > h3 > a.active_tab,
+            > h3 > a:active,
+            > h3 > a:focus {
+                background-color: $accent_color;
+                color: $white;
+                border: 2px solid $accent_color;
+            }
+            > h3 > a:hover {
+                background-color: $gray_one;
+                color: $white;
+                border: 2px solid $gray_one;
+            }
+        }
+        // Headline
+        > div:last-of-type > h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 44px;
+            font-family: sans-serif;
+            margin: 40px 0;
+            text-align: center;
+            text-transform: uppercase;
+            &:before {
+                border-top: 2px solid #dfdfdf;
+                content: "";
+                margin: 0 auto;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 80vw;
+                z-index: -1;
+            }
+            > span {
+                background: #fff;
+                padding: 0 15px;
+            }
+        }
+        // Menu Lists
+        > div:last-of-type .menu_list, 
+        > div:last-of-type .menu_title {
+            display: none;
+        }
+        > div:last-of-type .menu_list.active_menu_list {
+            display: inline-block;
+        }
+        > div:last-of-type .menu_title.active_menu_title {
+            display: block;
+        }
+        > div:last-of-type {
+            // $w : 59vw;
+            // $c : 2;
+            $w : 80vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            > ul {
+                list-style: none;
+            }
+            > ul > li > h3 {
+                font-size: 26px;
+                font-weight: bold;
+                border-bottom: 3px solid $accent_color;
+                padding-bottom: 15px;
+                display: flex;
+                justify-content: space-between;
+            }
+            > ul > li > h3 > span {
+                color: $gray_four;
+                font-weight: 600;
+            }
+            > ul > li > p {
+                font-size: 18px;
+                margin-top: 15px;
+                color: $gray_four;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    section#mod_menu #menu_section {
+        max-width: 65vw;
+    }
+    section#mod_menu #menu_section > #menu_tabs_pills > h3 {
+        display: inline-block;
+    }
+    section#mod_menu #menu_section > div:last-of-type > h2:before {
+        width: 59vw;
+    }
+    section#mod_menu #menu_section > div:last-of-type {
+        $w : 59vw;
+        $c : 2;
+        $g : 3vw;
+        $s : to-upper-case($string: "");
+        @include gridLayout($w, $c, $g, $s);
+    }
+}
