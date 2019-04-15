@@ -42,30 +42,26 @@
 
         $return_gallery = '<div id="tabbed_gallery"><div>';
         
-        $count = 0;
-        foreach($fields['tabbed_gallery'] as $tab){
+        foreach($fields['tabbed_gallery'] as $i => $tab){
             $return_gallery .= sprintf(
                 $format_gallery
                 ,strtolower(str_replace(' ', '', $tab['tab_title'])) 
-                ,($count === 0 ? "active_gallery" : "")
+                ,($i === 0 ? "active_gallery" : "")
                 ,$tab['tab_title']
             );
-            $count++;
         }
 
         $return_gallery .= '</div>'; 
 
-        $gallery_list = '<div>';
+        $gallery_list = '<div>'; 
  
-        $count = 0;
-        foreach($fields['tabbed_gallery'] as $tab){
-            $gallery = '<ul class="gallery_list '.strtolower(str_replace(' ', '', $tab['tab_title'])). ' ' .($count === 0 ? "active_gallery_list" : "").'">';  
+        foreach($fields['tabbed_gallery'] as $i => $tab){
+            $gallery = '<ul class="gallery_list '.strtolower(str_replace(' ', '', $tab['tab_title'])). ' ' .($i === 0 ? "active_gallery_list" : "").'">';  
             foreach($tab['images'] as $image){
                 $gallery .= '<li><div class="image" style="background-image:url('.$image['url'].');"></div></li>';
             }
             $gallery .= '</ul>';
             $gallery_list .=  $gallery;
-            $count++;
         }
         
 
