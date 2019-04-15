@@ -1,8 +1,95 @@
 @media only screen {
     // Gallery section 
     section#mod_gallery {
-        #tabbed_gallery { 
+        // Standard Gallery
+        #standard_gallery {
+            margin: 0 auto;
+        }
+        // Tabbed Gallery
+        #tabbed_gallery,
+        // Standard Gallery
+        #standard_gallery {
             min-height: 90vh; 
+        }
+
+        // Tabbed Pills
+        /* #tabbed_gallery > div:first-of-type {
+            color: #C2C2C2;
+            margin: 0 auto 25px;
+            > h3 {
+                display: block;
+                margin: 10px 5px;
+                text-transform: uppercase;
+                padding: 10px 0;
+            }
+            > h3 > a {
+                padding: 10px 15px;
+                border-radius: 20px;
+                background-color: transparent;
+                border: 2px solid #C2C2C2;
+            }
+            > h3 > a.active_gallery,
+            > h3 > a:active,
+            > h3 > a:focus {
+                background-color: #d8761f;
+                color: #fff;
+                border: 2px solid #d8761f;
+            }
+            > h3 > a:hover {
+                background-color: #C2C2C2;
+                color: #fff;
+                border: 2px solid #C2C2C2;
+            }
+        } */
+
+        // Tabbed Classic
+        /* #tabbed_gallery > div:first-of-type {
+            text-align: center;
+            color: #C2C2C2;
+            width: 80vw;
+            margin: 0 auto 25px;
+            border-bottom: 2px solid #c6c7ca;
+            > h3 {
+                margin: 5px 2px 0;
+                text-transform: uppercase;
+                padding: 10px 0;
+                display: inline-block;
+            }
+            > h3 > a {
+                padding: 10px 15px;
+                background-color: #c6c7ca;
+                color: #818181;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                transition: all 0.3s ease-in-out;
+                position: relative;
+                top: 2px;
+            }
+            > h3 > a.active_gallery,
+            > h3 > a:active, 
+            > h3 > a:focus {
+                background-color: #fff;
+                color: #d8761f;
+                border-top: 2px solid #c6c7ca;
+                border-left: 2px solid #c6c7ca;
+                border-right: 2px solid #c6c7ca;
+            }
+            > h3 > a:hover {
+                color: #fff;
+                background: #d6d8db;
+                background: -moz-linear-gradient(top, #d6d8db 0%, #c6c7ca 100%);
+                background: -moz-linear-gradient(top, #d6d8db 0%, #aaabad 100%);
+                background: -webkit-linear-gradient(top, #d6d8db 0%,#aaabad 100%); 
+                background: linear-gradient(to bottom, #d6d8db 0%,#aaabad 100%); 
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d8db', endColorstr='#aaabad',GradientType=0 ); 
+            }
+        } */
+
+        // Standard Gallery
+        #standard_gallery > h3 {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
 
         // Tabbed Side Menu
@@ -52,7 +139,9 @@
         }
 
         // Tabbed Pills, Tabbed Classic, Tabbed Side Menu
-        > div {
+        #tabbed_gallery > div:last-of-type, 
+        // Standard Gallery
+        #standard_gallery {
             $w : 80vw;
             $c : 2;
             $g : 1.5vw;
@@ -68,7 +157,6 @@
                 list-style: none;
             }
         }
-        
     }
 }
 
@@ -92,15 +180,23 @@
             width: 70vw;
         }
 
+        // Tabbed Pills and Tabbed Classic
+        /* > div {
+            $w : 80vw;
+            $c : 2;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+        } */
+
         // Tabbed Side Menu
-        > div {
+        #tabbed_gallery > div:last-of-type {
             $w : 60vw;
             $c : 2;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-        
     }
 }
 
@@ -108,25 +204,57 @@
     // Gallery section 
     section#mod_gallery {
         
+        // Tabbed Pill and Tabbed Classic
+        /* > div {
+            $w : 80vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+        } */
+
         // Tabbed Side Menu
         #tabbed_gallery > div:last-of-type {
             width: 80vw;
         }
-        > div {
+        #tabbed_gallery > div:last-of-type {
             $w : 70vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-        
+        // Standard Gallery
+        #standard_gallery {
+            $w : 80vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+        }
     }
 } 
 
 @media only screen and (min-width: 1000px){
 
-    //Tabbed Side Menu
-    section#mod_gallery #tabbed_gallery {
+    // Tabbed Pills and Tabbed Classic 
+    /* section#mod_gallery #tabbed_gallery > div:first-of-type {
+        width: 60vw;
+    }
+    section#mod_gallery {
+        > div {
+            $w : 60vw;
+            $c : 4;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+        } 
+    } */
+
+    // Tabbed Side Menu
+    section#mod_gallery #tabbed_gallery,
+    // Standard Gallery 
+    section#mod_gallery #standard_gallery {
         width: 65vw;
     }
     section#mod_gallery #tabbed_gallery > div:first-of-type {
@@ -140,14 +268,20 @@
     }
 
     // Tabbed Side Menu
-    section#mod_gallery {
-        > div {
-            $w : 80vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        } 
+    section#mod_gallery #tabbed_gallery > div:last-of-type {
+        $w : 50vw;
+        $c : 3;
+        $g : 1.5vw;
+        $s : true;
+        @include gridLayout($w, $c, $g, $s);
+    } 
+    // Standard Gallery
+    section#mod_gallery #standard_gallery {
+        $w : 65vw;
+        $c : 4;
+        $g : 1.5vw;
+        $s : true;
+        @include gridLayout($w, $c, $g, $s);
     }
 }
 

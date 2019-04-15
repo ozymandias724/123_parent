@@ -24,7 +24,7 @@
         
         $format_gallery = '<li><div class="image" style="background-image:url(%s);"></div></li>';
         
-        $return_gallery = '<div><h2>'.$fields['normal_gallery']['heading'].'</h2><ul>';
+        $return_gallery = '<div id="standard_gallery"><h3>'.$fields['normal_gallery']['heading'].'</h3><ul>';
         
         foreach( $fields['normal_gallery']['images'] as $i => $image ){
             $return_gallery .= sprintf(
