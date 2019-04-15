@@ -212,7 +212,6 @@ Theme.PA = {
 
 
 Theme.Gallery = {
-
     link : $("#tabbed_gallery > div > h3 > a"),
     active_link_text : $("a.active_gallery").text(),
     image_galleries : $(".gallery_list"), 
@@ -238,7 +237,6 @@ Theme.Gallery = {
             }
         });
     }
-
 }
 Theme.Gallery._init();
 

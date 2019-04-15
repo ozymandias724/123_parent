@@ -20,6 +20,7 @@
     // If status is 1, (possibly)
  
     // check type
+    // Standard
     if( $fields['type'] == 'standard' ){ 
         
         $format_gallery = '<li><div class="image" style="background-image:url(%s);"></div></li>';
@@ -36,6 +37,7 @@
 
         $return_gallery .= '</ul></div>'; 
         
+    // Tabbed Gallery
     } else if($fields['type'] == 'tabbed'){
 
         $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
