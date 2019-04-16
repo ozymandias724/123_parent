@@ -47,7 +47,7 @@
         foreach($fields['tabbed_gallery'] as $i => $tab){
             $return_gallery .= sprintf(
                 $format_gallery
-                ,strtolower(str_replace(' ', '', $tab['tab_title'])) 
+                ,strtolower(str_replace(' ', '', $tab['tab_title'])) . "_tab" 
                 ,($i === 0 ? "active_gallery" : "")
                 ,$tab['tab_title']
             );
@@ -58,7 +58,7 @@
         $gallery_list = '<div>'; 
  
         foreach($fields['tabbed_gallery'] as $i => $tab){
-            $gallery = '<ul class="gallery_list '.strtolower(str_replace(' ', '', $tab['tab_title'])). ' ' .($i === 0 ? "active_gallery_list" : "").'">';  
+            $gallery = '<ul class="gallery_section '.strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ' .($i === 0 ? "active_gallery_section" : "").'">';  
             foreach($tab['images'] as $image){
                 $gallery .= '<li><div class="image" style="background-image:url('.$image['url'].');"></div></li>';
             }
