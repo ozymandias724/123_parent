@@ -3112,7 +3112,7 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     color: #484848;
     border-bottom: 1px solid transparent;
   }
-  section#mod_menu > #menu_area #menu_list > h2 {
+  section#mod_menu > #menu_area #menu_one > h2 {
     position: relative;
     z-index: 1;
     font-size: 44px;
@@ -3121,7 +3121,7 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     text-align: center;
     text-transform: uppercase;
   }
-  section#mod_menu > #menu_area #menu_list > h2:before {
+  section#mod_menu > #menu_area #menu_one > h2:before {
     border-top: 2px solid #dfdfdf;
     content: "";
     margin: 0 auto;
@@ -3133,40 +3133,40 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     width: 80vw;
     z-index: -1;
   }
-  section#mod_menu > #menu_area #menu_list > h2 > span {
+  section#mod_menu > #menu_area #menu_one > h2 > span {
     background: #fff;
     padding: 0 15px;
   }
-  section#mod_menu > #menu_area #menu_list {
+  section#mod_menu > #menu_area #menu_one {
     text-align: center;
   }
-  section#mod_menu > #menu_area #menu_list ul {
+  section#mod_menu > #menu_area #menu_one ul {
     text-align: left;
     width: 80vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area #menu_list ul:after {
+  section#mod_menu > #menu_area #menu_one ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area #menu_list ul > li {
+  section#mod_menu > #menu_area #menu_one ul > li {
     width: 80vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area #menu_list ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area #menu_one ul > li:nth-child(n+1) {
     margin: 0 3vw 3vw 0;
   }
-  section#mod_menu > #menu_area #menu_list ul > li:nth-child(1n) {
+  section#mod_menu > #menu_area #menu_one ul > li:nth-child(1n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area #menu_list > ul {
+  section#mod_menu > #menu_area #menu_one > ul {
     list-style: none;
   }
-  section#mod_menu > #menu_area #menu_list > ul > li > h3 {
+  section#mod_menu > #menu_area #menu_one > ul > li > h3 {
     font-size: 26px;
     font-weight: bold;
     border-bottom: 3px solid #d8761f;
@@ -3174,14 +3174,69 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     display: flex;
     justify-content: space-between;
   }
-  section#mod_menu > #menu_area #menu_list > ul > li > h3 > span {
+  section#mod_menu > #menu_area #menu_one > ul > li > h3 > span {
     color: #aaabad;
     font-weight: 600;
   }
-  section#mod_menu > #menu_area #menu_list > ul > li > p {
+  section#mod_menu > #menu_area #menu_one > ul > li > p {
     font-size: 18px;
     margin-top: 15px;
     color: #aaabad;
+  }
+  section#mod_menu > #menu_area #menu_two {
+    text-align: center;
+    font-family: sans-serif;
+    text-align: left;
+  }
+  section#mod_menu > #menu_area #menu_two ul {
+    text-align: left;
+    width: 80vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu > #menu_area #menu_two ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu > #menu_area #menu_two ul > li {
+    width: 80vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu > #menu_area #menu_two ul > li:nth-child(n+1) {
+    margin: 0 3vw 3vw 0;
+  }
+  section#mod_menu > #menu_area #menu_two ul > li:nth-child(1n) {
+    margin: 0 0 3vw 0;
+  }
+  section#mod_menu > #menu_area #menu_two > h2 {
+    font-size: 36px;
+    text-transform: capitalize;
+  }
+  section#mod_menu > #menu_area #menu_two > h3 {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    color: #c2c2c2;
+    padding-bottom: 10px;
+    border-bottom: 3px dotted #d8761f;
+    margin-bottom: 20px;
+  }
+  section#mod_menu > #menu_area #menu_two > ul {
+    list-style: none;
+  }
+  section#mod_menu > #menu_area #menu_two > ul > li > h3 {
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+  section#mod_menu > #menu_area #menu_two > ul > li > p {
+    font-size: 18px;
+    color: #aaabad;
+    font-style: italic;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -3193,34 +3248,34 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     display: inline-block;
   }
 
-  section#mod_menu > #menu_area > #menu_list {
+  section#mod_menu > #menu_area > #menu_one {
     text-align: center;
   }
-  section#mod_menu > #menu_area > #menu_list ul {
+  section#mod_menu > #menu_area > #menu_one ul {
     text-align: left;
     width: 59vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area > #menu_list ul:after {
+  section#mod_menu > #menu_area > #menu_one ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area > #menu_list ul > li {
+  section#mod_menu > #menu_area > #menu_one ul > li {
     width: 28vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area > #menu_list ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area > #menu_one ul > li:nth-child(n+1) {
     margin: 0 3vw 3vw 0;
   }
-  section#mod_menu > #menu_area > #menu_list ul > li:nth-child(2n) {
+  section#mod_menu > #menu_area > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
 
-  section#mod_menu > #menu_area > #menu_list > h2:before {
+  section#mod_menu > #menu_area > #menu_one > h2:before {
     width: 59vw;
   }
 
@@ -3232,78 +3287,134 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
   section#mod_menu > #menu_area.menu_flex {
     width: 90vw;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-flow: row nowrap;
   }
 
-  section#mod_menu > #menu_area.menu_flex > #menu_list {
+  section#mod_menu > #menu_area.menu_flex > #menu_one {
     text-align: center;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul {
     text-align: left;
     width: 60vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul:after {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul > li {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul > li {
     width: 28.5vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(n+1) {
     margin: 0 3vw 3vw 0;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul > li:nth-child(2n) {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
 
-  section#mod_menu > #menu_area.menu_flex > #menu_list > h2:before {
+  section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
     width: 60vw;
+  }
+
+  section#mod_menu > #menu_area #menu_two > h2,
+section#mod_menu > #menu_area #menu_two > h3 {
+    text-align: left;
+  }
+
+  section#mod_menu > #menu_area > #menu_two {
+    text-align: center;
+  }
+  section#mod_menu > #menu_area > #menu_two ul {
+    text-align: left;
+    width: 60vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu > #menu_area > #menu_two ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu > #menu_area > #menu_two ul > li {
+    width: 60vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1) {
+    margin: 0 1vw 1vw 0;
+  }
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n) {
+    margin: 0 0 1vw 0;
   }
 }
 @media only screen and (min-width: 1350px) {
   section#mod_menu > #menu_area.menu_flex {
     width: 59vw;
-    display: flex;
-    align-items: center;
-    flex-flow: row nowrap;
   }
 
-  section#mod_menu > #menu_area.menu_flex > #menu_list {
+  section#mod_menu > #menu_area.menu_flex > #menu_one {
     text-align: center;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul {
     text-align: left;
     width: 42vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul:after {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul > li {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul > li {
     width: 19.5vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(n+1) {
     margin: 0 3vw 3vw 0;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_list ul > li:nth-child(2n) {
+  section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
 
-  section#mod_menu > #menu_area.menu_flex > #menu_list > h2:before {
+  section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
     width: 42vw;
+  }
+
+  section#mod_menu > #menu_area > #menu_two {
+    text-align: center;
+  }
+  section#mod_menu > #menu_area > #menu_two ul {
+    text-align: left;
+    width: 42vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu > #menu_area > #menu_two ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu > #menu_area > #menu_two ul > li {
+    width: 42vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1) {
+    margin: 0 1vw 1vw 0;
+  }
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n) {
+    margin: 0 0 1vw 0;
   }
 }
 

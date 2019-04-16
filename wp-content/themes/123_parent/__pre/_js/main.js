@@ -245,6 +245,7 @@ Theme.Menu = {
     active_link_text : $("#mod_menu a.active_tab").text(),
     menu_section: $(".menu_section"), 
     menu_title : $(".menu_title"), 
+    menu_subtitle : $(".menu_subtitle"), 
 
     _init : function(){
         Theme.Menu.link.on("click", Theme.Menu._link_click);  
@@ -268,6 +269,14 @@ Theme.Menu = {
                 $(this).hide();
             }
         });
+        // Menu Subitle
+        Theme.Menu.menu_subtitle.each(function(){
+            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_subtitle")){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
         // Menu List
         Theme.Menu.menu_section.each(function(){
             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_section")){
@@ -281,6 +290,14 @@ Theme.Menu = {
         // Menu Title
         Theme.Menu.menu_title.each(function(){
             if($(this).hasClass("active_menu_title")){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
+        // Menu Subtitle
+        Theme.Menu.menu_subtitle.each(function(){
+            if($(this).hasClass("active_menu_subtitle")){
                 $(this).show();
             }else{
                 $(this).hide();

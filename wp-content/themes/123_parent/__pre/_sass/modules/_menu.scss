@@ -73,8 +73,8 @@ $gray_four : #aaabad;
                 border-bottom: 1px solid transparent;
             }
         }
-        // Menu List Headline
-        #menu_list > h2 {
+        // Menu One Headline
+        #menu_one > h2 {
             position: relative;
             z-index: 1;
             font-size: 44px;
@@ -82,7 +82,7 @@ $gray_four : #aaabad;
             margin: 40px 0;
             text-align: center;
             text-transform: uppercase;
-            // Menu List line behind Headline
+            // Menu One line behind Headline
             &:before {
                 border-top: 2px solid #dfdfdf;
                 content: "";
@@ -95,24 +95,24 @@ $gray_four : #aaabad;
                 width: 80vw;
                 z-index: -1;
             }
-            // Menu List Headline Span
+            // Menu One Headline Span
             > span {
                 background: #fff;
                 padding: 0 15px;
             }
         }
-        // Menu List
-        #menu_list {
+        // Menu One
+        #menu_one {
             $w : 80vw;
             $c : 1;
             $g : 3vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
-            // Menu List Unordered list
+            // Menu One Unordered list
             > ul {
                 list-style: none;
             }
-            // Menu List unordered list title 
+            // Menu One unordered list title 
             > ul > li > h3 {
                 font-size: 26px;
                 font-weight: bold;
@@ -121,17 +121,54 @@ $gray_four : #aaabad;
                 display: flex;
                 justify-content: space-between;
             }
-            // Menu List unordered list title price
+            // Menu One unordered list title price
             > ul > li > h3 > span {
                 color: $gray_four;
                 font-weight: 600;
             }
-            // Menu List unordered list paragraph
+            // Menu One unordered list paragraph
             > ul > li > p {
                 font-size: 18px;
                 margin-top: 15px;
                 color: $gray_four;
             }
+        }
+        // Menu Two
+        #menu_two {
+            $w : 80vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+            text-align: left;
+        }
+        #menu_two > h2 {
+            font-size: 36px;
+            text-transform: capitalize;
+        }
+        #menu_two > h3 {    
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 500;
+            color: $gray_one;
+            padding-bottom: 10px;
+            border-bottom: 3px dotted $accent_color; 
+            margin-bottom: 20px;
+        }
+        #menu_two > ul {
+            list-style: none;
+        }
+        #menu_two > ul > li > h3 {
+            font-size: 26px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        #menu_two > ul > li > p {
+            font-size: 18px;
+            color: $gray_four;
+            font-style: italic;
         }
     }
 }
@@ -145,16 +182,16 @@ $gray_four : #aaabad;
     section#mod_menu > #menu_area > #menu_tabs_pills > h3 {
         display: inline-block;
     }
-    // Menu List
-    section#mod_menu > #menu_area > #menu_list {
+    // Menu One
+    section#mod_menu > #menu_area > #menu_one {
         $w : 59vw;
         $c : 2;
         $g : 3vw;
         $s : to-upper-case($string: "");
         @include gridLayout($w, $c, $g, $s);
     }
-    // Menu List Headline Line
-    section#mod_menu > #menu_area > #menu_list > h2:before {
+    // Menu One Headline Line
+    section#mod_menu > #menu_area > #menu_one > h2:before {
         width: 59vw;
     }
     section#mod_menu > #menu_area > #menu_tabs_side_menu {
@@ -165,12 +202,12 @@ $gray_four : #aaabad;
     section#mod_menu > #menu_area.menu_flex {
         width: 90vw;
         display: flex;
-        align-items: center;
+        align-items: baseline;
         flex-flow: row nowrap;
 
     }
-    // Menu Section with Flexbox Menu List CSS 
-    section#mod_menu > #menu_area.menu_flex > #menu_list {
+    // Menu Section with Flexbox Menu One CSS 
+    section#mod_menu > #menu_area.menu_flex > #menu_one {
         $w : 60vw;
         $c : 2;
         $g : 3vw;
@@ -178,8 +215,21 @@ $gray_four : #aaabad;
         @include gridLayout($w, $c, $g, $s);
     }
     // Menu Section with Flexbox Headline
-    section#mod_menu > #menu_area.menu_flex > #menu_list > h2:before {
+    section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
         width: 60vw;
+    }
+
+    // Menu Two
+    section#mod_menu > #menu_area #menu_two > h2,
+    section#mod_menu > #menu_area #menu_two > h3 {
+        text-align: left;
+    }
+    section#mod_menu > #menu_area > #menu_two {
+        $w : 60vw;
+        $c : 1; 
+        $g : 1vw;
+        $s : to-upper-case($string: "");
+        @include gridLayout($w, $c, $g, $s);
     }
 }
 
@@ -187,12 +237,9 @@ $gray_four : #aaabad;
     // Menu Section with Flexbox
     section#mod_menu > #menu_area.menu_flex {
         width: 59vw;
-        display: flex;
-        align-items: center;
-        flex-flow: row nowrap;
     }
-    // Menu Section with Flexbox Menu List CSS 
-    section#mod_menu > #menu_area.menu_flex > #menu_list {
+    // Menu Section with Flexbox Menu One CSS 
+    section#mod_menu > #menu_area.menu_flex > #menu_one {
         $w : 42vw;
         $c : 2;
         $g : 3vw;
@@ -200,7 +247,16 @@ $gray_four : #aaabad;
         @include gridLayout($w, $c, $g, $s);
     }
     // Menu Section with Flexbox Headline
-    section#mod_menu > #menu_area.menu_flex > #menu_list > h2:before {
+    section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
         width: 42vw;
+    }
+
+     // Menu Two
+     section#mod_menu > #menu_area > #menu_two {
+        $w : 42vw;
+        $c : 1; 
+        $g : 1vw;
+        $s : to-upper-case($string: "");
+        @include gridLayout($w, $c, $g, $s);
     }
 }

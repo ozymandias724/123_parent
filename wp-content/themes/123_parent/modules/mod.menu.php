@@ -23,8 +23,8 @@
 ?>
 
 <?php
-    $menu_tabs = "menu_tabs_side_menu";
-    $menu_type = "menu_one";
+    $menu_tabs = "menu_tabs_side_menu"; 
+    $menu_type = "menu_two";
 ?>
     <!-- Menu Area -->
     <div id="menu_area" class="<?php echo ($menu_tabs == 'menu_tabs_side_menu') == true ? 'menu_flex' : ''; ?>">
@@ -48,7 +48,7 @@
         <?php } ?>
         <?php if($menu_type == "menu_one"){ ?>
         <!-- Menu List -->
-        <div id="menu_list">    
+        <div id="menu_one">    
             <h2 class="menu_title sides_title active_menu_title"><span>Sides</span></h2>
             <ul class="menu_section sides_section active_menu_section">
                 <li>
@@ -90,6 +90,50 @@
         </div>
         <!-- /Menu List -->
         <?php }else if($menu_type == "menu_two"){ ?>
+        <!-- Menu List -->
+        <div id="menu_two">    
+            <h2 class="menu_title sides_title active_menu_title"><span>Sides Menu</span></h2>
+            <h3 class="menu_subtitle sides_subtitle active_menu_subtitle"><span>Sides Available until 5pm Saturday &#38; Sunday</span></h3>
+            <ul class="menu_section sides_section active_menu_section">
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 11</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 12</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 10</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 9</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+            </ul>
+            <h2 class="menu_title lunch_title"><span>Lunch Menu</span></h2>
+            <h3 class="menu_subtitle lunch_subtitle"><span>Lunch Available until 5pm Saturday &#38; Sunday</span></h3>
+            <ul class="menu_section lunch_section">
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 11</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 12</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 10</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+                <li>
+                    <h3>Coal Fired Blue Hubbard Pumpkin<span> 9</span></h3>
+                    <p>Pumpkin kosho butter &#38; fried pumpkin seeds</p>
+                </li>
+            </ul>
+        </div>
+        <!-- /Menu List -->
         <?php } ?>
         <!-- /Menu -->
     </div>
