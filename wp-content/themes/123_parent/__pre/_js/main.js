@@ -3,11 +3,22 @@ var Theme = {};
 var Hero = {};
 var Headers = {};
 import slick from 'slick-carousel-browserify';
+import Masonry from 'masonry-layout';
 
-var rand = Math.floor(Math.random() * $(".img-slick").length);
 
+
+Theme.Grid_Masonry = {
+    _init : function(){
+        var msnry = new Masonry('#menu_tabs_pills', {
+            itemSelector : '.grid-item',
+            columnWidth : 200
+        });
+    }
+}
+//Theme.Grid_Masonry._init();
 
 Theme.Slick = {
+    rand : Math.floor(Math.random() * $(".img-slick").length),
     _init : function(){
         $('#slick_slider').slick({
             autoplay : Boolean(hero_fields.autoplay)
@@ -17,7 +28,7 @@ Theme.Slick = {
             ,autoplaySpeed : hero_fields.speed 
             ,pauseOnHover : false
             ,pauseOnFocus : false
-            ,initialSlider : Boolean(hero_fields.random) ? rand : ''
+            ,initialSlider : Boolean(hero_fields.random) ? Theme.Slick.rand : ''
         });
     }
 }

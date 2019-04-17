@@ -47,7 +47,20 @@
 
     div.site_grid {
         $w: 80vw;
-        $c: 3;
+        $c: 4;
+        $g: 1.5vw;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+    }
+
+}
+@media only screen and (min-width: 1024px) {
+
+    // Gallery section 
+
+    div.site_grid {
+        $w: 80vw;
+        $c: 6;
         $g: 1.5vw;
         $s: true;
         @include gridLayout($w, $c, $g, $s);
