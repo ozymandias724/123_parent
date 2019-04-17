@@ -40,7 +40,7 @@
         <?php } else if($menu_tabs == "menu_tabs_side_menu"){ ?>
         <div id="menu_tabs_side_menu">
             <h3><a class="sides_tab active_tab" href="javascript:;">Sides</a></h3>
-            <h3><a class="lunch_tab" href="javascript:;">Lunch</a></h3>
+            <h3><a class="lunch_tab" href="javascript:;">Lunch</a></h3> 
             <h3><a class="brunch_tab" href="javascript:;">Brunch</a></h3>
             <h3><a class="drinks_tab" href="javascript:;">Drinks</a></h3>
             <h3><a class="desserts_tab" href="javascript:;">Desserts</a></h3>
