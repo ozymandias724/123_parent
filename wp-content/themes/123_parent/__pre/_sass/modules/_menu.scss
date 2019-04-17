@@ -57,8 +57,8 @@ $gray_four : #aaabad;
                 padding: 10px 15px;
                 transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
                 display: block;
-                color: $gray_two;
                 border-bottom: 1px solid $gray_one;
+                color: $gray_two;
             }
             > h3 > a.active_tab,
             > h3 > a:active, 
@@ -133,8 +133,11 @@ $gray_four : #aaabad;
                 color: $gray_four;
             }
         }
+    }
+
+    section#mod_menu > #menu_area {
         // Menu Two
-        #menu_two {
+        > #menu_two {
             $w : 80vw;
             $c : 1;
             $g : 3vw;
@@ -143,11 +146,13 @@ $gray_four : #aaabad;
             font-family: sans-serif;
             text-align: left;
         }
-        #menu_two > h2 {
+        // Menu Two Headline Title
+        > #menu_two > h2 {
             font-size: 36px;
             text-transform: capitalize;
         }
-        #menu_two > h3 {    
+        // Menu Two Headline Subtitle
+        > #menu_two > h3 {    
             font-size: 18px;
             font-style: italic;
             font-weight: 500;
@@ -156,16 +161,19 @@ $gray_four : #aaabad;
             border-bottom: 3px dotted $accent_color; 
             margin-bottom: 20px;
         }
-        #menu_two > ul {
+        // Menu Two Unordered Lists
+        > #menu_two > ul {
             list-style: none;
         }
-        #menu_two > ul > li > h3 {
+        // Menu Two Unordered Lists Titles 
+        > #menu_two > ul > li > h3 {
             font-size: 26px;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
         }
-        #menu_two > ul > li > p {
+        // Menu Two Unordered Lists Paragraph Text
+        > #menu_two > ul > li > p {
             font-size: 18px;
             color: $gray_four;
             font-style: italic;
@@ -194,6 +202,7 @@ $gray_four : #aaabad;
     section#mod_menu > #menu_area > #menu_one > h2:before {
         width: 59vw;
     }
+    // Menu Tabbed Side Menu
     section#mod_menu > #menu_area > #menu_tabs_side_menu {
         width: 15vw;
         margin: 0 auto 20px 0;
@@ -204,9 +213,8 @@ $gray_four : #aaabad;
         display: flex;
         align-items: baseline;
         flex-flow: row nowrap;
-
     }
-    // Menu Section with Flexbox Menu One CSS 
+    // Menu Section with Flexbox for Menu One
     section#mod_menu > #menu_area.menu_flex > #menu_one {
         $w : 60vw;
         $c : 2;
@@ -218,12 +226,12 @@ $gray_four : #aaabad;
     section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
         width: 60vw;
     }
-
-    // Menu Two
+    // Menu Two Title and Subtitle
     section#mod_menu > #menu_area #menu_two > h2,
     section#mod_menu > #menu_area #menu_two > h3 {
         text-align: left;
     }
+    // Menu Two Lists
     section#mod_menu > #menu_area > #menu_two {
         $w : 60vw;
         $c : 1; 
@@ -238,7 +246,7 @@ $gray_four : #aaabad;
     section#mod_menu > #menu_area.menu_flex {
         width: 59vw;
     }
-    // Menu Section with Flexbox Menu One CSS 
+    // Menu Section with Flexbox for Menu One
     section#mod_menu > #menu_area.menu_flex > #menu_one {
         $w : 42vw;
         $c : 2;
@@ -246,17 +254,25 @@ $gray_four : #aaabad;
         $s : to-upper-case($string: "");
         @include gridLayout($w, $c, $g, $s);
     }
-    // Menu Section with Flexbox Headline
+    // Menu Section with Flexbox Headline for Menu One
     section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
         width: 42vw;
     }
-
-     // Menu Two
-     section#mod_menu > #menu_area > #menu_two {
+    // Menu Two without Flexbox
+    section#mod_menu > #menu_area > #menu_two {
+        $w : 59vw;
+        $c : 1; 
+        $g : 1vw;
+        $s : to-upper-case($string: "");
+        @include gridLayout($w, $c, $g, $s);
+    }
+    // Menu Two with Flexbox 
+    section#mod_menu > #menu_area.menu_flex > #menu_two {
         $w : 42vw;
         $c : 1; 
         $g : 1vw;
         $s : to-upper-case($string: "");
         @include gridLayout($w, $c, $g, $s);
     }
+    
 }

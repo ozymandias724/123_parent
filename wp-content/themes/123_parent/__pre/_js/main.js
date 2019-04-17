@@ -269,7 +269,7 @@ Theme.Menu = {
                 $(this).hide();
             }
         });
-        // Menu Subitle
+        // Menu Subtitle
         Theme.Menu.menu_subtitle.each(function(){
             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_subtitle")){
                 $(this).show();

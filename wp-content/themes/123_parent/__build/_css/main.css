@@ -3097,8 +3097,8 @@ section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:focus {
     padding: 10px 15px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
     display: block;
-    color: #484848;
     border-bottom: 1px solid #c2c2c2;
+    color: #484848;
   }
   section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a.active_tab,
 section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:active,
@@ -3183,39 +3183,40 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     margin-top: 15px;
     color: #aaabad;
   }
-  section#mod_menu > #menu_area #menu_two {
+
+  section#mod_menu > #menu_area > #menu_two {
     text-align: center;
     font-family: sans-serif;
     text-align: left;
   }
-  section#mod_menu > #menu_area #menu_two ul {
+  section#mod_menu > #menu_area > #menu_two ul {
     text-align: left;
     width: 80vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area #menu_two ul:after {
+  section#mod_menu > #menu_area > #menu_two ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area #menu_two ul > li {
+  section#mod_menu > #menu_area > #menu_two ul > li {
     width: 80vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area #menu_two ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1) {
     margin: 0 3vw 3vw 0;
   }
-  section#mod_menu > #menu_area #menu_two ul > li:nth-child(1n) {
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area #menu_two > h2 {
+  section#mod_menu > #menu_area > #menu_two > h2 {
     font-size: 36px;
     text-transform: capitalize;
   }
-  section#mod_menu > #menu_area #menu_two > h3 {
+  section#mod_menu > #menu_area > #menu_two > h3 {
     font-size: 18px;
     font-style: italic;
     font-weight: 500;
@@ -3224,16 +3225,16 @@ section#mod_menu > #menu_area #menu_tabs_side_menu > h3 > a:focus {
     border-bottom: 3px dotted #d8761f;
     margin-bottom: 20px;
   }
-  section#mod_menu > #menu_area #menu_two > ul {
+  section#mod_menu > #menu_area > #menu_two > ul {
     list-style: none;
   }
-  section#mod_menu > #menu_area #menu_two > ul > li > h3 {
+  section#mod_menu > #menu_area > #menu_two > ul > li > h3 {
     font-size: 26px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
   }
-  section#mod_menu > #menu_area #menu_two > ul > li > p {
+  section#mod_menu > #menu_area > #menu_two > ul > li > p {
     font-size: 18px;
     color: #aaabad;
     font-style: italic;
@@ -3395,7 +3396,7 @@ section#mod_menu > #menu_area #menu_two > h3 {
   }
   section#mod_menu > #menu_area > #menu_two ul {
     text-align: left;
-    width: 42vw;
+    width: 59vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3406,7 +3407,7 @@ section#mod_menu > #menu_area #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_two ul > li {
-    width: 42vw;
+    width: 59vw;
     height: auto;
     float: left;
   }
@@ -3414,6 +3415,33 @@ section#mod_menu > #menu_area #menu_two > h3 {
     margin: 0 1vw 1vw 0;
   }
   section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n) {
+    margin: 0 0 1vw 0;
+  }
+
+  section#mod_menu > #menu_area.menu_flex > #menu_two {
+    text-align: center;
+  }
+  section#mod_menu > #menu_area.menu_flex > #menu_two ul {
+    text-align: left;
+    width: 42vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu > #menu_area.menu_flex > #menu_two ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu > #menu_area.menu_flex > #menu_two ul > li {
+    width: 42vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu > #menu_area.menu_flex > #menu_two ul > li:nth-child(n+1) {
+    margin: 0 1vw 1vw 0;
+  }
+  section#mod_menu > #menu_area.menu_flex > #menu_two ul > li:nth-child(1n) {
     margin: 0 0 1vw 0;
   }
 }
