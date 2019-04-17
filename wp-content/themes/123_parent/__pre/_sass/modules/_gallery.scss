@@ -29,7 +29,7 @@ $accent_color : #d8761f;
         }
 
         // Tabbed Pills
-        #tabbed_gallery > div:first-of-type {
+        #tabbed_gallery.tabs_pills > div:first-of-type {
             color: $gray_one;
             margin: 0 auto 25px auto;
             width: 80vw;
@@ -63,12 +63,17 @@ $accent_color : #d8761f;
         }
 
         // Tabbed Classic
-        /* #tabbed_gallery > div:first-of-type {
+        #tabbed_gallery.tabs_classic > div:first-of-type {
             text-align: center;
             color: $gray_one;
             width: 80vw;
             margin: 0 auto 25px;
-            border-bottom: 2px solid $gray_one;
+            &:after {
+                content: "";
+                display: block;
+                border-bottom: 2px solid $gray_one;
+                z-index: -1;
+            }
             > h3 {
                 margin: 5px 2px 0;
                 text-transform: uppercase;
@@ -82,7 +87,11 @@ $accent_color : #d8761f;
                 color: $gray_two;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
-                transition: all 0.3s ease-in-out;
+                border-top: 2px solid $gray_one;
+                border-left: 2px solid $gray_one;
+                border-right: 2px solid $gray_one;
+                border-bottom: 2px solid $gray_one;
+                transition: color 0.3s ease-in-out;
             }
             > h3 > a.active_gallery,
             > h3 > a:active, 
@@ -92,6 +101,7 @@ $accent_color : #d8761f;
                 border-top: 2px solid $gray_one;
                 border-left: 2px solid $gray_one;
                 border-right: 2px solid $gray_one;
+                border-bottom: 2px solid transparent;
             }
             > h3 > a:hover {
                 color: $white;
@@ -102,16 +112,16 @@ $accent_color : #d8761f;
                 background: linear-gradient(to bottom, $gray_three 0%,$gray_four 100%); 
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gray_three', endColorstr='$gray_four',GradientType=0 ); 
             }
-        } */
+        }
 
         // Tabbed Side Menu
-        /* #tabbed_gallery {
+        > #tabbed_gallery.tabs_side_menu {
             display: flex;
             margin: 0 auto;
             width: 80vw;
             flex-flow: column nowrap;
         }
-        #tabbed_gallery > div:first-of-type {
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
             text-align: center;
             width: 80vw;
             margin-bottom: 15px;
@@ -138,20 +148,12 @@ $accent_color : #d8761f;
                 color: $gray_two;
                 border-bottom: 1px solid transparent;
             }
-        } */
-
-        // Tabbed Pills, Tabbed Classic, Tabbed Side Menu
-        #tabbed_gallery > div:last-of-type > .gallery_section {
-            display: none;
-        }
-        #tabbed_gallery > div:last-of-type > .gallery_section.active_gallery_section {
-            display: inline-block;
         }
 
         // Tabbed Pills, Tabbed Classic, Tabbed Side Menu
-        #tabbed_gallery > div:last-of-type, 
+        > #tabbed_gallery > div:last-of-type, 
         // Standard Gallery
-        #standard_gallery {
+        > #standard_gallery {
             $w : 80vw;
             $c : 2;
             $g : 1.5vw;
@@ -171,85 +173,71 @@ $accent_color : #d8761f;
 }
 
 @media only screen and (min-width: 550px){
-    // Gallery section 
-    section#mod_gallery {
+    // Tabbed Pills and Tabbed Classic
+    section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
+        display: inline-block;
+    }
+    section#mod_gallery > div:last-of-type {
+        $w : 80vw;
+        $c : 2;
+        $g : 1.5vw;
+        $s : true;
+        @include gridLayout($w, $c, $g, $s);
+    }
+    section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
+        text-align: left;
+    }
 
-        // Tabbed Pills and Tabbed Classic
-        #tabbed_gallery > div:first-of-type > h3 {
-            display: inline-block;
-        }
-        > div:last-of-type {
-            $w : 80vw;
-            $c : 2;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-
-        // Tabbed Side Menu
-        /* #tabbed_gallery {
-            flex-flow: row nowrap;
-            width: 90vw;
-        }
-        #tabbed_gallery > div:first-of-type {
-            width: 20vw;
-            margin-bottom: 0;
-        }
-        #tabbed_gallery > div:last-of-type {
-            width: 70vw;
-        }
-        #tabbed_gallery > div:last-of-type {
-            $w : 60vw;
-            $c : 2;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        } */
+    // Tabbed Side Menu
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu {
+        flex-flow: row nowrap;
+        width: 90vw;
+    }
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
+        width: 20vw;
+        margin-bottom: 0;
+    }
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type {
+        width: 70vw;
+    }
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type {
+        $w : 60vw;
+        $c : 2;
+        $g : 1.5vw;
+        $s : true;
+        @include gridLayout($w, $c, $g, $s);
     }
 }
 
 @media only screen and (min-width: 768px){
-    // Gallery section 
-    section#mod_gallery {
-        // Tabbed Pill and Tabbed Classic
-        > div:last-of-type {
-            $w : 80vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-
-        // Tabbed Side Menu
-        /* #tabbed_gallery > div:last-of-type {
-            width: 80vw;
-        }
-        #tabbed_gallery > div:last-of-type {
-            $w : 70vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        } */
-
-        // Standard Gallery
-        #standard_gallery {
-            $w : 80vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        } 
+    // Tabbed Pill and Tabbed Classic
+    section#mod_gallery > #tabbed_gallery.tabs_pills > div:last-of-type {
+        $w : 80vw;
+        $c : 3;
+        $g : 1.5vw;
+        $s : true;
+        @include gridLayout($w, $c, $g, $s);
     }
+
+    // Standard Gallery
+    section#mod_gallery > #standard_gallery {
+        $w : 80vw;
+        $c : 3;
+        $g : 1.5vw;
+        $s : true;
+        @include gridLayout($w, $c, $g, $s);
+    } 
 } 
 
 @media only screen and (min-width: 1000px){
 
     // Tabbed Pills and Tabbed Classic 
-    section#mod_gallery #tabbed_gallery > div:first-of-type {
+    section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type,
+    section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
         width: 60vw;
     }
-    section#mod_gallery #tabbed_gallery > div:last-of-type {
+    section#mod_gallery > #tabbed_gallery.tabs_pills > div:last-of-type,
+    section#mod_gallery > #tabbed_gallery.tabs_classic > div:last-of-type {
         $w : 60vw;
         $c : 4;
         $g : 1.5vw;
@@ -258,15 +246,13 @@ $accent_color : #d8761f;
     } 
 
     // Tabbed Side Menu
-    /* section#mod_gallery #tabbed_gallery,
-    // Standard Gallery 
-    section#mod_gallery #standard_gallery {
-        width: 65vw;
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu {
+        width: 70vw;
     }
-    section#mod_gallery #tabbed_gallery > div:first-of-type {
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
         width: 20vw;
     }
-    #tabbed_gallery > div:last-of-type {
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type {
         width: 80vw;
         $w : 50vw;
         $c : 3;
@@ -274,17 +260,27 @@ $accent_color : #d8761f;
         $s : true;
         @include gridLayout($w, $c, $g, $s);
     }
-    #tabbed_gallery > div:first-of-type > h3 {
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
         margin-right: 15px;
-    } */
+    }
 
+    // Standard Gallery 
+    section#mod_gallery > #standard_gallery {
+        width: 65vw;
+    }
     // Standard Gallery
-    section#mod_gallery #standard_gallery {
+    section#mod_gallery > #standard_gallery {
         $w : 60vw;
         $c : 4;
         $g : 1.5vw;
         $s : true;
         @include gridLayout($w, $c, $g, $s);
+    }
+}
+
+@media only screen and (min-width: 1300px){
+    section#mod_gallery > #tabbed_gallery.tabs_side_menu {
+        width: 65vw;
     }
 }
 

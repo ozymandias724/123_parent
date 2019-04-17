@@ -229,6 +229,7 @@ Theme.Gallery = {
 
     _init : function(){
         Theme.Gallery.link.on("click", Theme.Gallery._link_click);  
+        Theme.Gallery._hide_non_active();
     },
 
     _link_click : function(e){
@@ -242,6 +243,15 @@ Theme.Gallery = {
         });
         Theme.Gallery.image_galleries.each(function(){
             if($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 4) + "_section")){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }
+        });
+    },
+    _hide_non_active : function(){
+        Theme.Gallery.image_galleries.each(function(){
+            if($(this).hasClass("active_gallery_section")){
                 $(this).show();
             }else{
                 $(this).hide();

@@ -18,10 +18,13 @@
     $fields = get_fields($res[0]);
 
     // If status is 1, (possibly)
+
+    // Type of tabs
+    $fields['tabs_type'] = 'tabs_side_menu';
  
     // check type
     // Standard
-    if( $fields['type'] == 'standard' ){ 
+    if( $fields['type'] == 'standard' ){  
         
         $format_gallery = '<li><div class="image" style="background-image:url(%s);"></div></li>';
         
@@ -42,7 +45,7 @@
 
         $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
-        $return_gallery = '<div id="tabbed_gallery"><div>';
+        $return_gallery = '<div id="tabbed_gallery" class="'.$fields['tabs_type'].'"><div>';
         
         foreach($fields['tabbed_gallery'] as $i => $tab){
             $return_gallery .= sprintf(
