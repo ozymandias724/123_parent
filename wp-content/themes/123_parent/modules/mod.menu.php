@@ -23,7 +23,7 @@
 ?>
 
 <?php
-    $menu_tabs = "menu_tabs_pills"; 
+    $menu_tabs = "menu_tabs_side_menu"; 
     $menu_type = "menu_two";
 ?>
     <!-- Menu Area -->

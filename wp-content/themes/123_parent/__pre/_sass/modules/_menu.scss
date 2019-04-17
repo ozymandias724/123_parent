@@ -13,68 +13,69 @@ $gray_four : #aaabad;
             color: $gray_one;
             margin: 0 auto 25px auto;
             text-align: center;
-            // Tab Title
-            > h3 {
-                display: block;
-                margin: 10px 5px;
-                text-transform: uppercase;
-                padding: 10px 0;
-                font-size: 14px;
-            }
-            // Tab Title Link
-            > h3 > a {
-                padding: 10px 15px;
-                border-radius: 20px;
-                background-color: transparent;
-                border: 2px solid $gray_one;
-                color: $gray_two;
-            }
-            // Tab Title Link actions on active_tab, active and focus
-            > h3 > a.active_tab,
-            > h3 > a:active,
-            > h3 > a:focus {
-                background-color: $accent_color;
-                color: $white;
-                border: 2px solid $accent_color;
-            }
-            // Tab Title Link action on hover
-            > h3 > a:hover {
-                background-color: $gray_one;
-                color: $white;
-                border: 2px solid $gray_one;
-            }
+        }
+        // Tab Title
+        > #menu_tabs_pills > h3 {
+            display: block;
+            margin: 10px 5px;
+            text-transform: uppercase;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        // Tab Title Link
+        > #menu_tabs_pills > h3 > a {
+            padding: 10px 15px;
+            border-radius: 20px;
+            background-color: transparent;
+            border: 2px solid $gray_one;
+            color: $gray_two;
+        }
+        // Tab Title Link actions on active_tab, active and focus
+        > #menu_tabs_pills > h3 > a.active_tab,
+        > #menu_tabs_pills > h3 > a:active,
+        > #menu_tabs_pills > h3 > a:focus {
+            background-color: $accent_color;
+            color: $white;
+            border: 2px solid $accent_color;
+        }
+        // Tab Title Link action on hover
+        > #menu_tabs_pills > h3 > a:hover {
+            background-color: $gray_one;
+            color: $white;
+            border: 2px solid $gray_one;
         }
         // Menu Tabbed Side Menu
-        #menu_tabs_side_menu {
+        > #menu_tabs_side_menu {
             text-align: left;
             width: 80vw;
             margin: 0 auto 15px auto;
-            > h3 {
-                display: block;
-                font-size: 14px;
-            }
-            > h3 > a {
-                padding: 10px 15px;
-                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-                display: block;
-                border-bottom: 1px solid $gray_one;
-                color: $gray_two;
-            }
-            > h3 > a.active_tab,
-            > h3 > a:active, 
-            > h3 > a:focus {
-                color: $white;
-                background-color: $accent_color;
-                border-bottom: 1px solid $accent_color;
-            }
-            > h3 > a:hover {
-                background-color: $gray_one;
-                color: $gray_two;
-                border-bottom: 1px solid transparent;
-            }
         }
+        > #menu_tabs_side_menu > h3 {
+            display: block;
+            font-size: 14px;
+        }
+        > #menu_tabs_side_menu > h3 > a {
+            padding: 10px 15px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+            display: block;
+            border-bottom: 1px solid $gray_one;
+            color: $gray_two;
+        }
+        > #menu_tabs_side_menu > h3 > a.active_tab,
+        > #menu_tabs_side_menu > h3 > a:active, 
+        > #menu_tabs_side_menu > h3 > a:focus {
+            color: $white;
+            background-color: $accent_color;
+            border-bottom: 1px solid $accent_color;
+        }
+        > #menu_tabs_side_menu > h3 > a:hover {
+            background-color: $gray_one;
+            color: $gray_two;
+            border-bottom: 1px solid transparent;
+        }
+
         // Menu One Headline
-        #menu_one > h2 {
+        > #menu_one > h2 {
             position: relative;
             z-index: 1;
             font-size: 44px;
@@ -82,56 +83,56 @@ $gray_four : #aaabad;
             margin: 40px 0;
             text-align: center;
             text-transform: uppercase;
-            // Menu One line behind Headline
-            &:before {
-                border-top: 2px solid #dfdfdf;
-                content: "";
-                margin: 0 auto;
-                position: absolute;
-                top: 50%;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 80vw;
-                z-index: -1;
-            }
-            // Menu One Headline Span
-            > span {
-                background: #fff;
-                padding: 0 15px;
-            }
+        }
+        // Menu One line behind Headline
+        > #menu_one > h2:before {
+            border-top: 2px solid #dfdfdf;
+            content: "";
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 80vw;
+            z-index: -1;
+        }
+        // Menu One Headline Span
+        > #menu_one > h2 > span {
+            background: #fff;
+            padding: 0 15px;
         }
         // Menu One
-        #menu_one {
+        > #menu_one {
             $w : 80vw;
             $c : 1;
             $g : 3vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
-            // Menu One Unordered list
-            > ul {
-                list-style: none;
-            }
-            // Menu One unordered list title 
-            > ul > li > h3 {
-                font-size: 26px;
-                font-weight: bold;
-                border-bottom: 3px solid $accent_color;
-                padding-bottom: 15px;
-                display: flex;
-                justify-content: space-between;
-            }
-            // Menu One unordered list title price
-            > ul > li > h3 > span {
-                color: $gray_four;
-                font-weight: 600;
-            }
-            // Menu One unordered list paragraph
-            > ul > li > p {
-                font-size: 18px;
-                margin-top: 15px;
-                color: $gray_four;
-            }
+        }
+        // Menu One Unordered list
+        > #menu_one > ul {
+            list-style: none;
+        }
+        // Menu One unordered list title 
+        > #menu_one > ul > li > h3 {
+            font-size: 26px;
+            font-weight: bold;
+            border-bottom: 3px solid $accent_color;
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        // Menu One unordered list title price
+        > #menu_one > ul > li > h3 > span {
+            color: $gray_four;
+            font-weight: 600;
+        }
+        // Menu One unordered list paragraph
+        > #menu_one > ul > li > p {
+            font-size: 18px;
+            margin-top: 15px;
+            color: $gray_four;
         }
     }
 
@@ -182,97 +183,100 @@ $gray_four : #aaabad;
 }
 
 @media only screen and (min-width: 768px){
-    // Menu Section
-    section#mod_menu > #menu_area { 
-        width: 65vw;
-    }
-    // Menu Tabs Pills Links
-    section#mod_menu > #menu_area > #menu_tabs_pills > h3 {
-        display: inline-block;
-    }
-    // Menu One
-    section#mod_menu > #menu_area > #menu_one {
-        $w : 65vw;
-        $c : 2;
-        $g : 3vw;
-        $s : to-upper-case($string: "");
-        @include gridLayout($w, $c, $g, $s);
-    }
-    // Menu One Headline Line
-    section#mod_menu > #menu_area > #menu_one > h2:before {
-        width: 65vw;
-    }
-    // Menu Tabbed Side Menu
-    section#mod_menu > #menu_area > #menu_tabs_side_menu {
-        width: 15vw;
-        margin: 0 auto 20px 0;
-    }
-    // Menu Section with Flexbox
-    section#mod_menu > #menu_area.menu_flex {
-        width: 90vw;
-        display: flex;
-        align-items: baseline;
-        flex-flow: row nowrap;
-    }
-    // Menu Section with Flexbox for Menu One
-    section#mod_menu > #menu_area.menu_flex > #menu_one {
-        $w : 65vw;
-        $c : 2;
-        $g : 3vw;
-        $s : to-upper-case($string: "");
-        @include gridLayout($w, $c, $g, $s);
-    }
-    // Menu Section with Flexbox Headline
-    section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-        width: 65vw;
-    }
-    // Menu Two Title and Subtitle
-    section#mod_menu > #menu_area #menu_two > h2,
-    section#mod_menu > #menu_area #menu_two > h3 {
-        text-align: left;
-    }
-    // Menu Two Lists
-    section#mod_menu > #menu_area > #menu_two {
-        $w : 65vw;
-        $c : 1; 
-        $g : 1vw;
-        $s : to-upper-case($string: "");
-        @include gridLayout($w, $c, $g, $s);
+    section#mod_menu {
+        // Menu Section
+        > #menu_area { 
+            width: 65vw;
+        }
+        // Menu Tabs Pills Links
+        > #menu_area > #menu_tabs_pills > h3 {
+            display: inline-block;
+        }
+        // Menu One
+        > #menu_area > #menu_one {
+            $w : 65vw;
+            $c : 2;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // Menu One Headline Line
+        > #menu_area > #menu_one > h2:before {
+            width: 65vw;
+        }
+        // Menu Tabbed Side Menu
+        > #menu_area > #menu_tabs_side_menu {
+            width: 15vw;
+            margin: 0 auto 20px 0;
+        }
+        // Menu Section with Flexbox
+        > #menu_area.menu_flex {
+            width: 90vw;
+            display: flex;
+            align-items: baseline;
+            flex-flow: row nowrap;
+        }
+        // Menu Section with Flexbox for Menu One
+        > #menu_area.menu_flex > #menu_one {
+            $w : 65vw;
+            $c : 2;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // Menu Section with Flexbox Headline
+        > #menu_area.menu_flex > #menu_one > h2:before {
+            width: 65vw;
+        }
+        // Menu Two Title and Subtitle
+        > #menu_area #menu_two > h2,
+        > #menu_area #menu_two > h3 {
+            text-align: left;
+        }
+        // Menu Two Lists
+        > #menu_area > #menu_two {
+            $w : 65vw;
+            $c : 1; 
+            $g : 1vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
     }
 }
 
 @media only screen and (min-width: 1350px){
-    // Menu Section with Flexbox
-    section#mod_menu > #menu_area.menu_flex {
-        width: 65vw;
-    }
-    // Menu Section with Flexbox for Menu One
-    section#mod_menu > #menu_area.menu_flex > #menu_one {
-        $w : 42vw;
-        $c : 2;
-        $g : 3vw;
-        $s : to-upper-case($string: "");
-        @include gridLayout($w, $c, $g, $s);
-    }
-    // Menu Section with Flexbox Headline for Menu One
-    section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-        width: 42vw;
-    }
-    // Menu Two without Flexbox
-    section#mod_menu > #menu_area > #menu_two {
-        $w : 65vw;
-        $c : 1; 
-        $g : 1vw;
-        $s : to-upper-case($string: "");
-        @include gridLayout($w, $c, $g, $s);
-    }
-    // Menu Two with Flexbox 
-    section#mod_menu > #menu_area.menu_flex > #menu_two {
-        $w : 42vw;
-        $c : 1; 
-        $g : 1vw;
-        $s : to-upper-case($string: "");
-        @include gridLayout($w, $c, $g, $s);
-    }
-    
+    section#mod_menu {
+        // Menu Section with Flexbox
+        > #menu_area.menu_flex {
+            width: 65vw;
+        }
+        // Menu Section with Flexbox for Menu One
+        > #menu_area.menu_flex > #menu_one {
+            $w : 42vw;
+            $c : 2;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // Menu Section with Flexbox Headline for Menu One
+        > #menu_area.menu_flex > #menu_one > h2:before {
+            width: 42vw;
+        }
+        // Menu Two without Flexbox
+        > #menu_area > #menu_two {
+            $w : 65vw;
+            $c : 1; 
+            $g : 1vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // Menu Two with Flexbox 
+        > #menu_area.menu_flex > #menu_two {
+            $w : 42vw;
+            $c : 1; 
+            $g : 1vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
+    }   
 }

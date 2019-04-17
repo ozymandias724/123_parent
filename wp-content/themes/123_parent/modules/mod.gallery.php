@@ -21,38 +21,56 @@
 
     // Type of tabs
     $fields['tabs_type'] = 'tabs_side_menu';
+    $fields['masonry'] = true; 
  
     // check type
     // Standard
     if( $fields['type'] == 'standard' ){  
         
-        $format_gallery = '<li><div class="image" style="background-image:url(%s);"></div></li>';
-        
-        $return_gallery = '<div id="standard_gallery"><h3>'.$fields['normal_gallery']['heading'].'</h3><ul>';
-        
-        foreach( $fields['normal_gallery']['images'] as $i => $image ){
-            $return_gallery .= sprintf(
-                $format_gallery
-                ,$image['url']
-            );
+        if($fields['masonry'] == true){
+            $format_gallery = '<li><img class="grid_image" src="%s" style="height:%spx;" /></li>';
+            
+            $return_gallery = '<div id="standard_gallery" class="grid_gallery"><h3>' . $fields['normal_gallery']['heading'] . '</h3><ul class="grid_masonry">';
+            
+            foreach( $fields['normal_gallery']['images'] as $i => $image ){
+                $return_gallery .= sprintf(
+                    $format_gallery,
+                    $image['url'],
+                    $image['sizes']['medium-height']
+                );
+            }
+    
+            $return_gallery .= '</ul></div>'; 
+        }else{
+            
+            $format_gallery = '<li><div class="image" style="background-image:url(%s);"></div></li>';
+            
+            $return_gallery = '<div id="standard_gallery" class="non_grid"><h3>' . $fields['normal_gallery']['heading'] . '</h3><ul>';
+            
+            foreach( $fields['normal_gallery']['images'] as $i => $image ){
+                $return_gallery .= sprintf(
+                    $format_gallery,
+                    $image['url']
+                );
+            }
+    
+            $return_gallery .= '</ul></div>'; 
 
         }
-
-        $return_gallery .= '</ul></div>'; 
         
     // Tabbed Gallery
     } else if($fields['type'] == 'tabbed'){
 
         $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
-        $return_gallery = '<div id="tabbed_gallery" class="'.$fields['tabs_type'].'"><div>';
+        $return_gallery = '<div id="tabbed_gallery" class="' . $fields['tabs_type'] . '"><div>';
         
         foreach($fields['tabbed_gallery'] as $i => $tab){
             $return_gallery .= sprintf(
-                $format_gallery
-                ,strtolower(str_replace(' ', '', $tab['tab_title'])) . "_tab" 
-                ,($i === 0 ? "active_gallery" : "")
-                ,$tab['tab_title']
+                $format_gallery ,
+                strtolower(str_replace(' ', '', $tab['tab_title'])) . "_tab",
+                ($i === 0 ? "active_gallery" : ""),
+                $tab['tab_title']
             );
         }
 
@@ -61,10 +79,16 @@
         $gallery_list = '<div>'; 
  
         foreach($fields['tabbed_gallery'] as $i => $tab){
-            $gallery = '<ul class="gallery_section '.strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ' .($i === 0 ? "active_gallery_section" : "").'">';  
+
+            $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ';
+            $active_gallery_section = ($i === 0 ? "active_gallery_section" : "");
+
+            $gallery = '<ul class="gallery_section ' . $tab_title . $active_gallery_section . '">';  
             foreach($tab['images'] as $image){
-                $gallery .= '<li><div class="image" style="background-image:url('.$image['url'].');"></div></li>';
+                $image_url = $image['url'];
+                $gallery .= '<li><div class="image" style="background-image:url(' . $image_url . ');"></div></li>';
             }
+
             $gallery .= '</ul>';
             $gallery_list .=  $gallery;
         }
