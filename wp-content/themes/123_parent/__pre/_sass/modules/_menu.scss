@@ -180,6 +180,113 @@ $gray_four : #aaabad;
             font-style: italic;
         }
     }
+
+    section#mod_menu > #menu_area {
+        // Menu Three
+        #menu_three {
+            $w : 80vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+            text-align: center;
+        }
+        // Menu Three Headline Title
+        > #menu_three > h2 {
+            font-size: 36px;
+            text-transform: capitalize;
+        }
+        // Menu Three Headline Subtitle
+        > #menu_three > h3 {    
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 500;
+            color: $gray_one;
+            padding-bottom: 10px;
+            border-bottom: 3px solid $accent_color; 
+            margin-bottom: 20px;
+        }
+        // Menu Three Unordered Lists
+        > #menu_three > ul {
+            list-style: none;
+            text-align: center;
+        }
+        // Menu Three Unordered Lists Titles 
+        > #menu_three > ul > li > h3 {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        > #menu_three > ul > li > h3 > span {
+            font-weight: 500;
+        }
+        > #menu_three > ul > li > h3 > span:before {
+            content: "";
+            border-left: 2px solid $gray_four;
+            margin: 0 10px 0 15px;
+        }
+        // Menu Three Unordered Lists Paragraph Text
+        > #menu_three > ul > li > p {
+            font-size: 14px;
+            color: $gray_four;
+            font-style: italic;
+        }
+    }
+    section#mod_menu > #menu_area {
+        // Menu Four
+        > #menu_four {
+            $w : 80vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+        }
+        // Menu Four Headline Title
+        > #menu_four > h2 {
+            font-size: 36px;
+            text-transform: capitalize;
+        }
+        // Menu Four Headline Subtitle
+        > #menu_four > h3 {    
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 500;
+            color: $gray_one;
+            padding-bottom: 10px;
+            border-bottom: 3px solid $accent_color; 
+            margin-bottom: 20px;
+        }
+        // Menu Four Unordered Lists
+        > #menu_four > ul {
+            list-style: none;
+        }
+        > #menu_four > ul > li > .menu_image {
+            height: 200px; 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+        // Menu Four Unordered Lists Titles 
+        > #menu_four > ul > li > h3 {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        > #menu_four > ul > li > h3 > div > span {
+            font-size: 14px;
+            position: relative;
+            top: -5px;
+        }
+        // Menu Four Unordered Lists Paragraph Text
+        > #menu_four > ul > li > p {
+            font-size: 14px;
+            color: $gray_four;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px){
@@ -235,11 +342,46 @@ $gray_four : #aaabad;
         }
         // Menu Two Lists
         > #menu_area > #menu_two {
-            $w : 65vw;
+            $w : 60vw;
             $c : 1; 
             $g : 1vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
+        }
+        > #menu_area > #menu_three {
+            $w : 60vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+            text-align: center;
+        }
+        // Menu Three Headline Subtitle
+        > #menu_area > #menu_three > h3 {    
+            font-size: 18px;
+        }
+        // Menu Three Unordered Lists Titles 
+        > #menu_area > #menu_three > ul > li > h3 {
+            font-size: 28px;
+        }
+        // Menu Three Unordered Lists
+        > #menu_area > #menu_three > ul {
+            text-align: center;
+        }
+        // Menu Three Unordered Lists Paragraph Text
+        > #menu_area > #menu_three > ul > li > p {
+            font-size: 18px;
+        }
+
+        // Menu Four
+        > #menu_area > #menu_four {
+            $w : 60vw;
+            $c : 2;
+            $g : 1.5vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
         }
     }
 }
@@ -252,7 +394,7 @@ $gray_four : #aaabad;
         }
         // Menu Section with Flexbox for Menu One
         > #menu_area.menu_flex > #menu_one {
-            $w : 42vw;
+            $w : 48vw;
             $c : 2;
             $g : 3vw;
             $s : to-upper-case($string: "");
@@ -260,7 +402,7 @@ $gray_four : #aaabad;
         }
         // Menu Section with Flexbox Headline for Menu One
         > #menu_area.menu_flex > #menu_one > h2:before {
-            width: 42vw;
+            width: 48vw;
         }
         // Menu Two without Flexbox
         > #menu_area > #menu_two {
@@ -272,11 +414,33 @@ $gray_four : #aaabad;
         }
         // Menu Two with Flexbox 
         > #menu_area.menu_flex > #menu_two {
-            $w : 42vw;
+            $w : 48vw;
             $c : 1; 
             $g : 1vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
+        }
+        > #menu_area > #menu_three {
+            $w : 48vw;
+            $c : 1;
+            $g : 2vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+            text-align: center;
+        }
+        // Menu Three Unordered Lists
+        > #menu_area > #menu_three > ul {
+            text-align: center;
+        }
+        // Menu Four
+        > #menu_area > #menu_four {
+            $w : 48vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
         }
     }   
 }
