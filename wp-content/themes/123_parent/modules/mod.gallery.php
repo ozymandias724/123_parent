@@ -20,8 +20,8 @@
     // If status is 1, (possibly)
 
     // Type of tabs
-    $fields['tabs_type'] = 'tabs_side_menu';
-    $fields['masonry'] = false; 
+    $fields['tabs_type'] = 'tabs_classic';
+    $fields['masonry'] = true; 
  
     // check type
     // Standard
@@ -61,7 +61,41 @@
     } else if($fields['type'] == 'tabbed'){
 
         if($fields['masonry'] == true){
+            $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
+
+            $return_gallery = '<div id="tabbed_gallery" class="grid_gallery ' . $fields['tabs_type'] . '"><div>';
             
+            foreach($fields['tabbed_gallery'] as $i => $tab){
+                $return_gallery .= sprintf(
+                    $format_gallery ,
+                    strtolower(str_replace(' ', '', $tab['tab_title'])) . "_tab",
+                    ($i === 0 ? "active_gallery" : ""),
+                    $tab['tab_title']
+                );
+            }
+    
+            $return_gallery .= '</div>'; 
+    
+            $gallery_list = '<div>'; 
+     
+            foreach($fields['tabbed_gallery'] as $i => $tab){
+    
+                $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ';
+                $active_gallery_section = ($i === 0 ? "active_gallery_section" : "");
+    
+                $gallery = '<ul class="gallery_section ' . $tab_title . $active_gallery_section . '">';  
+                foreach($tab['images'] as $image){
+                    $image_url = $image['sizes']['medium_large'];
+                    $gallery .= '<li><img src="' . $image_url . '" /></li>';
+                }
+    
+                $gallery .= '</ul>';
+                $gallery_list .=  $gallery;
+            }
+            
+            $return_gallery .= $gallery_list . '</div>';
+    
+            $return_gallery .= '</div>';
         }else{
             $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
@@ -95,7 +129,6 @@
                 $gallery_list .=  $gallery;
             }
             
-    
             $return_gallery .= $gallery_list . '</div>';
     
             $return_gallery .= '</div>';

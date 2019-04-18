@@ -123,6 +123,7 @@ $accent_color : #d8761f;
             text-align: center;
             width: 80vw;
             margin-bottom: 15px;
+            margin-right: 15px;
         }
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
             display: block;
@@ -149,7 +150,9 @@ $accent_color : #d8761f;
         }
 
         // Tabbed Pills, Tabbed Classic, Tabbed Side Menu
-        > #tabbed_gallery > div:last-of-type, 
+        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type, 
+        > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type, 
+        > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type, 
         // Standard Gallery
         > #standard_gallery.non_grid {
             $w : 80vw;
@@ -180,6 +183,29 @@ $accent_color : #d8761f;
         > #standard_gallery.grid_gallery > ul > li {
             margin-bottom: 15px;
         }
+
+        // Tabbed Pills and Classic with Masonry Grid
+        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
+            column-count: 2;
+            column-gap: 10px;
+            margin: 0 auto;
+            width: 90vw;
+        }
+        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul > li,
+        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul > li {
+            margin-bottom: 15px;
+        }
+        // Tabbed Side Menu with Mason Grid
+        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
+            column-count: 2;
+            column-gap: 10px;
+            margin: 0 auto;
+            width: 80vw;
+        }
+        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul > li {
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -192,7 +218,8 @@ $accent_color : #d8761f;
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
             display: inline-block;
         }
-        > div:last-of-type.non_grid {
+        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
+        > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
             $w : 80vw;
             $c : 2;
             $g : 1.5vw;
@@ -209,7 +236,7 @@ $accent_color : #d8761f;
             width: 20vw;
             margin-bottom: 0;
         }
-        > #tabbed_gallery.tabs_side_menu > div:last-of-type.non_grid {
+        > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
             width: 70vw;
             $w : 60vw;
             $c : 2;
@@ -217,13 +244,17 @@ $accent_color : #d8761f;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
+        // Tabbed Side Menu with Mason Grid
+        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
+            width: 65vw;
+        }
     }
 }
 
 @media only screen and (min-width: 768px){
     section#mod_gallery {
         // Tabbed Pill and Tabbed Classic
-        > #tabbed_gallery.tabs_pills > div:last-of-type.non_grid {
+        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type {
             $w : 80vw;
             $c : 3;
             $g : 1.5vw;
@@ -242,7 +273,17 @@ $accent_color : #d8761f;
         // Masonry Grid
         > #standard_gallery.grid_gallery > ul {
             column-count: 3;
-            max-width: 85vw;
+            width: 85vw;
+        }
+        // Tabbed Classic and Pills with Masonry Grid
+        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
+            column-count: 3;
+            width: 85vw;
+        }
+        // Tabbed Side Menu with Mason Grid
+        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
+            column-count: 3;
         }
     }
 } 
@@ -254,14 +295,14 @@ $accent_color : #d8761f;
         > #tabbed_gallery.tabs_classic > div:first-of-type {
             width: 60vw;
         }
-        > #tabbed_gallery.tabs_pills > div:last-of-type.non_grid,
-        > #tabbed_gallery.tabs_classic > div:last-of-type.non_grid {
+        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
+        > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
             $w : 60vw;
             $c : 4;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
-        } 
+        }  
     
         // Tabbed Side Menu
         > #tabbed_gallery.tabs_side_menu {
@@ -273,7 +314,7 @@ $accent_color : #d8761f;
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
             margin-right: 15px;
         }
-        > #tabbed_gallery.tabs_side_menu > div:last-of-type.non_grid {
+        > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
             width: 80vw;
             $w : 50vw;
             $c : 3;
@@ -295,7 +336,19 @@ $accent_color : #d8761f;
         // Masonry Grid
         > #standard_gallery.grid_gallery > ul {
             column-count: 3;
-            max-width: 85vw;
+            width: 85vw;
+        }
+        // Tabbed Classic and Pills with Masonry Grid
+        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
+            column-count: 3;
+            width: 85vw;
+        }
+
+        // Tabbed Side Menu with Mason Grid
+        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
+            column-count: 3;
+            width: 50vw;
         }
     }
 }
@@ -307,7 +360,12 @@ $accent_color : #d8761f;
         }
         // Masonry Grid
         > #standard_gallery.grid_gallery > ul {
-            max-width: 65vw;
+            width: 65vw;
+        }
+        // Tabbed Classic and Pills with Masonry Grid
+        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
+            width: 65vw;
         }
     }
 }
