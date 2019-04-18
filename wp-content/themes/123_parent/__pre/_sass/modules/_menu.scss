@@ -110,10 +110,6 @@ $gray_four : #aaabad;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
         }
-        // Menu One Unordered list
-        > #menu_one > ul {
-            list-style: none;
-        }
         // Menu One unordered list title 
         > #menu_one > ul > li > h3 {
             font-size: 26px;
@@ -162,10 +158,6 @@ $gray_four : #aaabad;
             border-bottom: 3px dotted $accent_color; 
             margin-bottom: 20px;
         }
-        // Menu Two Unordered Lists
-        > #menu_two > ul {
-            list-style: none;
-        }
         // Menu Two Unordered Lists Titles 
         > #menu_two > ul > li > h3 {
             font-size: 26px;
@@ -209,7 +201,6 @@ $gray_four : #aaabad;
         }
         // Menu Three Unordered Lists
         > #menu_three > ul {
-            list-style: none;
             text-align: center;
         }
         // Menu Three Unordered Lists Titles 
@@ -258,10 +249,6 @@ $gray_four : #aaabad;
             border-bottom: 3px solid $accent_color; 
             margin-bottom: 20px;
         }
-        // Menu Four Unordered Lists
-        > #menu_four > ul {
-            list-style: none;
-        }
         > #menu_four > ul > li > .menu_image {
             height: 200px; 
             background-size: cover;
@@ -285,6 +272,59 @@ $gray_four : #aaabad;
         > #menu_four > ul > li > p {
             font-size: 14px;
             color: $gray_four;
+        }
+    }
+    section#mod_menu > #menu_area {
+        // Menu Six
+        > #menu_six {
+            $w : 80vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+        }
+        // Menu Six Headline Title
+        > #menu_six > h2 {
+            font-size: 36px;
+            text-transform: capitalize;
+        }
+        // Menu Six Headline Subtitle
+        > #menu_six > h3 {    
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 500;
+            color: $gray_one;
+            padding-bottom: 10px;
+            border-bottom: 3px solid $accent_color; 
+            margin-bottom: 20px;
+        }
+        // Menu Six Unordered Lists
+        > #menu_six > ul > li > .menu_image {
+            height: 220px; 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+        // Menu Six Unordered Lists Titles 
+        > #menu_six > ul > li > div > h3 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        // Menu Six Unordered Lists Paragraph Text
+        > #menu_six > ul > li > div > p {
+            font-size: 14px;
+            color: $gray_four;
+            padding-bottom: 10px;
+            border-bottom: 5px dotted $gray_one;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        > #menu_six > ul > li > div > h4 {
+            font-size: 22px;
+            color: $gray_two;
+            font-weight: 500;
         }
     }
 }
@@ -383,6 +423,43 @@ $gray_four : #aaabad;
             @include gridLayout($w, $c, $g, $s);
             font-family: sans-serif;
         }
+        > #menu_area > #menu_six {
+            $w : 60vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+        }
+        > #menu_area > #menu_six > ul > li {
+            display: flex;
+            align-items: flex-start;
+        }
+        > #menu_area > #menu_six > ul > li > .menu_image {
+            width: 500px;
+            margin-right: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    section#mod_menu {
+        // Menu Six Headline Subtitle
+        > #menu_area > #menu_six > h3 {    
+            font-size: 22px;
+        }
+        // Menu Six Unordered Lists Titles 
+        > #menu_area > #menu_six > ul > li > div > h3 {
+            font-size: 32px;
+        }
+        // Menu Six Unordered Lists Paragraph Text
+        > #menu_area > #menu_six > ul > li > div > p {
+            font-size: 20px;
+            line-height: 1.3em;
+        }
+        > #menu_area > #menu_six > ul > li > div > h4 {
+            font-size: 30px;
+        }
     }
 }
 
@@ -438,6 +515,14 @@ $gray_four : #aaabad;
             $w : 48vw;
             $c : 3;
             $g : 1.5vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+            font-family: sans-serif;
+        }
+        > #menu_area > #menu_six {
+            $w : 48vw;
+            $c : 1;
+            $g : 3vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
             font-family: sans-serif;
