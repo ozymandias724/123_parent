@@ -246,6 +246,42 @@
 }
 
 @font-face {
+  font-family: "Aleo";
+  src: url("../../library/fonts/Aleo-Regular.woff2") format("woff2"), url("../../library/fonts/Aleo-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aleo";
+  src: url("../../library/fonts/Aleo-Bold.woff2") format("woff2"), url("../../library/fonts/Aleo-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aleo";
+  src: url("../../library/fonts/Aleo-BoldItalic.woff2") format("woff2"), url("../../library/fonts/Aleo-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Aleo";
+  src: url("../../library/fonts/Aleo-Light.woff2") format("woff2"), url("../../library/fonts/Aleo-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aleo";
+  src: url("../../library/fonts/Aleo-LightItalic.woff2") format("woff2"), url("../../library/fonts/Aleo-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Aleo";
+  src: url("../../library/fonts/Aleo-Italic.woff2") format("woff2"), url("../../library/fonts/Aleo-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
   font-family: "Lato";
   src: url("../../library/fonts/Lato-Light.woff2") format("woff2"), url("../../library/fonts/Lato-Light.woff") format("woff");
   font-weight: 300;
@@ -3217,167 +3253,145 @@ section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-ty
     max-width: 80vw;
     margin: 0 auto;
   }
+  section#mod_menu > #menu_area > #menu_tabs_pills > h3,
+section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 {
+    display: block;
+    font-size: 14px;
+  }
+  section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a {
+    padding: 10px 25px;
+    color: #c2c2c2;
+  }
+  section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a {
+    padding: 10px 15px;
+    color: #c2c2c2;
+  }
+  section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a.active_tab,
+section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:active,
+section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:focus,
+section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a.active_tab,
+section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:active,
+section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
+    background-color: #d8761f;
+    color: #fff;
+  }
+  section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:hover,
+section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:hover {
+    background-color: #c2c2c2;
+  }
   section#mod_menu > #menu_area > #menu_tabs_pills {
     color: #c2c2c2;
     margin: 0 auto 25px auto;
     text-align: center;
   }
+  section#mod_menu > #menu_area > #menu_tabs_side_menu {
+    margin: 0 auto 15px auto;
+    text-align: left;
+    width: 80vw;
+  }
   section#mod_menu > #menu_area > #menu_tabs_pills > h3 {
-    display: block;
     margin: 10px 5px;
-    text-transform: uppercase;
     padding: 10px 0;
-    font-size: 14px;
+    text-transform: uppercase;
   }
   section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a {
-    padding: 10px 15px;
-    border-radius: 20px;
     background-color: transparent;
     border: 2px solid #c2c2c2;
-    color: #484848;
+    border-radius: 20px;
+  }
+  section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a {
+    border-bottom: 1px solid #c2c2c2;
+    display: block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
   }
   section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a.active_tab,
 section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:active,
 section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:focus {
-    background-color: #d8761f;
-    color: #fff;
     border: 2px solid #d8761f;
-  }
-  section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:hover {
-    background-color: #c2c2c2;
-    color: #fff;
-    border: 2px solid #c2c2c2;
-  }
-  section#mod_menu > #menu_area > #menu_tabs_side_menu {
-    text-align: left;
-    width: 80vw;
-    margin: 0 auto 15px auto;
-  }
-  section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 {
-    display: block;
-    font-size: 14px;
-  }
-  section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a {
-    padding: 10px 15px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-    display: block;
-    border-bottom: 1px solid #c2c2c2;
-    color: #484848;
   }
   section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a.active_tab,
 section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:active,
 section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
-    color: #fff;
-    background-color: #d8761f;
     border-bottom: 1px solid #d8761f;
   }
+  section#mod_menu > #menu_area > #menu_tabs_pills > h3 > a:hover {
+    border: 2px solid #c2c2c2;
+    color: #fff;
+  }
   section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:hover {
-    background-color: #c2c2c2;
-    color: #484848;
     border-bottom: 1px solid transparent;
+    color: #484848;
   }
-  section#mod_menu > #menu_area > #menu_one > h2 {
-    position: relative;
-    z-index: 1;
-    font-size: 44px;
-    font-family: sans-serif;
-    margin: 40px 0;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  section#mod_menu > #menu_area > #menu_one > h2:before {
-    border-top: 2px solid #dfdfdf;
-    content: "";
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 80vw;
-    z-index: -1;
-  }
-  section#mod_menu > #menu_area > #menu_one > h2 > span {
-    background: #fff;
-    padding: 0 15px;
-  }
-  section#mod_menu > #menu_area > #menu_one {
+  section#mod_menu > #menu_area > #menu_one,
+section#mod_menu > #menu_area > #menu_two,
+section#mod_menu > #menu_area > #menu_three,
+section#mod_menu > #menu_area > #menu_four,
+section#mod_menu > #menu_area > #menu_five,
+section#mod_menu > #menu_area > #menu_six {
     text-align: center;
   }
-  section#mod_menu > #menu_area > #menu_one ul {
+  section#mod_menu > #menu_area > #menu_one ul,
+section#mod_menu > #menu_area > #menu_two ul,
+section#mod_menu > #menu_area > #menu_three ul,
+section#mod_menu > #menu_area > #menu_four ul,
+section#mod_menu > #menu_area > #menu_five ul,
+section#mod_menu > #menu_area > #menu_six ul {
     text-align: left;
     width: 80vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area > #menu_one ul:after {
+  section#mod_menu > #menu_area > #menu_one ul:after,
+section#mod_menu > #menu_area > #menu_two ul:after,
+section#mod_menu > #menu_area > #menu_three ul:after,
+section#mod_menu > #menu_area > #menu_four ul:after,
+section#mod_menu > #menu_area > #menu_five ul:after,
+section#mod_menu > #menu_area > #menu_six ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area > #menu_one ul > li {
+  section#mod_menu > #menu_area > #menu_one ul > li,
+section#mod_menu > #menu_area > #menu_two ul > li,
+section#mod_menu > #menu_area > #menu_three ul > li,
+section#mod_menu > #menu_area > #menu_four ul > li,
+section#mod_menu > #menu_area > #menu_five ul > li,
+section#mod_menu > #menu_area > #menu_six ul > li {
     width: 80vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area > #menu_one ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area > #menu_one ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_three ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_four ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_five ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_six ul > li:nth-child(n+1) {
     margin: 0 3vw 3vw 0;
   }
-  section#mod_menu > #menu_area > #menu_one ul > li:nth-child(1n) {
+  section#mod_menu > #menu_area > #menu_one ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_three ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_four ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_five ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_six ul > li:nth-child(1n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area > #menu_one > ul > li > h3 {
-    font-size: 26px;
-    font-weight: bold;
-    border-bottom: 3px solid #d8761f;
-    padding-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-  }
-  section#mod_menu > #menu_area > #menu_one > ul > li > h3 > span {
-    color: #aaabad;
-    font-weight: 600;
-  }
-  section#mod_menu > #menu_area > #menu_one > ul > li > p {
-    font-size: 18px;
-    margin-top: 15px;
-    color: #aaabad;
-  }
-
-  section#mod_menu > #menu_area > #menu_two {
-    text-align: center;
+  section#mod_menu > #menu_area > #menu_one > h2,
+section#mod_menu > #menu_area > #menu_two > h2,
+section#mod_menu > #menu_area > #menu_three > h2,
+section#mod_menu > #menu_area > #menu_four > h2,
+section#mod_menu > #menu_area > #menu_six > h2 {
+    font-size: 40px;
     font-family: sans-serif;
-    text-align: left;
-  }
-  section#mod_menu > #menu_area > #menu_two ul {
-    text-align: left;
-    width: 80vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #menu_area > #menu_two ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #menu_area > #menu_two ul > li {
-    width: 80vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1) {
-    margin: 0 3vw 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n) {
-    margin: 0 0 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_two > h2 {
-    font-size: 36px;
     text-transform: capitalize;
+    letter-spacing: 2px;
   }
-  section#mod_menu > #menu_area > #menu_two > h3 {
+  section#mod_menu > #menu_area > #menu_two > h3,
+section#mod_menu > #menu_area > #menu_three > h3,
+section#mod_menu > #menu_area > #menu_four > h3,
+section#mod_menu > #menu_area > #menu_six > h3 {
     font-size: 18px;
     font-style: italic;
     font-weight: 500;
@@ -3386,64 +3400,80 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
     border-bottom: 3px dotted #d8761f;
     margin-bottom: 20px;
   }
-  section#mod_menu > #menu_area > #menu_two > ul > li > h3 {
+  section#mod_menu > #menu_area > #menu_four > h3,
+section#mod_menu > #menu_area > #menu_six > h3 {
+    border-bottom: 3px solid #d8761f;
+  }
+  section#mod_menu > #menu_area > #menu_one > ul > li > h3,
+section#mod_menu > #menu_area > #menu_two > ul > li > h3,
+section#mod_menu > #menu_area > #menu_four > ul > li > h3,
+section#mod_menu > #menu_area > #menu_five > ul > li > ul > li > h3 {
+    display: flex;
     font-size: 26px;
     font-weight: bold;
-    display: flex;
     justify-content: space-between;
   }
-  section#mod_menu > #menu_area > #menu_two > ul > li > p {
+  section#mod_menu > #menu_area > #menu_one > ul > li > p,
+section#mod_menu > #menu_area > #menu_two > ul > li > p,
+section#mod_menu > #menu_area > #menu_three > ul > li > p,
+section#mod_menu > #menu_area > #menu_five > ul > li > ul > li > p {
     font-size: 18px;
     color: #aaabad;
     font-style: italic;
   }
-
-  section#mod_menu > #menu_area #menu_three {
-    text-align: center;
-    font-family: sans-serif;
-    text-align: center;
+  section#mod_menu > #menu_area > #menu_four > ul > li > .menu_image,
+section#mod_menu > #menu_area > #menu_six > ul > li > .menu_image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
   }
-  section#mod_menu > #menu_area #menu_three ul {
-    text-align: left;
-    width: 80vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
+  section#mod_menu > #menu_area > #menu_one > h2 {
+    margin: 20px 0 40px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Aleo", serif;
+    font-weight: 700;
   }
-  section#mod_menu > #menu_area #menu_three ul:after {
+  section#mod_menu > #menu_area > #menu_one > h2:before {
+    border-top: 2px solid #dfdfdf;
+    bottom: 0;
     content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #menu_area #menu_three ul > li {
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
     width: 80vw;
-    height: auto;
-    float: left;
+    z-index: -1;
   }
-  section#mod_menu > #menu_area #menu_three ul > li:nth-child(n+1) {
-    margin: 0 3vw 3vw 0;
+  section#mod_menu > #menu_area > #menu_one > h2 > span {
+    background: #fff;
+    padding: 0 15px;
   }
-  section#mod_menu > #menu_area #menu_three ul > li:nth-child(1n) {
-    margin: 0 0 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_three > h2 {
-    font-size: 36px;
-    text-transform: capitalize;
-  }
-  section#mod_menu > #menu_area > #menu_three > h3 {
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 500;
-    color: #c2c2c2;
-    padding-bottom: 10px;
+  section#mod_menu > #menu_area > #menu_one > ul > li > h3,
+section#mod_menu > #menu_area > #menu_five > ul > li > ul > li > h3 {
     border-bottom: 3px solid #d8761f;
-    margin-bottom: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
+  section#mod_menu > #menu_area > #menu_one > ul > li > h3 > span,
+section#mod_menu > #menu_area > #menu_five > ul > li > ul > li > h3 > span {
+    color: #aaabad;
+    font-weight: 600;
+  }
+  section#mod_menu > #menu_area > #menu_one > ul > li > p,
+section#mod_menu > #menu_area > #menu_five > ul > li > ul > li > p {
+    font-style: normal;
+  }
+
   section#mod_menu > #menu_area > #menu_three > ul {
     text-align: center;
   }
   section#mod_menu > #menu_area > #menu_three > ul > li > h3 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -3455,64 +3485,9 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
     border-left: 2px solid #aaabad;
     margin: 0 10px 0 15px;
   }
-  section#mod_menu > #menu_area > #menu_three > ul > li > p {
-    font-size: 14px;
-    color: #aaabad;
-    font-style: italic;
-  }
 
-  section#mod_menu > #menu_area > #menu_four {
-    text-align: center;
-    font-family: sans-serif;
-  }
-  section#mod_menu > #menu_area > #menu_four ul {
-    text-align: left;
-    width: 80vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #menu_area > #menu_four ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #menu_area > #menu_four ul > li {
-    width: 80vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #menu_area > #menu_four ul > li:nth-child(n+1) {
-    margin: 0 3vw 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_four ul > li:nth-child(1n) {
-    margin: 0 0 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_four > h2 {
-    font-size: 36px;
-    text-transform: capitalize;
-  }
-  section#mod_menu > #menu_area > #menu_four > h3 {
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 500;
-    color: #c2c2c2;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #d8761f;
-    margin-bottom: 20px;
-  }
-  section#mod_menu > #menu_area > #menu_four > ul > li > .menu_image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 10px;
-  }
   section#mod_menu > #menu_area > #menu_four > ul > li > h3 {
     font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
   }
   section#mod_menu > #menu_area > #menu_four > ul > li > h3 > div > span {
     font-size: 14px;
@@ -3524,53 +3499,20 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
     color: #aaabad;
   }
 
-  section#mod_menu > #menu_area > #menu_six {
-    text-align: center;
-    font-family: sans-serif;
+  section#mod_menu > #menu_area > #menu_five > ul {
+    align-items: center;
   }
-  section#mod_menu > #menu_area > #menu_six ul {
+  section#mod_menu > #menu_area > #menu_five > ul > li > h2 {
+    margin: 20px 0 20px;
+    position: relative;
     text-align: left;
-    width: 80vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #menu_area > #menu_six ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #menu_area > #menu_six ul > li {
-    width: 80vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #menu_area > #menu_six ul > li:nth-child(n+1) {
-    margin: 0 3vw 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_six ul > li:nth-child(1n) {
-    margin: 0 0 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_six > h2 {
+    text-transform: uppercase;
+    font-family: "Aleo", serif;
+    font-weight: 700;
     font-size: 36px;
-    text-transform: capitalize;
+    margin-right: 10px;
   }
-  section#mod_menu > #menu_area > #menu_six > h3 {
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 500;
-    color: #c2c2c2;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #d8761f;
-    margin-bottom: 20px;
-  }
-  section#mod_menu > #menu_area > #menu_six > ul > li > .menu_image {
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: 10px;
-  }
+
   section#mod_menu > #menu_area > #menu_six > ul > li > div > h3 {
     font-size: 22px;
     font-weight: bold;
@@ -3590,11 +3532,17 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
   }
 }
 @media only screen and (min-width: 768px) {
-  section#mod_menu > #menu_area {
+  section#mod_menu > #menu_area,
+section#mod_menu > #menu_area > #menu_one > h2:before,
+section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
     width: 65vw;
   }
   section#mod_menu > #menu_area > #menu_tabs_pills > h3 {
     display: inline-block;
+  }
+  section#mod_menu > #menu_area > #menu_five,
+section#mod_menu > #menu_area > #menu_one {
+    width: 60vw;
   }
   section#mod_menu > #menu_area > #menu_one {
     text-align: center;
@@ -3622,8 +3570,57 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
   section#mod_menu > #menu_area > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area > #menu_one > h2:before {
-    width: 65vw;
+  section#mod_menu > #menu_area > #menu_five {
+    text-align: center;
+  }
+  section#mod_menu > #menu_area > #menu_five ul {
+    text-align: left;
+    width: 60vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu > #menu_area > #menu_five ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu > #menu_area > #menu_five ul > li {
+    width: 60vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu > #menu_area > #menu_five ul > li:nth-child(n+1) {
+    margin: 0 3vw 3vw 0;
+  }
+  section#mod_menu > #menu_area > #menu_five ul > li:nth-child(1n) {
+    margin: 0 0 3vw 0;
+  }
+  section#mod_menu > #menu_area > #menu_five > ul > li {
+    text-align: center;
+  }
+  section#mod_menu > #menu_area > #menu_five > ul > li ul {
+    text-align: left;
+    width: 60vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_menu > #menu_area > #menu_five > ul > li ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_menu > #menu_area > #menu_five > ul > li ul > li {
+    width: 28.5vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_menu > #menu_area > #menu_five > ul > li ul > li:nth-child(n+1) {
+    margin: 0 3vw 3vw 0;
+  }
+  section#mod_menu > #menu_area > #menu_five > ul > li ul > li:nth-child(2n) {
+    margin: 0 0 3vw 0;
   }
   section#mod_menu > #menu_area > #menu_tabs_side_menu {
     width: 15vw;
@@ -3632,7 +3629,7 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
   section#mod_menu > #menu_area.menu_flex {
     width: 90vw;
     display: flex;
-    align-items: baseline;
+    align-items: end;
     flex-flow: row nowrap;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one {
@@ -3661,68 +3658,50 @@ section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 > a:focus {
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-    width: 65vw;
-  }
-  section#mod_menu > #menu_area #menu_two > h2,
-section#mod_menu > #menu_area #menu_two > h3 {
+  section#mod_menu > #menu_area > #menu_two > h2,
+section#mod_menu > #menu_area > #menu_two > h3 {
     text-align: left;
   }
-  section#mod_menu > #menu_area > #menu_two {
+  section#mod_menu > #menu_area > #menu_two,
+section#mod_menu > #menu_area > #menu_three,
+section#mod_menu > #menu_area > #menu_six {
     text-align: center;
   }
-  section#mod_menu > #menu_area > #menu_two ul {
+  section#mod_menu > #menu_area > #menu_two ul,
+section#mod_menu > #menu_area > #menu_three ul,
+section#mod_menu > #menu_area > #menu_six ul {
     text-align: left;
     width: 60vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_menu > #menu_area > #menu_two ul:after {
+  section#mod_menu > #menu_area > #menu_two ul:after,
+section#mod_menu > #menu_area > #menu_three ul:after,
+section#mod_menu > #menu_area > #menu_six ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_menu > #menu_area > #menu_two ul > li {
+  section#mod_menu > #menu_area > #menu_two ul > li,
+section#mod_menu > #menu_area > #menu_three ul > li,
+section#mod_menu > #menu_area > #menu_six ul > li {
     width: 60vw;
     height: auto;
     float: left;
   }
-  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1) {
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_three ul > li:nth-child(n+1),
+section#mod_menu > #menu_area > #menu_six ul > li:nth-child(n+1) {
     margin: 0 1vw 1vw 0;
   }
-  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n) {
+  section#mod_menu > #menu_area > #menu_two ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_three ul > li:nth-child(1n),
+section#mod_menu > #menu_area > #menu_six ul > li:nth-child(1n) {
     margin: 0 0 1vw 0;
   }
-  section#mod_menu > #menu_area > #menu_three {
-    text-align: center;
-    font-family: sans-serif;
-    text-align: center;
-  }
-  section#mod_menu > #menu_area > #menu_three ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #menu_area > #menu_three ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #menu_area > #menu_three ul > li {
-    width: 60vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #menu_area > #menu_three ul > li:nth-child(n+1) {
-    margin: 0 3vw 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_three ul > li:nth-child(1n) {
-    margin: 0 0 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_three > h3 {
+  section#mod_menu > #menu_area > #menu_three > h3,
+section#mod_menu > #menu_area > #menu_three > ul > li > p {
     font-size: 18px;
   }
   section#mod_menu > #menu_area > #menu_three > ul > li > h3 {
@@ -3730,9 +3709,6 @@ section#mod_menu > #menu_area #menu_two > h3 {
   }
   section#mod_menu > #menu_area > #menu_three > ul {
     text-align: center;
-  }
-  section#mod_menu > #menu_area > #menu_three > ul > li > p {
-    font-size: 18px;
   }
   section#mod_menu > #menu_area > #menu_four {
     text-align: center;
@@ -3761,33 +3737,6 @@ section#mod_menu > #menu_area #menu_two > h3 {
   section#mod_menu > #menu_area > #menu_four ul > li:nth-child(2n) {
     margin: 0 0 1.5vw 0;
   }
-  section#mod_menu > #menu_area > #menu_six {
-    text-align: center;
-    font-family: sans-serif;
-  }
-  section#mod_menu > #menu_area > #menu_six ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #menu_area > #menu_six ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #menu_area > #menu_six ul > li {
-    width: 60vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #menu_area > #menu_six ul > li:nth-child(n+1) {
-    margin: 0 3vw 3vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_six ul > li:nth-child(1n) {
-    margin: 0 0 3vw 0;
-  }
   section#mod_menu > #menu_area > #menu_six > ul > li {
     display: flex;
     align-items: flex-start;
@@ -3809,7 +3758,7 @@ section#mod_menu > #menu_area #menu_two > h3 {
     line-height: 1.3em;
   }
   section#mod_menu > #menu_area > #menu_six > ul > li > div > h4 {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
 @media only screen and (min-width: 1350px) {

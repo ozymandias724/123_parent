@@ -8,148 +8,109 @@ $gray_four : #aaabad;
     section#mod_menu > #menu_area {
         max-width: 80vw;
         margin: 0 auto;
+        // Similar Propeties of Tabs
+        > #menu_tabs_pills > h3, 
+        > #menu_tabs_side_menu  > h3 {
+            display: block;
+            font-size: 14px;
+        }
+        > #menu_tabs_pills > h3 > a {
+            padding: 10px 25px;
+            color: $gray_one;
+        }
+        > #menu_tabs_side_menu > h3 > a {
+            padding: 10px 15px;
+            color: $gray_one;
+        }
+        > #menu_tabs_pills > h3 > a.active_tab,
+        > #menu_tabs_pills > h3 > a:active,
+        > #menu_tabs_pills > h3 > a:focus, 
+        > #menu_tabs_side_menu > h3 > a.active_tab,
+        > #menu_tabs_side_menu > h3 > a:active,
+        > #menu_tabs_side_menu > h3 > a:focus {
+            background-color: $accent_color;
+            color: $white;
+        }
+        > #menu_tabs_pills > h3 > a:hover,
+        > #menu_tabs_side_menu > h3 > a:hover {
+            background-color: $gray_one;
+        }
+
         // Menu Tabbed Pills 
         > #menu_tabs_pills {
             color: $gray_one;
             margin: 0 auto 25px auto;
             text-align: center;
         }
+        // Menu Tabbed Side Menu
+        > #menu_tabs_side_menu {
+            margin: 0 auto 15px auto;
+            text-align: left;
+            width: 80vw;
+        }
         // Tab Title
         > #menu_tabs_pills > h3 {
-            display: block;
             margin: 10px 5px;
-            text-transform: uppercase;
             padding: 10px 0;
-            font-size: 14px;
+            text-transform: uppercase;
         }
         // Tab Title Link
         > #menu_tabs_pills > h3 > a {
-            padding: 10px 15px;
-            border-radius: 20px;
             background-color: transparent;
             border: 2px solid $gray_one;
-            color: $gray_two;
+            border-radius: 20px;
+        }
+        > #menu_tabs_side_menu > h3 > a {
+            border-bottom: 1px solid $gray_one;
+            display: block;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
         }
         // Tab Title Link actions on active_tab, active and focus
         > #menu_tabs_pills > h3 > a.active_tab,
         > #menu_tabs_pills > h3 > a:active,
         > #menu_tabs_pills > h3 > a:focus {
-            background-color: $accent_color;
-            color: $white;
             border: 2px solid $accent_color;
-        }
-        // Tab Title Link action on hover
-        > #menu_tabs_pills > h3 > a:hover {
-            background-color: $gray_one;
-            color: $white;
-            border: 2px solid $gray_one;
-        }
-        // Menu Tabbed Side Menu
-        > #menu_tabs_side_menu {
-            text-align: left;
-            width: 80vw;
-            margin: 0 auto 15px auto;
-        }
-        > #menu_tabs_side_menu > h3 {
-            display: block;
-            font-size: 14px;
-        }
-        > #menu_tabs_side_menu > h3 > a {
-            padding: 10px 15px;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-            display: block;
-            border-bottom: 1px solid $gray_one;
-            color: $gray_two;
         }
         > #menu_tabs_side_menu > h3 > a.active_tab,
         > #menu_tabs_side_menu > h3 > a:active, 
         > #menu_tabs_side_menu > h3 > a:focus {
-            color: $white;
-            background-color: $accent_color;
             border-bottom: 1px solid $accent_color;
         }
+        // Tab Title Link action on hover
+        > #menu_tabs_pills > h3 > a:hover {
+            border: 2px solid $gray_one;
+            color: $white;
+        }
         > #menu_tabs_side_menu > h3 > a:hover {
-            background-color: $gray_one;
-            color: $gray_two;
             border-bottom: 1px solid transparent;
+            color: $gray_two;
         }
-
-        // Menu One Headline
-        > #menu_one > h2 {
-            position: relative;
-            z-index: 1;
-            font-size: 44px;
-            font-family: sans-serif;
-            margin: 40px 0;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        // Menu One line behind Headline
-        > #menu_one > h2:before {
-            border-top: 2px solid #dfdfdf;
-            content: "";
-            margin: 0 auto;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 80vw;
-            z-index: -1;
-        }
-        // Menu One Headline Span
-        > #menu_one > h2 > span {
-            background: #fff;
-            padding: 0 15px;
-        }
-        // Menu One
-        > #menu_one {
+        > #menu_one, 
+        > #menu_two,
+        > #menu_three,
+        > #menu_four,
+        > #menu_five, 
+        > #menu_six {
             $w : 80vw;
             $c : 1;
             $g : 3vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
         }
-        // Menu One unordered list title 
-        > #menu_one > ul > li > h3 {
-            font-size: 26px;
-            font-weight: bold;
-            border-bottom: 3px solid $accent_color;
-            padding-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-        // Menu One unordered list title price
-        > #menu_one > ul > li > h3 > span {
-            color: $gray_four;
-            font-weight: 600;
-        }
-        // Menu One unordered list paragraph
-        > #menu_one > ul > li > p {
-            font-size: 18px;
-            margin-top: 15px;
-            color: $gray_four;
-        }
-    }
-
-    section#mod_menu > #menu_area {
-        // Menu Two
-        > #menu_two {
-            $w : 80vw;
-            $c : 1;
-            $g : 3vw;
-            $s : to-upper-case($string: "");
-            @include gridLayout($w, $c, $g, $s);
+        > #menu_one > h2,
+        > #menu_two > h2,
+        > #menu_three > h2,
+        > #menu_four > h2,
+        > #menu_six > h2 {
+            font-size: 40px;
             font-family: sans-serif;
-            text-align: left;
-        }
-        // Menu Two Headline Title
-        > #menu_two > h2 {
-            font-size: 36px;
             text-transform: capitalize;
+            letter-spacing: 2px;
         }
-        // Menu Two Headline Subtitle
-        > #menu_two > h3 {    
+        > #menu_two > h3,
+        > #menu_three > h3,
+        > #menu_four > h3,
+        > #menu_six > h3 {    
             font-size: 18px;
             font-style: italic;
             font-weight: 500;
@@ -158,54 +119,90 @@ $gray_four : #aaabad;
             border-bottom: 3px dotted $accent_color; 
             margin-bottom: 20px;
         }
-        // Menu Two Unordered Lists Titles 
-        > #menu_two > ul > li > h3 {
+        > #menu_four > h3,    
+        > #menu_six > h3 {    
+            border-bottom: 3px solid $accent_color; 
+        }
+        > #menu_one > ul > li > h3,
+        > #menu_two > ul > li > h3,
+        > #menu_four > ul > li > h3,
+        > #menu_five > ul > li > ul > li > h3 {
+            display: flex;
             font-size: 26px;
             font-weight: bold;
-            display: flex;
             justify-content: space-between;
         }
-        // Menu Two Unordered Lists Paragraph Text
-        > #menu_two > ul > li > p {
+        > #menu_one > ul > li > p,
+        > #menu_two > ul > li > p,
+        > #menu_three > ul > li > p,
+        > #menu_five > ul > li > ul > li > p {
             font-size: 18px;
             color: $gray_four;
             font-style: italic;
         }
+        > #menu_four > ul > li > .menu_image, 
+        > #menu_six > ul > li > .menu_image {
+            height: 200px; 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+
+        // Menu One Headline
+        > #menu_one > h2 {
+            margin: 20px 0 40px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: "Aleo", serif;
+            font-weight: 700;
+        }
+        // Menu One line behind Headline
+        > #menu_one > h2:before {
+            border-top: 2px solid #dfdfdf;
+            bottom: 0;
+            content: "";
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 80vw;
+            z-index: -1;
+        }
+        // Menu One Headline Span
+        > #menu_one > h2 > span {
+            background: #fff;
+            padding: 0 15px;
+        }
+        // Menu One unordered list title 
+        > #menu_one > ul > li > h3,
+        > #menu_five > ul > li > ul > li > h3 {
+            border-bottom: 3px solid $accent_color;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        // Menu One unordered list title price
+        > #menu_one > ul > li > h3 > span,
+        > #menu_five > ul > li > ul > li > h3 > span {
+            color: $gray_four;
+            font-weight: 600;
+        }
+        > #menu_one > ul > li > p,
+        > #menu_five > ul > li > ul > li > p {
+            font-style: normal;
+        }
     }
 
     section#mod_menu > #menu_area {
-        // Menu Three
-        #menu_three {
-            $w : 80vw;
-            $c : 1;
-            $g : 3vw;
-            $s : to-upper-case($string: "");
-            @include gridLayout($w, $c, $g, $s);
-            font-family: sans-serif;
-            text-align: center;
-        }
-        // Menu Three Headline Title
-        > #menu_three > h2 {
-            font-size: 36px;
-            text-transform: capitalize;
-        }
-        // Menu Three Headline Subtitle
-        > #menu_three > h3 {    
-            font-size: 15px;
-            font-style: italic;
-            font-weight: 500;
-            color: $gray_one;
-            padding-bottom: 10px;
-            border-bottom: 3px solid $accent_color; 
-            margin-bottom: 20px;
-        }
         // Menu Three Unordered Lists
         > #menu_three > ul {
             text-align: center;
         }
         // Menu Three Unordered Lists Titles 
         > #menu_three > ul > li > h3 {
-            font-size: 22px;
+            font-size: 26px;
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -217,51 +214,11 @@ $gray_four : #aaabad;
             border-left: 2px solid $gray_four;
             margin: 0 10px 0 15px;
         }
-        // Menu Three Unordered Lists Paragraph Text
-        > #menu_three > ul > li > p {
-            font-size: 14px;
-            color: $gray_four;
-            font-style: italic;
-        }
     }
     section#mod_menu > #menu_area {
-        // Menu Four
-        > #menu_four {
-            $w : 80vw;
-            $c : 1;
-            $g : 3vw;
-            $s : to-upper-case($string: "");
-            @include gridLayout($w, $c, $g, $s);
-            font-family: sans-serif;
-        }
-        // Menu Four Headline Title
-        > #menu_four > h2 {
-            font-size: 36px;
-            text-transform: capitalize;
-        }
-        // Menu Four Headline Subtitle
-        > #menu_four > h3 {    
-            font-size: 15px;
-            font-style: italic;
-            font-weight: 500;
-            color: $gray_one;
-            padding-bottom: 10px;
-            border-bottom: 3px solid $accent_color; 
-            margin-bottom: 20px;
-        }
-        > #menu_four > ul > li > .menu_image {
-            height: 200px; 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-bottom: 10px;
-        }
         // Menu Four Unordered Lists Titles 
         > #menu_four > ul > li > h3 {
             font-size: 22px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
         }
         > #menu_four > ul > li > h3 > div > span {
             font-size: 14px;
@@ -274,39 +231,24 @@ $gray_four : #aaabad;
             color: $gray_four;
         }
     }
+
     section#mod_menu > #menu_area {
-        // Menu Six
-        > #menu_six {
-            $w : 80vw;
-            $c : 1;
-            $g : 3vw;
-            $s : to-upper-case($string: "");
-            @include gridLayout($w, $c, $g, $s);
-            font-family: sans-serif;
+        > #menu_five > ul {
+            align-items: center;
         }
-        // Menu Six Headline Title
-        > #menu_six > h2 {
+        > #menu_five > ul > li > h2 {
+            margin: 20px 0 20px;
+            position: relative;
+            text-align: left;
+            text-transform: uppercase;
+            font-family: "Aleo", serif;
+            font-weight: 700;
             font-size: 36px;
-            text-transform: capitalize;
+            margin-right: 10px;
         }
-        // Menu Six Headline Subtitle
-        > #menu_six > h3 {    
-            font-size: 15px;
-            font-style: italic;
-            font-weight: 500;
-            color: $gray_one;
-            padding-bottom: 10px;
-            border-bottom: 3px solid $accent_color; 
-            margin-bottom: 20px;
-        }
-        // Menu Six Unordered Lists
-        > #menu_six > ul > li > .menu_image {
-            height: 220px; 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-bottom: 10px;
-        }
+    }
+
+    section#mod_menu > #menu_area {
         // Menu Six Unordered Lists Titles 
         > #menu_six > ul > li > div > h3 {
             font-size: 22px;
@@ -331,15 +273,19 @@ $gray_four : #aaabad;
 
 @media only screen and (min-width: 768px){
     section#mod_menu {
-        // Menu Section
-        > #menu_area { 
+        > #menu_area,
+        > #menu_area > #menu_one > h2:before,
+        > #menu_area.menu_flex > #menu_one > h2:before { 
             width: 65vw;
         }
         // Menu Tabs Pills Links
         > #menu_area > #menu_tabs_pills > h3 {
             display: inline-block;
         }
-        // Menu One
+        > #menu_area > #menu_five,
+        > #menu_area > #menu_one {
+            width: 60vw;
+        }
         > #menu_area > #menu_one {
             $w : 65vw;
             $c : 2;
@@ -347,9 +293,19 @@ $gray_four : #aaabad;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
         }
-        // Menu One Headline Line
-        > #menu_area > #menu_one > h2:before {
-            width: 65vw;
+        > #menu_area > #menu_five {
+            $w : 60vw;
+            $c : 1;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
+        }
+        > #menu_area > #menu_five > ul > li {
+            $w : 60vw;
+            $c : 2;
+            $g : 3vw;
+            $s : to-upper-case($string: "");
+            @include gridLayout($w, $c, $g, $s);
         }
         // Menu Tabbed Side Menu
         > #menu_area > #menu_tabs_side_menu {
@@ -360,7 +316,7 @@ $gray_four : #aaabad;
         > #menu_area.menu_flex {
             width: 90vw;
             display: flex;
-            align-items: baseline;
+            align-items: end;
             flex-flow: row nowrap;
         }
         // Menu Section with Flexbox for Menu One
@@ -371,34 +327,26 @@ $gray_four : #aaabad;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
         }
-        // Menu Section with Flexbox Headline
-        > #menu_area.menu_flex > #menu_one > h2:before {
-            width: 65vw;
-        }
-        // Menu Two Title and Subtitle
-        > #menu_area #menu_two > h2,
-        > #menu_area #menu_two > h3 {
+    
+        // Menu Two and Three Title and Subtitle
+        > #menu_area > #menu_two > h2,
+        > #menu_area>  #menu_two > h3 {
             text-align: left;
         }
-        // Menu Two Lists
-        > #menu_area > #menu_two {
+        
+        // Common CSS for Menu Two, Three and Six
+        > #menu_area > #menu_two,
+        > #menu_area > #menu_three, 
+        > #menu_area > #menu_six {
             $w : 60vw;
             $c : 1; 
             $g : 1vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
         }
-        > #menu_area > #menu_three {
-            $w : 60vw;
-            $c : 1;
-            $g : 3vw;
-            $s : to-upper-case($string: "");
-            @include gridLayout($w, $c, $g, $s);
-            font-family: sans-serif;
-            text-align: center;
-        }
-        // Menu Three Headline Subtitle
-        > #menu_area > #menu_three > h3 {    
+        
+        > #menu_area > #menu_three > h3,
+        > #menu_area > #menu_three > ul > li > p {    
             font-size: 18px;
         }
         // Menu Three Unordered Lists Titles 
@@ -408,10 +356,6 @@ $gray_four : #aaabad;
         // Menu Three Unordered Lists
         > #menu_area > #menu_three > ul {
             text-align: center;
-        }
-        // Menu Three Unordered Lists Paragraph Text
-        > #menu_area > #menu_three > ul > li > p {
-            font-size: 18px;
         }
 
         // Menu Four
@@ -423,14 +367,8 @@ $gray_four : #aaabad;
             @include gridLayout($w, $c, $g, $s);
             font-family: sans-serif;
         }
-        > #menu_area > #menu_six {
-            $w : 60vw;
-            $c : 1;
-            $g : 3vw;
-            $s : to-upper-case($string: "");
-            @include gridLayout($w, $c, $g, $s);
-            font-family: sans-serif;
-        }
+
+        // Menu Six
         > #menu_area > #menu_six > ul > li {
             display: flex;
             align-items: flex-start;
@@ -458,7 +396,7 @@ $gray_four : #aaabad;
             line-height: 1.3em;
         }
         > #menu_area > #menu_six > ul > li > div > h4 {
-            font-size: 30px;
+            font-size: 26px;
         }
     }
 }
@@ -511,7 +449,7 @@ $gray_four : #aaabad;
             text-align: center;
         }
         // Menu Four
-        > #menu_area > #menu_four {
+        > #menu_area > #menu_four  {
             $w : 48vw;
             $c : 3;
             $g : 1.5vw;

@@ -23,8 +23,8 @@
 ?>
 
 <?php
-    $menu_tabs = 'menu_tabs_pills'; 
-    $menu_type = 'menu_six';
+    $menu_tabs = 'menu_tabs_side_menu'; 
+    $menu_type = 'menu_five';
 ?>
     <!-- Menu Area -->
     <div id="menu_area" class="<?php echo ($menu_tabs == 'menu_tabs_side_menu') == true ? 'menu_flex' : ''; ?>">
@@ -40,15 +40,16 @@
         <?php } ?>
         <div id="<?php echo $menu_type; ?>"> 
         <?php for($x = 0; $x < 2; $x++){ ?>
-        <!-- If Menu One -->
         <?php if($menu_type == 'menu_one'){ ?>  
             <h2 class="menu_title <?php echo ($x == 0) ? ' sides_title active_menu_title':'lunch_title';?>"><span><?php echo ($x == 0) ? 'Sides' : 'Lunch';?></span></h2>
-        <!-- If Menu Two, Three, Four or Six -->
-        <?php }else if($menu_type == 'menu_two' || $menu_type == 'menu_three' || $menu_type == 'menu_four' || $menu_type == 'menu_six'){ ?>   
+        <?php }else if(
+            $menu_type == 'menu_two' || 
+            $menu_type == 'menu_three' || 
+            $menu_type == 'menu_four' ||
+            $menu_type == 'menu_six'){ ?>   
             <h2 class="menu_title <?php echo ($x == 0) ? ' sides_title active_menu_title':'lunch_title';?>"><?php echo ($x == 0) ? 'Sides' : 'Lunch';?> Menu</h2>
             <h3 class="menu_subtitle <?php echo ($x == 0) ? ' sides_subtitle active_menu_subtitle':'lunch_subtitle';?>"><?php echo ($x == 0) ? 'Sides' : 'Lunch';?> Available until 5pm Saturday &#38; Sunday</h3>
         <?php } ?>
-        <!-- If Menu One, Two or Three -->
         <?php if($menu_type == 'menu_one' || $menu_type == 'menu_two' || $menu_type == 'menu_three'){ ?>
             <ul class="menu_section <?php echo ($x == 0) ? ' sides_section active_menu_section':'lunch_section'?>">
             <?php for($i = 0; $i < 4; $i++){ ?>
@@ -58,7 +59,6 @@
                 </li>
             <?php }?>
             </ul>
-        <!-- If Menu Four -->
         <?php }else if($menu_type == 'menu_four'){ ?>
             <ul class="menu_section <?php echo ($x == 0) ? ' sides_section active_menu_section':'lunch_section'?>">
             <?php for($i = 0; $i < 6; $i++){ 
@@ -71,7 +71,22 @@
                 </li>
             <?php }?>
             </ul>
-        <!-- If Menu Six -->
+        <?php }else if($menu_type == 'menu_five'){ ?>
+            <ul class="menu_section <?php echo ($x == 0) ? ' sides_section active_menu_section':'lunch_section'?>">
+            <?php for($y = 0; $y < 2; $y++){ ?>
+                <li>
+                    <h2>Entrees</h2>
+                    <ul>
+                        <?php for($i = 0; $i < 4; $i++){ ?>
+                            <li>
+                                <h3><?php echo ($x == 0) ? 'Sides' : 'Lunch';?> + Guacamole<span> $6.75</span></h3>
+                                <p>Avocado, tomato, onion, cilantro, serrano chili, avocado, tomato, cilantro, serrano chili</p>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </li>
+            <?php } ?>
+            </ul>
         <?php }else if($menu_type == 'menu_six'){ ?>
             <ul class="menu_section <?php echo ($x == 0) ? ' sides_section active_menu_section':'lunch_section'?>">
             <?php for($i = 0; $i < 3; $i++){ ?>
@@ -84,7 +99,7 @@
                     </div>  
                 </li>
             <?php }?>
-            </ul>            
+            </ul>                
         <?php }
         } ?>
         </div>
