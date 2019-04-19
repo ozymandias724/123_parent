@@ -24,7 +24,7 @@
 
 <?php
     $menu_tabs = 'menu_tabs_side_menu'; 
-    $menu_type = 'menu_five';
+    $menu_type = 'menu_six';
 ?>
     <!-- Menu Area -->
     <div id="menu_area" class="<?php echo ($menu_tabs == 'menu_tabs_side_menu') == true ? 'menu_flex' : ''; ?>">
@@ -75,7 +75,7 @@
             <ul class="menu_section <?php echo ($x == 0) ? ' sides_section active_menu_section':'lunch_section'?>">
             <?php for($y = 0; $y < 2; $y++){ ?>
                 <li>
-                    <h2>Entrees</h2>
+                    <div><h2>Entrees</h2><span></span></div>
                     <ul>
                         <?php for($i = 0; $i < 4; $i++){ ?>
                             <li>

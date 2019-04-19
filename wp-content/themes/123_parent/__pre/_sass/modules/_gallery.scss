@@ -4,6 +4,7 @@ $gray_three : #d6d8db;
 $gray_four : #aaabad; 
 $white : $white; 
 $accent_color : #d8761f;
+$max_width: 1262px;
 
 @media only screen {
     // Gallery section 
@@ -67,7 +68,7 @@ $accent_color : #d8761f;
         > #tabbed_gallery.tabs_classic > div:first-of-type {
             text-align: center;
             color: $gray_one;
-            width: 80vw;
+            max-width: $max_width;
             margin: 0 auto 25px;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type:after {
@@ -291,10 +292,6 @@ $accent_color : #d8761f;
 @media only screen and (min-width: 1000px){
     section#mod_gallery {
         // Tabbed Pills and Tabbed Classic 
-        > #tabbed_gallery.tabs_pills > div:first-of-type,
-        > #tabbed_gallery.tabs_classic > div:first-of-type {
-            width: 60vw;
-        }
         > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
         > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
             $w : 60vw;
