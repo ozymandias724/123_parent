@@ -24,7 +24,7 @@
 
 <?php
     $menu_tabs = 'menu_tabs_side_menu'; 
-    $menu_type = 'menu_six';
+    $menu_type = 'menu_one';
 ?>
     <!-- Menu Area -->
     <div id="menu_area" class="<?php echo ($menu_tabs == 'menu_tabs_side_menu') == true ? 'menu_flex' : ''; ?>">

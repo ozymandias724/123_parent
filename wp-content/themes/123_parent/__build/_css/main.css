@@ -2581,6 +2581,7 @@ section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:fo
     color: #c2c2c2;
     max-width: 1262px;
     margin: 0 auto 25px;
+    padding: 0 10px;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type:after {
     content: "";
@@ -2612,7 +2613,7 @@ section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:
 section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus {
     background-color: #fff;
     color: #d8761f;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:hover {
     color: #fff;
@@ -3246,8 +3247,9 @@ section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-ty
 }
 @media only screen {
   section#mod_menu > #menu_area {
-    max-width: 80vw;
+    max-width: 1262px;
     margin: 0 auto;
+    padding: 0 10px;
   }
   section#mod_menu > #menu_area > #menu_tabs_pills > h3,
 section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 {
@@ -3449,12 +3451,15 @@ section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
     position: absolute;
     right: 0;
     top: 50%;
-    width: 80vw;
     z-index: -1;
   }
   section#mod_menu > #menu_area > #menu_one > h2 > span {
     background: #fff;
     padding: 0 15px;
+  }
+  section#mod_menu > #menu_area > #menu_two {
+    width: 90vw;
+    margin: 0 auto;
   }
   section#mod_menu > #menu_area > #menu_two > h3 {
     font-style: italic;
@@ -3464,9 +3469,6 @@ section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
   }
   section#mod_menu > #menu_area > #menu_two > ul > li > h3 {
     text-transform: uppercase;
-  }
-  section#mod_menu > #menu_area > #menu_three {
-    width: 80vw;
   }
   section#mod_menu > #menu_area > #menu_three > ul {
     text-align: center;
@@ -3536,9 +3538,6 @@ section#mod_menu > #menu_area > #menu_three > h3 {
   section#mod_menu > #menu_area > #menu_five > ul > li > ul > li {
     margin-bottom: 20px;
   }
-  section#mod_menu > #menu_area > #menu_six {
-    width: 80vw;
-  }
   section#mod_menu > #menu_area > #menu_six > h2,
 section#mod_menu > #menu_area > #menu_six > h3 {
     text-align: center;
@@ -3593,20 +3592,12 @@ section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
     font-size: 28px;
   }
 
-  section#mod_menu > #menu_area.menu_flex > #menu_six {
-    width: 60vw;
-  }
-
-  section#mod_menu > #menu_area,
-section#mod_menu > #menu_area > #menu_one > h2:before,
-section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-    width: 65vw;
-  }
-
-  section#mod_menu > #menu_area > #menu_five,
-section#mod_menu > #menu_area > #menu_one,
-section#mod_menu > #menu_area > #menu_three {
-    width: 60vw;
+  section#mod_menu > #menu_area.menu_flex > #menu_six,
+section#mod_menu > #menu_area.menu_flex > #menu_five,
+section#mod_menu > #menu_area.menu_flex > #menu_four,
+section#mod_menu > #menu_area.menu_flex > #menu_three,
+section#mod_menu > #menu_area.menu_flex > #menu_two {
+    width: 70vw;
   }
 
   section#mod_menu > #menu_area > #menu_one {
@@ -3614,7 +3605,7 @@ section#mod_menu > #menu_area > #menu_three {
   }
   section#mod_menu > #menu_area > #menu_one ul {
     text-align: left;
-    width: 65vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3625,7 +3616,7 @@ section#mod_menu > #menu_area > #menu_three {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_one ul > li {
-    width: 31vw;
+    width: 33.5vw;
     height: auto;
     float: left;
   }
@@ -3642,10 +3633,10 @@ section#mod_menu > #menu_area > #menu_three {
   }
 
   section#mod_menu > #menu_area.menu_flex {
-    width: 65vw;
     display: flex;
     align-items: end;
     flex-flow: row nowrap;
+    justify-content: center;
   }
 
   section#mod_menu > #menu_area.menu_flex > #menu_one {
@@ -3653,7 +3644,7 @@ section#mod_menu > #menu_area > #menu_three {
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul {
     text-align: left;
-    width: 65vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3664,7 +3655,7 @@ section#mod_menu > #menu_area > #menu_three {
     clear: both;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li {
-    width: 31vw;
+    width: 33.5vw;
     height: auto;
     float: left;
   }
@@ -3680,17 +3671,13 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     text-align: left;
   }
 
-  section#mod_menu > #menu_area > #menu_three > ul {
-    text-align: center;
-  }
-
   section#mod_menu > #menu_area > #menu_four {
     text-align: center;
     font-family: sans-serif;
   }
   section#mod_menu > #menu_area > #menu_four ul {
     text-align: left;
-    width: 60vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3701,7 +3688,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_four ul > li {
-    width: 29.25vw;
+    width: 34.25vw;
     height: auto;
     float: left;
   }
@@ -3724,23 +3711,20 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   }
 }
 @media only screen and (min-width: 1000px) {
-  section#mod_menu > #menu_area > #menu_six {
-    width: 63vw;
+  section#mod_menu > #menu_area > #menu_five > ul {
+    display: flex;
+    justify-content: space-between;
   }
-}
-@media only screen and (min-width: 1350px) {
-  section#mod_menu > #menu_area > #menu_six {
-    width: 65vw;
+  section#mod_menu > #menu_area > #menu_five > ul > li:first-of-type {
+    margin-right: 40px;
   }
-  section#mod_menu > #menu_area.menu_flex {
-    width: 65vw;
-  }
+
   section#mod_menu > #menu_area.menu_flex > #menu_one {
     text-align: center;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul {
     text-align: left;
-    width: 48vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3751,7 +3735,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li {
-    width: 22.5vw;
+    width: 33.5vw;
     height: auto;
     float: left;
   }
@@ -3761,14 +3745,12 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-    width: 48vw;
-  }
   section#mod_menu > #menu_area.menu_flex > #menu_two {
-    width: 60vw;
+    width: 70vw;
+    margin: 0;
   }
-  section#mod_menu > #menu_area > #menu_three > ul {
-    text-align: center;
+  section#mod_menu > #menu_area.menu_flex > #menu_four {
+    width: 70vw;
   }
   section#mod_menu > #menu_area > #menu_four {
     text-align: center;
@@ -3776,7 +3758,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   }
   section#mod_menu > #menu_area > #menu_four ul {
     text-align: left;
-    width: 48vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3787,7 +3769,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_four ul > li {
-    width: 15vw;
+    width: 22.3333333333vw;
     height: auto;
     float: left;
   }
@@ -3796,19 +3778,6 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   }
   section#mod_menu > #menu_area > #menu_four ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_five > ul {
-    width: 65vw;
-    display: flex;
-    justify-content: space-between;
-  }
-  section#mod_menu > #menu_area.menu_flex > #menu_five > ul {
-    display: flex;
-    width: 51vw;
-    justify-content: space-between;
-  }
-  section#mod_menu > #menu_area > #menu_five > ul > li:first-of-type {
-    margin-right: 40px;
   }
 }
 

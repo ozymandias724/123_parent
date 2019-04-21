@@ -8,9 +8,9 @@ $max_width: 1262px;
 
 @media only screen {    
     section#mod_menu > #menu_area {
-        max-width: 80vw;
+        max-width: $max_width;
         margin: 0 auto;
-
+        padding: 0 10px;
         // Similar Propeties of Tabs
         > #menu_tabs_pills > h3, 
         > #menu_tabs_side_menu  > h3 {
@@ -199,13 +199,17 @@ $max_width: 1262px;
             position: absolute;
             right: 0;
             top: 50%;
-            width: 80vw;
             z-index: -1;
         }
         // Menu One Headline Span
         > #menu_one > h2 > span {
             background: #fff;
             padding: 0 15px;
+        }
+
+        > #menu_two {
+            width: 90vw;
+            margin: 0 auto;
         }
         > #menu_two > h3 {
             font-style: italic;
@@ -217,9 +221,6 @@ $max_width: 1262px;
             text-transform: uppercase;
         }
         
-        > #menu_three {
-            width: 80vw;
-        }
         // Menu Three Unordered Lists
         > #menu_three > ul {
             text-align: center;
@@ -294,10 +295,7 @@ $max_width: 1262px;
         > #menu_five > ul > li > ul > li {
             margin-bottom: 20px;
         }
-    
-        > #menu_six {
-            width: 80vw;
-        }
+
         > #menu_six > h2,
         > #menu_six > h3 {
             text-align: center;
@@ -324,7 +322,6 @@ $max_width: 1262px;
             border-bottom: 4px dotted $gray_one;
             margin-bottom: 20px;
         }
-        
     }
 }
 
@@ -353,21 +350,15 @@ $max_width: 1262px;
     section#mod_menu > #menu_area > #menu_six > ul > li > div > h3 {
         font-size: 28px;
     }
-    section#mod_menu > #menu_area.menu_flex > #menu_six {
-        width: 60vw;
-    }
-    section#mod_menu > #menu_area,
-    section#mod_menu > #menu_area > #menu_one > h2:before,
-    section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before { 
-        width: 65vw;
-    }
-    section#mod_menu > #menu_area > #menu_five,
-    section#mod_menu > #menu_area > #menu_one, 
-    section#mod_menu > #menu_area > #menu_three {
-        width: 60vw;
+    section#mod_menu > #menu_area.menu_flex > #menu_six,
+    section#mod_menu > #menu_area.menu_flex > #menu_five,
+    section#mod_menu > #menu_area.menu_flex > #menu_four,
+    section#mod_menu > #menu_area.menu_flex > #menu_three,
+    section#mod_menu > #menu_area.menu_flex > #menu_two {
+        width: 70vw;
     }
     section#mod_menu > #menu_area > #menu_one {
-        $w : 65vw;
+        $w : 70vw;
         $c : 2;
         $g : 3vw;
         $s : to-upper-case($string: "");
@@ -380,14 +371,14 @@ $max_width: 1262px;
     }
     // Menu Section with Flexbox
     section#mod_menu > #menu_area.menu_flex {
-        width: 65vw;
         display: flex;
         align-items: end;
         flex-flow: row nowrap;
+        justify-content: center;
     }
     // Menu Section with Flexbox for Menu One
     section#mod_menu > #menu_area.menu_flex > #menu_one {
-        $w : 65vw;
+        $w : 70vw;
         $c : 2;
         $g : 3vw;
         $s : to-upper-case($string: "");
@@ -400,14 +391,9 @@ $max_width: 1262px;
         text-align: left;
     }
 
-    // Menu Three Unordered Lists
-    section#mod_menu > #menu_area > #menu_three > ul {
-        text-align: center;
-    }
-
     // Menu Four
     section#mod_menu > #menu_area > #menu_four {
-        $w : 60vw;
+        $w : 70vw;
         $c : 2;
         $g : 1.5vw;
         $s : to-upper-case($string: "");
@@ -429,62 +415,40 @@ $max_width: 1262px;
 
 @media only screen and (min-width: 1000px){
     section#mod_menu {
-        > #menu_area > #menu_six {
-            width: 63vw;
+        > #menu_area > #menu_five > ul {
+            display: flex;
+            justify-content: space-between;
         }
+        > #menu_area > #menu_five > ul > li:first-of-type {
+            margin-right: 40px; 
+        } 
     }
-}
-
-@media only screen and (min-width: 1350px){
     section#mod_menu {
-        > #menu_area > #menu_six {
-            width: 65vw;
-        }
-        // Menu Section with Flexbox
-        > #menu_area.menu_flex {
-            width: 65vw;
-        }
         // Menu Section with Flexbox for Menu One
         > #menu_area.menu_flex > #menu_one {
-            $w : 48vw;
+            $w : 70vw;
             $c : 2;
             $g : 3vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
         }
-        // Menu Section with Flexbox Headline for Menu One
-        > #menu_area.menu_flex > #menu_one > h2:before {
-            width: 48vw;
-        }
+  
         // Menu Two with Flexbox 
         > #menu_area.menu_flex > #menu_two {
-            width: 60vw;
+            width: 70vw;
+            margin: 0;
         }
-        // Menu Three Unordered Lists
-        > #menu_area > #menu_three > ul {
-            text-align: center;
+        > #menu_area.menu_flex > #menu_four {
+            width: 70vw;
         }
         // Menu Four
         > #menu_area > #menu_four  {
-            $w : 48vw;
+            $w : 70vw;
             $c : 3;
             $g : 1.5vw;
             $s : to-upper-case($string: "");
             @include gridLayout($w, $c, $g, $s);
             font-family: sans-serif;
-        }
-        > #menu_area > #menu_five > ul {
-            width: 65vw;
-            display: flex;
-            justify-content: space-between;
-        }
-        > #menu_area.menu_flex > #menu_five > ul {
-            display: flex;
-            width: 51vw;
-            justify-content: space-between;
-        }
-        > #menu_area > #menu_five > ul > li:first-of-type {
-            margin-right: 40px; 
         }
     }   
 }
