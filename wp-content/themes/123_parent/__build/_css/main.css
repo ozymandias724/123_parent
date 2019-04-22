@@ -2593,13 +2593,12 @@ section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:fo
     z-index: -1;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-    margin: 5px 2px 8px;
     text-transform: uppercase;
     padding: 10px 0;
     display: block;
     font-size: 14px;
   }
-  section#mod_gallery > #tabbed_gallery > div:first-of-type > h3.active_tab_title {
+  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3.active_tab_title {
     margin: 5px 2px 0px;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
@@ -2633,7 +2632,6 @@ section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:
   section#mod_gallery > #tabbed_gallery.tabs_side_menu {
     display: flex;
     margin: 0 auto;
-    width: 90vw;
     flex-flow: column nowrap;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
@@ -2871,9 +2869,6 @@ section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type u
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
     display: inline-block;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-    margin: 5px 2px 0px;
-  }
   section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type {
     text-align: center;
   }
@@ -2947,9 +2942,6 @@ section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-ty
   }
 }
 @media only screen and (min-width: 1000px) {
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-    margin: 5px 2px 0px;
-  }
   section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
 section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
     text-align: center;
@@ -2988,9 +2980,6 @@ section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type u
   }
   section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
     width: 55vw;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
-    width: 70vw;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
     width: 20vw;
