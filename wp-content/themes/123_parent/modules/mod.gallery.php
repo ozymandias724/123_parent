@@ -20,7 +20,7 @@
     // If status is 1, (possibly)
 
     // Type of tabs
-    $fields['tabs_type'] = 'tabs_side_menu';
+    $fields['tabs_type'] = 'tabs_classic';
     $fields['masonry'] = true;
  
     // check type
@@ -47,17 +47,21 @@
     // Tabbed Gallery
     } else if($fields['type'] == 'tabbed'){
 
-        $format_gallery = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
+        $format_gallery = '<h3 class="%s"><a class="%s %s" href="javascript:;">%s</a></h3>';
 
         $gallery_class = ($fields['masonry'] == true) ? 'grid_gallery ' : 'non_grid ';
 
         $return_gallery = '<div id="tabbed_gallery" class="' . $gallery_class . $fields['tabs_type'] . '"><div>';
         
         foreach($fields['tabbed_gallery'] as $i => $tab){
+
+            $active_tab_title = ($i == 0) ? 'active_tab_title' : '';
+
             $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])) . "_tab";
             
             $return_gallery .= sprintf(
                 $format_gallery
+                ,$active_tab_title
                 ,$tab_title
                 ,($i === 0 ? "active_gallery" : "")
                 ,$tab['tab_title']

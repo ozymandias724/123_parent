@@ -4,7 +4,6 @@ $gray_three : #d6d8db;
 $gray_four : #aaabad; 
 $white : $white; 
 $accent_color : #d8761f;
-$max_width: 1262px;
 
 @media only screen {
     // Gallery section 
@@ -28,7 +27,7 @@ $max_width: 1262px;
         #standard_gallery {
             min-height: 90vh; 
             margin-bottom: 20px;
-            max-width: 1262px;
+            max-width: $nav_maxwidth;
             margin: 0 auto;
         }
 
@@ -36,7 +35,7 @@ $max_width: 1262px;
         > #tabbed_gallery.tabs_pills > div:first-of-type {
             color: $gray_one;
             margin: 0 auto 25px auto;
-            max-width: $max_width;
+            max-width: $nav_maxwidth;
             text-align: center;
         }
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
@@ -70,7 +69,7 @@ $max_width: 1262px;
         > #tabbed_gallery.tabs_classic > div:first-of-type {
             text-align: center;
             color: $gray_one;
-            max-width: $max_width;
+            max-width: $nav_maxwidth;
             margin: 0 auto 25px;
             padding: 0 10px;
         }
@@ -81,11 +80,14 @@ $max_width: 1262px;
             z-index: -1;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-            margin: 5px 2px 0;
+            margin: 5px 2px 8px;
             text-transform: uppercase;
             padding: 10px 0;
-            display: inline-block;
+            display: block;
             font-size: 14px;
+        }
+        > #tabbed_gallery > div:first-of-type > h3.active_tab_title {
+            margin: 5px 2px 0px;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
             padding: 10px 15px;
@@ -190,7 +192,7 @@ $max_width: 1262px;
             column-count: 2;
             column-gap: 10px;
             margin: 0 auto;
-            max-width: $max_width; 
+            max-width: $nav_maxwidth; 
             padding: 0 20px;
         }
         > #standard_gallery.grid_gallery > ul > li {
@@ -202,8 +204,8 @@ $max_width: 1262px;
         > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
             column-count: 2;
             column-gap: 10px;
-            margin: 0 auto;
-            max-width: $max_width;
+            margin: 0 auto 20px;
+            max-width: $nav_maxwidth;
             padding: 0 20px;
         }
         > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul > li,
@@ -215,7 +217,7 @@ $max_width: 1262px;
             column-count: 2;
             column-gap: 10px;
             margin: 0 auto;
-            max-width: $max_width;
+            max-width: $nav_maxwidth;
         }
         > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul > li {
             margin-bottom: 15px;
@@ -225,10 +227,6 @@ $max_width: 1262px;
 
 @media only screen and (min-width: 550px){
     section#mod_gallery {
-        // Tabbed Pills and Tabbed Classic
-        > #tabbed_gallery.tabs_classic > div:first-of-type {
-            text-align: left;
-        }
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
             display: inline-block;
         }
@@ -265,6 +263,16 @@ $max_width: 1262px;
 
 @media only screen and (min-width: 768px){
     section#mod_gallery {
+        // Tabbed Pills and Tabbed Classic
+        > #tabbed_gallery.tabs_classic > div:first-of-type {
+            text-align: left;
+        }
+        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
+            display: inline-block;
+        }
+        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
+            margin: 5px 2px 0px;
+        }
         // Tabbed Pill and Tabbed Classic
         > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type {
             $w : 80vw;
@@ -304,6 +312,9 @@ $max_width: 1262px;
 
 @media only screen and (min-width: 1000px){
     section#mod_gallery {
+        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
+            margin: 5px 2px 0px;
+        }
         // Tabbed Pills and Tabbed Classic 
         > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
         > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {

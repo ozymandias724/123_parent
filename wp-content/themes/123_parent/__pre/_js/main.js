@@ -222,22 +222,25 @@ Theme.PA = {
 
 
 Theme.Gallery = {
-    link : $("#tabbed_gallery > div > h3 > a"),
+    links : $("#tabbed_gallery > div:first-of-type > h3 > a"),
     active_link_text : $("a.active_gallery").text(),
     image_galleries : $(".gallery_section"), 
 
     _init : function(){
-        Theme.Gallery.link.on("click", Theme.Gallery._link_click);  
+        Theme.Gallery.links.on("click", Theme.Gallery._link_click);  
         Theme.Gallery._hide_non_active();
     },
 
     _link_click : function(e){
         Theme.Gallery.link_text = e.target.classList[0];
-        Theme.Gallery.link.each(function(){
+        Theme.Gallery.links.each(function(){
             if($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 4) + "_tab")){
                 $(this).addClass('active_gallery');
+                $(this).parent().insertAfter("#tabbed_gallery > div:first-of-type > h3:last-of-type");
+                $(this).parent().addClass('active_tab_title');
             }else{
                 $(this).removeClass('active_gallery');
+                $(this).parent().removeClass('active_tab_title');
             }
         });
         Theme.Gallery.image_galleries.each(function(){
@@ -256,84 +259,89 @@ Theme.Gallery = {
                 $(this).hide();
             }
         });
+        Theme.Gallery.links.each(function(){
+            if($(this).hasClass("active_gallery")){
+                $(this).parent().insertAfter("#tabbed_gallery > div:first-of-type > h3:last-of-type");
+            }
+        });
     }
 }
 Theme.Gallery._init();
 
-Theme.Menu = {
-    link : $("#mod_menu > #menu_area h3 a"),
-    active_link_text : $("#mod_menu a.active_tab").text(),
-    menu_section: $(".menu_section"), 
-    menu_title : $(".menu_title"), 
-    menu_subtitle : $(".menu_subtitle"), 
+// Theme.Menu = {
+//     link : $("#mod_menu > #menu_area h3 a"),
+//     active_link_text : $("#mod_menu a.active_tab").text(),
+//     menu_section: $(".menu_section"), 
+//     menu_title : $(".menu_title"), 
+//     menu_subtitle : $(".menu_subtitle"), 
 
-    _init : function(){
-        Theme.Menu.link.on("click", Theme.Menu._link_click);  
-        Theme.Menu._hide_non_active();
-    },
-    _link_click : function(e){
-        Theme.Menu.link_text = e.target.classList[0];
-        // Tab Link
-        Theme.Menu.link.each(function(){
-            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_tab")){
-                $(this).addClass('active_tab');
-            }else{
-                $(this).removeClass('active_tab');
-            }
-        });
-        // Menu Title
-        Theme.Menu.menu_title.each(function(){
-            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_title")){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        });
-        // Menu Subtitle
-        Theme.Menu.menu_subtitle.each(function(){
-            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_subtitle")){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        });
-        // Menu List
-        Theme.Menu.menu_section.each(function(){
-            if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_section")){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        });
-    }, 
-    _hide_non_active : function(){
-        // Menu Title
-        Theme.Menu.menu_title.each(function(){
-            if($(this).hasClass("active_menu_title")){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        });
-        // Menu Subtitle
-        Theme.Menu.menu_subtitle.each(function(){
-            if($(this).hasClass("active_menu_subtitle")){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        });
-        // Menu List
-        Theme.Menu.menu_section.each(function(){
-            if($(this).hasClass("active_menu_section")){
-                $(this).show();
-            }else{
-                $(this).hide();
-            }
-        });
-    }
-}
-Theme.Menu._init();
+//     _init : function(){
+//         Theme.Menu.link.on("click", Theme.Menu._link_click);  
+//         Theme.Menu._hide_non_active();
+//     },
+//     _link_click : function(e){
+//         Theme.Menu.link_text = e.target.classList[0];
+//         // Tab Link
+//         Theme.Menu.link.each(function(){
+//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_tab")){
+//                 $(this).addClass('active_tab');
+//             }else{
+//                 $(this).removeClass('active_tab');
+//             }
+//         });
+//         // Menu Title
+//         Theme.Menu.menu_title.each(function(){
+//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_title")){
+//                 $(this).show();
+//             }else{
+//                 $(this).hide();
+//             }
+//         });
+//         // Menu Subtitle
+//         Theme.Menu.menu_subtitle.each(function(){
+//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_subtitle")){
+//                 $(this).show();
+//             }else{
+//                 $(this).hide();
+//             }
+//         });
+//         // Menu List
+//         Theme.Menu.menu_section.each(function(){
+//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_section")){
+//                 $(this).show();
+//             }else{
+//                 $(this).hide();
+//             }
+//         });
+//     }, 
+//     _hide_non_active : function(){
+//         // Menu Title
+//         Theme.Menu.menu_title.each(function(){
+//             if($(this).hasClass("active_menu_title")){
+//                 $(this).show();
+//             }else{
+//                 $(this).hide();
+//             }
+//         });
+//         // Menu Subtitle
+//         Theme.Menu.menu_subtitle.each(function(){
+//             if($(this).hasClass("active_menu_subtitle")){
+//                 $(this).show();
+//             }else{
+//                 $(this).hide();
+//             }
+//         });
+//         // Menu List
+//         Theme.Menu.menu_section.each(function(){
+//             if($(this).hasClass("active_menu_section")){
+//                 $(this).show();
+//             }else{
+//                 $(this).hide();
+//             }
+//         });
+//     }
+// }
+// Theme.Menu._init();
 
 
 Headers.One = {
