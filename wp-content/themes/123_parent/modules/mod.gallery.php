@@ -20,7 +20,7 @@
     // If status is 1, (possibly)
 
     // Type of tabs
-    $fields['tabs_type'] = 'tabs_classic';
+    $fields['tabs_type'] = 'tabs_side_menu';
     $fields['masonry'] = true;
  
     // check type

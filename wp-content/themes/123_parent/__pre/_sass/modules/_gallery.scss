@@ -9,43 +9,47 @@ $accent_color : #d8761f;
     // Gallery section 
     section#mod_gallery {
 
-        // Standard Gallery
+        // Standard gallery
         #tabbed_gallery,
         #standard_gallery { 
             margin: 0 auto;
         }
-        // Standard Gallery
+        // Standard gallery title
         #standard_gallery > h3 {
             display: block;
             font-size: 14px;
             margin-bottom: 15px;
         }
+        // Standard gallery unordered list
         > #standard_gallery > ul {
             list-style: none;
         }   
-        // Tabbed Gallery
+        // Tabbed gallery
         #tabbed_gallery,
-        // Standard Gallery
+        // Standard gallery
         #standard_gallery {
             min-height: 90vh; 
             margin-bottom: 20px;
             max-width: $nav_maxwidth;
         }
 
-        // Tabbed Side Menu
+        // Tabbed gallery side menu tabs
         > #tabbed_gallery.tabs_side_menu {
             display: flex;
             flex-flow: column nowrap;
         }
+        // Tabbed gallery side menu tabs menu section
         > #tabbed_gallery.tabs_side_menu > div:first-of-type {
             text-align: center;
             width: 90vw;
             margin: 0 auto 15px;
         }
+        // Tabbed gallery side menu tabs menu section text
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
             display: block;
             font-size: 14px;
         }
+        // Tabbed gallery side menu tabs menu section text links
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
             color: $gray_two;
             padding: 10px 15px;
@@ -53,30 +57,34 @@ $accent_color : #d8761f;
             display: block;
             border-bottom: 1px solid $gray_one;
         }
+        // Tabbed gallery side menu tabs links actions on active, focus and active gallery
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active, 
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus,
-            > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
             color: $white;
             background-color: $accent_color;
             border-bottom: 1px solid $accent_color;
         }
+        // Tabbed gallery side menu tabs links actions on hover
         > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
             color: $gray_two;
             background-color: $gray_one;
             border-bottom: 1px solid transparent;
         }
+        // Tabbed gallery side menu tabs images section
         > #tabbed_gallery.tabs_side_menu > div:last-of-type {
             margin: 0 auto 20px;
             width: 90vw;
         }
 
-        // Tabbed Pills
+        // Tabbed gallery pills tabs menu section 
         > #tabbed_gallery.tabs_pills > div:first-of-type {
             color: $gray_one;
             margin: 0 auto 25px auto;
             max-width: $nav_maxwidth;
             text-align: center;
         }
+        // Tabbed gallery pills tabs menu section tab text
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
             display: block;
             margin: 10px 5px;
@@ -84,6 +92,7 @@ $accent_color : #d8761f;
             padding: 10px 0;
             font-size: 14px;
         }
+        // Tabbed gallery pills tabs menu section tab text links
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a {
             padding: 10px 15px;
             border-radius: 20px;
@@ -91,6 +100,7 @@ $accent_color : #d8761f;
             border: 2px solid $gray_one;
             color: $gray_two;
         }
+        // Tabbed gallery pills tabs menu section tab text links actions on active, focus, active gallery and hover
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active,
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus,
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery,
@@ -99,11 +109,12 @@ $accent_color : #d8761f;
             background-color: $accent_color;
             border: 2px solid $accent_color;
         }
+        // Tabbed gallery pills tabs, menu section tab text links actions on hover
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
             border: 2px solid $gray_one;
         }
 
-        // Tabbed Classic
+        // Tabbed gallery classic tabs, menu section
         > #tabbed_gallery.tabs_classic > div:first-of-type {
             color: $gray_one;
             padding: 0 20px; 
@@ -111,20 +122,24 @@ $accent_color : #d8761f;
             margin: 0 auto 25px;
             max-width: $nav_maxwidth;
         }
+        // Tabbed gallery classic tabs menu section
         > #tabbed_gallery.tabs_classic > div:first-of-type:after {
             content: "";
             display: block;
             border-bottom: 2px solid $gray_one;
         }
+        // Tabbed gallery classic tabs menu section tab text
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
             display: block;
             padding: 10px 0;
             font-size: 14px;
             text-transform: uppercase;
         }
+        // Tabbed gallery classic tabs menu section tabs text on active tab title
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3.active_tab_title {
             margin: 5px 2px 0px;
         }
+        // Tabbed gallery classic tabs menu section tabs text links
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
             color: $gray_two;
             padding: 10px 15px;
@@ -136,6 +151,7 @@ $accent_color : #d8761f;
             border-right: 2px solid $gray_one;
             transition: color 0.3s ease-in-out;
         }
+        // Tabbed gallery classic tabs menu section tabs links actions on focus, active and active gallery
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus,
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:active, 
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery {
@@ -143,6 +159,7 @@ $accent_color : #d8761f;
             background-color: $white;
             border-bottom: 3px solid transparent;
         }
+        // Tabbed gallery classic tabs menu section tabs links actions on hover
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:hover {
             color: $white;
             background: $gray_three;
@@ -160,7 +177,7 @@ $accent_color : #d8761f;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-        // Standard and Tabbed Gallery Background Images
+        // Standard and tabbed gallery background images
         > #standard_gallery .image,
         > #tabbed_gallery .image {
             height: 200px; 
@@ -168,11 +185,11 @@ $accent_color : #d8761f;
             background-position: center;
             background-repeat: no-repeat;
         }
-        // Standard Gallery Title
+        // Standard gallery title
         #standard_gallery.masonry > h3 {
             text-align: center;
         }
-        // Masonry Gallery Unordered List for Tabbed and Standard Gallery
+        // Masonry gallery unordered list for tabbed and standard gallery
         > #standard_gallery.masonry > ul,
         > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
         > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul,
@@ -183,14 +200,14 @@ $accent_color : #d8761f;
             max-width: $nav_maxwidth; 
             padding: 0 20px;
         }
-        // Masonry Gallery List Item for Standard and Tabbed
+        // Masonry gallery list items for standard and tabbed gallery
         > #standard_gallery.masonry > ul > li,
         > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul > li,
         > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul > li,
         > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul > li {
             margin-bottom: 15px;
         } 
-        // Masonry Gallery Tabbed Side Menus
+        // Masonry gallery unordered list for side menu tabs
         > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
             padding: 0;
         }
