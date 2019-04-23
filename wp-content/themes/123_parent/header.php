@@ -11,7 +11,7 @@
 		<meta property="og:url" content="<?php global $wp;
 		echo home_url(add_query_arg(array(),$wp->request)); ?>"/>
 		<?php else: ?>
-		<meta property="og:image" content="<?php echo get_logo(); ?>"/>
+		<meta property="og:image" content="<?php // echo get_logo(); ?>"/>
 		<meta property="og:title" content="<?php echo get_bloginfo('name'); ?>"/>
 		<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>"/>
 		<meta property="og:url" content="<?php global $wp; echo home_url(add_query_arg(array(),$wp->request)); ?>"/>

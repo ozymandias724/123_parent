@@ -2,6 +2,23 @@ import $ from 'jquery';
 
 var Admin = {};
 
+
+
+
+Admin.ThemeSettings = {
+    
+    _init : function(){
+        $('#admin__headerstyle-preview img').prop('src', '/library/img/header_mockups/1.jpg');
+    }
+    
+}
+Admin.ThemeSettings._init();
+
+
+
+
+
+
 Admin.SiteSetup = {
     sections: $('#acf-group_sitesetup_intro, #acf-group_sitesetup_1, #acf-group_sitesetup_2, #acf-group_sitesetup_3, #acf-group_sitesetup_4'),
 

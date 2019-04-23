@@ -1,7 +1,33 @@
+<?php 
+
+$format_copyright_m = '
+    <br>
+    <span class="mobilefooter-copyright">
+    Powered by <a href="%s" class="mobilefooter-copyright-tclink" target="_blank">%s</a>
+    %s
+    <br>
+    Copyright &copy; %s
+    </span>
+';
+$has_terms = 
+    ( !get_field('terms-disable', 'option') ) 
+    ? '<br><a href="'.site_url().'/terms" target="_blank" class="mobilefooter-copyright-tclink">Terms &amp; Conditions</a>'
+    : ''
+;
+$content_copyright_m = sprintf(
+    $format_copyright_m
+    ,$reseller_info[0]['url']
+    ,$reseller_info[0]['name']
+    ,$has_terms
+    ,Date('Y')
+);
+
+?>
+
 <footer class="mobilefooter<?php echo $logo_is_inverted ? ' invertlogo' : ''; ?>">
 
 	<div class="mobilefooter-section">
-		<a href="<?php echo site_url(); ?>" class="mobilefooter-logo"><img src="<?php echo get_logo(); ?>" class="mobilefooter-logo-image"></a>
+		<a href="<?php echo site_url(); ?>" class="mobilefooter-logo"><img src="<?php // echo get_logo(); ?>" class="mobilefooter-logo-image"></a>
 		<div class="mobilefooter-section-contactlinks">
 			<?php 
 				echo $content_contact_m;			

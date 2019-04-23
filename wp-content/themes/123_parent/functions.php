@@ -26,6 +26,13 @@ include_once('classes/class.Customizer.php');
 include_once('classes/class.NavHandler.php');
 
 
+function register_google_maps_api() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyCm3DUlMvghNSFqCUw9InFgQbDC--_PQyY');
+}
+
+add_action('acf/init', 'register_google_maps_api');
+
 
 
 function _get_site_nav($pre = 'navlinks'){
@@ -62,8 +69,7 @@ function _get_site_nav($pre = 'navlinks'){
     }
 }
 
-
-function get_section_banner($title, $text = ''){
+function get_section_banner($title = null, $text = null){
 
     $title = ( !empty($title) ) ? $title : $post->post_title;
     $text = ( !empty($text) ) ? $text : '';
@@ -182,19 +188,6 @@ if( !function_exists('remove_admin_dashboard_widgets') ){
 add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets', 20 );
 
 
-// returns the logo based on the logo type switch set in Theme Settings > 1. Company Info
-if( !function_exists( 'get_logo' ) ){
-	function get_logo(){
-		if(get_field( 'logo-type-switch', 'option' ) == 'text'){
-			return wp_upload_dir()['baseurl'] . '/logo-text.png';
-		}
-		else{
-			return get_field('general-logo', 'option');
-		}
-	}
-}
-
-
 // sets a notice of site being disabled
 if( !function_exists('admin_notify_disabled_site') ){
 	function admin_notify_disabled_site() {
@@ -283,27 +276,6 @@ if( !function_exists('remove_wp_logo') ){
 		$wp_admin_bar->remove_node( 'comments' );
 	}
 }
-
-// remove toolbar new post from agent & client
-add_action('admin_init', 'remove_admin_toolbar_items' );
-
-if( !function_exists('remove_admin_toolbar_items') ){
-	function remove_admin_toolbar_items(){
-		$user = wp_get_current_user();
-
-		if( !array_intersect(array('administrator'), $user->roles) ){
-			add_action('admin_bar_menu', 'remove_topbar_new_content', 999);
-		}
-
-	}
-}
-
-if( !function_exists('remove_topbar_new_content') ){
-	function remove_topbar_new_content($wp_admin_bar){
-		$wp_admin_bar->remove_node( 'new-content' );
-	}
-}
-
 
 
 // remove flyout from google analytics plugin

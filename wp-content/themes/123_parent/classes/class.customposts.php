@@ -49,6 +49,42 @@ class CustomPosts
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
         );
         register_post_type('testimonials', $args);
+
+        
+        
+        $labels = array(
+            'name'               => _x( 'Food Menus', 'post type general name', '123_parent' ),
+            'singular_name'      => _x( 'Food Menu', 'post type singular name', '123_parent' ),
+            'menu_name'          => _x( 'Food Menus', 'admin menu', '123_parent' ),
+            'name_admin_bar'     => _x( 'Food Menu', 'add new on admin bar', '123_parent' ),
+            'add_new'            => _x( 'Add New', 'Food Menu', '123_parent' ),
+            'add_new_item'       => __( 'Add New Food Menu', '123_parent' ),
+            'new_item'           => __( 'New Food Menu', '123_parent' ),
+            'edit_item'          => __( 'Edit Food Menu', '123_parent' ),
+            'view_item'          => __( 'View Food Menu', '123_parent' ),
+            'all_items'          => __( 'All Food Menus', '123_parent' ),
+            'search_items'       => __( 'Search Food Menus', '123_parent' ),
+            'parent_item_colon'  => __( 'Parent Food Menus:', '123_parent' ),
+            'not_found'          => __( 'No Food Menus found.', '123_parent' ),
+            'not_found_in_trash' => __( 'No Food Menus found in Trash.', '123_parent' )
+        );
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __( 'Description.', '123_parent' ),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+        );
+        register_post_type('food_menus', $args);
+        
+        
         
 
         $labels = array(
@@ -169,7 +205,7 @@ class CustomPosts
 			);
 
 			$args = array(
-				'labels'                   => $labels,
+				'labels'              => $labels,
 				'hierarchical'        => false,
 				'description'         => 'description',
 				'taxonomies'          => array(),

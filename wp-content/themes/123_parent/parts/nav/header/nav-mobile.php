@@ -2,7 +2,11 @@
 
     $num_display = get_the_phone();
     $num_href = get_the_phone('tel');
-    $field_social_icons = get_field('field_akan8a8sskshb', 'options');
+
+    // $field_social_icons = get_field('field_akan8a8sskshb', 'options');
+    $company_info = get_field('company_info','options');
+    $field_social_icons = $company_info['social_media'];
+    
     $content_social_icons = '<ul>';
     $format_social_icons = '
         <li>
@@ -14,7 +18,7 @@
     foreach( $field_social_icons as $social_icon ){
         $url = $social_icon['url'] ;
         $img = $social_icon['image'];
-        $fa = $social_icon['fonticon'];
+        $fa = $social_icon['icon'];
         $custom_png_url = '';
         // we have a preconfigured URL
         if( strpos($url, 'booksy') ){

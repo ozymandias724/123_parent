@@ -2,6 +2,25 @@
 /**
  * 
  */
+$format_copyright_dt = '
+    <span class="footer-copyright">
+        Powered by <a href="%s" class="footer-copyright-tclink" target="_blank">%s</a>
+        %s
+        | Copyright &copy; %s
+    </span>
+';
+$has_terms = 
+( !get_field('terms-disable', 'option') ) 
+    ? '| <a href="'.site_url().'/terms" target="_blank" class="footer-copyright-tclink">Terms &amp; Conditions</a>'
+    : ''
+; // end $has_terms
+$content_copyright_dt = sprintf(
+    $format_copyright_dt
+    ,$reseller_info[0]['url']
+    ,$reseller_info[0]['name']
+    ,$has_terms
+    ,Date('Y')
+);
  ?>
 <footer class="footer<?php echo ($logo_is_inverted) ? ' invertlogo' : ''; ?>">
 	<div class="footer-wrap">
@@ -42,8 +61,6 @@
 		</div>
 	</div>
 </footer>
-<div class="footer-copyright">
-	<?php 
-		echo $content_copyright_dt;
-	 ?>
-</div>
+<?php 
+    echo $content_copyright_dt;
+?>

@@ -23,12 +23,19 @@ class NavHandler
 
     // Initialize
     function _init(){
-        $gmap_query = '#'; // simple href to search for the addr // IDK
+        $gmap_query = '';
         $addr = get_master_address(); // supposedly easy to format (test plz)
         $addr = str_replace('<br>', ' - ', $addr);
         $num_display = get_the_phone();
         $num_href = get_the_phone('tel');
-        $quotebtn_txt = get_field('quickquote-button-text', 'option');
+        $popups = get_field('popups','options');
+        $footer = get_field('footer','options');
+        $header = get_field('header','options');
+        $company_info = get_field('company_info','options');
+        $fadenav = $header['fade_background'];
+        
+        // needsfix
+        $quotebtn_txt = $popups['banner']['bar_text'];
         if( !empty($quotebtn_txt) ){
             $format_quotebtn = '
                 <a href="#" class="topbanner-quickquote" title="Get a quote button">
@@ -41,12 +48,12 @@ class NavHandler
                 ,$quotebtn_txt
             );
         }
-        // 
+        // /needsfix
+
         // theme3 pink social bar above header
         $format_socialtopbar = '
             <div id="opt__topbanner">
                 <span>
-
                     <a href="%s" alt="Address button"><i class="fas fa-map-marker-alt"></i>
                         <span>%s</span>
                     </a>
@@ -66,22 +73,23 @@ class NavHandler
             $num_display,
             $content_quotebtn
         );
-        $desktop_social = '<a href="tel:'.$num_href.'" class="header-content-menus-social-menu-item-link" title="Phone number button"><i class="fas fa-phone"></i> '.$num_display.'</a>';
-        if( !empty($quotebtn_txt) ){
-            $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $quotebtn_txt . '</a>';
+
+
+        // phone iconLink
+        $desktop_social = '<a href="tel:'.$num_href.'" title=""><i class="fas fa-phone"></i> '.$num_display.'</a>';
+        
+        // header popup button
+        $quickquote = '';
+        if( $popups['header']['status'] ){
+            $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
+
         }
-        // 
-        // 
-        $invertlogo = ( get_field('general-theme-invert-headerfooter-logo-colors', 'option') ) ? ' invertlogo' : '';
-        $fadenav = ( get_field('nav-fadein-toggle', 'option') ) ? ' removefadein' : '';
 
-
-        // if the topbar is disabled, set the 'topbar-removed' class
-        $topbar_class = get_field('remove-topbar', 'option') ? ' topbar-removed' : '';
-        // Text that appears in the 'topbar'
-        $topbar_text = get_field('header-bar-text', 'option');
-        // if we dont the topbar removed class, and we do have text, create the topbar
-        if( empty($topbar_class && !empty($topbar_text) ) ){
+        // banner popup
+        $topbar_class = 'topbar-removed';
+        if( $popups['banner']['status'] ){
+            $topbar_class = '';
+            $topbar_text = $popups['banner']['bar_text'];
             $format_topbar = '
                 <div class="opt__estimatebar">
                     <a href="#" class="topbanner-quickquote" title="Get a quote button">%s</a>
@@ -92,9 +100,15 @@ class NavHandler
                 ,$topbar_text
             );
         }
+
+
+        
+        
         /**
          * Logo
          */
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $logo_img = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         $format_logo = '
             <a class="header-logo" href="%s" title="Logo button">
                 <img src="%s" alt="%s">
@@ -103,14 +117,16 @@ class NavHandler
         $content_logo = sprintf(
             $format_logo
             ,site_url()
-            ,get_logo()
+            ,$logo_img
             ,get_bloginfo('sitename')
         );
+
         /**
          * 
          */
 
-        $field_social_icons = get_field('field_akan8a8sskshb', 'options');
+        // $field_social_icons = get_field('field_akan8a8sskshb', 'options');
+        $field_social_icons = $company_info['social_media'];
         $content_social_icons = '<ul>';
         $format_social_icons = '
             <li>
@@ -122,7 +138,7 @@ class NavHandler
         foreach( $field_social_icons as $social_icon ){
             $url = $social_icon['url'] ;
             $img = $social_icon['image'];
-            $fa = $social_icon['fonticon'];
+            $fa = $social_icon['icon'];
             $custom_png_url = '';
             // we have a preconfigured URL
             if( strpos($url, 'booksy') ){
@@ -164,7 +180,7 @@ class NavHandler
 
         // 1
         $format_header = '
-            <header class="%s %s %s header" id="opt_header_one">
+            <header class="%s %s header" id="opt_header_one">
                 <div>
                     <div>
                         %s
@@ -186,10 +202,9 @@ class NavHandler
         ';
         $this->header_one = sprintf( 
             $format_header
-            ,$invertlogo
             ,$topbar_class
             ,$fadenav
-            ,$content_logo
+            ,get_custom_logo()
             ,$addr
             ,$num_href
             ,$num_display

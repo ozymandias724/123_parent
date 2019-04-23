@@ -24,10 +24,11 @@ class SetupTheme
 		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
         register_nav_menu( 'main-nav', 'Main Navigation' );
+        add_theme_support( 'custom-logo' );
 	}
 	// 
 	public static function init(){
-		add_post_type_support( 'page', 'excerpt' );
+        add_post_type_support( 'page', 'excerpt' );
 	}
 
 	/**

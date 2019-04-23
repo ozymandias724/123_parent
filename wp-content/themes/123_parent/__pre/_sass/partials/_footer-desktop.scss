@@ -12,7 +12,11 @@ $color_white_not_transparent: rgba(255,255,255,1);
 	}
 	.footer-copyright{
 		display: none;
-	}
+    }
+    
+    footer {
+        margin-bottom: 0;
+    }
 }	
 @media only screen and (min-width: $medium){
 }
@@ -23,7 +27,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 		text-align: center;
 		background-color: $footer-grey;
 		color: $white;
-		font-size: 0;
+        font-size: 0;
 		ul{
 			list-style: none;
 		}

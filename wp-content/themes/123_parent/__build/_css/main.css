@@ -947,11 +947,13 @@ h6 {
     font-size: 1.4rem;
     padding-top: 52px;
   }
-  header.header a.header-logo {
+  header.header a.header-logo,
+header.header a.custom-logo-link {
     display: inline-block;
     padding: 15px;
   }
-  header.header a.header-logo > img {
+  header.header a.header-logo > img,
+header.header a.custom-logo-link > img {
     max-width: 180px;
   }
   header.header ul.navlinks {
@@ -2247,6 +2249,10 @@ header#opt_header_eight > div > div:last-of-type > nav > ul > li > a:focus:befor
 
   .footer-copyright {
     display: none;
+  }
+
+  footer {
+    margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 1280px) {

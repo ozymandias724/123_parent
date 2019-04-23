@@ -5,8 +5,11 @@ $navHandler = new NavHandler();
 
 // required vars
 $enabled_theme = wp_get_theme()->Name;
-$use_custom_header = get_field('enable-choose-header', 'options');
-$selected_header = get_field('choose-header-style', 'options');
+
+
+$header = get_field('header', 'options');
+$use_custom_header = $header['select_style'];
+$selected_header = $header['style'];
 
 
 // use default header
