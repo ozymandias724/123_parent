@@ -27,11 +27,11 @@
     // Standard
     if( $fields['type'] == 'standard' ){  
         
-        $gallery_img = $fields['masonry'] == true ? '<img class="grid_image" src="%s" />' : '<div class="image" style="background-image:url(%s);"></div>';
+        $gallery_img = $fields['masonry'] == true ? '<img src="%s" />' : '<div class="image" style="background-image:url(%s);"></div>';
 
         $format_gallery = '<li>' . $gallery_img . '</li>'; 
 
-        $gallery_class = $fields['masonry'] == true ? "grid_gallery" : "non_grid";
+        $gallery_class = $fields['masonry'] == true ? 'masonry' : 'non_masonry';
 
         $return_gallery = '<div id="standard_gallery" class="'. $gallery_class . '"><h3>' . $fields['normal_gallery']['heading'] . '</h3><ul>';
         
@@ -49,7 +49,7 @@
 
         $format_gallery = '<h3 class="%s"><a class="%s %s" href="javascript:;">%s</a></h3>';
 
-        $gallery_class = ($fields['masonry'] == true) ? 'grid_gallery ' : 'non_grid ';
+        $gallery_class = ($fields['masonry'] == true) ? 'masonry ' : 'non_masonry ';
 
         $return_gallery = '<div id="tabbed_gallery" class="' . $gallery_class . $fields['tabs_type'] . '"><div>';
         

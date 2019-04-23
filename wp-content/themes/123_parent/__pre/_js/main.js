@@ -3,18 +3,6 @@ var Theme = {};
 var Hero = {};
 var Headers = {};
 import slick from 'slick-carousel-browserify';
-//import Masonry from 'masonry-layout';
-
-
-// Theme.Grid_Masonry = {
-//     _init : function(){
-//         var msnry = new Masonry('.grid_masonry', {
-//             itemSelector : 'li',
-//             columnWidth : 100
-//         });
-//     }
-// }
-// Theme.Grid_Masonry._init();
 
 Theme.Slick = {
     rand : Math.floor(Math.random() * $(".img-slick").length),

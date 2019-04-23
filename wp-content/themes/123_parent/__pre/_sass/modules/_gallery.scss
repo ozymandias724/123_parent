@@ -10,17 +10,19 @@ $accent_color : #d8761f;
     section#mod_gallery {
 
         // Standard Gallery
-        #standard_gallery {
+        #tabbed_gallery,
+        #standard_gallery { 
             margin: 0 auto;
         }
-
         // Standard Gallery
         #standard_gallery > h3 {
             display: block;
             font-size: 14px;
             margin-bottom: 15px;
         }
-
+        > #standard_gallery > ul {
+            list-style: none;
+        }   
         // Tabbed Gallery
         #tabbed_gallery,
         // Standard Gallery
@@ -28,7 +30,44 @@ $accent_color : #d8761f;
             min-height: 90vh; 
             margin-bottom: 20px;
             max-width: $nav_maxwidth;
-            margin: 0 auto;
+        }
+
+        // Tabbed Side Menu
+        > #tabbed_gallery.tabs_side_menu {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
+            text-align: center;
+            width: 90vw;
+            margin: 0 auto 15px;
+        }
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
+            display: block;
+            font-size: 14px;
+        }
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
+            color: $gray_two;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+            display: block;
+            border-bottom: 1px solid $gray_one;
+        }
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active, 
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus,
+            > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
+            color: $white;
+            background-color: $accent_color;
+            border-bottom: 1px solid $accent_color;
+        }
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
+            color: $gray_two;
+            background-color: $gray_one;
+            border-bottom: 1px solid transparent;
+        }
+        > #tabbed_gallery.tabs_side_menu > div:last-of-type {
+            margin: 0 auto 20px;
+            width: 90vw;
         }
 
         // Tabbed Pills
@@ -52,130 +91,76 @@ $accent_color : #d8761f;
             border: 2px solid $gray_one;
             color: $gray_two;
         }
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery,
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active,
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus {
-            background-color: $accent_color;
+        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus,
+        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery,
+        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
             color: $white;
+            background-color: $accent_color;
             border: 2px solid $accent_color;
         }
         > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
-            background-color: $gray_one;
-            color: $white;
             border: 2px solid $gray_one;
         }
 
         // Tabbed Classic
         > #tabbed_gallery.tabs_classic > div:first-of-type {
-            text-align: center;
             color: $gray_one;
-            max-width: $nav_maxwidth;
+            padding: 0 20px; 
+            text-align: center;
             margin: 0 auto 25px;
-            padding: 0 10px;
+            max-width: $nav_maxwidth;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type:after {
             content: "";
             display: block;
             border-bottom: 2px solid $gray_one;
-            z-index: -1;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-            text-transform: uppercase;
-            padding: 10px 0;
             display: block;
+            padding: 10px 0;
             font-size: 14px;
+            text-transform: uppercase;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3.active_tab_title {
             margin: 5px 2px 0px;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
+            color: $gray_two;
             padding: 10px 15px;
             background-color: $gray_one;
-            color: $gray_two;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             border-top: 2px solid $gray_one;
             border-left: 2px solid $gray_one;
             border-right: 2px solid $gray_one;
-            border-bottom: 2px solid $gray_one;
             transition: color 0.3s ease-in-out;
         }
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery,
+        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus,
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:active, 
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus {
-            background-color: $white;
+        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery {
             color: $accent_color;
+            background-color: $white;
             border-bottom: 3px solid transparent;
         }
         > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:hover {
             color: $white;
             background: $gray_three;
-            background: -moz-linear-gradient(top, $gray_three 0%, $gray_four 100%);
-            background: -moz-linear-gradient(top, $gray_three 0%, $gray_four 100%);
-            background: -webkit-linear-gradient(top, $gray_three 0%,$gray_four 100%); 
             background: linear-gradient(to bottom, $gray_three 0%,$gray_four 100%); 
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gray_three', endColorstr='$gray_four',GradientType=0 ); 
         }
 
-        // Tabbed Side Menu
-        > #tabbed_gallery.tabs_side_menu {
-            display: flex;
-            margin: 0 auto;
-            flex-flow: column nowrap;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-            text-align: center;
-            width: 90vw;
-            margin: 0 auto 15px;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-            display: block;
-            font-size: 14px;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
-            padding: 10px 15px;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-            display: block;
-            color: $gray_two;
-            border-bottom: 1px solid $gray_one;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery,
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active, 
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus {
-            color: $white;
-            background-color: $accent_color;
-            border-bottom: 1px solid $accent_color;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
-            background-color: $gray_one;
-            color: $gray_two;
-            border-bottom: 1px solid transparent;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:last-of-type {
-            margin-bottom: 20px;
-        }
-
-        // Tabbed Pills, Tabbed Classic, Tabbed Side Menu
-        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type, 
-        > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type, 
-        // Standard Gallery
-        > #standard_gallery.non_grid {
+        // Non-masonry standard gallery, tabbed pills, classic and side-menu
+        > #standard_gallery.non_masonry,
+        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type, 
+        > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type, 
+        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
             $w : 90vw;
             $c : 2;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-        > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
-            $w : 90vw;
-            $c : 2;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-        > #standard_gallery > ul {
-            list-style: none;
-        }
+        // Standard and Tabbed Gallery Background Images
         > #standard_gallery .image,
         > #tabbed_gallery .image {
             height: 200px; 
@@ -183,190 +168,188 @@ $accent_color : #d8761f;
             background-position: center;
             background-repeat: no-repeat;
         }
-        #standard_gallery.grid_gallery > h3 {
+        // Standard Gallery Title
+        #standard_gallery.masonry > h3 {
             text-align: center;
         }
-        > #standard_gallery.grid_gallery > ul {
+        // Masonry Gallery Unordered List for Tabbed and Standard Gallery
+        > #standard_gallery.masonry > ul,
+        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul,
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
             column-count: 2;
             column-gap: 10px;
             margin: 0 auto;
             max-width: $nav_maxwidth; 
             padding: 0 20px;
         }
-        > #standard_gallery.grid_gallery > ul > li {
+        // Masonry Gallery List Item for Standard and Tabbed
+        > #standard_gallery.masonry > ul > li,
+        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul > li,
+        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul > li,
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul > li {
             margin-bottom: 15px;
-        }   
-
-        // Tabbed Pills and Classic with Masonry Grid
-        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-            column-count: 2;
-            column-gap: 10px;
-            margin: 0 auto 20px;
-            max-width: $nav_maxwidth;
-            padding: 0 20px;
-        }
-        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul > li,
-        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul > li {
-            margin-bottom: 15px;
-        }
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-            column-count: 2;
-            column-gap: 10px;
-            margin: 0 auto;
-            max-width: $nav_maxwidth;
-        }
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul > li {
-            margin-bottom: 15px;
+        } 
+        // Masonry Gallery Tabbed Side Menus
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
+            padding: 0;
         }
     }
 }
 
 @media only screen and (min-width: 550px){
     section#mod_gallery {
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
-            display: inline-block;
-        }
-        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
-        > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
-            $w : 90vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-    
-        // Tabbed Side Menu
-        > #tabbed_gallery.tabs_side_menu {
-            flex-flow: row nowrap;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-            width: 20vw;
-            margin-bottom: 0;
-        }
-        > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
+        // Non-masonry tabbed side menu
+        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
             $w : 60vw;
             $c : 2;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-            width: 65vw;
+        // Non-masonry tabbed pills and classic
+        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
+        > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
+            $w : 90vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // Tabbed Pills Tab Text
+        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
+            display: inline-block;
+        }
+
+        // Tabbed Sude Menu 
+        > #tabbed_gallery.tabs_side_menu > div:last-of-type,
+        // Tabbed Side Menu with Masonry Gallery
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
+            width: 60vw;
+        }
+        // Tabbed Side Menu
+        > #tabbed_gallery.tabs_side_menu {
+            flex-flow: row nowrap;
+        }
+        // Tabbed Side Menu 
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
+            width: 20vw;
+            margin-bottom: 0;
         }
     }
 }
 
 @media only screen and (min-width: 768px){
     section#mod_gallery {
-        // Tabbed Pills and Tabbed Classic
-        > #tabbed_gallery.tabs_classic > div:first-of-type {
-            text-align: left;
-        }
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-            display: inline-block;
-        }
-        // Tabbed Pill and Tabbed Classic
-        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type {
+        // Non-masonry tabbed pills 
+        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type {
             $w : 80vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
-    
-        // Standard Gallery
-        > #standard_gallery.non_grid {
+        // Non-masonry standard gallery
+        > #standard_gallery.non_masonry {
             $w : 90vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         } 
-        // Masonry Grid
-        > #standard_gallery.grid_gallery > ul {
+        // Tabbed pills and tabbed classic
+        > #tabbed_gallery.tabs_classic > div:first-of-type {
+            text-align: left;
+        }
+        // Tabbed Classic tab text
+        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
+            display: inline-block;
+        }
+        // Masonry gallery unordered list
+        > #standard_gallery.masonry > ul,
+        // Masonry gallery tabbed classic and pills unordered list
+        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
             column-count: 3;
         }
-        // Tabbed Classic and Pills with Masonry Grid
-        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-            column-count: 3;
-        }
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
+        // Masonry gallery tabbed side menu unordered list
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
             column-count: 2;
-        }
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-            width: 65vw;
+            width: 60vw;
         }
     }
 } 
 
 @media only screen and (min-width: 1000px){
     section#mod_gallery {
-        // Tabbed Pills and Tabbed Classic 
-        > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
-        > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
+        // Standard Gallery 
+        > #standard_gallery.non_masonry,
+        // Tabbed Pills without Masonry Gallery
+        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
+        // Tabbed Classic without Masonry Gallery
+        > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
             $w : 65vw;
             $c : 4;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }  
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-            width: 55vw;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-            width: 20vw;
-        }
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-            margin-right: 15px;
-        }
-        > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
-            width: 80vw;
+        // Tabbed Side Menu without Masonry Gallery
+        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
             $w : 50vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
+
+        // Masonry tabbed side menu unordered list
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+        // Non-masonry tabbed side menu
+        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
+            width: 60vw;
+        }
+        // Tabbed side menu
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
+            width: 30vw;
+        }
         
-        // Standard Gallery
-        > #standard_gallery.non_grid {
-            $w : 65vw;
-            $c : 4;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-
-        // Masonry Grid
-        > #standard_gallery.grid_gallery > ul {
+        // Masonry Grid Unordered List
+        > #standard_gallery.masonry > ul,
+        // Tabs Side Menu with Masonry Gallery
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+        // Tabbed Classic and Pills with Masonry Gallery
+        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
             column-count: 3;
         }
-        // Tabbed Classic and Pills with Masonry Grid
-        > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-        > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-            column-count: 3;
-            padding: 0 10px;
+        // Tabbed Pills with Masonry Gallery Unordered List
+        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+        // Tabbed Classic with Masonry Gallery Unordered List
+        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
+            padding: 0 20px;
         }
-
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-            column-count: 3;
+        // Tabbed Side Menu Header 3
+        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
+            margin-right: 15px;
         }
     }
 }
 
 @media only screen and (min-width: 1300px){
     section#mod_gallery {
-        // Masonry Grid
-        > #standard_gallery.grid_gallery > ul {
+        // Standard gallery with masonry unordered list
+        > #standard_gallery.masonry > ul,
+        // Tabbed classic gallery
+        > #tabbed_gallery.tabs_classic > div:first-of-type {
             padding: 0 10px;
+        }
+        // Tabbed Side Menu with Mason Grid
+        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+        // Tabbed Side Menu without Mason Grid
+        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
+            width: 50vw;
         }
     }
 }
