@@ -1008,7 +1008,7 @@ header.header .opt__topbanner {
     justify-content: space-around;
     display: flex;
     margin: 0 auto;
-    max-width: 1262px;
+    max-width: 1280px;
   }
   header#opt_header_one > div:nth-of-type(1) {
     background-color: black;
@@ -1127,7 +1127,7 @@ header.header .opt__topbanner {
     flex-flow: row nowrap;
     background-color: #383838;
     justify-content: space-around;
-    max-width: 1262px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   header#opt_header_two > div:last-of-type > div > a {
@@ -1219,7 +1219,7 @@ header#opt_header_two > div:last-of-type > div > div > a:active {
     padding: 0px;
   }
   header#opt_header_three > div {
-    max-width: 1262px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   header#opt_header_three > div > div:first-of-type > span {
@@ -1320,7 +1320,7 @@ header#opt_header_three > div > div:last-of-type > ul > li > a:focus {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: 1262px;
+    max-width: 1280px;
   }
   header#opt_header_four > div > div > ul,
 header#opt_header_four > div > div > span {
@@ -1434,7 +1434,7 @@ header#opt_header_four > nav > ul:after {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   header#opt_header_five > div:first-of-type > div > ul {
@@ -1508,7 +1508,7 @@ header#opt_header_four > nav > ul:after {
     align-items: center;
     flex-flow: row nowrap;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1280px;
     justify-content: space-between;
   }
   header#opt_header_five > div:last-of-type > div > a {
@@ -1652,7 +1652,7 @@ header#opt_header_four > nav > ul:after {
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
   }
   header#opt_header_seven > div {
-    max-width: 1262px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   header#opt_header_seven > div > div:first-of-type {
@@ -1731,7 +1731,7 @@ header#opt_header_seven > div > div:first-of-type > span > a {
   header#opt_header_eight > div {
     display: flex;
     justify-content: space-between;
-    max-width: 1252px;
+    max-width: 1270px;
     background-color: white;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
     padding: 0 0 0 15px;
@@ -1796,7 +1796,7 @@ header#opt_header_eight > div > div:last-of-type > nav > ul > li > a:focus:befor
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 1262px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   header#opt_header_nine > div:first-of-type > div > div {
@@ -1901,7 +1901,7 @@ header#opt_header_eight > div > div:last-of-type > nav > ul > li > a:focus:befor
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
   }
   header#opt_header_ten > div:first-of-type {
-    max-width: 1262px;
+    max-width: 1280px;
     margin: 0 auto;
   }
   header#opt_header_ten > div:first-of-type > div {
@@ -1991,7 +1991,7 @@ header#opt_header_eight > div > div:last-of-type > nav > ul > li > a:focus:befor
   }
   .header_sidebar_menu_1 > div {
     height: 100%;
-    width: 250px;
+    width: 300px;
     position: fixed;
     z-index: 20;
     font-size: 16px;
@@ -2472,7 +2472,7 @@ section.hero .hero_foreground a:active {
   }
 
   section.hero#hero_image > #hero_staticimage {
-    height: 90vh;
+    height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2487,6 +2487,7 @@ section.hero .hero_foreground a:active {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    height: 80vh;
   }
 
   section.hero#hero_video {
@@ -2537,7 +2538,8 @@ section.hero .hero_foreground a:active {
   }
 }
 @media only screen {
-  section#mod_gallery #standard_gallery {
+  section#mod_gallery #tabbed_gallery,
+section#mod_gallery #standard_gallery {
     margin: 0 auto;
   }
   section#mod_gallery #standard_gallery > h3 {
@@ -2545,15 +2547,55 @@ section.hero .hero_foreground a:active {
     font-size: 14px;
     margin-bottom: 15px;
   }
+  section#mod_gallery > #standard_gallery > ul {
+    list-style: none;
+  }
   section#mod_gallery #tabbed_gallery,
 section#mod_gallery #standard_gallery {
     min-height: 90vh;
     margin-bottom: 20px;
+    max-width: 1280px;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
+    text-align: center;
+    width: 90vw;
+    margin: 0 auto 15px;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
+    display: block;
+    font-size: 14px;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
+    color: #484848;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    display: block;
+    border-bottom: 1px solid #c2c2c2;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active,
+section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus,
+section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
+    color: #fff;
+    background-color: #d8761f;
+    border-bottom: 1px solid #d8761f;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
+    color: #484848;
+    background-color: #c2c2c2;
+    border-bottom: 1px solid transparent;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type {
+    margin: 0 auto 20px;
+    width: 90vw;
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type {
     color: #c2c2c2;
     margin: 0 auto 25px auto;
-    width: 80vw;
+    max-width: 1280px;
     text-align: center;
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
@@ -2570,152 +2612,110 @@ section#mod_gallery #standard_gallery {
     border: 2px solid #c2c2c2;
     color: #484848;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery,
-section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active,
-section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus {
-    background-color: #d8761f;
+  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active,
+section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus,
+section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery,
+section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
     color: #fff;
+    background-color: #d8761f;
     border: 2px solid #d8761f;
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
-    background-color: #c2c2c2;
-    color: #fff;
     border: 2px solid #c2c2c2;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
-    text-align: center;
     color: #c2c2c2;
-    max-width: 1262px;
+    padding: 0 20px;
+    text-align: center;
     margin: 0 auto 25px;
+    max-width: 1280px;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type:after {
     content: "";
     display: block;
     border-bottom: 2px solid #c2c2c2;
-    z-index: -1;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-    margin: 5px 2px 0;
-    text-transform: uppercase;
+    display: block;
     padding: 10px 0;
-    display: inline-block;
     font-size: 14px;
+    text-transform: uppercase;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3.active_tab_title {
+    margin: 5px 2px 0px;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
+    color: #484848;
     padding: 10px 15px;
     background-color: #c2c2c2;
-    color: #484848;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-top: 2px solid #c2c2c2;
     border-left: 2px solid #c2c2c2;
     border-right: 2px solid #c2c2c2;
-    border-bottom: 2px solid #c2c2c2;
     transition: color 0.3s ease-in-out;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery,
+  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus,
 section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:active,
-section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus {
-    background-color: #fff;
+section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery {
     color: #d8761f;
-    border-bottom: 2px solid transparent;
+    background-color: #fff;
+    border-bottom: 3px solid transparent;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:hover {
     color: #fff;
     background: #d6d8db;
-    background: -moz-linear-gradient(top, #d6d8db 0%, #aaabad 100%);
-    background: -moz-linear-gradient(top, #d6d8db 0%, #aaabad 100%);
-    background: -webkit-linear-gradient(top, #d6d8db 0%, #aaabad 100%);
     background: linear-gradient(to bottom, #d6d8db 0%, #aaabad 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$gray_three", endColorstr="$gray_four",GradientType=0 );
   }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
-    display: flex;
-    margin: 0 auto;
-    width: 80vw;
-    flex-flow: column nowrap;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-    text-align: center;
-    width: 80vw;
-    margin-bottom: 15px;
-    margin-right: 15px;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-    display: block;
-    font-size: 14px;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
-    padding: 10px 15px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-    display: block;
-    color: #484848;
-    border-bottom: 1px solid #c2c2c2;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery,
-section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active,
-section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus {
-    color: #fff;
-    background-color: #d8761f;
-    border-bottom: 1px solid #d8761f;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
-    background-color: #c2c2c2;
-    color: #484848;
-    border-bottom: 1px solid transparent;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type,
-section#mod_gallery > #standard_gallery.non_grid {
+  section#mod_gallery > #standard_gallery.non_masonry,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
     text-align: center;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul,
-section#mod_gallery > #standard_gallery.non_grid ul {
+  section#mod_gallery > #standard_gallery.non_masonry ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
     text-align: left;
-    width: 80vw;
+    width: 90vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul:after,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul:after,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul:after,
-section#mod_gallery > #standard_gallery.non_grid ul:after {
+  section#mod_gallery > #standard_gallery.non_masonry ul:after,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li,
-section#mod_gallery > #standard_gallery.non_grid ul > li {
-    width: 39.25vw;
+  section#mod_gallery > #standard_gallery.non_masonry ul > li,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
+    width: 44.25vw;
     height: auto;
     float: left;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li div.image,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li div.image,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li div.image,
-section#mod_gallery > #standard_gallery.non_grid ul > li div.image {
-    height: 39.25vw;
+  section#mod_gallery > #standard_gallery.non_masonry ul > li div.image,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
+    height: 44.25vw;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(n+1),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li:nth-child(n+1),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1),
-section#mod_gallery > #standard_gallery.non_grid ul > li:nth-child(n+1) {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(n+1),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(2n),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li:nth-child(2n),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li:nth-child(2n),
-section#mod_gallery > #standard_gallery.non_grid ul > li:nth-child(2n) {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(2n),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(2n),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(2n),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(2n) {
     margin: 0 0 1.5vw 0;
-  }
-  section#mod_gallery > #standard_gallery > ul {
-    list-style: none;
   }
   section#mod_gallery > #standard_gallery .image,
 section#mod_gallery > #tabbed_gallery .image {
@@ -2724,326 +2724,288 @@ section#mod_gallery > #tabbed_gallery .image {
     background-position: center;
     background-repeat: no-repeat;
   }
-  section#mod_gallery #standard_gallery.grid_gallery > h3 {
+  section#mod_gallery #standard_gallery.masonry > h3 {
     text-align: center;
   }
-  section#mod_gallery > #standard_gallery.grid_gallery > ul {
+  section#mod_gallery > #standard_gallery.masonry > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
     column-count: 2;
     column-gap: 10px;
     margin: 0 auto;
-    max-width: 90vw;
+    max-width: 1280px;
+    padding: 0 20px;
   }
-  section#mod_gallery > #standard_gallery.grid_gallery > ul > li {
+  section#mod_gallery > #standard_gallery.masonry > ul > li,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul > li,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul > li,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul > li {
     margin-bottom: 15px;
   }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-    column-count: 2;
-    column-gap: 10px;
-    margin: 0 auto;
-    width: 90vw;
-  }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul > li,
-section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul > li {
-    margin-bottom: 15px;
-  }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-    column-count: 2;
-    column-gap: 10px;
-    margin: 0 auto;
-    width: 80vw;
-  }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul > li {
-    margin-bottom: 15px;
+  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
+    padding: 0;
   }
 }
 @media only screen and (min-width: 550px) {
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
-    text-align: left;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
-    display: inline-block;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
     text-align: center;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
     text-align: left;
-    width: 80vw;
+    width: 60vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul:after,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul:after {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li {
-    width: 39.25vw;
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
+    width: 29.25vw;
     height: auto;
     float: left;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li div.image,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li div.image {
-    height: 39.25vw;
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
+    height: 29.25vw;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(n+1),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(2n),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li:nth-child(2n) {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(2n) {
     margin: 0 0 1.5vw 0;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
+    text-align: center;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul {
+    text-align: left;
+    width: 90vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li {
+    width: 29vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image {
+    height: 29vw;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
+    margin: 0 1.5vw 1.5vw 0;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(3n),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(3n) {
+    margin: 0 0 1.5vw 0;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
+    display: inline-block;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
+    width: 60vw;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu {
     flex-flow: row nowrap;
-    width: 90vw;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
     width: 20vw;
     margin-bottom: 0;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
-    width: 70vw;
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li {
-    width: 29.25vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 29.25vw;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li:nth-child(2n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-    width: 65vw;
-  }
 }
 @media only screen and (min-width: 768px) {
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type {
     text-align: center;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul {
     text-align: left;
     width: 80vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul:after {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li {
     width: 25.6666666667vw;
     height: auto;
     float: left;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li div.image {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image {
     height: 25.6666666667vw;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(n+1) {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(3n) {
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
   }
-  section#mod_gallery > #standard_gallery.non_grid {
+  section#mod_gallery > #standard_gallery.non_masonry {
     text-align: center;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul {
+  section#mod_gallery > #standard_gallery.non_masonry ul {
     text-align: left;
-    width: 80vw;
+    width: 90vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul:after {
+  section#mod_gallery > #standard_gallery.non_masonry ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li {
-    width: 25.6666666667vw;
+  section#mod_gallery > #standard_gallery.non_masonry ul > li {
+    width: 29vw;
     height: auto;
     float: left;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li div.image {
-    height: 25.6666666667vw;
+  section#mod_gallery > #standard_gallery.non_masonry ul > li div.image {
+    height: 29vw;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li:nth-child(n+1) {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li:nth-child(3n) {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
   }
-  section#mod_gallery > #standard_gallery.grid_gallery > ul {
-    column-count: 3;
-    width: 85vw;
+  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
+    text-align: left;
   }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-    column-count: 3;
-    width: 85vw;
+  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
+    display: inline-block;
   }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
+  section#mod_gallery > #standard_gallery.masonry > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
     column-count: 3;
+  }
+  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
+    column-count: 2;
+    width: 60vw;
   }
 }
 @media only screen and (min-width: 1000px) {
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type {
+  section#mod_gallery > #standard_gallery.non_masonry,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
     text-align: center;
   }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul:after,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li {
-    width: 13.875vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li div.image,
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li div.image {
-    height: 13.875vw;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(n+1),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_pills > div:last-of-type ul > li:nth-child(4n),
-section#mod_gallery > #tabbed_gallery.non_grid.tabs_classic > div:last-of-type ul > li:nth-child(4n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
-    width: 70vw;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-    width: 20vw;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-    margin-right: 15px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type {
-    width: 80vw;
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 50vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li {
-    width: 15.6666666667vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 15.6666666667vw;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_grid.tabs_side_menu > div:last-of-type ul > li:nth-child(3n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_gallery > #standard_gallery.non_grid {
-    width: 65vw;
-    text-align: center;
-  }
-  section#mod_gallery > #standard_gallery.non_grid ul {
+  section#mod_gallery > #standard_gallery.non_masonry ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul {
     text-align: left;
     width: 65vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul:after {
+  section#mod_gallery > #standard_gallery.non_masonry ul:after,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after {
     content: "";
     display: table;
     clear: both;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li {
     width: 15.125vw;
     height: auto;
     float: left;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li div.image {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li div.image,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image {
     height: 15.125vw;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li:nth-child(n+1) {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(n+1),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
   }
-  section#mod_gallery > #standard_gallery.non_grid ul > li:nth-child(4n) {
+  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(4n),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(4n),
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(4n) {
     margin: 0 0 1.5vw 0;
   }
-  section#mod_gallery > #standard_gallery.grid_gallery > ul {
-    column-count: 3;
-    width: 85vw;
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
+    text-align: center;
   }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-    column-count: 3;
-    width: 85vw;
-  }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_side_menu > div:last-of-type > ul {
-    column-count: 3;
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
+    text-align: left;
     width: 50vw;
+    margin: 0 auto 0 auto;
+    display: inline-block;
+    list-style: none;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
+    width: 15.6666666667vw;
+    height: auto;
+    float: left;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
+    height: 15.6666666667vw;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
+    margin: 0 1.5vw 1.5vw 0;
+  }
+  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(3n) {
+    margin: 0 0 1.5vw 0;
+  }
+  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
+    width: 60vw;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
+    width: 30vw;
+  }
+  section#mod_gallery > #standard_gallery.masonry > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
+    column-count: 3;
+  }
+  section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
+    padding: 0 20px;
+  }
+  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
+    margin-right: 15px;
   }
 }
 @media only screen and (min-width: 1300px) {
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
-    width: 65vw;
+  section#mod_gallery > #standard_gallery.masonry > ul,
+section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
+    padding: 0 10px;
   }
-  section#mod_gallery > #standard_gallery.grid_gallery > ul {
-    width: 65vw;
-  }
-  section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_pills > div:last-of-type > ul,
-section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-type > ul {
-    width: 65vw;
+  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
+section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
+    width: 50vw;
   }
 }
 @media only screen {
@@ -3252,8 +3214,9 @@ section#mod_gallery > #tabbed_gallery.grid_gallery.tabs_classic > div:last-of-ty
 }
 @media only screen {
   section#mod_menu > #menu_area {
-    max-width: 80vw;
+    max-width: 1262px;
     margin: 0 auto;
+    padding: 0 10px;
   }
   section#mod_menu > #menu_area > #menu_tabs_pills > h3,
 section#mod_menu > #menu_area > #menu_tabs_side_menu > h3 {
@@ -3455,12 +3418,15 @@ section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
     position: absolute;
     right: 0;
     top: 50%;
-    width: 80vw;
     z-index: -1;
   }
   section#mod_menu > #menu_area > #menu_one > h2 > span {
     background: #fff;
     padding: 0 15px;
+  }
+  section#mod_menu > #menu_area > #menu_two {
+    width: 90vw;
+    margin: 0 auto;
   }
   section#mod_menu > #menu_area > #menu_two > h3 {
     font-style: italic;
@@ -3470,9 +3436,6 @@ section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
   }
   section#mod_menu > #menu_area > #menu_two > ul > li > h3 {
     text-transform: uppercase;
-  }
-  section#mod_menu > #menu_area > #menu_three {
-    width: 80vw;
   }
   section#mod_menu > #menu_area > #menu_three > ul {
     text-align: center;
@@ -3542,9 +3505,6 @@ section#mod_menu > #menu_area > #menu_three > h3 {
   section#mod_menu > #menu_area > #menu_five > ul > li > ul > li {
     margin-bottom: 20px;
   }
-  section#mod_menu > #menu_area > #menu_six {
-    width: 80vw;
-  }
   section#mod_menu > #menu_area > #menu_six > h2,
 section#mod_menu > #menu_area > #menu_six > h3 {
     text-align: center;
@@ -3599,20 +3559,12 @@ section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
     font-size: 28px;
   }
 
-  section#mod_menu > #menu_area.menu_flex > #menu_six {
-    width: 60vw;
-  }
-
-  section#mod_menu > #menu_area,
-section#mod_menu > #menu_area > #menu_one > h2:before,
-section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-    width: 65vw;
-  }
-
-  section#mod_menu > #menu_area > #menu_five,
-section#mod_menu > #menu_area > #menu_one,
-section#mod_menu > #menu_area > #menu_three {
-    width: 60vw;
+  section#mod_menu > #menu_area.menu_flex > #menu_six,
+section#mod_menu > #menu_area.menu_flex > #menu_five,
+section#mod_menu > #menu_area.menu_flex > #menu_four,
+section#mod_menu > #menu_area.menu_flex > #menu_three,
+section#mod_menu > #menu_area.menu_flex > #menu_two {
+    width: 70vw;
   }
 
   section#mod_menu > #menu_area > #menu_one {
@@ -3620,7 +3572,7 @@ section#mod_menu > #menu_area > #menu_three {
   }
   section#mod_menu > #menu_area > #menu_one ul {
     text-align: left;
-    width: 65vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3631,7 +3583,7 @@ section#mod_menu > #menu_area > #menu_three {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_one ul > li {
-    width: 31vw;
+    width: 33.5vw;
     height: auto;
     float: left;
   }
@@ -3648,10 +3600,10 @@ section#mod_menu > #menu_area > #menu_three {
   }
 
   section#mod_menu > #menu_area.menu_flex {
-    width: 65vw;
     display: flex;
     align-items: end;
     flex-flow: row nowrap;
+    justify-content: center;
   }
 
   section#mod_menu > #menu_area.menu_flex > #menu_one {
@@ -3659,7 +3611,7 @@ section#mod_menu > #menu_area > #menu_three {
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul {
     text-align: left;
-    width: 65vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3670,7 +3622,7 @@ section#mod_menu > #menu_area > #menu_three {
     clear: both;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li {
-    width: 31vw;
+    width: 33.5vw;
     height: auto;
     float: left;
   }
@@ -3686,17 +3638,13 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     text-align: left;
   }
 
-  section#mod_menu > #menu_area > #menu_three > ul {
-    text-align: center;
-  }
-
   section#mod_menu > #menu_area > #menu_four {
     text-align: center;
     font-family: sans-serif;
   }
   section#mod_menu > #menu_area > #menu_four ul {
     text-align: left;
-    width: 60vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3707,7 +3655,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_four ul > li {
-    width: 29.25vw;
+    width: 34.25vw;
     height: auto;
     float: left;
   }
@@ -3730,23 +3678,20 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   }
 }
 @media only screen and (min-width: 1000px) {
-  section#mod_menu > #menu_area > #menu_six {
-    width: 63vw;
+  section#mod_menu > #menu_area > #menu_five > ul {
+    display: flex;
+    justify-content: space-between;
   }
-}
-@media only screen and (min-width: 1350px) {
-  section#mod_menu > #menu_area > #menu_six {
-    width: 65vw;
+  section#mod_menu > #menu_area > #menu_five > ul > li:first-of-type {
+    margin-right: 40px;
   }
-  section#mod_menu > #menu_area.menu_flex {
-    width: 65vw;
-  }
+
   section#mod_menu > #menu_area.menu_flex > #menu_one {
     text-align: center;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul {
     text-align: left;
-    width: 48vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3757,7 +3702,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li {
-    width: 22.5vw;
+    width: 33.5vw;
     height: auto;
     float: left;
   }
@@ -3767,14 +3712,12 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   section#mod_menu > #menu_area.menu_flex > #menu_one ul > li:nth-child(2n) {
     margin: 0 0 3vw 0;
   }
-  section#mod_menu > #menu_area.menu_flex > #menu_one > h2:before {
-    width: 48vw;
-  }
   section#mod_menu > #menu_area.menu_flex > #menu_two {
-    width: 60vw;
+    width: 70vw;
+    margin: 0;
   }
-  section#mod_menu > #menu_area > #menu_three > ul {
-    text-align: center;
+  section#mod_menu > #menu_area.menu_flex > #menu_four {
+    width: 70vw;
   }
   section#mod_menu > #menu_area > #menu_four {
     text-align: center;
@@ -3782,7 +3725,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   }
   section#mod_menu > #menu_area > #menu_four ul {
     text-align: left;
-    width: 48vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3793,7 +3736,7 @@ section#mod_menu > #menu_area > #menu_two > h3 {
     clear: both;
   }
   section#mod_menu > #menu_area > #menu_four ul > li {
-    width: 15vw;
+    width: 22.3333333333vw;
     height: auto;
     float: left;
   }
@@ -3802,19 +3745,6 @@ section#mod_menu > #menu_area > #menu_two > h3 {
   }
   section#mod_menu > #menu_area > #menu_four ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
-  }
-  section#mod_menu > #menu_area > #menu_five > ul {
-    width: 65vw;
-    display: flex;
-    justify-content: space-between;
-  }
-  section#mod_menu > #menu_area.menu_flex > #menu_five > ul {
-    display: flex;
-    width: 51vw;
-    justify-content: space-between;
-  }
-  section#mod_menu > #menu_area > #menu_five > ul > li:first-of-type {
-    margin-right: 40px;
   }
 }
 
