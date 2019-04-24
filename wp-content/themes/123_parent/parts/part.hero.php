@@ -7,11 +7,13 @@
     // detect hero type
     $type = $fields['choose_hero_type'];
     // a hero is either not selected, or no hero is selected
-    if( $type == 'none' || empty($type) ){
+    if( $type == 'none' || empty($type) )
+    {
         $content_hero = '';        
     }
     // we have a hero type selected
-    else {
+    else 
+    {
 
         // get all fields (options table)
         $foreground = (!empty(get_field('hero_foreground')) ? get_field('hero_foreground') : '' );

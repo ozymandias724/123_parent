@@ -51,7 +51,6 @@
             //Address span element
             &:nth-of-type(1) > div > span:nth-of-type(1) {
                 margin-left: auto;
-                width: 280px;
                 font-size: 16px;
             }
             //Address span element before pseudo element
@@ -73,9 +72,13 @@
                 transform: rotate(90deg);
                 margin-top: 5px;
             }
+            //Phone number link 
+            &:nth-of-type(1) > div > span:nth-of-type(2) > a {
+                font-size: 18px;
+            }
             //Phone number link span element
             &:nth-of-type(1) > div > span:nth-of-type(2) > a > span {
-                font-size: 14px;
+                font-size: 18px;
                 text-align: left;
                 color: $blue_infinity_carpet;
                 text-transform: uppercase;

@@ -24,14 +24,13 @@ class NavHandler
     // Initialize
     function _init(){
         $gmap_query = '';
-        $addr = get_master_address(); // supposedly easy to format (test plz)
-        $addr = str_replace('<br>', ' - ', $addr);
         $num_display = get_the_phone();
         $num_href = get_the_phone('tel');
         $popups = get_field('popups','options');
         $footer = get_field('footer','options');
         $header = get_field('header','options');
         $company_info = get_field('company_info','options');
+        $addr = $company_info['address'];
         $fadenav = $header['fade_background'];
         
         // needsfix
@@ -103,7 +102,6 @@ class NavHandler
 
 
         
-        
         /**
          * Logo
          */
@@ -124,6 +122,7 @@ class NavHandler
         /**
          * 
          */
+
 
         // $field_social_icons = get_field('field_akan8a8sskshb', 'options');
         $field_social_icons = $company_info['social_media'];
@@ -238,7 +237,7 @@ class NavHandler
             ,$fadenav
             ,$topbar_class
             ,$content_topbar
-            ,$content_logo
+            ,get_custom_logo()
             ,$desktop_social
             ,_get_site_nav()
             ,$quickquote
@@ -263,7 +262,7 @@ class NavHandler
             ,$topbar_class
             ,$fadenav
             ,$content_socialtopbar
-            ,$content_logo
+            ,get_custom_logo()
             ,_get_site_nav()
             ,$topbar_class // NOPE
         );
@@ -291,7 +290,7 @@ class NavHandler
             ,$topbar_class
             ,$fadenav
             ,$content_social_icons
-            ,$content_logo
+            ,get_custom_logo()
             ,$num_href
             ,$num_display
             ,_get_site_nav()
@@ -334,7 +333,7 @@ class NavHandler
             ,$addr
             ,$num_href
             ,$num_display
-            ,$content_logo
+            ,get_custom_logo()
             ,_get_site_nav()
         );
         
@@ -376,7 +375,7 @@ class NavHandler
             ,$num_display
             ,$addr
             ,$content_social_icons
-            ,$content_logo
+            ,get_custom_logo()
             ,_get_site_nav()
         );
         
@@ -407,7 +406,7 @@ class NavHandler
             ,$topbar_class
             ,$fadenav
             ,$content_social_icons
-            ,$content_logo
+            ,get_custom_logo()
             ,$num_href
             ,$num_display
             ,_get_site_nav()
@@ -433,7 +432,7 @@ class NavHandler
             ,$invertlogo
             ,$topbar_class
             ,$fadenav
-            ,$content_logo
+            ,get_custom_logo()
             ,_get_site_nav()
         );
         
@@ -475,7 +474,7 @@ class NavHandler
             ,$num_display
             ,$addr
             ,$content_social_icons
-            ,$content_logo
+            ,get_custom_logo()
             ,_get_site_nav()
         );
         
@@ -514,7 +513,7 @@ class NavHandler
             ,$invertlogo
             ,$topbar_class
             ,$fadenav
-            ,$content_logo
+            ,get_custom_logo()
             ,$content_social_icons
             ,_get_site_nav()
             ,$num_href

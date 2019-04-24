@@ -396,6 +396,7 @@ Theme.Gallery.Tabs_Classic._init();
 Headers.One = {
 
     header: $("header.header#opt_header_one"),
+    div_two: $("header.header#opt_header_one>div:last-of-type"),
 
     _init: function(){
 
@@ -409,7 +410,6 @@ Headers.One = {
     },
 
     _sticky_header: function() {
-
         if (window.pageYOffset >= Headers.One.div_two_offset_top) {
             Headers.One.div_two.addClass("sticky");
         } else {

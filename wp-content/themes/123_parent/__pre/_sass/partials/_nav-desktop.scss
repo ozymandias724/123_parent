@@ -6,6 +6,10 @@ $third_black : #383838;
 $opacity_level_below_one : 0.8;
 $opacity_level_below_one_2 : 0.3;
 $black_and_opacity_level_below_one : rgba(0, 0, 0, $opacity_level_below_one_2);
+$gray_one : #c2c2c2;
+$gray_two : #484848; 
+$gray_three : #aaabad; 
+$white : #fff; 
 $accent : green;
 $tint : lightgrey;
 $blue: #32A2AE;
@@ -36,13 +40,15 @@ $bp__lg : 1280px;
         z-index: 19;
         font-size: 1.4rem;
         padding-top: $banner_height;
-
+        // All header links
+        a {
+            color: $tint;
+        }
         // Logo link
         a.header-logo,
         a.custom-logo-link {
             display: inline-block;
             padding: 15px;
-
             //Logo image
             >img {
                 max-width: 180px;

@@ -103,6 +103,6 @@
 <section id="mod_gallery">
 <?php 
     echo get_section_banner($res[0]->post_title);
-    echo $return_gallery;
+    echo $return_gallery;  
 ?>
 </section>
