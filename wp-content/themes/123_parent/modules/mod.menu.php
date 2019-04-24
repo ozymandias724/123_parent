@@ -56,6 +56,9 @@
     // Check menu style
     if($style == 'Text 1/2')
     {
+        
+        $menu_section = '<div class="menu_section" id="menu_text_half">';
+        
         // Format Menu Section Title and Description
         $format_header = '
             <div class="menu_header">
@@ -71,9 +74,7 @@
                 <div>%s<span>%s</span></div>
             </li>
         ';
-
-        $menu_section = '<div class="menu_section" id="menu_text_half">';
-
+        
         // Get each menu section 
         foreach($sections as $i => $section)
         {
