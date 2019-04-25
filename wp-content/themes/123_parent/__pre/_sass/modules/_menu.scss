@@ -7,7 +7,7 @@
             max-width: 1280px;
         }
         // Menu section unordered list
-        .menu_section > ul {
+        .menu_section ul {
             list-style: none;
         }
         // Active menu section
@@ -16,21 +16,199 @@
         }
         // Menu Text 1/2
         .menu_text_half {
-            font-size: 18px;
-            color: $black;
-        }
-        // Menu text 1/2 menu header
-        .menu_text_half > #menu_header {
-            font-size: 18px
+            // Menu header
+            .menu_header {
+                text-align: center;
+            }
+            // Menu header title text
+            .menu_header > h2 {
+                margin: 9px 0 0;
+                text-transform: uppercase;
+                font-weight: 700;
+                position: relative;
+                font-size: 44px;
+            }
+            // Menu header title text span
+            .menu_header > h2 > span {
+                background: $white;
+                padding: 0 15px;
+            }
+            // Menu header title text before line 
+            .menu_header > h2:before {
+                border-top: 1px solid $gray_one;
+                bottom: 0;
+                content: "";
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                z-index: -1;
+            }
+            // Menu header description
+            .menu_header > p {
+                margin-bottom: 20px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                font-style: italic;
+                font-size: 24px;
+                font-weight: 500;
+                color: $gray_three;
+            }
+            // Menu items 
+            .menu_items > ul > li {
+                margin-bottom: 20px;
+            }
+            // Menu items titles
+            .menu_items > ul > li > h3 {
+                display: flex;
+                font-size: 26px;
+                font-weight: 700;
+                justify-content: space-between;
+                border-bottom: 3px solid $accent;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+            // Menu items prices
+            .menu_items > ul > li > h3 > span {
+                color: $gray_three;
+                font-weight: 600;
+            }
+            // Menu items description
+            .menu_items > ul > li > p {
+                font-size: 18px;
+                color: $gray_three;
+            }
+            // Menu item image
+            .menu_items > ul > li > .image_prov {
+                height: 300px;
+                max-width: 400px;
+                margin: 0 auto;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                margin-bottom: 15px;
+            }
         }
         // Menu Text List Left
         .menu_text_list_left {
-            font-size: 18px;
-            color: $black;
+            // Menu header
+            .menu_header {
+                text-align: left;
+                border-bottom: 5px dotted green;
+                margin-bottom: 30px;
+            }
+            .menu_header > h2 {
+                text-transform: capitalize;
+                font-weight: 800;
+                letter-spacing: -1px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                font-size: 44px;
+            }
+            .menu_header > p {
+                font-style: italic;
+                font-size: 24px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                font-weight: 500;
+                color: $gray_three;
+                padding-bottom: 15px;
+            }
+            .menu_items > ul > li {
+                margin-bottom: 20px;
+            }
+            .menu_items > ul > li > h3 {
+                text-transform: uppercase;
+                display: flex;
+                font-size: 26px;
+                font-weight: 700;
+                justify-content: space-between;
+            }
+            .menu_items > ul > li > p {
+                font-size: 24px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                color: $gray_three;
+                font-style: italic;
+            }
+            // Menu item image
+            .menu_items > ul > li > .image_prov {
+                height: 300px;
+                max-width: 400px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center left;
+                margin-bottom: 15px;
+            }
         }
-        // Menu text list left menu header
-        .menu_text_list_left > #menu_header {
-            font-size: 18px;
+        // Menu Text List Center 
+        .menu_text_list_center {
+            // Menu header
+            .menu_header {
+                text-align: center;
+                border-bottom: 3px solid green;
+                margin-bottom: 30px;
+            }
+            .menu_header > h2 {
+                font-size: 44px;
+                text-transform: capitalize;
+                font-weight: 800;
+                letter-spacing: -1px;
+            }
+            .menu_header > p {
+                font-style: italic;
+                font-size: 24px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                font-weight: 500;
+                color: $gray_three;
+                padding-bottom: 15px;
+            }
+            .menu_items {
+                text-align: center;
+            }
+            .menu_items > ul > li {
+                margin-bottom: 20px;
+            }
+            .menu_items > ul > li > h3 {
+                font-size: 26px;
+                font-weight: 800;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }
+            .menu_items > ul > li > h3 > span {
+                font-weight: 500;
+            }
+            .menu_items > ul > li > h3 > span:before {
+                content: "";
+                border-left: 2px solid $gray_three;
+                margin: 0 15px 0 10px;
+            }
+            .menu_items > ul > li > p {
+                font-size: 24px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                color: $gray_three;
+                font-style: italic;
+            }
+            // Menu item image
+            .menu_items > ul > li > .image_prov {
+                height: 300px;
+                max-width: 400px;
+                margin: 0 auto;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                margin-bottom: 15px;
+            }
+        }
+        // Menu Photo List 
+        .menu_photo_list {
+            font-size: 16px;
+            .menu_header {
+                
+            }
         }
         // Menu Content
         .menu_content {
@@ -46,19 +224,23 @@
             flex-flow: column nowrap;
             // Menu tabs
             #menu_tabs {
-                font-size: 18px;
+                font-size: 14px;
+                text-align: center;
+                margin-bottom: 15px;
             }
             // Menu tabs titles
             #menu_tabs > h4 {
                 display: block;
             }
+            // Menu tabs links
             #menu_tabs > h4 > a {
                 padding: 10px 15px;
-                color: $gray_one;
+                color: $gray_two;
                 border-bottom: 1px solid $gray_one;
                 display: block;
                 transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
             }
+            // Menu tabs links actions on active menu link, active and focus
             #menu_tabs > h4 > a.active_menu_link,
             #menu_tabs > h4 > a:active, 
             #menu_tabs > h4 > a:focus {
@@ -66,9 +248,9 @@
                 color: $white;
                 border-bottom: 1px solid $accent;
             }
+            // Menu tabs links actions on hover
             #menu_tabs > h4 > a:hover {
                 background-color: $gray_one;
-                color: $gray_two;
                 border-bottom: 1px solid transparent;
             }
         }
@@ -80,12 +262,30 @@
         #tabs_side_menu {
             flex-flow: row nowrap;
             #menu_tabs {
-                flex: 0 1 20%;
+                flex: 0 1 30%;
                 margin: 0 30px 0 0;
             }
             .menu_section {
-                flex: 0 1 80%;
+                flex: 0 1 70%;
             }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    section#mod_menu {
+        .menu_text_half .menu_items > ul {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .menu_text_half .menu_items > ul > li {
+            flex: 0 1 50%;
+        }
+        .menu_text_half .menu_items > ul > li:nth-child(odd) {
+            padding-right: 15px;
+        }
+        .menu_text_half .menu_items > ul > li:nth-child(even) {
+            padding-left: 15px;
         }
     }
 }
@@ -98,449 +298,3 @@
     }
 }
 
-// @media only screen {    
-//     section#mod_menu > #menu_area {
-//         max-width: $max_width;
-//         margin: 0 auto;
-//         padding: 0 10px;
-//         // Similar Propeties of Tabs
-//         > #menu_tabs_pills > h3, 
-//         > #menu_tabs_side_menu  > h3 {
-//             display: block;
-//             font-size: 14px;
-//         }
-//         > #menu_tabs_pills > h3 > a {
-//             padding: 10px 25px;
-//             color: $gray_one;
-//         }
-//         > #menu_tabs_side_menu > h3 > a {
-//             padding: 10px 15px;
-//             color: $gray_one;
-//         }
-//         > #menu_tabs_pills > h3 > a.active_tab,
-//         > #menu_tabs_pills > h3 > a:active,
-//         > #menu_tabs_pills > h3 > a:focus, 
-//         > #menu_tabs_side_menu > h3 > a.active_tab,
-//         > #menu_tabs_side_menu > h3 > a:active,
-//         > #menu_tabs_side_menu > h3 > a:focus {
-//             background-color: $accent_color;
-//             color: $white;
-//         }
-//         > #menu_tabs_pills > h3 > a:hover,
-//         > #menu_tabs_side_menu > h3 > a:hover {
-//             background-color: $gray_one;
-//         }
-
-//         // Menu Tabbed Pills 
-//         > #menu_tabs_pills {
-//             color: $gray_one;
-//             margin: 0 auto 25px auto;
-//             text-align: center;
-//         }
-//         // Menu Tabbed Side Menu
-//         > #menu_tabs_side_menu {
-//             margin: 0 auto 15px auto;
-//             text-align: left;
-//             width: 80vw;
-//         }
-//         // Tab Title
-//         > #menu_tabs_pills > h3 {
-//             margin: 10px 5px;
-//             padding: 10px 0;
-//             text-transform: uppercase;
-//         }
-//         // Tab Title Link
-//         > #menu_tabs_pills > h3 > a {
-//             background-color: transparent;
-//             border: 2px solid $gray_one;
-//             border-radius: 20px;
-//         }
-//         > #menu_tabs_side_menu > h3 > a {
-//             border-bottom: 1px solid $gray_one;
-//             display: block;
-//             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-//         }
-//         // Tab Title Link actions on active_tab, active and focus
-//         > #menu_tabs_pills > h3 > a.active_tab,
-//         > #menu_tabs_pills > h3 > a:active,
-//         > #menu_tabs_pills > h3 > a:focus {
-//             border: 2px solid $accent_color;
-//         }
-//         > #menu_tabs_side_menu > h3 > a.active_tab,
-//         > #menu_tabs_side_menu > h3 > a:active, 
-//         > #menu_tabs_side_menu > h3 > a:focus {
-//             border-bottom: 1px solid $accent_color;
-//         }
-//         // Tab Title Link action on hover
-//         > #menu_tabs_pills > h3 > a:hover {
-//             border: 2px solid $gray_one;
-//             color: $white;
-//         }
-//         > #menu_tabs_side_menu > h3 > a:hover {
-//             border-bottom: 1px solid transparent;
-//             color: $gray_two;
-//         }
-//         > #menu_one, 
-//         > #menu_four {
-//             $w : 80vw;
-//             $c : 1;
-//             $g : 3vw;
-//             $s : to-upper-case($string: "");
-//             @include gridLayout($w, $c, $g, $s);
-//         }
-//         > #menu_one > h2,
-//         > #menu_two > h2,
-//         > #menu_three > h2,
-//         > #menu_four > h2,
-//         > #menu_six > h2 {
-//             font-size: 40px;
-//             text-transform: capitalize;
-//             font-weight: 800;
-//             letter-spacing: -1px;
-//         }
-//         > #menu_two > h3,
-//         > #menu_three > h3,
-//         > #menu_four > h3,
-//         > #menu_six > h3 {    
-//             font-size: 18px;
-//             font-style: italic;
-//             font-weight: 500;
-//             color: $gray_five;
-//             padding-bottom: 15px;
-//             border-bottom: 5px dotted $accent_color; 
-//             margin-bottom: 30px;
-//         }
-//         > #menu_three > h3 {
-//             border-bottom: 3px solid $accent_color; 
-//         }
-//         > #menu_four > h3,    
-//         > #menu_six > h3 {    
-//             border-bottom: 3px solid $accent_color; 
-//         }
-//         > #menu_one > ul > li > h3,
-//         > #menu_two > ul > li > h3,
-//         > #menu_four > ul > li > h3,
-//         > #menu_five > ul > li > ul > li > h3 {
-//             display: flex;
-//             font-size: 26px;
-//             font-weight: 700;
-//             justify-content: space-between;
-//         }
-//         > #menu_one > ul > li > p,
-//         > #menu_two > ul > li > p,
-//         > #menu_three > ul > li > p,
-//         > #menu_five > ul > li > ul > li > p {
-//             font-size: 18px;
-//             color: $gray_five;
-//             font-style: italic;
-//         }
-//         > #menu_four > ul > li > .menu_image, 
-//         > #menu_six > ul > li > .menu_image {
-//             height: 200px; 
-//             background-size: cover;
-//             background-position: center;
-//             background-repeat: no-repeat;
-//             margin-bottom: 10px;
-//         }
-//         > #menu_one > ul > li > h3,
-//         > #menu_five > ul > li > ul > li > h3 {
-//             border-bottom: 3px solid $accent_color;
-//             padding-bottom: 15px;
-//             margin-bottom: 15px;
-//         }
-//         > #menu_one > ul > li > h3 > span,
-//         > #menu_five > ul > li > ul > li > h3 > span {
-//             color: $gray_four;
-//             font-weight: 600;
-//         }
-//         > #menu_one > ul > li > p,
-//         > #menu_five > ul > li > ul > li > p {
-//             font-style: normal;
-//         }
-    
-//         > #menu_two > h2,
-//         > #menu_two > h3,
-//         > #menu_two > ul > li > p,
-//         > #menu_three > h3,
-//         > #menu_three > ul > li > p,
-//         > #menu_four > h3,  
-//         > #menu_six > ul > li > div > p,
-//         > #menu_six > h3,
-//         > #menu_six > ul > li > div > p {
-//             font-family: "Times New Roman";
-//             line-height: 1em;
-//         }
-
-//         // Menu One Headline
-//         > #menu_one > h2 {
-//             margin: 20px 0 20px;
-//             position: relative;
-//             text-align: center;
-//             text-transform: uppercase;
-//             font-family: "Aleo", serif;
-//             font-weight: 700;
-//             letter-spacing: 0;
-//         }
-//         // Menu One line behind Headline
-//         > #menu_one > h2:before {
-//             border-top: 2px solid #dfdfdf;
-//             bottom: 0;
-//             content: "";
-//             left: 0;
-//             margin: 0 auto;
-//             position: absolute;
-//             right: 0;
-//             top: 50%;
-//             z-index: -1;
-//         }
-//         // Menu One Headline Span
-//         > #menu_one > h2 > span {
-//             background: #fff;
-//             padding: 0 15px;
-//         }
-
-//         > #menu_two {
-//             width: 90vw;
-//             margin: 0 auto;
-//         }
-//         > #menu_two > h3 {
-//             font-style: italic;
-//         }
-//         > #menu_two > ul > li {
-//             margin-bottom: 20px;
-//         }
-//         > #menu_two > ul > li > h3 {
-//             text-transform: uppercase;
-//         }
-        
-//         // Menu Three Unordered Lists
-//         > #menu_three > ul {
-//             text-align: center;
-//         }
-//         > #menu_three > ul > li {
-//             margin-bottom: 20px;
-//         }
-//         > #menu_three > h2,
-//         > #menu_three > h3 {
-//             text-align: center;
-//         }
-//         // Menu Three Unordered Lists Titles 
-//         > #menu_three > ul > li > h3 {
-//             font-size: 26px;
-//             font-weight: 800;
-//             text-transform: uppercase;
-//             margin-bottom: 5px;
-//         }
-//         > #menu_three > ul > li > h3 > span {
-//             font-weight: 500;
-//         }
-//         > #menu_three > ul > li > h3 > span:before {
-//             content: "";
-//             border-left: 2px solid $gray_four;
-//             margin: 0 10px 0 15px;
-//         }
-   
-//         // Menu Four Unordered Lists Titles 
-//         > #menu_four > ul > li > h3 {
-//             font-size: 18px;
-//             margin-bottom: 5px;
-//         }
-//         > #menu_four > ul > li > h3 > div > span {
-//             font-size: 14px;
-//             position: relative;
-//             top: -5px;
-//         }
-//         // Menu Four Unordered Lists Paragraph Text
-//         > #menu_four > ul > li > p {
-//             font-size: 12px;
-//             color: $gray_four;
-//             font-family: "Montserrat";
-//         }
-
-//         > #menu_five > ul {
-//             align-items: center;
-//         }
-//         > #menu_five > ul > li > div {
-//             display: flex;
-//             align-items: center;
-//         }
-//         > #menu_five > ul > li > div > h2 {
-//             margin: 0 20px 20px 0;
-//             position: relative;
-//             text-align: left;
-//             text-transform: uppercase;
-//             font-family: "Aleo", serif;
-//             font-weight: 700;
-//             font-size: 36px;
-//             margin-right: 10px;
-//         }
-//         > #menu_five > ul > li > div > span {
-//             background-color: $gray_three;
-//             content: "";
-//             display: inline-block;
-//             height: 2px;
-//             position: relative;
-//             vertical-align: middle;
-//             width: 100%;
-//             margin-bottom: 20px;
-//         }
-//         > #menu_five > ul > li > ul > li {
-//             margin-bottom: 20px;
-//         }
-
-//         > #menu_six > h2,
-//         > #menu_six > h3 {
-//             text-align: center;
-//         }
-//         > #menu_six > ul > li > div {
-//             margin-bottom: 20px;
-//         }
-//         // Menu Six Unordered Lists Titles 
-//         > #menu_six > ul > li > div > h3 {
-//             font-size: 22px;
-//             font-weight: 900;
-//         }
-//         > #menu_six > ul > li > div > h4 {
-//             font-size: 22px;
-//             color: $gray_two;
-//             font-weight: 500;
-//         }
-//         > #menu_six > ul > li > div > p {
-//             font-style: italic;
-//             color: $gray_five;
-//             font-size: 20px;
-//             line-height: 1.3em;
-//             padding-bottom: 10px;
-//             border-bottom: 4px dotted $gray_one;
-//             margin-bottom: 20px;
-//         }
-//     }
-// }
-
-// @media only screen and (min-width: 768px){
-//     // Menu Tabs Pills Links
-//     section#mod_menu > #menu_area > #menu_tabs_pills > h3 {
-//         display: inline-block;
-//     }
-//     section#mod_menu > #menu_area > #menu_one > h2, 
-//     section#mod_menu > #menu_area > #menu_two > h2, 
-//     section#mod_menu > #menu_area > #menu_three > h2, 
-//     section#mod_menu > #menu_area > #menu_four > h2, 
-//     section#mod_menu > #menu_area > #menu_six > h2 {
-//         font-size: 44px;
-//     }
-//     section#mod_menu > #menu_area > #menu_two > h3,
-//     section#mod_menu > #menu_area > #menu_three > h3,
-//     section#mod_menu > #menu_area > #menu_four > h3,
-//     section#mod_menu > #menu_area > #menu_six > h3,
-//     section#mod_menu > #menu_area > #menu_two > ul > li > p,
-//     section#mod_menu > #menu_area > #menu_three > ul > li > p,
-//     section#mod_menu > #menu_area > #menu_six > ul > li > p,
-//     section#mod_menu > #menu_area > #menu_six > ul > li > div > p {
-//         font-size: 24px
-//     }
-//     section#mod_menu > #menu_area > #menu_six > ul > li > div > h3 {
-//         font-size: 28px;
-//     }
-//     section#mod_menu > #menu_area.menu_flex > #menu_six,
-//     section#mod_menu > #menu_area.menu_flex > #menu_five,
-//     section#mod_menu > #menu_area.menu_flex > #menu_four,
-//     section#mod_menu > #menu_area.menu_flex > #menu_three,
-//     section#mod_menu > #menu_area.menu_flex > #menu_two {
-//         width: 70vw;
-//     }
-//     section#mod_menu > #menu_area > #menu_one {
-//         $w : 70vw;
-//         $c : 2;
-//         $g : 3vw;
-//         $s : to-upper-case($string: "");
-//         @include gridLayout($w, $c, $g, $s);
-//     }
-//     // Menu Tabbed Side Menu
-//     section#mod_menu > #menu_area > #menu_tabs_side_menu {
-//         width: 20vw;
-//         margin: 0 20px 20px 0;
-//     }
-//     // Menu Section with Flexbox
-//     section#mod_menu > #menu_area.menu_flex {
-//         display: flex;
-//         align-items: end;
-//         flex-flow: row nowrap;
-//         justify-content: center;
-//     }
-//     // Menu Section with Flexbox for Menu One
-//     section#mod_menu > #menu_area.menu_flex > #menu_one {
-//         $w : 70vw;
-//         $c : 2;
-//         $g : 3vw;
-//         $s : to-upper-case($string: "");
-//         @include gridLayout($w, $c, $g, $s);
-//     }
-
-//     // Menu Two and Three Title and Subtitle
-//     section#mod_menu > #menu_area > #menu_two > h2,
-//     section#mod_menu > #menu_area>  #menu_two > h3 {
-//         text-align: left;
-//     }
-
-//     // Menu Four
-//     section#mod_menu > #menu_area > #menu_four {
-//         $w : 70vw;
-//         $c : 2;
-//         $g : 1.5vw;
-//         $s : to-upper-case($string: "");
-//         @include gridLayout($w, $c, $g, $s);
-//         font-family: sans-serif;
-//     }
-
-//     // Menu Six
-//     section#mod_menu > #menu_area > #menu_six > ul > li {
-//         display: flex;
-//         align-items: flex-start;
-//         margin-bottom: 15px;
-//     }
-//     section#mod_menu > #menu_area > #menu_six > ul > li > .menu_image {
-//         width: 500px;
-//         margin-right: 20px;
-//     }
-// }
-
-// @media only screen and (min-width: 1000px){
-//     section#mod_menu {
-//         > #menu_area > #menu_five > ul {
-//             display: flex;
-//             justify-content: space-between;
-//         }
-//         > #menu_area > #menu_five > ul > li:first-of-type {
-//             margin-right: 40px; 
-//         } 
-//     }
-//     section#mod_menu {
-//         // Menu Section with Flexbox for Menu One
-//         > #menu_area.menu_flex > #menu_one {
-//             $w : 70vw;
-//             $c : 2;
-//             $g : 3vw;
-//             $s : to-upper-case($string: "");
-//             @include gridLayout($w, $c, $g, $s);
-//         }
-  
-//         // Menu Two with Flexbox 
-//         > #menu_area.menu_flex > #menu_two {
-//             width: 70vw;
-//             margin: 0;
-//         }
-//         > #menu_area.menu_flex > #menu_four {
-//             width: 70vw;
-//         }
-//         // Menu Four
-//         > #menu_area > #menu_four  {
-//             $w : 70vw;
-//             $c : 3;
-//             $g : 1.5vw;
-//             $s : to-upper-case($string: "");
-//             @include gridLayout($w, $c, $g, $s);
-//             font-family: sans-serif;
-//         }
-//     }   
-// }

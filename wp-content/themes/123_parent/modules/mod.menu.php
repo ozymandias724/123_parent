@@ -104,16 +104,16 @@
         // Format Menu Section Title and Description
         $format_header = '
             <div class="menu_header">
-                <h2>%s</h2>
+                <h2><span>%s</span></h2>
                 %s
             </div>
         ';
         // Format Menu Section Item
         $format_item = '
             <li class="menu_item">
-                <div style="background-image:url(%s);"></div>
-                <h3>%s</h3>
-                <div>%s<span>%s</span></div>
+                %s
+                <h3>%s <span>%s<span></h3>
+                %s
             </li>
         ';
 
@@ -129,22 +129,22 @@
             );
 
             // For each menu section item
-            $ul = '<ul>';
+            $ul = '<div class="menu_items"><ul>';
             foreach($section['item'] as $k => $item)
             {
                 $ul .= sprintf(
                     $format_item
                     // Get image url
-                    ,$item['image']['url']
+                    ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].'");"></div>' : ''
                     // Get title
                     ,$item['title']
-                    // Get description
-                    ,$item['description']
                     // Get price
                     ,$item['price']
+                    // Get description
+                    ,$item['description']
                 );
             }
-            $ul .= '</ul>';
+            $ul .= '</ul></div>';
 
             $menu_section .= $ul;
         }
