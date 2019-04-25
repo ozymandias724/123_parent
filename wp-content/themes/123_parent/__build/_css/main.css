@@ -3218,24 +3218,82 @@ section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-t
   }
 }
 @media only screen {
-  section#mod_menu #menu_tabs {
-    font-size: 18px;
-    margin: 0 auto;
-    max-width: 1280px;
-  }
   section#mod_menu .menu_section {
-    margin: 0 auto;
+    display: none;
     max-width: 1280px;
   }
   section#mod_menu .menu_section > ul {
     list-style: none;
   }
-  section#mod_menu #menu_text_half {
+  section#mod_menu .active_menu_section {
+    display: block;
+  }
+  section#mod_menu .menu_text_half {
     font-size: 18px;
     color: #000;
   }
-  section#mod_menu #menu_text_half > #menu_header {
+  section#mod_menu .menu_text_half > #menu_header {
     font-size: 18px;
+  }
+  section#mod_menu .menu_text_list_left {
+    font-size: 18px;
+    color: #000;
+  }
+  section#mod_menu .menu_text_list_left > #menu_header {
+    font-size: 18px;
+  }
+  section#mod_menu .menu_content {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+  section#mod_menu #tabs_side_menu {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  section#mod_menu #tabs_side_menu #menu_tabs {
+    font-size: 18px;
+  }
+  section#mod_menu #tabs_side_menu #menu_tabs > h4 {
+    display: block;
+  }
+  section#mod_menu #tabs_side_menu #menu_tabs > h4 > a {
+    padding: 10px 15px;
+    color: #c2c2c2;
+    border-bottom: 1px solid #c2c2c2;
+    display: block;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+  }
+  section#mod_menu #tabs_side_menu #menu_tabs > h4 > a.active_menu_link,
+section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:active,
+section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:focus {
+    background-color: green;
+    color: #fff;
+    border-bottom: 1px solid green;
+  }
+  section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:hover {
+    background-color: #c2c2c2;
+    color: #484848;
+    border-bottom: 1px solid transparent;
+  }
+}
+@media only screen and (min-width: 768px) {
+  section#mod_menu #tabs_side_menu {
+    flex-flow: row nowrap;
+  }
+  section#mod_menu #tabs_side_menu #menu_tabs {
+    flex: 0 1 20%;
+    margin: 0 30px 0 0;
+  }
+  section#mod_menu #tabs_side_menu .menu_section {
+    flex: 0 1 80%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  section#mod_menu .menu_content {
+    padding: 0 10px;
   }
 }
 

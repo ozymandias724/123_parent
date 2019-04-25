@@ -1,27 +1,99 @@
 @media only screen {
-    // Menu Section
+    // Menu Area
     section#mod_menu {
-        // Menu Tabs
-        #menu_tabs {
-            font-size: 18px;
-            margin: 0 auto;
-            max-width: $nav_maxwidth;
-        }
-        // Menu Content
+        // Menu Section
         .menu_section {
-            margin: 0 auto;
-            max-width: $nav_maxwidth;
+            display: none;
+            max-width: 1280px;
         }
+        // Menu section unordered list
         .menu_section > ul {
             list-style: none;
         }
+        // Active menu section
+        .active_menu_section {
+            display: block;
+        }
         // Menu Text 1/2
-        #menu_text_half {
+        .menu_text_half {
             font-size: 18px;
             color: $black;
         }
-        #menu_text_half > #menu_header {
+        // Menu text 1/2 menu header
+        .menu_text_half > #menu_header {
             font-size: 18px
+        }
+        // Menu Text List Left
+        .menu_text_list_left {
+            font-size: 18px;
+            color: $black;
+        }
+        // Menu text list left menu header
+        .menu_text_list_left > #menu_header {
+            font-size: 18px;
+        }
+        // Menu Content
+        .menu_content {
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+        // Menu with Tabs Side Menu
+        #tabs_side_menu {
+            max-width: $nav_maxwidth;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            // Menu tabs
+            #menu_tabs {
+                font-size: 18px;
+            }
+            // Menu tabs titles
+            #menu_tabs > h4 {
+                display: block;
+            }
+            #menu_tabs > h4 > a {
+                padding: 10px 15px;
+                color: $gray_one;
+                border-bottom: 1px solid $gray_one;
+                display: block;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+            }
+            #menu_tabs > h4 > a.active_menu_link,
+            #menu_tabs > h4 > a:active, 
+            #menu_tabs > h4 > a:focus {
+                background-color: $accent;
+                color: $white;
+                border-bottom: 1px solid $accent;
+            }
+            #menu_tabs > h4 > a:hover {
+                background-color: $gray_one;
+                color: $gray_two;
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    section#mod_menu {
+        #tabs_side_menu {
+            flex-flow: row nowrap;
+            #menu_tabs {
+                flex: 0 1 20%;
+                margin: 0 30px 0 0;
+            }
+            .menu_section {
+                flex: 0 1 80%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $nav_maxwidth){
+    section#mod_menu {
+        .menu_content {
+            padding: 0 10px;
         }
     }
 }

@@ -317,80 +317,31 @@ Theme.Gallery.Tabs_Classic = {
 }
 Theme.Gallery.Tabs_Classic._init();
 
-// Theme.Menu = {
-//     link : $("#mod_menu > #menu_area h3 a"),
-//     active_link_text : $("#mod_menu a.active_tab").text(),
-//     menu_section: $(".menu_section"), 
-//     menu_title : $(".menu_title"), 
-//     menu_subtitle : $(".menu_subtitle"), 
+Theme.Menu = {
+    tab_header : $("#mod_menu #menu_tabs > h4 > a"),
+    tab_link : $("#mod_menu #menu_tabs > h4 > a"),
+    menu_section : $("#mod_menu .menu_section"),
 
-//     _init : function(){
-//         Theme.Menu.link.on("click", Theme.Menu._link_click);  
-//         Theme.Menu._hide_non_active();
-//     },
-//     _link_click : function(e){
-//         Theme.Menu.link_text = e.target.classList[0];
-//         // Tab Link
-//         Theme.Menu.link.each(function(){
-//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_tab")){
-//                 $(this).addClass('active_tab');
-//             }else{
-//                 $(this).removeClass('active_tab');
-//             }
-//         });
-//         // Menu Title
-//         Theme.Menu.menu_title.each(function(){
-//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_title")){
-//                 $(this).show();
-//             }else{
-//                 $(this).hide();
-//             }
-//         });
-//         // Menu Subtitle
-//         Theme.Menu.menu_subtitle.each(function(){
-//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_subtitle")){
-//                 $(this).show();
-//             }else{
-//                 $(this).hide();
-//             }
-//         });
-//         // Menu List
-//         Theme.Menu.menu_section.each(function(){
-//             if($(this).hasClass(Theme.Menu.link_text.substring(0, Theme.Menu.link_text.length - 4) + "_section")){
-//                 $(this).show();
-//             }else{
-//                 $(this).hide();
-//             }
-//         });
-//     }, 
-//     _hide_non_active : function(){
-//         // Menu Title
-//         Theme.Menu.menu_title.each(function(){
-//             if($(this).hasClass("active_menu_title")){
-//                 $(this).show();
-//             }else{
-//                 $(this).hide();
-//             }
-//         });
-//         // Menu Subtitle
-//         Theme.Menu.menu_subtitle.each(function(){
-//             if($(this).hasClass("active_menu_subtitle")){
-//                 $(this).show();
-//             }else{
-//                 $(this).hide();
-//             }
-//         });
-//         // Menu List
-//         Theme.Menu.menu_section.each(function(){
-//             if($(this).hasClass("active_menu_section")){
-//                 $(this).show();
-//             }else{
-//                 $(this).hide();
-//             }
-//         });
-//     }
-// }
-// Theme.Menu._init();
+    _init : function(){
+        Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
+    },
+    _tab_link_click : function(e){
+        var menu_name = e.target.dataset.tab;
+        Theme.Menu.menu_section.each(function(){
+            $(this).removeClass("active_menu_section");
+        });
+        Theme.Menu.tab_link.each(function(){
+            $(this).removeClass("active_menu_link");
+        });
+        Theme.Menu.tab_header.each(function(){
+            $(this).removeClass("active_menu_header");
+        });
+        $(".menu_section[data-tab^='"+menu_name+"']").addClass("active_menu_section");
+        $(this).addClass("active_menu_link");
+        $(this).parent().addClass("active_menu_header");
+    }
+}
+Theme.Menu._init();
 
 
 Headers.One = {
