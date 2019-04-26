@@ -1,6 +1,5 @@
 @media only screen {
     header#opt_header_four {
-        color: white;
         padding: 0px;
         //Top part of header
         > div {
@@ -35,7 +34,7 @@
                 padding: 5px;
                 text-align: center;
                 overflow: hidden;
-                color: white;
+                color: #fff;
                 transition: color 0.3s;
             }
             //Social icons list items links actions on hover, active and focus 
@@ -53,6 +52,7 @@
                 border-bottom: 1px solid transparent;
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
+                color: $nav_4_top_bar_phone;
             }
             //Phone number link actions on hover, active and focus
             > div > span:last-child > a:hover,
@@ -90,7 +90,7 @@
         //Navigational menu list items links 
         > nav > ul > li > a {
             text-decoration: none;
-            color: white;
+            color: $nav_4_menu_text;
             text-transform: uppercase;
             padding: 10px;
             font-size: 13px;

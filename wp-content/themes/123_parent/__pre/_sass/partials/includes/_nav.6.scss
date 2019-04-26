@@ -6,7 +6,7 @@
         > div {
             //Top bar including (Address, phone number and social icons)
             &:first-of-type {
-                background-color: $prestige_painters;
+                background-color: $accent;
                 width: 100%;
             }
             //First div element, parent of address and phone number section and social icons section
@@ -32,6 +32,7 @@
             //Address and phone number links
             &:first-of-type > div > div > span > a {
                 padding: 10px;
+                color: $nav_6_top_bar_text;
                 //Icons for the address and phone number
                 > i {
                     font-size: 18px;
@@ -57,6 +58,7 @@
             //Social icons unordered list items links
             &:first-of-type > div > ul > li > a {
                 padding: 10px;
+                color: $header_icons_color;
             }
             //Bottom part including logo and navigational menu and quote button
             &:last-of-type {
@@ -108,21 +110,22 @@
             //Navigational menu unordered list items links
             &:last-of-type > div > div > nav > ul > li > a {
                 padding: 10px 0;
-                border-bottom: 2px solid rgba(233, 29, 98, 0);
+                border-bottom: 2px solid rgba(233, 29, 98, 0); 
+                color: $nav_6_menu_text;
             }
             //Navigational menu unordered list items links actions on hover, active and focus
             &:last-of-type > div > div > nav > ul > li > a:hover,
             &:last-of-type > div > div > nav > ul > li > a:active, 
             &:last-of-type > div > div > nav > ul > li > a:focus {
-                border-bottom: 2px solid rgba(233, 29, 98, 1);
+                border-bottom: 2px solid $accent;
             }
             //Quote button link
             &:last-of-type > div > div > a {
                 padding: 10px 20px;
                 border-radius: 20px;
-                background-color: $prestige_painters;
+                background-color: $accent;
+                color: $nav_6_quote_button_text;
             }
-            //Actions on hover, active and focus for 
             //Phone number and address links
             &:first-of-type>div>div>span>a,
             //Social icons unordered list items links
@@ -131,7 +134,6 @@
             &:last-of-type>div>div>a {
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
-                color: white;
                 &:hover,
                 &:active,
                 &:focus {

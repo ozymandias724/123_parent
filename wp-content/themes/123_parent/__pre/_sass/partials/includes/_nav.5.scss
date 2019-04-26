@@ -31,6 +31,7 @@
             &:first-of-type > div > ul > li > a {
                 padding: 10px;
                 transition: color 0.3s;
+                color: #fff;
                 //Social icons list items icons
                 > i {
                     font-size: 16px;
@@ -50,7 +51,7 @@
                 > i {
                     font-size: 16px;
                     margin-right: 10px;
-                    color: $prestige_painters;
+                    color: $accent;
                 }
             }
             //Address span element
@@ -62,6 +63,7 @@
             &:first-of-type > div > div > span:first-of-type > a {
                 padding: 10px;
                 transition: color 0.3s;
+                color: #fff;
             }
             //Address link actions on hover, active and focus
             &:first-of-type > div > div > span:first-of-type > a:hover,
@@ -78,7 +80,7 @@
             &:first-of-type > div > ul > li > a:active,
             &:first-of-type > div > ul > li > a:focus
             {
-                color: $prestige_painters;
+                color: $accent;
             }
             //Phone number in span element
             &:first-of-type > div > div > span:last-of-type {
@@ -89,6 +91,7 @@
             &:first-of-type > div > div > span:last-of-type > a {
                 padding: 10px;
                 transition: color 0.3s;
+                color: #fff;
             }
             //Phone number link icon
             &:first-of-type > div > div > span:last-of-type > a > i {
@@ -100,9 +103,10 @@
                 text-transform: uppercase;
                 padding: 15px 15px;
                 font-weight: 500;
-                background-color: $prestige_painters;
+                background-color: $accent;
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.1s;
+                color: $nav_5_quote_button;
             }
             //Quote button actions on hover, active and focus
             &:first-of-type > div > div > a:hover, 
@@ -149,13 +153,14 @@
                 font-weight: 500;
                 transition: color 0.1s, background-color 0.1s;
                 display: block;
+                color: $nav_5_menu_text;
             }
             //Navigational menu unordered list items links actions on hover, active and focus
             &:last-of-type > div > nav > ul > li > a:hover, 
             &:last-of-type > div > nav > ul > li > a:active, 
             &:last-of-type > div > nav > ul > li > a:focus { 
-                background-color: $prestige_painters;
-                color: white;
+                background-color: $accent;
+                color: #fff;
             }
         }
     }

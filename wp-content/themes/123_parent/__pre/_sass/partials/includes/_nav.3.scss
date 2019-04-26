@@ -13,7 +13,7 @@
             }
             //Top part of header
             > div:first-of-type {
-                background-color: $pink;
+                background-color: $accent;
                 color: white;
                 display: flex;
                 flex-flow: row nowrap;
@@ -38,6 +38,7 @@
                 padding: 10px;
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
+                color: $nav_3_top_bar_text;
             }
             //Links of address and phone number actions on hover, active and focus
             > div:first-of-type > span a:hover, 
@@ -93,6 +94,7 @@
             > div:last-of-type > ul > li > a {
                 padding: 7px;
                 opacity: $opacity_level_below_one;
+                color: $nav_3_menu_text;
             }
             //Navigational menu unordered list items links actions on hover, focus and active 
             > div:last-of-type > ul > li > a:hover,

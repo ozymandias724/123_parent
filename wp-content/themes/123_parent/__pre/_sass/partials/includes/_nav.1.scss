@@ -18,8 +18,8 @@
             }
             //Top part of header
             &:nth-of-type(1) {
-                background-color: $black;
-                color: white;
+                background-color: $nav_1_top_bar_background;
+                color: $nav_1_top_bar_text;
             }
             //Span elements inside top part of header
             &:nth-of-type(1) > div > span:nth-of-type(1),
@@ -29,10 +29,10 @@
             }
             //Before pseudo of span elements inside top part of header
             &:nth-of-type(1) > div > span:before {
-                color: $blue_infinity_carpet;
+                color: $accent;
                 border-radius: 100%;
                 font-weight: 700;
-                border: 3px solid $blue_infinity_carpet;
+                border: 3px solid $accent;
                 display: block;
                 font-family: 'Font Awesome 5 Free';
             }
@@ -41,6 +41,7 @@
                 padding: 5px;
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
+                color: $nav_1_top_bar_text;
             }
             //Links actions on hover, active and focus of span elements inside top part of header
             &:nth-of-type(1) > div > span > a:hover,
@@ -80,14 +81,14 @@
             &:nth-of-type(1) > div > span:nth-of-type(2) > a > span {
                 font-size: 18px;
                 text-align: left;
-                color: $blue_infinity_carpet;
+                color: $accent;
                 text-transform: uppercase;
                 display: block;
                 font-weight: 700;
             }
             //Lower part of header (navigational menu and social icons) 
             &:nth-of-type(2) {
-                background-color: white;
+                background-color: $nav_1_bottom_bar_background;
                 box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
                 top: 0; 
             }       
@@ -103,21 +104,21 @@
             &:nth-of-type(2) > div > nav > ul > li > a {
                 display: block;
                 font-weight: 500;
-                color: $black;
+                color: $nav_1_menu_text;
                 padding: 15px 10px;
             }
             //Navigational menu actions on hover, active and focus
             &:nth-of-type(2) > div > nav > ul > li > a:hover, 
             &:nth-of-type(2) > div > nav > ul > li > a:active,
             &:nth-of-type(2) > div > nav > ul > li > a:focus {
-                background-color: $blue_infinity_carpet;
+                background-color: $accent;
                 color: white;
             }
             //Navigational menu list items
             &:nth-of-type(2) > div > nav > ul > li {
                 margin-right: 0px;
             }
-            //Social icons underordered list
+            //Social icons underordered list 
             &:nth-of-type(2) > div > ul {
                 flex: 1 0 auto;
                 list-style: none;
@@ -136,12 +137,13 @@
                 padding: 7px 10px;
                 transition: color 0.3s;
                 font-size: 16px;
+                color: $header_icons_color;
             }
             //Social icons list items actions on hover, active and focus
             &:nth-of-type(2) > div > ul > li > a:hover,
             &:nth-of-type(2) > div > ul > li > a:active,
             &:nth-of-type(2) > div > ul > li > a:focus {
-                color: $blue_infinity_carpet;
+                color: $accent;
             }
             //Last social icon list item
             &:nth-of-type(2) > div > ul > li:last-of-type {

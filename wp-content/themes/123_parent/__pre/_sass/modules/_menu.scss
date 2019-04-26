@@ -1,18 +1,142 @@
 @media only screen {
     // Menu Area
     section#mod_menu {
-        // Menu Section
-        .menu_section {
+        // Common CSS for the different Menu Styles
+        // All Menu styles
+        .menu_text_half, 
+        .menu_text_list_left,
+        .menu_text_list_center,
+        .menu_photo_list,
+        .menu_photo_tiled_x3,
+        .menu_text_sub_group_half {
             display: none;
-            max-width: 1280px;
         }
-        // Menu section unordered list
-        .menu_section ul {
-            list-style: none;
+        // All Menus images 
+        .menu_text_half .menu_items > ul > li > .image_prov, 
+        .menu_text_list_left .menu_items > ul > li > .image_prov,
+        .menu_text_list_center .menu_items > ul > li > .image_prov,
+        .menu_photo_list .menu_items > ul > li > .image_prov,
+        .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov,
+        .menu_text_sub_group_half .menu_items > ul > li > .image_prov {
+            height: 300px;
+            max-width: 400px;
+            margin: 0 auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            margin-bottom: 15px;
+        }
+        // All menus header title
+        .menu_text_half .menu_header > h2, 
+        .menu_text_list_left .menu_header > h2,
+        .menu_text_list_center .menu_header > h2,
+        .menu_photo_list .menu_header > h2,
+        .menu_photo_tiled_x3 .menu_header > h2,
+        .menu_text_sub_group_half .menu_header > h2 {
+            font-size: 44px;
+            letter-spacing: -1px;
+            font-weight: 800;
+        }
+        // All menus header description
+        .menu_text_half .menu_header > p, 
+        .menu_text_list_left .menu_header > p,
+        .menu_text_list_center .menu_header > p,
+        .menu_photo_list .menu_header > p,
+        .menu_photo_tiled_x3 .menu_header > p,
+        .menu_text_sub_group_half .menu_header > p {
+                margin-bottom: 20px;
+                font-family: "Times New Roman";
+                line-height: 1em;
+                font-style: italic;
+                font-size: 24px;
+                font-weight: 500;
+                color: $gray_three;
+        }
+        // Menu Text List Left and List Center menu item paragraph
+        .menu_text_list_left .menu_items > ul > li > div:last-of-type > p, 
+        .menu_text_list_center .menu_items > ul > li > div:last-of-type > p {
+            font-size: 24px;
+            font-family: "Times New Roman";
+            line-height: 1em;
+            color: $gray_three;
+            font-style: italic;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 header title line
+        .menu_text_half .menu_header > h2:before,
+        .menu_text_sub_group_half .menu_header > h2:before {
+            border-top: 1px solid $gray_one;
+            bottom: 0;
+            content: "";
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            z-index: -1;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 header title
+        .menu_text_half .menu_header > h2,
+        .menu_text_sub_group_half .menu_header > h2 {
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+            letter-spacing: normal; 
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 header title span element
+        .menu_text_half .menu_header > h2 > span,
+        .menu_text_sub_group_half .menu_header > h2 > span {
+            background: $white;
+            padding: 0 15px;
+        }
+        // Menu styles header title
+        .menu_text_list_left .menu_header > h2,
+        .menu_text_list_center .menu_header > h2,
+        .menu_photo_list .menu_header > h2,
+        .menu_photo_tiled_x3 .menu_header > h2 {
+            text-transform: capitalize;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 header description
+        .menu_text_half .menu_header > p,
+        .menu_text_sub_group_half .menu_header > p {
+            margin-bottom: 20px;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 menu items title
+        .menu_text_half .menu_items > ul > li > div:last-of-type > h3,
+        .menu_text_sub_group_half .menu_items > ul > li > div:last-of-type > h3 {
+            display: flex;
+            font-size: 26px;
+            font-weight: 700;
+            justify-content: space-between;
+            border-bottom: 3px solid $accent;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 menu items 
+        .menu_text_half .menu_items > ul > li,
+        .menu_text_sub_group_half .menu_items > ul > li  {
+            margin-bottom: 30px;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 menu items price
+        .menu_text_half .menu_items > ul > li > div:last-of-type > h3 > span,
+        .menu_text_sub_group_half .menu_items > ul > li > div:last-of-type > h3 > span {
+            color: $gray_three;
+            font-weight: 600;
+        }
+        // Menu Text 1/2 and Menu Sub Group 1/2 menu items description
+        .menu_text_half .menu_items > ul > li > div:last-of-type > p,
+        .menu_text_sub_group_half .menu_items > ul > li > div:last-of-type > p {
+            font-size: 18px;
+            color: $gray_three;
+        }
+        // Menu Text List Center and Photo List header
+        .menu_text_list_center .menu_header,
+        .menu_photo_list .menu_header {
+            text-align: center;
+            border-bottom: 3px solid green;
+            margin-bottom: 30px;
         }
         // Menu Text 1/2
         .menu_text_half {
-            display: none;
             // Menu header
             .menu_header {
                 text-align: center;
@@ -20,102 +144,32 @@
             // Menu header title text
             .menu_header > h2 {
                 margin: 9px 0 0;
-                text-transform: uppercase;
-                font-weight: 700;
-                position: relative;
-                font-size: 44px;
             }
-            // Menu header title text span
-            .menu_header > h2 > span {
-                background: $white;
-                padding: 0 15px;
-            }
-            // Menu header title text before line 
-            .menu_header > h2:before {
-                border-top: 1px solid $gray_one;
-                bottom: 0;
-                content: "";
-                left: 0;
-                margin: 0 auto;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                z-index: -1;
-            }
-            // Menu header description
-            .menu_header > p {
-                margin-bottom: 20px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                font-style: italic;
-                font-size: 24px;
-                font-weight: 500;
-                color: $gray_three;
-            }
-            // Menu items 
-            .menu_items > ul > li {
-                margin-bottom: 20px;
-            }
-            // Menu items titles
-            .menu_items > ul > li > div:last-of-type > h3 {
-                display: flex;
-                font-size: 26px;
-                font-weight: 700;
-                justify-content: space-between;
-                border-bottom: 3px solid $accent;
-                padding-bottom: 15px;
-                margin-bottom: 15px;
-            }
-            // Menu items prices
-            .menu_items > ul > li > div:last-of-type > h3 > span {
-                color: $gray_three;
-                font-weight: 600;
-            }
-            // Menu items description
-            .menu_items > ul > li > div:last-of-type > p {
-                font-size: 18px;
-                color: $gray_three;
-            }
-            // Menu item image
-            .menu_items > ul > li > .image_prov {
-                height: 300px;
-                max-width: 400px;
-                margin: 0 auto;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                margin-bottom: 15px;
+        }
+        // Menu Text Sub Group 1/2
+        .menu_text_sub_group_half {
+            flex-flow: column nowrap;
+            > div {
+                flex: 0 1 50%;
             }
         }
         // Menu Text List Left
         .menu_text_list_left {
-            display: none;
             // Menu header
             .menu_header {
-                text-align: left;
                 border-bottom: 5px dotted green;
                 margin-bottom: 30px;
             }
+            // Menu header title
             .menu_header > h2 {
-                text-transform: capitalize;
-                font-weight: 800;
-                letter-spacing: -1px;
                 font-family: "Times New Roman";
                 line-height: 1em;
-                font-size: 44px;
             }
-            .menu_header > p {
-                font-style: italic;
-                font-size: 24px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                font-weight: 500;
-                color: $gray_three;
-                padding-bottom: 15px;
-            }
+            // Menu items unordered list items
             .menu_items > ul > li {
                 margin-bottom: 20px;
             }
+            // Menu items title
             .menu_items > ul > li > div:last-of-type > h3 {
                 text-transform: uppercase;
                 display: flex;
@@ -123,131 +177,68 @@
                 font-weight: 700;
                 justify-content: space-between;
             }
-            .menu_items > ul > li > div:last-of-type > p {
-                font-size: 24px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                color: $gray_three;
-                font-style: italic;
-            }
             // Menu item image
             .menu_items > ul > li > .image_prov {
-                height: 300px;
-                max-width: 400px;
-                background-repeat: no-repeat;
-                background-size: contain;
                 background-position: center left;
-                margin-bottom: 15px;
+                margin: 0;
+                margin-bottom: 20px;
             }
         }
         // Menu Text List Center 
         .menu_text_list_center {
-            display: none;
-            // Menu header
-            .menu_header {
-                text-align: center;
-                border-bottom: 3px solid green;
-                margin-bottom: 30px;
-            }
-            .menu_header > h2 {
-                font-size: 44px;
-                text-transform: capitalize;
-                font-weight: 800;
-                letter-spacing: -1px;
-            }
-            .menu_header > p {
-                font-style: italic;
-                font-size: 24px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                font-weight: 500;
-                color: $gray_three;
-                padding-bottom: 15px;
-            }
+            // Menu items
             .menu_items {
                 text-align: center;
             }
+            // Menu items unordered list items
             .menu_items > ul > li {
-                margin-bottom: 20px;
+                margin-bottom: 30px;
             }
+            // Menu items title
             .menu_items > ul > li > div:last-of-type >  h3 {
                 font-size: 26px;
                 font-weight: 800;
                 text-transform: uppercase;
                 margin-bottom: 5px;
             }
+            // Menu items price
             .menu_items > ul > li > div:last-of-type > h3 > span {
                 font-weight: 500;
             }
+            // Menu items line before the price
             .menu_items > ul > li > div:last-of-type > h3 > span:before {
                 content: "";
                 border-left: 2px solid $gray_three;
                 margin: 0 15px 0 10px;
             }
-            .menu_items > ul > li > div:last-of-type > p {
-                font-size: 24px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                color: $gray_three;
-                font-style: italic;
-            }
-            // Menu item image
-            .menu_items > ul > li > .image_prov {
-                height: 300px;
-                max-width: 400px;
-                margin: 0 auto;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                margin-bottom: 15px;
-            }
         }
         // Menu Photo List 
         .menu_photo_list {
-            display: none;
-            .menu_header {
-                text-align: center;
-                border-bottom: 3px solid green;
-                margin-bottom: 30px;
-            }
-            .menu_header > h2 {
-                font-size: 44px;
-                text-transform: capitalize;
-                font-weight: 800;
-                letter-spacing: -1px;
-            }
-            .menu_header > p {
-                font-style: italic;
-                font-size: 24px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                font-weight: 500;
-                color: $gray_three;
-                padding-bottom: 15px;
-            }
+            // Menu items unordered list items
             .menu_items > ul > li  {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
+                margin-bottom: 20px;
             }
+            // Menu items unordered list items 
             .menu_items > ul > li > div:first-of-type {
                 flex: 0 1 37%;
             }
+            // Menu items unordered list items 
             .menu_items > ul > li > div:last-of-type {
                 flex: 0 1 60%;
             }
+            // Menu items image
             .menu_items > ul > li > .image_prov {
-                height: 300px;
-                width: 400px;
-                background-repeat: no-repeat;
-                background-size: contain;
                 background-position: top center;
-                margin-bottom: 15px;
             }
+            // Menu items title
             .menu_items > ul > li > div:last-of-type > h3 {
                 font-weight: 900;
                 font-size: 28px;
             }
+            // Menu items description
             .menu_items > ul > li > div:last-of-type > p:first-of-type {
                 font-size: 24px;
                 font-style: italic;
@@ -258,6 +249,7 @@
                 margin-bottom: 20px;
                 font-family: "Times New Roman";
             }
+            // Menu items price
             .menu_items > ul > li > div:last-of-type > p:last-of-type {
                 font-size: 22px;
                 color: $gray_two;
@@ -266,27 +258,13 @@
         }
         // Menu Photo Tiled x3
         .menu_photo_tiled_x3 {
-            display: none;
+            // Menu header
             .menu_header {
                 text-align: center;
                 border-bottom: 3px solid $accent;
                 margin-bottom: 30px;
             }
-            .menu_header > h2 {
-                text-transform: capitalize;
-                font-weight: 800;
-                letter-spacing: -1px;
-                font-size: 44px;
-            }
-            .menu_header > p {
-                font-style: italic;
-                font-size: 24px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                font-weight: 500;
-                color: $gray_three;
-                padding-bottom: 15px;
-            }
+            // Menu items title
             .menu_items > ul > li > div:last-of-type > h3 {
                 display: flex;
                 font-weight: 700;
@@ -294,24 +272,18 @@
                 font-size: 18px;
                 margin-bottom: 5px;
             }
+            // Menu items price
             .menu_items > ul > li > div:last-of-type > h3 > div > span {
                 font-size: 14px;
                 position: relative;
                 top: -5px;
             }
+            // Menu items description
             .menu_items > ul > li > div:last-of-type > p {
                 color: $gray_three;
-                font-size: 14px;
+                font-size: 16px;
             }
-            .menu_items > ul > li > .image_prov {
-                height: 300px;
-                max-width: 400px;
-                margin: 0 auto;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                margin-bottom: 15px;
-            }
+            // Menu items
             .menu_items {
                 $w : 90vw;
                 $c : 1;
@@ -320,84 +292,14 @@
                 @include gridLayout($w, $c, $g, $s);
             }
         }
-        // Menu Text Sub Group 1/2
-        .menu_text_sub_group_half {
+        // Menu Section
+        .menu_section {
             display: none;
-            flex-flow: column nowrap;
-            > div {
-                flex: 0 1 50%;
-            }
-            > div:nth-child(odd) {
-                margin-right: 40px;
-            }
-            // Menu header title text
-            .menu_header > h2 {
-                position: relative;
-                text-transform: uppercase;
-                font-weight: 700;
-                font-size: 44px;
-            }
-            // Menu header title text span
-            .menu_header > h2 > span {
-                background: $white;
-                padding: 0 15px 0 0;
-            }
-            // Menu header title text before line 
-            .menu_header > h2:before {
-                border-top: 1px solid $gray_one;
-                bottom: 0;
-                content: "";
-                left: 0;
-                margin: 0 auto;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                z-index: -1;
-            }
-            // Menu header description
-            .menu_header > p {
-                margin-bottom: 20px;
-                font-family: "Times New Roman";
-                line-height: 1em;
-                font-style: italic;
-                font-size: 24px;
-                font-weight: 500;
-                color: $gray_three;
-            }
-            // Menu items 
-            .menu_items > ul > li {
-                margin-bottom: 20px;
-            }
-            // Menu items titles
-            .menu_items > ul > li > div:last-of-type > h3 {
-                display: flex;
-                font-size: 26px;
-                font-weight: 700;
-                justify-content: space-between;
-                border-bottom: 3px solid $accent;
-                padding-bottom: 15px;
-                margin-bottom: 15px;
-            }
-            // Menu items prices
-            .menu_items > ul > li > div:last-of-type > h3 > span {
-                color: $gray_three;
-                font-weight: 600;
-            }
-            // Menu items description
-            .menu_items > ul > li > div:last-of-type > p {
-                font-size: 18px;
-                color: $gray_three;
-            }
-            // Menu item image
-            .menu_items > ul > li > .image_prov {
-                height: 300px;
-                max-width: 400px;
-                margin: 0 auto;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                margin-bottom: 15px;
-            }
+            max-width: 1280px;
+        }
+        // Menu section unordered list
+        .menu_section ul {
+            list-style: none;
         }
         // Active menu section
         .active_menu_section {
@@ -454,65 +356,79 @@
 }
 
 @media only screen and (min-width: 768px){
+    // Menu 
     section#mod_menu {
+        // Tabs Style of Side Menu
         #tabs_side_menu {
             flex-flow: row nowrap;
-            #menu_tabs {
-                flex: 0 1 20%;
-                margin: 0 30px 0 0;
-            }
-            .menu_section {
-                flex: 0 1 80%;
-            }
         }
-        .menu_photo_tiled_x3 {
-            .menu_items > ul > li > .image_prov {
-                height: 200px;
-            }
-            .menu_items {
-                $w : 60vw;
-                $c : 2;
-                $g : 1.5vw;
-                $s : true;
-                @include gridLayout($w, $c, $g, $s);
-            }
+        // Tabs Area for Tabs Style of Side Menu
+        #tabs_side_menu #menu_tabs {
+            flex: 0 1 20%;
+            margin: 0 30px 0 0;
+        }
+        // Menu section for Tabs Style of Side Menu 
+        #tabs_side_menu .menu_section {
+            flex: 0 1 80%;
+        }
+        // Menu style of Photo Tiled x3 image
+        .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+            height: 200px;
+        }
+        // Menu style of Photo Tiled x3 menu items
+        .menu_photo_tiled_x3 .menu_items {
+            $w : 60vw;
+            $c : 2;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
         }
         // Menu Text Sub Group 1/2
-        .menu_text_sub_group_half {
+        .menu_text_sub_group_half { 
             flex-flow: row nowrap;
+        }
+        // Menu Text Sub Group 1/2
+        .menu_text_sub_group_half > div:nth-child(odd) {
+            margin-right: 40px;
         }
     }
 }
 
 @media only screen and (min-width: 1000px){
+    // Menu 
     section#mod_menu {
+        // Menu Style Text 1/2 menu items unordered list
         .menu_text_half .menu_items > ul {
             display: flex;
             flex-flow: row wrap;
         }
+        // Menu Style Text 1/2 menu items unordered list items
         .menu_text_half .menu_items > ul > li {
             flex: 0 1 50%;
         }
+        // Menu Style Text 1/2 menu items unordered list odd items
         .menu_text_half .menu_items > ul > li:nth-child(odd) {
             padding-right: 15px;
         }
+        // Menu Style Text 1/2 menu items unordered list even items
         .menu_text_half .menu_items > ul > li:nth-child(even) {
             padding-left: 15px;
         }
-        .menu_photo_tiled_x3 {
-            .menu_items {
-                $w : 60vw;
-                $c : 3;
-                $g : 1.5vw;
-                $s : true;
-                @include gridLayout($w, $c, $g, $s);
-            }
+        // Menu style of Photo Tiled x3 menu items
+        .menu_photo_tiled_x3 .menu_items {
+            $w : 60vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
         }
     }
 }
 
 @media only screen and (min-width: $nav_maxwidth){
+    // Menu 
     section#mod_menu {
+        // Menu Content
         .menu_content {
             padding: 0 10px;
         }
@@ -520,19 +436,19 @@
 }
 
 @media only screen and (min-width: 1600px){
+    // Menu 
     section#mod_menu {
-        .menu_photo_tiled_x3 {
-            .menu_items > ul > li > .image_prov {
-                height: 300px;
-            }
-            .menu_items {
-                $w : 50vw;
-                $c : 3;
-                $g : 1.5vw;
-                $s : true;
-                @include gridLayout($w, $c, $g, $s);
-            }
+        // Menu style of Photo Tiled x3 menu items unordered list image
+        .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+            height: 300px;
+        }
+        // Menu style of Photo Tiled x3 menu items 
+        .menu_photo_tiled_x3 .menu_items {
+            $w : 50vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
         }
     }
 }
-
