@@ -109,13 +109,32 @@
             </div>
         ';
         // Format Menu Section Item
-        $format_item = '
-            <li class="menu_item">
-                %s
-                <h3>%s <span>%s<span></h3>
-                %s
-            </li>
-        ';
+        if($menu_style == 'menu_photo_list')
+        {
+            $format_item = '
+                <li class="menu_item">
+                    %s
+                    <div>
+                        <h3>%s</h3>
+                        %s
+                        <p>%s</p>
+                    </div>
+                </li>
+            ';
+        }
+        else
+        {
+            $format_item = '
+                <li class="menu_item">
+                    %s
+                    <div>
+                        <h3>%s <span>%s<span></h3>
+                        %s
+                    </div>
+                </li>
+            ';
+        }
+
 
         // Get each menu section 
         foreach($sections as $j => $section)
@@ -123,26 +142,44 @@
             $menu_section .= sprintf(
                 $format_header
                 // Get title
-                ,$section['title']
+                ,(!empty($section['title'])) ? $section['title'] : ''
                 // Get description
-                ,$section['description']
+                ,(!empty($section['description'])) ? $section['description'] : ''
             );
 
             // For each menu section item
             $ul = '<div class="menu_items"><ul>';
             foreach($section['item'] as $k => $item)
             {
-                $ul .= sprintf(
-                    $format_item
-                    // Get image url
-                    ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].'");"></div>' : ''
-                    // Get title
-                    ,$item['title']
-                    // Get price
-                    ,$item['price']
-                    // Get description
-                    ,$item['description']
-                );
+                if($menu_style == 'menu_photo_list')
+                {
+                    $ul .= sprintf(
+                        $format_item
+                        // Get image url
+                        ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : ''
+                        // Get title
+                        ,(!empty($item['title'])) ? $item['title'] : ''
+                        // Get description
+                        ,(!empty($item['description'])) ? $item['description'] : ''
+                        // Get price
+                        ,(!empty($item['price'])) ? $item['price'] : ''
+                    );
+                }
+                else
+                {
+                    $ul .= sprintf(
+                        $format_item
+                        // Get image url
+                        ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : ''
+                        // Get title
+                        ,(!empty($item['title'])) ? $item['title'] : ''
+                        // Get price
+                        ,(!empty($item['price'])) ? $item['price'] : ''
+                        // Get description
+                        ,(!empty($item['description'])) ? $item['description'] : ''
+                    );
+
+                }
             }
             $ul .= '</ul></div>';
 

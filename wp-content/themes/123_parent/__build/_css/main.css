@@ -3265,7 +3265,7 @@ section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-t
   section#mod_menu .menu_text_half .menu_items > ul > li {
     margin-bottom: 20px;
   }
-  section#mod_menu .menu_text_half .menu_items > ul > li > h3 {
+  section#mod_menu .menu_text_half .menu_items > ul > li > div:last-of-type > h3 {
     display: flex;
     font-size: 26px;
     font-weight: 700;
@@ -3274,11 +3274,11 @@ section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-t
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
-  section#mod_menu .menu_text_half .menu_items > ul > li > h3 > span {
+  section#mod_menu .menu_text_half .menu_items > ul > li > div:last-of-type > h3 > span {
     color: #aaabad;
     font-weight: 600;
   }
-  section#mod_menu .menu_text_half .menu_items > ul > li > p {
+  section#mod_menu .menu_text_half .menu_items > ul > li > div:last-of-type > p {
     font-size: 18px;
     color: #aaabad;
   }
@@ -3316,14 +3316,14 @@ section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-t
   section#mod_menu .menu_text_list_left .menu_items > ul > li {
     margin-bottom: 20px;
   }
-  section#mod_menu .menu_text_list_left .menu_items > ul > li > h3 {
+  section#mod_menu .menu_text_list_left .menu_items > ul > li > div:last-of-type > h3 {
     text-transform: uppercase;
     display: flex;
     font-size: 26px;
     font-weight: 700;
     justify-content: space-between;
   }
-  section#mod_menu .menu_text_list_left .menu_items > ul > li > p {
+  section#mod_menu .menu_text_list_left .menu_items > ul > li > div:last-of-type > p {
     font-size: 24px;
     font-family: "Times New Roman";
     line-height: 1em;
@@ -3364,21 +3364,21 @@ section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-t
   section#mod_menu .menu_text_list_center .menu_items > ul > li {
     margin-bottom: 20px;
   }
-  section#mod_menu .menu_text_list_center .menu_items > ul > li > h3 {
+  section#mod_menu .menu_text_list_center .menu_items > ul > li > div:last-of-type > h3 {
     font-size: 26px;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 5px;
   }
-  section#mod_menu .menu_text_list_center .menu_items > ul > li > h3 > span {
+  section#mod_menu .menu_text_list_center .menu_items > ul > li > div:last-of-type > h3 > span {
     font-weight: 500;
   }
-  section#mod_menu .menu_text_list_center .menu_items > ul > li > h3 > span:before {
+  section#mod_menu .menu_text_list_center .menu_items > ul > li > div:last-of-type > h3 > span:before {
     content: "";
     border-left: 2px solid #aaabad;
     margin: 0 15px 0 10px;
   }
-  section#mod_menu .menu_text_list_center .menu_items > ul > li > p {
+  section#mod_menu .menu_text_list_center .menu_items > ul > li > div:last-of-type > p {
     font-size: 24px;
     font-family: "Times New Roman";
     line-height: 1em;
@@ -3396,6 +3396,41 @@ section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-t
   }
   section#mod_menu .menu_photo_list {
     font-size: 16px;
+  }
+  section#mod_menu .menu_photo_list .menu_header {
+    text-align: center;
+    border-bottom: 3px solid green;
+    margin-bottom: 30px;
+  }
+  section#mod_menu .menu_photo_list .menu_header > h2 {
+    font-size: 44px;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+  section#mod_menu .menu_photo_list .menu_header > p {
+    font-style: italic;
+    font-size: 24px;
+    font-family: "Times New Roman";
+    line-height: 1em;
+    font-weight: 500;
+    color: #aaabad;
+    padding-bottom: 15px;
+  }
+  section#mod_menu .menu_photo_list .menu_items > ul > li {
+    display: flex;
+  }
+  section#mod_menu .menu_photo_list .menu_items > ul > li > div:first-of-type,
+section#mod_menu .menu_photo_list .menu_items > ul > li > div:last-of-type {
+    flex: 0 1 50%;
+  }
+  section#mod_menu .menu_photo_list .menu_items > ul > li > .image_prov {
+    height: 300px;
+    width: 400px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    margin-bottom: 15px;
   }
   section#mod_menu .menu_content {
     padding: 0 20px;
