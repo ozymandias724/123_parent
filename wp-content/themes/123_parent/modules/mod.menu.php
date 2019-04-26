@@ -98,16 +98,29 @@
         // Set active menu section
         $active_menu_section = ($i == 0) ? ' active_menu_section' : '';
         $menu_name = strtolower(str_replace(' ', '', $fields['menus'][$i]['menu_post']->post_title)) . '_menu';
+        $menu_section_with_flex = ($menu_style == 'menu_text_sub_group_half') ? 'flex_menu' : '';
 
-        $menu_section = '<div data-tab="'.$menu_name.'" class="menu_section'. $active_menu_section . ' ' . $menu_style . '">';
+        $menu_section = '<div data-tab="'.$menu_name.'" class="menu_section'. $active_menu_section . ' ' . $menu_style . ' ' . $menu_section_with_flex .'">';
 
         // Format Menu Section Title and Description
-        $format_header = '
+        if($menu_style == 'menu_text_sub_group_half')
+        {
+            $format_header = '
+                <div><div class="menu_header">
+                    <h2><span>%s</span></h2>
+                    %s
+                </div>
+            ';
+        }
+        else
+        {
+            $format_header = '
             <div class="menu_header">
                 <h2><span>%s</span></h2>
                 %s
             </div>
         ';
+        }
         // Format Menu Section Item
         if($menu_style == 'menu_photo_list')
         {
@@ -118,6 +131,18 @@
                         <h3>%s</h3>
                         %s
                         <p>%s</p>
+                    </div>
+                </li>
+            ';
+        }
+        else if($menu_style == 'menu_photo_tiled_x3')
+        {
+            $format_item = '
+                <li class="menu_item">
+                    %s
+                    <div>
+                        <h3>%s <div>%s.<span>%s</span></div></h3>
+                        %s
                     </div>
                 </li>
             ';
@@ -165,6 +190,23 @@
                         ,(!empty($item['price'])) ? $item['price'] : ''
                     );
                 }
+                else if($menu_style == 'menu_photo_tiled_x3')
+                {
+                    $price = (!empty($item['price'])) ? explode('.',$item['price']) : '';
+                    $ul .= sprintf(
+                        $format_item
+                        // Get image url
+                        ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : ''
+                        // Get title
+                        ,(!empty($item['title'])) ? $item['title'] : ''
+                        // Price first number
+                        ,$price[0]
+                        // Price decimal number
+                        ,$price[1]
+                        // Get description
+                        ,(!empty($item['description'])) ? $item['description'] : ''
+                    );
+                }
                 else
                 {
                     $ul .= sprintf(
@@ -181,7 +223,8 @@
 
                 }
             }
-            $ul .= '</ul></div>';
+            $menu_text_sub_group_half = ($menu_style == 'menu_text_sub_group_half') ? '</div>' : '';
+            $ul .= '</ul></div>'. $menu_text_sub_group_half;
 
             $menu_section .= $ul;
         }

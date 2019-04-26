@@ -318,7 +318,7 @@ Theme.Gallery.Tabs_Classic = {
 Theme.Gallery.Tabs_Classic._init();
 
 Theme.Menu = {
-    tab_header : $("#mod_menu #menu_tabs > h4 > a"),
+    tab_header : $("#mod_menu #menu_tabs > h4"),
     tab_link : $("#mod_menu #menu_tabs > h4 > a"),
     menu_section : $("#mod_menu .menu_section"),
 
