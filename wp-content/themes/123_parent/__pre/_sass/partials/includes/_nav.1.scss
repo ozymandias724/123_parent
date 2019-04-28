@@ -1,4 +1,5 @@
 @media only screen {
+
     //Header 1
     header#opt_header_one {
         padding: 0px;
@@ -6,149 +7,171 @@
         position: relative;
         font-family: 'Montserrat', sans-serif;
         //Common scss for top part and bottom part of header
-        > div {
+        >div {
             width: 100%;
             //Common scss of top part and bottom part of header first div 
-            > div {
+            >div {
+                display: flex;
                 flex-wrap: nowrap;
                 justify-content: space-around;
-                display: flex;
                 margin: 0 auto;
                 max-width: $nav_maxwidth;
             }
-            //Top part of header
-            &:nth-of-type(1) {
-                background-color: $nav_1_top_bar_background;
-                color: $nav_1_top_bar_text;
-            }
-            //Span elements inside top part of header
-            &:nth-of-type(1) > div > span:nth-of-type(1),
-            &:nth-of-type(1) > div > span:nth-of-type(2) {
-                align-items: center;
-                display: flex;
-            }
-            //Before pseudo of span elements inside top part of header
-            &:nth-of-type(1) > div > span:before {
-                color: $accent;
-                border-radius: 100%;
-                font-weight: 700;
-                border: 3px solid $accent;
-                display: block;
-                font-family: 'Font Awesome 5 Free';
-            }
-            //Links of span elements inside top part of header
-            &:nth-of-type(1) > div > span > a {
-                padding: 5px;
-                opacity: $opacity_level_below_one;
-                transition: opacity 0.3s;
-                color: $nav_1_top_bar_text;
-            }
-            //Links actions on hover, active and focus of span elements inside top part of header
-            &:nth-of-type(1) > div > span > a:hover,
-            &:nth-of-type(1) > div > span > a:active,
-            &:nth-of-type(1) > div > span > a:focus {
-                opacity: 1;
-            }
-            //Address span element
-            &:nth-of-type(1) > div > span:nth-of-type(1) {
-                margin-left: auto;
-                font-size: 16px;
-            }
-            //Address span element before pseudo element
-            &:nth-of-type(1) > div > span:nth-of-type(1):before {
-                content: "\f3c5";
-                padding: 8px 14px;
-                margin-right: 10px;
-            }
-            //Phone number span element
-            &:nth-of-type(1) > div > span:nth-of-type(2) {
-                margin-left: 5%;
-            }
-            //Phone number span element before pseudo element
-            &:nth-of-type(1) > div > span:nth-of-type(2):before {
-                content: "\f095";
-                padding: 10px 10px;
-                margin-left: 30px;
-                margin-right: 10px;
-                transform: rotate(90deg);
-                margin-top: 5px;
-            }
-            //Phone number link 
-            &:nth-of-type(1) > div > span:nth-of-type(2) > a {
-                font-size: 18px;
-            }
-            //Phone number link span element
-            &:nth-of-type(1) > div > span:nth-of-type(2) > a > span {
-                font-size: 18px;
-                text-align: left;
-                color: $accent;
-                text-transform: uppercase;
-                display: block;
-                font-weight: 700;
-            }
-            //Lower part of header (navigational menu and social icons) 
-            &:nth-of-type(2) {
-                background-color: $nav_1_bottom_bar_background;
-                box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-                top: 0; 
-            }       
-            //Navigational menu
-            &:nth-of-type(2) > div > nav {
-                align-items: center;
-                display: flex;
-                flex: 1 0 85%;
-                text-transform: uppercase;
-                padding: 0 5px;
-            }
-            //Navigational menu links
-            &:nth-of-type(2) > div > nav > ul > li > a {
-                display: block;
-                font-weight: 500;
-                color: $nav_1_menu_text;
-                padding: 15px 10px;
-            }
-            //Navigational menu actions on hover, active and focus
-            &:nth-of-type(2) > div > nav > ul > li > a:hover, 
-            &:nth-of-type(2) > div > nav > ul > li > a:active,
-            &:nth-of-type(2) > div > nav > ul > li > a:focus {
-                background-color: $accent;
-                color: white;
-            }
-            //Navigational menu list items
-            &:nth-of-type(2) > div > nav > ul > li {
-                margin-right: 0px;
-            }
-            //Social icons underordered list 
-            &:nth-of-type(2) > div > ul {
-                flex: 1 0 auto;
-                list-style: none;
-                flex-wrap: nowrap;
-                align-items: center;
-                display: flex;
-            }
-            //Social icons list items
-            &:nth-of-type(2) > div > ul > li {
-                flex: 1 0 auto;
-                position: relative;
-                padding: 2px;
-            }
-            //Social icons list items links
-            &:nth-of-type(2) > div > ul > li > a {
-                padding: 7px 10px;
-                transition: color 0.3s;
-                font-size: 16px;
-                color: $header_icons_color;
-            }
-            //Social icons list items actions on hover, active and focus
-            &:nth-of-type(2) > div > ul > li > a:hover,
-            &:nth-of-type(2) > div > ul > li > a:active,
-            &:nth-of-type(2) > div > ul > li > a:focus {
-                color: $accent;
-            }
-            //Last social icon list item
-            &:nth-of-type(2) > div > ul > li:last-of-type {
-                padding-right: 0;
-            }    
         }
     }
+
+    header#opt_header_one>div:first-of-type {
+        //Top part of header
+        background-color: $nav_1_top_bar_background;
+        color: $nav_1_top_bar_text;
+
+        //Span elements inside top part of header
+        >div>span:nth-of-type(1),
+        >div>span:nth-of-type(2) {
+            align-items: center;
+            display: flex;
+        }
+
+        //Before pseudo of span elements inside top part of header
+        >div>span:before {
+            color: $accent;
+            border-radius: 100%;
+            font-weight: 700;
+            border: 3px solid $accent;
+            display: block;
+            font-family: 'Font Awesome 5 Free';
+        }
+
+        //Links of span elements inside top part of header
+        >div>span>a {
+            padding: 5px;
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+            color: $nav_1_top_bar_text;
+        }
+
+        //Links actions on hover, active and focus of span elements inside top part of header
+        >div>span>a:hover,
+        >div>span>a:active,
+        >div>span>a:focus {
+            opacity: 1;
+        }
+
+        //Address span element
+        >div>span:nth-of-type(1) {
+            margin-left: auto;
+            font-size: 16px;
+        }
+
+        //Address span element before pseudo element
+        >div>span:nth-of-type(1):before {
+            content: "\f3c5";
+            padding: 8px 14px;
+            margin-right: 10px;
+        }
+
+        //Phone number span element
+        >div>span:nth-of-type(2) {
+            margin-left: 5%;
+        }
+
+        //Phone number span element before pseudo element
+        >div>span:nth-of-type(2):before {
+            content: "\f095";
+            padding: 10px 10px;
+            margin-left: 30px;
+            margin-right: 10px;
+            transform: rotate(90deg);
+            margin-top: 5px;
+        }
+
+        //Phone number link 
+        >div>span:nth-of-type(2)>a {
+            font-size: 18px;
+        }
+
+        //Phone number link span element
+        >div>span:nth-of-type(2)>a>span {
+            font-size: 18px;
+            text-align: left;
+            color: $accent;
+            text-transform: uppercase;
+            display: block;
+            font-weight: 700;
+        }
+    }
+
+    header#opt_header_one>div:last-of-type {
+        //Lower part of header (navigational menu and social icons) 
+        background-color: $nav_1_bottom_bar_background;
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        top: 0;
+
+        //Navigational menu
+        >nav {
+            align-items: center;
+            display: flex;
+            flex: 1 0 85%;
+            text-transform: uppercase;
+            padding: 0 5px;
+        }
+
+        //Navigational menu links
+        >nav>ul>li>a {
+            display: block;
+            font-weight: 500;
+            color: $nav_1_menu_text;
+            padding: 15px 10px;
+        }
+
+        //Navigational menu actions on hover, active and focus
+        >nav>ul>li>a:hover,
+        >nav>ul>li>a:active,
+        >nav>ul>li>a:focus {
+            background-color: $accent;
+            color: white;
+        }
+
+        //Navigational menu list items
+        >nav>ul>li {
+            margin-right: 0px;
+        }
+
+        //Social icons underordered list 
+        >ul {
+            flex: 1 0 auto;
+            list-style: none;
+            flex-wrap: nowrap;
+            align-items: center;
+            display: flex;
+        }
+
+        //Social icons list items
+        >ul>li {
+            flex: 1 0 auto;
+            position: relative;
+            padding: 2px;
+        }
+
+        //Social icons list items links
+        >ul>li>a {
+            padding: 7px 10px;
+            transition: color 0.3s;
+            font-size: 16px;
+            color: $header_icons_color;
+        }
+
+        //Social icons list items actions on hover, active and focus
+        >ul>li>a:hover,
+        >ul>li>a:active,
+        >ul>li>a:focus {
+            color: $accent;
+        }
+
+        //Last social icon list item
+        >ul>li:last-of-type {
+            padding-right: 0;
+        }
+    }
+
 }

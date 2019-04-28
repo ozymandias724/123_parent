@@ -26,15 +26,6 @@ include_once('classes/class.Customizer.php');
 include_once('classes/class.NavHandler.php');
 
 
-function register_google_maps_api() {
-	
-	acf_update_setting('google_api_key', 'AIzaSyCm3DUlMvghNSFqCUw9InFgQbDC--_PQyY');
-}
-
-add_action('acf/init', 'register_google_maps_api');
-
-
-
 function _get_site_nav($pre = 'navlinks'){
     $return_nav = '';
     $page = get_page_by_path('home-page', OBJECT, 'page');

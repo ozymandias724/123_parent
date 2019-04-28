@@ -1,11 +1,11 @@
 <?php 
 /**
- * Module: Menu
+ * Module: Areas Served (Locations)
  * 
  * Description:
- *  Concise view w/ link to full view
+ * 
  */
-    // get the gallery page object
+    // get the page object
     $args = array(
         'posts_per_page' => 1
         ,'post_type' => 'page'
@@ -13,27 +13,24 @@
     );
     $res = get_posts($args);
 
-    // get the gallery page fields
+    // get the fields
     $fields = get_fields($res[0]);
 
-
-    $args = array(
-        'post_type' => 'areas-served'
-        ,'posts_per_page' => -1
-    );
-    $locations = get_posts($args);
-
-    foreach( $locations as $location){
-
-        $location_fields = get_fields($location);
-
-    }
-
+    if( !empty($fields['locations']) ){
+        foreach( $fields['locations'] as $location ){
     
+            $lo_fields = get_fields($location['location']->ID);
+    
+            print_r($lo_fields);
+        }
+    }
  ?>
 <section id="mod_locations">
 <?php 
     echo get_section_banner($res[0]->post_title);
+
+
+    
  ?>
 </section>
 <?php 
