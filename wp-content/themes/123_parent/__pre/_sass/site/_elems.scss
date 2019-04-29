@@ -32,4 +32,30 @@
         height: auto;
         width: 100%;
     }
+
+    .site__iconlink {
+        display: inline-block;
+        vertical-align: top;
+        &:before {
+            content: "";
+            display: inline-block;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    .site__iconlink-phone {
+        &:before{
+            content: '\f095';
+        }
+    }
+    .site__iconlink-address {
+        &:before{
+            content: '\f3c5';
+        }
+    }
+    
 }

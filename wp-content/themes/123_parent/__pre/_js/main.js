@@ -1,8 +1,25 @@
 import $ from 'jquery';
+import slick from 'slick-carousel-browserify';
+import leaflet from 'leaflet';
 var Theme = {};
 var Hero = {};
 var Headers = {};
-import slick from 'slick-carousel-browserify';
+
+
+
+
+var mapLat = $('#mapid').attr('data-lat');
+var mapLng = $('#mapid').attr('data-lng');
+
+var mymap = L.map('mapid').setView([mapLat, mapLng], 13);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1Ijoia21hcmN5NzI0IiwiYSI6ImNqdjFsaGUxZjF2NHA0ZXNkemlwZno5cTcifQ.552sQf1WxlHY2EHfj8oMCg'
+}).addTo(mymap);
+
 
 Theme.Slick = {
     rand : Math.floor(Math.random() * $(".img-slick").length),

@@ -38,9 +38,12 @@ class NavHandler
         // look for a 'custom logo'
         $content_logo = '';
         // if we have a custom logo
-        if( !empty($header['logo']) ){
-            $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
-            $logo_srcset = wp_get_attachment_image_srcset($header['logo']['id']);
+        // if( !empty($header['logo']) ){
+        if( !empty( get_theme_mod( 'custom_logo' ) ) ){
+            // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
+            // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
+            $logo_srcset = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
+            $logo_srcset = wp_get_attachment_image_srcset(get_theme_mod( 'custom_logo' ));
             $format_logo = '
                 <a class="header-logo" href="%s" title="Logo button">
                     <img src="%s" srcset="%s" alt="%s">
@@ -124,13 +127,13 @@ class NavHandler
         $site__iconlink_location = '';
         if( !empty($company_address) ){
             $site__iconlink_location .= '
-                <a href="javascript:;" title="" class="site__iconlink-address">'.$company_address.'</a>
+                <a href="javascript:;" title="" class="site__iconlink site__iconlink-address">'.$company_address.'</a>
             ';
         }
         $site__iconlink_phone = '';
         if( !empty($phone_number_1) ){
             $site__iconlink_phone .= '
-                <a href="javascript:;" title="" class="site__iconlink-phone">'.$phone_number_1.'</a>
+                <a href="javascript:;" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
             ';
         }
 
