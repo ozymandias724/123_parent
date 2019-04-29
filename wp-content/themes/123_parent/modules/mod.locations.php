@@ -17,21 +17,26 @@
     $fields = get_fields($res[0]);
 
     if( !empty($fields['locations']) ){
-        foreach( $fields['locations'] as $location ){
-    
+        $return_maps = '';    
+        foreach( $fields['locations'] as $location ){    
             $lo_fields = get_fields($location['location']->ID);
-    
-            print_r($lo_fields);
+            
+            $lat = $lo_fields['open_street_map']['center_lat'];
+            $lng = $lo_fields['open_street_map']['center_lng'];
+
+            $return_maps .= '<div id="mapid" style="height: 400px;" data-lat="'.$lat.'" data-lng="'.$lng.'"></div>';
+
         }
     }
  ?>
 <section id="mod_locations">
 <?php 
     echo get_section_banner($res[0]->post_title);
+    echo $return_maps;
+?>
 
 
     
- ?>
 </section>
 <?php 
  ?>

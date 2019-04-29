@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 /* Slider */
+@import '../../node_modules/leaflet/dist/leaflet.css';
 .slick-slider {
   position: relative;
   display: block;
@@ -620,6 +621,29 @@ h6 {
     height: auto;
     width: 100%;
   }
+
+  .site__iconlink {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .site__iconlink:before {
+    content: "";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .site__iconlink-phone:before {
+    content: "";
+  }
+
+  .site__iconlink-address:before {
+    content: "";
+  }
 }
 @media only screen {
   div.site_grid {
@@ -995,35 +1019,44 @@ header.header .opt__topbanner {
 }
 @media only screen and (min-width: 1280px) {
   header#opt_header_one {
-    padding: 0px;
-    display: block;
     position: relative;
-    font-family: "Montserrat", sans-serif;
-  }
-  header#opt_header_one > div {
-    width: 100%;
-    padding: 0 5%;
-  }
-  header#opt_header_one > div > div {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 1280px;
+    padding: 0 0 0 0;
   }
 
   header#opt_header_one > div:first-of-type {
     background-color: #000;
     color: #fff;
-    height: 85px;
-    display: flex;
+    height: 80px;
   }
-  header#opt_header_one > div:first-of-type > a:first-of-type {
-    margin-right: auto;
+  header#opt_header_one > div:first-of-type .header-logo {
+    padding: 10px 0;
+    height: 100%;
   }
-  header#opt_header_one > div:first-of-type > a.site__iconlink-address,
-header#opt_header_one > div:first-of-type > a.site__iconlink-phone {
-    line-height: 85px;
+  header#opt_header_one > div:first-of-type .header-logo img {
+    max-height: 100%;
+  }
+  header#opt_header_one > div:first-of-type .site__iconlink {
+    line-height: 80px;
+    max-height: 100%;
+  }
+  header#opt_header_one > div:first-of-type > div > a:before {
+    color: green;
+    border-radius: 100%;
+    font-weight: 700;
+    border: 3px solid green;
+    display: block;
+    font-family: "Font Awesome";
+  }
+  header#opt_header_one > div:first-of-type > div > a {
+    padding: 5px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    color: #fff;
+  }
+  header#opt_header_one > div:first-of-type > div > a:hover,
+header#opt_header_one > div:first-of-type > div > a:active,
+header#opt_header_one > div:first-of-type > div > a:focus {
+    opacity: 1;
   }
 
   header#opt_header_one > nav {
