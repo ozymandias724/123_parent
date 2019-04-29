@@ -5,31 +5,45 @@
         position: relative;
         padding: 0 0 0 0;
     } 
+    
+    // Header 1 top part
     header#opt_header_one>div:first-of-type {
         background-color: $nav_1_top_bar_background;
         color: $nav_1_top_bar_text;
         height: 80px;
+        padding: 0 5%;
+        display: flex;
 
+        // Header logo
         .header-logo {
             padding: 10px 0;
             height: 100%;
+            margin-right: auto;
             img {
                 max-height: 100%;
             }
         }
 
+        // Address and Phone number links
         .site__iconlink {
-            line-height: 80px;
-            max-height: 100%;
+            color: $white;
+            display: flex;
+            align-items: center;
         }
 
-        >div>a:before {
-            color: $accent;
+        // Address and Phone number links icons
+        .site__iconlink-address:before,
+        .site__iconlink-phone:before {
+            padding: 8px 14px;
+            margin-right: 10px;
+            border: 2px solid $accent;
             border-radius: 100%;
-            font-weight: 700;
-            border: 3px solid $accent;
-            display: block;
-            font-family: 'Font Awesome';
+            color: $accent;
+        }
+
+        // Phone number icon
+        .site__iconlink-phone:before {
+            margin-left: 10px;
         }
 
         //Links of span elements inside top part of header
@@ -48,22 +62,24 @@
         }
     }
 
-    header#opt_header_one {
+    //Bottom part of header one
+    header#opt_header_one>div:last-of-type { 
+        padding: 0 5%;
+        height: 50px;
+        background-color: $nav_1_bottom_bar_background;
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        display: flex;
         //Navigational menu
         >nav {
             align-items: center;
             display: flex;
             flex: 1 0 85%;
             text-transform: uppercase;
-            padding: 0 5%;
-            background-color: $nav_1_bottom_bar_background;
-            box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-            height: 50px;
         }
 
         //Navigational menu links
         >nav>ul>li>a {
-            display: block;
+            display: inline-block;
             font-weight: 500;
             color: $nav_1_menu_text;
             padding: 0 10px;
@@ -90,21 +106,25 @@
             flex-wrap: nowrap;
             align-items: center;
             display: flex;
+            justify-content: flex-end;
         }
 
         //Social icons list items
         >ul>li {
-            flex: 1 0 auto;
-            position: relative;
-            padding: 2px;
+            margin-right: 10px;
+        }
+        >ul>li:last-of-type {
+            margin-right: 0;
         }
 
         //Social icons list items links
         >ul>li>a {
-            padding: 7px 10px;
+            padding: 0 10px;
             transition: color 0.3s;
             font-size: 16px;
-            color: $header_icons_color;
+            color: $nav_1_social_icons_color;
+            line-height: 50px;
+            display: inline-block;
         }
 
         //Social icons list items actions on hover, active and focus

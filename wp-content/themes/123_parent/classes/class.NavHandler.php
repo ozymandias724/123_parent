@@ -213,10 +213,12 @@ class NavHandler
                     %s
                     %s
                 </div>
-                <nav>
-                    %s  
-                </nav>
-                %s
+                <div>
+                    <nav>
+                        %s  
+                    </nav>
+                    %s
+                </div>
             </header>
         ';
         $this->header_one = sprintf( 
@@ -274,13 +276,11 @@ class NavHandler
          * 
          */
         $format_header = '
-            <header class="header %s" id="opt_header_three">
-                <div>
+            <header class="header %s" id="opt_header_three">                
+                %s
+                <div class="header-content">
                     %s
-                    <div class="header-content">
-                        %s
-                        %s
-                    </div>
+                    %s
                 </div>
             </header>
         ';
@@ -507,11 +507,7 @@ class NavHandler
                 <div> 
                     <div>
                         <div>
-                            <a href="javascript:;" title="3 Line menu icon button">
-                                <span></span>
-                                <span></span>
-                                <span></span> 
-                            </a>
+                            <a class="site__bars" href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>
                         </div>
                         <div> 
                             %s

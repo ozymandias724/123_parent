@@ -1027,25 +1027,32 @@ header.header .opt__topbanner {
     background-color: #000;
     color: #fff;
     height: 80px;
+    padding: 0 5%;
+    display: flex;
   }
   header#opt_header_one > div:first-of-type .header-logo {
     padding: 10px 0;
     height: 100%;
+    margin-right: auto;
   }
   header#opt_header_one > div:first-of-type .header-logo img {
     max-height: 100%;
   }
   header#opt_header_one > div:first-of-type .site__iconlink {
-    line-height: 80px;
-    max-height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
   }
-  header#opt_header_one > div:first-of-type > div > a:before {
-    color: green;
+  header#opt_header_one > div:first-of-type .site__iconlink-address:before,
+header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
+    padding: 8px 14px;
+    margin-right: 10px;
+    border: 2px solid green;
     border-radius: 100%;
-    font-weight: 700;
-    border: 3px solid green;
-    display: block;
-    font-family: "Font Awesome";
+    color: green;
+  }
+  header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
+    margin-left: 10px;
   }
   header#opt_header_one > div:first-of-type > div > a {
     padding: 5px;
@@ -1059,56 +1066,63 @@ header#opt_header_one > div:first-of-type > div > a:focus {
     opacity: 1;
   }
 
-  header#opt_header_one > nav {
+  header#opt_header_one > div:last-of-type {
+    padding: 0 5%;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+    display: flex;
+  }
+  header#opt_header_one > div:last-of-type > nav {
     align-items: center;
     display: flex;
     flex: 1 0 85%;
     text-transform: uppercase;
-    padding: 0 5%;
-    background-color: #fff;
-    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-    height: 50px;
   }
-  header#opt_header_one > nav > ul > li > a {
-    display: block;
+  header#opt_header_one > div:last-of-type > nav > ul > li > a {
+    display: inline-block;
     font-weight: 500;
     color: #000;
     padding: 0 10px;
     line-height: 50px;
   }
-  header#opt_header_one > nav > ul > li > a:hover,
-header#opt_header_one > nav > ul > li > a:active,
-header#opt_header_one > nav > ul > li > a:focus {
+  header#opt_header_one > div:last-of-type > nav > ul > li > a:hover,
+header#opt_header_one > div:last-of-type > nav > ul > li > a:active,
+header#opt_header_one > div:last-of-type > nav > ul > li > a:focus {
     background-color: green;
     color: white;
   }
-  header#opt_header_one > nav > ul > li {
+  header#opt_header_one > div:last-of-type > nav > ul > li {
     margin-right: 0px;
   }
-  header#opt_header_one > ul {
+  header#opt_header_one > div:last-of-type > ul {
     flex: 1 0 auto;
     list-style: none;
     flex-wrap: nowrap;
     align-items: center;
     display: flex;
+    justify-content: flex-end;
   }
-  header#opt_header_one > ul > li {
-    flex: 1 0 auto;
-    position: relative;
-    padding: 2px;
+  header#opt_header_one > div:last-of-type > ul > li {
+    margin-right: 10px;
   }
-  header#opt_header_one > ul > li > a {
-    padding: 7px 10px;
+  header#opt_header_one > div:last-of-type > ul > li:last-of-type {
+    margin-right: 0;
+  }
+  header#opt_header_one > div:last-of-type > ul > li > a {
+    padding: 0 10px;
     transition: color 0.3s;
     font-size: 16px;
-    color: #fff;
+    color: #000;
+    line-height: 50px;
+    display: inline-block;
   }
-  header#opt_header_one > ul > li > a:hover,
-header#opt_header_one > ul > li > a:active,
-header#opt_header_one > ul > li > a:focus {
+  header#opt_header_one > div:last-of-type > ul > li > a:hover,
+header#opt_header_one > div:last-of-type > ul > li > a:active,
+header#opt_header_one > div:last-of-type > ul > li > a:focus {
     color: green;
   }
-  header#opt_header_one > ul > li:last-of-type {
+  header#opt_header_one > div:last-of-type > ul > li:last-of-type {
     padding-right: 0;
   }
 }
@@ -1121,6 +1135,7 @@ header#opt_header_one > ul > li > a:focus {
   }
   header#opt_header_two > div {
     display: flex;
+    align-items: center;
     flex-flow: row nowrap;
     justify-content: space-around;
     background-color: #383838;
@@ -1136,12 +1151,12 @@ header#opt_header_one > ul > li > a:focus {
     align-items: flex-end;
   }
   header#opt_header_two > div > div > a {
+    display: inline-block;
     text-align: right;
     font-size: 24px;
     padding: 0 5px;
     margin-right: -10px;
     color: #fff;
-    line-height: 50px;
   }
   header#opt_header_two > div > div > a > i {
     font-size: 20px;
@@ -1154,44 +1169,23 @@ header#opt_header_one > ul > li > a:focus {
     padding: 0 10px;
     color: #fff;
     line-height: 50px;
+    display: inline-block;
+    text-transform: uppercase;
   }
   header#opt_header_two > div > a:last-of-type {
     background-color: green;
-    text-decoration: none;
     font-size: 16px;
     border-radius: 4px;
     text-align: center;
-    padding: 0 15px;
-    line-height: 100px;
+    padding: 15px;
   }
-  header#opt_header_two .opt__estimatebar {
-    background-color: green;
-    text-align: center;
-    color: white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: auto;
-  }
-  header#opt_header_two .opt__estimatebar > a {
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 10px;
-  }
-  header#opt_header_two .opt__estimatebar > a,
-header#opt_header_two > div:last-of-type > div > div > div > a,
+  header#opt_header_two > div:last-of-type > div > div > div > a,
 header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a,
 header#opt_header_two > div:last-of-type > div > div > a {
     opacity: 0.8;
     transition: opacity 0.3s;
   }
-  header#opt_header_two .opt__estimatebar > a:hover, header#opt_header_two .opt__estimatebar > a:focus, header#opt_header_two .opt__estimatebar > a:active,
-header#opt_header_two > div:last-of-type > div > div > div > a:hover,
-header#opt_header_two > div:last-of-type > div > div > div > a:focus,
-header#opt_header_two > div:last-of-type > div > div > div > a:active,
+  header#opt_header_two > div:last-of-type > div > div > div > a:hover, header#opt_header_two > div:last-of-type > div > div > div > a:focus, header#opt_header_two > div:last-of-type > div > div > div > a:active,
 header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:hover,
 header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:focus,
 header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:active,
@@ -1203,18 +1197,14 @@ header#opt_header_two > div:last-of-type > div > div > a:active {
 }
 @media only screen and (min-width: 1280px) {
   header#opt_header_three {
-    padding: 0px;
+    padding: 0 5%;
   }
-  header#opt_header_three > div {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-  header#opt_header_three > div > div:first-of-type > span {
+  header#opt_header_three > div:first-of-type > span {
     display: flex;
     flex: 1 0 80%;
     align-items: center;
   }
-  header#opt_header_three > div > div:first-of-type {
+  header#opt_header_three > div:first-of-type {
     background-color: green;
     color: white;
     display: flex;
@@ -1222,34 +1212,34 @@ header#opt_header_two > div:last-of-type > div > div > a:active {
     justify-content: space-around;
     padding: 0 3.5%;
   }
-  header#opt_header_three > div > div:first-of-type > span a:last-child {
+  header#opt_header_three > div:first-of-type > span a:last-child {
     display: flex;
     margin: 0 auto;
   }
-  header#opt_header_three > div > div:first-of-type > span a i {
+  header#opt_header_three > div:first-of-type > span a i {
     color: black;
     margin-right: 10px;
     font-size: 2rem;
     transition: color 0.3s;
   }
-  header#opt_header_three > div > div:first-of-type > span a {
+  header#opt_header_three > div:first-of-type > span a {
     font-size: 1.6rem;
     padding: 10px;
     opacity: 0.8;
     transition: opacity 0.3s;
     color: #fff;
   }
-  header#opt_header_three > div > div:first-of-type > span a:hover,
-header#opt_header_three > div > div:first-of-type > span a:active,
-header#opt_header_three > div > div:first-of-type > span a:focus {
+  header#opt_header_three > div:first-of-type > span a:hover,
+header#opt_header_three > div:first-of-type > span a:active,
+header#opt_header_three > div:first-of-type > span a:focus {
     opacity: 1;
   }
-  header#opt_header_three > div > div:first-of-type > span a:hover > i,
-header#opt_header_three > div > div:first-of-type > span a:active > i,
-header#opt_header_three > div > div:first-of-type > span a:focus > i {
+  header#opt_header_three > div:first-of-type > span a:hover > i,
+header#opt_header_three > div:first-of-type > span a:active > i,
+header#opt_header_three > div:first-of-type > span a:focus > i {
     color: white;
   }
-  header#opt_header_three > div > div:first-of-type > a i {
+  header#opt_header_three > div:first-of-type > a i {
     color: green;
     font-size: 2rem;
     font-weight: bold;
@@ -1257,7 +1247,7 @@ header#opt_header_three > div > div:first-of-type > span a:focus > i {
     top: 2px;
     left: 5px;
   }
-  header#opt_header_three > div > div:first-of-type > a {
+  header#opt_header_three > div:first-of-type > a {
     flex: 1 0 10%;
     background-color: black;
     padding: 15px;
@@ -1266,12 +1256,12 @@ header#opt_header_three > div > div:first-of-type > span a:focus > i {
     text-transform: uppercase;
     transition: background-color 0.3s;
   }
-  header#opt_header_three > div > div:first-of-type > a:hover,
-header#opt_header_three > div > div:first-of-type > a:active,
-header#opt_header_three > div > div:first-of-type > a:focus {
+  header#opt_header_three > div:first-of-type > a:hover,
+header#opt_header_three > div:first-of-type > a:active,
+header#opt_header_three > div:first-of-type > a:focus {
     background-color: #333333;
   }
-  header#opt_header_three > div > div:last-of-type {
+  header#opt_header_three > div:last-of-type {
     background-color: white;
     display: flex;
     flex-flow: row nowrap;
@@ -1279,19 +1269,19 @@ header#opt_header_three > div > div:first-of-type > a:focus {
     justify-content: space-around;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
   }
-  header#opt_header_three > div > div:last-of-type > ul > li {
+  header#opt_header_three > div:last-of-type > ul > li {
     font-size: 1.6rem;
     text-transform: uppercase;
     margin-right: 0;
   }
-  header#opt_header_three > div > div:last-of-type > ul > li > a {
+  header#opt_header_three > div:last-of-type > ul > li > a {
     padding: 7px;
     opacity: 0.8;
     color: #000;
   }
-  header#opt_header_three > div > div:last-of-type > ul > li > a:hover,
-header#opt_header_three > div > div:last-of-type > ul > li > a:active,
-header#opt_header_three > div > div:last-of-type > ul > li > a:focus {
+  header#opt_header_three > div:last-of-type > ul > li > a:hover,
+header#opt_header_three > div:last-of-type > ul > li > a:active,
+header#opt_header_three > div:last-of-type > ul > li > a:focus {
     opacity: 1;
   }
 }

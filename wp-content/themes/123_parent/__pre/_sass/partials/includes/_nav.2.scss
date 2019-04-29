@@ -11,6 +11,7 @@ $half_header_height : 50px;
         //Select top and bottom part of header
         > div {
             display: flex;
+            align-items: center;
             flex-flow: row nowrap;
             justify-content: space-around;
             background-color: $third_black;
@@ -28,12 +29,12 @@ $half_header_height : 50px;
             }
             //Phone number link
             > div > a {
+                display: inline-block;
                 text-align: right;
                 font-size: 24px;
                 padding: 0 5px;
                 margin-right: -10px;
                 color: $nav_2_top_bar_phone;
-                line-height: $half_header_height;
                 //Phone number link icon
                 > i {
                     font-size: 20px;
@@ -49,39 +50,18 @@ $half_header_height : 50px;
                 padding: 0 10px;
                 color: $nav_2_menu_text;
                 line-height: $half_header_height;
+                display: inline-block;
+                text-transform: uppercase;
             }
             //Quote button link
             > a:last-of-type {
                 background-color: $accent;
-                text-decoration: none;
                 font-size: 16px;
                 border-radius: 4px;
                 text-align: center;
-                padding: 0 15px;
-                line-height: $header_height;
+                padding: 15px;
             }
         }
-        // Black free estimate bar above header
-        .opt__estimatebar {
-            background-color: getVar($colors, primary);
-            text-align: center;
-            color: white;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            height: auto;
-            //Estimate bar above header link
-            > a {
-                font-size: 1.6rem;
-                text-transform: uppercase;
-                text-align: center;
-                padding: 10px;
-            }
-        }
-        //Black free estimate bar 
-        .opt__estimatebar,
         //Phone number
         > div:last-of-type > div > div > div,
         //Nav bar
