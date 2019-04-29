@@ -1,4 +1,7 @@
-@media only screen {
+$header_height : 100px;
+$half_header_height : 50px;
+
+@media only screen { 
     //Header 2
     header#opt_header_two {
         flex-flow: row nowrap;
@@ -7,78 +10,55 @@
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         //Select top and bottom part of header
         > div {
-            //Lower part of header
-            &:last-of-type {
-                background-color: $third_black;
-            }
-            //Phone number and navigational menu
-            &:last-of-type > div {
-                display: flex;
-                flex-flow: row nowrap;
-                background-color: $third_black;
-                justify-content: space-around;
-                max-width: $nav_maxwidth;
-                margin: 0 auto;
-            }
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            background-color: $third_black;
+            padding: 0 $padding_left_and_right;
+            height: $header_height;
             // Logo 
-            &:last-of-type > div > a {
+            > a:first-of-type {
                 margin-right: auto;
             }
-            //Parent div element of phone number, nav and quote button
-            &:last-of-type > div > div {
-                color: white;
-                text-transform: uppercase;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                margin-right: 15px;
-            }
             //Sections of phone number and nav bar
-            &:last-of-type > div > div > div {
+            > div {
                 display: flex;
                 flex-flow: column nowrap;
                 align-items: flex-end;
-                height: 100%;
-                padding-bottom: 10px;
             }
             //Phone number link
-            &:last-of-type > div > div > div > a {
+            > div > a {
                 text-align: right;
                 font-size: 24px;
-                padding: 15px 5px;
+                padding: 0 5px;
                 margin-right: -10px;
                 color: $nav_2_top_bar_phone;
+                line-height: $half_header_height;
                 //Phone number link icon
                 > i {
                     font-size: 20px;
                 }
             }
             //Menu items navigation element
-            &:last-of-type > div > div > div > nav {
+            > div > nav {
                 margin-right: -10px;
             }
-            //Menu items unordered list
-            &:last-of-type > div > div > div > nav > ul {
-                display: flex;
-                flex-flow: row wrap;
-            }
-            //Menu items unordered list items
-            &:last-of-type > div > div > div > nav > ul > li {
-                margin: 5px 0;
-            }
             //Menu items unordered list items links
-            &:last-of-type > div > div > div > nav > ul > li > a {
+            > div > nav > ul > li > a {
                 font-size: 14px;
-                padding: 10px;
+                padding: 0 10px;
                 color: $nav_2_menu_text;
+                line-height: $half_header_height;
             }
             //Quote button link
-            &:last-of-type > div > div > a {
-                background-color: $prestige_painters;
+            > a:last-of-type {
+                background-color: $accent;
                 text-decoration: none;
                 font-size: 16px;
                 border-radius: 4px;
                 text-align: center;
+                padding: 0 15px;
+                line-height: $header_height;
             }
         }
         // Black free estimate bar above header

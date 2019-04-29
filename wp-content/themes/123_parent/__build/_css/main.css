@@ -1002,6 +1002,7 @@ header.header .opt__topbanner {
   }
   header#opt_header_one > div {
     width: 100%;
+    padding: 0 5%;
   }
   header#opt_header_one > div > div {
     display: flex;
@@ -1132,66 +1133,50 @@ header#opt_header_one > div:last-of-type > ul > li > a:focus {
     justify-content: space-between;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
   }
-  header#opt_header_two > div:last-of-type {
-    background-color: #383838;
-  }
-  header#opt_header_two > div:last-of-type > div {
+  header#opt_header_two > div {
     display: flex;
     flex-flow: row nowrap;
-    background-color: #383838;
     justify-content: space-around;
-    max-width: 1280px;
-    margin: 0 auto;
+    background-color: #383838;
+    padding: 0 5%;
+    height: 100px;
   }
-  header#opt_header_two > div:last-of-type > div > a {
+  header#opt_header_two > div > a:first-of-type {
     margin-right: auto;
   }
-  header#opt_header_two > div:last-of-type > div > div {
-    color: white;
-    text-transform: uppercase;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    margin-right: 15px;
-  }
-  header#opt_header_two > div:last-of-type > div > div > div {
+  header#opt_header_two > div > div {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    height: 100%;
-    padding-bottom: 10px;
   }
-  header#opt_header_two > div:last-of-type > div > div > div > a {
+  header#opt_header_two > div > div > a {
     text-align: right;
     font-size: 24px;
-    padding: 15px 5px;
+    padding: 0 5px;
     margin-right: -10px;
     color: #fff;
+    line-height: 50px;
   }
-  header#opt_header_two > div:last-of-type > div > div > div > a > i {
+  header#opt_header_two > div > div > a > i {
     font-size: 20px;
   }
-  header#opt_header_two > div:last-of-type > div > div > div > nav {
+  header#opt_header_two > div > div > nav {
     margin-right: -10px;
   }
-  header#opt_header_two > div:last-of-type > div > div > div > nav > ul {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li {
-    margin: 5px 0;
-  }
-  header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a {
+  header#opt_header_two > div > div > nav > ul > li > a {
     font-size: 14px;
-    padding: 10px;
+    padding: 0 10px;
     color: #fff;
+    line-height: 50px;
   }
-  header#opt_header_two > div:last-of-type > div > div > a {
-    background-color: #e91d62;
+  header#opt_header_two > div > a:last-of-type {
+    background-color: green;
     text-decoration: none;
     font-size: 16px;
     border-radius: 4px;
     text-align: center;
+    padding: 0 15px;
+    line-height: 100px;
   }
   header#opt_header_two .opt__estimatebar {
     background-color: green;

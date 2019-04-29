@@ -69,7 +69,7 @@ class NavHandler
         $content_social_icons = '';
         // if we have social media icons
         if( !empty($$company_info['social_media']) ){
-            $content_social_icons = '<ul class="site_social-media">';
+            $content_social_icons .= '<ul class="site__social-media">';
             $format_social_icons = '
                 <li>
                     <a href="%s" title="Social icon button">
@@ -242,27 +242,21 @@ class NavHandler
          */
         $format_header = '
             <header class="header %s" id="opt_header_two">
-                %s
-                <div> 
-                    <div class="header-tint">  
+                <div class="header-tint">  
+                    %s
+                    <div>
                         %s
-                        <div>
-                            <div>
-                                %s
-                                <nav>
-                                    %s
-                                </nav>
-                            </div>
+                        <nav>
                             %s
-                        </div>
+                        </nav>
                     </div>
+                    %s
                 </div>
             </header>
         ';
         $this->header_two = sprintf(
             $format_header
             ,$fadenav
-            ,$content_topbar
             ,get_custom_logo()
             ,$desktop_social
             ,_get_site_nav()
@@ -290,6 +284,15 @@ class NavHandler
                 </div>
             </header>
         ';
+        // $format_header = '
+        //     <header class="header %s" id="opt_header_three">
+        //         %s
+        //         <div class="header-content">
+        //             %s
+        //             %s
+        //         </div>
+        //     </header>
+        // ';
         $this->header_three = sprintf(
             $format_header
             ,$fadenav
