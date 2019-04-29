@@ -25,96 +25,28 @@
         //Top part of header
         background-color: $nav_1_top_bar_background;
         color: $nav_1_top_bar_text;
-
-        //Span elements inside top part of header
-        >div>span:nth-of-type(1),
-        >div>span:nth-of-type(2) {
-            align-items: center;
-            display: flex;
+        height: 85px;
+        display: flex;
+        > a:first-of-type {
+            margin-right: auto;
         }
-
-        //Before pseudo of span elements inside top part of header
-        >div>span:before {
-            color: $accent;
-            border-radius: 100%;
-            font-weight: 700;
-            border: 3px solid $accent;
-            display: block;
-            font-family: 'Font Awesome 5 Free';
-        }
-
-        //Links of span elements inside top part of header
-        >div>span>a {
-            padding: 5px;
-            opacity: $opacity_level_below_one;
-            transition: opacity 0.3s;
-            color: $nav_1_top_bar_text;
-        }
-
-        //Links actions on hover, active and focus of span elements inside top part of header
-        >div>span>a:hover,
-        >div>span>a:active,
-        >div>span>a:focus {
-            opacity: 1;
-        }
-
-        //Address span element
-        >div>span:nth-of-type(1) {
-            margin-left: auto;
-            font-size: 16px;
-        }
-
-        //Address span element before pseudo element
-        >div>span:nth-of-type(1):before {
-            content: "\f3c5";
-            padding: 8px 14px;
-            margin-right: 10px;
-        }
-
-        //Phone number span element
-        >div>span:nth-of-type(2) {
-            margin-left: 5%;
-        }
-
-        //Phone number span element before pseudo element
-        >div>span:nth-of-type(2):before {
-            content: "\f095";
-            padding: 10px 10px;
-            margin-left: 30px;
-            margin-right: 10px;
-            transform: rotate(90deg);
-            margin-top: 5px;
-        }
-
-        //Phone number link 
-        >div>span:nth-of-type(2)>a {
-            font-size: 18px;
-        }
-
-        //Phone number link span element
-        >div>span:nth-of-type(2)>a>span {
-            font-size: 18px;
-            text-align: left;
-            color: $accent;
-            text-transform: uppercase;
-            display: block;
-            font-weight: 700;
+        > a.site__iconlink-address,
+        > a.site__iconlink-phone {
+            line-height: 85px;
         }
     }
 
-    header#opt_header_one>div:last-of-type {
-        //Lower part of header (navigational menu and social icons) 
-        background-color: $nav_1_bottom_bar_background;
-        box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-        top: 0;
-
+    header#opt_header_one {
         //Navigational menu
         >nav {
             align-items: center;
             display: flex;
             flex: 1 0 85%;
             text-transform: uppercase;
-            padding: 0 5px;
+            padding: 0 5%;
+            background-color: $nav_1_bottom_bar_background;
+            box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+            height: 50px;
         }
 
         //Navigational menu links
@@ -122,7 +54,8 @@
             display: block;
             font-weight: 500;
             color: $nav_1_menu_text;
-            padding: 15px 10px;
+            padding: 0 10px;
+            line-height: 50px;
         }
 
         //Navigational menu actions on hover, active and focus

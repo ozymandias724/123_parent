@@ -68,7 +68,7 @@ class NavHandler
         $social_media = ($company_info['social_media'] ? $company_info['social_media'] : '');
         $content_social_icons = '';
         // if we have social media icons
-        if( !empty($$company_info['social_media']) ){
+        if( !empty($company_info['social_media']) ){
             $content_social_icons .= '<ul class="site__social-media">';
             $format_social_icons = '
                 <li>
@@ -77,7 +77,7 @@ class NavHandler
                     </a>
                 </li>
             ';
-            foreach( $field_social_icons as $social_icon ){
+            foreach( $company_info['social_media'] as $social_icon ){
                 $url = $social_icon['url'] ;
                 $img = $social_icon['image'];
                 $fa = $social_icon['icon'];
@@ -124,13 +124,13 @@ class NavHandler
         $site__iconlink_location = '';
         if( !empty($company_address) ){
             $site__iconlink_location .= '
-                <a href="javascript:;" title="" class="site__iconlink-address">'.$company_address.'</a>
+                <a href="javascript:;" title="" class="site__iconlink-address"><i class="fas fa-map-marker-alt"></i>'.$company_address.'</a>
             ';
         }
         $site__iconlink_phone = '';
         if( !empty($phone_number_1) ){
             $site__iconlink_phone .= '
-                <a href="javascript:;" title="" class="site__iconlink-phone">'.$phone_number_1.'</a>
+                <a href="javascript:;" title="" class="site__iconlink-phone"><i class="fas fa-phone"></i>'.$phone_number_1.'</a>
             ';
         }
 
@@ -182,7 +182,6 @@ class NavHandler
         $quickquote = '';
         if( $popups['header']['status'] ){
             $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
-
         }
 
         // banner popup
@@ -211,12 +210,10 @@ class NavHandler
                     %s
                     %s
                 </div>
-                <div>
-                    <nav>
-                        %s  
-                    </nav>
-                    %s
-                </div>
+                <nav>
+                    %s  
+                </nav>
+                %s
             </header>
         ';
         $this->header_one = sprintf( 
@@ -543,5 +540,4 @@ class NavHandler
         
     }
 }
-
 ?>
