@@ -6,12 +6,28 @@ var Hero = {};
 var Headers = {};
 
 
-
-
+/**
+ * Module: Non-Interactive Maps w/ Leaflet
+ * 
+ * Description:
+ * 
+ */
 var mapLat = $('#mapid').attr('data-lat');
 var mapLng = $('#mapid').attr('data-lng');
 
-var mymap = L.map('mapid').setView([mapLat, mapLng], 13);
+// initialize the map on the "map" div with a given center and zoom
+var mymap = L.map('mapid', {
+    center: [mapLat, mapLng],
+    zoom: 13,
+    zoomControl : false,
+    boxZoom: false,
+    doubleClickZoom: false,
+    dragging: false,
+    keyboard: false,
+    scrollWheelZoom: false,
+    tap: false,
+    touchZoom: false,
+});
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -19,6 +35,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1Ijoia21hcmN5NzI0IiwiYSI6ImNqdjFsaGUxZjF2NHA0ZXNkemlwZno5cTcifQ.552sQf1WxlHY2EHfj8oMCg'
 }).addTo(mymap);
+
+L.marker([mapLat, mapLng]).addTo(mymap);
+L.circle([mapLat, mapLng], {
+    radius : 2000,
+}).addTo(mymap);
+
 
 
 Theme.Slick = {
