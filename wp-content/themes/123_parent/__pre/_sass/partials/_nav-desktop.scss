@@ -159,38 +159,22 @@ $bp__lg : 1280px;
 
     // Header 10 sidebar menu
     .header_10_sidebar_menu {
-
-        // Class to add to sidebar when it is opened
-        &.header_sidebar_cover_all {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-        }
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        z-index: 20;
+        font-size: 16px;
+        top: 0;
+        background-color: white; 
+        overflow-x: hidden;
+        padding-top: 60px;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
 
         // First div element in sidebar when sidebar menu has the above class
-        &.header_sidebar_cover_all>nav {
+        &.header_sidebar_cover_all {
             transform: translateX(0%);
             box-shadow: -6px 0px 25px 0px $black;
-        }
-
-        // First div element in sidebar 
-        >nav {
-            height: 100%;
-            width: 300px;
-            position: fixed;
-            z-index: 20;
-            font-size: 16px;
-            top: 0;
-            background-color: white;
-            overflow-x: hidden;
-            padding-top: 60px;
-            transform: translateX(-100%);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        // Social media icons
-        ul {
-            margin-top: 30px;
         }
 
         // Navigational menu
@@ -203,17 +187,18 @@ $bp__lg : 1280px;
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
+            margin-top: 30px;
         }
 
         // Navigational menu unordered list items
         >nav>ul>li {
-            margin-right: 0;
+            margin-right: 0 !important;
             width: 100%;
         }
 
         // Navigational menu unordered list items links 
         >nav>ul>li>a {
-            border-bottom: 1px solid $tint;
+            border-bottom: 1px solid lightgrey;
             color: $black;
             padding: 12px 12px 12px 0;
             display: block;
@@ -235,7 +220,7 @@ $bp__lg : 1280px;
 
 
         // Telephone number link
-        >a {
+        >nav>a {
             display: inline-block;
             padding: 10px 15px 10px 15px;
             border-radius: 20px;
@@ -246,7 +231,13 @@ $bp__lg : 1280px;
             opacity: $opacity_level_below_one;
             transition: opacity 0.3s, background-color 0.3s, color 0.3s;
             border: 1px solid $black;
-
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+            &:before {
+                display: none;
+            }
             // Actions on hover, active and focus
             &:hover,
             &:active,
