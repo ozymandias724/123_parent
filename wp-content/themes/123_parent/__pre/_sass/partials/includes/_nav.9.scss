@@ -10,8 +10,7 @@
             display: flex;
             align-items: center;
             //Address and phone number link 
-            > a:first-of-type,
-            > a:last-of-type {
+            > .site__iconlink {
                 padding: 0 10px;
                 line-height: 50px;
                 color: $white;
@@ -19,6 +18,23 @@
                 &:before {
                     margin-right: 10px;
                 }
+            }
+            // Phone, Address and Social Media links
+            > .site__iconlink,
+            > ul > li > a {
+                color: white;
+                opacity: $opacity_level_below_one;
+                transition: opacity 0.3s;
+            }
+            // Phone and Address links
+            > .site__iconlink:hover,
+            > .site__iconlink:active,
+            > .site__iconlink:focus,
+            // Social Media links
+            > ul > li > a:hover,
+            > ul > li > a:active,
+            > ul > li > a:focus {
+                opacity: 1;
             }
             //Social icons unordered list
             > ul {

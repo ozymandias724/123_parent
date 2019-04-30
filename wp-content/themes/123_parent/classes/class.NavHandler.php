@@ -58,6 +58,7 @@ class NavHandler
             );
         }
         
+        $spanbars = '<a class="site__bars" href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>';
 
         // get company info field group
         $company_info = get_field('company_info','options');
@@ -462,36 +463,26 @@ class NavHandler
         $format_header = '
             <header class="%s header" id="opt_header_ten">
                 <div> 
-                    <div>
-                        <div>
-                            <a class="site__bars" href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>
-                        </div>
-                        <div> 
-                            %s
-                        </div>
-                        %s
-                    </div>
+                    %s
+                    %s
+                    %s
                 </div>
-                <div class="header_sidebar_menu_1">
-					<div>
-						<nav>
-							%s
-						</nav>
-						<div> 
-							<a href="tel:%s" title="Phone number button">%s</a>
-						</div>
-					</div>
-                </div> 
+                <div>
+                    <nav>
+                        %s
+                    </nav>
+                    %s
+                </div>
             </header>
         ';
         $this->header_ten = sprintf(
             $format_header
             ,$fadenav
+            ,$spanbars
             ,get_custom_logo()
             ,$content_social_icons
             ,_get_site_nav()
-            ,$phone_number_1
-            ,$phone_number_1 
+            ,$site__iconlink_phone
         ); 
         
     }

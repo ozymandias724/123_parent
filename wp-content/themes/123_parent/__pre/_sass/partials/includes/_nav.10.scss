@@ -4,31 +4,20 @@
         background-color: white;
         padding: 0px;
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-        // Parent div element to apply max-width and center children elements of header 
-        > div {
-            //First div, the container for the main header
-            &:first-of-type {
-                max-width: $nav_maxwidth;
-                margin: 0 auto;
-            }
-            // Parent div element of hamburger icon, logo and social icons 
-            &:first-of-type > div {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                font-size: 18px;
-            }
+        > div:first-of-type {
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 18px;
             // Hamburger icon div element 
-            &:first-of-type > div > div:nth-of-type(1) {
+            > a:first-of-type {
                 display: flex;
                 z-index: 21;
-            }
-            //Hamburger icon link
-            &:first-of-type > div > div:nth-of-type(1) > a {
                 padding: 10px;
             }
             // Hamburger icon link spans 
-            &:first-of-type > div > div:nth-of-type(1) > a > span {
+            > a:first-of-type > span {
                 display: block;
                 width: 33px;
                 height: 4px;
@@ -40,61 +29,51 @@
                     opacity 0.35s ease-in-out;
             }
             // First span of hamburger icon link 
-            &:first-of-type > div > div:nth-of-type(1) > a > span:nth-of-type(1) {
+            > a:first-of-type > span:nth-of-type(1) {
                 transform-origin: 0% 0%;
                 margin-bottom: 4px;
             }
             // Second span of hamburger icon link 
-            &:first-of-type > div > div:nth-of-type(1) > a > span:nth-of-type(2) {
+            > a:first-of-type > span:nth-of-type(2) {
                 transform-origin: 0% 100%;
                 margin-bottom: 4px;
             }
             // First span of hamburger icon link to change hamburger icon
-            &:first-of-type > div > div:nth-of-type(1) > a.header_10_hamburger_icon_changed > span:nth-of-type(1) {
+            >a:first-of-type.header_10_hamburger_icon_changed > span:nth-of-type(1) {
                 opacity: 1;
                 transform: rotate(45deg) translate(0px, -10px);
                 background: #232323;
             }
             // Second span of hamburger icon link 
-            &:first-of-type > div > div:nth-of-type(1) > a.header_10_hamburger_icon_changed > span:nth-of-type(2) {
+            > a:first-of-type.header_10_hamburger_icon_changed > span:nth-of-type(2) {
                 transform: rotate(-45deg) translate(0px, 10px);
             }
             // Third span of hamburger icon link 
-            &:first-of-type > div > div:nth-of-type(1) > a.header_10_hamburger_icon_changed > span:nth-of-type(3) {
+            > a:first-of-type.header_10_hamburger_icon_changed > span:nth-of-type(3) {
                 opacity: 0;
                 transform: rotate(0deg) scale(0.2, 0.2);
             }
-            //Logo parent div
-            &:first-of-type > div > div:nth-of-type(2) {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            //Logo link
-            &:first-of-type > div > div:nth-of-type(2) > a {
-                padding: 15px;
-            }
             //Social icons unordered list
-            &:first-of-type > div > ul {
+            > ul {
                 list-style: none;
                 display: flex;
                 justify-content: flex-end;
                 margin-right: -10px;
             }
-            &:first-of-type > div > ul > li > a {
+            > ul > li > a {
                 padding: 15px;
             }
             //Hamburger icon div element
-            &:first-of-type > div > div:first-of-type,
+            >a:first-of-type,
             //Logo link
-            &:first-of-type > div > div:last-of-type,
+            >a:nth-of-type(2),
             //Social icons unordered list
-            &:first-of-type > div > ul {
+            > ul {
                 flex: 1 0 30%;
             }
             //Hamburger icon link and social icons unordered list
-            &:first-of-type > div > div:first-of-type > a,
-            &:first-of-type > div > ul > li > a {
+            > a:first-of-type,
+            > ul > li > a {
                 transition: color 0.3s;
                 //Hamburger icon link and social icons unordered list actions on hover, active and focus
                 &:hover,
