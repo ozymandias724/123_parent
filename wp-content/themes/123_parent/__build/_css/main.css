@@ -3275,11 +3275,6 @@ section#mod_menu .menu_text_sub_group_half .menu_header > h2 {
     position: relative;
     letter-spacing: normal;
   }
-  section#mod_menu .menu_text_half .menu_header > h2 > span,
-section#mod_menu .menu_text_sub_group_half .menu_header > h2 > span {
-    background: #fff;
-    padding: 0 15px;
-  }
   section#mod_menu .menu_text_list_left .menu_header > h2,
 section#mod_menu .menu_text_list_center .menu_header > h2,
 section#mod_menu .menu_photo_list .menu_header > h2,
@@ -3323,11 +3318,19 @@ section#mod_menu .menu_photo_list .menu_header {
   section#mod_menu .menu_text_half .menu_header {
     text-align: center;
   }
+  section#mod_menu .menu_text_half .menu_header > h2 > span {
+    background: #fff;
+    padding: 0 15px;
+  }
   section#mod_menu .menu_text_half .menu_header > h2 {
     margin: 9px 0 0;
   }
   section#mod_menu .menu_text_sub_group_half {
     flex-flow: column nowrap;
+  }
+  section#mod_menu .menu_text_sub_group_half .menu_header > h2 > span {
+    background: #fff;
+    padding-right: 15px;
   }
   section#mod_menu .menu_text_sub_group_half > div {
     flex: 0 1 50%;

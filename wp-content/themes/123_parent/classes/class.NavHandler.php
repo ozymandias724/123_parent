@@ -138,7 +138,6 @@ class NavHandler
             ';
         }
 
-
         // needsfix
         $quotebtn_txt = $popups['banner']['bar_text'];
         if( !empty($quotebtn_txt) ){
@@ -177,7 +176,6 @@ class NavHandler
             $phone_number_1,
             $content_quotebtn
         );
-
 
         // phone iconLink
         $desktop_social = '<a href="tel:'.$phone_number_1.'" title=""><i class="fas fa-phone"></i> '.$phone_number_1.'</a>';

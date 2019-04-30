@@ -82,12 +82,6 @@
             position: relative;
             letter-spacing: normal; 
         }
-        // Menu Text 1/2 and Menu Sub Group 1/2 header title span element
-        .menu_text_half .menu_header > h2 > span,
-        .menu_text_sub_group_half .menu_header > h2 > span {
-            background: $white;
-            padding: 0 15px;
-        }
         // Menu styles header title
         .menu_text_list_left .menu_header > h2,
         .menu_text_list_center .menu_header > h2,
@@ -141,6 +135,10 @@
             .menu_header {
                 text-align: center;
             }
+            .menu_header > h2 > span {
+                background: $white;
+                padding: 0 15px;
+            }
             // Menu header title text
             .menu_header > h2 {
                 margin: 9px 0 0;
@@ -149,6 +147,10 @@
         // Menu Text Sub Group 1/2
         .menu_text_sub_group_half {
             flex-flow: column nowrap;
+            .menu_header > h2 > span {
+                background: $white;
+                padding-right: 15px;
+            }
             > div {
                 flex: 0 1 50%;
             }
