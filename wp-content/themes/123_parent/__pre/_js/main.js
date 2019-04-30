@@ -424,13 +424,13 @@ Headers.Ten = {
     header: $("header#opt_header_ten"),
     hamburger_icon: $(".site__bars"),
     sidebar: $(".header_10_sidebar_menu"),
-    outside: $('.header_10_sidebar_menu, #opt_header_ten ul, #opt_header_ten'),
+    outside: $("body, html"),
 
     _init: function () {
 
         Headers.Ten.hamburger_icon.on("click", Headers.Ten._hamburger_icon_click);
 
-        Headers.Ten.outside.on("click", Headers.Ten._outside_click);
+        Headers.Ten.outside.on("click", Headers.Ten._close_sidebar);
 
         Headers.Ten.sidebar.on("blur", Headers.Ten._close_sidebar);
 
@@ -441,16 +441,12 @@ Headers.Ten = {
 
     },
 
-    _hamburger_icon_click: function () {
+    _hamburger_icon_click: function (e) {
+        e.stopPropagation();
         //If header 10 hamburger icon link has class of ...
         if (!Headers.Ten.hamburger_icon.hasClass("header_10_hamburger_icon_changed")) {
             Headers.Ten._open_sidebar();
         } else {
-            Headers.Ten._close_sidebar();
-        }
-    },
-    _outside_click: function (e) {
-        if (e.target === this) {
             Headers.Ten._close_sidebar();
         }
     },
@@ -478,7 +474,7 @@ Headers.Sidebar = {
     //Mobile header sidebar menu
     sidebar: $(".mobile_header_sidebar_menu_1"),
     //Mobile header sidebar and mobile header first div element
-    outside: $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
+    outside: $("body, html"),
     //Link which is the parent of the hamburger icons (spans)
     toggle: $("header.mobileheader > div:first-of-type > a"),
 
@@ -486,7 +482,7 @@ Headers.Sidebar = {
 
         //When hamburger icon spans link is clicked
         Headers.Sidebar.toggle.on("click", Headers.Sidebar._clickHandler);
-        Headers.Sidebar.outside.on("click", Headers.Sidebar._outside_click_close_sidebar);
+        Headers.Sidebar.outside.on("click", Headers.Sidebar._close_sidebar);
         Headers.Sidebar.sidebar.on("blur", Headers.Sidebar._close_sidebar);
 
         //On resize of browser
@@ -498,18 +494,14 @@ Headers.Sidebar = {
         });
 
     },
-    _clickHandler: function () {
+    _clickHandler: function (e) {
+        e.stopPropagation();
         //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
         if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar_menu_1")) {
             //Open sidebar
             Headers.Sidebar._open_sidebar();
         } else {
             //Close sidebar
-            Headers.Sidebar._close_sidebar();
-        }
-    },
-    _outside_click_close_sidebar: function (e) {
-        if (e.target === this) {
             Headers.Sidebar._close_sidebar();
         }
     },
