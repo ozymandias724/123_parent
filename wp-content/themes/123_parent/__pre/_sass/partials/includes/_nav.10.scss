@@ -7,17 +7,17 @@
         > div:first-of-type {
             padding: 0 5%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             font-size: 18px;
             // Hamburger icon div element 
-            > a:first-of-type {
+            > div {
                 display: flex;
                 z-index: 21;
                 padding: 10px;
             }
             // Hamburger icon link spans 
-            > a:first-of-type > span {
+            > div > a > span {
                 display: block;
                 width: 33px;
                 height: 4px;
@@ -29,27 +29,27 @@
                     opacity 0.35s ease-in-out;
             }
             // First span of hamburger icon link 
-            > a:first-of-type > span:nth-of-type(1) {
+            > div > a > span:nth-of-type(1) {
                 transform-origin: 0% 0%;
                 margin-bottom: 4px;
             }
             // Second span of hamburger icon link 
-            > a:first-of-type > span:nth-of-type(2) {
+            > div > a > span:nth-of-type(2) {
                 transform-origin: 0% 100%;
                 margin-bottom: 4px;
             }
             // First span of hamburger icon link to change hamburger icon
-            >a:first-of-type.header_10_hamburger_icon_changed > span:nth-of-type(1) {
+            > div > a.header_10_hamburger_icon_changed > span:nth-of-type(1) {
                 opacity: 1;
                 transform: rotate(45deg) translate(0px, -10px);
                 background: #232323;
             }
             // Second span of hamburger icon link 
-            > a:first-of-type.header_10_hamburger_icon_changed > span:nth-of-type(2) {
+            > div > a.header_10_hamburger_icon_changed > span:nth-of-type(2) {
                 transform: rotate(-45deg) translate(0px, 10px);
             }
             // Third span of hamburger icon link 
-            > a:first-of-type.header_10_hamburger_icon_changed > span:nth-of-type(3) {
+            > div > a.header_10_hamburger_icon_changed > span:nth-of-type(3) {
                 opacity: 0;
                 transform: rotate(0deg) scale(0.2, 0.2);
             }
@@ -63,23 +63,15 @@
             > ul > li > a {
                 padding: 15px;
             }
-            //Hamburger icon div element
-            >a:first-of-type,
-            //Logo link
-            >a:nth-of-type(2),
-            //Social icons unordered list
-            > ul {
-                flex: 1 0 30%;
-            }
             //Hamburger icon link and social icons unordered list
-            > a:first-of-type,
+            > div > a,
             > ul > li > a {
                 transition: color 0.3s;
                 //Hamburger icon link and social icons unordered list actions on hover, active and focus
                 &:hover,
                 &:active,
                 &:focus {
-                    color: $prestige_painters;
+                    color: $accent;
                 }
             }
         }

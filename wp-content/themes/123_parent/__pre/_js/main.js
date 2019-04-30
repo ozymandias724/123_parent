@@ -422,9 +422,9 @@ Headers.Eight._init();
 Headers.Ten = {
 
     header: $("header#opt_header_ten"),
-    hamburger_icon: $("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
-    sidebar: $(".header_sidebar_menu_1"),
-    outside: $('.header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten'),
+    hamburger_icon: $("header#opt_header_ten > a:first-of-type"),
+    sidebar: $(".header_10_sidebar_menu"),
+    outside: $('.header_10_sidebar_menu, #opt_header_ten ul, #opt_header_ten'),
 
     _init: function () {
 

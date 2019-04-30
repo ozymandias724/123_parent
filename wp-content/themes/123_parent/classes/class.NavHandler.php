@@ -463,11 +463,13 @@ class NavHandler
         $format_header = '
             <header class="%s header" id="opt_header_ten">
                 <div> 
-                    %s
+                    <div>
+                        %s
+                    </div>
                     %s
                     %s
                 </div>
-                <div>
+                <div class="header_10_sidebar_menu"> 
                     <nav>
                         %s
                     </nav>
