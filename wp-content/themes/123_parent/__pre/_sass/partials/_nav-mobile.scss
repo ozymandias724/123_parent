@@ -132,6 +132,10 @@ $opacity_level_below_one : 0.8;
                 background-color: $black;
                 transition: opacity 0.3s, background-color 0.3s, color 0.3s;
                 border: 1px solid $black;
+                //Remove phone number icon
+                &:before {
+                    display: none;
+                }
                 // Actions on hover, active and focus
                 &:hover,
                 &:active,

@@ -6,6 +6,15 @@
     // $field_social_icons = get_field('field_akan8a8sskshb', 'options');
     $company_info = get_field('company_info','options');
 
+    $phone_number_1 = ($company_info['phone_number_1'] ? $company_info['phone_number_1'] : '');
+
+    $site__iconlink_phone = ''; 
+    if( !empty($phone_number_1) ){
+        $site__iconlink_phone .= '
+            <a href="javascript:;" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
+        ';
+    }
+
     $hamburger_icon = '<a href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>';
     
     $field_social_icons = $company_info['social_media'];
@@ -57,7 +66,7 @@
                     ,$url
                     ,( !empty($icon_url) ) ? '<img src="'.$icon_url.'">' : $fa_icon
                 );
-            }
+            } 
         }
         $content_social_icons .= '</ul>';
     }
@@ -70,7 +79,7 @@
             <div class="mobile_header_sidebar">
                 <nav>
                     %s
-                    <a href="tel:%s" title="Phone number button">%s</a>
+                    %s 
                     %s
                 </nav>
             </div> 
@@ -83,8 +92,7 @@
         ,$invertlogo
         ,$hamburger_icon
         ,_get_site_nav()
-        ,$num_href
-        ,$num_display
+        ,$site__iconlink_phone
         ,$content_social_icons
     );
 
