@@ -1180,19 +1180,19 @@ header#opt_header_one > div:last-of-type > ul > li > a:focus {
     text-align: center;
     padding: 15px;
   }
-  header#opt_header_two > div:last-of-type > div > div > div > a,
-header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a,
-header#opt_header_two > div:last-of-type > div > div > a {
+  header#opt_header_two > div > div > a,
+header#opt_header_two > div > div > nav > ul > li > a,
+header#opt_header_two > div > a:last-of-type {
     opacity: 0.8;
     transition: opacity 0.3s;
   }
-  header#opt_header_two > div:last-of-type > div > div > div > a:hover, header#opt_header_two > div:last-of-type > div > div > div > a:focus, header#opt_header_two > div:last-of-type > div > div > div > a:active,
-header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:hover,
-header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:focus,
-header#opt_header_two > div:last-of-type > div > div > div > nav > ul > li > a:active,
-header#opt_header_two > div:last-of-type > div > div > a:hover,
-header#opt_header_two > div:last-of-type > div > div > a:focus,
-header#opt_header_two > div:last-of-type > div > div > a:active {
+  header#opt_header_two > div > div > a:hover, header#opt_header_two > div > div > a:focus, header#opt_header_two > div > div > a:active,
+header#opt_header_two > div > div > nav > ul > li > a:hover,
+header#opt_header_two > div > div > nav > ul > li > a:focus,
+header#opt_header_two > div > div > nav > ul > li > a:active,
+header#opt_header_two > div > a:last-of-type:hover,
+header#opt_header_two > div > a:last-of-type:focus,
+header#opt_header_two > div > a:last-of-type:active {
     opacity: 1;
   }
 }
@@ -1321,7 +1321,6 @@ header#opt_header_four > div > span {
   }
   header#opt_header_four > div > ul > li > a {
     font-size: 16px;
-    width: 28px;
     border-radius: 50%;
     display: inline-block;
     padding: 0 10px;
@@ -1722,6 +1721,9 @@ header#opt_header_seven > div > span {
     line-height: 50px;
     display: inline-block;
     color: black;
+  }
+  header#opt_header_seven > nav > ul > li > a:hover, header#opt_header_seven > nav > ul > li > a:active, header#opt_header_seven > nav > ul > li > a:focus {
+    opacity: 0.8;
   }
   header#opt_header_seven div > ul > li > a:hover, header#opt_header_seven div > ul > li > a:active, header#opt_header_seven div > ul > li > a:focus {
     color: black;

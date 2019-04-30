@@ -63,21 +63,18 @@ $half_header_height : 50px;
             }
         }
         //Phone number
-        > div:last-of-type > div > div > div,
+        > div > div > a,
         //Nav bar
-        > div:last-of-type > div > div > div > nav > ul > li,
-        //Quote button
-        > div:last-of-type > div > div {
-            //Direct links inside the above selector parents
-            > a {
-                opacity: $opacity_level_below_one;
-                transition: opacity 0.3s;
-                //Actions on hover, focus and active of selected elements links above
-                &:hover,
-                &:focus,
-                &:active {
-                    opacity: 1;
-                }
+        > div > div > nav > ul > li > a,
+        //Quote button link
+        > div > a:last-of-type {
+            opacity: $opacity_level_below_one;
+            transition: opacity 0.3s;
+            //Actions on hover, focus and active of selected elements links above
+            &:hover,
+            &:focus,
+            &:active {
+                opacity: 1;
             }
         }
     }
