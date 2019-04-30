@@ -58,7 +58,7 @@ class NavHandler
             );
         }
         
-        $spanbars = '<a class="site__bars" href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>';
+        $hamburger_icon = '<a class="site__bars" href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>';
 
         // get company info field group
         $company_info = get_field('company_info','options');
@@ -363,7 +363,11 @@ class NavHandler
          * 
          */
         
-        // 6
+        /**
+         * 
+         * Start Header Style 6
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_six">
                 <div> 
@@ -390,8 +394,17 @@ class NavHandler
             ,_get_site_nav()
             ,$quickquote
         );
+        /**
+         * 
+         * End Header Style 6
+         * 
+         */
         
-        // 7
+        /**
+         * 
+         * Start Header Style 7
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_seven">
                 <div>
@@ -412,8 +425,17 @@ class NavHandler
             ,$site__iconlink_phone
             ,_get_site_nav()
         ); 
+        /**
+         * 
+         * End Header Style 7
+         * 
+         */
 
-        // 8
+        /**
+         * 
+         * Start Header Style 8
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_eight">
                 <div>
@@ -430,8 +452,17 @@ class NavHandler
             ,get_custom_logo()
             ,_get_site_nav()
         );
+        /**
+         * 
+         * End Header Style 8
+         * 
+         */
         
-        // 9
+        /**
+         * 
+         * Start Header Style 9
+         * 
+         */
         $format_header = '
         <header class="%s header" id="opt_header_nine">
             <div>
@@ -458,8 +489,17 @@ class NavHandler
             ,_get_site_nav()
             ,$quickquote
         );
+        /**
+         * 
+         * End Header Style 9
+         * 
+         */
         
-        // 10
+        /**
+         * 
+         * Start Header Style 10
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_ten">
                 <div> 
@@ -478,13 +518,17 @@ class NavHandler
         $this->header_ten = sprintf(
             $format_header
             ,$fadenav
-            ,$spanbars
+            ,$hamburger_icon
             ,get_custom_logo()
             ,$content_social_icons
             ,_get_site_nav()
             ,$site__iconlink_phone
         ); 
-        
+        /**
+         * 
+         * End Header Style 10
+         * 
+         */
     }
 }
 ?>

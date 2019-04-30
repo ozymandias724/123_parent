@@ -46,19 +46,22 @@
             margin-left: 10px;
         }
 
+        .site__iconlink {
+            opacity: 1;
+            //Actions on hover, active and focus
+            &:hover, 
+            &:active,
+            &:focus {
+                opacity: 0.8;
+            }
+        }
+
         //Links of span elements inside top part of header
         >div>a {
             padding: 5px;
             opacity: $opacity_level_below_one;
             transition: opacity 0.3s;
             color: $nav_1_top_bar_text;
-        }
-
-        //Links actions on hover, active and focus of span elements inside top part of header
-        >div>a:hover,
-        >div>a:active,
-        >div>a:focus {
-            opacity: 1;
         }
     }
 

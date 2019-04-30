@@ -472,7 +472,7 @@ Headers.Ten._init();
 Headers.Sidebar = {
 
     //Mobile header sidebar menu
-    sidebar: $(".mobile_header_sidebar_menu_1"),
+    sidebar: $(".mobile_header_sidebar"),
     //Mobile header sidebar and mobile header first div element
     outside: $("body, html"),
     //Link which is the parent of the hamburger icons (spans)
@@ -490,14 +490,14 @@ Headers.Sidebar = {
             //Remove mobile nav sidebar menu width
             Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
             //Remove mobile nav hamburger icon class
-            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
         });
 
     },
     _clickHandler: function (e) {
         e.stopPropagation();
         //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
-        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar_menu_1")) {
+        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar")) {
             //Open sidebar
             Headers.Sidebar._open_sidebar();
         } else {
@@ -507,13 +507,13 @@ Headers.Sidebar = {
     },
     _open_sidebar: function () {
         //Hamburger icon link add class
-        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar_menu_1");
+        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar");
         //Make the sidebar menu cover the whole page
         Headers.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
     },
     _close_sidebar: function () {
         //Hamburger icon link remove class
-        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
         //Make the sidebar menu to not cover the whole page
         Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
     }
@@ -526,6 +526,7 @@ Hero.Padding_Top = {
 
     header_id: $("header").attr("id"),
     header_height: $("header").height(),
+
     mobile_header_height: $(".mobileheader").height(),
     main: $(".mobileheader").next(),
 
@@ -561,24 +562,28 @@ Hero.Padding_Top = {
             Hero.Padding_Top.header_id !== "opt_header_one" && 
             Hero.Padding_Top.header_id !== "opt_header_four" && 
             Hero.Padding_Top.header_id !== "opt_header_nine" && 
-            Hero.Padding_Top.header_id !== "opt_header_three") {
+            Hero.Padding_Top.header_id !== "opt_header_three" && 
+            Hero.Padding_Top.header_id !== "opt_header_eight") 
+        {
 
             Hero.Padding_Top.header_height = $("header").height();
 
             Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
 
-        //If header has a position of fixed and is either header 1, 4, or 9
+        
         } else if (
             Hero.Padding_Top.header_position === "fixed" &&
-            Hero.Padding_Top.header_id === "opt_header_one" ||
+            (Hero.Padding_Top.header_id === "opt_header_one" ||
             Hero.Padding_Top.header_id === "opt_header_four" ||
-            Hero.Padding_Top.header_id === "opt_header_nine"
-        ) { 
-            Hero.Padding_Top.header_first_div_height = $("header#" + Hero.Padding_Top.header_id + " > div").height();
+            Hero.Padding_Top.header_id === "opt_header_nine")
+        ) 
+        { 
+            Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id).height();
 
-            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_first_div_height);
-
-        } else {
+            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
+        } 
+        else 
+        {
             //Do not adding padding-top to hero
             Hero.Padding_Top.main.css("padding-top", "0");
         }
