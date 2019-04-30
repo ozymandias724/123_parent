@@ -58,6 +58,7 @@ class NavHandler
             );
         }
         
+        $hamburger_icon = '<a class="site__bars" href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>';
 
         // get company info field group
         $company_info = get_field('company_info','options');
@@ -71,8 +72,8 @@ class NavHandler
         $social_media = ($company_info['social_media'] ? $company_info['social_media'] : '');
         $content_social_icons = '';
         // if we have social media icons
-        if( !empty($$company_info['social_media']) ){
-            $content_social_icons = '<ul class="site_social-media">';
+        if( !empty($company_info['social_media']) ){
+            $content_social_icons .= '<ul class="site__social-media">';
             $format_social_icons = '
                 <li>
                     <a href="%s" title="Social icon button">
@@ -80,7 +81,7 @@ class NavHandler
                     </a>
                 </li>
             ';
-            foreach( $field_social_icons as $social_icon ){
+            foreach( $company_info['social_media'] as $social_icon ){
                 $url = $social_icon['url'] ;
                 $img = $social_icon['image'];
                 $fa = $social_icon['icon'];
@@ -130,13 +131,12 @@ class NavHandler
                 <a href="javascript:;" title="" class="site__iconlink site__iconlink-address">'.$company_address.'</a>
             ';
         }
-        $site__iconlink_phone = '';
+        $site__iconlink_phone = ''; 
         if( !empty($phone_number_1) ){
             $site__iconlink_phone .= '
                 <a href="javascript:;" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
             ';
         }
-
 
         // needsfix
         $quotebtn_txt = $popups['banner']['bar_text'];
@@ -161,7 +161,7 @@ class NavHandler
                     <a href="#" alt="Address button"><i class="fas fa-map-marker-alt"></i>
                         <span>%s</span>
                     </a>
-                    <a href="%s" title="Phone number button">
+                    <a href="tel:%s" title="Phone number button">
                         <i class="fas fa-phone"></i>
                         <span>%s</span>
                     </a>
@@ -177,7 +177,6 @@ class NavHandler
             $content_quotebtn
         );
 
-
         // phone iconLink
         $desktop_social = '<a href="tel:'.$phone_number_1.'" title=""><i class="fas fa-phone"></i> '.$phone_number_1.'</a>';
         
@@ -185,7 +184,6 @@ class NavHandler
         $quickquote = '';
         if( $popups['header']['status'] ){
             $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
-
         }
 
         // banner popup
@@ -245,27 +243,21 @@ class NavHandler
          */
         $format_header = '
             <header class="header %s" id="opt_header_two">
-                %s
-                <div> 
-                    <div class="header-tint">  
+                <div class="header-tint">  
+                    %s
+                    <div>
                         %s
-                        <div>
-                            <div>
-                                %s
-                                <nav>
-                                    %s
-                                </nav>
-                            </div>
+                        <nav>
                             %s
-                        </div>
+                        </nav>
                     </div>
+                    %s
                 </div>
             </header>
         ';
         $this->header_two = sprintf(
             $format_header
             ,$fadenav
-            ,$content_topbar
             ,get_custom_logo()
             ,$desktop_social
             ,_get_site_nav()
@@ -283,13 +275,11 @@ class NavHandler
          * 
          */
         $format_header = '
-            <header class="header %s" id="opt_header_three">
-                <div>
+            <header class="header %s" id="opt_header_three">                
+                %s
+                <div class="header-content">
                     %s
-                    <div class="header-content">
-                        %s
-                        %s
-                    </div>
+                    %s
                 </div>
             </header>
         ';
@@ -300,18 +290,19 @@ class NavHandler
             ,get_custom_logo()
             ,_get_site_nav()
         );
+        /**
+         * End Header Style 3
+         */
     
-        // 4
+        /**
+         * Start Header Style 4
+         */
         $format_header = '
             <header class="%s %s header" id="opt_header_four">
                 <div>
-                    <div>
-                        %s
-                        %s
-                        <span>
-                            <a href="tel:%s" title="Phone number button">%s</a>
-                        </span>
-                    </div>
+                    %s
+                    %s
+                    %s
                 </div>
                 <nav>
                     %s
@@ -324,109 +315,104 @@ class NavHandler
             ,$fadenav
             ,$content_social_icons
             ,get_custom_logo()
-            ,$phone_number_1
-            ,$phone_number_1
+            ,$desktop_social
             ,_get_site_nav()
         );
+        /**
+         * 
+         * End Header Style 4
+         * 
+         */
 
-        // 5
+        /**
+         * 
+         * Start Header Style 5
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_five">
                 <div>
-                    <div>
-                        %s
-                        <div>  
-                            <span>
-                                <a href="javascript:;" class="google-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
-                            </span>
-                            <span>
-                                <a href="tel:%s" title="Phone number button"><i class="fas fa-phone"></i> %s</a>
-                            </span>
-                            <a href="#" class="topbanner-quickquote" title="Get a quote button">Quote</a> 
-                        </div>
-                    </div>
+                    %s
+                    %s
+                    %s
+                    %s
                 </div>
                 <div> 
-                    <div> 
+                    %s
+                    <nav>
                         %s
-                        <nav>
-                            %s
-                        </nav>
-                    </div>
+                    </nav>
                 </div>
             </header>
         ';
-
         $this->header_five = sprintf(
             $format_header
             ,$fadenav
             ,$content_social_icons
-            ,$company_address
-            ,$phone_number_1
-            ,$phone_number_1
+            ,$site__iconlink_location
+            ,$site__iconlink_phone
+            ,$quickquote
             ,get_custom_logo()
             ,_get_site_nav()
         );
+        /**
+         * 
+         * End Header Style 5
+         * 
+         */
         
-        // 6
+        /**
+         * 
+         * Start Header Style 6
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_six">
-                <div>
-                    <div> 
-                        <div>
-                            <span>
-                                <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
-                            </span>
-                            <span>
-                                <a href="javascript:;" class="google-address" title="Address button"><i class="fa fa-map-marker-alt"></i> %s</a>
-                            </span>
-                        </div>
-                        %s
-                    </div>
+                <div> 
+                    %s
+                    %s
+                    %s
                 </div>
                 <div>
-                    <div>
+                    %s
+                    <nav>
                         %s
-                        <div>
-                            <nav>
-                                %s
-                            </nav>
-                            <a href="#" class="topbanner-quickquote" title="Get a quote button">Get A Quote</a>
-                        </div> 
-                    </div>
+                    </nav>
+                    %s
                 </div>
             </header>
         ';
         $this->header_six = sprintf(
             $format_header
             ,$fadenav
-            ,$phone_number_1 
-            ,$phone_number_1
-            ,$company_address
+            ,$site__iconlink_phone
+            ,$site__iconlink_location
             ,$content_social_icons
             ,get_custom_logo()
             ,_get_site_nav()
+            ,$quickquote
         );
+        /**
+         * 
+         * End Header Style 6
+         * 
+         */
         
-        // 7
+        /**
+         * 
+         * Start Header Style 7
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_seven">
-                <div> 
-                    <div>
-                        <div>
-                            %s
-                        </div>
-                        %s
-                        <span>
-                            <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
-                        </span>
-                    </div> 
-                    <div>
-                        <nav>
-                            %s
-                        </nav>
-                    </div>
-                </div>
+                <div>
+                    %s
+                    %s
+                    %s
+                </div> 
+                <nav>
+                    %s
+                </nav>
             </header>
         ';
         $this->header_seven = sprintf(
@@ -434,23 +420,27 @@ class NavHandler
             ,$fadenav
             ,$content_social_icons
             ,get_custom_logo()
-            ,$phone_number_1
-            ,$phone_number_1
+            ,$site__iconlink_phone
             ,_get_site_nav()
         ); 
+        /**
+         * 
+         * End Header Style 7
+         * 
+         */
 
-        // 8
+        /**
+         * 
+         * Start Header Style 8
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_eight">
                 <div>
-                    <div>
+                    %s
+                    <nav>
                         %s
-                    </div>
-                    <div>
-                        <nav>
-                            %s
-                        </nav>
-                    </div>
+                    </nav>
                 </div>
             </header>
         ';
@@ -460,88 +450,83 @@ class NavHandler
             ,get_custom_logo()
             ,_get_site_nav()
         );
+        /**
+         * 
+         * End Header Style 8
+         * 
+         */
         
-        // 9
+        /**
+         * 
+         * Start Header Style 9
+         * 
+         */
         $format_header = '
         <header class="%s header" id="opt_header_nine">
             <div>
-                <div> 
-                    <div>
-                        <span>
-                            <a href="tel:%s"><i class="fas fa-phone" title="Phone number button"></i> %s</a>
-                        </span>
-                        <span>
-                            <a href="javascript:;" class="google-address" title="Address button"><i class="fas fa-map-marker-alt"></i> %s</a>
-                        </span>
-                    </div>
-                    %s
-                </div>
+                %s
+                %s
+                %s
             </div>
             <div>
-                <div>
+                %s
+                <nav>
                     %s
-                    <div>
-                        <nav>
-                            %s
-                        </nav>
-                        <a href="#" class="topbanner-quickquote" title="Get a quote button">Get A Quote</a>
-                    </div> 
-                </div>
+                </nav>
+                %s
             </div>
         </header>
         ';
         $this->header_nine = sprintf(
             $format_header
             ,$fadenav
-            ,$phone_number_1 
-            ,$phone_number_1
-            ,$company_address
+            ,$site__iconlink_phone
+            ,$site__iconlink_location
             ,$content_social_icons
             ,get_custom_logo()
             ,_get_site_nav()
+            ,$quickquote
         );
+        /**
+         * 
+         * End Header Style 9
+         * 
+         */
         
-        // 10
+        /**
+         * 
+         * Start Header Style 10
+         * 
+         */
         $format_header = '
             <header class="%s header" id="opt_header_ten">
                 <div> 
-                    <div>
-                        <div>
-                            <a href="javascript:;" title="3 Line menu icon button">
-                                <span></span>
-                                <span></span>
-                                <span></span> 
-                            </a>
-                        </div>
-                        <div> 
-                            %s
-                        </div>
-                        %s
-                    </div>
+                    %s
+                    %s
+                    %s
                 </div>
-                <div class="header_sidebar_menu_1">
-					<div>
-						<nav>
-							%s
-						</nav>
-						<div> 
-							<a href="tel:%s" title="Phone number button">%s</a>
-						</div>
-					</div>
-                </div> 
+                <div class="header_10_sidebar_menu"> 
+                    <nav>
+                        %s
+                        %s
+                    </nav>
+                </div>
             </header>
         ';
         $this->header_ten = sprintf(
             $format_header
             ,$fadenav
+            ,$hamburger_icon
             ,get_custom_logo()
             ,$content_social_icons
             ,_get_site_nav()
-            ,$phone_number_1
-            ,$phone_number_1 
+            ,$site__iconlink_phone
         ); 
-        
+        /**
+         * 
+         * End Header Style 10
+         * 
+         */
     }
 }
-
 ?>

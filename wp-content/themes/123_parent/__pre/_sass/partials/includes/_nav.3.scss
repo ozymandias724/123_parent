@@ -1,49 +1,47 @@
 @media only screen {
     header#opt_header_three {
-        padding: 0px;
-        //DIV parent of top part and bottom part of header
-        > div {
-            max-width: $nav_maxwidth;
-            margin: 0 auto;
+        padding: 0 5%;
+        //Top part of header
+        > div:first-of-type {
+            background-color: $accent;
+            color: white;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            padding: 0 3.5%;
+            height: 50px;
             //Section of address and phone number
-            > div:first-of-type > span {
+            > span { 
                 display: flex;
                 flex: 1 0 80%;
                 align-items: center;
             }
-            //Top part of header
-            > div:first-of-type {
-                background-color: $accent;
-                color: white;
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-around;
-                padding: 0 3.5%;
-            }
             //Phone number link
-            > div:first-of-type > span a:last-child {
+            > span a:last-child {
                 display: flex;
                 margin: 0 auto;
             }   
             //Address and phone number icon
-            > div:first-of-type > span a i {
+            > span a i {
                 color: $black;
                 margin-right: 10px;
                 font-size: 2rem;
                 transition: color 0.3s;
+                line-height: 50px;
             }
             //Links of address and phone number
-            > div:first-of-type > span a {
+            > span a {
                 font-size: 1.6rem;
-                padding: 10px;
+                padding: 0 10px;
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
                 color: $nav_3_top_bar_text;
+                line-height: 50px;
             }
             //Links of address and phone number actions on hover, active and focus
-            > div:first-of-type > span a:hover, 
-            > div:first-of-type > span a:active,
-            > div:first-of-type > span a:focus {
+            > span a:hover, 
+            > span a:active,
+            > span a:focus {
                 opacity: 1;
                 //Icons of links of address and phone number actions on hover, active and focus
                 > i {
@@ -51,7 +49,7 @@
                 }
             }
             //Quick quote button icon
-            > div:first-of-type > a i {
+            > a i {
                 color: getVar($colors, primary);
                 font-size: 2rem;
                 font-weight: bold;
@@ -60,46 +58,56 @@
                 left: 5px;
             }
             //Quick quote button 
-            > div:first-of-type > a {
-                flex: 1 0 10%;
-                background-color: $ink;
-                padding: 15px;
+            > a {
+                background-color: $black;
+                padding: 0 40px;
                 text-align: center;
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 transition: background-color 0.3s;
+                line-height: 50px;
+                color: $white;
             }
             //Quick quote button actions on hover, active and focus
-            > div:first-of-type > a:hover,
-            > div:first-of-type > a:active,
-            > div:first-of-type > a:focus {
+            > a:hover,
+            > a:active,
+            > a:focus {
                 background-color: $second_black;
             }
-            //Bottom part of header
-            > div:last-of-type {
-                background-color: white;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                justify-content: space-around;
-                box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        }
+        //Bottom part of header
+        > div:last-of-type {
+            background-color: white;
+            box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+            height: 90px;
+            padding: 0 3.5%;
+            // Logo
+            > a {
+                height: 90px;
+            }
+            // Nav menu unordered list
+            > ul {
+                line-height: 90px;
+                float: right;
             }
             //Navigational menu unordered list items 
-            > div:last-of-type > ul > li {
+            > ul > li {
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 margin-right: 0;
             }
             //Navigational menu unordered list item links
-            > div:last-of-type > ul > li > a {
-                padding: 7px;
-                opacity: $opacity_level_below_one;
-                color: $nav_3_menu_text;
+            > ul > li > a {
+                padding: 0 7px;
+                opacity: 0.8;
+                color: $black;
+                line-height: 90px;
+                display: inline-block;
             }
             //Navigational menu unordered list items links actions on hover, focus and active 
-            > div:last-of-type > ul > li > a:hover,
-            > div:last-of-type > ul > li > a:active,
-            > div:last-of-type > ul > li > a:focus {
+            > ul > li > a:hover,
+            > ul > li > a:active,
+            > ul > li > a:focus {
                 opacity: 1;
             }
         }

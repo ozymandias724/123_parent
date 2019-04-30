@@ -44,9 +44,7 @@
         </h4>
     ';
     foreach($fields['menus'] as $i => $menu){
-
         $menu_name = strtolower(str_replace(' ', '', $menu['menu_post']->post_title)) . '_menu';
-
         $tabs_area .= sprintf(
             $format_tab
             ,($i == 0) ? 'active_menu_header': ''
@@ -56,8 +54,9 @@
         );
     }
     $tabs_area .= '</div>';
+    // End Tabs Area
 
-    // Loop through each menu in $menus
+    // Loop through each menu
     foreach($menus as $i => $menu)
     {
         // Get menu style
@@ -160,7 +159,6 @@
             ';
         }
 
-
         // Get each menu section 
         foreach($sections as $j => $section)
         {
@@ -231,5 +229,6 @@
         $content_menu .= $menu_section . '</div>';    
     }
     $content .=  $tabs_area . $content_menu . '</div></section>';
+    
     echo $content;
 ?>

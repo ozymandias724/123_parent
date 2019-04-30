@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import slick from 'slick-carousel-browserify';
-import leaflet from 'leaflet';
+// import leaflet from 'leaflet';
 var Theme = {};
 var Hero = {};
 var Headers = {};
@@ -444,15 +444,15 @@ Headers.Eight._init();
 Headers.Ten = {
 
     header: $("header#opt_header_ten"),
-    hamburger_icon: $("header#opt_header_ten > div:first-of-type > div > div:first-of-type > a"),
-    sidebar: $(".header_sidebar_menu_1"),
-    outside: $('.header_sidebar_menu_1, #opt_header_ten > div:first-of-type div, #opt_header_ten ul, #opt_header_ten'),
+    hamburger_icon: $(".site__bars"),
+    sidebar: $(".header_10_sidebar_menu"),
+    outside: $("body, html"),
 
     _init: function () {
 
         Headers.Ten.hamburger_icon.on("click", Headers.Ten._hamburger_icon_click);
 
-        Headers.Ten.outside.on("click", Headers.Ten._outside_click);
+        Headers.Ten.outside.on("click", Headers.Ten._close_sidebar);
 
         Headers.Ten.sidebar.on("blur", Headers.Ten._close_sidebar);
 
@@ -463,16 +463,12 @@ Headers.Ten = {
 
     },
 
-    _hamburger_icon_click: function () {
+    _hamburger_icon_click: function (e) {
+        e.stopPropagation();
         //If header 10 hamburger icon link has class of ...
         if (!Headers.Ten.hamburger_icon.hasClass("header_10_hamburger_icon_changed")) {
             Headers.Ten._open_sidebar();
         } else {
-            Headers.Ten._close_sidebar();
-        }
-    },
-    _outside_click: function (e) {
-        if (e.target === this) {
             Headers.Ten._close_sidebar();
         }
     },
@@ -498,9 +494,9 @@ Headers.Ten._init();
 Headers.Sidebar = {
 
     //Mobile header sidebar menu
-    sidebar: $(".mobile_header_sidebar_menu_1"),
+    sidebar: $(".mobile_header_sidebar"),
     //Mobile header sidebar and mobile header first div element
-    outside: $(".mobile_header_sidebar_menu_1, .mobileheader > div:first-of-type"),
+    outside: $("body, html"),
     //Link which is the parent of the hamburger icons (spans)
     toggle: $("header.mobileheader > div:first-of-type > a"),
 
@@ -508,7 +504,7 @@ Headers.Sidebar = {
 
         //When hamburger icon spans link is clicked
         Headers.Sidebar.toggle.on("click", Headers.Sidebar._clickHandler);
-        Headers.Sidebar.outside.on("click", Headers.Sidebar._outside_click_close_sidebar);
+        Headers.Sidebar.outside.on("click", Headers.Sidebar._close_sidebar);
         Headers.Sidebar.sidebar.on("blur", Headers.Sidebar._close_sidebar);
 
         //On resize of browser
@@ -516,13 +512,14 @@ Headers.Sidebar = {
             //Remove mobile nav sidebar menu width
             Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
             //Remove mobile nav hamburger icon class
-            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
         });
 
     },
-    _clickHandler: function () {
+    _clickHandler: function (e) {
+        e.stopPropagation();
         //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
-        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar_menu_1")) {
+        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar")) {
             //Open sidebar
             Headers.Sidebar._open_sidebar();
         } else {
@@ -530,20 +527,15 @@ Headers.Sidebar = {
             Headers.Sidebar._close_sidebar();
         }
     },
-    _outside_click_close_sidebar: function (e) {
-        if (e.target === this) {
-            Headers.Sidebar._close_sidebar();
-        }
-    },
     _open_sidebar: function () {
         //Hamburger icon link add class
-        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar_menu_1");
+        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar");
         //Make the sidebar menu cover the whole page
         Headers.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
     },
     _close_sidebar: function () {
         //Hamburger icon link remove class
-        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar_menu_1");
+        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
         //Make the sidebar menu to not cover the whole page
         Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
     }
@@ -556,6 +548,7 @@ Hero.Padding_Top = {
 
     header_id: $("header").attr("id"),
     header_height: $("header").height(),
+
     mobile_header_height: $(".mobileheader").height(),
     main: $(".mobileheader").next(),
 
@@ -591,24 +584,28 @@ Hero.Padding_Top = {
             Hero.Padding_Top.header_id !== "opt_header_one" && 
             Hero.Padding_Top.header_id !== "opt_header_four" && 
             Hero.Padding_Top.header_id !== "opt_header_nine" && 
-            Hero.Padding_Top.header_id !== "opt_header_three") {
+            Hero.Padding_Top.header_id !== "opt_header_three" && 
+            Hero.Padding_Top.header_id !== "opt_header_eight") 
+        {
 
             Hero.Padding_Top.header_height = $("header").height();
 
             Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
 
-        //If header has a position of fixed and is either header 1, 4, or 9
+        
         } else if (
             Hero.Padding_Top.header_position === "fixed" &&
-            Hero.Padding_Top.header_id === "opt_header_one" ||
+            (Hero.Padding_Top.header_id === "opt_header_one" ||
             Hero.Padding_Top.header_id === "opt_header_four" ||
-            Hero.Padding_Top.header_id === "opt_header_nine"
-        ) { 
-            Hero.Padding_Top.header_first_div_height = $("header#" + Hero.Padding_Top.header_id + " > div").height();
+            Hero.Padding_Top.header_id === "opt_header_nine")
+        ) 
+        { 
+            Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id).height();
 
-            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_first_div_height);
-
-        } else {
+            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
+        } 
+        else 
+        {
             //Do not adding padding-top to hero
             Hero.Padding_Top.main.css("padding-top", "0");
         }

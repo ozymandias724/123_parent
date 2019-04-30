@@ -1,10 +1,12 @@
 $accent : green;
 $header_icons_color : #fff;
+$padding_left_and_right : 5%;
 
 $nav_1_top_bar_background : #000; 
 $nav_1_bottom_bar_background : #fff;
 $nav_1_top_bar_text : #fff;
 $nav_1_menu_text : #000; 
+$nav_1_social_icons_color : #000;
 
 $nav_2_top_bar_phone : #fff;
 $nav_2_menu_text : #fff;
@@ -156,64 +158,48 @@ $bp__lg : 1280px;
     }
 
     // Header 10 sidebar menu
-    .header_sidebar_menu_1 {
-
-        // Class to add to sidebar when it is opened
-        &.header_sidebar_cover_all {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-        }
+    .header_10_sidebar_menu {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        z-index: 20;
+        font-size: 16px;
+        top: 0;
+        background-color: white; 
+        overflow-x: hidden;
+        padding-top: 60px;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
 
         // First div element in sidebar when sidebar menu has the above class
-        &.header_sidebar_cover_all>div {
+        &.header_sidebar_cover_all {
+            position: fixed;
             transform: translateX(0%);
             box-shadow: -6px 0px 25px 0px $black;
         }
 
-        // First div element in sidebar 
-        >div {
-            height: 100%;
-            width: 300px;
-            position: fixed;
-            z-index: 20;
-            font-size: 16px;
-            top: 0;
-            background-color: white;
-            overflow-x: hidden;
-            padding-top: 60px;
-            transform: translateX(-100%);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        // Telephone number
-        >div>div,
-        // Social media icons
-        >div>ul {
-            margin-top: 30px;
-        }
-
         // Navigational menu
-        >div>nav {
+        >nav {
             margin-top: 90px;
         }
 
         // Navigational menu unordered list
-        >div>nav>ul {
+        >nav>ul {
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
+            margin-top: 30px;
         }
 
         // Navigational menu unordered list items
-        >div>nav>ul>li {
-            margin-right: 0;
+        >nav>ul>li {
+            margin-right: 0 !important;
             width: 100%;
         }
 
         // Navigational menu unordered list items links 
-        >div>nav>ul>li>a {
-            border-bottom: 1px solid $tint;
+        >nav>ul>li>a {
+            border-bottom: 1px solid lightgrey;
             color: $black;
             padding: 12px 12px 12px 0;
             display: block;
@@ -233,14 +219,8 @@ $bp__lg : 1280px;
             }
         }
 
-        // Telephone number parent div element
-        >div>div {
-            display: block;
-            text-align: center;
-        }
-
         // Telephone number link
-        >div>div>a {
+        >nav>a {
             display: inline-block;
             padding: 10px 15px 10px 15px;
             border-radius: 20px;
@@ -251,7 +231,13 @@ $bp__lg : 1280px;
             opacity: $opacity_level_below_one;
             transition: opacity 0.3s, background-color 0.3s, color 0.3s;
             border: 1px solid $black;
-
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+            &:before {
+                display: none;
+            }
             // Actions on hover, active and focus
             &:hover,
             &:active,

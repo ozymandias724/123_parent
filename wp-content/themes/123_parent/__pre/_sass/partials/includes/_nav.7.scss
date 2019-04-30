@@ -1,89 +1,104 @@
 @media only screen {
     //Header 7
     header#opt_header_seven {
-        padding: 0px;
-        background-color: white;
+        background-color: $white;
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-        //Parent div of top and bottom parts of header
+        padding: 0 5%;
+        // Top part of header
         > div {
-            max-width: $nav_maxwidth;
-            margin: 0 auto;
-            //Top part of header
-            > div:first-of-type {
-                display: flex;
-                justify-content: space-between;
-                font-size: 18px;
-                color: $black;
-            }
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            color: $black;
+            height: 85px;
+            align-items: center;
             //Social icons unordered list 
-            > div:first-of-type > div > ul {
+            > ul {
                 display: flex;
                 list-style: none;
             }
             //Social icons unordered list items
-            > div:first-of-type > div > ul > li > a {
-                padding: 10px;
+            > ul > li > a {
+                padding: 0 15px;
+                line-height: 85px;
+                display: inline-block;
+                color: $accent;
             }
             //Social icons and phone number sections
-            > div:first-of-type > div, 
-            > div:first-of-type > span {
+            > div, 
+            > span {
                 margin-top: 15px;
             } 
-            //Image link
-            > div:first-of-type > a {
+            // Logo link
+            > a:first-of-type {
                 padding: 7px;
             }
-            //Bottom part of header
-            > div:last-of-type {
-                display: flex;
-                flex-flow: column;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 14px;
-                text-transform: uppercase;
-                font-weight: 500;
+            > .site__iconlink-phone {
+                padding: 0 7px;
+                line-height: 85px;
+                color: $black;
+                &:before {
+                    transform: rotate(90deg);
+                    margin-right: 10px;
+                    color: $accent;
+                }
             }
+        }
+        //Bottom part of header
+        > nav {
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+            height: 50px;
             //Line above navigational menu and below logo
-            > div:last-of-type:before {
+            &:before {
                 content: "";
                 position: relative;
                 left: 0;
                 bottom: 0;
                 height: 2px;
                 width: 100%;
-                border-bottom: 2px solid $prestige_painters;
+                border-bottom: 2px solid $accent;
             }
             //Navigational menu unordered list
-            > div:last-of-type > nav > ul {
+            > ul {
                 list-style: none;
                 display: flex;
-                height: 40px;
                 align-items: center;
             }
             //Navigational menu unordered list items
-            > div:last-of-type > nav > ul > li {
+            > ul > li {
                 margin-right: 0px;
             }
-            //Social icons links
-            > div:first-of-type > div > ul > li > a,
-            //Phone number links
-            > div:first-of-type > span > a,
-            //Navigational menu items links
-            > div:last-of-type > nav > ul > li > a {
-                padding: 10px;
+            > ul > li > a {
+                padding: 0 10px;
+                line-height: 50px;
+                display: inline-block;
+                color: $black;
                 //Actions on hover, active and focus
                 &:hover,
                 &:active,
                 &:focus {
-                    color: $prestige_painters;
+                    opacity: 0.8;
                 }
             }
-            //Social icons links
-            > div:first-of-type > div > ul > li > a,
-            //Phone number links
-            > div:first-of-type > span > a {
-                transition: color 0.3s;
+        }
+        //Social icons links
+        div > ul > li > a {
+            //Actions on hover, active and focus
+            &:hover,
+            &:active,
+            &:focus {
+                color: $black;
             }
+        }
+        //Social icons links
+        div > ul > li > a {
+            transition: color 0.3s;
         }
     }
 }
