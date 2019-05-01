@@ -5,67 +5,8 @@
  * Description:
  *  Concise view w/ link to full view
  */
-    // get the menu page object
-    $args = array(
-        'posts_per_page' => 1
-        ,'post_type' => 'page'
-        ,'pagename' => 'menu'
-    );
 
-    $res = get_posts($args);
-
-    // get the menu page fields
-    $fields = get_fields($res[0]);
- ?>
-
-<section id="mod_menu">
-
-<?php 
-    // Output the banner with post title
-    echo get_section_banner($res[0]->post_title);
-?>
-
-<?php
-    // Make an array containing the fields for each menu
-    $menus = array();
-    
-    // Loop through each menu
-    foreach($fields['menus'] as $i => $menu)
-    {
-        // Get menu fields and push to $menus array
-        array_push($menus, get_fields($menu['menu_post']));
-    }
-
-    // Tabs area
-    $tabs_area = '<div id="tabs_side_menu" class="menu_content"><div id="menu_tabs">';
-    $format_tab = '
-        <h4 class="%s">
-            <a data-tab="%s" class="%s" href="javascript:;">%s</a>
-        </h4>
-    ';
-    foreach($fields['menus'] as $i => $menu){
-        $menu_name = strtolower(str_replace(' ', '', $menu['menu_post']->post_title)) . '_menu';
-        $tabs_area .= sprintf(
-            $format_tab
-            ,($i == 0) ? 'active_menu_header': ''
-            ,$menu_name
-            ,($i == 0) ? 'active_menu_link' : ''
-            ,$menu['menu_post']->post_title
-        );
-    }
-    $tabs_area .= '</div>';
-    // End Tabs Area
-
-    // Loop through each menu
-    foreach($menus as $i => $menu)
-    {
-        // Get menu style
-        $style = $menu['style'];
-
-        // Get menu section 
-        $sections = $menu['menu_sections'];
-
-        // Set menu style
+    function _menu_style($style){
         switch($style)
         {
             case 'Text 1/2':
@@ -93,142 +34,226 @@
                 $menu_style = 'menu_jpeg_embed';
                 break;
         }
+        return $menu_style;
+    }
 
-        // Set active menu section
-        $active_menu_section = ($i == 0) ? ' active_menu_section' : '';
-        $menu_name = strtolower(str_replace(' ', '', $fields['menus'][$i]['menu_post']->post_title)) . '_menu';
-        $menu_section_with_flex = ($menu_style == 'menu_text_sub_group_half') ? 'flex_menu' : '';
+    function _menu_name($post_title){
+        $menu_name = strtolower(str_replace(' ', '', $post_title)) . '_menu';
+        return $menu_name;
+    }
 
-        $menu_section = '<div data-tab="'.$menu_name.'" class="menu_section'. $active_menu_section . ' ' . $menu_style . ' ' . $menu_section_with_flex .'">';
+    function _menu_item($format_item, $menu_style, $image, $title, $description, $price){
+        $price_full = $price;
+        $price = (!empty($price)) ? explode('.',$price) : '';
 
-        // Format Menu Section Title and Description
-        if($menu_style == 'menu_text_sub_group_half')
-        {
-            $format_header = '
-                <div><div class="menu_header">
-                    <h2><span>%s</span></h2>
-                    %s
-                </div>
-            ';
-        }
-        else
-        {
-            $format_header = '
-            <div class="menu_header">
-                <h2><span>%s</span></h2>
-                %s
-            </div>
-        ';
-        }
-        // Format Menu Section Item
         if($menu_style == 'menu_photo_list')
         {
-            $format_item = '
-                <li class="menu_item">
-                    %s
-                    <div>
-                        <h3>%s</h3>
-                        %s
-                        <p>%s</p>
-                    </div>
-                </li>
-            ';
+            $ul .= sprintf(
+                $format_item
+                ,$image
+                ,$title
+                ,$description
+                ,$price_full
+            );
         }
         else if($menu_style == 'menu_photo_tiled_x3')
         {
-            $format_item = '
-                <li class="menu_item">
-                    %s
-                    <div>
-                        <h3>%s <div>%s.<span>%s</span></div></h3>
-                        %s
-                    </div>
-                </li>
-            ';
+            $ul .= sprintf(
+                $format_item
+                ,$image
+                ,$title
+                ,$price[0]
+                ,$price[1]
+                ,$description
+            );
         }
         else
         {
-            $format_item = '
-                <li class="menu_item">
-                    %s
-                    <div>
-                        <h3>%s <span>%s<span></h3>
-                        %s
-                    </div>
-                </li>
-            ';
+            $ul .= sprintf(
+                $format_item
+                ,$image
+                ,$title
+                ,$price_full
+                ,$description
+            );
+        }
+        return $ul;
+    }
+
+    // get the menu page object
+    $args = array(
+        'posts_per_page' => 1
+        ,'post_type' => 'page'
+        ,'pagename' => 'menu'
+    );
+
+    $res = get_posts($args);
+
+    // Get the menu page fields
+    $fields = get_fields($res[0]);
+
+    // Assign the tabs style
+    $tabs_style = $fields['tabs_style'];
+
+    // Make an array containing the fields for each menu
+    $menus = array();
+    // Loop through all the menus
+    foreach($fields['menus'] as $i => $menu)
+    {
+        // Get menu fields and push to $menus array
+        array_push($menus, get_fields($menu['menu_post']));
+    }
+
+    // Tabs area
+    $tabs_area = '<div id="menu_tabs">';
+    $format_tab = '
+        <h4 class="%s">
+            <a data-tab="%s" class="%s" href="javascript:;">%s</a>
+        </h4>
+    ';
+    // Loop through all the menus
+    foreach($fields['menus'] as $i => $menu){
+        $menu_name = strtolower(str_replace(' ', '', $menu['menu_post']->post_title)) . '_menu';
+        $tabs_area .= sprintf(
+            $format_tab
+            ,($i == 0) ? 'active_menu_header': ''
+            ,$menu_name
+            ,($i == 0) ? 'active_menu_link' : ''
+            ,$menu['menu_post']->post_title
+        );
+    }
+    $tabs_area .= '</div>';
+    // End Tabs Area
+
+    // Menu Section Header format
+    $format_header_default = '
+        <div><div class="menu_header">
+            <h2><span>%s</span></h2>
+            %s
+        </div> 
+    ';
+
+    // Menu Section Items format
+    $format_item_photo_list = '
+        <li class="menu_item">
+            %s
+            <div>
+                <h3>%s</h3>
+                %s
+                <p>%s</p>
+            </div>
+        </li>
+    ';
+
+    $format_item_photo_tiled_x3 = '
+        <li class="menu_item">
+            %s
+            <h3>%s <div>%s.<span>%s</span></div></h3>
+            %s
+        </li>
+    ';
+
+    $format_item_default = '
+        <li class="menu_item">
+            %s
+            <h3>%s <span>%s<span></h3>
+            %s
+        </li>
+    ';
+
+    // Loop through all the menus
+    foreach($menus as $i => $menu)
+    {
+        // Get menu style
+        $style = $menu['style'];
+
+        // Get menu section 
+        $sections = $menu['menu_sections'];
+
+        // Set menu style
+        $menu_style = _menu_style($style);
+
+        // Set menu name
+        $menu_name = _menu_name($fields['menus'][$i]['menu_post']->post_title);
+
+        $format_menu_section = '
+            <div data-tab="%s" class="menu_section %s %s %s">
+        ';
+
+        $menu_section = sprintf(
+            $format_menu_section
+            ,$menu_name
+            ,($i == 0) ? 'active_menu_section' : ''
+            ,$menu_style
+            ,($menu_style == 'menu_text_sub_group_half') ? 'flex_menu' : ''
+        );
+
+        // Format Menu Section Item
+        if($menu_style == 'menu_photo_list')
+        {
+            $format_item = $format_item_photo_list;
+        }
+        else if($menu_style == 'menu_photo_tiled_x3')
+        {
+            $format_item = $format_item_photo_tiled_x3;
+        }
+        else
+        {
+            $format_item = $format_item_default;
         }
 
-        // Get each menu section 
+        // Loop through all the menu sections 
         foreach($sections as $j => $section)
         {
             $menu_section .= sprintf(
-                $format_header
+                $format_header_default
                 // Get title
                 ,(!empty($section['title'])) ? $section['title'] : ''
                 // Get description
                 ,(!empty($section['description'])) ? $section['description'] : ''
             );
 
-            // For each menu section item
+            // Loop through all the menu section items
             $ul = '<div class="menu_items"><ul>';
             foreach($section['item'] as $k => $item)
-            {
-                if($menu_style == 'menu_photo_list')
-                {
-                    $ul .= sprintf(
-                        $format_item
-                        // Get image url
-                        ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : ''
-                        // Get title
-                        ,(!empty($item['title'])) ? $item['title'] : ''
-                        // Get description
-                        ,(!empty($item['description'])) ? $item['description'] : ''
-                        // Get price
-                        ,(!empty($item['price'])) ? $item['price'] : ''
-                    );
-                }
-                else if($menu_style == 'menu_photo_tiled_x3')
-                {
-                    $price = (!empty($item['price'])) ? explode('.',$item['price']) : '';
-                    $ul .= sprintf(
-                        $format_item
-                        // Get image url
-                        ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : ''
-                        // Get title
-                        ,(!empty($item['title'])) ? $item['title'] : ''
-                        // Price first number
-                        ,$price[0]
-                        // Price decimal number
-                        ,$price[1]
-                        // Get description
-                        ,(!empty($item['description'])) ? $item['description'] : ''
-                    );
-                }
-                else
-                {
-                    $ul .= sprintf(
-                        $format_item
-                        // Get image url
-                        ,(!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : ''
-                        // Get title
-                        ,(!empty($item['title'])) ? $item['title'] : ''
-                        // Get price
-                        ,(!empty($item['price'])) ? $item['price'] : ''
-                        // Get description
-                        ,(!empty($item['description'])) ? $item['description'] : ''
-                    );
+            {   
+                $image = (!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : '';
+                $title = (!empty($item['title'])) ? $item['title'] : '';
+                $description = (!empty($item['description'])) ? $item['description'] : '';
+                $price = (!empty($item['price'])) ? $item['price'] : '';
 
-                }
+                $ul .= _menu_item($format_item, $menu_style, $image, $title, $description, $price);
             }
-            $menu_text_sub_group_half = ($menu_style == 'menu_text_sub_group_half') ? '</div>' : '';
-            $ul .= '</ul></div>'. $menu_text_sub_group_half;
-
+            $ul .= '</ul></div></div>';
             $menu_section .= $ul;
-        }
-        $content_menu .= $menu_section . '</div>';    
+        } 
+        $content_menu .= $menu_section . '</div>';
     }
-    $content .=  $tabs_area . $content_menu . '</div></section>';
-    
+
+    /**
+     * Start Menu Content
+     */
+    $format_menu = '
+        <section id="mod_menu">
+            %s
+            <div id="tabs_%s">
+                %s
+                %s
+            </div>
+        </section>
+    ';
+    $content .= sprintf(
+        $format_menu
+        ,get_section_banner($res[0]->post_title)
+        ,$tabs_style
+        ,$tabs_area
+        ,$content_menu
+    );
+    /**
+     * End Menu Content
+     */
+
+    // Output the menu content
     echo $content;
+    
 ?>

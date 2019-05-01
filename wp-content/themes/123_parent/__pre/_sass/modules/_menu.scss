@@ -2,7 +2,6 @@
     // Menu Area
     section#mod_menu {
         // Common CSS for the different Menu Styles
-        // All Menu styles
         .menu_text_half, 
         .menu_text_list_left,
         .menu_text_list_center,
@@ -53,8 +52,8 @@
                 color: $gray_three;
         }
         // Menu Text List Left and List Center menu item paragraph
-        .menu_text_list_left .menu_items > ul > li > div:last-of-type > p, 
-        .menu_text_list_center .menu_items > ul > li > div:last-of-type > p {
+        .menu_text_list_left .menu_items > ul > li > p, 
+        .menu_text_list_center .menu_items > ul > li > p {
             font-size: 24px;
             font-family: "Times New Roman";
             line-height: 1em;
@@ -95,8 +94,8 @@
             margin-bottom: 20px;
         }
         // Menu Text 1/2 and Menu Sub Group 1/2 menu items title
-        .menu_text_half .menu_items > ul > li > div:last-of-type > h3,
-        .menu_text_sub_group_half .menu_items > ul > li > div:last-of-type > h3 {
+        .menu_text_half .menu_items > ul > li > h3,
+        .menu_text_sub_group_half .menu_items > ul > li > h3 {
             display: flex;
             font-size: 26px;
             font-weight: 700;
@@ -111,14 +110,14 @@
             margin-bottom: 30px;
         }
         // Menu Text 1/2 and Menu Sub Group 1/2 menu items price
-        .menu_text_half .menu_items > ul > li > div:last-of-type > h3 > span,
-        .menu_text_sub_group_half .menu_items > ul > li > div:last-of-type > h3 > span {
+        .menu_text_half .menu_items > ul > li > h3 > span,
+        .menu_text_sub_group_half .menu_items > ul > li > h3 > span {
             color: $gray_three;
             font-weight: 600;
         }
         // Menu Text 1/2 and Menu Sub Group 1/2 menu items description
-        .menu_text_half .menu_items > ul > li > div:last-of-type > p,
-        .menu_text_sub_group_half .menu_items > ul > li > div:last-of-type > p {
+        .menu_text_half .menu_items > ul > li > p,
+        .menu_text_sub_group_half .menu_items > ul > li > p {
             font-size: 18px;
             color: $gray_three;
         }
@@ -172,7 +171,7 @@
                 margin-bottom: 20px;
             }
             // Menu items title
-            .menu_items > ul > li > div:last-of-type > h3 {
+            .menu_items > ul > li > h3 {
                 text-transform: uppercase;
                 display: flex;
                 font-size: 26px;
@@ -197,18 +196,18 @@
                 margin-bottom: 30px;
             }
             // Menu items title
-            .menu_items > ul > li > div:last-of-type >  h3 {
+            .menu_items > ul > li >  h3 {
                 font-size: 26px;
                 font-weight: 800;
                 text-transform: uppercase;
                 margin-bottom: 5px;
             }
             // Menu items price
-            .menu_items > ul > li > div:last-of-type > h3 > span {
+            .menu_items > ul > li > h3 > span {
                 font-weight: 500;
             }
             // Menu items line before the price
-            .menu_items > ul > li > div:last-of-type > h3 > span:before {
+            .menu_items > ul > li > h3 > span:before {
                 content: "";
                 border-left: 2px solid $gray_three;
                 margin: 0 15px 0 10px;
@@ -227,7 +226,6 @@
             .menu_items > ul > li > div:first-of-type {
                 flex: 0 1 37%;
             }
-            // Menu items unordered list items 
             .menu_items > ul > li > div:last-of-type {
                 flex: 0 1 60%;
             }
@@ -236,12 +234,12 @@
                 background-position: top center;
             }
             // Menu items title
-            .menu_items > ul > li > div:last-of-type > h3 {
+            .menu_items > ul > li > div > h3 {
                 font-weight: 900;
                 font-size: 28px;
             }
             // Menu items description
-            .menu_items > ul > li > div:last-of-type > p:first-of-type {
+            .menu_items > ul > li > div > p:first-of-type {
                 font-size: 24px;
                 font-style: italic;
                 color: $gray_three;
@@ -252,7 +250,7 @@
                 font-family: "Times New Roman";
             }
             // Menu items price
-            .menu_items > ul > li > div:last-of-type > p:last-of-type {
+            .menu_items > ul > li > div > p:last-of-type {
                 font-size: 22px;
                 color: $gray_two;
                 font-weight: 500;
@@ -267,7 +265,7 @@
                 margin-bottom: 30px;
             }
             // Menu items title
-            .menu_items > ul > li > div:last-of-type > h3 {
+            .menu_items > ul > li > h3 {
                 display: flex;
                 font-weight: 700;
                 justify-content: space-between;
@@ -275,13 +273,13 @@
                 margin-bottom: 5px;
             }
             // Menu items price
-            .menu_items > ul > li > div:last-of-type > h3 > div > span {
+            .menu_items > ul > li > h3 > div > span {
                 font-size: 14px;
                 position: relative;
                 top: -5px;
             }
             // Menu items description
-            .menu_items > ul > li > div:last-of-type > p {
+            .menu_items > ul > li  > p {
                 color: $gray_three;
                 font-size: 16px;
             }
