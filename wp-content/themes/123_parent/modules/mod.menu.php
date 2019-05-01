@@ -210,7 +210,7 @@
                 ,(!empty($section['description'])) ? $section['description'] : ''
             );
 
-            // Loop through all the menu section items
+            // Loop through all the menu items
             $ul = '<div class="menu_items"><ul>';
             foreach($section['item'] as $k => $item)
             {   
