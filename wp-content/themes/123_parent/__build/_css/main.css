@@ -3250,6 +3250,13 @@ section#mod_menu .menu_text_list_center .menu_items > ul > li > p {
     color: #aaabad;
     font-style: italic;
   }
+  section#mod_menu .menu_text_half .menu_header > h2,
+section#mod_menu .menu_text_sub_group_half .menu_header > h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    letter-spacing: normal;
+  }
   section#mod_menu .menu_text_half .menu_header > h2:before,
 section#mod_menu .menu_text_sub_group_half .menu_header > h2:before {
     border-top: 1px solid #c2c2c2;
@@ -3262,22 +3269,13 @@ section#mod_menu .menu_text_sub_group_half .menu_header > h2:before {
     top: 50%;
     z-index: -1;
   }
-  section#mod_menu .menu_text_half .menu_header > h2,
-section#mod_menu .menu_text_sub_group_half .menu_header > h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-    position: relative;
-    letter-spacing: normal;
-  }
-  section#mod_menu .menu_text_list_left .menu_header > h2,
-section#mod_menu .menu_text_list_center .menu_header > h2,
-section#mod_menu .menu_photo_list .menu_header > h2,
-section#mod_menu .menu_photo_tiled_x3 .menu_header > h2 {
-    text-transform: capitalize;
-  }
   section#mod_menu .menu_text_half .menu_header > p,
 section#mod_menu .menu_text_sub_group_half .menu_header > p {
     margin-bottom: 20px;
+  }
+  section#mod_menu .menu_text_half .menu_items > ul > li,
+section#mod_menu .menu_text_sub_group_half .menu_items > ul > li {
+    margin-bottom: 30px;
   }
   section#mod_menu .menu_text_half .menu_items > ul > li > h3,
 section#mod_menu .menu_text_sub_group_half .menu_items > ul > li > h3 {
@@ -3289,10 +3287,6 @@ section#mod_menu .menu_text_sub_group_half .menu_items > ul > li > h3 {
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
-  section#mod_menu .menu_text_half .menu_items > ul > li,
-section#mod_menu .menu_text_sub_group_half .menu_items > ul > li {
-    margin-bottom: 30px;
-  }
   section#mod_menu .menu_text_half .menu_items > ul > li > h3 > span,
 section#mod_menu .menu_text_sub_group_half .menu_items > ul > li > h3 > span {
     color: #aaabad;
@@ -3302,6 +3296,12 @@ section#mod_menu .menu_text_sub_group_half .menu_items > ul > li > h3 > span {
 section#mod_menu .menu_text_sub_group_half .menu_items > ul > li > p {
     font-size: 18px;
     color: #aaabad;
+  }
+  section#mod_menu .menu_text_list_left .menu_header > h2,
+section#mod_menu .menu_text_list_center .menu_header > h2,
+section#mod_menu .menu_photo_list .menu_header > h2,
+section#mod_menu .menu_photo_tiled_x3 .menu_header > h2 {
+    text-transform: capitalize;
   }
   section#mod_menu .menu_text_list_center .menu_header,
 section#mod_menu .menu_photo_list .menu_header {
@@ -3411,22 +3411,6 @@ section#mod_menu .menu_photo_list .menu_header {
     border-bottom: 3px solid green;
     margin-bottom: 30px;
   }
-  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3 {
-    display: flex;
-    font-weight: 700;
-    justify-content: space-between;
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3 > div > span {
-    font-size: 14px;
-    position: relative;
-    top: -5px;
-  }
-  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > p {
-    color: #aaabad;
-    font-size: 16px;
-  }
   section#mod_menu .menu_photo_tiled_x3 .menu_items {
     text-align: center;
   }
@@ -3455,6 +3439,22 @@ section#mod_menu .menu_photo_list .menu_header {
   }
   section#mod_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(1n) {
     margin: 0 0 1.5vw 0;
+  }
+  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3 {
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3 > div > span {
+    font-size: 14px;
+    position: relative;
+    top: -5px;
+  }
+  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > p {
+    color: #aaabad;
+    font-size: 16px;
   }
   section#mod_menu .menu_section {
     display: none;
@@ -3517,9 +3517,6 @@ section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:focus {
   section#mod_menu #tabs_side_menu .menu_section {
     flex: 0 1 80%;
   }
-  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
-    height: 200px;
-  }
   section#mod_menu .menu_photo_tiled_x3 .menu_items {
     text-align: center;
   }
@@ -3548,6 +3545,9 @@ section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:focus {
   }
   section#mod_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(2n) {
     margin: 0 0 1.5vw 0;
+  }
+  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+    height: 200px;
   }
   section#mod_menu .menu_text_sub_group_half {
     flex-flow: row nowrap;
@@ -3606,9 +3606,6 @@ section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:focus {
   }
 }
 @media only screen and (min-width: 1600px) {
-  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
-    height: 300px;
-  }
   section#mod_menu .menu_photo_tiled_x3 .menu_items {
     text-align: center;
   }
@@ -3637,5 +3634,8 @@ section#mod_menu #tabs_side_menu #menu_tabs > h4 > a:focus {
   }
   section#mod_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
+  }
+  section#mod_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+    height: 300px;
   }
 }

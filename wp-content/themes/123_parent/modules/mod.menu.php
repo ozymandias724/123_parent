@@ -6,6 +6,11 @@
  *  Concise view w/ link to full view
  */
 
+    function _menu_name($post_title){
+        $menu_name = strtolower(str_replace(' ', '', $post_title)) . '_menu';
+        return $menu_name;
+    }
+
     function _menu_style($style){
         switch($style)
         {
@@ -37,17 +42,13 @@
         return $menu_style;
     }
 
-    function _menu_name($post_title){
-        $menu_name = strtolower(str_replace(' ', '', $post_title)) . '_menu';
-        return $menu_name;
-    }
-
     function _menu_item($format_item, $menu_style, $image, $title, $description, $price){
         $price_full = $price;
         $price = (!empty($price)) ? explode('.',$price) : '';
 
-        if($menu_style == 'menu_photo_list')
+        switch($menu_style)
         {
+            case 'menu_photo_list':
             $ul .= sprintf(
                 $format_item
                 ,$image
@@ -55,9 +56,8 @@
                 ,$description
                 ,$price_full
             );
-        }
-        else if($menu_style == 'menu_photo_tiled_x3')
-        {
+            break;
+            case 'menu_photo_tiled_x3':
             $ul .= sprintf(
                 $format_item
                 ,$image
@@ -66,9 +66,8 @@
                 ,$price[1]
                 ,$description
             );
-        }
-        else
-        {
+            break;
+            default:
             $ul .= sprintf(
                 $format_item
                 ,$image
@@ -79,6 +78,43 @@
         }
         return $ul;
     }
+   
+    function _format_item($menu_style){
+        switch($menu_style)
+        {
+            case 'menu_photo_list':
+            $format_item = '
+                <li class="menu_item">
+                    %s
+                    <div>
+                        <h3>%s</h3>
+                        %s
+                        <p>%s</p>
+                    </div>
+                </li>
+            ';
+            break;
+            case 'menu_photo_tiled_x3':
+            $format_item = '
+                <li class="menu_item">
+                    %s
+                    <h3>%s <div>%s.<span>%s</span></div></h3>
+                    %s
+                </li>
+            ';
+            break;
+            default: 
+            $format_item = '
+                <li class="menu_item">
+                    %s
+                    <h3>%s <span>%s<span></h3>
+                    %s
+                </li>
+            ';
+        }
+        return $format_item;
+    }
+
 
     // get the menu page object
     $args = array(
@@ -95,8 +131,9 @@
     // Assign the tabs style
     $tabs_style = $fields['tabs_style'];
 
-    // Make an array containing the fields for each menu
+    // Make an array to contain the fields for each menu
     $menus = array();
+
     // Loop through all the menus
     foreach($fields['menus'] as $i => $menu)
     {
@@ -133,34 +170,6 @@
         </div> 
     ';
 
-    // Menu Section Items format
-    $format_item_photo_list = '
-        <li class="menu_item">
-            %s
-            <div>
-                <h3>%s</h3>
-                %s
-                <p>%s</p>
-            </div>
-        </li>
-    ';
-
-    $format_item_photo_tiled_x3 = '
-        <li class="menu_item">
-            %s
-            <h3>%s <div>%s.<span>%s</span></div></h3>
-            %s
-        </li>
-    ';
-
-    $format_item_default = '
-        <li class="menu_item">
-            %s
-            <h3>%s <span>%s<span></h3>
-            %s
-        </li>
-    ';
-
     // Loop through all the menus
     foreach($menus as $i => $menu)
     {
@@ -179,7 +188,6 @@
         $format_menu_section = '
             <div data-tab="%s" class="menu_section %s %s %s">
         ';
-
         $menu_section = sprintf(
             $format_menu_section
             ,$menu_name
@@ -189,18 +197,7 @@
         );
 
         // Format Menu Section Item
-        if($menu_style == 'menu_photo_list')
-        {
-            $format_item = $format_item_photo_list;
-        }
-        else if($menu_style == 'menu_photo_tiled_x3')
-        {
-            $format_item = $format_item_photo_tiled_x3;
-        }
-        else
-        {
-            $format_item = $format_item_default;
-        }
+        $format_item = _format_item($menu_style);
 
         // Loop through all the menu sections 
         foreach($sections as $j => $section)
