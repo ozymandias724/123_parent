@@ -573,15 +573,19 @@ Hero.Padding_Top = {
         
         } else if (
             Hero.Padding_Top.header_position === "fixed" &&
-            (Hero.Padding_Top.header_id === "opt_header_one" ||
-            Hero.Padding_Top.header_id === "opt_header_four" ||
-            Hero.Padding_Top.header_id === "opt_header_nine")
+            Hero.Padding_Top.header_id === "opt_header_one"
         ) 
         { 
             Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id).height();
 
             Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
         } 
+        else if (Hero.Padding_Top.header_id === "opt_header_four" || Hero.Padding_Top.header_id === "opt_header_nine")
+        {
+            Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div").height();
+
+            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
+        }
         else 
         {
             //Do not adding padding-top to hero

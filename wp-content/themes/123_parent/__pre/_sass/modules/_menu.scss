@@ -1,6 +1,84 @@
 @media only screen {
-    // Menu Area
-    section#mod_menu {
+    // Menu Area for Tabs Style Side Menu
+    section#mod_menu > #tabs_side_menu{
+        padding: 0 5%;
+        display: flex;
+        flex-flow: column nowrap;
+        // Menu tabs
+        #menu_tabs {
+            font-size: 14px;
+            margin-bottom: 15px;
+            // Menu tabs titles
+            > h4 {
+                display: block;
+            }
+            // Menu tabs links
+            > h4 > a {
+                padding: 10px 15px;
+                color: $gray_two;
+                border-bottom: 1px solid $gray_one;
+                display: block;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+            }
+            // Menu tabs links actions on active menu link, active and focus
+            > h4 > a.active_menu_link,
+            > h4 > a:active, 
+            > h4 > a:focus {
+                background-color: $accent;
+                color: $white;
+                border-bottom: 1px solid $accent;
+            }
+            // Menu tabs links actions on hover
+            > h4 > a:hover {
+                background-color: $gray_one;
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+    // Menu with Tabs Pills
+    section#mod_menu > #tabs_pills {
+        padding: 0 5%;
+        display: flex;
+        flex-flow: column nowrap;
+        // Tabs
+        #menu_tabs {
+            font-size: 14px;
+            margin: 0 auto 15px;
+            // Tabs titles
+            > h4 {
+                display: block;
+                margin: 10px 5px;
+                padding: 10px 0;
+                text-transform: uppercase;
+                text-align: center;
+                // Tabs links
+                > a {
+                    background-color: transparent;
+                    border: 2px solid $gray_one;
+                    border-radius: 20px;
+                    padding: 10px 25px;
+                    color: $gray_one;
+                    // Tabs links actions on active, active menu link, and focus
+                    &.active_menu_link,
+                    &:active,
+                    &:focus {
+                        border: 2px solid $accent;
+                        background-color: $accent;
+                        color: $white;
+                    }
+                    // Tabs links actions on hover
+                    &:hover {
+                        border: 2px solid $gray_one;
+                        color: $white;
+                        background-color: $gray_one;
+                    }
+                }
+            }
+        }
+    }
+    // Common CSS for different Menu Tabs Styles
+    section#mod_menu > #tabs_side_menu,
+    section#mod_menu > #tabs_pills {
         // Common CSS for the different Menu Styles
         .menu_text_half, 
         .menu_text_list_left,
@@ -104,7 +182,6 @@
                 }
             }
         }
-        
         // Menu styles header title
         .menu_text_list_left .menu_header > h2,
         .menu_text_list_center .menu_header > h2,
@@ -292,7 +369,6 @@
         // Menu Section
         .menu_section {
             display: none;
-            max-width: 1280px;
         }
         // Menu section unordered list
         .menu_section ul {
@@ -311,52 +387,36 @@
             padding: 0 20px;
             margin-bottom: 20px;
         }
-        // Menu with Tabs Side Menu
-        #tabs_side_menu {
-            max-width: $nav_maxwidth;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            flex-flow: column nowrap;
-            // Menu tabs
-            #menu_tabs {
-                font-size: 14px;
-                margin-bottom: 15px;
-                // Menu tabs titles
-                > h4 {
-                    display: block;
-                }
-                // Menu tabs links
-                > h4 > a {
-                    padding: 10px 15px;
-                    color: $gray_two;
-                    border-bottom: 1px solid $gray_one;
-                    display: block;
-                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-                }
-                // Menu tabs links actions on active menu link, active and focus
-                > h4 > a.active_menu_link,
-                > h4 > a:active, 
-                > h4 > a:focus {
-                    background-color: $accent;
-                    color: $white;
-                    border-bottom: 1px solid $accent;
-                }
-                // Menu tabs links actions on hover
-                > h4 > a:hover {
-                    background-color: $gray_one;
-                    border-bottom: 1px solid transparent;
-                }
-            }
-        }
     }
 }
 
 @media only screen and (min-width: 768px){
     // Menu 
     section#mod_menu {
+        > #tabs_pills,
+        > #tabs_side_menu {
+            // Menu style of Photo Tiled x3 menu items
+            .menu_photo_tiled_x3 .menu_items {
+                $w : 60vw;
+                $c : 2;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+                // Image
+                > ul > li > .image_prov {
+                    height: 200px;
+                }
+            }
+            // Menu Text Sub Group 1/2
+            .menu_text_sub_group_half { 
+                flex-flow: row nowrap;
+                > div:nth-child(odd) {
+                    margin-right: 40px;
+                }
+            }
+        }
         // Tabs Style of Side Menu
-        #tabs_side_menu {
+        > #tabs_side_menu {
             flex-flow: row nowrap;
             // Tabs Area for Tabs Style of Side Menu
             #menu_tabs {
@@ -368,31 +428,18 @@
                 flex: 0 1 80%;
             }
         }
-        // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items {
-            $w : 60vw;
-            $c : 2;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-            // Image
-            > ul > li > .image_prov {
-                height: 200px;
-            }
-        }
-        // Menu Text Sub Group 1/2
-        .menu_text_sub_group_half { 
-            flex-flow: row nowrap;
-            > div:nth-child(odd) {
-                margin-right: 40px;
-            }
+        // Tabs Style of Pills
+        > #tabs_pills #menu_tabs > h4 {
+            display: inline-block;
+            text-align: left;
         }
     }
 }
 
 @media only screen and (min-width: 1000px){
     // Menu 
-    section#mod_menu {
+    section#mod_menu > #tabs_side_menu,
+    section#mod_menu > #tabs_pills {
         // Menu Text 1/2
         .menu_text_half {
             // Menu Style Text 1/2 menu items unordered list
@@ -436,7 +483,7 @@
 
 @media only screen and (min-width: 1600px){
     // Menu 
-    section#mod_menu {
+    section#mod_menu > #tabs_side_menu {
         // Menu style of Photo Tiled x3 menu items
         .menu_photo_tiled_x3 .menu_items {
             $w : 50vw;
@@ -448,6 +495,36 @@
             > ul > li > .image_prov {
                 height: 300px;
             }
+        }
+    }
+    section#mod_menu > #tabs_pills {
+        // Menu style of Photo Tiled x3 menu items
+        .menu_photo_tiled_x3 .menu_items {
+            $w : 90vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+            // Menu style of Photo Tiled x3 menu items unordered list image
+            > ul > li > .image_prov {
+                height: 300px;
+                max-width: 540px;
+                margin: 0 0 15px;
+            }
+        }
+        .menu_photo_list .menu_items > ul > li > .image_prov,
+        .menu_text_sub_group_half .menu_items > ul > li > .image_prov,
+        .menu_text_list_center .menu_items > ul > li > .image_prov {
+            height: 350px;
+        }
+        .menu_photo_list .menu_items > ul > li > .image_prov {
+            max-width: none;
+            margin: 0 0 15px;
+            background-position: center center;
+        }
+        .menu_text_list_center .menu_items > ul > li > .image_prov {
+            height: 350px;
+            max-width: 550px;
         }
     }
 }
