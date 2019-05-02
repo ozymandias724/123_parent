@@ -157,7 +157,7 @@
     $fields = get_fields($res[0]);
 
     // Type of tabs
-    $fields['tabs_type'] = 'tabs_side_menu';
+    $fields['tabs_type'] = 'tabs_pills';
     $fields['masonry'] = false; 
         
     $format_standard_gallery = '

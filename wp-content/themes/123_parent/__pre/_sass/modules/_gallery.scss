@@ -9,9 +9,6 @@
             &.tabs_side_menu > div:last-of-type > ul {
                 column-count: 2;
                 column-gap: 10px;
-                margin: 0 auto;
-                max-width: $nav_maxwidth; 
-                padding: 0 20px;
                 // Masonry gallery list items for standard and tabbed gallery
                 > li {
                     margin-bottom: 15px;
@@ -27,7 +24,7 @@
             &.tabs_pills > div:last-of-type, 
             &.tabs_classic > div:last-of-type, 
             &.tabs_side_menu > div:last-of-type {
-                $w : 90vw;
+                $w : 86vw;
                 $c : 2;
                 $g : 1.5vw;
                 $s : true;
@@ -41,8 +38,7 @@
             // Tabbed gallery side menu tabs menu section
             > div:first-of-type {
                 text-align: center;
-                width: 90vw;
-                margin: 0 auto 15px;
+                margin-bottom: 15px;
                 // Tabbed gallery side menu tabs menu section text
                 > h3 {
                     display: block;
@@ -72,15 +68,14 @@
             }
             // Tabbed gallery side menu tabs images section
             > div:last-of-type {
-                margin: 0 auto 20px;
-                width: 90vw;
+                margin-bottom: 20px;
+                flex: 0 1 80%;
             }
         }
         // Tabbed gallery pills tabs menu section 
         &.tabs_pills > div:first-of-type {
             color: $gray_one;
             margin: 0 auto 25px auto;
-            max-width: $nav_maxwidth;
             text-align: center;
             // Tabbed gallery pills tabs menu section tab text
             > h3 {
@@ -116,10 +111,8 @@
         // Tabbed gallery classic tabs, menu section
         &.tabs_classic > div:first-of-type {
             color: $gray_one;
-            padding: 0 20px; 
             text-align: center;
             margin: 0 auto 25px;
-            max-width: $nav_maxwidth;
             // Tabbed gallery classic tabs menu section
             &:after {
                 content: "";
@@ -167,32 +160,26 @@
     }
     // Standard Gallery
     section#mod_gallery > #standard_gallery {
-        // Standard gallery unordered list
-        > ul {
-            list-style: none;
-            column-count: 2;
-            column-gap: 10px;
-            margin: 0 auto;
-            max-width: $nav_maxwidth; 
-            padding: 0 20px;
-            > li {
-                margin-bottom: 15px;
-            }
-        }  
         // Standard gallery title
         > h3 {
             display: block;
             font-size: 14px;
             margin-bottom: 15px;
+            text-align: center;
+
         }
         &.masonry {
-            // Standard gallery title
-            > h3 {
-                text-align: center;
-            }
+            > ul {
+                list-style: none;
+                column-count: 2;
+                column-gap: 10px;
+                > li {
+                    margin-bottom: 15px;
+                }
+            }  
         }
         &.non_masonry {
-            $w : 90vw;
+            $w : 86vw;
             $c : 2;
             $g : 1.5vw;
             $s : true;
@@ -206,6 +193,7 @@
         margin: 0 auto;
         min-height: 90vh; 
         margin-bottom: 20px;
+        padding: 0 5%;
         // Standard and tabbed gallery background images
         .image {
             height: 200px; 
@@ -220,7 +208,7 @@
     section#mod_gallery > #tabbed_gallery {
         &.non_masonry {
             &.tabs_side_menu > div:last-of-type {
-                $w : 60vw;
+                $w : 86vw;
                 $c : 2;
                 $g : 1.5vw;
                 $s : true;
@@ -228,30 +216,18 @@
             }
             &.tabs_pills > div:last-of-type,
             &.tabs_classic > div:last-of-type {
-                $w : 90vw;
+                $w : 86vw;
                 $c : 3;
                 $g : 1.5vw;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
         }
-        &.masonry {
-            &.tabs_side_menu > div:last-of-type > ul {
-                width: 60vw;
-            }
-        }
         &.tabs_pills > div:first-of-type > h3 {
             display: inline-block;
         }
-        &.tabs_side_menu {
-            flex-flow: row nowrap;
-            > div:first-of-type {
-                width: 30vw;
-                margin-bottom: 0;
-            }
-            > div:last-of-type {
-                width: 60vw;
-            }
+        &.tabs_side_menu > div:first-of-type {
+            flex: 0 1 20%;
         }
     }
 }
@@ -261,8 +237,15 @@
         &.non_masonry {
             // Non-masonry tabbed pills 
             &.tabs_pills > div:last-of-type {
-                $w : 80vw;
+                $w : 90vw;
                 $c : 3;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            &.tabs_side_menu > div:last-of-type {
+                $w : 60vw;
+                $c : 2;
                 $g : 1.5vw;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
@@ -277,7 +260,6 @@
             // Masonry gallery tabbed side menu unordered list
             &.tabs_side_menu > div:last-of-type ul { 
                 column-count: 2;
-                width: 60vw;
             }
         }
         // Tabbed pills and tabbed classic
@@ -286,6 +268,13 @@
             // Tabbed Classic tab text
             > h3 {
                 display: inline-block;
+            }
+        }
+        &.tabs_side_menu {
+            flex-flow: row nowrap;
+            // Tabbed Side Menu Header 3
+            > div:first-of-type {
+                margin-right: 30px;
             }
         }
     }
@@ -310,14 +299,14 @@
             &.tabs_pills > div:last-of-type,
             // Tabbed Classic without Masonry Gallery
             &.tabs_classic > div:last-of-type {
-                $w : 65vw;
+                $w : 88vw;
                 $c : 4;
                 $g : 1.5vw;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             } 
             &.tabs_side_menu > div:last-of-type {
-                $w : 50vw;
+                $w: 65vw;
                 $c : 3;
                 $g : 1.5vw;
                 $s : true;
@@ -326,11 +315,7 @@
         }
         &.masonry {
             &.tabs_side_menu {
-                > div:first-of-type {
-                    width: 30vw;
-                }
                 > div:last-of-type > ul {
-                    width: 60vw;
                     column-count: 3;
                 }
             }
@@ -338,17 +323,12 @@
             &.tabs_pills > div:last-of-type > ul,
             &.tabs_classic > div:last-of-type > ul {
                 column-count: 3;
-                padding: 0 20px;
             }
-        }
-        // Tabbed Side Menu Header 3
-        &.tabs_side_menu > div:first-of-type > h3 {
-            margin-right: 15px;
         }
     }
     section#mod_gallery > #standard_gallery {
         &.non_masonry {
-            $w : 65vw;
+            $w : 86vw;
             $c : 4;
             $g : 1.5vw;
             $s : true;
@@ -360,30 +340,17 @@
             }
         }
     }
-    section#mod_gallery > #tabbed_gallery,
-    section#mod_gallery > #standard_gallery {
-        padding: 0 10%;
-    }
 }
 
 @media only screen and (min-width: 1300px){
     section#mod_gallery > #tabbed_gallery {
-        // Tabbed classic gallery
-        &.tabs_classic > div:first-of-type {
-            padding: 0 10px;
-        }
-        &.masonry {
-            &.tabs_side_menu > div:last-of-type > ul {
-                width: 50vw;
-            }
-        }
-    }
-    // Standard Gallery
-    section#mod_gallery > #standard_gallery {
-        &.masonry {
-            // Masonry unordered list
-            > ul {
-                padding: 0 10px;
+        &.non_masonry {
+            &.tabs_side_menu > div:last-of-type {
+                $w: 70vw;
+                $c : 3;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
             }
         }
     }

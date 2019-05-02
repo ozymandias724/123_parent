@@ -206,9 +206,9 @@
                     padding: 0 15px;
                 }
                 // Menu header title text
-                > h2 {
-                    margin: 9px 0 0;
-                }
+                // > h2 {
+                //     margin: 9px 0 0;
+                // }
             }
         }
         // Menu Text Sub Group 1/2
@@ -353,7 +353,7 @@
                     font-size: 18px;
                     margin-bottom: 5px;
                 }
-                // Menu items price
+                // Menu items priceg
                 > ul > li > h3 > div > span {
                     font-size: 14px;
                     position: relative;
@@ -363,6 +363,7 @@
                 > ul > li  > p {
                     color: $gray_three;
                     font-size: 16px;
+                    text-align: justify;
                 }
             }
         }
@@ -489,7 +490,7 @@
     section#mod_menu > #tabs_side_menu {
         // Menu style of Photo Tiled x3 menu items
         .menu_photo_tiled_x3 .menu_items {
-            $w : 50vw;
+            $w : 70vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
@@ -497,6 +498,7 @@
             // Menu style of Photo Tiled x3 menu items unordered list image
             > ul > li > .image_prov {
                 height: 300px;
+                max-width: 430px;
             }
         }
     }
