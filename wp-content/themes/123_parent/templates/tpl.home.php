@@ -9,6 +9,7 @@
  ?>
 <main id="page_home">
 <?php 
+    include( get_template_directory() . '/parts/part.popups.php');
     include( get_template_directory() . '/parts/part.hero.php');
 
     if( !empty($fields['long_scroll']) && !empty($fields['sections']) ){

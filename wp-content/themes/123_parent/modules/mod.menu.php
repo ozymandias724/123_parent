@@ -43,13 +43,13 @@
     }
 
     function _menu_item($format_item, $menu_style, $image, $title, $description, $price){
-        $price_full = $price;
+        $price_full = (!empty($price)) ? $price : '';
         $price = (!empty($price)) ? explode('.',$price) : '';
 
         switch($menu_style)
         {
             case 'menu_photo_list':
-            $ul .= sprintf(
+            $ul = sprintf(
                 $format_item
                 ,$image
                 ,$title
@@ -58,7 +58,7 @@
             );
             break;
             case 'menu_photo_tiled_x3':
-            $ul .= sprintf(
+            $ul = sprintf(
                 $format_item
                 ,$image
                 ,$title
@@ -68,7 +68,7 @@
             );
             break;
             default:
-            $ul .= sprintf(
+            $ul = sprintf(
                 $format_item
                 ,$image
                 ,$title
@@ -77,6 +77,33 @@
             );
         }
         return $ul;
+    }
+
+    function _format_header($menu_style){
+        if(
+            $menu_style == 'menu_text_list_center' || 
+            $menu_style == 'menu_text_list_left' ||
+            $menu_style == 'menu_photo_tiled_x3' || 
+            $menu_style == 'menu_photo_list'
+        )
+        {
+            $format_header = '
+                <div><div class="menu_header">
+                    <h2>%s</h2>
+                    %s
+                </div> 
+            ';
+        }
+        else 
+        {
+            $format_header = '
+                <div><div class="menu_header">
+                    <h2><span>%s</span></h2>
+                    %s
+                </div> 
+            ';
+        }
+        return $format_header;
     }
    
     function _format_item($menu_style){
@@ -107,7 +134,7 @@
             $format_item = '
                 <li class="menu_item">
                     %s
-                    <h3>%s <span>%s<span></h3>
+                    <h3>%s <span>%s</span></h3>
                     %s
                 </li>
             ';
@@ -163,14 +190,6 @@
     $tabs_area .= '</div>';
     // End Tabs Area
 
-    // Menu Section Header format
-    $format_header_default = '
-        <div><div class="menu_header">
-            <h2><span>%s</span></h2>
-            %s
-        </div> 
-    ';
-
     // Loop through all the menus
     foreach($menus as $i => $menu)
     {
@@ -203,8 +222,9 @@
         // Loop through all the menu sections 
         foreach($sections as $j => $section)
         {
+            $format_header = _format_header($menu_style);
             $menu_section .= sprintf(
-                $format_header_default
+                $format_header
                 // Get title
                 ,(!empty($section['title'])) ? $section['title'] : ''
                 // Get description

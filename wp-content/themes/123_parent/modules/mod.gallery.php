@@ -23,7 +23,7 @@
 
     // Get standard gallery title
     function _get_standard_title($fields){
-        return $fields['normal_gallery']['heading'];
+        return (!empty($fields['normal_gallery']['heading'])) ? $fields['normal_gallery']['heading'] : '';
     }
 
     // Get standard list items
@@ -38,7 +38,7 @@
                 {
                     $gallery_items .= sprintf(
                         $format_list_item
-                        ,$image['url']
+                        ,(!empty($image['url'])) ? $image['url'] : ''
                     );
                 }
             }
@@ -50,7 +50,7 @@
                 {
                     $gallery_items .= sprintf(
                         $format_list_item
-                        ,$image['sizes']['medium_large']
+                        ,(!empty($image['sizes']['medium_large'])) ? $image['sizes']['medium_large'] : ''
                     );
                 }
             }
@@ -75,7 +75,7 @@
                     ,$active_tab_title
                     ,$tab_title
                     ,($i === 0 ? 'active_gallery' : '')
-                    ,$tab['tab_title']
+                    ,(!empty($tab['tab_title'])) ? $tab['tab_title'] : ''
                 );
             }
         }
@@ -97,7 +97,8 @@
                     $list .= '<ul class="gallery_section '.$tab_title .' '.$active_gallery_section.'">';
 
                     foreach($tab['images'] as $image){
-                        $list .= '<li><img src="' . $image['url'] . '"/></li>'; 
+                        $image = (!empty($image['url'])) ? $image['url'] : '';
+                        $list .= '<li><img src="' . $image . '"/></li>'; 
                     }
                     
                     $list .= '</ul>';
@@ -114,7 +115,8 @@
                     $list .= '<ul class="gallery_section '.$tab_title .' '.$active_gallery_section.'">';
 
                     foreach($tab['images'] as $image){
-                        $list .= '<li><div class="image" style="background-image:url(' . $image['sizes']['medium_large'] . ');"></div></li>'; 
+                        $image = (!empty($image['sizes']['medium_large'])) ? $image['sizes']['medium_large'] : '';
+                        $list .= '<li><div class="image" style="background-image:url(' . $image . ');"></div></li>'; 
                     }
 
                     $list .= '</ul>';
