@@ -34,10 +34,12 @@
         return ($fields['type'] == 'standard') ? '' : $fields['tabs_type'];
     }
 
+    // Get standard gallery title
     function _get_standard_title($fields){
         return $fields['normal_gallery']['heading'];
     }
 
+    // Get standard list items
     function _get_standard_list_items($fields){
         if($fields['type'] == 'standard')
         {
@@ -69,14 +71,13 @@
         return $gallery_items;
     }
 
+    // Get tabbed gallery titles
     function _get_tabbed_titles($fields){
         if($fields['type'] == 'tabbed')
         {
             foreach($fields['tabbed_gallery'] as $i => $tab)
             {
-                $format_title = '
-                    <h3 class="%s"><a class="%s %s" href="javascript:;">%s</a></h3>
-                ';
+                $format_title = '<h3 class="%s"><a class="%s %s" href="javascript:;">%s</a></h3>';
 
                 $active_tab_title = ($i == 0) ? 'active_tab_title' : '';
 
@@ -94,12 +95,12 @@
         return $titles;
     }
 
+    // Get tabbed list items
     function _get_tabbed_list_items($fields){
         if($fields['type'] == 'tabbed')
         {
             if($fields['masonry'] == true)
             {
-                $list = '';
                 foreach($fields['tabbed_gallery'] as $i => $tab)
                 {
                     $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ';
@@ -107,17 +108,16 @@
                     $active_gallery_section = ($i === 0 ? 'active_gallery_section' : '');
 
                     $list .= '<ul class="gallery_section '.$tab_title .' '.$active_gallery_section.'">';
+
                     foreach($tab['images'] as $image){
-                        $image_url = $image['url'];
-                        $list .= '<li><img src="' . $image_url . '"/></li>'; 
+                        $list .= '<li><img src="' . $image['url'] . '"/></li>'; 
                     }
+                    
                     $list .= '</ul>';
                 }
-                return $list;
             }
             else
             {
-                $list = '';
                 foreach($fields['tabbed_gallery'] as $i => $tab)
                 {
                     $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ';
@@ -125,17 +125,19 @@
                     $active_gallery_section = ($i === 0 ? 'active_gallery_section' : '');
 
                     $list .= '<ul class="gallery_section '.$tab_title .' '.$active_gallery_section.'">';
+
                     foreach($tab['images'] as $image){
-                        $image_url = $image['sizes']['medium_large'];
-                        $list .= '<li><div class="image" style="background-image:url(' . $image_url . ');"></div></li>'; 
+                        $list .= '<li><div class="image" style="background-image:url(' . $image['sizes']['medium_large'] . ');"></div></li>'; 
                     }
+
                     $list .= '</ul>';
                 }
-                return $list;
             }
         }
+        return $list;
     }
     
+    // Create gallery content
     function _get_gallery_content($format_standard_gallery, $format_tabbed_gallery, $fields){
         if($fields['type'] == 'standard')
         {
