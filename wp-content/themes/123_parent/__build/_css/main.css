@@ -2624,15 +2624,17 @@ section.hero .hero_foreground a:active {
     border-radius: 20px;
     background-color: transparent;
     border: 2px solid #c2c2c2;
-    color: #484848;
+    color: #aaabad;
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery {
     color: #fff;
     background-color: green;
-    border: 2px solid green;
+    border: 2px solid transparent;
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
-    border: 2px solid #c2c2c2;
+    border: 2px solid #aaabad;
+    background-color: #aaabad;
+    color: #fff;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
     color: #c2c2c2;
@@ -2731,7 +2733,6 @@ section#mod_gallery > #standard_gallery {
     margin: 0 auto;
     min-height: 90vh;
     margin-bottom: 20px;
-    max-width: 1280px;
   }
   section#mod_gallery > #tabbed_gallery .image,
 section#mod_gallery > #standard_gallery .image {
@@ -2810,7 +2811,7 @@ section#mod_gallery > #standard_gallery .image {
     flex-flow: row nowrap;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-    width: 20vw;
+    width: 30vw;
     margin-bottom: 0;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type {
@@ -2847,12 +2848,12 @@ section#mod_gallery > #standard_gallery .image {
   section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
   }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type > ul {
-    column-count: 2;
-    width: 60vw;
-  }
   section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
     column-count: 3;
+  }
+  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type ul {
+    column-count: 2;
+    width: 60vw;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
     text-align: left;
@@ -2929,7 +2930,7 @@ section#mod_gallery > #standard_gallery .image {
   }
   section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
     text-align: left;
-    width: 65vw;
+    width: 50vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -2940,12 +2941,12 @@ section#mod_gallery > #standard_gallery .image {
     clear: both;
   }
   section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
-    width: 20.6666666667vw;
+    width: 15.6666666667vw;
     height: auto;
     float: left;
   }
   section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 20.6666666667vw;
+    height: 15.6666666667vw;
   }
   section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;
@@ -2999,6 +3000,11 @@ section#mod_gallery > #standard_gallery .image {
   }
   section#mod_gallery > #standard_gallery.masonry > ul {
     column-count: 3;
+  }
+
+  section#mod_gallery > #tabbed_gallery,
+section#mod_gallery > #standard_gallery {
+    padding: 0 10%;
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -3250,7 +3256,7 @@ section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:focus {
   }
 
   section#mod_menu > #tabs_pills {
-    padding: 0 5%;
+    padding: 0 1%;
     display: flex;
     flex-flow: column nowrap;
   }
@@ -3763,6 +3769,10 @@ section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-chil
 section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(3n) {
     margin: 0 0 1.5vw 0;
   }
+
+  section#mod_menu > #tabs_pills {
+    padding: 0 10%;
+  }
 }
 @media only screen and (min-width: 1280px) {
   section#mod_menu .menu_content {
@@ -3808,7 +3818,7 @@ section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-chil
   }
   section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul {
     text-align: left;
-    width: 90vw;
+    width: 70vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3819,12 +3829,12 @@ section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-chil
     clear: both;
   }
   section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 29vw;
+    width: 22.3333333333vw;
     height: auto;
     float: left;
   }
   section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 29vw;
+    height: 22.3333333333vw;
   }
   section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
     margin: 0 1.5vw 1.5vw 0;

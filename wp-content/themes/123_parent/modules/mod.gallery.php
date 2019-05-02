@@ -6,19 +6,6 @@
  *  Concise view w/ link to full view
  */
 
-    // get the gallery page object
-    $args = array(
-        'posts_per_page' => 1
-        ,'post_type' => 'page'
-        ,'pagename' => 'gallery'
-    );
-    $res = get_posts($args);
-
-    // get the gallery page fields
-    $fields = get_fields($res[0]);
-
-    // If status is 1, (possibly)
-
     // Get id of $format_gallery
     function _get_gallery_id($fields){
         return ($fields['type'] == 'standard') ? 'standard_gallery' : 'tabbed_gallery';
@@ -157,6 +144,17 @@
         }
         return $gallery;
     }
+
+    // get the gallery page object
+    $args = array(
+        'posts_per_page' => 1
+        ,'post_type' => 'page'
+        ,'pagename' => 'gallery'
+    );
+    $res = get_posts($args);
+
+    // get the gallery page fields
+    $fields = get_fields($res[0]);
 
     // Type of tabs
     $fields['tabs_type'] = 'tabs_side_menu';

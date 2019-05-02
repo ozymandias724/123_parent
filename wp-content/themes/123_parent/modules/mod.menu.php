@@ -149,7 +149,8 @@
         </h4>
     ';
     // Loop through all the menus
-    foreach($fields['menus'] as $i => $menu){
+    foreach($fields['menus'] as $i => $menu)
+    {
         $menu_name = strtolower(str_replace(' ', '', $menu['menu_post']->post_title)) . '_menu';
         $tabs_area .= sprintf(
             $format_tab

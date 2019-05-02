@@ -37,7 +37,7 @@
     }
     // Menu with Tabs Pills
     section#mod_menu > #tabs_pills {
-        padding: 0 5%;
+        padding: 0 1%;
         display: flex;
         flex-flow: column nowrap;
         // Tabs
@@ -469,6 +469,9 @@
             @include gridLayout($w, $c, $g, $s);
         }
     }
+    section#mod_menu > #tabs_pills {
+        padding: 0 10%;
+    }
 }
 
 @media only screen and (min-width: $nav_maxwidth){
@@ -500,7 +503,7 @@
     section#mod_menu > #tabs_pills {
         // Menu style of Photo Tiled x3 menu items
         .menu_photo_tiled_x3 .menu_items {
-            $w : 90vw;
+            $w : 70vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
