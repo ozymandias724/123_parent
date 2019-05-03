@@ -2530,6 +2530,59 @@ section.hero .hero_foreground a:active {
   }
 }
 @media only screen {
+  section#header_popup,
+section#timed_overlay_popup {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0.9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 5%;
+  }
+  section#header_popup .popup_close,
+section#timed_overlay_popup .popup_close {
+    content: "";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    font-size: 40px;
+    margin-right: 5%;
+  }
+
+  section#header_popup > div:first-of-type {
+    height: 300px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  section#header_popup > h3 {
+    font-size: 16px;
+    color: #fff;
+  }
+  section#header_popup > p:first-of-type {
+    font-size: 16px;
+    color: #fff;
+  }
+  section#header_popup > p:last-of-type {
+    font-size: 16px;
+    color: #fff;
+  }
+}
+@media only screen {
   section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
     column-count: 2;
     column-gap: 10px;

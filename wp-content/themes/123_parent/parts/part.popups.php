@@ -10,12 +10,19 @@
         return ($popups[$popup_name]['status'] == 1) ? true : false;
     }
 
+    function _get_times()
+    {
+        $times = '<a href="javascript:;" class="popup_close"><i class="fas fa-times"></i></a>';
+        return $times;
+    }
+
     function _echo_popups($popups)
     {
         if(_get_status($popups, 'header'))
         {
             echo _header_popup($popups);
         }
+        
         if(_get_status($popups, 'timed_overlay'))
         {
             echo _timed_overlay_popup($popups);
@@ -36,11 +43,13 @@
                 %s
                 %s
                 %s
+                %s
             </section>
         ';
 
         $header_popup = sprintf(
             $format_popup
+            ,_get_times()
             ,$image
             ,$heading
             ,$text
@@ -66,11 +75,13 @@
                 %s
                 %s
                 %s
+                %s
             </section>
         ';
 
         $timed_overlay_popup = sprintf(
             $format_popup
+            ,_get_times()
             ,$image
             ,$heading
             ,$text

@@ -5,9 +5,6 @@ var Theme = {};
 var Hero = {};
 var Headers = {};
 
-
-
-
 // var mapLat = $('#mapid').attr('data-lat');
 // var mapLng = $('#mapid').attr('data-lng');
 
@@ -19,7 +16,6 @@ var Headers = {};
     // id: 'mapbox.streets',
     // accessToken: 'pk.eyJ1Ijoia21hcmN5NzI0IiwiYSI6ImNqdjFsaGUxZjF2NHA0ZXNkemlwZno5cTcifQ.552sQf1WxlHY2EHfj8oMCg'
 // }).addTo(mymap);
-
 
 Theme.Slick = {
     rand : Math.floor(Math.random() * $(".img-slick").length),
@@ -160,34 +156,28 @@ Theme.Open_Address = {
 Theme.Open_Address._init();
 
 
-Theme.Estimate = {
-    tint: $(".header-tint"),
-    estimate: $(".estimate-toggle, .topbanner-quickquote, .site__button-quote"),
-    estimate_popup: $(".estimate"),
-    estimate_close: $(".estimate.popupcontainer, .estimate-content-times.popupcontainer-times"),
+Theme.Popup = {
+
+    header_popup : $("section#header_popup"),
+    nav_bar_quote_btn : $(".site__button-quote"),
+    popup_close : $("section#header_popup .popup_close"),
+
 
     _init: function () {
-        $(Theme.Estimate.estimate).on("click", Theme.Estimate._click_handler);
+        $(Theme.Popup.nav_bar_quote_btn ).on("click", Theme.Popup._click_handler);
 
-        $(Theme.Estimate.estimate_close).on("click", Theme.Estimate._close_popup);
+        $(Theme.Popup.popup_close).on("click", Theme.Popup._close_popup);
     },
 
     _click_handler: function (event) {
-        event.preventDefault();
-        Theme.Estimate.estimate_popup.fadeIn(250);
+        Theme.Popup.header_popup.fadeIn(250);
     },
     _close_popup: function (event) {
-        if ($(event.target).hasClass("estimate") ||
-            $(event.target).hasClass("estimate-content-times") ||
-            $(event.target).hasClass("topbanner-quickquote") ||
-            $(event.target).hasClass("site__button-quote")
-        ) {
-            event.preventDefault();
-            Theme.Estimate.estimate_popup.fadeOut(250);
-        }
+        Theme.Popup.header_popup.fadeOut(250);
     },
 
 }
+Theme.Popup._init();
 
 
 Theme.PA = {
