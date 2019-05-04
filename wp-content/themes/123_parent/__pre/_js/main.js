@@ -156,28 +156,71 @@ Theme.Open_Address = {
 Theme.Open_Address._init();
 
 
-Theme.Popup = {
-
-    header_popup : $("section#header_popup"),
-    nav_bar_quote_btn : $(".site__button-quote"),
-    popup_close : $("section#header_popup .popup_close"),
-
+Theme.Popups = {
+    popups : $(".popup"),
+    quote_btn : $(".site__button-quote"),
+    header_popup : $("#header_popup"),
+    timed_popup : $("#timed_overlay_popup"),
+    header_popup_times : $("#header_popup .popup_close"), 
+    timed_popup_times : $("#timed_overlay_popup .popup_close"),
+    timed_first_view : $("#timed_overlay_popup").attr("data-first-view"),
+    timed_second_view : $("#timed_overlay_popup").attr("data-second-view"),
 
     _init: function () {
-        $(Theme.Popup.nav_bar_quote_btn ).on("click", Theme.Popup._click_handler);
-
-        $(Theme.Popup.popup_close).on("click", Theme.Popup._close_popup);
+        $(Theme.Popups.quote_btn).on("click", Theme.Popups._click_handler);
+        $(Theme.Popups.header_popup_times).on("click", Theme.Popups._header_popup_close);
+        $(Theme.Popups.header_popup).on("click", Theme.Popups._header_popup_section_close);
+        if(Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
+        $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
+        $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
+        window.addEventListener('resize', function () {
+            Theme.Popups._resize_close();
+        });
     },
-
-    _click_handler: function (event) {
-        Theme.Popup.header_popup.fadeIn(250);
+    _click_handler: function () {
+        Theme.Popups.header_popup.fadeIn(250);
     },
-    _close_popup: function (event) {
-        Theme.Popup.header_popup.fadeOut(250);
+    _header_popup_close: function(){
+        Theme.Popups.header_popup.fadeOut(250);
     },
-
+    _header_popup_section_close: function (event) {
+        if(event.target == event.currentTarget) Theme.Popups.header_popup.fadeOut(250);
+    },
+    _timed_popup_close: function(){
+        Theme.Popups.timed_popup.fadeOut(250);
+        Theme.Popups._increase_timed_views();
+    },
+    _timed_popup_section_close: function (event) {
+        if(event.target == event.currentTarget) Theme.Popups.timed_popup.fadeOut(250, function(){
+            Theme.Popups._increase_timed_views();
+        });
+    },
+    _resize_close : function(){
+        Theme.Popups.popups.hide();
+        Theme.Popups._increase_timed_views();
+    },
+    _increase_timed_views : function(){
+        var views = $("#timed_overlay_popup").attr("data-viewed");
+        views++;
+        $("#timed_overlay_popup").attr("data-viewed", views);
+        Theme.Popups._start_timed_popup_second();
+    },
+    _start_timed_popup : function(){
+        setTimeout(function(){
+            Theme.Popups.timed_popup.fadeIn(100);
+        },Theme.Popups.timed_first_view * 1000);
+    },
+    _start_timed_popup_second : function(){
+        var views = $("#timed_overlay_popup").attr("data-viewed");
+        views = parseInt(views);
+        if(!(views == 2)){
+            setTimeout(function(){
+                Theme.Popups.timed_popup.fadeIn(100);
+            }, Theme.Popups.timed_second_view * 1000);
+        }
+    },
 }
-Theme.Popup._init();
+Theme.Popups._init();
 
 
 Theme.PA = {

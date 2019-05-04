@@ -12,21 +12,22 @@
 
     function _get_times()
     {
-        $times = '<a href="javascript:;" class="popup_close"><i class="fas fa-times"></i></a>';
-        return $times;
+        return '<a href="javascript:;" class="popup_close"><i class="fas fa-times"></i></a>';
+    }
+
+    function _get_form()
+    {
+       $form = '';
+        return $form;
     }
 
     function _echo_popups($popups)
     {
-        if(_get_status($popups, 'header'))
-        {
-            echo _header_popup($popups);
-        }
-        
-        if(_get_status($popups, 'timed_overlay'))
-        {
-            echo _timed_overlay_popup($popups);
-        }
+        if(_get_status($popups, 'header')) echo _header_popup($popups);
+
+        if(_get_status($popups, 'timed_overlay')) echo _timed_overlay_popup($popups);
+
+        if(_get_status($popups, 'banner')) echo _banner_popup($popups);
     }
 
     function _header_popup($popups)
@@ -38,24 +39,26 @@
         $email = (!empty($popup['email'])) ? '<p>'.$popup['email'].'</p>' : '';
 
         $format_popup = '
-            <section id="header_popup">
-                %s
-                %s
-                %s
-                %s
-                %s
+            <section class="popup" id="header_popup">
+                <div>
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
             </section>
         ';
 
         $header_popup = sprintf(
             $format_popup
             ,_get_times()
-            ,$image
             ,$heading
+            ,$image
+            ,_get_form()
             ,$text
-            ,$email
         );
-
+        
         return $header_popup;
     }
 
@@ -70,27 +73,65 @@
         $timer_viewed_once = (!empty($popup['viewed_once_timer'])) ? $popup['viewed_once_timer'] : '';
 
         $format_popup = '
-            <section id="timed_overlay_popup">
-                %s
-                %s
-                %s
-                %s
-                %s
+            <section class="popup" id="timed_overlay_popup" data-first-view="%s" data-second-view="%s" data-viewed="0">
+                <div>
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
             </section>
         ';
 
         $timed_overlay_popup = sprintf(
             $format_popup
+            ,$timer_first_view
+            ,$timer_viewed_once
             ,_get_times()
-            ,$image
             ,$heading
+            ,$image
+            ,_get_form()
             ,$text
-            ,$email
         );
 
         return $timed_overlay_popup; 
     }
 
-    _echo_popups($popups);
+    function _banner_popup($popups)
+    {
+        $popup = array_slice($popups['banner'], 0);
+        $bar_text = (!empty($popup['bar_text'])) ? '<h3>'.$popup['bar_text'].'</h3>' : '';
+        $image = (!empty($popup['popup_image']['url'])) ? '<div style="background-image:url('.$popup['popup_image']['url'].');"></div>' : '';
+        $heading = (!empty($popup['popup_heading'])) ? '<h3>'.$popup['popup_heading'].'</h3>' : '';
+        $text = (!empty($popup['popup_text'])) ? $popup['popup_text'] : '';
+        $email = (!empty($popup['email'])) ? '<p>'.$popup['email'].'</p>' : '';
 
+        $format_popup = '
+            <section class="popup" id="banner_popup">
+                <div>
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
+            </section>
+        ';
+
+        $banner_popup = sprintf(
+            $format_popup
+            ,_get_times()
+            ,$bar_text
+            ,$image
+            ,$heading
+            ,_get_form()
+            ,$text
+        );
+
+        return $banner_popup; 
+    }
+
+    _echo_popups($popups);
 ?>
