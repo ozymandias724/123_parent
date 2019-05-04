@@ -183,7 +183,7 @@ class NavHandler
         // header popup button
         $quickquote = '';
         if( $popups['header']['status'] ){
-            $quickquote = '<a href="#" class="site__button-quote" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
+            $quickquote = '<a href="javascript:;" class="site__button-quote" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
         }
 
         // banner popup

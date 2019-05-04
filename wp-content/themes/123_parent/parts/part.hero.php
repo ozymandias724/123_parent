@@ -36,13 +36,11 @@
     
             $format_hero = '
                 <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
-                    <div>
-                        <div class="hero_foreground">
-                            %s
-                            %s
-                            %s
-                            %s
-                        </div>
+                    <div class="hero_foreground">
+                        %s
+                        %s
+                        %s
+                        %s
                     </div>
                 </div>
             ';

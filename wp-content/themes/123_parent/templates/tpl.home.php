@@ -26,5 +26,6 @@
  ?>
 </main>
 <?php 
+    include( get_template_directory() . '/parts/part.popups.php');
     get_footer();
  ?>

@@ -4,7 +4,7 @@
         //Top part of header
         > div:first-of-type {
             background-color: $accent;
-            color: white;
+            color: $white;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
@@ -12,15 +12,8 @@
             height: 50px;
             //Section of address and phone number
             > span { 
-                display: flex;
                 flex: 1 0 80%;
-                align-items: center;
-            }
-            //Phone number link
-            > span a:last-child {
-                display: flex;
-                margin: 0 auto;
-            }   
+            } 
             //Address and phone number icon
             > span a i {
                 color: $black;
@@ -37,6 +30,8 @@
                 transition: opacity 0.3s;
                 color: $nav_3_top_bar_text;
                 line-height: 50px;
+                display: inline-block;
+                margin-right: 26%;
             }
             //Links of address and phone number actions on hover, active and focus
             > span a:hover, 

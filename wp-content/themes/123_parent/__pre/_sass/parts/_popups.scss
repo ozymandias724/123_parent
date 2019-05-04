@@ -1,0 +1,107 @@
+@media only screen {
+    // Popups
+    section#header_popup,
+    section#timed_overlay_popup,
+    section#banner_popup {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        .popup_close {
+            content: '\f00d';
+            display: inline-block;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: $gray_two;
+            font-size: 40px;
+            margin-right: 5%;
+            padding: 2%;
+        }
+    }
+    section#header_popup {
+        background-color: rgba(0,0,0,0.3);
+        > div {
+            right: 0;
+            top: 0;
+            position: absolute;
+            background-color: $white;
+            width: 35%;
+            padding: 5%;
+            margin: 0.5% 0.5% 0 0;
+            box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            // Image
+            > div:first-of-type {
+                height: 350px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                margin: 30px auto;
+            }
+            // Heading
+            > h3 {
+                font-size: 16px;
+                color: $gray_two;
+                text-align: center;
+            }
+            // Text
+            > p:first-of-type {
+                font-size: 16px;
+                color: $gray_two;
+            }
+            // Email
+            > p:last-of-type {
+                font-size: 16px;
+                color: $gray_two;
+            }
+        }
+    }
+    section#timed_overlay_popup {
+        > div {
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            background-color: $white;
+            width: 50%;
+            padding: 5%;
+            margin: 5% 0;
+            border-radius: 10px;
+            // Image
+            > div:first-of-type {
+                height: 350px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                margin: 30px auto;
+            }
+            // Heading
+            > h3 {
+                font-size: 16px;
+                color: $gray_two;
+                text-align: center;
+            }
+            // Text
+            > p:first-of-type {
+                font-size: 16px;
+                color: $gray_two;
+            }
+            // Email
+            > p:last-of-type {
+                font-size: 16px;
+                color: $gray_two;
+            }
+        }
+    }
+}

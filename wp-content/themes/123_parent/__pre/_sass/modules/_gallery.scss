@@ -1,366 +1,357 @@
 
 @media only screen {
-    // Gallery section 
-    section#mod_gallery {
-
-        // Standard gallery
-        #tabbed_gallery,
-        #standard_gallery { 
-            margin: 0 auto;
+    // Tabbed Gallery
+    section#mod_gallery > #tabbed_gallery {
+        &.masonry {
+            // Masonry gallery unordered list for tabbed and standard gallery
+            &.tabs_pills > div:last-of-type > ul,
+            &.tabs_classic > div:last-of-type > ul,
+            &.tabs_side_menu > div:last-of-type > ul {
+                column-count: 2;
+                column-gap: 10px;
+                // Masonry gallery list items for standard and tabbed gallery
+                > li {
+                    margin-bottom: 15px;
+                }
+            }
+            // Masonry gallery unordered list for side menu tabs
+            &.tabs_side_menu > div:last-of-type > ul {
+                padding: 0;
+            }
         }
+        &.non_masonry {
+            // Non-masonry standard gallery, tabbed pills, classic and side-menu
+            &.tabs_pills > div:last-of-type, 
+            &.tabs_classic > div:last-of-type, 
+            &.tabs_side_menu > div:last-of-type {
+                $w : 86vw;
+                $c : 2;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+        // Tabbed gallery side menu tabs
+        &.tabs_side_menu {
+            display: flex;
+            flex-flow: column nowrap;
+            // Tabbed gallery side menu tabs menu section
+            > div:first-of-type {
+                text-align: center;
+                margin-bottom: 15px;
+                // Tabbed gallery side menu tabs menu section text
+                > h3 {
+                    display: block;
+                    font-size: 14px;
+                    // Tabbed gallery side menu tabs menu section text links
+                    > a {
+                        color: $gray_two;
+                        padding: 10px 15px;
+                        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+                        display: block;
+                        border-bottom: 1px solid $gray_one;
+                        // Tabbed gallery side menu tabs links actions on active, focus and active gallery
+                        &:active, 
+                        &:focus,
+                        &.active_gallery {
+                            color: $white;
+                            background-color: $accent;
+                            border-bottom: 1px solid $accent;
+                        }
+                        &:hover {
+                            color: $gray_two;
+                            background-color: $gray_one;
+                            border-bottom: 1px solid transparent;
+                        }
+                    }
+                }
+            }
+            // Tabbed gallery side menu tabs images section
+            > div:last-of-type {
+                margin-bottom: 20px;
+                flex: 0 1 80%;
+            }
+        }
+        // Tabbed gallery pills tabs menu section 
+        &.tabs_pills > div:first-of-type {
+            color: $gray_one;
+            margin: 0 auto 25px auto;
+            text-align: center;
+            // Tabbed gallery pills tabs menu section tab text
+            > h3 {
+                display: block;
+                margin: 10px 5px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                font-size: 14px;
+                // Tabbed gallery pills tabs menu section tab text links
+                > a {
+                    padding: 10px 15px;
+                    border-radius: 20px;
+                    background-color: transparent;
+                    border: 2px solid $gray_one;
+                    color: $gray_three;
+                    // Tabbed gallery pills tabs menu section tab text links actions on active, focus, active gallery and hover
+                    &:active,
+                    &:focus,
+                    &.active_gallery {
+                        color: $white;
+                        background-color: $accent;
+                        border: 2px solid transparent;
+                    }
+                    // Tabbed gallery pills tabs, menu section tab text links actions on hover
+                    &:hover {
+                        border: 2px solid $gray_three;
+                        background-color: $gray_three;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        // Tabbed gallery classic tabs, menu section
+        &.tabs_classic > div:first-of-type {
+            color: $gray_one;
+            text-align: center;
+            margin: 0 auto 25px;
+            // Tabbed gallery classic tabs menu section
+            &:after {
+                content: "";
+                display: block;
+                border-bottom: 2px solid $gray_one;
+            }
+            // Tabbed gallery classic tabs menu section tab text
+            > h3 {
+                display: block;
+                padding: 10px 0;
+                font-size: 14px;
+                text-transform: uppercase;
+                // Tabbed gallery classic tabs menu section tabs text on active tab title
+                &.active_tab_title {
+                    margin: 5px 2px 0px;
+                }
+                // Tabbed gallery classic tabs menu section tabs text links
+                > a {
+                    color: $gray_two;
+                    padding: 10px 15px;
+                    background-color: $gray_one;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    border-top: 2px solid $gray_one;
+                    border-left: 2px solid $gray_one;
+                    border-right: 2px solid $gray_one;
+                    transition: color 0.3s ease-in-out;
+                    // Tabbed gallery classic tabs menu section tabs links actions on focus, active and active gallery
+                    &:focus,
+                    &:active, 
+                    &.active_gallery {
+                        color: $accent;
+                        background-color: $white;
+                        border-bottom: 3px solid transparent;
+                    }
+                    // Tabbed gallery classic tabs menu section tabs links actions on hover
+                    &:hover {
+                        color: $white;
+                        background: $tint;
+                        background: linear-gradient(to bottom, $tint 0%,$gray_three 100%); 
+                    }
+                }
+            }
+        }
+    }
+    // Standard Gallery
+    section#mod_gallery > #standard_gallery {
         // Standard gallery title
-        #standard_gallery > h3 {
+        > h3 {
             display: block;
             font-size: 14px;
             margin-bottom: 15px;
-        }
-        // Standard gallery unordered list
-        > #standard_gallery > ul {
-            list-style: none;
-        }   
-        // Tabbed gallery
-        #tabbed_gallery,
-        // Standard gallery
-        #standard_gallery {
-            min-height: 90vh; 
-            margin-bottom: 20px;
-            max-width: $nav_maxwidth;
-        }
-
-        // Tabbed gallery side menu tabs
-        > #tabbed_gallery.tabs_side_menu {
-            display: flex;
-            flex-flow: column nowrap;
-        }
-        // Tabbed gallery side menu tabs menu section
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
             text-align: center;
-            width: 90vw;
-            margin: 0 auto 15px;
-        }
-        // Tabbed gallery side menu tabs menu section text
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-            display: block;
-            font-size: 14px;
-        }
-        // Tabbed gallery side menu tabs menu section text links
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
-            color: $gray_two;
-            padding: 10px 15px;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-            display: block;
-            border-bottom: 1px solid $gray_one;
-        }
-        // Tabbed gallery side menu tabs links actions on active, focus and active gallery
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active, 
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus,
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
-            color: $white;
-            background-color: $accent;
-            border-bottom: 1px solid $accent;
-        }
-        // Tabbed gallery side menu tabs links actions on hover
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
-            color: $gray_two;
-            background-color: $gray_one;
-            border-bottom: 1px solid transparent;
-        }
-        // Tabbed gallery side menu tabs images section
-        > #tabbed_gallery.tabs_side_menu > div:last-of-type {
-            margin: 0 auto 20px;
-            width: 90vw;
-        }
 
-        // Tabbed gallery pills tabs menu section 
-        > #tabbed_gallery.tabs_pills > div:first-of-type {
-            color: $gray_one;
-            margin: 0 auto 25px auto;
-            max-width: $nav_maxwidth;
-            text-align: center;
         }
-        // Tabbed gallery pills tabs menu section tab text
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
-            display: block;
-            margin: 10px 5px;
-            text-transform: uppercase;
-            padding: 10px 0;
-            font-size: 14px;
+        &.masonry {
+            > ul {
+                list-style: none;
+                column-count: 2;
+                column-gap: 10px;
+                > li {
+                    margin-bottom: 15px;
+                }
+            }  
         }
-        // Tabbed gallery pills tabs menu section tab text links
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a {
-            padding: 10px 15px;
-            border-radius: 20px;
-            background-color: transparent;
-            border: 2px solid $gray_one;
-            color: $gray_two;
-        }
-        // Tabbed gallery pills tabs menu section tab text links actions on active, focus, active gallery and hover
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active,
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus,
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery,
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
-            color: $white;
-            background-color: $accent;
-            border: 2px solid $accent;
-        }
-        // Tabbed gallery pills tabs, menu section tab text links actions on hover
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
-            border: 2px solid $gray_one;
-        }
-
-        // Tabbed gallery classic tabs, menu section
-        > #tabbed_gallery.tabs_classic > div:first-of-type {
-            color: $gray_one;
-            padding: 0 20px; 
-            text-align: center;
-            margin: 0 auto 25px;
-            max-width: $nav_maxwidth;
-        }
-        // Tabbed gallery classic tabs menu section
-        > #tabbed_gallery.tabs_classic > div:first-of-type:after {
-            content: "";
-            display: block;
-            border-bottom: 2px solid $gray_one;
-        }
-        // Tabbed gallery classic tabs menu section tab text
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-            display: block;
-            padding: 10px 0;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        // Tabbed gallery classic tabs menu section tabs text on active tab title
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3.active_tab_title {
-            margin: 5px 2px 0px;
-        }
-        // Tabbed gallery classic tabs menu section tabs text links
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
-            color: $gray_two;
-            padding: 10px 15px;
-            background-color: $gray_one;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            border-top: 2px solid $gray_one;
-            border-left: 2px solid $gray_one;
-            border-right: 2px solid $gray_one;
-            transition: color 0.3s ease-in-out;
-        }
-        // Tabbed gallery classic tabs menu section tabs links actions on focus, active and active gallery
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus,
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:active, 
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery {
-            color: $accent;
-            background-color: $white;
-            border-bottom: 3px solid transparent;
-        }
-        // Tabbed gallery classic tabs menu section tabs links actions on hover
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:hover {
-            color: $white;
-            background: $tint;
-            background: linear-gradient(to bottom, $tint 0%,$gray_three 100%); 
-        }
-
-        // Non-masonry standard gallery, tabbed pills, classic and side-menu
-        > #standard_gallery.non_masonry,
-        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type, 
-        > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type, 
-        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-            $w : 90vw;
+        &.non_masonry {
+            $w : 86vw;
             $c : 2;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
+    }
+
+    // Standard gallery and Tabbed gallery
+    section#mod_gallery > #tabbed_gallery,
+    section#mod_gallery > #standard_gallery { 
+        margin: 0 auto;
+        min-height: 90vh; 
+        margin-bottom: 20px;
+        padding: 0 5%;
         // Standard and tabbed gallery background images
-        > #standard_gallery .image,
-        > #tabbed_gallery .image {
+        .image {
             height: 200px; 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
-        // Standard gallery title
-        #standard_gallery.masonry > h3 {
-            text-align: center;
-        }
-        // Masonry gallery unordered list for tabbed and standard gallery
-        > #standard_gallery.masonry > ul,
-        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
-        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul,
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-            column-count: 2;
-            column-gap: 10px;
-            margin: 0 auto;
-            max-width: $nav_maxwidth; 
-            padding: 0 20px;
-        }
-        // Masonry gallery list items for standard and tabbed gallery
-        > #standard_gallery.masonry > ul > li,
-        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul > li,
-        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul > li,
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul > li {
-            margin-bottom: 15px;
-        } 
-        // Masonry gallery unordered list for side menu tabs
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-            padding: 0;
-        }
     }
 }
 
 @media only screen and (min-width: 550px){
-    section#mod_gallery {
-        // Non-masonry tabbed side menu
-        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-            $w : 60vw;
-            $c : 2;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
+    section#mod_gallery > #tabbed_gallery {
+        &.non_masonry {
+            &.tabs_side_menu > div:last-of-type {
+                $w : 86vw;
+                $c : 2;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            &.tabs_pills > div:last-of-type,
+            &.tabs_classic > div:last-of-type {
+                $w : 86vw;
+                $c : 3;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
         }
-        // Non-masonry tabbed pills and classic
-        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
-        > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
-            $w : 90vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-        // Tabbed Pills Tab Text
-        > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
+        &.tabs_pills > div:first-of-type > h3 {
             display: inline-block;
         }
-
-        // Tabbed Sude Menu 
-        > #tabbed_gallery.tabs_side_menu > div:last-of-type,
-        // Tabbed Side Menu with Masonry Gallery
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-            width: 60vw;
-        }
-        // Tabbed Side Menu
-        > #tabbed_gallery.tabs_side_menu {
-            flex-flow: row nowrap;
-        }
-        // Tabbed Side Menu 
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-            width: 20vw;
-            margin-bottom: 0;
+        &.tabs_side_menu > div:first-of-type {
+            flex: 0 1 20%;
         }
     }
 }
 
 @media only screen and (min-width: 768px){
-    section#mod_gallery {
-        // Non-masonry tabbed pills 
-        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type {
-            $w : 80vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
+    section#mod_gallery > #tabbed_gallery {
+        &.non_masonry {
+            // Non-masonry tabbed pills 
+            &.tabs_pills > div:last-of-type {
+                $w : 90vw;
+                $c : 3;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            &.tabs_side_menu > div:last-of-type {
+                $w : 60vw;
+                $c : 2;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
         }
+        &.masonry {
+            // Masonry gallery tabbed classic and pills unordered list
+            &.tabs_pills > div:last-of-type > ul,
+            &.tabs_classic > div:last-of-type > ul {
+                column-count: 3;
+            }
+            // Masonry gallery tabbed side menu unordered list
+            &.tabs_side_menu > div:last-of-type ul { 
+                column-count: 2;
+            }
+        }
+        // Tabbed pills and tabbed classic
+        &.tabs_classic > div:first-of-type {
+            text-align: left;
+            // Tabbed Classic tab text
+            > h3 {
+                display: inline-block;
+            }
+        }
+        &.tabs_side_menu {
+            flex-flow: row nowrap;
+            // Tabbed Side Menu Header 3
+            > div:first-of-type {
+                margin-right: 30px;
+            }
+        }
+    }
+    section#mod_gallery > #standard_gallery {
         // Non-masonry standard gallery
-        > #standard_gallery.non_masonry {
+        &.non_masonry {
             $w : 90vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
-        } 
-        // Tabbed pills and tabbed classic
-        > #tabbed_gallery.tabs_classic > div:first-of-type {
-            text-align: left;
         }
-        // Tabbed Classic tab text
-        > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-            display: inline-block;
-        }
-        // Masonry gallery unordered list
-        > #standard_gallery.masonry > ul,
-        // Masonry gallery tabbed classic and pills unordered list
-        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
-        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
+        &.masonry > ul {
             column-count: 3;
-        }
-        // Masonry gallery tabbed side menu unordered list
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-            column-count: 2;
-            width: 60vw;
         }
     }
 } 
 
 @media only screen and (min-width: 1000px){
-    section#mod_gallery {
-        // Standard Gallery 
-        > #standard_gallery.non_masonry,
-        // Tabbed Pills without Masonry Gallery
-        > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type,
-        // Tabbed Classic without Masonry Gallery
-        > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
-            $w : 65vw;
+    section#mod_gallery > #tabbed_gallery {
+        &.non_masonry {
+            &.tabs_pills > div:last-of-type,
+            // Tabbed Classic without Masonry Gallery
+            &.tabs_classic > div:last-of-type {
+                $w : 88vw;
+                $c : 4;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            } 
+            &.tabs_side_menu > div:last-of-type {
+                $w: 65vw;
+                $c : 3;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+        &.masonry {
+            &.tabs_side_menu {
+                > div:last-of-type > ul {
+                    column-count: 3;
+                }
+            }
+            // Tabbed Classic and Pills with Masonry Gallery
+            &.tabs_pills > div:last-of-type > ul,
+            &.tabs_classic > div:last-of-type > ul {
+                column-count: 3;
+            }
+        }
+    }
+    section#mod_gallery > #standard_gallery {
+        &.non_masonry {
+            $w : 86vw;
             $c : 4;
             $g : 1.5vw;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
-        }  
-        // Tabbed Side Menu without Masonry Gallery
-        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-            $w : 50vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
         }
-
-        // Masonry tabbed side menu unordered list
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
-        // Non-masonry tabbed side menu
-        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-            width: 60vw;
-        }
-        // Tabbed side menu
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-            width: 30vw;
-        }
-        
-        // Masonry Grid Unordered List
-        > #standard_gallery.masonry > ul,
-        // Tabs Side Menu with Masonry Gallery
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
-        // Tabbed Classic and Pills with Masonry Gallery
-        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
-        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
-            column-count: 3;
-        }
-        // Tabbed Pills with Masonry Gallery Unordered List
-        > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul,
-        // Tabbed Classic with Masonry Gallery Unordered List
-        > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
-            padding: 0 20px;
-        }
-        // Tabbed Side Menu Header 3
-        > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-            margin-right: 15px;
+        &.masonry {
+            > ul {
+                column-count: 3;
+            }
         }
     }
 }
 
 @media only screen and (min-width: 1300px){
-    section#mod_gallery {
-        // Standard gallery with masonry unordered list
-        > #standard_gallery.masonry > ul,
-        // Tabbed classic gallery
-        > #tabbed_gallery.tabs_classic > div:first-of-type {
-            padding: 0 10px;
-        }
-        // Tabbed Side Menu with Mason Grid
-        > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul,
-        // Tabbed Side Menu without Mason Grid
-        > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-            width: 50vw;
+    section#mod_gallery > #tabbed_gallery {
+        &.non_masonry {
+            &.tabs_side_menu > div:last-of-type {
+                $w: 70vw;
+                $c : 3;
+                $g : 1.5vw;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            }
         }
     }
 }
