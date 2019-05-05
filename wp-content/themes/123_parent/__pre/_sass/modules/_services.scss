@@ -1,0 +1,48 @@
+@media only screen {
+
+
+    #mod_services {
+
+
+        section.mod__services-featuredservice {
+            $w: getVar($sizing, content, medium);
+            $c: 3;
+            $g: 2vw;
+            $s: true;
+            margin: 0 auto;
+            text-align: center;
+            width: $w;
+
+            .site_grid {
+                @include gridLayout($w, $c, $g, $s);
+
+                >ul {
+                    >li {
+                        border: 1px solid black;
+                        text-align: center;
+                        padding: 30px;
+                        flex: 1 0 auto;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        align-items: center;
+                        justify-content: center;
+
+                        >h5 {
+                            font-size: 2rem;
+                            text-transform: uppercase;
+                        }
+
+                        >h5,
+                        >p {
+                            margin-bottom: 10px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+
+
+}

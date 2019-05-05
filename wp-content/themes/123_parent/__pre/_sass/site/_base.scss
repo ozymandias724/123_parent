@@ -1,14 +1,40 @@
 // 
 @media only screen {
 
+    main {
+        > section {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    
+    .site_button {
+        display: inline-block;
+        margin: 0 auto 15px auto;
+        border: 1px solid black;
+        padding: 0 15px;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: background-color 0.2s ease;
+        line-height: 44px;
+        height: 44px;
+        min-width: 180px;
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        background-color: rgba(0,0,0,0);
+        &:focus, &:active, &:hover {
+            background-color: rgba(0,0,0, 0.2);
+        }
+    }
 
     div.site_grid {
-        $w: 80vw;
+        $w: getVar($sizing, content, medium);
         $c: 1;
         $g: 1.5vw;
         $s: false;
         @include gridLayout($w, $c, $g, $s);
-
+        width: $w;
         >h2 {
             margin: 15px 0;
         }
@@ -25,6 +51,49 @@
         }
     }
 
+    .site_featured_item_block {
+        $w: getVar($sizing, content, medium);
+        $c: 3;
+        $g: 2vw;
+        $s: true;
+        display: block;
+        margin: 0 auto;
+        width: $w;
+        text-align: center;
+        .image {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .site_grid {
+            @include gridLayout($w, $c, $g, $s);
+            >ul {
+                >li {
+                    border: 1px solid black;
+                    text-align: center;
+                    padding: 30px;
+                    flex: 1 0 auto;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+                    
+
+                    >h4, h5 {
+                        font-size: 2rem;
+                        text-transform: uppercase;
+                    }
+
+                    >h5,
+                    >p {
+                        margin-bottom: 10px;
+                    }
+
+                }
+            }
+        }
+    }
     
 }   // end mq
 @media only screen and (min-width: 550px) {

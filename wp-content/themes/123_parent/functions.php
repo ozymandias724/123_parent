@@ -2,6 +2,7 @@
 
 // built-in acf
 include_once('reqs/localize-acf.php');
+include_once('reqs/ext/acfext.address.php');
 
 // acf handler for page publish/private status
 include_once('classes/Pagedata.php');

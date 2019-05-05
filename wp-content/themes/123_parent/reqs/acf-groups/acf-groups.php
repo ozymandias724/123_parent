@@ -14,33 +14,7 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
         'position' 		=> 3,
 	));
-
-
-	// Blog Page Info
-	acf_add_options_sub_page(array(
-		'page_title' => 'Settings',
-		'menu_title' => 'Settings',
-		'menu_slug' => 'blog-settings',
-		'parent_slug' => 'edit.php',
-		'capability' => 'read_private_posts',
-	));
-	// Blog Page Banner
-	acf_add_options_sub_page(array(
-		'page_title' => 'Edit Banner',
-		'menu_title' => 'Edit Banner',
-		'menu_slug' => 'blog-settings-banner',
-		'parent_slug' => 'edit.php',
-		'capability' => 'read_private_posts',
-	));
-	// Coupons Banners
-	acf_add_options_sub_page(array(
-		'page_title' => 'Edit Banner',
-		'menu_title' => 'Edit Banner',
-		'menu_slug' => 'coupons-settings-banner',
-		'parent_slug' => 'edit.php?post_type=coupon',
-		'capability' => 'read_private_posts',
-	));
-	// Locations
+    // Locations
 	acf_add_options_page(array(
 		'page_title' 	=> ' ',
 		'menu_title'	=> 'Locations',
@@ -242,40 +216,6 @@ if( !function_exists('add_acf_fields') ){
 						'param' => 'options_page',
 						'operator' => '==',
 						'value' => 'locations-settings',
-					),
-				),
-			),
-		));
-		/*
-			Coupons Settings Fields
-		 */
-		acf_add_local_field_group(array(
-			'key' => 'group_8',
-			'title' => ' ',
-			'fields' => array (
-				array(
-					'key' => 'field_bx9ehdf',
-					'label' => 'Expiration Date',
-					'type' => 'date_time_picker',
-					'name' => 'coupon-expiration-date',
-					'display_format' => 'M jS, Y g:i a',
-					'return_format' => 'M jS, Y g:i a',
-					'first_day' => 0,
-				),
-				array(
-					'key' => 'field_bx9dehdf',
-					'label' => 'Coupon Code',
-					'type' => 'text',
-					'name' => 'coupon-code',
-					'instructions' => 'Please use only capital letters and numbers for ease of translation across platforms.',
-				),
-			),
-			'location' => array (
-				array (
-					array (
-						'param' => 'post_type',
-						'operator' => '==',
-						'value' => 'coupon',
 					),
 				),
 			),

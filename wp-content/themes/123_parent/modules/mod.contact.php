@@ -1,11 +1,12 @@
 <?php 
 /**
- * Module: Menu
+ * Module: Contact
  * 
  * Description:
- *  Concise view w/ link to full view
+ *  gravity form call to action
+ *  
  */
-    // get the gallery page object
+    // get the contact page object
     $args = array(
         'posts_per_page' => 1
         ,'post_type' => 'page'
@@ -13,8 +14,12 @@
     );
     $res = get_posts($args);
 
-    // get the gallery page fields
+    // get the contact page fields
     $fields = get_fields($res[0]);
+
+    $company_info = get_field('company_info','options');
+
+    
  ?>
 <section id="mod_contact">
 <?php 

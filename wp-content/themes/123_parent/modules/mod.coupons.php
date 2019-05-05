@@ -17,34 +17,54 @@
     $fields = get_fields($res[0]);
 
 
-    $format_coupon = '<li><div class="image">%s</div></li>';
-    
-    $return_coupons_grid = '<div class="site_grid"><ul>';
-    
+    if( !empty($fields['featured_coupons']['coupons']) ){
 
-    $args = array(
-        'post_type' => 'coupon'
-        ,'posts_per_page' => -1
-    );
-    $coupons = get_posts($args);
-    foreach( $coupons as $coupon ){
-
-        $rec_fields = get_fields($coupon->ID);
+        $heading = ( !empty( $fields['featured_coupons']['heading'] ) ? '<h4>'.$fields['featured_coupons']['heading'].'</h4>' : '');
+        $details = ( !empty( $fields['featured_coupons']['details'] ) ? '<p>'.$fields['featured_coupons']['details'].'</p>' : '');
         
-        $return_coupons_grid .= sprintf(
-            $format_coupon
-            ,$coupon->post_title
-        );
+        $return_coupons = '
+            <section class="mod__coupons-featuredcoupons">
+                <div>
+                    '.$heading.'
+                    '.$details.'
+                </div>
+                <div class="site_grid"><ul>
+        ';
+        
+        $format_coupon = '
+            <li>
+                <h5>%s</h5>
+                <p>%s</p>
+                <p>%s</p>
+            </li>
+        ';
 
+        foreach( $fields['featured_coupons']['coupons'] as $coupon ){
+
+            $coupon_fields = get_fields($coupon['coupon']->ID);
+            
+            if( $coupon_fields['status'] ){ 
+                $return_coupons .= sprintf(
+                    $format_coupon
+                    ,$coupon['coupon']->post_title
+                    ,date('M j, Y',$coupon_fields['expiration'])
+                    ,$coupon_fields['code']
+                );
+            }
+        }
+        $return_coupons .= '</ul></div>';
+
+        $return_coupons .= '
+            <a href="javascript:;" title="View all coupons" class="site_button">View All Coupons</a>
+            </section>
+        ';
     }
-
-    $return_coupons_grid .= '</ul></div>';
     
  ?>
 <section id="mod_coupons">
 <?php 
     echo get_section_banner($res[0]->post_title);
-    echo $return_coupons_grid;
+    echo $return_coupons;
  ?>
 </section>
 <?php 

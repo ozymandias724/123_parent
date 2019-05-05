@@ -1,19 +1,9 @@
 import $ from 'jquery';
 import slick from 'slick-carousel-browserify';
-import L from 'leaflet';
 
 var Theme = {};
 var Hero = {};
 var Headers = {};
-
-// var mapLat = $('#mapid').attr('data-lat');
-// var mapLng = $('#mapid').attr('data-lng');
-
-L.marker([mapLat, mapLng]).addTo(mymap);
-L.circle([mapLat, mapLng], {
-    radius: mapRad,
-}).addTo(mymap);
-
 
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),

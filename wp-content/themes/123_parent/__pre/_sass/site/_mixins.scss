@@ -17,7 +17,7 @@
 // width, cols, gutter, square
 @mixin gridLayout($w, $c, $g, $s) {
     text-align: center;
-    & ul {
+    ul {
         text-align: left;
         width: $w;
         margin: 0 auto 0 auto;
@@ -25,7 +25,7 @@
         list-style: none;
         @include clearfix;
 
-        &>li {
+        >li {
             $d: colWidth($w, $c, $g);
             width: $d;
             height: auto;
