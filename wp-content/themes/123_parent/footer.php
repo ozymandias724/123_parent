@@ -2,7 +2,17 @@
 /**
  * Part: Footer
  * Description:
+ *  logo, company info, address
+ *  nav links
+ *  payment types
+ *  social icoms
+ *  badges
+ *  copyright section
  */
+
+    $company_info = get_field('company_info', 'options');
+    print_r($company_info);
+
 ?>
 </main>
 <footer>
@@ -17,10 +27,7 @@
 	   	<script src="//localhost:35729/livereload.js"></script>
 	   <?php
 	}
-    
-    
     wp_footer();
-    
 ?>
 </footer>
 </body>

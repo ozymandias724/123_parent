@@ -27,6 +27,35 @@ include_once('classes/class.Customizer.php');
 include_once('classes/class.NavHandler.php');
 
 
+
+function _get_site_logo(){
+    // look for a 'custom logo'
+    $content_logo = '';
+    // if we have a custom logo
+    // if( !empty($header['logo']) ){
+    if( !empty( get_theme_mod( 'custom_logo' ) ) ){
+        // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
+        // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
+        $logo_srcset = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
+        $logo_srcset = wp_get_attachment_image_srcset(get_theme_mod( 'custom_logo' ));
+        $format_logo = '
+            <a class="header-logo" href="%s" title="Logo button">
+                <img src="%s" srcset="%s" alt="%s">
+            </a>
+        ';
+        $content_logo .= sprintf(
+            $format_logo
+            ,site_url()
+            ,$logo_src
+            ,$logo_srcset
+            ,get_bloginfo('sitename')
+        );
+    }
+    return $content_logo;
+}
+
+
+
 function _get_site_nav($pre = 'navlinks'){
     $return_nav = '';
     $page = get_page_by_path('home-page', OBJECT, 'page');
