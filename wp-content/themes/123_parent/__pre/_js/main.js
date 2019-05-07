@@ -22,6 +22,20 @@ Theme.Slick = {
 }
 Theme.Slick._init();
 
+Theme.Location = {
+    header_3_address_br : $("#opt_header_three .site__iconlink-address br"),
+    header_5_address_br : $("#opt_header_five .site__iconlink-address br"),
+    header_6_address_br : $("#opt_header_six .site__iconlink-address br"),
+    header_9_address_br : $("#opt_header_nine .site__iconlink-address br"),
+    _init : function(){
+        Theme.Location.header_3_address_br.replaceWith(", ");
+        Theme.Location.header_5_address_br.replaceWith(", "); 
+        Theme.Location.header_6_address_br.replaceWith(", "); 
+        Theme.Location.header_9_address_br.replaceWith(", "); 
+    },
+}
+Theme.Location._init();
+
 Theme.CookieMonster = {
     _init: function () {
         if (DisableTimedPopup === 'false') {
@@ -200,14 +214,14 @@ Theme.Popups = {
     _start_timed_popup_second: function () {
         var views = $("#timed_overlay_popup").attr("data-viewed");
         views = parseInt(views);
-        if (!(views == 2)) {
+        if (!(views > 1)) {
             setTimeout(function () {
                 Theme.Popups.timed_popup.fadeIn(100);
             }, Theme.Popups.timed_second_view * 1000);
         }
     },
 }
-Theme.Popups._init();
+Theme.Popups._init(); 
 
 
 Theme.PA = {
@@ -588,16 +602,19 @@ Hero.Padding_Top = {
 
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
 
-
             }
             else if (
-                Hero.Padding_Top.header_id === "opt_header_four" ||
-                Hero.Padding_Top.header_id === "opt_header_nine"
+                Hero.Padding_Top.header_id === "opt_header_four"
             )
             {
                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:last-of-type").height();
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
             } 
+            else if (Hero.Padding_Top.header_id === "opt_header_nine")
+            {
+                Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:first-of-type").height();
+                Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
+            }
             else 
             {
                 //Do not adding padding-top to hero

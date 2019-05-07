@@ -63,7 +63,8 @@ class NavHandler
         // get company info field group
         $company_info = get_field('company_info','options');
         // get company info fields
-        $company_address = ($company_info['address'] ? $company_info['address'] : '');
+        $location = ($company_info['location'] ? $company_info['location'] : '');
+        $company_address = $location['address_street'] . ' ' . $location['address_street_2'] . '<br/>' . $location['address_city'] . ', ' . $location['address_state'] . ', ' . $location['address_postcode'] . '<br/>' . $location['address_country'];
         $phone_number_1 = ($company_info['phone_number_1'] ? $company_info['phone_number_1'] : '');
         $phone_number_2 = ($company_info['phone_number_2'] ? $company_info['phone_number_2'] : '');
         $company_email = ($company_info['email'] ? $company_info['email'] : '');
