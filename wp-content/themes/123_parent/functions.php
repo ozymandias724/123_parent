@@ -27,6 +27,31 @@ include_once('classes/class.Customizer.php');
 include_once('classes/class.NavHandler.php');
 
 
+function _get_full_address_br(){
+	$company_info = get_field('company_info','options');
+        
+	$location = ($company_info['location'] ? $company_info['location'] : '');
+
+	$street_1 = $location['address_street'];
+	$street_2 = $location['address_street_2'];
+	$city = $location['address_city'];
+	$state = $location['address_state'];
+	$postcode = $location['address_postcode'];
+	$country = $location['address_country'];
+
+	$format_full_address_br = '%s %s <br/>%s, %s, %s<br/>%s'; 
+
+	$full_address_br = sprintf(
+		$format_full_address_br
+		,$street_1
+		,$street_2
+		,$city
+		,$state
+		,$postcode
+		,$country
+	);
+	return $full_address_br; 
+}
 
 function _get_site_logo(){
     // look for a 'custom logo'
@@ -53,8 +78,6 @@ function _get_site_logo(){
     }
     return $content_logo;
 }
-
-
 
 function _get_site_nav($pre = 'navlinks'){
     $return_nav = '';

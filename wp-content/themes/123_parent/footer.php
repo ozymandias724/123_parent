@@ -11,7 +11,42 @@
  */
 
     $company_info = get_field('company_info', 'options');
+    $footer_info = get_field('footer', 'options');
+    $company_address = _get_full_address_br();
 
+    function _get_copyright_banner($footer_info){
+
+        $banner = $footer_info['copyright_banner'];
+        $terms = $banner['terms_and_conditions'];
+
+        $copyright = ($banner['copyright']) ? $banner['copyright'] : '' ;
+        $terms_url = ($terms['url']) ? $terms['url'] : ''; 
+        $terms_title = ($terms['title']) ? $terms['title'] : '';
+        $terms_target = ($terms['target']) ? $terms['target'] : ''; 
+
+        $format_url = '<a href="%s" class="%s">%s</a>';
+
+        $url = sprintf(
+            $format_url
+            ,$terms_url
+            ,$terms_target
+            ,$terms_title
+        );
+
+        $format_banner = '
+            <div id="copyright_banner">
+                %s
+            </div>
+        ';
+
+        $copyright_banner = sprintf(
+            $format_banner
+            ,$url
+        );
+
+        return $copyright_banner; 
+    }
+    
 ?>
 </main>
 <footer>

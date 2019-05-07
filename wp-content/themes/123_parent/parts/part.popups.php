@@ -132,6 +132,5 @@
 
         return $banner_popup; 
     }
-
     _echo_popups($popups);
 ?>
