@@ -13,9 +13,6 @@ include_once('classes/class.Setup.php');
 // custom users
 include_once('classes/class.UserRoles.php');
 
-// php image (to be cut)
-include_once('PHPImage.php');
-
 // custom post types
 include_once( 'classes/class.customposts.php' );
 
@@ -39,7 +36,7 @@ function _get_full_address_br(){
 	$postcode = $location['address_postcode'];
 	$country = $location['address_country'];
 
-	$format_full_address_br = '%s %s <br/>%s, %s, %s<br/>%s'; 
+	$format_full_address_br = '%s %s <br/>%s, %s, %s'; 
 
 	$full_address_br = sprintf(
 		$format_full_address_br
@@ -48,10 +45,12 @@ function _get_full_address_br(){
 		,$city
 		,$state
 		,$postcode
-		,$country
+		// ,$country
 	);
 	return $full_address_br; 
 }
+
+
 
 function _get_site_logo(){
     // look for a 'custom logo'
@@ -350,112 +349,6 @@ if( !function_exists('remove_ga_flyout') ){
 	}
 }
 
-/**
- * Logo Text Image Stuff
- */
-// generates Logo text when logo type switch is set to text
-// if( !function_exists('update_logo_text_image') ){
-// 	function update_logo_text_image(){
-// 		if( basename($_SERVER['REQUEST_URI']) == 'admin.php?page=general-settings' && get_field('logo-type-switch', 'option') == 'text' ){
-// 			do_update_logo_text_image();
-// 		}
-// 	}
-// }
-//add_action('save_post', 'update_logo_text_image');
-
-
-// if( !function_exists('do_update_logo_text_image') ){
-// 	function do_update_logo_text_image(){
-// 		function hex_to_rgb($hex){
-// 			$hex = str_replace("#", "", $hex);
-
-// 			if(strlen($hex) == 3) {
-// 			  $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-// 			  $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-// 			  $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-// 			} else {
-// 			  $r = hexdec(substr($hex,0,2));
-// 			  $g = hexdec(substr($hex,2,2));
-// 			  $b = hexdec(substr($hex,4,2));
-// 			}
-// 			$rgb = array($r, $g, $b);
-// 			//return implode(",", $rgb); // returns the rgb values separated by commas
-// 			return $rgb; // returns an array with the rgb values
-// 		}
-
-// 		$active_theme = wp_get_theme()->Name;
-// 		// if(  $active_theme == '123_three' ){
-
-// 		// }
-
-// 		$bg = get_template_directory() . '/library/img/logo-canvas.png';
-
-// 		$phpimg = new PHPImage();
-
-// 		$phpimg->setDimensionsFromImage($bg);
-// 		$phpimg->setQuality(9);
-// 		if(  $active_theme == '123_three' ){
-// 			$phpimg->setFont(get_stylesheet_directory() . '/library/fonts/Montserrat-Black.ttf');
-// 		} else {
-// 			$phpimg->setFont(get_template_directory() . '/library/fonts/GothamHTF-Medium.ttf');
-// 		}
-
-// 		$text_color = array(255, 255, 255);
-
-// 		if(  $active_theme == '123_three' ){
-// 			if( get_field('add_extra_theme_colors_header-logotoggle', 'option') ){
-// 				$text_color = hex_to_rgb(get_field('add_extra_theme_colors_header-logopicker', 'option'));
-// 			}
-// 		} else {
-// 			if( get_field('navs-text-toggle', 'option') ){
-// 				$text_color = hex_to_rgb(get_field('navs-text', 'option'));
-// 			}
-// 		}
-
-// 		$phpimg->setTextColor($text_color);
-
-// 		$phpimg->text(get_field('site_title', 'option'), array(
-// 	        'fontSize' => 60, 
-// 	        'x' => 0,
-// 	        'y' => 0,
-// 	        'width' => 560,
-// 	        'height' => 128,
-// 	        'alignHorizontal' => 'center',
-// 	        'alignVertical' => 'center',
-// 	    ));
-
-// 		$phpimg->imagetrim();
-
-// 		$phpimg->setOutput('png');
-
-// 		$phpimg->save(wp_upload_dir()['basedir'] . '/logo-text.png');
-// 		chmod(wp_upload_dir()['basedir'] . '/logo-text.png', 0755);
-// 	}
-// }
-// // regenerate logo-text.png on push-to-deploy
-// add_action( 'wppusher_theme_was_updated', function(){
-// 	if( function_exists( 'do_update_logo_text_image' )){
-// 		do_update_logo_text_image();
-// 	}
-// });
-// // regenerate logo-text.png on theme switch
-// add_action( 'after_switch_theme', function(){
-// 	if( function_exists( 'do_update_logo_text_image' )){
-// 		do_update_logo_text_image();
-// 	}
-// });
-// // checks if logo-text.png exists in uploads dir if it doesn't then generate it
-// add_action( 'after_setup_theme', 'check_logo_text_exists' );
-// if( !function_exists('check_logo_text_exists') ){
-// 	function check_logo_text_exists(){
-// 		if( !file_exists(wp_upload_dir()['basedir'] . '/logo-text.png') ){
-// 			do_update_logo_text_image();
-// 		}
-// 	}
-// }
-// 
-// 
-// 
 
 if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) : 
 	function wpse_custom_wp_trim_excerpt($wpse_excerpt) {

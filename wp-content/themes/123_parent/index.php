@@ -6,24 +6,8 @@
     // get header
     get_header();
 
-    // open main element
-    echo '<main>';
+    // i think this should redirect to the 404????
     
-    // get hero
-    include( 'modules/hero.php' );
-
-    $res = get_field('field_naaolkn23oin', 'option');
-
-    foreach ($res as $rec) {
-        if( !empty($rec['page-template']) ){
-            
-            include locate_template( 'modules/' . $rec['page-template'] . '.php' );
-        }
-    }
-    
-    // close main element
-    echo '</main>';
-
     // get footer
     get_footer();
  ?>
