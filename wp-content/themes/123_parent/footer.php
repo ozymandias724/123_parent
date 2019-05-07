@@ -19,7 +19,7 @@
         $banner = $footer_info['copyright_banner'];
         $terms = $banner['terms_and_conditions'];
 
-        $copyright = ($banner['copyright']) ? $banner['copyright'] : '' ;
+        $copyright_text = ($banner['copyright']) ? $banner['copyright'] : '' ;
         $terms_url = ($terms['url']) ? $terms['url'] : ''; 
         $terms_title = ($terms['title']) ? $terms['title'] : '';
         $terms_target = ($terms['target']) ? $terms['target'] : ''; 
@@ -33,8 +33,16 @@
             ,$terms_title
         );
 
+        $format_copyright = '<p>%s</p>';
+
+        $copyright = sprintf(
+            $format_copyright
+            ,$copyright_text
+        );
+
         $format_banner = '
             <div id="copyright_banner">
+                %s
                 %s
             </div>
         ';
@@ -42,6 +50,7 @@
         $copyright_banner = sprintf(
             $format_banner
             ,$url
+            ,$copyright
         );
 
         return $copyright_banner; 
@@ -54,6 +63,7 @@
     
     echo get_section_banner('Footer Here Please');
     
+    echo _get_copyright_banner();
     
     // live reload script
 	if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
