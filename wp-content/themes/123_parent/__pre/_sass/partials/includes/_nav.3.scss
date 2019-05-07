@@ -15,7 +15,7 @@
                 flex: 1 0 80%;
             } 
             //Address and phone number icon
-            > span a i {
+            > span a:before {
                 color: $black;
                 margin-right: 10px;
                 font-size: 2rem;
@@ -44,7 +44,7 @@
                 }
             }
             //Quick quote button icon
-            > a i {
+            > .site__button-quote i {
                 color: getVar($colors, primary);
                 font-size: 2rem;
                 font-weight: bold;
@@ -53,7 +53,7 @@
                 left: 5px;
             }
             //Quick quote button 
-            > a {
+            > .site__button-quote {
                 background-color: $black;
                 padding: 0 40px;
                 text-align: center;
@@ -64,9 +64,9 @@
                 color: $white;
             }
             //Quick quote button actions on hover, active and focus
-            > a:hover,
-            > a:active,
-            > a:focus {
+            > .site__button-quote:hover,
+            > .site__button-quote:active,
+            > .site__button-quote:focus {
                 background-color: $second_black;
             }
         }
@@ -74,15 +74,13 @@
         > div:last-of-type {
             background-color: white;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-            height: 90px;
             padding: 0 3.5%;
-            // Logo
-            > a {
-                height: 90px;
-            }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             // Nav menu unordered list
             > ul {
-                line-height: 90px;
+                height: 90px;
                 float: right;
             }
             //Navigational menu unordered list items 

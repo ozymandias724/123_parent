@@ -48,14 +48,14 @@
                 }
             }
             //Address link actions on hover, active and focus
-            > a:first-of-type:hover,
-            > a:first-of-type:active, 
-            > a:first-of-type:focus, 
+            > .site__iconlink-address:hover,
+            > .site__iconlink-address:active, 
+            > .site__iconlink-address:focus, 
             
             //Phone number link actions on hover, active and focus
-            > a:nth-of-type(2):hover,
-            > a:nth-of-type(2):active,
-            > a:nth-of-type(2):focus,
+            > .site__iconlink-phone:hover,
+            > .site__iconlink-phone:active,
+            > .site__iconlink-phone:focus,
 
             //Social icons list items links actions on hover, active and focus
             > ul > li > a:hover,
@@ -64,7 +64,7 @@
                 color: $accent;
             }
             //Phone number link
-            > a:nth-of-type(2) {
+            > .site__iconlink-phone {
                 font-size: 14px;
                 transition: color 0.3s;
                 color: #fff;
@@ -73,7 +73,7 @@
                 }
             }
             //Quote button
-            > a:last-of-type {
+            > .site__button-quote {
                 font-size: 16px;
                 text-transform: uppercase;
                 font-weight: 500;
@@ -81,14 +81,11 @@
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.1s;
                 color: $nav_5_quote_button;
-                > i {
-                    transform: rotate(90deg);
-                }
             }
             //Quote button actions on hover, active and focus
-            > a:last-of-type:hover, 
-            > a:last-of-type:active,
-            > a:last-of-type:focus {
+            > .site__button-quote:hover, 
+            > .site__button-quote:active,
+            > .site__button-quote:focus {
                 opacity: 1;
             }
         }

@@ -11,7 +11,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 18px;
-            height: 85px;
+            height: 90px;
             // Hamburger icon link
             > a:first-of-type {
                 z-index: 21;
@@ -54,6 +54,10 @@
                     transform: rotate(0deg) scale(0.2, 0.2);
                 }
             }
+            // Logo 
+            > .custom-logo-link {
+                padding: 10px;
+            }
             //Social icons unordered list
             > ul {
                 list-style: none;
@@ -64,7 +68,7 @@
             // Social icons unordered list items links
             > ul > li > a {
                 padding: 0 15px;
-                line-height: 85px;
+                line-height: 90px;
                 display: inline-block;
                 color: $black;
             }

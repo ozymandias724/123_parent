@@ -154,6 +154,19 @@ class NavHandler
         }
         // /needsfix
 
+        $format_address_phone_number = '
+            <span>
+                %s
+                %s
+            </span>
+        ';
+
+        $content_address_phone_number = sprintf(
+            $format_address_phone_number
+            ,$site__iconlink_location
+            ,$site__iconlink_phone
+        );
+
         // theme3 pink social bar above header
         $format_socialtopbar = '
             <div id="opt__topbanner">
@@ -275,8 +288,11 @@ class NavHandler
          * 
          */
         $format_header = '
-            <header class="header %s" id="opt_header_three">                
-                %s
+            <header class="header %s" id="opt_header_three">   
+                <div> 
+                    %s
+                    %s
+                </div>
                 <div class="header-content">
                     %s
                     %s
@@ -286,7 +302,8 @@ class NavHandler
         $this->header_three = sprintf(
             $format_header
             ,$fadenav
-            ,$content_socialtopbar
+            ,$content_address_phone_number
+            ,$quickquote
             ,get_custom_logo()
             ,_get_site_nav()
         );
@@ -315,7 +332,7 @@ class NavHandler
             ,$fadenav
             ,$content_social_icons
             ,get_custom_logo()
-            ,$desktop_social
+            ,$site__iconlink_phone
             ,_get_site_nav()
         );
         /**

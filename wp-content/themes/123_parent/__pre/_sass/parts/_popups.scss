@@ -74,7 +74,7 @@
             transform: translateX(-50%);
             position: absolute;
             background-color: $white;
-            width: 50%;
+            width: 90%;
             padding: 5%;
             margin: 5% 0;
             border-radius: 10px;
@@ -103,5 +103,11 @@
                 color: $gray_two;
             }
         }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    section#timed_overlay_popup > div {
+        width: 50%;
     }
 }

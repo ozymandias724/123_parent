@@ -11,7 +11,7 @@
  */
 
     $company_info = get_field('company_info', 'options');
-    print_r($company_info);
+    //print_r($company_info);
 
 ?>
 </main>

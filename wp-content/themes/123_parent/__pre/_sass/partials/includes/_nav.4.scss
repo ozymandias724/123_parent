@@ -9,12 +9,15 @@
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
-            height: 85px;
+            > ul {
+                height: 85px;
+            }
             //Social icons underordered list and phone number section
             > ul, 
             > span {
                 flex: 0 1 auto;
                 font-size: 1.6rem;
+
             }
             //Social icons list items
             > ul > li {
@@ -41,10 +44,11 @@
             }
             // Logo
             > a:nth-of-type(2) {
-                line-height: 85px;
+                height: 85px;
+
             }
             //Phone number link
-            > a:last-of-type {
+            > .site__iconlink-phone {
                 padding: 0 10px;
                 font-weight: 400;
                 font-size: 16px;
@@ -55,11 +59,14 @@
                 color:$white;
                 line-height: 85px;
                 display: inline-block;
+                &:before {
+                    margin-right: 10px;
+                }
             }
             //Phone number link actions on hover, active and focus
-            > a:last-of-type:hover,
-            > a:last-of-type:active,
-            > a:last-of-type:focus {
+            > .site__iconlink-phone:hover,
+            > .site__iconlink-phone:active,
+            > .site__iconlink-phone:focus {
                 opacity: 1;
             }
         }
