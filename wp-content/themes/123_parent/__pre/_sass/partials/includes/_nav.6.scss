@@ -63,19 +63,15 @@
             justify-content: space-around;
             align-items: center;
             padding: 0 5%;
-            height: 90px;
+            height: 110px;
             //Logo link
-            > a:first-of-type {
-                padding: 0 10px;
+            > .custom-logo-link {
+                padding: 10px;
                 margin-right: auto;
-                line-height: 90px;
                 margin-left: -10px; 
-            }
-            //Logo image inside link
-            > a > img {
-                width: auto;
-                max-width: none;
-                max-height: 70px;
+                > .custom-logo {
+                    max-height: 90px;
+                }
             }
             //Navigational meu
             > nav {

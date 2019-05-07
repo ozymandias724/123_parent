@@ -10,7 +10,7 @@
             justify-content: space-between;
             font-size: 18px;
             color: $black;
-            height: 85px;
+            height: 110px;
             align-items: center;
             //Social icons unordered list 
             > ul {
@@ -30,8 +30,11 @@
                 margin-top: 15px;
             } 
             // Logo link
-            > a:first-of-type {
-                padding: 7px;
+            > .custom-logo-link {
+                padding: 10px;
+                > .custom-logo {
+                    max-height: 90px;
+                }
             }
             > .site__iconlink-phone {
                 padding: 0 7px;

@@ -63,7 +63,7 @@
     
     echo get_section_banner('Footer Here Please');
     
-    echo _get_copyright_banner();
+    echo _get_copyright_banner($footer_info);
     
     // live reload script
 	if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {

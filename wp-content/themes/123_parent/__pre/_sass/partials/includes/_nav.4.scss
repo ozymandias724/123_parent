@@ -9,6 +9,13 @@
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
+            height: 110px;
+            > .custom-logo-link {
+                padding: 10px;
+                > .custom-logo {
+                    max-height: 90px;
+                }
+            }
             > ul {
                 height: 85px;
             }
@@ -41,11 +48,6 @@
             > ul > li > a:active,
             > ul > li > a:focus {
                 color: getVar($colors, primary);
-            }
-            // Logo
-            > a:nth-of-type(2) {
-                height: 85px;
-
             }
             //Phone number link
             > .site__iconlink-phone {

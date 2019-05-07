@@ -16,11 +16,15 @@ $half_header_height : 50px;
             justify-content: space-around;
             background-color: $third_black;
             padding: 0 $padding_left_and_right;
-            height: $header_height;
+            height: 110px;
             // Logo 
-            > a:first-of-type {
+            > .custom-logo-link {
                 margin-right: auto;
                 margin-left: -15px;
+                padding: 10px;
+                > .custom-logo {
+                    max-height: 90px;
+                }
             }
             //Sections of phone number and nav bar
             > div {

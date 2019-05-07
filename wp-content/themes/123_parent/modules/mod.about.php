@@ -75,5 +75,3 @@
     echo $return_staff;
  ?>
 </section>
-<?php 
- ?>
