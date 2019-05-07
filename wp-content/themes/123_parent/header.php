@@ -22,19 +22,8 @@
 		// wp_enqueue_scripts runs on the wp_head hook which is called by wp_head()
 	    wp_head();
 	 ?>
-	
-	<!-- admin-area css in theme settings -->
-	<?php echo !empty(get_field('custom-css', 'option')) ? '<style type="text/css">' . get_field('custom-css', 'option') . '</style>' : ''; ?>
-	
-	<!-- color pickers in theme settings -->
-	<?php // include( locate_template( 'partials/color-pickers.php' ) ); ?>
-	<?php // do_action('123_after_color_pickers'); ?>
-	
 </head>
-<?php 
-    $theme_name = 'theme_' . wp_get_theme()->Name;
- ?>
-<body <?php body_class($theme_name); ?>>
+<body <?php body_class(); ?>>
 <?php 
 	if( $post->post_name !== 'disabled' ) {
 		include('parts/nav/header/nav-desktop.php');
