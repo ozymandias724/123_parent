@@ -592,7 +592,7 @@ img {
 }
 @media only screen {
   body {
-    font-family: "Lato", sans-serif;
+    font-family: "Montserrat", serif;
   }
 
   h1,
@@ -1084,7 +1084,7 @@ header.header a.custom-logo-link > img {
     background-color: #fff;
   }
   header.header a.site__button-quote {
-    background-color: green;
+    background-color: #386591;
     color: white;
     padding: 15px;
     margin-left: 15px;
@@ -1112,36 +1112,55 @@ header.header .opt__topbanner {
     max-width: 1050px;
     display: flex;
     align-items: center;
-    height: 110px;
+    height: 80px;
     margin: 0 auto;
   }
   header#opt_header_one > div:first-of-type .header-logo {
-    height: 100%;
     padding: 10px;
   }
-  header#opt_header_one > div:first-of-type .header-logo img {
-    max-height: 100%;
+  header#opt_header_one > div:first-of-type .header-logo > img {
+    max-height: 60px;
   }
   header#opt_header_one > div:first-of-type .site__iconlink-address {
     margin-left: auto;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  header#opt_header_one > div:first-of-type .site__iconlink-phone > div {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 13px;
+    align-items: flex-start;
+    color: #386591;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  header#opt_header_one > div:first-of-type .site__iconlink-phone > div > span {
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
   }
   header#opt_header_one > div:first-of-type .site__iconlink {
     color: #fff;
     display: flex;
     align-items: center;
     height: 80px;
+    line-height: 1.3em;
   }
   header#opt_header_one > div:first-of-type .site__iconlink-address:before,
 header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
-    padding: 15px 20px;
+    padding: 5px 11px;
     margin-right: 10px;
-    border: 2px solid green;
+    border: 3px solid #386591;
     border-radius: 100%;
-    color: green;
-    font-size: 20px;
+    color: #386591;
+    font-size: 14px;
   }
   header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
     margin-left: 10px;
+    transform: rotate(90deg);
+    padding: 7px 7px;
   }
   header#opt_header_one > div:first-of-type .site__iconlink {
     opacity: 1;
@@ -1157,7 +1176,7 @@ header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
   }
 
   header#opt_header_one > div:last-of-type {
-    height: 50px;
+    height: 45px;
     background-color: #fff;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -1173,15 +1192,15 @@ header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
   }
   header#opt_header_one > div:last-of-type .navlinks-item-link {
     display: inline-block;
-    font-weight: 500;
+    font-weight: 600;
     color: #000;
     padding: 0 10px;
-    line-height: 50px;
+    line-height: 45px;
   }
   header#opt_header_one > div:last-of-type .navlinks-item-link:hover,
 header#opt_header_one > div:last-of-type .navlinks-item-link:active,
 header#opt_header_one > div:last-of-type .navlinks-item-link:focus {
-    background-color: green;
+    background-color: #386591;
     color: white;
   }
   header#opt_header_one > div:last-of-type > nav > ul > li {
@@ -1207,13 +1226,13 @@ header#opt_header_one > div:last-of-type .navlinks-item-link:focus {
     transition: color 0.3s;
     font-size: 16px;
     color: #000;
-    line-height: 50px;
+    line-height: 45px;
     display: inline-block;
   }
   header#opt_header_one > div:last-of-type .site__social-media a:hover,
 header#opt_header_one > div:last-of-type .site__social-media a:active,
 header#opt_header_one > div:last-of-type .site__social-media a:focus {
-    color: green;
+    color: #386591;
   }
   header#opt_header_one > div:last-of-type .site__social-media li:last-of-type {
     padding-right: 0;
@@ -1273,7 +1292,7 @@ header#opt_header_one > div:last-of-type .site__social-media a:focus {
     text-transform: uppercase;
   }
   header#opt_header_two > div .site__button-quote {
-    background-color: green;
+    background-color: #386591;
     font-size: 16px;
     border-radius: 4px;
     text-align: center;
@@ -1303,7 +1322,7 @@ header#opt_header_two > div > a:last-of-type:active {
     padding: 0;
   }
   header#opt_header_three > div:first-of-type {
-    background-color: green;
+    background-color: #386591;
     color: #fff;
     display: flex;
     flex-flow: row nowrap;
@@ -1578,7 +1597,7 @@ header#opt_header_five > div:first-of-type > .site__iconlink-phone:focus,
 header#opt_header_five > div:first-of-type > ul > li > a:hover,
 header#opt_header_five > div:first-of-type > ul > li > a:active,
 header#opt_header_five > div:first-of-type > ul > li > a:focus {
-    color: green;
+    color: #386591;
   }
   header#opt_header_five > div:first-of-type > .site__iconlink-phone {
     font-size: 14px;
@@ -1592,7 +1611,7 @@ header#opt_header_five > div:first-of-type > ul > li > a:focus {
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
-    background-color: green;
+    background-color: #386591;
     opacity: 0.8;
     transition: opacity 0.1s;
     color: #fff;
@@ -1641,18 +1660,18 @@ header#opt_header_five > div:first-of-type > .site__button-quote:focus {
   header#opt_header_five .inner_div > nav > ul > li > a:hover,
 header#opt_header_five .inner_div > nav > ul > li > a:active,
 header#opt_header_five .inner_div > nav > ul > li > a:focus {
-    background-color: green;
+    background-color: #386591;
     color: #fff;
   }
 }
 @media only screen and (min-width: 1280px) {
   header#opt_header_six {
     padding: 0px;
-    background-color: green;
+    background-color: #386591;
   }
   header#opt_header_six > div:first-of-type {
     display: flex;
-    background-color: green;
+    background-color: #386591;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -1737,12 +1756,12 @@ header#opt_header_six > div:first-of-type .site__iconlink-address:before {
   header#opt_header_six > div:last-of-type .navlinks-item-link:hover,
 header#opt_header_six > div:last-of-type .navlinks-item-link:active,
 header#opt_header_six > div:last-of-type .navlinks-item-link:focus {
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #386591;
   }
   header#opt_header_six > div:last-of-type .site__button-quote {
     padding: 10px 20px;
     border-radius: 20px;
-    background-color: green;
+    background-color: #386591;
     color: #fff;
   }
   header#opt_header_six div:first-of-type > a:first-of-type,
@@ -1789,7 +1808,7 @@ header#opt_header_six .site__button-quote:focus {
     padding: 0 15px;
     line-height: 85px;
     display: inline-block;
-    color: green;
+    color: #386591;
   }
   header#opt_header_seven > div > div,
 header#opt_header_seven > div > span {
@@ -1809,7 +1828,7 @@ header#opt_header_seven > div > span {
   header#opt_header_seven > div > .site__iconlink-phone:before {
     transform: rotate(90deg);
     margin-right: 10px;
-    color: green;
+    color: #386591;
   }
   header#opt_header_seven > nav {
     display: flex;
@@ -1830,7 +1849,7 @@ header#opt_header_seven > div > span {
     bottom: 0;
     height: 2px;
     width: 100%;
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #386591;
   }
   header#opt_header_seven > nav > ul {
     list-style: none;
@@ -1906,7 +1925,7 @@ header#opt_header_seven > div > span {
     left: 0px;
     bottom: 0px;
     content: "";
-    background: green;
+    background: #386591;
     transition: height 0.3s;
     z-index: -1;
   }
@@ -1926,12 +1945,12 @@ header#opt_header_eight > div > nav > ul > li > a:focus:before {
     padding: 0px;
   }
   header#opt_header_nine .outer_div {
-    background-color: green;
+    background-color: #386591;
   }
   header#opt_header_nine .inner_div {
     max-width: 1050px;
     margin: 0 auto;
-    background-color: green;
+    background-color: #386591;
     height: 50px;
     display: flex;
     align-items: center;
@@ -2108,7 +2127,7 @@ header#opt_header_ten > div:first-of-type > ul > li > a {
 header#opt_header_ten > div:first-of-type > ul > li > a:hover,
 header#opt_header_ten > div:first-of-type > ul > li > a:active,
 header#opt_header_ten > div:first-of-type > ul > li > a:focus {
-    color: green;
+    color: #386591;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -2844,8 +2863,8 @@ section#banner_popup .popup_close {
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
     color: #fff;
-    background-color: green;
-    border-bottom: 1px solid green;
+    background-color: #386591;
+    border-bottom: 1px solid #386591;
   }
   section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
     color: #484848;
@@ -2877,7 +2896,7 @@ section#banner_popup .popup_close {
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery {
     color: #fff;
-    background-color: green;
+    background-color: #386591;
     border: 2px solid transparent;
   }
   section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
@@ -2916,7 +2935,7 @@ section#banner_popup .popup_close {
     transition: color 0.3s ease-in-out;
   }
   section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery {
-    color: green;
+    color: #386591;
     background-color: #fff;
     border-bottom: 3px solid transparent;
   }
@@ -3426,9 +3445,9 @@ section#mod_gallery > #standard_gallery .image {
   section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a.active_menu_link,
 section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:active,
 section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:focus {
-    background-color: green;
+    background-color: #386591;
     color: #fff;
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #386591;
   }
   section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:hover {
     background-color: #c2c2c2;
@@ -3460,8 +3479,8 @@ section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:focus {
     color: #c2c2c2;
   }
   section#mod_menu > #tabs_pills #menu_tabs > h4 > a.active_menu_link, section#mod_menu > #tabs_pills #menu_tabs > h4 > a:active, section#mod_menu > #tabs_pills #menu_tabs > h4 > a:focus {
-    border: 2px solid green;
-    background-color: green;
+    border: 2px solid #386591;
+    background-color: #386591;
     color: #fff;
   }
   section#mod_menu > #tabs_pills #menu_tabs > h4 > a:hover {
@@ -3597,7 +3616,7 @@ section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li >
     font-size: 26px;
     font-weight: 700;
     justify-content: space-between;
-    border-bottom: 3px solid green;
+    border-bottom: 3px solid #386591;
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
@@ -3630,7 +3649,7 @@ section#mod_menu > #tabs_side_menu .menu_photo_list .menu_header,
 section#mod_menu > #tabs_pills .menu_text_list_center .menu_header,
 section#mod_menu > #tabs_pills .menu_photo_list .menu_header {
     text-align: center;
-    border-bottom: 3px solid green;
+    border-bottom: 3px solid #386591;
     margin-bottom: 30px;
   }
   section#mod_menu > #tabs_side_menu .menu_text_half .menu_header,
@@ -3657,7 +3676,7 @@ section#mod_menu > #tabs_pills .menu_text_sub_group_half > div {
   }
   section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header,
 section#mod_menu > #tabs_pills .menu_text_list_left .menu_header {
-    border-bottom: 5px dotted green;
+    border-bottom: 5px dotted #386591;
     margin-bottom: 30px;
   }
   section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header > h2,
@@ -3752,7 +3771,7 @@ section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div > p:
   section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_header,
 section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_header {
     text-align: center;
-    border-bottom: 3px solid green;
+    border-bottom: 3px solid #386591;
     margin-bottom: 30px;
   }
   section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items,

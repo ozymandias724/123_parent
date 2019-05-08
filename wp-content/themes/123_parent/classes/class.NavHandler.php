@@ -95,6 +95,13 @@ class NavHandler
             ';
         }
 
+        $header_1_phone = '';
+        if( !empty($phone_number_1) ){
+            $header_1_phone .= '
+                <a href="javascript:;" class="site__iconlink site__iconlink-phone"><div>CALL US TODAY:<br/><span>'.$phone_number_1.'</span></div></a>
+            ';
+        }
+
         // needsfix
         $quotebtn_txt = $popups['banner']['bar_text'];
         if( !empty($quotebtn_txt) ){
@@ -195,7 +202,7 @@ class NavHandler
             ,$fadenav
             ,$content_logo
             ,$site__iconlink_location_br
-            ,$site__iconlink_phone
+            ,$header_1_phone 
             ,_get_site_nav()
             ,_get_social_icons()
         );
