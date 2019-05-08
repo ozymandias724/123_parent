@@ -22,19 +22,6 @@ Theme.Slick = {
 }
 Theme.Slick._init();
 
-Theme.Location = {
-    header_3_address_br : $("#opt_header_three .site__iconlink-address br"),
-    header_5_address_br : $("#opt_header_five .site__iconlink-address br"),
-    header_6_address_br : $("#opt_header_six .site__iconlink-address br"),
-    header_9_address_br : $("#opt_header_nine .site__iconlink-address br"),
-    _init : function(){
-        Theme.Location.header_3_address_br.replaceWith(", ");
-        Theme.Location.header_5_address_br.replaceWith(", "); 
-        Theme.Location.header_6_address_br.replaceWith(", "); 
-        Theme.Location.header_9_address_br.replaceWith(", "); 
-    },
-}
-Theme.Location._init();
 
 Theme.CookieMonster = {
     _init: function () {
@@ -44,7 +31,7 @@ Theme.CookieMonster = {
 
             // if there's no cookies ie. first time on the site
             if (Theme.CookieMonster._cookieExists('ad_notset') == false && Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_firsttime') == false) {
-                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false);
+                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false); 
             }
             // if the other cookies don't exist then listen for the expiration of the firstitme cookie
             if (Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_notset') == false) {
