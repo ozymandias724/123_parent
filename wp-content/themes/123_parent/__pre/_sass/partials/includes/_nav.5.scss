@@ -2,6 +2,7 @@
     //Header 5
     header#opt_header_five {
         padding: 0px;
+        background-color: $black;
         //Top part of the header (social icons, address, phone number and quote button)
         > div:first-of-type {
             background-color: $black;
@@ -9,8 +10,9 @@
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-            padding: 0 5%;
             height: 50px;
+            max-width: $max_width;
+            margin: 0 auto;
             //Social icons items list
             > ul {
                 list-style: none;
@@ -90,19 +92,22 @@
             }
         }
         // Bottom bar of the header (logo and navigational menu)
-        >div:last-of-type {
+        .outer_div {
             background-color: $white;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        }
+        .inner_div {
+            background-color: $white;
             display: flex;
             align-items: center;
             flex-flow: row nowrap;
             justify-content: space-between;
-            padding: 0 5%;
+            max-width: $max_width;
+            margin: 0 auto;
             height: 110px;
             //Logo 
             > .custom-logo-link {
                 line-height: 100px;
-                margin-left: -15px;
                 padding: 10px;
                 > .custom-logo {
                     max-height: 90px;

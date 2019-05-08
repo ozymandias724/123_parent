@@ -64,74 +64,30 @@ class NavHandler
         $company_info = get_field('company_info','options');
         // get company info fields
         
-        $company_address = _get_full_address_br();
-        $phone_number_1 = ($company_info['phone_number_1'] ? $company_info['phone_number_1'] : '');
-        $phone_number_2 = ($company_info['phone_number_2'] ? $company_info['phone_number_2'] : '');
-        $company_email = ($company_info['email'] ? $company_info['email'] : '');
+        $company_address_br = _get_full_address_br();
+        $company_address = _get_full_address();
+        $phone_number_1 = _get_phone_number_1();
+        $phone_number_2 = _get_phone_number_2();
+        $company_email = _get_email();
         
         // check for social media Icons
         $social_media = ($company_info['social_media'] ? $company_info['social_media'] : '');
-        $content_social_icons = '';
-        // if we have social media icons
-        if( !empty($company_info['social_media']) ){
-            $content_social_icons .= '<ul class="site__social-media">';
-            $format_social_icons = '
-                <li>
-                    <a href="%s" title="Social icon button">
-                        %s
-                    </a>
-                </li>
-            ';
-            foreach( $company_info['social_media'] as $social_icon ){
-                $url = $social_icon['url'] ;
-                $img = $social_icon['image'];
-                $fa = $social_icon['icon'];
-                $custom_png_url = '';
-                // we have a preconfigured URL
-                if( strpos($url, 'booksy') ){
-                    $custom_png_url = get_template_directory_uri() . '/library/img/social_icons/booksy.png';
-                }
-                if( strpos($url, 'groupon') ){
-                    $custom_png_url = get_template_directory_uri() . '/library/img/social_icons/groupon.png';
-                }
-                if( strpos($url, 'pinterest') ){
-                    $custom_png_url = get_template_directory_uri() . '/library/img/social_icons/pinterest.png';
-                }
-                if( !empty($custom_png_url) ){
-                    $icon_url = $custom_png_url;
-                } else {
-                    // we have img
-                    if( !empty($img) ){
-                        $icon_url = $img;
-                    }
-                    // img is empty, we have fa
-                    else if( !empty($fa) ){
-                        $icon_url = '';
-                        $fa_icon = '<i class="fab '.$fa.'"></i>';
-                    }
-                    // img and fa are empty
-                    // something went wrong...
-                    else {
-                        $icon_url = '';
-                    }
-                }
-                if( !empty($url) ){
-                    $content_social_icons .= sprintf(
-                        $format_social_icons
-                        ,$url
-                        ,( !empty($icon_url) ) ? '<img src="'.$icon_url.'">' : $fa_icon
-                    );
-                }
-            }
-            $content_social_icons .= '</ul>';
-        }
         
+        
+        $site__iconlink_location_br = '';
+        if( !empty($company_address_br) ){
+            $site__iconlink_location_br .= '
+                <a href="javascript:;" title="" class="site__iconlink site__iconlink-address">'.$company_address_br.'</a>
+            ';
+        }
+
         $site__iconlink_location = '';
         if( !empty($company_address) ){
             $site__iconlink_location .= '
                 <a href="javascript:;" title="" class="site__iconlink site__iconlink-address">'.$company_address.'</a>
             ';
         }
+
         $site__iconlink_phone = ''; 
         if( !empty($phone_number_1) ){
             $site__iconlink_phone .= '
@@ -229,8 +185,8 @@ class NavHandler
                 <div>
                     <nav>
                         %s  
+                        %s
                     </nav>
-                    %s
                 </div>
             </header>
         ';
@@ -238,10 +194,10 @@ class NavHandler
             $format_header
             ,$fadenav
             ,$content_logo
-            ,$site__iconlink_location
+            ,$site__iconlink_location_br
             ,$site__iconlink_phone
             ,_get_site_nav()
-            ,$content_social_icons
+            ,_get_social_icons()
         );
         /**
          * 
@@ -317,10 +273,12 @@ class NavHandler
          */
         $format_header = '
             <header class="%s %s header" id="opt_header_four">
-                <div>
-                    %s
-                    %s
-                    %s
+                <div class="outer_div">
+                    <div class="inner_div">
+                        %s
+                        %s
+                        %s
+                    </div>
                 </div>
                 <nav>
                     %s
@@ -331,7 +289,7 @@ class NavHandler
             $format_header
             ,$invertlogo
             ,$fadenav
-            ,$content_social_icons
+            ,_get_social_icons()
             ,get_custom_logo()
             ,$site__iconlink_phone
             ,_get_site_nav()
@@ -355,18 +313,20 @@ class NavHandler
                     %s
                     %s
                 </div>
-                <div> 
-                    %s
-                    <nav>
+                <div class="outer_div">
+                    <div class="inner_div"> 
                         %s
-                    </nav>
+                        <nav>
+                            %s
+                        </nav>
+                    </div>
                 </div>
             </header>
         ';
         $this->header_five = sprintf(
             $format_header
             ,$fadenav
-            ,$content_social_icons
+            ,_get_social_icons()
             ,$site__iconlink_location
             ,$site__iconlink_phone
             ,$quickquote
@@ -392,11 +352,11 @@ class NavHandler
                     %s
                 </div>
                 <div>
-                    %s
                     <nav>
                         %s
+                        %s
+                        %s
                     </nav>
-                    %s
                 </div>
             </header>
         ';
@@ -405,7 +365,7 @@ class NavHandler
             ,$fadenav
             ,$site__iconlink_phone
             ,$site__iconlink_location
-            ,$content_social_icons
+            ,_get_social_icons()
             ,get_custom_logo()
             ,_get_site_nav()
             ,$quickquote
@@ -436,7 +396,7 @@ class NavHandler
         $this->header_seven = sprintf(
             $format_header
             ,$fadenav
-            ,$content_social_icons
+            ,_get_social_icons()
             ,get_custom_logo()
             ,$site__iconlink_phone
             ,_get_site_nav()
@@ -481,17 +441,21 @@ class NavHandler
          */
         $format_header = '
         <header class="%s header" id="opt_header_nine">
-            <div>
-                %s
-                %s
-                %s
+            <div class="outer_div">
+                <div class="inner_div">
+                    %s
+                    %s
+                    %s
+                </div>
             </div>
             <div>
-                %s
-                <nav>
+                <div class="inner_div">
                     %s
-                </nav>
-                %s
+                    <nav>
+                        %s
+                    </nav>
+                    %s
+                </div>
             </div>
         </header>
         ';
@@ -500,7 +464,7 @@ class NavHandler
             ,$fadenav
             ,$site__iconlink_phone
             ,$site__iconlink_location
-            ,$content_social_icons
+            ,_get_social_icons()
             ,get_custom_logo()
             ,_get_site_nav()
             ,$quickquote
@@ -536,7 +500,7 @@ class NavHandler
             ,$fadenav
             ,$hamburger_icon
             ,get_custom_logo()
-            ,$content_social_icons
+            ,_get_social_icons()
             ,_get_site_nav()
             ,$site__iconlink_phone
         ); 

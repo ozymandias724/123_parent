@@ -23,6 +23,87 @@ include_once('classes/class.Customizer.php');
 
 include_once('classes/class.NavHandler.php');
 
+function _print_c($data)
+{
+	echo '<pre style="font-size:20px;">'.print_r($data, true).'</pre>';
+}
+
+function _get_phone_number_1()
+{
+	$company_info = get_field('company_info','options');
+	return (!empty($company_info['phone_number_1']) ? $company_info['phone_number_1'] : '');
+}
+
+function _get_phone_number_2()
+{
+	$company_info = get_field('company_info','options');
+	return (!empty($company_info['phone_number_2']) ? $company_info['phone_number_2'] : '');
+}
+
+function _get_email()
+{
+	return (!empty($company_info['email']) ? $company_info['email'] : '');
+}
+
+function _get_social_icons()
+{
+	$company_info = get_field('company_info','options');
+	$content_social_icons = '';
+        // if we have social media icons
+	if( !empty($company_info['social_media']) ){
+		$content_social_icons .= '<ul class="site__social-media">';
+		$format_social_icons = '
+			<li>
+				<a href="%s" title="Social icon button">
+					%s
+				</a>
+			</li>
+		';
+		foreach( $company_info['social_media'] as $social_icon ){
+			$url = $social_icon['url'] ;
+			$img = $social_icon['image'];
+			$fa = $social_icon['icon'];
+			$custom_png_url = '';
+			// we have a preconfigured URL
+			if( strpos($url, 'booksy') ){
+				$custom_png_url = get_template_directory_uri() . '/library/img/social_icons/booksy.png';
+			}
+			if( strpos($url, 'groupon') ){
+				$custom_png_url = get_template_directory_uri() . '/library/img/social_icons/groupon.png';
+			}
+			if( strpos($url, 'pinterest') ){
+				$custom_png_url = get_template_directory_uri() . '/library/img/social_icons/pinterest.png';
+			}
+			if( !empty($custom_png_url) ){
+				$icon_url = $custom_png_url;
+			} else {
+				// we have img
+				if( !empty($img) ){
+					$icon_url = $img;
+				}
+				// img is empty, we have fa
+				else if( !empty($fa) ){
+					$icon_url = '';
+					$fa_icon = '<i class="fab '.$fa.'"></i>';
+				}
+				// img and fa are empty
+				// something went wrong...
+				else {
+					$icon_url = '';
+				}
+			}
+			if( !empty($url) ){
+				$content_social_icons .= sprintf(
+					$format_social_icons
+					,$url
+					,( !empty($icon_url) ) ? '<img src="'.$icon_url.'">' : $fa_icon
+				);
+			}
+		}
+		$content_social_icons .= '</ul>';
+	}
+	return $content_social_icons;
+}
 
 function _get_full_address_br(){
 	$company_info = get_field('company_info','options');
@@ -48,6 +129,32 @@ function _get_full_address_br(){
 		// ,$country
 	);
 	return $full_address_br; 
+}
+
+function _get_full_address(){
+	$company_info = get_field('company_info','options');
+        
+	$location = ($company_info['location'] ? $company_info['location'] : '');
+
+	$street_1 = $location['address_street'];
+	$street_2 = $location['address_street_2'];
+	$city = $location['address_city'];
+	$state = $location['address_state'];
+	$postcode = $location['address_postcode'];
+	$country = $location['address_country'];
+
+	$format_full_address = '%s %s, %s, %s, %s'; 
+
+	$full_address = sprintf(
+		$format_full_address
+		,$street_1
+		,$street_2
+		,$city
+		,$state
+		,$postcode
+		// ,$country
+	);
+	return $full_address; 
 }
 
 

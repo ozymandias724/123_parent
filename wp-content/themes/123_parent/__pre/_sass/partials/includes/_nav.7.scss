@@ -3,7 +3,7 @@
     header#opt_header_seven {
         background-color: $white;
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-        padding: 0 5%;
+        padding: 0;
         // Top part of header
         > div {
             display: flex;
@@ -12,6 +12,8 @@
             color: $black;
             height: 110px;
             align-items: center;
+            max-width: $max_width;
+            margin: 0 auto;
             //Social icons unordered list 
             > ul {
                 display: flex;
@@ -57,6 +59,8 @@
             text-transform: uppercase;
             font-weight: 500;
             height: 50px;
+            max-width: $max_width;
+            margin: 0 auto;
             //Line above navigational menu and below logo
             &:before {
                 content: "";

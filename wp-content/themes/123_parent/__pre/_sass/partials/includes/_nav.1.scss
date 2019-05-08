@@ -3,27 +3,29 @@
     //Header 1
     header#opt_header_one {
         position: relative;
-        padding: 0 0 0 0;
+        padding: 0;
+        background-color: $black;
     } 
     
     // Header 1 top part
     header#opt_header_one>div:first-of-type {
         background-color: $nav_1_top_bar_background;
         color: $nav_1_top_bar_text;
-        padding: 0 5%;
+        max-width: $max_width;
         display: flex;
         align-items: center;
         height: 110px;
+        margin: 0 auto;
         // Header logo
         .header-logo {
             height: 100%;
-            padding: 10px 0;
+            padding: 10px;
             img {
                 max-height: 100%; 
             }
         }
 
-        > a:nth-of-type(2) {
+        .site__iconlink-address {
             margin-left: auto;
         }
 
@@ -72,26 +74,23 @@
 
     //Bottom part of header one
     header#opt_header_one>div:last-of-type { 
-        padding: 0 5%;
         height: 50px;
         background-color: $nav_1_bottom_bar_background;
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        width:100%;
         display: flex;
-        width: 100%;
         //Navigational menu
         >nav {
             align-items: center;
             display: flex;
             flex: 1 0 85%;
             text-transform: uppercase;
-        }
-        //Nav menu unordered list 
-        > nav > ul {
-            margin-left: -10px;
+            max-width: $max_width;
+            margin: 0 auto;
         }
 
         //Navigational menu links
-        >nav>ul>li>a {
+        .navlinks-item-link {
             display: inline-block;
             font-weight: 500;
             color: $nav_1_menu_text;
@@ -100,9 +99,9 @@
         }
 
         //Navigational menu actions on hover, active and focus
-        >nav>ul>li>a:hover,
-        >nav>ul>li>a:active,
-        >nav>ul>li>a:focus {
+        .navlinks-item-link:hover,
+        .navlinks-item-link:active,
+        .navlinks-item-link:focus {
             background-color: $accent;
             color: white;
         }
@@ -113,7 +112,7 @@
         }
 
         //Social icons underordered list 
-        >ul {
+        .site__social-media {
             flex: 1 0 auto;
             list-style: none;
             flex-wrap: nowrap;
@@ -124,15 +123,15 @@
         }
 
         //Social icons list items
-        >ul>li {
+        .site__social-media li {
             margin-right: 10px;
         }
-        >ul>li:last-of-type {
+        .site__social-media li:last-of-type {
             margin-right: 0;
         }
 
         //Social icons list items links
-        >ul>li>a {
+        .site__social-media a {
             padding: 0 10px;
             transition: color 0.3s;
             font-size: 16px;
@@ -142,14 +141,14 @@
         }
 
         //Social icons list items actions on hover, active and focus
-        >ul>li>a:hover,
-        >ul>li>a:active,
-        >ul>li>a:focus {
+        .site__social-media a:hover,
+        .site__social-media a:active,
+        .site__social-media a:focus {
             color: $accent;
         }
 
         //Last social icon list item
-        >ul>li:last-of-type {
+        .site__social-media li:last-of-type {
             padding-right: 0;
         }
     }

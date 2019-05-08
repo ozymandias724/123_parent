@@ -1,6 +1,9 @@
 @media only screen {
     header#opt_header_three {
-        padding: 0 5%;
+        max-width: $max_width;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0;
         //Top part of header
         > div:first-of-type {
             background-color: $accent;
@@ -8,7 +11,6 @@
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
-            padding: 0 3.5%;
             height: 50px;
             //Section of address and phone number
             > span { 
@@ -31,7 +33,6 @@
                 color: $nav_3_top_bar_text;
                 line-height: 50px;
                 display: inline-block;
-                margin-right: 26%;
             }
             //Links of address and phone number actions on hover, active and focus
             > span a:hover, 
@@ -74,7 +75,6 @@
         > div:last-of-type {
             background-color: white;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-            padding: 0 3.5%;
             display: flex;
             justify-content: space-between;
             align-items: center;

@@ -1,9 +1,13 @@
 @media only screen {
     header#opt_header_four {
         padding: 0px;
+        .outer_div {
+            background-color: $black;
+        }
         //Top part of header
-        > div {
-            padding: 0 5%;
+        .inner_div {
+            max-width: $max_width;
+            margin: 0 auto;
             background-color: $black;
             display: flex;
             flex-flow: row nowrap;
@@ -74,7 +78,8 @@
         }
         // Nav bar
         > nav {
-            padding: 0 10%;
+            margin: 0 auto;
+            max-width: $max_width;
             height: 50px;
             //Navigational menu unordered list
             > ul {

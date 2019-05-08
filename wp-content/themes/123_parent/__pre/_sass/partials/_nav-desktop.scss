@@ -24,8 +24,6 @@ $nav_6_top_bar_text : #fff;
 $nav_6_menu_text : #000;
 $nav_6_quote_button_text: #fff;
 
-
-
 $gray_one : #c2c2c2;
 $gray_two : #484848; 
 $gray_three : #aaabad; 
@@ -47,7 +45,7 @@ $blue_infinity_carpet : #1a69a0;
 $prestige_painters : #e91d62;
 $gray: #909090;
 $blue_darker : #257d87;
-$nav_maxwidth : 1280px; 
+$max_width : 1050px; 
 $banner_height : 52px;
 $bp__lg : 1280px;
 
@@ -180,11 +178,12 @@ $bp__lg : 1280px;
         overflow-x: hidden;
         padding-top: 60px;
         transform: translateX(-100%);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-
+        transition: transform 0.25s ease, box-shadow 0.25s ease; 
+        opacity: 0;
         // First div element in sidebar when sidebar menu has the above class
         &.header_sidebar_cover_all {
             position: fixed;
+            opacity: 1;
             transform: translateX(0%);
             box-shadow: -6px 0px 25px 0px $black;
         }

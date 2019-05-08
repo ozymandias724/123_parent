@@ -1,7 +1,8 @@
 @media only screen {
     // Menu Area for Tabs Style Side Menu
     section#mod_menu > #tabs_side_menu{
-        padding: 0 5%;
+        margin: 0 auto;
+        max-width: $max_width;
         display: flex;
         flex-flow: column nowrap;
         // Menu tabs
@@ -37,7 +38,8 @@
     }
     // Menu with Tabs Pills
     section#mod_menu > #tabs_pills {
-        padding: 0 1%;
+        max-width: $max_width;
+        margin: 0 auto;
         display: flex;
         flex-flow: column nowrap;
         // Tabs
@@ -79,6 +81,7 @@
     // Common CSS for different Menu Tabs Styles
     section#mod_menu > #tabs_side_menu,
     section#mod_menu > #tabs_pills {
+        padding: 0 3%;
         // Common CSS for the different Menu Styles
         .menu_text_half, 
         .menu_text_list_left,
@@ -470,27 +473,20 @@
             @include gridLayout($w, $c, $g, $s);
         }
     }
-    section#mod_menu > #tabs_pills {
-        padding: 0 10%;
-    }
 }
 
-@media only screen and (min-width: $nav_maxwidth){
-    // Menu 
-    section#mod_menu {
-        // Menu Content
-        .menu_content {
-            padding: 0 10px;
-        }
+@media only screen and (min-width: 1280px){
+    section#mod_menu > #tabs_side_menu, 
+    section#mod_menu > #tabs_pills {
+        padding: 0;
     }
 }
 
 @media only screen and (min-width: 1600px){
-    // Menu 
     section#mod_menu > #tabs_side_menu {
         // Menu style of Photo Tiled x3 menu items
         .menu_photo_tiled_x3 .menu_items {
-            $w : 70vw;
+            $w : 42vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;
@@ -505,7 +501,7 @@
     section#mod_menu > #tabs_pills {
         // Menu style of Photo Tiled x3 menu items
         .menu_photo_tiled_x3 .menu_items {
-            $w : 70vw;
+            $w : 55vw;
             $c : 3;
             $g : 1.5vw;
             $s : true;

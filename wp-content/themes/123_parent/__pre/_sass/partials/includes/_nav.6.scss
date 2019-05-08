@@ -2,6 +2,7 @@
     //Header 6
     header#opt_header_six {
         padding: 0px;
+        background-color: $accent;
         //First div element, parent of address and phone number section and social icons section
         > div:first-of-type {
             display: flex;
@@ -10,10 +11,11 @@
             justify-content: space-between;
             align-items: center;
             height: 50px;
-            padding: 0 5%;
+            max-width: $max_width;
+            margin: 0 auto;
             // Address and Phone number
-            > a:first-of-type,
-            > a:nth-of-type(2) {
+            .site__iconlink-phone,
+            .site__iconlink-address {
                 color: $white;
                 margin-right: 10px;
                 font-size: 16px;
@@ -28,26 +30,26 @@
                 }
             }
             // Address
-            > a:nth-of-type(2) {
+            .site__iconlink-address {
                 margin-right: auto;
             }
             //Social icons unordered list
-            > ul {
+            .site__social-media {
                 list-style: none;
             }
             //Social icons unordered list items 
-            > ul > li {
+            .site__social-media > li {
                 font-size: 16px;
                 color: white;
                 display: inline-block;
                 margin-right: 10px;
             }
             // Last social icon
-            > ul > li:last-of-type {
+            .site__social-media > li:last-of-type {
                 margin-right: 0px;
             }
             //Social icons unordered list items links
-            > ul > li > a {
+            .site__social-media > li > a {
                 padding: 0 10px;
                 color: $header_icons_color;
                 line-height: 50px;
@@ -57,15 +59,13 @@
         //Bottom part including logo and navigational menu and quote button
         >div:last-of-type {
             background-color: white;
-            width: 100%;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 0 5%;
             height: 110px;
             //Logo link
-            > .custom-logo-link {
+            .custom-logo-link {
                 padding: 10px;
                 margin-right: auto;
                 margin-left: -10px; 
@@ -77,21 +77,23 @@
             > nav {
                 display: flex;
                 align-items: center;
+                width: 100%;
+                max-width: 1050px;
             }
             //Navigational menu unordered list
-            > nav > ul {
+            .navlinks {
                 list-style: none;
             }
             //Navigational menu unordered list items
-            > nav > ul > li {
+            .navlinks-item {
                 margin-right: 15px;
             }
             // Last menu link
-            > nav > ul > li:last-of-type {
+            .navlinks-item:last-of-type {
                 margin-right: 0;
             }
             //Navigational menu unordered list items links
-            > nav > ul > li > a {
+            .navlinks-item-link {
                 padding: 0 10px;
                 border-bottom: 2px solid rgba(233, 29, 98, 0);
                 color: $nav_6_menu_text;
@@ -99,13 +101,13 @@
                 display: inline-block;
             }
             //Navigational menu unordered list items links actions on hover, active and focus
-            > nav > ul > li > a:hover,
-            > nav > ul > li > a:active, 
-            > nav > ul > li > a:focus {
+            .navlinks-item-link:hover,
+            .navlinks-item-link:active, 
+            .navlinks-item-link:focus {
                 border-bottom: 2px solid $accent;
             }
             //Quote button link
-            > a:last-of-type {
+            .site__button-quote {
                 padding: 10px 20px;
                 border-radius: 20px;
                 background-color: $accent;
@@ -116,9 +118,9 @@
         div:first-of-type> a:first-of-type,
         div:first-of-type> a:nth-of-type(2),
         //Social icons unordered list items links
-        div:first-of-type>ul>li>a,
+        .site__social-media > li > a,
         //Quote button link
-        div:last-of-type>a:last-of-type {
+        .site__button-quote {
             opacity: $opacity_level_below_one;
             transition: opacity 0.3s;
             &:hover,

@@ -2,9 +2,13 @@
     //Header 9
     header#opt_header_nine {
         padding: 0px;
+        .outer_div {
+            background-color: $accent;
+        }
         //Top bar including (Address, phone number and social icons)
-        > div:first-of-type {
-            padding: 0 5%;
+        .inner_div {
+            max-width: $max_width;
+            margin: 0 auto;
             background-color: $accent;
             height: 50px;
             display: flex;
@@ -64,63 +68,67 @@
         //Bottom part including logo and navigational menu and quote button
         > div:last-of-type {
             background-color: $black_and_opacity_level_below_one;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            height: 110px;
-            //Logo link
-            > .custom-logo-link {
-                padding: 10px;
-                margin-right: auto;
-                > .custom-logo {
-                    max-height: 90px;
-                }
-            }
-            
-            //Navigational menu 
-            > nav {
+            .inner_div {
                 display: flex;
                 align-items: center;
-            }
-            //Navigational menu unordered list
-            > nav > ul {
-                list-style: none;
-            }
-            //Navigational menu unordered list items
-            > nav > ul > li {
-                margin-right: 20px;
-            }
-            > nav > ul > li:last-of-type {
-                margin-right: 0;
-            }
-            //Navigational menu unordered list items links
-            > nav > ul > li > a {
-                padding: 0;
-                border-bottom: 2px solid rgba(255, 255, 255, 0);
-                color: $white;
-                line-height: 50px;
-                display: inline-block;
-                text-transform: uppercase;
-            }
-            //Navigational menu unordered list items links actions on hover, active and focus
-            > nav > ul > li > a:hover,
-            > nav > ul > li > a:active,
-            > nav > ul > li > a:focus {
-                border-bottom: 2px solid rgba(255, 255, 255, 1);
-            }
-            //Quote button link
-            > a:last-of-type {
-                padding: 20px 30px;
-                border-radius: 10px;
-                border: 2px solid $white;
-                color: $white;
-                background-color: rgba(255, 255, 255, 0);
-                transition: color 0.3s, border 0.3s, background-color 0.3s;
-                //Quote button link actions on hover, active and focus
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: rgba(0, 0, 0, 0.2);
+                background-color: transparent;
+                height: 110px;
+                margin: 0 auto;
+                max-width: $max_width;
+                //Logo link
+                .custom-logo-link {
+                    padding: 10px;
+                    margin-right: auto;
+                    > .custom-logo {
+                        max-height: 90px;
+                    }
+                }
+                
+                //Navigational menu 
+                > nav {
+                    display: flex;
+                    align-items: center;
+                }
+                //Navigational menu unordered list
+                > nav > ul {
+                    list-style: none;
+                }
+                //Navigational menu unordered list items
+                > nav > ul > li {
+                    margin-right: 20px;
+                }
+                > nav > ul > li:last-of-type {
+                    margin-right: 0;
+                }
+                //Navigational menu unordered list items links
+                > nav > ul > li > a {
+                    padding: 0;
+                    border-bottom: 2px solid rgba(255, 255, 255, 0);
+                    color: $white;
+                    line-height: 50px;
+                    display: inline-block;
+                    text-transform: uppercase;
+                }
+                //Navigational menu unordered list items links actions on hover, active and focus
+                > nav > ul > li > a:hover,
+                > nav > ul > li > a:active,
+                > nav > ul > li > a:focus {
+                    border-bottom: 2px solid rgba(255, 255, 255, 1);
+                }
+                //Quote button link
+                .site__button-quote {
+                    padding: 20px 30px;
+                    border-radius: 10px;
+                    border: 2px solid $white;
+                    color: $white;
+                    background-color: rgba(255, 255, 255, 0);
+                    transition: color 0.3s, border 0.3s, background-color 0.3s;
+                    //Quote button link actions on hover, active and focus
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
                 }
             }
         }

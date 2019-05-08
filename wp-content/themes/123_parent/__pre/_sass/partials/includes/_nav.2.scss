@@ -8,6 +8,7 @@ $half_header_height : 50px;
         padding: 0px;
         justify-content: space-between;
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+        background-color: $third_black;
         //Select top and bottom part of header
         > div {
             display: flex;
@@ -15,7 +16,8 @@ $half_header_height : 50px;
             flex-flow: row nowrap;
             justify-content: space-around;
             background-color: $third_black;
-            padding: 0 $padding_left_and_right;
+            max-width: $max_width;
+            margin: 0 auto;
             height: 110px;
             // Logo 
             > .custom-logo-link {
