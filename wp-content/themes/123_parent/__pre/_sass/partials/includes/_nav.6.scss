@@ -1,3 +1,5 @@
+$max_width: 1200px;
+
 @media only screen {
     //Header 6
     header#opt_header_six {
@@ -18,15 +20,23 @@
             .site__iconlink-address {
                 color: $white;
                 margin-right: 10px;
-                font-size: 16px;
+                font-size: 13px;
                 padding: 0 10px;
                 color: $nav_6_top_bar_text;
                 line-height: 50px;
-                display: inline-block;
+                font-weight: 500;
+                display: flex;
                 // Icon
                 &:before {
                     font-size: 18px;
                     margin-right: 10px;
+                }
+            }
+            //Phone
+            .site__iconlink-phone {
+                letter-spacing: 0.5px;
+                &:before {
+                    transform: rotate(90deg);
                 }
             }
             // Address
@@ -78,7 +88,7 @@
                 display: flex;
                 align-items: center;
                 width: 100%;
-                max-width: 1050px;
+                max-width: $max_width;
             }
             //Navigational menu unordered list
             .navlinks {
@@ -86,48 +96,48 @@
             }
             //Navigational menu unordered list items
             .navlinks-item {
-                margin-right: 15px;
-            }
-            // Last menu link
-            .navlinks-item:last-of-type {
-                margin-right: 0;
+                margin-right: 20px;
             }
             //Navigational menu unordered list items links
             .navlinks-item-link {
-                padding: 0 10px;
-                border-bottom: 2px solid rgba(233, 29, 98, 0);
+                padding: 0; 
+                border-bottom: 3px solid rgba(233, 29, 98, 0);
                 color: $nav_6_menu_text;
-                line-height: 50px;
+                line-height: 40px;
                 display: inline-block;
+                font-size: 16px;
+                font-weight: 600;
+                text-transform: uppercase;
             }
             //Navigational menu unordered list items links actions on hover, active and focus
             .navlinks-item-link:hover,
             .navlinks-item-link:active, 
             .navlinks-item-link:focus,
             .active_menu_link {
-                border-bottom: 2px solid $accent;
+                border-bottom: 3px solid $accent;
             }
             //Quote button link
             .site__button-quote {
-                padding: 10px 20px;
-                border-radius: 20px;
+                padding: 15px 25px;
+                border-radius: 30px;
                 background-color: $accent;
                 color: $nav_6_quote_button_text;
+                font-size: 16px;
+                font-weight: 700;
             }            
         }
         //Phone number and address links
-        div:first-of-type> a:first-of-type,
-        div:first-of-type> a:nth-of-type(2),
+        .site__iconlink-phone,
+        .site__iconlink-address,
         //Social icons unordered list items links
         .site__social-media > li > a,
         //Quote button link
         .site__button-quote {
-            opacity: $opacity_level_below_one;
             transition: opacity 0.3s;
             &:hover,
             &:active,
             &:focus {
-                opacity: 1;
+                opacity: 0.8;
             }
         }
     }

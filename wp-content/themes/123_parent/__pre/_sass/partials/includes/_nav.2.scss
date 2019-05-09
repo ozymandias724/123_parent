@@ -46,7 +46,7 @@ $half_header_height : 50px;
                 margin-bottom: 5px;
                 //Phone number link icon
                 > i {
-                    font-size: 20px;
+                    display: none;
                 }
             }
             //Menu items navigation element
@@ -69,6 +69,7 @@ $half_header_height : 50px;
                 border-radius: 4px;
                 text-align: center;
                 padding: 15px 20px;
+                font-weight: 600;
             }
         }
         //Phone number
@@ -77,14 +78,13 @@ $half_header_height : 50px;
         > div > div > nav > ul > li > a,
         //Quote button link
         > div > a:last-of-type {
-            opacity: $opacity_level_below_one;
             transition: opacity 0.3s;
             //Actions on hover, focus and active of selected elements links above
             &:hover,
             &:focus,
             &:active,
             .active_menu_link {
-                opacity: 1;
+                opacity: 0.8;
             }
         }
     }

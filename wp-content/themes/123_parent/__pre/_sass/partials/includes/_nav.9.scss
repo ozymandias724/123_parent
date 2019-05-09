@@ -1,3 +1,5 @@
+$max_width: 1200px;
+
 @media only screen {
     //Header 9
     header#opt_header_nine {
@@ -10,14 +12,18 @@
             max-width: $max_width;
             margin: 0 auto;
             background-color: $accent;
-            height: 50px;
+            height: 40px;
             display: flex;
             align-items: center;
             //Address and phone number link 
+            > .site__iconlink,
+            .site__social-media a {
+                line-height: 40px;
+            }
             > .site__iconlink {
                 padding: 0 10px;
-                line-height: 50px;
                 color: $white;
+                font-size: 1.2rem;
                 // Icons
                 &:before {
                     margin-right: 10px;
@@ -25,9 +31,8 @@
             }
             // Phone, Address and Social Media links
             > .site__iconlink,
-            > ul > li > a {
+            .site__social-media a {
                 color: white;
-                opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
             }
             // Phone and Address links
@@ -35,13 +40,13 @@
             > .site__iconlink:active,
             > .site__iconlink:focus,
             // Social Media links
-            > ul > li > a:hover,
-            > ul > li > a:active,
-            > ul > li > a:focus {
-                opacity: 1;
+            .site__social-media a:hover,
+            .site__social-media a:active,
+            .site__social-media a:focus {
+                opacity: 0.8;
             }
             //Social icons unordered list
-            > ul {
+            .site__social-media {
                 list-style: none;
                 display: flex;
                 justify-content: space-between;
@@ -50,17 +55,16 @@
                 color: $white;
             }
             // Social icons list items
-            > ul > li {
-                margin-right: 10px;
+            .site__social-media li {
+                margin-right: 5px;
             }
             // Last social icon
-            > ul > li:last-of-type {
+            .site__social-media li:last-of-type {
                 margin-right: 0;
             }
             //Social icons unordered list items links
-            > ul > li > a {
+            .site__social-media a {
                 padding: 0 10px;
-                line-height: 50px;
                 display: inline-block;
                 color: $white;
             }
@@ -72,7 +76,7 @@
                 display: flex;
                 align-items: center;
                 background-color: transparent;
-                height: 110px;
+                height: 106px;
                 margin: 0 auto;
                 max-width: $max_width;
                 //Logo link
@@ -81,54 +85,56 @@
                     margin-right: auto;
                     > .custom-logo {
                         max-height: 90px;
+                        max-width: 225px;
                     }
                 }
-                
                 //Navigational menu 
                 > nav {
                     display: flex;
                     align-items: center;
                 }
                 //Navigational menu unordered list
-                > nav > ul {
+                .navlinks {
                     list-style: none;
                 }
                 //Navigational menu unordered list items
-                > nav > ul > li {
+                .navlinks-item {
                     margin-right: 20px;
                 }
-                > nav > ul > li:last-of-type {
+                .navlinks-item:last-of-type {
                     margin-right: 0;
                 }
                 //Navigational menu unordered list items links
-                > nav > ul > li > a {
+                .navlinks-item-link {
                     padding: 0;
                     border-bottom: 2px solid rgba(255, 255, 255, 0);
                     color: $white;
-                    line-height: 50px;
+                    line-height: 40px;
                     display: inline-block;
                     text-transform: uppercase;
                 }
                 //Navigational menu unordered list items links actions on hover, active and focus
-                > nav > ul > li > a:hover,
-                > nav > ul > li > a:active,
-                > nav > ul > li > a:focus,
+                .navlinks-item-link:hover,
+                .navlinks-item-link:active,
+                .navlinks-item-link:focus,
                 .active_menu_link {
                     border-bottom: 2px solid rgba(255, 255, 255, 1);
                 }
                 //Quote button link
                 .site__button-quote {
-                    padding: 20px 30px;
-                    border-radius: 10px;
+                    padding: 15px 25px;
+                    border-radius: 5px;
                     border: 2px solid $white;
                     color: $white;
+                    font-weight: 600;
                     background-color: rgba(255, 255, 255, 0);
                     transition: color 0.3s, border 0.3s, background-color 0.3s;
                     //Quote button link actions on hover, active and focus
                     &:hover,
                     &:active,
                     &:focus {
-                        background-color: rgba(0, 0, 0, 0.2);
+                        color: #606060;
+                        background-color: $white;
                     }
                 }
             }

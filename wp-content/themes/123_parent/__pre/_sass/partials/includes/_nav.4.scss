@@ -1,8 +1,11 @@
+$max_width : 1025px;
+
 @media only screen {
     header#opt_header_four {
         padding: 0px;
         .outer_div {
             background-color: $black;
+            height: 68px;  
         }
         //Top part of header
         .inner_div {
@@ -13,30 +16,28 @@
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
-            height: 110px;
             > .custom-logo-link {
                 padding: 10px;
                 > .custom-logo {
                     max-height: 90px;
                 }
             }
-            > ul {
-                height: 85px;
+            .site__social-media {
+                height: 68px;
             }
             //Social icons underordered list and phone number section
-            > ul, 
+            .site__social-media, 
             > span {
                 flex: 0 1 auto;
                 font-size: 1.6rem;
 
             }
             //Social icons list items
-            > ul > li {
+            .site__social-media li {
                 display: inline-block;
-                margin: 0 10px;
             }
             //Social icons list items links
-            > ul > li > a {
+            .site__social-media li a {
                 font-size: 16px;
                 border-radius: 50%;
                 display: inline-block;
@@ -45,12 +46,12 @@
                 overflow: hidden;
                 color: $white;
                 transition: color 0.3s;
-                line-height: 85px;
+                line-height: 68px;
             }
             //Social icons list items links actions on hover, active and focus 
-            > ul > li > a:hover,
-            > ul > li > a:active,
-            > ul > li > a:focus {
+            .site__social-media li a:hover,
+            .site__social-media li a:active,
+            .site__social-media li a:focus {
                 color: getVar($colors, primary);
             }
             //Phone number link
@@ -58,72 +59,78 @@
                 padding: 0 10px;
                 font-weight: 400;
                 font-size: 16px;
-                letter-spacing: 1px;
                 border-bottom: 1px solid transparent;
-                opacity: $opacity_level_below_one;
+                opacity: 1;
                 transition: opacity 0.3s;
                 color:$white;
-                line-height: 85px;
+                line-height: 68px;
                 display: inline-block;
+                font-weight: 500;
                 &:before {
                     margin-right: 10px;
+                    transform: rotate(90deg);
                 }
             }
             //Phone number link actions on hover, active and focus
             > .site__iconlink-phone:hover,
             > .site__iconlink-phone:active,
             > .site__iconlink-phone:focus {
-                opacity: 1;
+                opacity: 0.8;
             }
         }
         // Nav bar
         > nav {
             margin: 0 auto;
             max-width: $max_width;
-            height: 50px;
+            height: 56px;
             //Navigational menu unordered list
-            > ul {
+            .navlinks {
                 position: relative;
                 width: 100%;
                 background-color: getVar($colors, primary);
                 display: flex;
                 flex-flow: row nowrap;
-                justify-content: space-around;
+                justify-content: center;
             }
             //Navigational menu list items
-            > ul > li {
+            .navlinks-item {
                 flex: 0 1 auto;
                 display: inline-block;
                 vertical-align: middle;
             }
             //Navigational menu list items links 
-            > ul > li > a {
+            .navlinks-item-link {
                 text-decoration: none;
                 color: $nav_4_menu_text;
                 text-transform: uppercase;
-                padding: 0 10px; 
-                font-size: 13px;
-                line-height: 50px;
+                padding: 0px; 
+                font-size: 14px;
+                line-height: 56px;
                 letter-spacing: 1px;
-                opacity: $opacity_level_below_one;
+                opacity: 1;
                 display: inline-block;
+                margin-right: 20px; 
+                font-weight: 500;
+            }
+            .navlinks-item:last-of-type {
+                margin-right: 0;
             }
             //Navigational menu list items links actions on hover, active and focus
-            > ul > li > a:hover,
-            > ul > li > a:active,
-            > ul > li > a:focus,
+            .navlinks-item-link:hover,
+            .navlinks-item-link:active,
+            .navlinks-item-link:focus,
             .active_menu_link {
-                opacity: 1;
+                opacity: 0.8;
             }
             //Shapes before and after the navigational menu
-            > ul:before,
-            > ul:after {
+            .navlinks-item:before,
+            .navlinks-item:after {
                 content: "";
                 display: block;
                 position: absolute;
                 top: 0;
-                left: -70px;
-                width: 100px;
+                left: -30px;
+                width: 50px;
                 height: 100%;
                 flex: 1 0 auto;
                 top: 0;
@@ -132,10 +139,10 @@
                 z-index: -1;
             }
             //Shape after the navigational menu
-            > ul:after {
+            .navlinks-item:after {
                 transform: skewX(-37deg);
                 left: auto;
-                right: -70px;
+                right: -30px;
             }
         }
     }

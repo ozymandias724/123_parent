@@ -10,44 +10,63 @@
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
-            height: 50px;
+            height: 45px;
             max-width: $max_width;
             margin: 0 auto;
             //Social icons items list
-            > ul {
+            .site__social-media {
                 list-style: none;
                 display: flex;
                 margin-right: auto;
             }
             //Social icons items list items
-            > ul > li {
-                margin-right: 10px;
+            .site__social-media li {
+                margin-right: 5px;
+            }
+            .site__social-media li a,
+            > a,
+            > .site__button-quote {
+                line-height: 45px;
             }
             //Social icons list items links
-            > ul > li > a {
+            .site__social-media li a {
                 padding: 0 10px;
                 transition: color 0.3s;
                 color: $white;
                 display: inline-block;
-                line-height: 50px;
                 //Social icons list items icons
                 > i {
                     font-size: 16px;
                 }
+                &:hover,
+                &:active,
+                &:focus {
+                    opacity: 0.8;
+                }
             }
             // Immediate links in top part of header
             > a {
-                line-height: 50px;
                 padding: 0 15px;
             }
             //Address link
-            > a:first-of-type {
-                font-size: 14px;
+            .site__iconlink-address,
+            .site__iconlink-phone {
+                font-size: 13px;
                 transition: color 0.3s;
                 color: #fff;
+                font-weight: 500;
+                display: flex;
                 &:before {
                     margin-right:10px;
+                    color: $accent;
+                    font-size: 18px;
                 }
+            }
+            .site__iconlink-phone {
+                letter-spacing: 0.5px;
+            }
+            .site__iconlink-phone:before {
+                transform: rotate(180deg);
             }
             //Address link actions on hover, active and focus
             > .site__iconlink-address:hover,
@@ -60,19 +79,10 @@
             > .site__iconlink-phone:focus,
 
             //Social icons list items links actions on hover, active and focus
-            > ul > li > a:hover,
-            > ul > li > a:active,
-            > ul > li > a:focus {
-                color: $accent;
-            }
-            //Phone number link
-            > .site__iconlink-phone {
-                font-size: 14px;
-                transition: color 0.3s;
-                color: #fff;
-                &:before {
-                    margin-right: 10px;
-                }
+            .site__social-media > a:hover,
+            .site__social-media > a:active,
+            .site__social-media > a:focus {
+                opacity: 0.8;
             }
             //Quote button
             > .site__button-quote {
@@ -80,15 +90,17 @@
                 text-transform: uppercase;
                 font-weight: 500;
                 background-color: $accent;
-                opacity: $opacity_level_below_one;
+                opacity: 1;
                 transition: opacity 0.1s;
                 color: $nav_5_quote_button;
+                padding: 0 15px;
+                margin: 0;
             }
             //Quote button actions on hover, active and focus
             > .site__button-quote:hover, 
             > .site__button-quote:active,
             > .site__button-quote:focus {
-                opacity: 1;
+                opacity: 0.8;
             }
         }
         // Bottom bar of the header (logo and navigational menu)
@@ -104,37 +116,38 @@
             justify-content: space-between;
             max-width: $max_width;
             margin: 0 auto;
-            height: 110px;
+            height: 100px;
             //Logo 
             > .custom-logo-link {
                 line-height: 100px;
                 padding: 10px;
                 > .custom-logo {
                     max-height: 90px;
+                    max-width: 225px; 
                 }
             }
             //Navigational menu unordered list
-            > nav > ul {
+            .navlinks {
                 display: block;
             }
-            //Navigational menu unordered list items
-            > nav > ul > li {
-                margin-right: 0;
+            .navlinks-item {
+                margin-right: 0px;
             }
             //Navigational menu unordered list items links
-            > nav > ul > li > a {
+            .navlinks-item-link {
                 padding: 0 15px;
                 text-transform: uppercase;
-                font-weight: 500;
+                font-weight: 600;
+                font-size: 16px;
                 transition: color 0.1s, background-color 0.1s;
                 display: inline-block;
                 color: $nav_5_menu_text;
-                line-height: 110px;
+                line-height: 100px;
             }
             //Navigational menu unordered list items links actions on hover, active and focus
-            > nav > ul > li > a:hover, 
-            > nav > ul > li > a:active, 
-            > nav > ul > li > a:focus,
+            .navlinks-item-link:hover, 
+            .navlinks-item-link:active, 
+            .navlinks-item-link:focus,
             .active_menu_link { 
                 background-color: $accent;
                 color: $white;

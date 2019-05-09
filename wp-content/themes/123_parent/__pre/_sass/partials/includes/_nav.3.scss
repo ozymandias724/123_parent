@@ -1,3 +1,5 @@
+$max_width : 1200px;
+
 @media only screen {
     header#opt_header_three {
         max-width: $max_width;
@@ -10,28 +12,37 @@
             color: $white;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: space-around;
-            height: 50px;
+            height: 52px;
+            .site__iconlink:before {
+                font-size: 13px;
+                position: relative;
+                top: -1px;
+            }
+            .site__iconlink-phone:before {
+                transform: rotate(90deg);
+            }
             //Section of address and phone number
             > span { 
-                flex: 1 0 80%;
+                text-align: center;
+                margin-left: 40px;
+                display: flex;
+                align-items: center;
             } 
             //Address and phone number icon
             > span a:before {
                 color: $black;
-                margin-right: 10px;
-                font-size: 2rem;
+                margin-right: 20px; 
+                font-size: 16px;
                 transition: color 0.3s;
-                line-height: 50px;
             }
             //Links of address and phone number
             > span a {
-                font-size: 1.6rem;
+                font-size: 15px;
                 padding: 0 10px;
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
                 color: $nav_3_top_bar_text;
-                line-height: 50px;
+                line-height: 52px;
                 display: inline-block;
             }
             //Links of address and phone number actions on hover, active and focus
@@ -44,25 +55,32 @@
                     color: white;
                 }
             }
-            //Quick quote button icon
-            > .site__button-quote i {
-                color: getVar($colors, primary);
-                font-size: 2rem;
-                font-weight: bold;
-                position: relative;
-                top: 2px;
-                left: 5px;
-            }
             //Quick quote button 
             > .site__button-quote {
                 background-color: $black;
-                padding: 0 40px;
+                padding: 0 20px;
                 text-align: center;
-                font-size: 1.6rem;
+                font-size: 16px;
                 text-transform: uppercase;
                 transition: background-color 0.3s;
-                line-height: 50px;
+                line-height: 52px;
                 color: $white;
+                margin-right: 40px;
+                margin-left: auto;
+                display: flex;
+                &:after {
+                    color: $accent;
+                    margin-left: 10px;
+                    content: "\f105";
+                    font-size: 20px;
+                    display: inline-block;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                }
             }
             //Quick quote button actions on hover, active and focus
             > .site__button-quote:hover,
@@ -78,38 +96,41 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 110px;
+            height: 88px;
             > .custom-logo-link {
                 padding: 10px;
+                margin-left: 40px;
                 > .custom-logo {
-                    max-height: 90px;
+                    max-height: 75px;
                 }
             }
             // Nav menu unordered list
-            > ul {
-                height: 90px;
+            .navlinks {
+                height: 88px;
                 float: right;
+                margin-right: 40px;
             }
             //Navigational menu unordered list items 
-            > ul > li {
+            .navlinks-item {
                 font-size: 1.6rem;
                 text-transform: uppercase;
                 margin-right: 0;
             }
             //Navigational menu unordered list item links
-            > ul > li > a {
-                padding: 0 7px;
-                opacity: 0.8;
+            .navlinks-item-link {
+                padding: 0 5px;
                 color: $black;
-                line-height: 90px;
+                line-height: 88px;
                 display: inline-block;
+                font-size: 1.5rem;
+                font-weight: 500;
             }
             //Navigational menu unordered list items links actions on hover, focus and active 
-            > ul > li > a:hover,
-            > ul > li > a:active,
-            > ul > li > a:focus,
+            .navlinks-item:hover,
+            .navlinks-item:active,
+            .navlinks-item:focus,
             .active_menu_link {
-                opacity: 1;
+                opacity: 0.8;
             }
         }
     }

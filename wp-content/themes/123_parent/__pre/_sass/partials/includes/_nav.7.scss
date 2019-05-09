@@ -10,21 +10,25 @@
             justify-content: space-between;
             font-size: 18px;
             color: $black;
-            height: 110px;
-            align-items: center;
+            height: 100px;
             max-width: $max_width;
             margin: 0 auto;
             //Social icons unordered list 
-            > ul {
+            .site__social-media {
                 display: flex;
                 list-style: none;
+                margin-left: -10px;
             }
             //Social icons unordered list items
-            > ul > li > a {
-                padding: 0 15px;
-                line-height: 85px;
+            .site__social-media > li > a {
+                padding: 0 12px;
                 display: inline-block;
                 color: $accent;
+                transition: color 0.3s;
+            }
+            .site__social-media > li > a,
+            .site__iconlink-phone {
+                line-height: 55px;
             }
             //Social icons and phone number sections
             > div, 
@@ -33,19 +37,27 @@
             } 
             // Logo link
             > .custom-logo-link {
-                padding: 10px;
+                padding: 10px 10px 18px 10px;
+                margin-top: 7px;
                 > .custom-logo {
                     max-height: 90px;
+                    max-width: 270px;
                 }
             }
             > .site__iconlink-phone {
                 padding: 0 7px;
-                line-height: 85px;
-                color: $black;
+                color: $accent;
+                margin-right: -7px;
+                font-weight: 500;
                 &:before {
                     transform: rotate(90deg);
                     margin-right: 10px;
                     color: $accent;
+                }
+                &:focus,
+                &:active,
+                &:hover {
+                    opacity: 0.8;
                 }
             }
         }
@@ -72,20 +84,21 @@
                 border-bottom: 2px solid $accent;
             }
             //Navigational menu unordered list
-            > ul {
+            .navlinks {
                 list-style: none;
                 display: flex;
                 align-items: center;
             }
             //Navigational menu unordered list items
-            > ul > li {
+            .navlinks-item {
                 margin-right: 0px;
             }
-            > ul > li > a {
+            .navlinks-item-link {
                 padding: 0 10px;
                 line-height: 50px;
                 display: inline-block;
                 color: $black;
+                font-weight: 700;
                 //Actions on hover, active and focus
                 &:hover,
                 &:active,
@@ -96,17 +109,13 @@
             }
         }
         //Social icons links
-        div > ul > li > a {
+        .site__social-media > li > a {
             //Actions on hover, active and focus
             &:hover,
             &:active,
             &:focus {
                 color: $black;
             }
-        }
-        //Social icons links
-        div > ul > li > a {
-            transition: color 0.3s;
         }
     }
 }

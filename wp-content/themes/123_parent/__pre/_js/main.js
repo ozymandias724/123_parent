@@ -455,54 +455,53 @@ Headers.Eight = {
 Headers.Eight._init();
 
 
-Headers.Ten = {
+Headers.Site_Bars = {
 
-    header: $("header#opt_header_ten"),
-    hamburger_icon: $(".site__bars"),
-    sidebar: $(".header_10_sidebar_menu"),
+    site_bars: $(".site__bars"),
+    sidebar: $(".sidebar_menu"),
     outside: $("body, html"),
 
     _init: function () {
 
-        Headers.Ten.hamburger_icon.on("click", Headers.Ten._hamburger_icon_click);
+        Headers.Site_Bars.site_bars.on("click", Headers.Site_Bars._site_bars_click);
 
-        Headers.Ten.outside.on("click", Headers.Ten._close_sidebar);
+        Headers.Site_Bars.outside.on("click", Headers.Site_Bars._close_sidebar);
 
-        Headers.Ten.sidebar.on("blur", Headers.Ten._close_sidebar);
+        Headers.Site_Bars.sidebar.on("blur", Headers.Site_Bars._close_sidebar);
 
         //On browser resize
         window.addEventListener('resize', function () {
-            Headers.Ten._close_sidebar();
+            Headers.Site_Bars._close_sidebar();
         });
 
     },
 
-    _hamburger_icon_click: function (e) {
+    _site_bars_click: function (e) {
         e.stopPropagation();
         //If header 10 hamburger icon link has class of ...
-        if (!Headers.Ten.hamburger_icon.hasClass("header_10_hamburger_icon_changed")) {
-            Headers.Ten._open_sidebar();
+        if (!Headers.Site_Bars.site_bars.hasClass("site_bars_changed")) {
+            Headers.Site_Bars._open_sidebar();
         } else {
-            Headers.Ten._close_sidebar();
+            Headers.Site_Bars._close_sidebar();
         }
     },
     _close_sidebar: function () {
         //Add hamburger icon link class
-        Headers.Ten.hamburger_icon.removeClass("header_10_hamburger_icon_changed");
+        Headers.Site_Bars.site_bars.removeClass("site_bars_changed");
 
         //Open sidebar navigational menu
-        Headers.Ten.sidebar.removeClass("header_sidebar_cover_all");
+        Headers.Site_Bars.sidebar.removeClass("header_sidebar_cover_all");
     },
     _open_sidebar: function () {
         //Remove hamburger icon link class
-        Headers.Ten.hamburger_icon.addClass("header_10_hamburger_icon_changed");
+        Headers.Site_Bars.site_bars.addClass("site_bars_changed");
 
         //Close sidebar navigational menu
-        Headers.Ten.sidebar.addClass("header_sidebar_cover_all");
+        Headers.Site_Bars.sidebar.addClass("header_sidebar_cover_all");
     }
 
 }
-Headers.Ten._init();
+Headers.Site_Bars._init();
 
 
 Headers.Sidebar = {

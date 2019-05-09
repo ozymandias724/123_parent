@@ -1,4 +1,3 @@
-
 @media only screen {
     // Tabbed Gallery
     section#mod_gallery > #tabbed_gallery {
@@ -24,9 +23,9 @@
             &.tabs_pills > div:last-of-type, 
             &.tabs_classic > div:last-of-type, 
             &.tabs_side_menu > div:last-of-type {
-                $w : 86vw;
+                $w : 480px;
                 $c : 2;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
@@ -179,9 +178,9 @@
             }  
         }
         &.non_masonry {
-            $w : 86vw;
+            $w : 480px;
             $c : 2;
-            $g : 1.5vw;
+            $g : 10px;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
@@ -207,17 +206,17 @@
     section#mod_gallery > #tabbed_gallery {
         &.non_masonry {
             &.tabs_side_menu > div:last-of-type {
-                $w : 86vw;
+                $w : 530px;
                 $c : 2;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
             &.tabs_pills > div:last-of-type,
             &.tabs_classic > div:last-of-type {
-                $w : 86vw;
+                $w : 530px;
                 $c : 3;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
@@ -236,16 +235,16 @@
         &.non_masonry {
             // Non-masonry tabbed pills 
             &.tabs_pills > div:last-of-type {
-                $w : 90vw;
+                $w : 758px;
                 $c : 3;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
             &.tabs_side_menu > div:last-of-type {
-                $w : 60vw;
+                $w : 758px;
                 $c : 2;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
@@ -280,9 +279,9 @@
     section#mod_gallery > #standard_gallery {
         // Non-masonry standard gallery
         &.non_masonry {
-            $w : 90vw;
+            $w : 758px;
             $c : 3;
-            $g : 1.5vw;
+            $g : 10px;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
@@ -298,16 +297,16 @@
             &.tabs_pills > div:last-of-type,
             // Tabbed Classic without Masonry Gallery
             &.tabs_classic > div:last-of-type {
-                $w : 55vw;
+                $w : 990px;
                 $c : 4;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             } 
             &.tabs_side_menu > div:last-of-type {
-                $w: 65vw;
+                $w: 990px;
                 $c : 3;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }
@@ -327,9 +326,9 @@
     }
     section#mod_gallery > #standard_gallery {
         &.non_masonry {
-            $w : 80vw;
+            $w : 990px;
             $c : 4;
-            $g : 1.5vw;
+            $g : 10px;
             $s : true;
             @include gridLayout($w, $c, $g, $s);
         }
@@ -344,10 +343,19 @@
 @media only screen and (min-width: 1300px){
     section#mod_gallery > #tabbed_gallery {
         &.non_masonry {
+            &.tabs_pills > div:last-of-type,
+            // Tabbed Classic without Masonry Gallery
+            &.tabs_classic > div:last-of-type {
+                $w : $max_width;
+                $c : 4;
+                $g : 10px;
+                $s : true;
+                @include gridLayout($w, $c, $g, $s);
+            } 
             &.tabs_side_menu > div:last-of-type {
-                $w: 70vw;
+                $w: $max_width;
                 $c : 3;
-                $g : 1.5vw;
+                $g : 10px;
                 $s : true;
                 @include gridLayout($w, $c, $g, $s);
             }

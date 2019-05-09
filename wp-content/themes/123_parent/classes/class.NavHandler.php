@@ -91,14 +91,14 @@ class NavHandler
         $site__iconlink_phone = ''; 
         if( !empty($phone_number_1) ){
             $site__iconlink_phone .= '
-                <a href="javascript:;" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
+                <a href="tel:'.$phone_number_1.'" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
             ';
         }
 
         $header_1_phone = '';
         if( !empty($phone_number_1) ){
             $header_1_phone .= '
-                <a href="javascript:;" class="site__iconlink site__iconlink-phone"><div>CALL US TODAY:<br/><span>'.$phone_number_1.'</span></div></a>
+                <a href="tel:'.$phone_number_1.'" class="site__iconlink site__iconlink-phone"><div>CALL US TODAY:<br/><span>'.$phone_number_1.'</span></div></a>
             ';
         }
 
@@ -421,7 +421,7 @@ class NavHandler
          */
         $format_header = '
             <header class="%s header" id="opt_header_eight">
-                <div>
+                <div> 
                     %s
                     <nav>
                         %s
@@ -494,7 +494,7 @@ class NavHandler
                     %s
                     %s
                 </div>
-                <div class="header_10_sidebar_menu"> 
+                <div class="sidebar_menu"> 
                     <nav>
                         %s
                         %s
