@@ -464,6 +464,17 @@
                 padding-left: 15px;
             }
         }
+    }
+    section#mod_menu > #tabs_side_menu {
+        .menu_photo_tiled_x3 .menu_items {
+            $w : 60vw;
+            $c : 3;
+            $g : 1.5vw;
+            $s : true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+    }
+    section#mod_menu > #tabs_pills {
         // Menu style of Photo Tiled x3 menu items
         .menu_photo_tiled_x3 .menu_items {
             $w : 60vw;

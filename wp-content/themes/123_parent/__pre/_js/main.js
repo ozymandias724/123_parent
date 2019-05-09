@@ -355,6 +355,21 @@ Theme.Gallery.Tabs_Classic = {
 }
 Theme.Gallery.Tabs_Classic._init();
 
+Theme.Nav = {
+    nav_links : $(".navlinks-item-link"),
+
+    _init : function(){
+        Theme.Nav.nav_links.on("click", Theme.Nav._active_nav_link);
+    },
+    _active_nav_link : function(){
+        Theme.Nav.nav_links.each(function(){
+            $(this).removeClass("active_menu_link");
+        });
+        $(this).addClass("active_menu_link");
+    }
+}
+Theme.Nav._init();
+
 Theme.Menu = {
     tab_header: $("#mod_menu #menu_tabs > h4"),
     tab_link: $("#mod_menu #menu_tabs > h4 > a"),

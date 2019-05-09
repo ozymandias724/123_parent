@@ -65,7 +65,6 @@ $bp__lg : 1280px;
         }
     }
     
-    
     // Basics across all headers
     header.header {
         position: fixed; // need to remove something from theme 3 that is effecting this
@@ -223,7 +222,8 @@ $bp__lg : 1280px;
             // Actions on hover, active and focus
             &:hover,
             &:active,
-            &:focus {
+            &:focus,
+            .active_menu_link {
                 opacity: 1;
                 border-bottom: 1px solid $black;
             }

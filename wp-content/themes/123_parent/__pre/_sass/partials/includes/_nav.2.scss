@@ -18,14 +18,14 @@ $half_header_height : 50px;
             background-color: $third_black;
             max-width: $max_width;
             margin: 0 auto;
-            height: 110px;
+            height: 85px;
             // Logo 
             > .custom-logo-link {
                 margin-right: auto;
                 margin-left: -15px;
                 padding: 10px;
                 > .custom-logo {
-                    max-height: 90px;
+                    max-height: 75px;
                 }
             }
             //Sections of phone number and nav bar
@@ -40,8 +40,10 @@ $half_header_height : 50px;
                 text-align: right;
                 font-size: 24px;
                 padding: 0 5px;
+                letter-spacing: 0.5px;
                 margin-right: -10px;
                 color: $nav_2_top_bar_phone;
+                margin-bottom: 5px;
                 //Phone number link icon
                 > i {
                     font-size: 20px;
@@ -52,13 +54,13 @@ $half_header_height : 50px;
                 margin-right: -10px;
             }
             //Menu items unordered list items links
-            > div > nav > ul > li > a {
+            .navlinks-item-link {
                 font-size: 14px;
-                padding: 0 10px;
+                padding: 0 5px;
                 color: $nav_2_menu_text;
-                line-height: $half_header_height;
                 display: inline-block;
                 text-transform: uppercase;
+                margin-right: 0px;
             }
             //Quote button link
             .site__button-quote {
@@ -66,7 +68,7 @@ $half_header_height : 50px;
                 font-size: 16px;
                 border-radius: 4px;
                 text-align: center;
-                padding: 15px;
+                padding: 15px 20px;
             }
         }
         //Phone number
@@ -80,7 +82,8 @@ $half_header_height : 50px;
             //Actions on hover, focus and active of selected elements links above
             &:hover,
             &:focus,
-            &:active {
+            &:active,
+            .active_menu_link {
                 opacity: 1;
             }
         }
