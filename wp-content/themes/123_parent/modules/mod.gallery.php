@@ -6,147 +6,6 @@
  *  Concise view w/ link to full view
  */
 
-    // Get id of $format_gallery
-    function _get_gallery_id($fields){
-        return ($fields['type'] == 'standard') ? 'standard_gallery' : 'tabbed_gallery';
-    }
-     
-    // Get class of masonry
-    function _get_masonry_class($fields){
-        return ($fields['masonry'] == true) ? 'masonry' : 'non_masonry';
-    }
-
-    // Get type of tabs
-    function _get_tabs_style($fields){
-        return ($fields['type'] == 'standard') ? '' : $fields['tabs_type'];
-    }
-
-    // Get standard gallery title
-    function _get_standard_title($fields){
-        return (!empty($fields['normal_gallery']['heading'])) ? $fields['normal_gallery']['heading'] : '';
-    }
-
-    // Get standard list items
-    function _get_standard_list_items($fields){
-        if($fields['type'] == 'standard')
-        {
-            if($fields['masonry'] == true)
-            {
-                $format_list_item = '<li><img src="%s" /></li>';
-    
-                foreach($fields['normal_gallery']['images'] as $i => $image)
-                {
-                    $gallery_items .= sprintf(
-                        $format_list_item
-                        ,(!empty($image['url'])) ? $image['url'] : ''
-                    );
-                }
-            }
-            else
-            {
-                $format_list_item = '<li><div class="image" style="background-image:url(%s)";></div></li>';
-    
-                foreach($fields['normal_gallery']['images'] as $i => $image)
-                {
-                    $gallery_items .= sprintf(
-                        $format_list_item
-                        ,(!empty($image['sizes']['medium_large'])) ? $image['sizes']['medium_large'] : ''
-                    );
-                }
-            }
-        }
-        return $gallery_items;
-    }
-
-    // Get tabbed gallery titles
-    function _get_tabbed_titles($fields){
-        if($fields['type'] == 'tabbed')
-        {
-            foreach($fields['tabbed_gallery'] as $i => $tab)
-            {
-                $format_title = '<h3 class="%s"><a class="%s %s" href="javascript:;">%s</a></h3>';
-
-                $active_tab_title = ($i == 0) ? 'active_tab_title' : '';
-
-                $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])) . "_tab";
-                
-                $titles .= sprintf(
-                    $format_title
-                    ,$active_tab_title
-                    ,$tab_title
-                    ,($i === 0 ? 'active_gallery' : '')
-                    ,(!empty($tab['tab_title'])) ? $tab['tab_title'] : ''
-                );
-            }
-        }
-        return $titles;
-    }
-
-    // Get tabbed list items
-    function _get_tabbed_list_items($fields){
-        if($fields['type'] == 'tabbed')
-        {
-            if($fields['masonry'] == true)
-            {
-                foreach($fields['tabbed_gallery'] as $i => $tab)
-                {
-                    $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ';
-                    
-                    $active_gallery_section = ($i === 0 ? 'active_gallery_section' : '');
-
-                    $list .= '<ul class="gallery_section '.$tab_title .' '.$active_gallery_section.'">';
-
-                    foreach($tab['images'] as $image){
-                        $image = (!empty($image['url'])) ? $image['url'] : '';
-                        $list .= '<li><img src="' . $image . '"/></li>'; 
-                    }
-                    
-                    $list .= '</ul>';
-                }
-            }
-            else
-            {
-                foreach($fields['tabbed_gallery'] as $i => $tab)
-                {
-                    $tab_title = strtolower(str_replace(' ', '', $tab['tab_title'])). '_section ';
-                    
-                    $active_gallery_section = ($i === 0 ? 'active_gallery_section' : '');
-
-                    $list .= '<ul class="gallery_section '.$tab_title .' '.$active_gallery_section.'">';
-
-                    foreach($tab['images'] as $image){
-                        $image = (!empty($image['sizes']['medium_large'])) ? $image['sizes']['medium_large'] : '';
-                        $list .= '<li><div class="image" style="background-image:url(' . $image . ');"></div></li>'; 
-                    }
-
-                    $list .= '</ul>';
-                }
-            }
-        }
-        return $list;
-    }
-    
-    // Create gallery content
-    function _get_gallery_content($format_standard_gallery, $format_tabbed_gallery, $fields){
-        if($fields['type'] == 'standard')
-        {
-            $gallery = sprintf(
-                $format_standard_gallery
-                ,_get_standard_title($fields)
-                ,_get_standard_list_items($fields)
-            );
-        }
-        else
-        {
-            $gallery = sprintf(
-                $format_tabbed_gallery
-                ,_get_tabbed_titles($fields)
-                ,_get_tabbed_list_items($fields)
-            );
-        }
-        return $gallery;
-    }
-
     // get the gallery page object
     $args = array(
         'posts_per_page' => 1
@@ -156,43 +15,141 @@
     $res = get_posts($args);
 
     // get the gallery page fields
-    $fields = get_fields($res[0]);
+    $fields = get_fields($res[0]); 
 
-    // Type of tabs
-    $fields['tabs_type'] = 'tabs_pills';
-    $fields['masonry'] = false; 
-        
-    $format_standard_gallery = '
-        <h3>%s</h3>
-        <ul>%s</ul>
-    ';
-    $format_tabbed_gallery = '
-        <div>
-            %s
-        </div>
-        <div>
-            %s
-        </div>
-    ';
+    function _get_tab_name($fields)
+    {
+        return (!empty($fields['tab_type']) ? 'tab_' . $fields['tab_type'] : '');
+    }
+    
+    function _get_titles($fields)
+    {
+        $gallery = $fields['gallery'];
 
-    $format_gallery = '
-        <div id="%s" class="%s %s">
-            %s
-        </div>
-    ';
+        $format_title = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
-    $gallery = sprintf(
-        $format_gallery
-        ,_get_gallery_id($fields)
-        ,_get_masonry_class($fields)
-        ,_get_tabs_style($fields)
-        ,_get_gallery_content($format_standard_gallery, $format_tabbed_gallery, $fields)
-    );  
+        $tab_titles = '<div id="gallery_titles">';
+
+        foreach($gallery as $i => $row)
+        {
+            $active_title = ($i === 0 ? 'active_title' : '');
+
+            $title = (!empty($row['title']) ? strtolower(str_replace(' ', '', $row['title'])) : '');
+
+            $tab_title =  $title . '_title';
+
+            $title = sprintf(
+                $format_title
+                ,$active_title
+                ,$tab_title
+                ,(!empty($row['title']) ? $row['title'] : '')
+            );
+
+            $tab_titles .= $title;
+        }
+        $tab_titles .= '</div>';
+        return $tab_titles;
+    }
+
+    function _get_rows_with_titles($fields)
+    {
+        $gallery = $fields['gallery'];
+
+        $content = '<div id="gallery">';
+
+        foreach($gallery as $i => $row)
+        {
+            $content .= (!empty($row['title']) ? '<h3>'.$row['title'].'</h3>' : '');
+
+            $title = (!empty($row['title']) ? strtolower(str_replace(' ', '', $row['title'])) : '');
+
+            $content .= '<ul class="gallery_row">';
+
+            foreach($row['images'] as $image){
+                $image = (!empty($image['url'])) ? $image['url'] : '';
+                $content .= '
+                    <li class="gallery_item">
+                        <div class="gallery_image" style="background-image:url(' . $image . ');"></div>
+                    </li>'; 
+            }
+
+            $content .= '</ul>';
+        }
+        $content .= '</div>';
+
+        return $content;
+    }
+    
+    function _get_rows($fields)
+    {
+        $gallery = $fields['gallery'];
+
+        $format_rows = '
+            <div id="gallery_rows">
+                %s
+            </div>
+        ';
+
+        foreach($gallery as $i => $row)
+        {
+            $title = (!empty($row['title']) ? strtolower(str_replace(' ', '', $row['title'])) : '');
+
+            $tab_title =  $title . '_row';
+                    
+            $active_row = ($i === 0 ? 'active_row' : '');
+
+            $content .= '<ul class="gallery_row '.$tab_title .' '.$active_row.'">';
+
+            foreach($row['images'] as $image){
+                $image = (!empty($image['url'])) ? $image['url'] : '';
+                $content .= '
+                    <li class="gallery_item">
+                        <div class="gallery_image" style="background-image:url(' . $image . ');"></div>
+                    </li>'; 
+            }
+
+            $content .= '</ul>';
+        }
+
+        $rows = sprintf(
+            $format_rows
+            ,$content
+        );
+
+        return $rows; 
+    }
+
+    function _get_gallery($fields)
+    {
+        // With tabs
+        if($fields['use_tabs'])
+        {
+            $format_tab_gallery = '
+                <div id="gallery" class="%s">
+                    %s
+                    %s
+                </div>
+            ';
+
+            $gallery = sprintf(
+                $format_tab_gallery
+                ,_get_tab_name($fields)
+                ,_get_titles($fields)
+                ,_get_rows($fields)
+            );
+        }
+        // Without tabs
+        else
+        {
+            $gallery = _get_rows_with_titles($fields);
+        }
+        echo $gallery;
+    }
  
 ?>
 <section id="mod_gallery">
 <?php 
     echo get_section_banner($res[0]->post_title);
-    echo $gallery;
+    _get_gallery($fields);
 ?>
 </section>

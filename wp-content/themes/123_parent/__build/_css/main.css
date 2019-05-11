@@ -6,7 +6,6 @@
 .slick-slider {
   position: relative;
   display: block;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -14,7 +13,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -36,10 +34,6 @@
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -122,8 +116,6 @@
   top: 50%;
   margin-top: -10px\9 ;
   /*lte IE 8*/
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
@@ -722,7 +714,8 @@ h6 {
   }
 
   img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: auto;
     width: 100%;
   }
@@ -1696,7 +1689,7 @@ header#opt_header_four > nav .navlinks-item:after {
     flex-flow: row nowrap;
     align-items: center;
     height: 45px;
-    max-width: 1025px;
+    max-width: 1050px;
     margin: 0 auto;
   }
   header#opt_header_five > div:first-of-type .site__social-media {
@@ -1784,7 +1777,7 @@ header#opt_header_five > div:first-of-type > .site__button-quote:focus {
     align-items: center;
     flex-flow: row nowrap;
     justify-content: space-between;
-    max-width: 1025px;
+    max-width: 1050px;
     margin: 0 auto;
     height: 100px;
   }
@@ -1961,7 +1954,7 @@ header#opt_header_six .site__button-quote:focus {
     font-size: 18px;
     color: black;
     height: 100px;
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
   }
   header#opt_header_seven > div .site__social-media {
@@ -2014,7 +2007,7 @@ header#opt_header_seven > div > span {
     text-transform: uppercase;
     font-weight: 500;
     height: 50px;
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
   }
   header#opt_header_seven > nav:before {
@@ -2248,7 +2241,7 @@ header#opt_header_nine > div:last-of-type .inner_div .active_menu_link {
   }
   header#opt_header_ten > div:first-of-type {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1050px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2455,7 +2448,8 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   .mobilefooter > div:nth-of-type(1) > a > img {
     height: auto;
     max-width: 200px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .mobilefooter > div:nth-of-type(1) > div {
     display: flex;
@@ -2579,7 +2573,6 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
 
   footer.mobilefooter.invertlogo > div > a > img {
-    -webkit-filter: invert(100%);
     filter: invert(100%);
   }
 }
@@ -2837,7 +2830,8 @@ section.hero .hero_foreground a:active {
     margin-bottom: 0;
   }
   section.hero#hero_slider .slick_slider_img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     position: relative;
     top: 0;
     left: 50%;
@@ -2998,127 +2992,90 @@ section#banner_popup .popup_close {
   }
 }
 @media only screen {
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-    column-count: 2;
-    column-gap: 10px;
-  }
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul > li, section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul > li, section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul > li {
-    margin-bottom: 15px;
-  }
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-    padding: 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 480px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
+  ul {
     list-style: none;
   }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
-    width: 235px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 235px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(2n), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(2n), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(2n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 {
-    display: block;
-    font-size: 14px;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a {
-    color: #484848;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-    display: block;
-    border-bottom: 1px solid #c2c2c2;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a.active_gallery {
-    color: #fff;
-    background-color: #386591;
-    border-bottom: 1px solid #386591;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type > h3 > a:hover {
-    color: #484848;
-    background-color: #c2c2c2;
-    border-bottom: 1px solid transparent;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:last-of-type {
+
+  #gallery {
+    margin: 0 auto;
     margin-bottom: 20px;
-    flex: 0 1 80%;
+    max-width: 1200px;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type {
-    color: #c2c2c2;
-    margin: 0 auto 25px auto;
+  #gallery .gallery_image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #gallery > h3 {
+    display: block;
+    font-size: 2.8rem;
     text-align: center;
+    margin: 40px 0;
+    font-family: "Gotham", Helvetica, sans-serif;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
+  #gallery .gallery_row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  #gallery .gallery_row .gallery_item {
+    flex: 0 1 48%;
+    margin: 5px 3px;
+    display: flex;
+    justify-content: center;
+  }
+  #gallery > .gallery_row > .gallery_item {
+    flex: 0 1 49%;
+    margin: 5px 1px;
+    display: flex;
+    justify-content: center;
+  }
+  #gallery.tab_pill .gallery_row, #gallery.tab_divider .gallery_row, #gallery.tab_sidebar .gallery_row {
+    display: none;
+  }
+  #gallery.tab_pill .active_row, #gallery.tab_divider .active_row, #gallery.tab_sidebar .active_row {
+    display: flex;
+  }
+  #gallery.tab_pill #gallery_titles {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  #gallery.tab_pill h3 {
     display: block;
     margin: 10px 5px;
     text-transform: uppercase;
     padding: 10px 0;
     font-size: 14px;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a {
+  #gallery.tab_pill h3 a {
     padding: 10px 15px;
     border-radius: 20px;
     background-color: transparent;
     border: 2px solid #c2c2c2;
     color: #aaabad;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a.active_gallery {
+  #gallery.tab_pill h3 a:active, #gallery.tab_pill h3 a:focus, #gallery.tab_pill h3 a.active_title {
     color: #fff;
     background-color: #386591;
     border: 2px solid transparent;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 > a:hover {
+  #gallery.tab_pill h3 a:hover {
     border: 2px solid #aaabad;
     background-color: #aaabad;
     color: #fff;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
-    color: #c2c2c2;
-    text-align: center;
-    margin: 0 auto 25px;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type:after {
+  #gallery.tab_divider #gallery_titles:after {
     content: "";
     display: block;
     border-bottom: 2px solid #c2c2c2;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
+  #gallery.tab_divider h3 {
     display: block;
     padding: 10px 0;
     font-size: 14px;
+    margin: 0;
     text-transform: uppercase;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3.active_tab_title {
-    margin: 5px 2px 0px;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a {
+  #gallery.tab_divider h3 a {
     color: #484848;
     padding: 10px 15px;
     background-color: #c2c2c2;
@@ -3129,409 +3086,112 @@ section#banner_popup .popup_close {
     border-right: 2px solid #c2c2c2;
     transition: color 0.3s ease-in-out;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:focus, section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:active, section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a.active_gallery {
+  #gallery.tab_divider h3 a:focus, #gallery.tab_divider h3 a:active, #gallery.tab_divider h3 a.active_title {
     color: #386591;
     background-color: #fff;
     border-bottom: 3px solid transparent;
   }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 > a:hover {
+  #gallery.tab_divider h3 a:hover {
     color: #fff;
     background: #fff;
     background: linear-gradient(to bottom, #fff 0%, #aaabad 100%);
   }
-
-  section#mod_gallery > #standard_gallery > h3 {
+  #gallery.tab_divider h3 a.active_title {
+    margin: 5px 2px 0px;
+  }
+  #gallery.tab_sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  #gallery.tab_sidebar #gallery_rows {
+    margin-bottom: 20px;
+    flex: 1 1 75%;
+  }
+  #gallery.tab_sidebar #gallery_titles {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    flex: 0 1 25%;
+  }
+  #gallery.tab_sidebar #gallery_titles h3 {
     display: block;
     font-size: 14px;
-    margin-bottom: 15px;
-    text-align: center;
+    margin: 0;
   }
-  section#mod_gallery > #standard_gallery.masonry > ul {
-    list-style: none;
-    column-count: 2;
-    column-gap: 10px;
+  #gallery.tab_sidebar #gallery_titles h3 > a {
+    color: #484848;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+    display: block;
+    border-bottom: 1px solid #c2c2c2;
   }
-  section#mod_gallery > #standard_gallery.masonry > ul > li {
-    margin-bottom: 15px;
+  #gallery.tab_sidebar #gallery_titles h3 > a:active, #gallery.tab_sidebar #gallery_titles h3 > a:focus, #gallery.tab_sidebar #gallery_titles h3 > a.active_title {
+    color: #fff;
+    background-color: #386591;
+    border-bottom: 1px solid #386591;
   }
-  section#mod_gallery > #standard_gallery.non_masonry {
-    text-align: center;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul {
-    text-align: left;
-    width: 480px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li {
-    width: 235px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li div.image {
-    height: 235px;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(2n) {
-    margin: 0 0 10px 0;
-  }
-
-  section#mod_gallery > #tabbed_gallery,
-section#mod_gallery > #standard_gallery {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    max-width: 1200px;
-  }
-  section#mod_gallery > #tabbed_gallery .image,
-section#mod_gallery > #standard_gallery .image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  #gallery.tab_sidebar #gallery_titles h3 > a:hover {
+    color: #484848;
+    background-color: #c2c2c2;
+    border-bottom: 1px solid transparent;
   }
 }
 @media only screen and (min-width: 550px) {
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-    text-align: center;
+  #gallery.tab_sidebar {
+    display: flex;
+    flex-flow: row wrap;
   }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 530px;
-    margin: 0 auto 0 auto;
+
+  #gallery.tab_pill .gallery_item {
+    flex: 0 1 48%;
+    margin: 5px 4px;
+  }
+
+  #gallery.tab_divider .gallery_item {
+    flex: 0 1 48%;
+    margin: 5px 4px;
+  }
+
+  #gallery.tab_pill h3 {
     display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
-    width: 260px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 260px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(2n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul {
-    text-align: left;
-    width: 530px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li {
-    width: 170px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image {
-    height: 170px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(3n), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(3n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_pills > div:first-of-type > h3 {
-    display: inline-block;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-    flex: 0 1 20%;
   }
 }
 @media only screen and (min-width: 768px) {
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul {
-    text-align: left;
-    width: 758px;
-    margin: 0 auto 0 auto;
+  #gallery.tab_divider h3 {
     display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li {
-    width: 246px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image {
-    height: 246px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(3n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 758px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
-    width: 374px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 374px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(2n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
-    column-count: 3;
-  }
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type ul {
-    column-count: 2;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type {
-    text-align: left;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_classic > div:first-of-type > h3 {
-    display: inline-block;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu {
-    flex-flow: row nowrap;
-  }
-  section#mod_gallery > #tabbed_gallery.tabs_side_menu > div:first-of-type {
-    margin-right: 30px;
   }
 
-  section#mod_gallery > #standard_gallery.non_masonry {
-    text-align: center;
+  #gallery.tab_pill .gallery_item {
+    flex: 0 1 31%;
+    margin: 5px 4px;
   }
-  section#mod_gallery > #standard_gallery.non_masonry ul {
-    text-align: left;
-    width: 758px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
+
+  #gallery.tab_divider .gallery_item {
+    flex: 0 1 31%;
+    margin: 5px 4px;
   }
-  section#mod_gallery > #standard_gallery.non_masonry ul:after {
-    content: "";
-    display: table;
-    clear: both;
+
+  #gallery.tab_sidebar .gallery_item {
+    flex: 0 1 31%;
+    margin: 5px 4px;
   }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li {
-    width: 246px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li div.image {
-    height: 246px;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(3n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #standard_gallery.masonry > ul {
-    column-count: 3;
+
+  #gallery > .gallery_row > .gallery_item {
+    flex: 0 1 24%;
+    margin: 5px 4px;
+    display: flex;
+    justify-content: center;
   }
 }
 @media only screen and (min-width: 1000px) {
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul {
-    text-align: left;
-    width: 990px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li {
-    width: 240px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image {
-    height: 240px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(4n), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(4n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 990px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
-    width: 323.3333333333px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 323.3333333333px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(3n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_side_menu > div:last-of-type > ul {
-    column-count: 3;
-  }
-  section#mod_gallery > #tabbed_gallery.masonry.tabs_pills > div:last-of-type > ul, section#mod_gallery > #tabbed_gallery.masonry.tabs_classic > div:last-of-type > ul {
-    column-count: 3;
+  #gallery.tab_pill .gallery_item {
+    flex: 0 1 24%;
+    margin: 5px 4px;
   }
 
-  section#mod_gallery > #standard_gallery.non_masonry {
-    text-align: center;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul {
-    text-align: left;
-    width: 990px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li {
-    width: 240px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li div.image {
-    height: 240px;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #standard_gallery.non_masonry ul > li:nth-child(4n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #standard_gallery.masonry > ul {
-    column-count: 3;
-  }
-}
-@media only screen and (min-width: 1300px) {
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul {
-    text-align: left;
-    width: 1200px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul:after, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li {
-    width: 292.5px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li div.image, section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li div.image {
-    height: 292.5px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(n+1), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_pills > div:last-of-type ul > li:nth-child(4n), section#mod_gallery > #tabbed_gallery.non_masonry.tabs_classic > div:last-of-type ul > li:nth-child(4n) {
-    margin: 0 0 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type {
-    text-align: center;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul {
-    text-align: left;
-    width: 1200px;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li {
-    width: 393.3333333333px;
-    height: auto;
-    float: left;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li div.image {
-    height: 393.3333333333px;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(n+1) {
-    margin: 0 10px 10px 0;
-  }
-  section#mod_gallery > #tabbed_gallery.non_masonry.tabs_side_menu > div:last-of-type ul > li:nth-child(3n) {
-    margin: 0 0 10px 0;
+  #gallery.tab_divider .gallery_item {
+    flex: 0 1 24%;
+    margin: 5px 4px;
   }
 }
 @media only screen {
@@ -3646,103 +3306,103 @@ section#mod_gallery > #standard_gallery .image {
   }
 }
 @media only screen {
-  section#mod_menu > #tabs_side_menu {
+  #tabs_side_menu {
     margin: 0 auto;
     max-width: 1200px;
     display: flex;
     flex-flow: column nowrap;
   }
-  section#mod_menu > #tabs_side_menu #menu_tabs {
+  #tabs_side_menu #menu_tabs {
     font-size: 14px;
     margin-bottom: 15px;
   }
-  section#mod_menu > #tabs_side_menu #menu_tabs > h4 {
+  #tabs_side_menu #menu_tabs > h4 {
     display: block;
   }
-  section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a {
+  #tabs_side_menu #menu_tabs > h4 > a {
     padding: 10px 15px;
     color: #484848;
     border-bottom: 1px solid #c2c2c2;
     display: block;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
   }
-  section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a.active_menu_link,
-section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:active,
-section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:focus {
+  #tabs_side_menu #menu_tabs > h4 > a.active_menu_link,
+#tabs_side_menu #menu_tabs > h4 > a:active,
+#tabs_side_menu #menu_tabs > h4 > a:focus {
     background-color: #386591;
     color: #fff;
     border-bottom: 1px solid #386591;
   }
-  section#mod_menu > #tabs_side_menu #menu_tabs > h4 > a:hover {
+  #tabs_side_menu #menu_tabs > h4 > a:hover {
     background-color: #c2c2c2;
     border-bottom: 1px solid transparent;
   }
 
-  section#mod_menu > #tabs_pills {
+  #tabs_pills {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
   }
-  section#mod_menu > #tabs_pills #menu_tabs {
+  #tabs_pills #menu_tabs {
     font-size: 14px;
     margin: 0 auto 15px;
   }
-  section#mod_menu > #tabs_pills #menu_tabs > h4 {
+  #tabs_pills #menu_tabs > h4 {
     display: block;
     margin: 10px 5px;
     padding: 10px 0;
     text-transform: uppercase;
     text-align: center;
   }
-  section#mod_menu > #tabs_pills #menu_tabs > h4 > a {
+  #tabs_pills #menu_tabs > h4 > a {
     background-color: transparent;
     border: 2px solid #c2c2c2;
     border-radius: 20px;
     padding: 10px 25px;
     color: #c2c2c2;
   }
-  section#mod_menu > #tabs_pills #menu_tabs > h4 > a.active_menu_link, section#mod_menu > #tabs_pills #menu_tabs > h4 > a:active, section#mod_menu > #tabs_pills #menu_tabs > h4 > a:focus {
+  #tabs_pills #menu_tabs > h4 > a.active_menu_link, #tabs_pills #menu_tabs > h4 > a:active, #tabs_pills #menu_tabs > h4 > a:focus {
     border: 2px solid #386591;
     background-color: #386591;
     color: #fff;
   }
-  section#mod_menu > #tabs_pills #menu_tabs > h4 > a:hover {
+  #tabs_pills #menu_tabs > h4 > a:hover {
     border: 2px solid #c2c2c2;
     color: #fff;
     background-color: #c2c2c2;
   }
 
-  section#mod_menu > #tabs_side_menu,
-section#mod_menu > #tabs_pills {
+  #tabs_side_menu,
+#tabs_pills {
     padding: 0 3%;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half,
-section#mod_menu > #tabs_side_menu .menu_text_list_left,
-section#mod_menu > #tabs_side_menu .menu_text_list_center,
-section#mod_menu > #tabs_side_menu .menu_photo_list,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half,
-section#mod_menu > #tabs_pills .menu_text_half,
-section#mod_menu > #tabs_pills .menu_text_list_left,
-section#mod_menu > #tabs_pills .menu_text_list_center,
-section#mod_menu > #tabs_pills .menu_photo_list,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half {
+  #tabs_side_menu .menu_text_half,
+#tabs_side_menu .menu_text_list_left,
+#tabs_side_menu .menu_text_list_center,
+#tabs_side_menu .menu_photo_list,
+#tabs_side_menu .menu_photo_tiled_x3,
+#tabs_side_menu .menu_text_sub_group_half,
+#tabs_pills .menu_text_half,
+#tabs_pills .menu_text_list_left,
+#tabs_pills .menu_text_list_center,
+#tabs_pills .menu_photo_list,
+#tabs_pills .menu_photo_tiled_x3,
+#tabs_pills .menu_text_sub_group_half {
     display: none;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li > .image_prov {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li > .image_prov,
+#tabs_side_menu .menu_text_list_left .menu_items > ul > li > .image_prov,
+#tabs_side_menu .menu_text_list_center .menu_items > ul > li > .image_prov,
+#tabs_side_menu .menu_photo_list .menu_items > ul > li > .image_prov,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov,
+#tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_half .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_list_left .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_list_center .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_sub_group_half .menu_items > ul > li > .image_prov {
     height: 300px;
     max-width: 400px;
     margin: 0 auto;
@@ -3751,34 +3411,34 @@ section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li >
     background-position: center center;
     margin-bottom: 15px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_photo_list .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > h2 {
+  #tabs_side_menu .menu_text_half .menu_header > h2,
+#tabs_side_menu .menu_text_list_left .menu_header > h2,
+#tabs_side_menu .menu_text_list_center .menu_header > h2,
+#tabs_side_menu .menu_photo_list .menu_header > h2,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_header > h2,
+#tabs_side_menu .menu_text_sub_group_half .menu_header > h2,
+#tabs_pills .menu_text_half .menu_header > h2,
+#tabs_pills .menu_text_list_left .menu_header > h2,
+#tabs_pills .menu_text_list_center .menu_header > h2,
+#tabs_pills .menu_photo_list .menu_header > h2,
+#tabs_pills .menu_photo_tiled_x3 .menu_header > h2,
+#tabs_pills .menu_text_sub_group_half .menu_header > h2 {
     font-size: 44px;
     letter-spacing: -1px;
     font-weight: 800;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header > p,
-section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header > p,
-section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_header > p,
-section#mod_menu > #tabs_side_menu .menu_photo_list .menu_header > p,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_header > p,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_header > p,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header > p,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_header > p,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_header > p,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_header > p,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_header > p,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > p {
+  #tabs_side_menu .menu_text_half .menu_header > p,
+#tabs_side_menu .menu_text_list_left .menu_header > p,
+#tabs_side_menu .menu_text_list_center .menu_header > p,
+#tabs_side_menu .menu_photo_list .menu_header > p,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_header > p,
+#tabs_side_menu .menu_text_sub_group_half .menu_header > p,
+#tabs_pills .menu_text_half .menu_header > p,
+#tabs_pills .menu_text_list_left .menu_header > p,
+#tabs_pills .menu_text_list_center .menu_header > p,
+#tabs_pills .menu_photo_list .menu_header > p,
+#tabs_pills .menu_photo_tiled_x3 .menu_header > p,
+#tabs_pills .menu_text_sub_group_half .menu_header > p {
     margin-bottom: 20px;
     font-family: "Times New Roman";
     line-height: 1em;
@@ -3787,29 +3447,29 @@ section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > p {
     font-weight: 500;
     color: #aaabad;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_items > ul > li > p,
-section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items > ul > li > p,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_items > ul > li > p,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > p {
+  #tabs_side_menu .menu_text_list_left .menu_items > ul > li > p,
+#tabs_side_menu .menu_text_list_center .menu_items > ul > li > p,
+#tabs_pills .menu_text_list_left .menu_items > ul > li > p,
+#tabs_pills .menu_text_list_center .menu_items > ul > li > p {
     font-size: 24px;
     font-family: "Times New Roman";
     line-height: 1em;
     color: #aaabad;
     font-style: italic;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > h2 {
+  #tabs_side_menu .menu_text_half .menu_header > h2,
+#tabs_side_menu .menu_text_sub_group_half .menu_header > h2,
+#tabs_pills .menu_text_half .menu_header > h2,
+#tabs_pills .menu_text_sub_group_half .menu_header > h2 {
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
     letter-spacing: normal;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header > h2:before,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_header > h2:before,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header > h2:before,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > h2:before {
+  #tabs_side_menu .menu_text_half .menu_header > h2:before,
+#tabs_side_menu .menu_text_sub_group_half .menu_header > h2:before,
+#tabs_pills .menu_text_half .menu_header > h2:before,
+#tabs_pills .menu_text_sub_group_half .menu_header > h2:before {
     border-top: 1px solid #c2c2c2;
     bottom: 0;
     content: "";
@@ -3820,22 +3480,22 @@ section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > h2:befor
     top: 50%;
     z-index: -1;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header > p,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_header > p,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header > p,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > p {
+  #tabs_side_menu .menu_text_half .menu_header > p,
+#tabs_side_menu .menu_text_sub_group_half .menu_header > p,
+#tabs_pills .menu_text_half .menu_header > p,
+#tabs_pills .menu_text_sub_group_half .menu_header > p {
     margin-bottom: 20px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li,
+#tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li,
+#tabs_pills .menu_text_half .menu_items > ul > li,
+#tabs_pills .menu_text_sub_group_half .menu_items > ul > li {
     margin-bottom: 30px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li > h3,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > h3,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li > h3,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li > h3 {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li > h3,
+#tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > h3,
+#tabs_pills .menu_text_half .menu_items > ul > li > h3,
+#tabs_pills .menu_text_sub_group_half .menu_items > ul > li > h3 {
     display: flex;
     font-size: 26px;
     font-weight: 700;
@@ -3844,139 +3504,139 @@ section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li >
     padding-bottom: 15px;
     margin-bottom: 15px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li > h3 > span,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > h3 > span,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li > h3 > span,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li > h3 > span {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li > h3 > span,
+#tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > h3 > span,
+#tabs_pills .menu_text_half .menu_items > ul > li > h3 > span,
+#tabs_pills .menu_text_sub_group_half .menu_items > ul > li > h3 > span {
     color: #aaabad;
     font-weight: 600;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li > p,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > p,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li > p,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li > p {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li > p,
+#tabs_side_menu .menu_text_sub_group_half .menu_items > ul > li > p,
+#tabs_pills .menu_text_half .menu_items > ul > li > p,
+#tabs_pills .menu_text_sub_group_half .menu_items > ul > li > p {
     font-size: 18px;
     color: #aaabad;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_photo_list .menu_header > h2,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_header > h2 {
+  #tabs_side_menu .menu_text_list_left .menu_header > h2,
+#tabs_side_menu .menu_text_list_center .menu_header > h2,
+#tabs_side_menu .menu_photo_list .menu_header > h2,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_header > h2,
+#tabs_pills .menu_text_list_left .menu_header > h2,
+#tabs_pills .menu_text_list_center .menu_header > h2,
+#tabs_pills .menu_photo_list .menu_header > h2,
+#tabs_pills .menu_photo_tiled_x3 .menu_header > h2 {
     text-transform: capitalize;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_header,
-section#mod_menu > #tabs_side_menu .menu_photo_list .menu_header,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_header,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_header {
+  #tabs_side_menu .menu_text_list_center .menu_header,
+#tabs_side_menu .menu_photo_list .menu_header,
+#tabs_pills .menu_text_list_center .menu_header,
+#tabs_pills .menu_photo_list .menu_header {
     text-align: center;
     border-bottom: 3px solid #386591;
     margin-bottom: 30px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header {
+  #tabs_side_menu .menu_text_half .menu_header,
+#tabs_pills .menu_text_half .menu_header {
     text-align: center;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_header > h2 > span,
-section#mod_menu > #tabs_pills .menu_text_half .menu_header > h2 > span {
+  #tabs_side_menu .menu_text_half .menu_header > h2 > span,
+#tabs_pills .menu_text_half .menu_header > h2 > span {
     background: #fff;
     padding: 0 15px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_sub_group_half,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half {
+  #tabs_side_menu .menu_text_sub_group_half,
+#tabs_pills .menu_text_sub_group_half {
     flex-flow: column nowrap;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_sub_group_half .menu_header > h2 > span,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_header > h2 > span {
+  #tabs_side_menu .menu_text_sub_group_half .menu_header > h2 > span,
+#tabs_pills .menu_text_sub_group_half .menu_header > h2 > span {
     background: #fff;
     padding-right: 15px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_sub_group_half > div,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half > div {
+  #tabs_side_menu .menu_text_sub_group_half > div,
+#tabs_pills .menu_text_sub_group_half > div {
     flex: 0 1 50%;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_header {
+  #tabs_side_menu .menu_text_list_left .menu_header,
+#tabs_pills .menu_text_list_left .menu_header {
     border-bottom: 5px dotted #386591;
     margin-bottom: 30px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_header > h2,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_header > h2 {
+  #tabs_side_menu .menu_text_list_left .menu_header > h2,
+#tabs_pills .menu_text_list_left .menu_header > h2 {
     font-family: "Times New Roman";
     line-height: 1em;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_items > ul > li,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_items > ul > li {
+  #tabs_side_menu .menu_text_list_left .menu_items > ul > li,
+#tabs_pills .menu_text_list_left .menu_items > ul > li {
     margin-bottom: 20px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_items > ul > li > h3,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_items > ul > li > h3 {
+  #tabs_side_menu .menu_text_list_left .menu_items > ul > li > h3,
+#tabs_pills .menu_text_list_left .menu_items > ul > li > h3 {
     text-transform: uppercase;
     display: flex;
     font-size: 26px;
     font-weight: 700;
     justify-content: space-between;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_left .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_list_left .menu_items > ul > li > .image_prov {
+  #tabs_side_menu .menu_text_list_left .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_list_left .menu_items > ul > li > .image_prov {
     background-position: center left;
     margin: 0;
     margin-bottom: 20px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items {
+  #tabs_side_menu .menu_text_list_center .menu_items,
+#tabs_pills .menu_text_list_center .menu_items {
     text-align: center;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items > ul > li,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li {
+  #tabs_side_menu .menu_text_list_center .menu_items > ul > li,
+#tabs_pills .menu_text_list_center .menu_items > ul > li {
     margin-bottom: 30px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items > ul > li > h3,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > h3 {
+  #tabs_side_menu .menu_text_list_center .menu_items > ul > li > h3,
+#tabs_pills .menu_text_list_center .menu_items > ul > li > h3 {
     font-size: 26px;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 5px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items > ul > li > h3 > span,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > h3 > span {
+  #tabs_side_menu .menu_text_list_center .menu_items > ul > li > h3 > span,
+#tabs_pills .menu_text_list_center .menu_items > ul > li > h3 > span {
     font-weight: 500;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_list_center .menu_items > ul > li > h3 > span:before,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > h3 > span:before {
+  #tabs_side_menu .menu_text_list_center .menu_items > ul > li > h3 > span:before,
+#tabs_pills .menu_text_list_center .menu_items > ul > li > h3 > span:before {
     content: "";
     border-left: 2px solid #aaabad;
     margin: 0 15px 0 10px;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li,
+#tabs_pills .menu_photo_list .menu_items > ul > li {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     margin-bottom: 20px;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > div:first-of-type,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div:first-of-type {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li > div:first-of-type,
+#tabs_pills .menu_photo_list .menu_items > ul > li > div:first-of-type {
     flex: 0 1 37%;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > div:last-of-type,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div:last-of-type {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li > div:last-of-type,
+#tabs_pills .menu_photo_list .menu_items > ul > li > div:last-of-type {
     flex: 0 1 60%;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov {
     background-position: top center;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > div > h3,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div > h3 {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li > div > h3,
+#tabs_pills .menu_photo_list .menu_items > ul > li > div > h3 {
     font-weight: 900;
     font-size: 28px;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > div > p:first-of-type,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div > p:first-of-type {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li > div > p:first-of-type,
+#tabs_pills .menu_photo_list .menu_items > ul > li > div > p:first-of-type {
     font-size: 24px;
     font-style: italic;
     color: #aaabad;
@@ -3986,325 +3646,165 @@ section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div > p:
     margin-bottom: 20px;
     font-family: "Times New Roman";
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_list .menu_items > ul > li > div > p:last-of-type,
-section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > div > p:last-of-type {
+  #tabs_side_menu .menu_photo_list .menu_items > ul > li > div > p:last-of-type,
+#tabs_pills .menu_photo_list .menu_items > ul > li > div > p:last-of-type {
     font-size: 22px;
     color: #484848;
     font-weight: 500;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_header,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_header {
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_header,
+#tabs_pills .menu_photo_tiled_x3 .menu_header {
     text-align: center;
     border-bottom: 3px solid #386591;
     margin-bottom: 30px;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items {
-    text-align: center;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul {
-    text-align: left;
-    width: 90vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul:after,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 90vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li div.image,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 90vw;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1),
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(1n),
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(1n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > h3 {
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3,
+#tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > h3 {
     display: flex;
     font-weight: 700;
     justify-content: space-between;
     font-size: 18px;
     margin-bottom: 5px;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3 > div > span,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > h3 > div > span {
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > h3 > div > span,
+#tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > h3 > div > span {
     font-size: 14px;
     position: relative;
     top: -5px;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > p,
-section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > p {
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > p,
+#tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > p {
     color: #aaabad;
     font-size: 16px;
     text-align: justify;
   }
-  section#mod_menu > #tabs_side_menu .menu_section,
-section#mod_menu > #tabs_pills .menu_section {
+  #tabs_side_menu .menu_section,
+#tabs_pills .menu_section {
     display: none;
   }
-  section#mod_menu > #tabs_side_menu .menu_section ul,
-section#mod_menu > #tabs_pills .menu_section ul {
+  #tabs_side_menu .menu_section ul,
+#tabs_pills .menu_section ul {
     list-style: none;
   }
-  section#mod_menu > #tabs_side_menu .active_menu_section,
-section#mod_menu > #tabs_pills .active_menu_section {
+  #tabs_side_menu .active_menu_section,
+#tabs_pills .active_menu_section {
     display: block;
   }
-  section#mod_menu > #tabs_side_menu .active_menu_section.flex_menu,
-section#mod_menu > #tabs_pills .active_menu_section.flex_menu {
+  #tabs_side_menu .active_menu_section.flex_menu,
+#tabs_pills .active_menu_section.flex_menu {
     display: flex;
   }
-  section#mod_menu > #tabs_side_menu .menu_content,
-section#mod_menu > #tabs_pills .menu_content {
+  #tabs_side_menu .menu_content,
+#tabs_pills .menu_content {
     padding: 0 20px;
     margin-bottom: 20px;
   }
 }
 @media only screen and (min-width: 768px) {
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items {
-    text-align: center;
+  #tabs_pills .menu_photo_tiled_x3 .menu_items ul,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_items ul {
+    display: flex;
+    flex-flow: row wrap;
   }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
+  #tabs_pills .menu_photo_tiled_x3 .menu_items ul .menu_item,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_items ul .menu_item {
+    flex: 0 1 31%;
+    margin: 0 1%;
   }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul:after,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 29.25vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li div.image,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 29.25vw;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1),
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(2n),
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(2n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+  #tabs_pills .menu_photo_tiled_x3 .menu_items ul > ul > li > .image_prov,
+#tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > ul > li > .image_prov {
     height: 200px;
   }
-  section#mod_menu > #tabs_pills .menu_text_sub_group_half,
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half {
+  #tabs_pills .menu_text_sub_group_half,
+#tabs_side_menu .menu_text_sub_group_half {
     flex-flow: row nowrap;
   }
-  section#mod_menu > #tabs_pills .menu_text_sub_group_half > div:nth-child(odd),
-section#mod_menu > #tabs_side_menu .menu_text_sub_group_half > div:nth-child(odd) {
+  #tabs_pills .menu_text_sub_group_half > div:nth-child(odd),
+#tabs_side_menu .menu_text_sub_group_half > div:nth-child(odd) {
     margin-right: 30px;
   }
-  section#mod_menu > #tabs_side_menu {
+
+  #tabs_side_menu {
     flex-flow: row nowrap;
   }
-  section#mod_menu > #tabs_side_menu #menu_tabs {
+  #tabs_side_menu #menu_tabs {
     flex: 0 1 20%;
     margin: 0 30px 0 0;
   }
-  section#mod_menu > #tabs_side_menu .menu_section {
+  #tabs_side_menu .menu_section {
     flex: 0 1 80%;
   }
-  section#mod_menu > #tabs_pills #menu_tabs > h4 {
+
+  #tabs_pills #menu_tabs > h4 {
     display: inline-block;
     text-align: left;
   }
 }
 @media only screen and (min-width: 1000px) {
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul {
+  #tabs_side_menu .menu_text_half .menu_items > ul,
+#tabs_pills .menu_text_half .menu_items > ul {
     display: flex;
     flex-flow: row wrap;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li,
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li,
+#tabs_pills .menu_text_half .menu_items > ul > li {
     flex: 0 1 50%;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li:nth-child(odd),
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li:nth-child(odd) {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li:nth-child(odd),
+#tabs_pills .menu_text_half .menu_items > ul > li:nth-child(odd) {
     padding-right: 15px;
   }
-  section#mod_menu > #tabs_side_menu .menu_text_half .menu_items > ul > li:nth-child(even),
-section#mod_menu > #tabs_pills .menu_text_half .menu_items > ul > li:nth-child(even) {
+  #tabs_side_menu .menu_text_half .menu_items > ul > li:nth-child(even),
+#tabs_pills .menu_text_half .menu_items > ul > li:nth-child(even) {
     padding-left: 15px;
   }
 
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items {
-    text-align: center;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 19vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 19vw;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(3n) {
-    margin: 0 0 1.5vw 0;
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul .menu_item {
+    flex: 0 1 31%;
+    margin: 0 1%;
   }
 
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items {
-    text-align: center;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul {
-    text-align: left;
-    width: 60vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 19vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 19vw;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(3n) {
-    margin: 0 0 1.5vw 0;
+  #tabs_pills .menu_photo_tiled_x3 .menu_items ul .menu_item {
+    flex: 0 1 23%;
+    margin: 0 1%;
   }
 }
 @media only screen and (min-width: 1280px) {
-  section#mod_menu > #tabs_side_menu,
-section#mod_menu > #tabs_pills {
+  #tabs_side_menu,
+#tabs_pills {
     padding: 0;
   }
 }
 @media only screen and (min-width: 1600px) {
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items {
-    text-align: center;
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul .menu_item {
+    flex: 0 1 31%;
+    margin: 0 1%;
   }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul {
-    text-align: left;
-    width: 42vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 13vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 13vw;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > li:nth-child(3n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_menu > #tabs_side_menu .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+  #tabs_side_menu .menu_photo_tiled_x3 .menu_items ul > ul > li > .image_prov {
     height: 300px;
     max-width: 430px;
   }
 
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items {
-    text-align: center;
+  #tabs_pills .menu_photo_tiled_x3 .menu_items ul .menu_item {
+    flex: 0 1 23%;
+    margin: 0 1%;
   }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul {
-    text-align: left;
-    width: 55vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li {
-    width: 17.3333333333vw;
-    height: auto;
-    float: left;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li div.image {
-    height: 17.3333333333vw;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(n+1) {
-    margin: 0 1.5vw 1.5vw 0;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items ul > li:nth-child(3n) {
-    margin: 0 0 1.5vw 0;
-  }
-  section#mod_menu > #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > .image_prov {
+  #tabs_pills .menu_photo_tiled_x3 .menu_items ul > ul > li > .image_prov {
     height: 300px;
     max-width: 540px;
     margin: 0 0 15px;
   }
-  section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_sub_group_half .menu_items > ul > li > .image_prov,
-section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > .image_prov {
+  #tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_sub_group_half .menu_items > ul > li > .image_prov,
+#tabs_pills .menu_text_list_center .menu_items > ul > li > .image_prov {
     height: 350px;
   }
-  section#mod_menu > #tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov {
+  #tabs_pills .menu_photo_list .menu_items > ul > li > .image_prov {
     max-width: none;
     margin: 0 0 15px;
     background-position: center center;
   }
-  section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > .image_prov {
+  #tabs_pills .menu_text_list_center .menu_items > ul > li > .image_prov {
     height: 350px;
     max-width: 550px;
   }
@@ -4439,5 +3939,3 @@ section#mod_menu > #tabs_pills .menu_text_list_center .menu_items > ul > li > .i
     margin-bottom: 10px;
   }
 }
-
-/*# sourceMappingURL=main.css.map */

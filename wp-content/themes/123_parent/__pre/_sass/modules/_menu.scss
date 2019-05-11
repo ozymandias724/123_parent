@@ -1,6 +1,6 @@
 @media only screen {
     // Menu Area for Tabs Style Side Menu
-    section#mod_menu > #tabs_side_menu{
+    #tabs_side_menu{
         margin: 0 auto;
         max-width: $max_width;
         display: flex;
@@ -37,7 +37,7 @@
         }
     }
     // Menu with Tabs Pills
-    section#mod_menu > #tabs_pills {
+    #tabs_pills {
         max-width: $max_width;
         margin: 0 auto;
         display: flex;
@@ -79,8 +79,8 @@
         }
     }
     // Common CSS for different Menu Tabs Styles
-    section#mod_menu > #tabs_side_menu,
-    section#mod_menu > #tabs_pills {
+    #tabs_side_menu,
+    #tabs_pills {
         padding: 0 3%;
         // Common CSS for the different Menu Styles
         .menu_text_half, 
@@ -208,10 +208,6 @@
                     background: $white;
                     padding: 0 15px;
                 }
-                // Menu header title text
-                // > h2 {
-                //     margin: 9px 0 0;
-                // }
             }
         }
         // Menu Text Sub Group 1/2
@@ -343,11 +339,6 @@
             }
             // Menu items 
             .menu_items {
-                $w : 90vw;
-                $c : 1;
-                $g : 1.5vw;
-                $s : true;
-                @include gridLayout($w, $c, $g, $s);
                 // Menu items title
                 > ul > li > h3 {
                     display: flex;
@@ -395,55 +386,52 @@
 }
 
 @media only screen and (min-width: 768px){
-    // Menu 
-    section#mod_menu {
-        > #tabs_pills,
-        > #tabs_side_menu {
-            // Menu style of Photo Tiled x3 menu items
-            .menu_photo_tiled_x3 .menu_items {
-                $w : 60vw;
-                $c : 2;
-                $g : 1.5vw;
-                $s : true;
-                @include gridLayout($w, $c, $g, $s);
-                // Image
-                > ul > li > .image_prov {
-                    height: 200px;
-                }
+    #tabs_pills,
+    #tabs_side_menu {
+        .menu_photo_tiled_x3 .menu_items ul {
+            display: flex;
+            flex-flow: row wrap;
+            .menu_item {
+                flex: 0 1 31%;
+                margin: 0 1%;
             }
-            // Menu Text Sub Group 1/2
-            .menu_text_sub_group_half { 
-                flex-flow: row nowrap;
-                > div:nth-child(odd) {
-                    margin-right: 30px;
-                }
+            // Image
+            > ul > li > .image_prov {
+                height: 200px;
             }
         }
-        // Tabs Style of Side Menu
-        > #tabs_side_menu {
+        // Menu Text Sub Group 1/2
+        .menu_text_sub_group_half { 
             flex-flow: row nowrap;
-            // Tabs Area for Tabs Style of Side Menu
-            #menu_tabs {
-                flex: 0 1 20%;
-                margin: 0 30px 0 0;
-            }
-            // Menu section for Tabs Style of Side Menu 
-            .menu_section {
-                flex: 0 1 80%;
+            > div:nth-child(odd) {
+                margin-right: 30px;
             }
         }
-        // Tabs Style of Pills
-        > #tabs_pills #menu_tabs > h4 {
-            display: inline-block;
-            text-align: left;
+    }
+    // Tabs Style of Side Menu
+    #tabs_side_menu {
+        flex-flow: row nowrap;
+        // Tabs Area for Tabs Style of Side Menu
+        #menu_tabs {
+            flex: 0 1 20%;
+            margin: 0 30px 0 0;
         }
+        // Menu section for Tabs Style of Side Menu 
+        .menu_section {
+            flex: 0 1 80%;
+        }
+    }
+    // Tabs Style of Pills
+    #tabs_pills #menu_tabs > h4 {
+        display: inline-block;
+        text-align: left;
     }
 }
 
 @media only screen and (min-width: 1000px){
     // Menu 
-    section#mod_menu > #tabs_side_menu,
-    section#mod_menu > #tabs_pills {
+    #tabs_side_menu,
+    #tabs_pills {
         // Menu Text 1/2
         .menu_text_half {
             // Menu Style Text 1/2 menu items unordered list
@@ -465,43 +453,40 @@
             }
         }
     }
-    section#mod_menu > #tabs_side_menu {
-        .menu_photo_tiled_x3 .menu_items {
-            $w : 60vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
+    #tabs_side_menu {
+        .menu_photo_tiled_x3 .menu_items ul {
+            .menu_item {
+                flex: 0 1 31%;
+                margin: 0 1%;
+            }
         }
     }
-    section#mod_menu > #tabs_pills {
+    #tabs_pills {
         // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items {
-            $w : 60vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
+        .menu_photo_tiled_x3 .menu_items ul {
+            .menu_item {
+                flex: 0 1 23%;
+                margin: 0 1%;
+            }
         }
     }
 }
 
 @media only screen and (min-width: 1280px){
-    section#mod_menu > #tabs_side_menu, 
-    section#mod_menu > #tabs_pills {
+    #tabs_side_menu, 
+    #tabs_pills {
         padding: 0;
     }
 }
 
 @media only screen and (min-width: 1600px){
-    section#mod_menu > #tabs_side_menu {
+    #tabs_side_menu {
         // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items {
-            $w : 42vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
+        .menu_photo_tiled_x3 .menu_items ul {
+            .menu_item {
+                flex: 0 1 31%;
+                margin: 0 1%;
+            }
             // Menu style of Photo Tiled x3 menu items unordered list image
             > ul > li > .image_prov {
                 height: 300px;
@@ -509,14 +494,13 @@
             }
         }
     }
-    section#mod_menu > #tabs_pills {
+    #tabs_pills {
         // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items {
-            $w : 55vw;
-            $c : 3;
-            $g : 1.5vw;
-            $s : true;
-            @include gridLayout($w, $c, $g, $s);
+        .menu_photo_tiled_x3 .menu_items ul {
+            .menu_item {
+                flex: 0 1 23%;
+                margin: 0 1%;
+            }
             // Menu style of Photo Tiled x3 menu items unordered list image
             > ul > li > .image_prov {
                 height: 300px;
