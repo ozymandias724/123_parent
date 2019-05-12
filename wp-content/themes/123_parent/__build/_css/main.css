@@ -1,11 +1,10 @@
 @charset "UTF-8";
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 /* Slider */
-@import '../../node_modules/magnific-popup/dist/magnific-popup.css';
-@import '../../node_modules/leaflet/dist/leaflet.css';
 .slick-slider {
   position: relative;
   display: block;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -13,6 +12,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -34,6 +34,10 @@
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -116,6 +120,8 @@
   top: 50%;
   margin-top: -10px\9 ;
   /*lte IE 8*/
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
@@ -714,8 +720,7 @@ h6 {
   }
 
   img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     height: auto;
     width: 100%;
   }
@@ -769,8 +774,23 @@ h6 {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
+  section.mod__featured_grid {
+    text-align: center;
+  }
+  section.mod__featured_grid > div.container {
+    margin: 0 auto 30px auto;
+    width: 65vw;
+  }
+  section.mod__featured_grid > div.container > h2 {
+    margin: 0 auto 30px auto;
+  }
+  section.mod__featured_grid > div.container > div:first-of-type {
+    margin: 0 auto 30px auto;
+  }
+
   div.site_grid {
     text-align: center;
+    margin: 0 auto 0 auto;
     width: 65vw;
   }
   div.site_grid ul {
@@ -808,70 +828,11 @@ h6 {
   div.site_grid > ul {
     list-style: none;
   }
-
-  .site_featured_item_block {
-    display: block;
-    margin: 0 auto;
-    width: 65vw;
-    text-align: center;
-  }
-  .site_featured_item_block .image {
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .site_featured_item_block .site_grid {
-    text-align: center;
-  }
-  .site_featured_item_block .site_grid ul {
-    text-align: left;
-    width: 65vw;
-    margin: 0 auto 0 auto;
-    display: inline-block;
-    list-style: none;
-  }
-  .site_featured_item_block .site_grid ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .site_featured_item_block .site_grid ul > li {
-    width: 20.3333333333vw;
-    height: auto;
-    float: left;
-  }
-  .site_featured_item_block .site_grid ul > li div.image {
-    height: 20.3333333333vw;
-  }
-  .site_featured_item_block .site_grid ul > li:nth-child(n+1) {
-    margin: 0 2vw 2vw 0;
-  }
-  .site_featured_item_block .site_grid ul > li:nth-child(3n) {
-    margin: 0 0 2vw 0;
-  }
-  .site_featured_item_block .site_grid > ul > li {
-    border: 1px solid black;
-    text-align: center;
-    padding: 30px;
-    flex: 1 0 auto;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-  }
-  .site_featured_item_block .site_grid > ul > li > h4, .site_featured_item_block .site_grid > ul > li h5 {
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-  .site_featured_item_block .site_grid > ul > li > h5,
-.site_featured_item_block .site_grid > ul > li > p {
-    margin-bottom: 10px;
-  }
 }
 @media only screen and (min-width: 550px) {
   div.site_grid {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   div.site_grid ul {
     text-align: left;
@@ -903,6 +864,7 @@ h6 {
 @media only screen and (min-width: 768px) {
   div.site_grid {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   div.site_grid ul {
     text-align: left;
@@ -934,6 +896,7 @@ h6 {
 @media only screen and (min-width: 1024px) {
   div.site_grid {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   div.site_grid ul {
     text-align: left;
@@ -2448,8 +2411,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   .mobilefooter > div:nth-of-type(1) > a > img {
     height: auto;
     max-width: 200px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mobilefooter > div:nth-of-type(1) > div {
     display: flex;
@@ -2573,6 +2535,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
 
   footer.mobilefooter.invertlogo > div > a > img {
+    -webkit-filter: invert(100%);
     filter: invert(100%);
   }
 }
@@ -2830,8 +2793,7 @@ section.hero .hero_foreground a:active {
     margin-bottom: 0;
   }
   section.hero#hero_slider .slick_slider_img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     position: relative;
     top: 0;
     left: 50%;
@@ -3197,6 +3159,7 @@ section#banner_popup .popup_close {
 @media only screen {
   section#mod_about > div {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   section#mod_about > div ul {
     text-align: left;
@@ -3241,6 +3204,7 @@ section#banner_popup .popup_close {
 @media only screen and (min-width: 550px) {
   section#mod_about > div {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   section#mod_about > div ul {
     text-align: left;
@@ -3272,6 +3236,7 @@ section#banner_popup .popup_close {
 @media only screen and (min-width: 768px) {
   section#mod_about > div {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   section#mod_about > div ul {
     text-align: left;
@@ -3839,6 +3804,7 @@ section#banner_popup .popup_close {
   }
   #mod_coupons section.mod__coupons-featuredcoupons .site_grid {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   #mod_coupons section.mod__coupons-featuredcoupons .site_grid ul {
     text-align: left;
@@ -3893,6 +3859,7 @@ section#banner_popup .popup_close {
   }
   #mod_services section.mod__services-featuredservice .site_grid {
     text-align: center;
+    margin: 0 auto 0 auto;
   }
   #mod_services section.mod__services-featuredservice .site_grid ul {
     text-align: left;
@@ -3939,3 +3906,5 @@ section#banner_popup .popup_close {
     margin-bottom: 10px;
   }
 }
+
+/*# sourceMappingURL=main.css.map */

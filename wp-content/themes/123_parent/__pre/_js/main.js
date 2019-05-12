@@ -102,7 +102,7 @@ Theme.Max_Width = {
     },
 }
 Theme.Max_Width._init();
-
+    
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),
     _init: function () {
@@ -676,7 +676,6 @@ Hero.Padding_Top = {
             });
         },
         _header_function: function () {
-
             //Get header position value
             Hero.Padding_Top.header_position = $("header").css("position");
 
@@ -688,11 +687,8 @@ Hero.Padding_Top = {
                 Hero.Padding_Top.header_id !== "opt_header_nine" &&
                 Hero.Padding_Top.header_id !== "opt_header_three" &&
                 Hero.Padding_Top.header_id !== "opt_header_eight") {
-
                 Hero.Padding_Top.header_height = $("header").height();
-
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
-
             }
             else if (
                 Hero.Padding_Top.header_id === "opt_header_four"
@@ -712,10 +708,9 @@ Hero.Padding_Top = {
                 Hero.Padding_Top.main.css("padding-top", "0");
             }
         },
-        _mobile_header_function: function () {
-            Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
-            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
-        }
-
-    },
-    Hero.Padding_Top._init();
+    _mobile_header_function: function () {
+        Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
+        Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
+    }
+},
+Hero.Padding_Top._init();

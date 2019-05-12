@@ -19,15 +19,14 @@
 
     if( !empty($fields['featured_coupons']['coupons']) ){
 
-        $heading = ( !empty( $fields['featured_coupons']['heading'] ) ? '<h4>'.$fields['featured_coupons']['heading'].'</h4>' : '');
-        $details = ( !empty( $fields['featured_coupons']['details'] ) ? '<p>'.$fields['featured_coupons']['details'].'</p>' : '');
+        $heading = ( !empty( $fields['featured_coupons']['heading'] ) ? '<h2>'.$fields['featured_coupons']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['featured_coupons']['details'] ) ? '<div>'.$fields['featured_coupons']['details'].'</div>' : '');
         
         $return_coupons = '
-            <section class="mod__coupons-featuredcoupons">
-                <div>
-                    '.$heading.'
-                    '.$details.'
-                </div>
+            <section class="mod__coupons-featuredcoupons mod__featured_grid">
+                <div class="container">
+                '.$heading.'
+                '.$details.'
                 <div class="site_grid"><ul>
         ';
         
@@ -55,7 +54,8 @@
         $return_coupons .= '</ul></div>';
 
         $return_coupons .= '
-            <a href="javascript:;" title="View all coupons" class="site_button">View All Coupons</a>
+                    <a href="javascript:;" title="View all coupons" class="site_button">View All Coupons</a>
+                </div>
             </section>
         ';
     }

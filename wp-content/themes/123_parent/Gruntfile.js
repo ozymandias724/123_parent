@@ -103,6 +103,25 @@ grunt.initConfig({
                 sourceMaps: true
             }
         },
+        customizer: {
+            files: {
+                '__build/_js/_conditional/customizer.js': ['__pre/_js/_conditional/customizer.js']
+            },
+            options: {
+                transform: [
+                    [
+                        "babelify", {
+                            presets: ["@babel/env"]
+                        }
+                    ]
+                ],
+                browserifyOptions: {
+                    // Embed source map for tests
+                    debug: true
+                },
+                sourceMaps: true
+            }
+        },
         login: {
             files: {
                 '__build/_js/_conditional/login.js': ['__pre/_js/_conditional/login.js']
@@ -147,6 +166,12 @@ grunt.initConfig({
             options: {},
             files: {
                 '__build/_js/main.js.map': ['__build/_js/main.js'],
+            }
+        },
+        customizer: {
+            options: {},
+            files: {
+                '__build/_js/_conditional/customizer.js.map': ['__build/_js/_conditional/customizer.js'],
             }
         },
         admin: {

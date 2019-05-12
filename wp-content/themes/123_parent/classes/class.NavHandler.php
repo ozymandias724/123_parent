@@ -160,7 +160,7 @@ class NavHandler
         // header popup button
         $quickquote = '';
         if( $popups['header']['status'] ){
-            $quickquote = '<a href="javascript:;" class="site__button-quote" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
+            $quickquote = '<a href="javascript:;" class="site__button-quote site__colors_buttons_bg" title="Get a quote button">' . $popups['header']['button_text'] . '</a>';
         }
 
         // banner popup
@@ -219,12 +219,12 @@ class NavHandler
          * 
          */
         $format_header = '
-            <header class="header %s" id="opt_header_two">
-                <div class="header-tint">  
+            <header class="header %s site_colors_header_bg" id="opt_header_two">
+                <div class="header-tint site_colors_header_bg">  
                     %s
                     <div>
                         %s
-                        <nav>
+                        <nav class="site_colors_header_nav_bg">
                             %s
                         </nav>
                     </div>

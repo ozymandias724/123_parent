@@ -22,7 +22,7 @@
         $details = ( !empty( $fields['featured_testimonials']['details'] ) ? '<p>'.$fields['featured_testimonials']['details'].'</p>' : '');
         
         $return_testimonials = '
-            <section class="mod__testimonials-featuredtestimonial site_featured_item_block">
+            <section class="mod__testimonials-featuredtestimonial">
                 <div>
                     '.$heading.'
                     '.$details.'

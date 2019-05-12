@@ -5,7 +5,7 @@
  * @link http://codex.wordpress.org/Theme_Customization_API
  * @since MyTheme 1.0
  */
-class MyTheme_Customize
+class Site__Customizer
 {
     /**
      * This hooks into 'customize_register' (available as of WP 3.4) and allows
@@ -21,82 +21,173 @@ class MyTheme_Customize
      */
     public static function register($wp_customize)
     {
-        //1. Define a new section (if desired) to the Theme Customizer
-        $wp_customize->add_section(
-            '123parent_colors',
-            array(
-                'title' => __('Choose Theme Colors', '123_parent'), //Visible title of section
-                'priority' => 35, //Determines what order this appears in
-                'capability' => 'edit_theme_options', //Capability needed to tweak
-                'description' => __('Allows you to customize some example settings for 123_parent.', '123_parent'), //Descriptive tooltip
-            )
-        );
-      
-      //2. Register new settings to the WP database...
-        $wp_customize->add_setting(
-            'link_textcolor', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-            array(
-                'default' => '#383838', //Default setting/value to save
-                'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
-                'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
-                'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-            )
-        ); 
-        $wp_customize->add_setting(
-            'header_bgcolor', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-            array(
-                'default' => '#383838', //Default setting/value to save
-                'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
-                'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
-                'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-            )
-        );
         
-        $wp_customize->add_setting(
-            'header_nav_bgcolor', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
-            array(
-                'default' => '#383838', //Default setting/value to save
-                'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
-                'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
-                'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-            )
-        ); 
+        // add settings
+        $settings = array(
+            [
+                'id' => 'link_textcolor'
+                ,'args' => [
+                    'default' => '#383838', //Default setting/value to save
+                    'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                    'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+                ]
+            ]
+            ,[
+                'id' => 'header_bgcolor'
+                ,'args' => [
+                    'default' => '#383838', //Default setting/value to save
+                    'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                    'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+                ]
+            ]
+            ,[
+                'id' => 'header_nav_bgcolor'
+                ,'args' => [
+                    'default' => '#383838', //Default setting/value to save
+                    'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                    'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+                ]
+            ]
+            ,[
+                'id' => 'site__colors_buttons_bg'
+                ,'args' => [
+                    'default' => '#383838', //Default setting/value to save
+                    'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                    'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+                ]
+            ]
+            ,[
+                'id' => 'site__fonts_body'
+                ,'args' => [
+                    'default' => '#383838', //Default setting/value to save
+                    'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                    'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+                ]
+            ]
+            ,[
+                'id' => 'site__fonts_headers'
+                ,'args' => [
+                    'default' => '#383838', //Default setting/value to save
+                    'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+                    'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+                    'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+                ]
+            ]
+        );
+        foreach ($settings as $setting) {
+            $wp_customize->add_setting($setting['id'], $setting['args']);
+        }
+        // add sections
+        $sections = array(
+            [
+                'id' => '123parent_colors',
+                'args' => array(
+                    'title' => __('Choose Theme Colors', '123_parent'), //Visible title of section
+                    'priority' => 35, //Determines what order this appears in
+                    'capability' => 'edit_theme_options', //Capability needed to tweak
+                    'description' => __('Allows you to customize some example settings for 123_parent.', '123_parent'), //Descriptive tooltip
+                )
+            ]
+            ,[
+                'id' =>'123parent_fonts',
+                'args' => array(
+                    'title' => __('Choose Theme Fonts', '123_parent'), //Visible title of section
+                    'priority' => 35, //Determines what order this appears in
+                    'capability' => 'edit_theme_options', //Capability needed to tweak
+                    'description' => __('Allows you to customize some example settings for 123_parent.', '123_parent'), //Descriptive tooltip
+                )
+            ]
             
-      //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
-        $wp_customize->add_control(new WP_Customize_Color_Control( //Instantiate the color control class
-            $wp_customize, //Pass the $wp_customize object (required)
-            '123_parent_link_textcolor', //Set a unique ID for the control
-            array(
-                'label' => __('Links (text)', '123_parent'), //Admin-visible name of the control
-                'settings' => 'link_textcolor', //Which setting to load and manipulate (serialized is okay)
-                'priority' => 10, //Determines the order this control appears in for the specified section
-                'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-            )
-        ));
-
-        $wp_customize->add_control(new WP_Customize_Color_Control( //Instantiate the color control class
-            $wp_customize, //Pass the $wp_customize object (required)
-            '123_parent_header_bgcolor', //Set a unique ID for the control
-            array(
-                'label' => __('Header Background Color', '123_parent'), //Admin-visible name of the control
-                'settings' => 'header_bgcolor', //Which setting to load and manipulate (serialized is okay)
-                'priority' => 10, //Determines the order this control appears in for the specified section
-                'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-            )
-        ));
-
-        $wp_customize->add_control(new WP_Customize_Color_Control( //Instantiate the color control class
-            $wp_customize, //Pass the $wp_customize object (required)
-            '123_parent_header_nav_bgcolor', //Set a unique ID for the control
-            array(
-                'label' => __('Nav Background Color', '123_parent'), //Admin-visible name of the control
-                'settings' => 'header_nav_bgcolor', //Which setting to load and manipulate (serialized is okay)
-                'priority' => 10, //Determines the order this control appears in for the specified section
-                'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-            )
-        ));
-      
-      //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
+        );
+        foreach ($sections as $section) {
+            $wp_customize->add_section($section['id'], $section['args']);
+        }
+        // add controls
+        $color_controls = array(
+            [
+                'id' => '123_parent_link_textcolor'
+                ,'args' => [
+                    'label' => __('Links (text)', '123_parent'), //Admin-visible name of the control
+                    'settings' => 'link_textcolor', //Which setting to load and manipulate (serialized is okay)
+                    'priority' => 10, //Determines the order this control appears in for the specified section
+                    'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                ]
+            ]
+            ,[
+                'id' => '123_parent_header_bgcolor'
+                ,'args' => [
+                    'label' => __('Header Background Color', '123_parent'), //Admin-visible name of the control
+                    'settings' => 'header_bgcolor', //Which setting to load and manipulate (serialized is okay)
+                    'priority' => 10, //Determines the order this control appears in for the specified section
+                    'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                ]
+            ]
+            ,[
+                'id' => '123_parent_header_nav_bgcolor'
+                ,'args' => [
+                    'label' => __('Nav Background Color', '123_parent'), //Admin-visible name of the control
+                    'settings' => 'header_nav_bgcolor', //Which setting to load and manipulate (serialized is okay)
+                    'priority' => 10, //Determines the order this control appears in for the specified section
+                    'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                ]
+            ]
+            ,[
+                'id' => 'site__colors_buttons_bg'
+                ,'args' => [
+                    'label' => __('Buttons Background Color', '123_parent'), //Admin-visible name of the control
+                    'settings' => 'site__colors_buttons_bg', //Which setting to load and manipulate (serialized is okay)
+                    'priority' => 10, //Determines the order this control appears in for the specified section
+                    'section' => '123parent_colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                ]
+            ]
+        );
+        foreach ($color_controls as $color_control) {
+            $wp_customize->add_control(new WP_Customize_Color_Control(
+                $wp_customize
+                ,$color_control['id']
+                ,$color_control['args']
+            ));
+        }
+        $fonts_controls = array(
+            [
+                'id' => 'site__fonts_body'
+                ,'args' => [
+                    'label' => __('Choose Body Font', '123_parent') //Admin-visible name of the control
+                    ,'section' => '123parent_fonts' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                    ,'settings' => 'site__fonts_body' //Which setting to load and manipulate (serialized is okay)
+                    ,'type' => 'select'
+                    ,'choices' => array(
+                        'lato' => 'Lato'
+                        ,'gotham' => 'Gotham'
+                    )
+                    ,'priority' => 10, //Determines the order this control appears in for the specified section
+                ]
+            ]
+            ,[
+                'id' => 'site__fonts_headers'
+                ,'args' => [
+                    'label' => __('Choose Header Font', '123_parent') //Admin-visible name of the control
+                    ,'section' => '123parent_fonts' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                    ,'settings' => 'site__fonts_headers' //Which setting to load and manipulate (serialized is okay)
+                    ,'type' => 'select'
+                    ,'choices' => array(
+                        'lato' => 'Lato'
+                        ,'gotham' => 'Gotham'
+                    )
+                    ,'priority' => 10, //Determines the order this control appears in for the specified section
+                ]
+            ]
+        );
+        foreach ($fonts_controls as $fonts_control) {
+            $wp_customize->add_control($fonts_control['id'], $fonts_control['args']);
+        }
+        
+        //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
         $wp_customize->get_setting('blogname')->transport = 'postMessage';
         $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
         $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
@@ -113,18 +204,52 @@ class MyTheme_Customize
      */
     public static function header_output()
     {
-        ?>
-      <!--Customizer CSS--> 
-      <style type="text/css">
-           <?php self::generate_css('html body a', 'color', 'link_textcolor', '#'); ?>
-           <?php self::generate_css('header.header > div:first-child', 'background-color', 'header_bgcolor', '#', ' !important'); ?>
-           <?php self::generate_css('header.header > nav > ul, header.header > nav > ul:before, header.header > nav > ul:after', 'background-color', 'header_nav_bgcolor', '#', ' !important'); ?>
-      </style> 
-      <!--/Customizer CSS-->
-      <?php
-
+        $els = array(
+            [
+                '.site_colors_links'    // selector
+                ,'color'                // property
+                ,'link_textcolor'       // theme_mod (setting)
+                ,'#'                    // prefix
+                ,' !important'          // postfix
+            ]
+            ,[
+                'html body'    // selector
+                ,'font-family'                // property
+                ,'site__fonts_body'       // theme_mod (setting)
+                ,''                    // prefix
+                ,' !important'          // postfix
+            ]
+            ,[
+                '.site_colors_header_bg'    // selector
+                ,'background-color'                // property
+                ,'header_nav_bgcolor'       // theme_mod (setting)
+                ,'#'                    // prefix
+                ,' !important'          // postfix
+            ]
+            ,[
+                '.site_colors_header_nav_bg'    // selector
+                ,'color'                // property
+                ,'header_nav_bgcolor'       // theme_mod (setting)
+                ,'#'                    // prefix
+                ,' !important'          // postfix
+            ]
+            ,[
+                '.site__colors_buttons_bg'    // selector
+                ,'background-color'                // property
+                ,'site__colors_buttons_bg'       // theme_mod (setting)
+                ,'#'                    // prefix
+                ,' !important'          // postfix
+            ]
+        );
+        $return_customizer_css = '';
+        foreach ($els as $el) {
+            $return_customizer_css .= self::generate_css($el[0],$el[1],$el[2],$el[3],$el[4]);
+        }
+        return $return_customizer_css;
     }
 
+
+    // Helper Functions Below
     /**
      * This outputs the javascript needed to automate the live settings preview.
      * Also keep in mind that this function isn't necessary unless your settings 
@@ -140,7 +265,7 @@ class MyTheme_Customize
     {
         wp_enqueue_script(
             'mytheme-themecustomizer', // Give the script a unique ID
-            get_template_directory_uri() . '/js/customizer.js', // Define the path to the JS file
+            get_template_directory_uri() . '/__build/_js/_conditional/customizer.js', // Define the path to the JS file
             array('jquery', 'customize-preview'), // Define dependencies
             null, // Define a version (optional) 
             true // Specify whether to put in footer (leave this true)
@@ -181,10 +306,10 @@ class MyTheme_Customize
 }
 
 // Setup the Theme Customizer settings and controls...
-add_action('customize_register', array('MyTheme_Customize', 'register'));
+add_action('customize_register', array('Site__Customizer', 'register'));
 
 // Output custom CSS to live site
-add_action('wp_head', array('MyTheme_Customize', 'header_output'));
+add_action('wp_head', array('Site__Customizer', 'header_output'));
 
 // Enqueue live preview javascript in Theme Customizer admin screen
-add_action('customize_preview_init', array('MyTheme_Customize', 'live_preview'));
+add_action('customize_preview_init', array('Site__Customizer', 'live_preview'));

@@ -4,22 +4,38 @@
  * here. Your javascript should grab settings from customizer controls, and 
  * then make any necessary changes to the page using jQuery.
  */
-import $ from 'jquery';
 
 wp.customize('link_textcolor', function (value) {
     value.bind(function (newval) {
-        $('html body a').css('color', newval);
+        $('.site__colors_links').css('color', newval);
     });
 });
 
 wp.customize('header_bgcolor', function (value) {
     value.bind(function (newval) {
-        $('header.header > div:first-child').css('background-color', newval);
+        $('.site_colors_header_bg').css('background-color', newval);
     });
 });
 
 wp.customize('header_nav_bgcolor', function (value) {
     value.bind(function (newval) {
-        $('header.header > nav > ul, header.header > nav > ul:before, header.header > nav > ul:after').css('background-color', newval);
+        $('.site_colors_header_nav_bg').css('background-color', newval);
+    });
+});
+
+wp.customize('site__fonts_body', function (value) {
+    value.bind(function (newval) {
+        $('body, .site__fonts_body').css('font-family', newval);
+    });
+});
+wp.customize('site__fonts_headers', function (value) {
+    value.bind(function (newval) {
+        $('h1, h2, h3, h4, h5, h6, .site__fonts_headers').css('font-family', newval);
+    });
+});
+
+wp.customize('site__colors_buttons_bg', function (value) {
+    value.bind(function (newval) {
+        $('.site__colors_buttons_bg').css('background-color', newval);
     });
 });
