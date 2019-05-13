@@ -61,7 +61,7 @@
         $return_posts .= '</ul></div>';
 
         $return_posts .= '
-            <a href="javascript:;" title="View all blog posts" class="site_button">View All</a>
+            <a href="javascript:;" title="View all blog posts" class="site__button">View All</a>
             </section>
         ';
     }

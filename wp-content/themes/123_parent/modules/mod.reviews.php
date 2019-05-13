@@ -88,7 +88,7 @@
         $return_testimonials .= '</ul></div>';
 
         $return_testimonials .= '
-            <a href="javascript:;" title="View all testimonial" class="site_button">View All testimonials</a>
+            <a href="javascript:;" title="View all testimonial" class="site__button">View All testimonials</a>
             </section>
         ';
     }

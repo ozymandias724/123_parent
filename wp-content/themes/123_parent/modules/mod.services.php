@@ -19,21 +19,21 @@
 
     if( !empty($fields['featured_services']['services']) ){
 
-        $heading = ( !empty( $fields['featured_services']['heading'] ) ? '<h4>'.$fields['featured_services']['heading'].'</h4>' : '');
-        $details = ( !empty( $fields['featured_services']['details'] ) ? '<p>'.$fields['featured_services']['details'].'</p>' : '');
+        $heading = ( !empty( $fields['featured_services']['heading'] ) ? '<h2>'.$fields['featured_services']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['featured_services']['details'] ) ? '<div>'.$fields['featured_services']['details'].'</div>' : '');
         
         $return_services = '
-            <section class="mod__services-featuredservice">
-                <div>
+            <section class="mod__services-featuredservice mod__featured_grid">
+                <div class="container">
                     '.$heading.'
                     '.$details.'
-                </div>
-                <div class="site_grid"><ul>
+                    <div class="site_grid"><ul>
         ';
         
         $format_service = '
             <li>
                 <h5>%s</h5>
+                <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="site__bgimg_img" style="background-image: url(%s)"></div></div>
             </li>
         ';
 
@@ -45,13 +45,15 @@
                 $return_services .= sprintf(
                     $format_service
                     ,$service['service']->post_title
+                    ,$service_fields['image']['url']
                 );
             }
         }
         $return_services .= '</ul></div>';
 
         $return_services .= '
-            <a href="javascript:;" title="View all service" class="site_button">View All Services</a>
+            <a href="'.get_permalink($res[0]->ID).'" title="View all services" class="site__button">View All Services</a>
+            </div>
             </section>
         ';
     }

@@ -54,7 +54,7 @@
         $return_coupons .= '</ul></div>';
 
         $return_coupons .= '
-                    <a href="javascript:;" title="View all coupons" class="site_button">View All Coupons</a>
+                    <a href="'.get_permalink($res[0]->ID).'" title="View all coupons" class="site__button">View All Coupons</a>
                 </div>
             </section>
         ';

@@ -9,7 +9,7 @@
             $c: 3;
             $g: 2vw;
             $s: true;
-            margin: 0 auto;
+            margin: getVar($sizing, gutter, px, large) auto;
             text-align: center;
             width: $w;
 
@@ -26,10 +26,23 @@
                         flex-flow: column nowrap;
                         align-items: center;
                         justify-content: center;
+                        min-height: 245px;
+                        position: relative;
+
+                        > .site__bgimg {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
 
                         >h5 {
+                            position: relative;
+                            z-index: 9;
                             font-size: 2rem;
                             text-transform: uppercase;
+                            color: white;
                         }
 
                         >h5,
