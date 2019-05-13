@@ -1,6 +1,6 @@
 @media only screen {
     // Menu Area for Tabs Style Side Menu
-    #tabs_side_menu{
+    #tabs_sidebar {
         margin: 0 auto;
         max-width: $max_width;
         display: flex;
@@ -13,6 +13,9 @@
             > h4 {
                 display: block;
             }
+            > h4:first-of-type > a {
+                border-top: 1px solid $gray_one;
+            }
             // Menu tabs links
             > h4 > a {
                 padding: 10px 15px;
@@ -24,7 +27,8 @@
             // Menu tabs links actions on active menu link, active and focus
             > h4 > a.active_menu_link,
             > h4 > a:active, 
-            > h4 > a:focus {
+            > h4 > a:focus, 
+            > h4 > a.active_menu_link:hover {
                 background-color: $accent;
                 color: $white;
                 border-bottom: 1px solid $accent;
@@ -63,7 +67,8 @@
                     // Tabs links actions on active, active menu link, and focus
                     &.active_menu_link,
                     &:active,
-                    &:focus {
+                    &:focus,
+                    &.active_menu_link:hover {
                         border: 2px solid $accent;
                         background-color: $accent;
                         color: $white;
@@ -73,14 +78,64 @@
                         border: 2px solid $gray_one;
                         color: $white;
                         background-color: $gray_one;
-                    }
+                    } 
                 }
             }
         }
     }
-    // Common CSS for different Menu Tabs Styles
-    #tabs_side_menu,
-    #tabs_pills {
+    #tabs_divider {
+        max-width: $max_width;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        #menu_tabs {
+            padding: 0 0 15px 0;
+        }
+        #menu_tabs:after {
+            content: "";
+            display: block;
+            border-bottom: 2px solid $gray_one;
+            margin-top: -5px;
+        }
+        h4 {
+            display: block;
+            padding: 10px 0;
+            font-size: 14px;
+            margin: 0 2px;
+            text-transform: uppercase;
+            a {
+                color: $gray_two;
+                padding: 10px 15px;
+                background-color: $gray_one;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                border-top: 2px solid $gray_one;
+                border-left: 2px solid $gray_one;
+                border-right: 2px solid $gray_one;
+                transition: color 0.3s ease-in-out;
+                &:focus,
+                &.active_menu_link,
+                &.active_menu_link:hover {
+                    color: $accent;
+                    background: $white;
+                    border-bottom: 3px solid transparent;
+                }
+                &:hover,
+                &:active {
+                    color: $white;
+                    background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                }
+            }
+        }
+    }
+    #tabs_sidebar,
+    #tabs_pills,
+    #tabs_divider {
+        min-height: 60vh;
+    }
+    #tabs_sidebar,
+    #tabs_pills,
+    #tabs_divider {
         padding: 0 3%;
         // Common CSS for the different Menu Styles
         .menu_text_half, 
@@ -89,11 +144,10 @@
         .menu_photo_list,
         .menu_photo_tiled_x3,
         .menu_text_sub_group_half {
-            display: none;
             // All menus images
-            .menu_items > ul > li > .image_prov {
+            .image_prov {
                 height: 300px;
-                max-width: 400px;
+                width: 300px;
                 margin: 0 auto;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -110,7 +164,7 @@
                 }
                 // All menus header description
                 > p {
-                    margin-bottom: 20px;
+                    margin: 15px 0 20px;
                     font-family: "Times New Roman";
                     line-height: 1em;
                     font-style: italic;
@@ -155,7 +209,7 @@
                 }
                 // header description
                 > p {
-                    margin-bottom: 20px;
+                    margin: 10px 0 20px;
                 }
             }
             // menu items 
@@ -201,6 +255,12 @@
         }
         // Menu Text 1/2
         .menu_text_half {
+            > div > .menu_header {
+                margin-top: 20px;
+            }
+            > div:first-of-type > .menu_header {
+                margin-top: 0;
+            }
             // Menu header
             .menu_header {
                 text-align: center;
@@ -218,7 +278,7 @@
                 padding-right: 15px;
             }
             > div {
-                flex: 0 1 50%;
+                flex: 0 1 48%;
             }
         }
         // Menu Text List Left
@@ -289,7 +349,6 @@
             .menu_items {
                 // Menu items unordered list items
                 > ul > li  {
-                    display: flex;
                     flex-flow: row wrap;
                     justify-content: space-between;
                     margin-bottom: 20px;
@@ -331,6 +390,12 @@
         }
         // Menu Photo Tiled x3
         .menu_photo_tiled_x3 {
+            > div > .menu_header {
+                margin-top: 20px;
+            }
+            > div:first-of-type > .menu_header {
+                margin-top: 0;
+            }
             // Menu header
             .menu_header {
                 text-align: center;
@@ -339,6 +404,9 @@
             }
             // Menu items 
             .menu_items {
+                .menu_item {
+                    margin-bottom: 10px;
+                }
                 // Menu items title
                 > ul > li > h3 {
                     display: flex;
@@ -387,42 +455,70 @@
 
 @media only screen and (min-width: 768px){
     #tabs_pills,
-    #tabs_side_menu {
-        .menu_photo_tiled_x3 .menu_items ul {
-            display: flex;
-            flex-flow: row wrap;
-            .menu_item {
-                flex: 0 1 31%;
-                margin: 0 1%;
-            }
-            // Image
-            > ul > li > .image_prov {
-                height: 200px;
-            }
-        }
+    #tabs_sidebar,
+    #tabs_divider {
         // Menu Text Sub Group 1/2
         .menu_text_sub_group_half { 
-            flex-flow: row nowrap;
+            flex-flow: row wrap;
             > div:nth-child(odd) {
                 margin-right: 30px;
             }
         }
     }
+    #tabs_pills,
+    #tabs_divider {
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 340px;
+                width: 340px;
+            }
+        }
+    }
+    #tabs_pills,
+    #tabs_divider {
+        .menu_text_half .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 2%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 340px;
+                width: 340px;
+            }
+        }
+    }
     // Tabs Style of Side Menu
-    #tabs_side_menu {
+    #tabs_sidebar {
         flex-flow: row nowrap;
-        // Tabs Area for Tabs Style of Side Menu
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 250px;
+                width: 250px;
+            }
+        }
         #menu_tabs {
-            flex: 0 1 20%;
+            flex: 0 1 25%;
             margin: 0 30px 0 0;
         }
         // Menu section for Tabs Style of Side Menu 
         .menu_section {
-            flex: 0 1 80%;
+            flex: 1 1 75%;
         }
     }
     // Tabs Style of Pills
-    #tabs_pills #menu_tabs > h4 {
+    #tabs_pills #menu_tabs > h4,
+    #tabs_divider #menu_tabs > h4 {
         display: inline-block;
         text-align: left;
     }
@@ -430,19 +526,14 @@
 
 @media only screen and (min-width: 1000px){
     // Menu 
-    #tabs_side_menu,
-    #tabs_pills {
+    #tabs_sidebar {
         // Menu Text 1/2
         .menu_text_half {
-            // Menu Style Text 1/2 menu items unordered list
-            .menu_items > ul {
-                display: flex;
-                flex-flow: row wrap;
-            }
-            // Menu Style Text 1/2 menu items unordered list items
-            .menu_items > ul > li {
-                flex: 0 1 50%;
-            }
+            $w: 100%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
             // Menu Style Text 1/2 menu items unordered list odd items
             .menu_items > ul > li:nth-child(odd) {
                 padding-right: 15px;
@@ -453,74 +544,112 @@
             }
         }
     }
-    #tabs_side_menu {
-        .menu_photo_tiled_x3 .menu_items ul {
-            .menu_item {
-                flex: 0 1 31%;
-                margin: 0 1%;
+    #tabs_sidebar {
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 320px;
+                width: 320px;
             }
         }
     }
-    #tabs_pills {
-        // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items ul {
-            .menu_item {
-                flex: 0 1 23%;
-                margin: 0 1%;
+    #tabs_sidebar,
+    #tabs_pills,
+    #tabs_divider {
+        .menu_text_list_left,
+        .menu_text_list_center, {
+            ul .image_prov {
+                height: 400px;
+                width: 400px;
             }
+        }
+    }   
+    #tabs_pills,
+    #tabs_divider {
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 3;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 300px;
+                width: 300px;
+            }
+        }
+    }
+    #tabs_pills,
+    #tabs_divider {
+        .menu_text_half .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 2%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
         }
     }
 }
 
 @media only screen and (min-width: 1280px){
-    #tabs_side_menu, 
-    #tabs_pills {
+    #tabs_sidebar, 
+    #tabs_pills,
+    #tabs_divider {
         padding: 0;
     }
-}
-
-@media only screen and (min-width: 1600px){
-    #tabs_side_menu {
-        // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items ul {
-            .menu_item {
-                flex: 0 1 31%;
-                margin: 0 1%;
-            }
-            // Menu style of Photo Tiled x3 menu items unordered list image
-            > ul > li > .image_prov {
-                height: 300px;
-                max-width: 430px;
+    #tabs_sidebar {
+        // Menu Text 1/2
+        .menu_text_half {
+            $w: 100%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 400px;
+                width: 400px;
             }
         }
     }
-    #tabs_pills {
-        // Menu style of Photo Tiled x3 menu items
-        .menu_photo_tiled_x3 .menu_items ul {
-            .menu_item {
-                flex: 0 1 23%;
-                margin: 0 1%;
-            }
-            // Menu style of Photo Tiled x3 menu items unordered list image
-            > ul > li > .image_prov {
-                height: 300px;
-                max-width: 540px;
-                margin: 0 0 15px;
+    #tabs_sidebar {
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 3;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 280px;
+                width: 280px;
             }
         }
-        .menu_photo_list .menu_items > ul > li > .image_prov,
-        .menu_text_sub_group_half .menu_items > ul > li > .image_prov,
-        .menu_text_list_center .menu_items > ul > li > .image_prov {
-            height: 350px;
+    }
+    #tabs_pills,
+    #tabs_divider {
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 4;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 290px;
+                width: 290px;
+            }
         }
+    }
+}
+    
+@media only screen and (min-width: 1600px){
+    #tabs_pills,
+    #tabs_divider {
         .menu_photo_list .menu_items > ul > li > .image_prov {
             max-width: none;
             margin: 0 0 15px;
             background-position: center center;
-        }
-        .menu_text_list_center .menu_items > ul > li > .image_prov {
-            height: 350px;
-            max-width: 550px;
         }
     }
 }

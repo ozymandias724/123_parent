@@ -6,6 +6,25 @@
         margin: 0 auto;  
         margin-bottom: 20px;
         max-width: $max_width;
+        min-height: 60vh;
+        // Standard gallery with no tab style
+        $w: 98%;
+        $c: 2;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                justify-content: center;
+                .gallery_image {
+                    height: 220px;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin: 0 auto;
+                }
+            }
+        }
         > h3 {
             display: block;
             font-size: 2.8rem;
@@ -33,6 +52,26 @@
                 text-align: center;
                 margin-bottom: 5px; 
             }
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: 98%;
+                $c: 2;
+                $g: 1%;
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_row {
+                    .gallery_item {
+                        justify-content: center;
+                        .gallery_image {
+                            height: 220px;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
             h3 {
                 display: block;
                 margin: 10px 5px;
@@ -47,7 +86,8 @@
                     color: $gray_three;
                     &:active,
                     &:focus,
-                    &.active_title {
+                    &.active_title,
+                    &.active_title:hover {
                         color: $white;
                         background-color: $accent;
                         border: 2px solid transparent;
@@ -68,6 +108,27 @@
                 content: "";
                 display: block;
                 border-bottom: 2px solid $gray_one;
+                margin-top: -5px;
+            }
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: 98%;
+                $c: 2;
+                $g: 1%;
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_row {
+                    .gallery_item {
+                        justify-content: center;
+                        .gallery_image {
+                            height: 220px;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            margin: 0 auto;
+                        }
+                    }
+                }
             }
             h3 {
                 display: block;
@@ -86,16 +147,16 @@
                     border-right: 2px solid $gray_one;
                     transition: color 0.3s ease-in-out;
                     &:focus,
-                    &.active_title {
+                    &.active_title,
+                    &.active_title:hover {
                         color: $accent;
-                        background-color: $white;
+                        background: $white;
                         border-bottom: 3px solid transparent;
                     }
                     &:hover,
                     &:active {
                         color: $white;
-                        background: $tint;
-                        background: linear-gradient(to bottom, $tint 0%,$gray_three 100%); 
+                        background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                     }
                 }
             }
@@ -103,28 +164,26 @@
         &.tab_sidebar {
             display: flex;
             flex-flow: column nowrap;
-            .gallery_row {
-                .gallery_item {
-                    // flex: 0 1 48%;
-                    // margin: 5px 3px;
-                    justify-content: center;
-                    .gallery_image {
-                        width: 250px;
-                        height: 250px;
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                    }
-                }
-            }
             #gallery_rows {
                 margin-bottom: 20px;
                 flex: 1 1 75%;
-                $w: 90vw;
+                $w: 98%;
                 $c: 2;
-                $g: 1vw;
+                $g: 1%;
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
+                .gallery_row {
+                    .gallery_item {
+                        justify-content: center;
+                        .gallery_image {
+                            height: 220px;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            margin: 0 auto;
+                        }
+                    }
+                }
             }
             #gallery_titles {
                 margin-bottom: 15px;
@@ -145,7 +204,8 @@
                         border-bottom: 1px solid $gray_one;
                         &:active, 
                         &:focus,
-                        &.active_title {
+                        &.active_title,
+                        &.active_title:hover {
                             color: $white;
                             background-color: $accent;
                             border-bottom: 1px solid $accent;
@@ -155,11 +215,6 @@
                             background-color: $gray_one;
                             border-bottom: 1px solid transparent;
                         }
-                        &.active_title:hover {
-                            color: $white;
-                            background-color: $accent;
-                            border-bottom: 1px solid $accent;
-                        }
                     }
                 }
             }
@@ -168,61 +223,184 @@
 }
 
 @media only screen and (min-width: 550px){
-    #gallery.tab_sidebar {
-        display: flex;
-        flex-flow: row wrap;
+    // Standard gallery with no tab style
+    #gallery {
+        $w: 98%;
+        $c: 3;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 170px;
+                }
+            }
+        }
     }
-    // #gallery.tab_pill .gallery_item {
-    //     flex: 0 1 48%;
-    //     margin: 5px 4px;
-    // }
-    // #gallery.tab_divider .gallery_item {
-    //     flex: 0 1 48%;
-    //     margin: 5px 4px
-    // }
+    #gallery.tab_sidebar {
+        flex-flow: row nowrap;
+        #gallery_titles {
+            padding: 0;
+            margin-right: 30px;
+        }
+        #gallery_rows {
+            $w: 98%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            .gallery_row {
+                .gallery_item {
+                    .gallery_image {
+                        width: 170px;
+                        height: 170px
+                    }
+                }
+            }
+        }
+    }
     #gallery.tab_pill h3{
         display: inline-block;
     }
-    // #gallery.tab_sidebar .gallery_item {
-    //     flex: 0 1 48%;
-    //     margin: 5px 2px;
-    // }
 }
 
 @media only screen and (min-width: 768px){
     #gallery.tab_divider h3 {
         display: inline-block;
     }
-    // #gallery.tab_pill .gallery_item {
-    //     flex: 0 1 31%;
-    //     margin: 5px 4px;
-    // }
-    // #gallery.tab_divider .gallery_item {
-    //     flex: 0 1 31%;
-    //     margin: 5px 4px;
-    // }
-    // #gallery.tab_sidebar .gallery_item {
-    //     flex: 0 1 32%;
-    //     margin: 5px 4px;
-    // }
     // Standard gallery
     #gallery > .gallery_row > .gallery_item {
-        // flex: 0 1 24%;
-        // margin: 5px 4px;
         display: flex;
         justify-content: center;
+    }
+    // Standard gallery
+    #gallery {
+        $w: 98%;
+        $c: 3;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 230px;
+                    width: 230px;
+                }
+            }
+        }
+    }
+    #gallery.tab_sidebar {
+        #gallery_rows {
+            $w: 98%;
+            $c: 3;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            .gallery_row {
+                .gallery_item {
+                    .gallery_image {
+                        height: 160px;
+                        width: 160px;
+                    }
+                }
+            }
+        }
+    }
+    #gallery.tab_pill #gallery_rows {
+        margin-bottom: 20px;
+        $w: 98%;
+        $c: 3;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                justify-content: center;
+                .gallery_image {
+                    height: 220px;
+                }
+            }
+        }
+    }
+    #gallery.tab_divider #gallery_rows {
+        margin-bottom: 20px;
+        $w: 98%;
+        $c: 3;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 220px;
+                }
+            }
+        }
     }
 }
 
 @media only screen and (min-width: 1000px){
-    // #gallery.tab_pill .gallery_item {
-    //     flex: 0 1 24%;
-    //     margin: 5px 4px;
-    // }
-    // #gallery.tab_divider .gallery_item {
-    //     flex: 0 1 24%;
-    //     margin: 5px 4px;
-    // }
+    // Standard gallery
+    #gallery {
+        $w: 98%;
+        $c: 4;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 230px;
+                    width: 230px;
+                }
+            }
+        }
+    }
+    #gallery.tab_sidebar {
+        #gallery_rows {
+            .gallery_row {
+                .gallery_item {
+                    .gallery_image {
+                        height: 220px;
+                        width: 220px;
+                    }
+                }
+            }
+        }
+    }
+    #gallery.tab_pill #gallery_rows {
+        margin-bottom: 20px;
+        $w: 98%;
+        $c: 4;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 220px;
+                    width: 220px;
+                }
+            }
+        }
+    }
+    #gallery.tab_divider #gallery_rows {
+        margin-bottom: 20px;
+        $w: 98%;
+        $c: 4;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 220px;
+                    width: 220px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width:1280px){
@@ -231,6 +409,66 @@
     }
     #gallery #gallery_rows {
         padding: 0;
+    }
+    // Standard gallery
+    #gallery {
+        $w: 100%;
+        $c: 4;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 290px;
+                    width: 290px;
+                }
+            }
+        }
+    }
+    #gallery.tab_sidebar {
+        #gallery_rows {
+            .gallery_row {
+                .gallery_item {
+                    .gallery_image {
+                        height: 275px;
+                        width: 275px;
+                    }
+                }
+            }
+        }
+    }
+    #gallery.tab_pill #gallery_rows {
+        margin-bottom: 20px;
+        $w: 100%;
+        $c: 4;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 290px;
+                    width: 290px;
+                }
+            }
+        }
+    }
+    #gallery.tab_divider #gallery_rows {
+        margin-bottom: 20px;
+        $w: 99.5%;
+        $c: 4;
+        $g: 1%;
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        .gallery_row {
+            .gallery_item {
+                .gallery_image {
+                    height: 290px;
+                    width: 290px;
+                }
+            }
+        }
     }
 }
 
