@@ -18,6 +18,9 @@
             margin: 40px 0;
             font-family: "Gotham", Helvetica, sans-serif;
         }
+        #gallery_rows {
+            padding: 0 10px;
+        }
         .gallery_row {
             display: flex;
             flex-flow: row wrap;
@@ -28,17 +31,12 @@
                 justify-content: center;
             }
         }
-        > .gallery_row > .gallery_item {
-            flex: 0 1 49%;
-            margin: 5px 1px;
-            display: flex;
-            justify-content: center;
-        }
         &.tab_pill,
         &.tab_divider,
         &.tab_sidebar {
             .gallery_row {
                 display: none;
+                margin-top: -5px;
             }
             .active_row {
                 display: flex;
@@ -77,6 +75,9 @@
             }
         }
         &.tab_divider {
+            #gallery_titles {
+                padding: 0 10px 10px;
+            }
             #gallery_titles:after {
                 content: "";
                 display: block;
@@ -86,7 +87,7 @@
                 display: block;
                 padding: 10px 0;
                 font-size: 14px;
-                margin: 0;
+                margin: 0 2px;
                 text-transform: uppercase;
                 a {
                     color: $gray_two;
@@ -99,19 +100,16 @@
                     border-right: 2px solid $gray_one;
                     transition: color 0.3s ease-in-out;
                     &:focus,
-                    &:active,
                     &.active_title {
                         color: $accent;
                         background-color: $white;
                         border-bottom: 3px solid transparent;
                     }
-                    &:hover {
+                    &:hover,
+                    &:active {
                         color: $white;
                         background: $tint;
                         background: linear-gradient(to bottom, $tint 0%,$gray_three 100%); 
-                    }
-                    &.active_title {
-                        margin: 5px 2px 0px;
                     }
                 }
             }
@@ -119,6 +117,10 @@
         &.tab_sidebar {
             display: flex;
             flex-flow: column nowrap;
+            .gallery_item {
+                flex: 0 1 48%;
+                margin: 5px 3px;
+            }
             #gallery_rows {
                 margin-bottom: 20px;
                 flex: 1 1 75%;
@@ -173,6 +175,10 @@
     #gallery.tab_pill h3{
         display: inline-block;
     }
+    #gallery.tab_sidebar .gallery_item {
+        flex: 0 1 48%;
+        margin: 5px 2px;
+    }
 }
 
 @media only screen and (min-width: 768px){
@@ -188,7 +194,7 @@
         margin: 5px 4px;
     }
     #gallery.tab_sidebar .gallery_item {
-        flex: 0 1 31%;
+        flex: 0 1 32%;
         margin: 5px 4px;
     }
     // Standard gallery
@@ -208,6 +214,15 @@
     #gallery.tab_divider .gallery_item {
         flex: 0 1 24%;
         margin: 5px 4px;
+    }
+}
+
+@media only screen and (min-width:1280px){
+    #gallery.tab_divider #gallery_titles {
+        padding: 0 5px 10px;
+    }
+    #gallery #gallery_rows {
+        padding: 0;
     }
 }
 

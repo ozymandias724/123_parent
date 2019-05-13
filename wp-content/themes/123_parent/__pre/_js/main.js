@@ -87,13 +87,20 @@ Theme.Max_Width = {
     },
     _divide_2 : function(){
         var mobile_width = $("header.mobileheader").css("width");
-        var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 100; 
-        if($("#gallery").hasClass("tab_sidebar") && window.innerWidth >= 550){
+        if($("#gallery").hasClass("tab_sidebar") && window.innerWidth >= 550 && window.innerWidth <= 600){
+            var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 95; 
+            $(".gallery_image").css({
+                "height" : divided2 + 'px',
+                "width" : divided2 + 'px' 
+            });
+        }else if($("#gallery").hasClass("tab_sidebar") && window.innerWidth > 600){
+            var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 110; 
             $(".gallery_image").css({
                 "height" : divided2 + 'px',
                 "width" : divided2 + 'px' 
             });
         }else{
+            var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 20;
             $(".gallery_image").css({
                 "height" : divided2 + 'px',
                 "width" : divided2 + 'px'
