@@ -22,7 +22,7 @@
         $details = ( !empty( $fields['featured_testimonials']['details'] ) ? '<p>'.$fields['featured_testimonials']['details'].'</p>' : '');
         
         $return_testimonials = '
-            <section class="mod__testimonials-featuredtestimonial site_featured_item_block">
+            <section class="mod__testimonials-featuredtestimonial">
                 <div>
                     '.$heading.'
                     '.$details.'
@@ -88,7 +88,7 @@
         $return_testimonials .= '</ul></div>';
 
         $return_testimonials .= '
-            <a href="javascript:;" title="View all testimonial" class="site_button">View All testimonials</a>
+            <a href="javascript:;" title="View all testimonial" class="site__button">View All testimonials</a>
             </section>
         ';
     }

@@ -170,7 +170,7 @@ function _get_site_logo(){
         $logo_srcset = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
         $logo_srcset = wp_get_attachment_image_srcset(get_theme_mod( 'custom_logo' ));
         $format_logo = '
-            <a class="header-logo" href="%s" title="Logo button">
+            <a class="site__custom_logo" href="%s" title="Logo button">
                 <img src="%s" srcset="%s" alt="%s">
             </a>
         ';

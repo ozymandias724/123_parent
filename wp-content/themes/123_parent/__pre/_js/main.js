@@ -5,111 +5,111 @@ var Theme = {};
 var Hero = {};
 var Headers = {};
 
-Theme.Max_Width = {
+// Theme.Max_Width = {
 
-    gallery : $("#gallery"),
-    nav : $("header[id^='opt_header_']"),
+//     gallery : $("#gallery"),
+//     nav : $("header[id^='opt_header_']"),
     
-    _init : function(){
-        Theme.Max_Width._set_max_width();
-        $(window).on("resize", Theme.Max_Width._set_max_width);
-    },
-    _set_max_width : function(){
+//     _init : function(){
+//         Theme.Max_Width._set_max_width();
+//         $(window).on("resize", Theme.Max_Width._set_max_width);
+//     },
+//     _set_max_width : function(){
 
-        var nav_id = Theme.Max_Width.nav.attr("id");
+//         var nav_id = Theme.Max_Width.nav.attr("id");
 
-        // 1, 2, 5, 6, 7, 8, 10
-        if(
-            nav_id == "opt_header_one" || 
-            nav_id == "opt_header_two" || 
-            nav_id == "opt_header_five" || 
-            nav_id == "opt_header_six" || 
-            nav_id == "opt_header_seven" || 
-            nav_id == "opt_header_eight" || 
-            nav_id == "opt_header_ten"
-        ){
-            var nav_div = Theme.Max_Width.nav.children("div:first-of-type");
+//         // 1, 2, 5, 6, 7, 8, 10
+//         if(
+//             nav_id == "opt_header_one" || 
+//             nav_id == "opt_header_two" || 
+//             nav_id == "opt_header_five" || 
+//             nav_id == "opt_header_six" || 
+//             nav_id == "opt_header_seven" || 
+//             nav_id == "opt_header_eight" || 
+//             nav_id == "opt_header_ten"
+//         ){
+//             var nav_div = Theme.Max_Width.nav.children("div:first-of-type");
             
-            Theme.Max_Width.gallery.css("max-width", nav_div.css("max-width"));
+//             Theme.Max_Width.gallery.css("max-width", nav_div.css("max-width"));
 
-            var nav_width = Theme.Max_Width.nav.children("div:first-of-type").css("max-width");
+//             var nav_width = Theme.Max_Width.nav.children("div:first-of-type").css("max-width");
             
-            Theme.Max_Width._check_inner_width(nav_width);   
-        // 9
-        }else if(nav_id == "opt_header_nine"){
+//             Theme.Max_Width._check_inner_width(nav_width);   
+//         // 9
+//         }else if(nav_id == "opt_header_nine"){
 
-            var nav_inner_div = $("header#opt_header_nine .inner_div");
-            Theme.Max_Width.gallery.css("max-width", nav_inner_div.css("max-width"));
-            var nav_width = $("header#opt_header_nine .inner_div").css("max-width");
+//             var nav_inner_div = $("header#opt_header_nine .inner_div");
+//             Theme.Max_Width.gallery.css("max-width", nav_inner_div.css("max-width"));
+//             var nav_width = $("header#opt_header_nine .inner_div").css("max-width");
 
-            Theme.Max_Width._check_inner_width(nav_width);
-        // 4
-        }else if(nav_id == "opt_header_four"){
+//             Theme.Max_Width._check_inner_width(nav_width);
+//         // 4
+//         }else if(nav_id == "opt_header_four"){
 
-            var nav = Theme.Max_Width.nav.children("nav");
-            Theme.Max_Width.gallery.css("max-width", nav.css("max-width"));
-            var nav_width = Theme.Max_Width.nav.children("nav").css("max-width");
+//             var nav = Theme.Max_Width.nav.children("nav");
+//             Theme.Max_Width.gallery.css("max-width", nav.css("max-width"));
+//             var nav_width = Theme.Max_Width.nav.children("nav").css("max-width");
 
-            Theme.Max_Width._check_inner_width(nav_width);
-        // 3
-        }else{
+//             Theme.Max_Width._check_inner_width(nav_width);
+//         // 3
+//         }else{
 
-            Theme.Max_Width.gallery.css("max-width", Theme.Max_Width.nav.css("max-width"));
-            var nav_width = Theme.Max_Width.nav.css("max-width");
-            console.log(nav_width); 
+//             Theme.Max_Width.gallery.css("max-width", Theme.Max_Width.nav.css("max-width"));
+//             var nav_width = Theme.Max_Width.nav.css("max-width");
+//             console.log(nav_width); 
 
-            Theme.Max_Width._check_inner_width(nav_width);
-        }
-    },
-    _check_inner_width : function(nav_width){
-        if(window.innerWidth >= 1280){
-            Theme.Max_Width._divide_4(nav_width);
-        }else if(window.innerWidth < 1280 && window.innerWidth >= 768){
-            Theme.Max_Width._divide_3();
-        }else{
-            Theme.Max_Width._divide_2();
-        }
-    },
-    _divide_4 : function(nav_width){
-        var divided4 = (nav_width.substring(0, nav_width.indexOf('p')) / 4) - 10;
-        $(".gallery_image").css({
-            "height" : divided4 + 'px',
-            "width" : divided4 + 'px'
-        });
-    },
-    _divide_3 : function(){
-        var mobile_width = $("header.mobileheader").css("width");
-        var divided3 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 3) - 20;
-        $(".gallery_image").css({
-            "height" : divided3 + 'px',
-            "width" : divided3 + 'px'
-        });
-    },
-    _divide_2 : function(){
-        var mobile_width = $("header.mobileheader").css("width");
-        if($("#gallery").hasClass("tab_sidebar") && window.innerWidth >= 550 && window.innerWidth <= 600){
-            var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 95; 
-            $(".gallery_image").css({
-                "height" : divided2 + 'px',
-                "width" : divided2 + 'px' 
-            });
-        }else if($("#gallery").hasClass("tab_sidebar") && window.innerWidth > 600){
-            var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 110; 
-            $(".gallery_image").css({
-                "height" : divided2 + 'px',
-                "width" : divided2 + 'px' 
-            });
-        }else{
-            var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 20;
-            $(".gallery_image").css({
-                "height" : divided2 + 'px',
-                "width" : divided2 + 'px'
-            });
-        }
-    },
-}
-Theme.Max_Width._init();
-
+//             Theme.Max_Width._check_inner_width(nav_width);
+//         }
+//     },
+//     _check_inner_width : function(nav_width){
+//         if(window.innerWidth >= 1280){
+//             Theme.Max_Width._divide_4(nav_width);
+//         }else if(window.innerWidth < 1280 && window.innerWidth >= 768){
+//             Theme.Max_Width._divide_3();
+//         }else{
+//             Theme.Max_Width._divide_2();
+//         }
+//     },
+//     _divide_4 : function(nav_width){
+//         var divided4 = (nav_width.substring(0, nav_width.indexOf('p')) / 4) - 10;
+//         $(".gallery_image").css({
+//             "height" : divided4 + 'px',
+//             "width" : divided4 + 'px'
+//         });
+//     },
+//     _divide_3 : function(){
+//         var mobile_width = $("header.mobileheader").css("width");
+//         var divided3 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 3) - 20;
+//         $(".gallery_image").css({
+//             "height" : divided3 + 'px',
+//             "width" : divided3 + 'px'
+//         });
+//     },
+//     _divide_2 : function(){
+//         var mobile_width = $("header.mobileheader").css("width");
+//         if($("#gallery").hasClass("tab_sidebar") && window.innerWidth >= 550 && window.innerWidth <= 600){
+//             var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 95; 
+//             $(".gallery_image").css({
+//                 "height" : divided2 + 'px',
+//                 "width" : divided2 + 'px' 
+//             });
+//         }else if($("#gallery").hasClass("tab_sidebar") && window.innerWidth > 600){
+//             var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 110; 
+//             $(".gallery_image").css({
+//                 "height" : divided2 + 'px',
+//                 "width" : divided2 + 'px' 
+//             });
+//         }else{
+//             var divided2 = (mobile_width.substring(0, mobile_width.indexOf('p')) / 2) - 20;
+//             $(".gallery_image").css({
+//                 "height" : divided2 + 'px',
+//                 "width" : divided2 + 'px'
+//             });
+//         }
+//     },
+// }
+// Theme.Max_Width._init();
+    
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),
     _init: function () {
@@ -683,7 +683,6 @@ Hero.Padding_Top = {
             });
         },
         _header_function: function () {
-
             //Get header position value
             Hero.Padding_Top.header_position = $("header").css("position");
 
@@ -695,11 +694,8 @@ Hero.Padding_Top = {
                 Hero.Padding_Top.header_id !== "opt_header_nine" &&
                 Hero.Padding_Top.header_id !== "opt_header_three" &&
                 Hero.Padding_Top.header_id !== "opt_header_eight") {
-
                 Hero.Padding_Top.header_height = $("header").height();
-
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
-
             }
             else if (
                 Hero.Padding_Top.header_id === "opt_header_four"
@@ -719,10 +715,9 @@ Hero.Padding_Top = {
                 Hero.Padding_Top.main.css("padding-top", "0");
             }
         },
-        _mobile_header_function: function () {
-            Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
-            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
-        }
-
-    },
-    Hero.Padding_Top._init();
+    _mobile_header_function: function () {
+        Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
+        Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
+    }
+},
+Hero.Padding_Top._init();

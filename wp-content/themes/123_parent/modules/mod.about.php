@@ -22,10 +22,12 @@
 
 
         $format_company = '
-            <section>
-                <h2>%s</h2>
-                <div>
-                    <p>%s</p>
+            <section class="mod__featured_grid">
+                <div class="container">
+                    <h2>%s</h2>
+                    <div>
+                        <p>%s</p>
+                    </div>
                 </div>
             </section>
         ';
@@ -41,7 +43,7 @@
     // if we have staff members
     if( !empty($fields['staff_members']) ){
 
-        $return_staff = '<div class="site__grid"><ul>';
+        $return_staff = '<div class="container"><div class="site__grid"><ul>';
         // format string for staff member
         $format_staff = '
             <li>
@@ -64,6 +66,9 @@
         }
         // close return_staff[0] string for staff members grid
         $return_staff .= '</ul></div>';
+        $return_staff .= '
+            <a href="'.get_permalink($res[0]->ID).'" title="View all Staff" class="site__button">View All Staff</a></div>
+        ';
     }
     
  ?>

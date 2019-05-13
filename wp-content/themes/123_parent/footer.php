@@ -10,135 +10,69 @@
  *  copyright section
  */
 
+    
+ 
+ 
     function _get_copyright_banner()
     {
-        $footer_info = get_field('footer', 'options');
-        $banner = $footer_info['copyright_banner'];
-        $terms = $banner['terms_and_conditions'];
-
-        $copyright_text = (!empty($banner['copyright']) ? $banner['copyright'] : '');
-        $terms_url = (!empty($terms['url']) ? $terms['url'] : ''); 
-        $terms_title = (!empty($terms['title']) ? $terms['title'] : '');
-        $terms_target = (!empty($terms['target']) ? $terms['target'] : ''); 
-
-        $format_url = '<a href="%s" target="%s">%s</a>';
-
-        $url = sprintf(
-            $format_url
-            ,$terms_url
-            ,$terms_target
-            ,$terms_title
-        );
-
-        $format_copyright = '<p>%s</p>';
-
-        $copyright = sprintf(
-            $format_copyright
-            ,$copyright_text
-        );
-
-        $format_banner = '
-            <div id="copyright_banner">
-                %s
-                %s
-            </div>
-        ';
-
-        $copyright_banner = sprintf(
-            $format_banner
-            ,$url
-            ,$copyright
-        );
-
-        return $copyright_banner; 
+        $return = '';
+        $field = get_field('footer', 'options');
+        if( !empty($field['copyright_banner']) ){
+            $format = '
+                <div class="site__copyright_banner"><a href="%s" title="%s" target="%s">%s</a></div>
+            ';
+            $return .= sprintf(
+                $format
+                ,(!empty($field['copyright_banner']['url']) ? $field['copyright_banner']['url'] : '')
+                ,(!empty($field['copyright_banner']['title']) ? $field['copyright_banner']['title'] : '')
+                ,(!empty($field['copyright_banner']['target']) ? $field['copyright_banner']['target'] : '')
+                ,(!empty($field['copyright_banner']['title']) ? $field['copyright_banner']['title'] : '')
+            );
+        }
+        return $return;
     }
 
     function _get_badges()
     {
-        $footer_info = get_field('footer', 'options');
-        $badges_info = $footer_info['badges'];
-
-        $format_badges = '
-            <div id="footer_badges">
-                %s
-                %s
-            </div>
-        ';
-
-        $format_badge = '
-            <li>
-                <a href="%s"><div style="background-image:url(%s);"></div></a>
-            </li>
-        ';
-
-        $badges_ul = '<ul>';
-        
-        foreach($badges_info as $badge_info)
-        {
-            $title = '<h3>Powered by</h3>';
-            $url = (!empty($badge_info['url']) ? $badge_info['url'] : '');
-            $image_url = (!empty($badge_info['image']['url']) ? $badge_info['image']['url'] : '');
-            $badge = sprintf(
-                $format_badge
-                ,$url
-                ,$image_url
-            );
-            $badges_ul .= $badge;
-        }   
-        
-        $badges_ul .= '</ul>';
-
-        $badges = sprintf(
-            $format_badges
-            ,$title
-            ,$badges_ul
-        );
-
-        return $badges;
+        $return = '';
+        $field = get_field('footer', 'options');
+        if( !empty($field['badges']) ){
+            $return .= '<section class="footer_badges"><ul>';
+            $format = '
+                <li><a href="%s" title="%s" target="%s"><img src="%s" alt=""></a></li>
+            ';
+            foreach( $field['badges'] as $badge ){
+                $return .= sprintf(
+                    $format
+                    ,(!empty($badge['link']['url']) ? $badge['link']['url'] : 'javascript:;')
+                    ,(!empty($badge['link']['title']) ? $badge['link']['title'] : '')
+                    ,(!empty($badge['link']['target']) ? $badge['link']['target'] : '')
+                    ,(!empty($badge['image']['url']) ? $badge['image']['url'] : '')
+                );
+            }
+            $return .= '</ul></section>';
+        }
+        return $return;
     }
 
     function _get_payment_types()
     {
-        $footer_info = get_field('footer', 'options');
-        $payments_info = $footer_info['payment_types'];
-
-        $format_payments = '
-            <div id="footer_payments">
-                %s
-                %s
-            </div>
-        ';
-
-        $format_payment = '
-            <li>
-                <div style="background-image:url(%s);">%s</div>
-            </li>
-        ';
-
-        $payments_ul = '<ul>';
-
-        foreach($payments_info as $payment_info)
-        {
-            $title = '<h3>Payment</h3>';
-            $name = (!empty($payment_info['name']) ? $payment_info['name'] : '');
-            $image_url = (!empty($payment_info['image']['url']) ? $payment_info['image']['url'] : '');
-            $payment = sprintf(
-                $format_payment
-                ,$image_url
-                ,$name
-            );
-            $payments_ul .= $payment;
+        $return = '';
+        $field = get_field('footer', 'options');
+        if( !empty($field['payment_types']) ){
+            $return .= '<section class="footer_payment_types"><ul>';
+            $format = '
+                <li><img src="%s" alt=""></li>
+            ';
+            foreach( $field['payment_types'] as $type ){
+                $return .= sprintf(
+                    $format
+                    ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
+                );
+            }
+            $return .= '</ul></section>';
         }
-
-        $payments_ul .= '</ul>';
-
-        $payments = sprintf(
-            $format_payments
-            ,$title
-            ,$payments_ul
-        );
-
-        return $payments;
+        return $return;
     }
 
     function _get_company_info()
@@ -150,13 +84,13 @@
         $social_icons = _get_social_icons();
 
         $format_company_info = '
-            <div id="footer_company_info">
+            <section id="footer_company_info">
                 %s
                 %s
                 %s
                 %s
                 %s
-            </div>
+            </section>
         ';
         $company_info = sprintf(
             $format_company_info
@@ -171,16 +105,17 @@
 
     function _get_nav()
     {
-        $title = '<h3>Links</h3>';
         $format_nav = '
-            <nav id="footer_nav">
+            <section>
                 %s
-                %s
-            </nav>
+                <nav id="footer_nav">
+                    %s
+                </nav>
+            </section>
         ';
         $nav = sprintf(
             $format_nav
-            ,$title
+            ,'<h3>Links</h3>'
             ,_get_site_nav()
         );
         return $nav;
@@ -188,24 +123,23 @@
 
     function _get_footer_content()
     {
-        $footer_info = get_field('footer', 'options');
         $format_footer_content = '
-            <div id="footer_row_1">
+            <div class="container">
                 %s
                 %s
                 %s
                 %s
             </div>
-            %s
+                %s
         ';
 
         $footer_content = sprintf(
             $format_footer_content
             ,_get_company_info()
             ,_get_nav()
-            ,(!empty($footer_info['payment_types']) ? _get_payment_types() : '')
-            ,(!empty($footer_info['badges']) ? _get_badges() : '')
-            ,(!empty($footer_info['copyright_banner']) ? _get_copyright_banner() : '')
+            ,_get_payment_types()
+            ,_get_badges()
+            ,_get_copyright_banner()
         );
         
         return $footer_content;
@@ -215,8 +149,6 @@
 </main>
 <footer>
 <?php 
-    
-    echo get_section_banner('Footer Here Please');
     
     echo _get_footer_content();
     
