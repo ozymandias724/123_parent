@@ -160,7 +160,6 @@
             flex-flow: column nowrap;
             #gallery_rows {
                 margin-bottom: 20px;
-                flex: 1 1 75%;
                 $w: getVar($sizing, content, full);
                 $c: 2;
                 $g: getVar($sizing, gutter, vw, small);
@@ -180,7 +179,6 @@
             #gallery_titles {
                 margin-bottom: 15px;
                 padding: 0 10px;
-                flex: 0 1 25%;
                 h3:first-of-type > a {
                     border-top: 1px solid $gray_one;
                 }
@@ -230,6 +228,7 @@
             #gallery_titles {
                 padding: 0;
                 margin-right: 30px;
+                width: 35vw;
             }
             #gallery_rows {
                 $w: getVar($sizing, content, medium);
@@ -316,7 +315,7 @@
         }
         &.tab_sidebar {
             #gallery_rows {
-                $w: getVar($sizing, content, large);
+                $w: getVar($sizing, content, medium);
                 $c: 3;
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;

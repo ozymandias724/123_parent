@@ -2,7 +2,6 @@
     // Menu Area for Tabs Style Side Menu
     #tabs_sidebar {
         margin: 0 auto;
-        max-width: $max_width;
         display: flex;
         flex-flow: column nowrap;
         // Menu tabs
@@ -630,6 +629,7 @@
         }
     }
     #tabs_sidebar {
+        max-width: getVar($sizing, content, medium);
         .menu_text_half {
             $w: 100%;
             $c: 2;

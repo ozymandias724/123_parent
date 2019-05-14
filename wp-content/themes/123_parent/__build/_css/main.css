@@ -2600,7 +2600,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
   footer > div.container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 65vw;
     display: flex;
     flex-flow: column wrap;
   }
@@ -2611,8 +2611,9 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     margin-top: 20px;
   }
   footer > div.container .site__footer_logo {
-    display: block;
+    display: inline-block;
     padding: 10px;
+    width: 250px;
   }
   footer > div.container .site__footer_logo > div {
     height: 90px;
@@ -2636,7 +2637,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     text-transform: uppercase;
     color: #fff;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
   }
   footer > div.container #footer_nav .navlinks .navlinks-item-link:hover, footer > div.container #footer_nav .navlinks .navlinks-item-link:active, footer > div.container #footer_nav .navlinks .navlinks-item-link:focus {
     opacity: 0.8;
@@ -2648,7 +2649,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     left: 15px;
     right: 0;
     height: 0.5em;
-    border-right: 1.5px solid #fff;
+    border-right: 2px solid #fff;
   }
   footer > div.container #footer_nav .navlinks .navlinks-item:last-of-type .navlinks-item-link:after {
     border-right: none;
@@ -2694,7 +2695,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     opacity: 0.8;
   }
   footer > div.container .site__copyright_banner > a {
-    display: block;
+    display: inline-block;
     font-size: 1.4rem;
     line-height: 2.8rem;
     color: #fff;
@@ -3164,7 +3165,6 @@ section#banner_popup .popup_close {
   }
   #gallery.tab_sidebar #gallery_rows {
     margin-bottom: 20px;
-    flex: 1 1 75%;
     text-align: center;
     margin: 0 auto 0 auto;
     width: 96vw;
@@ -3208,7 +3208,6 @@ section#banner_popup .popup_close {
   #gallery.tab_sidebar #gallery_titles {
     margin-bottom: 15px;
     padding: 0 10px;
-    flex: 0 1 25%;
   }
   #gallery.tab_sidebar #gallery_titles h3:first-of-type > a {
     border-top: 1px solid #c2c2c2;
@@ -3277,6 +3276,7 @@ section#banner_popup .popup_close {
   #gallery.tab_sidebar #gallery_titles {
     padding: 0;
     margin-right: 30px;
+    width: 35vw;
   }
   #gallery.tab_sidebar #gallery_rows {
     text-align: center;
@@ -3473,11 +3473,11 @@ section#banner_popup .popup_close {
   #gallery.tab_sidebar #gallery_rows {
     text-align: center;
     margin: 0 auto 0 auto;
-    width: 80vw;
+    width: 65vw;
   }
   #gallery.tab_sidebar #gallery_rows ul {
     text-align: left;
-    width: 80vw;
+    width: 65vw;
     margin: 0 auto 0 auto;
     display: inline-block;
     list-style: none;
@@ -3488,12 +3488,12 @@ section#banner_popup .popup_close {
     clear: both;
   }
   #gallery.tab_sidebar #gallery_rows ul > li {
-    width: 26vw;
+    width: 21vw;
     height: auto;
     float: left;
   }
   #gallery.tab_sidebar #gallery_rows ul > li div.image {
-    height: 26vw;
+    height: 21vw;
   }
   #gallery.tab_sidebar #gallery_rows ul > li:nth-child(n+1) {
     margin: 0 1vw 1vw 0;
@@ -3838,7 +3838,6 @@ section#banner_popup .popup_close {
 @media only screen {
   #tabs_sidebar {
     margin: 0 auto;
-    max-width: 1200px;
     display: flex;
     flex-flow: column nowrap;
   }
@@ -4729,6 +4728,9 @@ section#banner_popup .popup_close {
     max-width: 500px;
   }
 
+  #tabs_sidebar {
+    max-width: 65vw;
+  }
   #tabs_sidebar .menu_text_half {
     text-align: center;
     margin: 0 auto 0 auto;

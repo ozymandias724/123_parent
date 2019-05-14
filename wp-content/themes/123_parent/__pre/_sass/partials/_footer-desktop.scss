@@ -16,7 +16,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
         background-color: $accent;
         > div.container {
             margin: 0 auto;
-            max-width: $max_width;
+            max-width: getVar($sizing, content, medium);
             display: flex;
             flex-flow: column wrap;
             > a:last-of-type {
@@ -26,8 +26,9 @@ $color_white_not_transparent: rgba(255,255,255,1);
                 margin-top: 20px;
             }
             .site__footer_logo {
-                display: block;
+                display: inline-block;
                 padding: 10px;
+                width: 250px;
                 > div {
                     height: 90px;
                     max-width: 250px;
@@ -49,7 +50,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
                         text-transform: uppercase;
                         color: $white;
                         font-weight: 500;
-                        font-size: 14px;    
+                        font-size: 15px;     
                         &:hover,
                         &:active,
                         &:focus {
@@ -63,7 +64,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
                         left: 15px;
                         right: 0;
                         height: 0.5em;
-                        border-right: 1.5px solid $white;
+                        border-right: 2px solid $white;
                     }
                     .navlinks-item:last-of-type .navlinks-item-link:after {
                         border-right: none;
@@ -119,7 +120,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
             }
             .site__copyright_banner {
                 > a {
-                    display: block;
+                    display: inline-block;
                     font-size: 1.4rem;
                     line-height: 2.8rem;
                     color: $white;
