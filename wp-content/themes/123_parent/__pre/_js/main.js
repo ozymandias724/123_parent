@@ -110,6 +110,8 @@ var Headers = {};
 // }
 // Theme.Max_Width._init();
     
+
+
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),
     _init: function () {
@@ -484,9 +486,12 @@ Theme.Menu = {
     tab_header: $("#mod_menu #menu_tabs > h4"),
     tab_link: $("#mod_menu #menu_tabs > h4 > a"),
     menu_section: $("#mod_menu .menu_section"),
+    images: $(".image_prov"),
 
     _init: function () {
         Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
+        //Theme.Menu._images_width();
+        //$(window).on("resize", Theme.Menu._images_width());
     },
     _tab_link_click: function (e) {
         var menu_name = e.target.dataset.tab;
@@ -502,7 +507,7 @@ Theme.Menu = {
         $(".menu_section[data-tab^='" + menu_name + "']").addClass("active_menu_section");
         $(this).addClass("active_menu_link");
         $(this).parent().addClass("active_menu_header");
-    }
+    },
 }
 Theme.Menu._init();
 

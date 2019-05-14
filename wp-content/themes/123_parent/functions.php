@@ -117,7 +117,7 @@ function _get_full_address_br(){
 	$postcode = $location['address_postcode'];
 	$country = $location['address_country'];
 
-	$format_full_address_br = '%s %s <br/>%s, %s, %s'; 
+	$format_full_address_br = '%s %s <br/>%s, %s %s'; 
 
 	$full_address_br = sprintf(
 		$format_full_address_br

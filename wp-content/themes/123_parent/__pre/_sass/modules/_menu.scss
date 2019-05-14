@@ -53,7 +53,7 @@
             // Tabs titles
             > h4 {
                 display: block;
-                margin: 10px 5px;
+                margin: 5px;
                 padding: 10px 0;
                 text-transform: uppercase;
                 text-align: center;
@@ -89,7 +89,7 @@
         display: flex;
         flex-flow: column nowrap;
         #menu_tabs {
-            padding: 0 0 15px 0;
+            padding: 0 0 30px 0; 
         }
         #menu_tabs:after {
             content: "";
@@ -147,7 +147,6 @@
             // All menus images
             .image_prov {
                 height: 300px;
-                width: 300px;
                 margin: 0 auto;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -178,9 +177,9 @@
         // Menu Text List Left and List Center menu item paragraph
         .menu_text_list_left .menu_items > ul > li > p, 
         .menu_text_list_center .menu_items > ul > li > p {
-            font-size: 24px;
+            font-size: 13px;
             font-family: "Times New Roman";
-            line-height: 1em;
+            line-height: 1.8rem;
             color: $gray_three;
             font-style: italic;
         }
@@ -219,7 +218,7 @@
                     // menu items title
                     > h3 {
                         display: flex;
-                        font-size: 26px;
+                        font-size: 20px; 
                         font-weight: 700;
                         justify-content: space-between;
                         border-bottom: 3px solid $accent;
@@ -233,8 +232,9 @@
                     }
                     // menu items description
                     > p {
-                        font-size: 18px;
+                        font-size: 13px;
                         color: $gray_three;
+                        line-height: 1.8rem;
                     }
                 }
             }
@@ -278,7 +278,7 @@
                 padding-right: 15px;
             }
             > div {
-                flex: 0 1 48%;
+                flex: 0 1 48.2%;
             }
         }
         // Menu Text List Left
@@ -303,7 +303,7 @@
                 > ul > li > h3 {
                     text-transform: uppercase;
                     display: flex;
-                    font-size: 26px;
+                    font-size: 20px;
                     font-weight: 700;
                     justify-content: space-between;
                 }
@@ -325,7 +325,7 @@
                     margin-bottom: 30px;
                     // Menu items title
                     >  h3 {
-                        font-size: 26px;
+                        font-size: 20px;
                         font-weight: 800;
                         text-transform: uppercase;
                         margin-bottom: 5px;
@@ -345,35 +345,36 @@
         }
         // Menu Photo List 
         .menu_photo_list {
-            // Menu items
+            ul .image_prov{
+                height: 210px;
+                // width: 210px;
+            }
             .menu_items {
                 // Menu items unordered list items
                 > ul > li  {
-                    flex-flow: row wrap;
-                    justify-content: space-between;
                     margin-bottom: 20px;
-                    // Menu items unordered list items 
+                    // Menu items image
                     > div:first-of-type {
-                        flex: 0 1 37%;
+                        margin-right: 10px;
+                        display: inline-block;
+                        width: 46%;
                     }
                     > div:last-of-type {
-                        flex: 0 1 60%;
-                    }
-                    // Menu items image
-                    > .image_prov {
-                        background-position: top center;
+                        display: inline-block;
+                        width: 50%;
+                        vertical-align: top;
                     }
                     // Menu items title
                     > div > h3 {
                         font-weight: 900;
-                        font-size: 28px;
+                        font-size: 20px;
                     }
                     // Menu items description
                     > div > p:first-of-type {
-                        font-size: 24px;
+                        font-size: 13px;
                         font-style: italic;
                         color: $gray_three;
-                        line-height: 1.3em;
+                        line-height: 1.8rem;
                         padding-bottom: 10px;
                         border-bottom: 4px dotted $gray_one;
                         margin-bottom: 20px;
@@ -412,7 +413,7 @@
                     display: flex;
                     font-weight: 700;
                     justify-content: space-between;
-                    font-size: 18px;
+                    font-size: 20px;
                     margin-bottom: 5px;
                 }
                 // Menu items priceg
@@ -424,8 +425,9 @@
                 // Menu items description
                 > ul > li  > p {
                     color: $gray_three;
-                    font-size: 16px;
+                    font-size: 13px;
                     text-align: justify;
+                    line-height: 1.8rem;
                 }
             }
         }
@@ -454,46 +456,6 @@
 }
 
 @media only screen and (min-width: 768px){
-    #tabs_pills,
-    #tabs_sidebar,
-    #tabs_divider {
-        // Menu Text Sub Group 1/2
-        .menu_text_sub_group_half { 
-            flex-flow: row wrap;
-            > div:nth-child(odd) {
-                margin-right: 30px;
-            }
-        }
-    }
-    #tabs_pills,
-    #tabs_divider {
-        .menu_photo_tiled_x3 .menu_items {
-            $w: 100%;
-            $c: 2;
-            $g: 1%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 340px;
-                width: 340px;
-            }
-        }
-    }
-    #tabs_pills,
-    #tabs_divider {
-        .menu_text_half .menu_items {
-            $w: 100%;
-            $c: 2;
-            $g: 2%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 340px;
-                width: 340px;
-            }
-        }
-    }
-    // Tabs Style of Side Menu
     #tabs_sidebar {
         flex-flow: row nowrap;
         .menu_photo_tiled_x3 .menu_items {
@@ -504,7 +466,17 @@
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
                 height: 250px;
-                width: 250px;
+                // width: 250px;
+            }
+        }
+        .menu_text_sub_group_half { 
+            flex-flow: row wrap;
+            > div:nth-child(odd) {
+                margin-right: 15px;
+            }
+            ul .image_prov {
+                height: 230px;
+                // width: 230px;
             }
         }
         #menu_tabs {
@@ -514,6 +486,56 @@
         // Menu section for Tabs Style of Side Menu 
         .menu_section {
             flex: 1 1 75%;
+        }
+    }
+    #tabs_pills,
+    #tabs_divider {
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 1%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 340px;
+                // width: 340px;
+            }
+        }
+        .menu_text_half .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 2%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 340px;
+                // width: 340px;
+            }
+        }
+        .menu_text_sub_group_half { 
+            flex-flow: row wrap;
+            > div:nth-child(odd) {
+                margin-right: 15px;
+            }
+            ul .image_prov {
+                height: 340px;
+                // width: 340px;
+            }
+        }
+    }
+    #tabs_pills,
+    #tabs_sidebar,
+    #tabs_divider {
+        .menu_photo_list ul .image_prov{
+            height: 239px;
+            // width: 239px;
+        }
+        .menu_text_list_left,
+        .menu_text_list_center {
+            ul .image_prov {
+                height: 400px;
+                max-width: 400px;
+            }
         }
     }
     // Tabs Style of Pills
@@ -543,8 +565,6 @@
                 padding-left: 15px;
             }
         }
-    }
-    #tabs_sidebar {
         .menu_photo_tiled_x3 .menu_items {
             $w: 100%;
             $c: 2;
@@ -553,18 +573,26 @@
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
                 height: 320px;
-                width: 320px;
+                // width: 320px;
+            }
+        }
+        .menu_text_sub_group_half { 
+            > div:nth-child(odd) {
+                margin-right: 20px;
+            }
+            ul .image_prov {
+                height: 320px;
+                // width: 320px;
             }
         }
     }
     #tabs_sidebar,
     #tabs_pills,
     #tabs_divider {
-        .menu_text_list_left,
-        .menu_text_list_center, {
+        .menu_photo_list {
             ul .image_prov {
-                height: 400px;
-                width: 400px;
+                height: 320px;
+                // width: 320px;
             }
         }
     }   
@@ -578,18 +606,25 @@
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
                 height: 300px;
-                width: 300px;
+                // width: 300px;
             }
         }
-    }
-    #tabs_pills,
-    #tabs_divider {
         .menu_text_half .menu_items {
             $w: 100%;
             $c: 2;
             $g: 2%;
             $s: true;
             @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 450px;
+                // width: 400px;
+            }
+        }
+        .menu_text_sub_group_half {
+            ul .image_prov {
+                height: 400px;
+                // width: 400px;
+            }
         }
     }
 }
@@ -599,9 +634,21 @@
     #tabs_pills,
     #tabs_divider {
         padding: 0;
+        .menu_photo_list {
+            ul .image_prov {
+                height: 400px;
+                // width: 400px;
+            }
+        }
+        .menu_text_list_left,
+        .menu_text_list_center {
+            ul .image_prov {
+                height: 500px;
+                max-width: 500px;
+            }
+        }
     }
     #tabs_sidebar {
-        // Menu Text 1/2
         .menu_text_half {
             $w: 100%;
             $c: 2;
@@ -610,11 +657,9 @@
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
                 height: 400px;
-                width: 400px;
+                // width: 400px;
             }
         }
-    }
-    #tabs_sidebar {
         .menu_photo_tiled_x3 .menu_items {
             $w: 100%;
             $c: 3;
@@ -623,7 +668,16 @@
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
                 height: 280px;
-                width: 280px;
+                // width: 280px;
+            }
+        }
+        .menu_text_sub_group_half { 
+            > div:nth-child(odd) {
+                margin-right: 30px;
+            }
+            ul .image_prov {
+                height: 420px;
+                // width: 420px;
             }
         }
     }
@@ -637,7 +691,18 @@
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
                 height: 290px;
-                width: 290px;
+                // width: 290px;
+            }
+        }
+        .menu_text_half .menu_items {
+            $w: 100%;
+            $c: 2;
+            $g: 2%;
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 500px;
+                // width: 400px;
             }
         }
     }
