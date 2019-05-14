@@ -2,27 +2,25 @@
     ul {
         list-style: none;
     }
+    // Standard gallery with no tab style
     #gallery {
-        margin: 0 auto;  
-        margin-bottom: 20px;
-        max-width: $max_width;
-        min-height: 60vh;
-        // Standard gallery with no tab style
-        $w: 98%;
+        margin: 0 auto 20px;  
+        max-width: getVar($sizing, content, full);
+        min-height: 70vh;
+        $w: getVar($sizing, content, full);
         $c: 2;
-        $g: 1%;
+        $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                justify-content: center;
-                .gallery_image {
-                    height: 220px;
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    margin: 0 auto;
-                }
+        .gallery_item {
+            justify-content: center;
+            .gallery_image {
+                height: 20vh;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 0 auto;
             }
         }
         > h3 {
@@ -50,31 +48,29 @@
         &.tab_pill {
             #gallery_titles {
                 text-align: center;
-                margin-bottom: 5px; 
+                margin-bottom: 15px; 
             }
             #gallery_rows {
                 margin-bottom: 20px;
-                $w: 98%;
+                $w: getVar($sizing, content, full);
                 $c: 2;
-                $g: 1%;
+                $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_row {
-                    .gallery_item {
-                        justify-content: center;
-                        .gallery_image {
-                            height: 220px;
-                            background-size: cover;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            margin: 0 auto;
-                        }
+                .gallery_item {
+                    justify-content: center;
+                    .gallery_image {
+                        height: 20vh;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin: 0 auto;
                     }
                 }
             }
             h3 {
                 display: block;
-                margin: 10px 5px;
+                margin: 0 5px;
                 text-transform: uppercase;
                 padding: 10px 0;
                 font-size: 14px;
@@ -102,7 +98,7 @@
         }
         &.tab_divider {
             #gallery_titles {
-                padding: 0 10px 10px;
+                padding: 0 0 10px;
             }
             #gallery_titles:after {
                 content: "";
@@ -112,21 +108,19 @@
             }
             #gallery_rows {
                 margin-bottom: 20px;
-                $w: 98%;
+                $w: getVar($sizing, content, full);
                 $c: 2;
-                $g: 1%;
+                $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_row {
-                    .gallery_item {
-                        justify-content: center;
-                        .gallery_image {
-                            height: 220px;
-                            background-size: cover;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            margin: 0 auto;
-                        }
+                .gallery_item {
+                    justify-content: center;
+                    .gallery_image {
+                        height: 20vh;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -167,21 +161,19 @@
             #gallery_rows {
                 margin-bottom: 20px;
                 flex: 1 1 75%;
-                $w: 98%;
+                $w: getVar($sizing, content, full);
                 $c: 2;
-                $g: 1%;
+                $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_row {
-                    .gallery_item {
-                        justify-content: center;
-                        .gallery_image {
-                            height: 220px;
-                            background-size: cover;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            margin: 0 auto;
-                        }
+                .gallery_item {
+                    justify-content: center;
+                    .gallery_image {
+                        height: 20vh;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -225,116 +217,87 @@
 @media only screen and (min-width: 550px){
     // Standard gallery with no tab style
     #gallery {
-        $w: 98%;
+        $w: getVar($sizing, content, full);
         $c: 3;
-        $g: 1%;
+        $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 170px;
+        .gallery_item .gallery_image {
+            height: 15vh;
+        }
+        &.tab_sidebar {
+            flex-flow: row nowrap;
+            #gallery_titles {
+                padding: 0;
+                margin-right: 30px;
+            }
+            #gallery_rows {
+                $w: getVar($sizing, content, medium);
+                $c: 2;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_item .gallery_image {
+                    height: 15vh;
                 }
             }
         }
-    }
-    #gallery.tab_sidebar {
-        flex-flow: row nowrap;
-        #gallery_titles {
-            padding: 0;
-            margin-right: 30px;
+        &.tab_pill h3{
+            display: inline-block;
         }
-        #gallery_rows {
-            $w: 98%;
-            $c: 2;
-            $g: 1%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            .gallery_row {
-                .gallery_item {
-                    .gallery_image {
-                        width: 170px;
-                        height: 170px
-                    }
-                }
-            }
-        }
-    }
-    #gallery.tab_pill h3{
-        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 768px){
-    #gallery.tab_divider h3 {
-        display: inline-block;
-    }
-    // Standard gallery
-    #gallery > .gallery_row > .gallery_item {
-        display: flex;
-        justify-content: center;
-    }
     // Standard gallery
     #gallery {
-        $w: 98%;
+        $w: getVar($sizing, content, full);
         $c: 3;
-        $g: 1%;
+        $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 230px;
-                    width: 230px;
+        .gallery_item .gallery_image {
+            height: 20vh;
+        }
+        &.tab_divider {
+            #gallery_titles {
+                text-align: left;
+            }
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: getVar($sizing, content, full);
+                $c: 3;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_item .gallery_image {
+                    height: 20vh;
+                }
+            }
+            h3 {
+                display: inline-block;
+            }
+        }
+        .gallery_item {
+            display: flex;
+            justify-content: center;
+        }
+        &.tab_sidebar {
+            #gallery_rows {
+                .gallery_item .gallery_image {
+                    height: 20vh;
                 }
             }
         }
-    }
-    #gallery.tab_sidebar {
-        #gallery_rows {
-            $w: 98%;
+        &.tab_pill #gallery_rows {
+            margin-bottom: 20px;
+            $w: getVar($sizing, content, full);
             $c: 3;
-            $g: 1%;
+            $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
-            .gallery_row {
-                .gallery_item {
-                    .gallery_image {
-                        height: 160px;
-                        width: 160px;
-                    }
-                }
-            }
-        }
-    }
-    #gallery.tab_pill #gallery_rows {
-        margin-bottom: 20px;
-        $w: 98%;
-        $c: 3;
-        $g: 1%;
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                justify-content: center;
-                .gallery_image {
-                    height: 220px;
-                }
-            }
-        }
-    }
-    #gallery.tab_divider #gallery_rows {
-        margin-bottom: 20px;
-        $w: 98%;
-        $c: 3;
-        $g: 1%;
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 220px;
-                }
+            .gallery_item .gallery_image {
+                height: 20vh;
             }
         }
     }
@@ -343,130 +306,99 @@
 @media only screen and (min-width: 1000px){
     // Standard gallery
     #gallery {
-        $w: 98%;
+        $w: getVar($sizing, content, full);
         $c: 4;
-        $g: 1%;
+        $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 230px;
-                    width: 230px;
+        .gallery_item .gallery_image {
+            height: 20vh;
+        }
+        &.tab_sidebar {
+            #gallery_rows {
+                $w: getVar($sizing, content, large);
+                $c: 3;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_item .gallery_image {
+                    height: 20vh;
                 }
             }
         }
-    }
-    #gallery.tab_sidebar {
-        #gallery_rows {
-            .gallery_row {
-                .gallery_item {
-                    .gallery_image {
-                        height: 220px;
-                        width: 220px;
-                    }
-                }
-            }
+        &.tab_pill #gallery_rows {
+            margin-bottom: 20px;
+            $w: getVar($sizing, content, full);
+            $c: 4;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
         }
-    }
-    #gallery.tab_pill #gallery_rows {
-        margin-bottom: 20px;
-        $w: 98%;
-        $c: 4;
-        $g: 1%;
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 220px;
-                    width: 220px;
-                }
-            }
-        }
-    }
-    #gallery.tab_divider #gallery_rows {
-        margin-bottom: 20px;
-        $w: 98%;
-        $c: 4;
-        $g: 1%;
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 220px;
-                    width: 220px;
-                }
+        &.tab_divider #gallery_rows {
+            margin-bottom: 20px;
+            $w: getVar($sizing, content, full);
+            $c: 4;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            .gallery_item .gallery_image {
+                height: 20vh;
             }
         }
     }
 }
 
 @media only screen and (min-width:1280px){
-    #gallery.tab_divider #gallery_titles {
-        padding: 0 5px 10px;
-    }
-    #gallery #gallery_rows {
-        padding: 0;
-    }
     // Standard gallery
     #gallery {
-        $w: 100%;
+        $w: getVar($sizing, content, medium);
         $c: 4;
-        $g: 1%;
+        $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 290px;
-                    width: 290px;
-                }
-            }
+        .gallery_item .gallery_image {
+            height: 25vh;
         }
-    }
-    #gallery.tab_sidebar {
         #gallery_rows {
-            .gallery_row {
-                .gallery_item {
-                    .gallery_image {
-                        height: 275px;
-                        width: 275px;
-                    }
+            padding: 0;
+        }
+        &.tab_divider {
+            #gallery_titles {
+                padding: 0 5px 10px;
+            }
+            #gallery_rows {
+                margin-bottom: 20px;
+                $w: getVar($sizing, content, medium);
+                $c: 4;
+                $g: getVar($sizing, gutter, vw, tiny);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_item .gallery_image {
+                    height: 25vh;
                 }
             }
         }
-    }
-    #gallery.tab_pill #gallery_rows {
-        margin-bottom: 20px;
-        $w: 100%;
-        $c: 4;
-        $g: 1%;
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 290px;
-                    width: 290px;
+        &.tab_sidebar {
+            #gallery_rows {
+                $w: 45vw;
+                $c: 3;
+                $g: getVar($sizing, gutter, vw, tiny);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                .gallery_item .gallery_image {
+                    height: 30vh;
                 }
             }
         }
-    }
-    #gallery.tab_divider #gallery_rows {
-        margin-bottom: 20px;
-        $w: 99.5%;
-        $c: 4;
-        $g: 1%;
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        .gallery_row {
-            .gallery_item {
-                .gallery_image {
-                    height: 290px;
-                    width: 290px;
-                }
+        &.tab_pill #gallery_rows {
+            margin-bottom: 20px;
+            $w: getVar($sizing, content, medium);
+            $c: 4;
+            $g: getVar($sizing, gutter, vw, tiny);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            .gallery_item .gallery_image {
+                height: 25vh;
             }
         }
     }
