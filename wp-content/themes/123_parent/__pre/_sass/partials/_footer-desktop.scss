@@ -19,111 +19,105 @@ $color_white_not_transparent: rgba(255,255,255,1);
             max-width: $max_width;
             display: flex;
             flex-flow: column wrap;
-            > section {
-                flex: 1 0 auto;
-                &:last-of-type {
-                    margin-right: 0;
-                }
-                &#footer_company_info {
-                    margin-top: 20px;
-                }
-                .site__footer_logo {
-                    display: block;
-                    padding: 10px;
-                    > div {
-                        height: 90px;
-                        max-width: 250px;
-                        margin: 0 auto;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        background-position: center center;
-                    }
-                }
-                #footer_nav {
-                    border-top: 2px solid $white;
-                    border-bottom: 2px solid $white;
-                    .navlinks {
-                        display: flex;
-                        justify-content: center;
-                        .navlinks-item-link {
-                            line-height: 50px;
-                            padding: 15px;
-                            text-transform: uppercase;
-                            color: $white;
-                            font-weight: 500;
-                            font-size: 14px;    
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                opacity: 0.8;
-                            }
-                        }
-                        .navlinks-item-link:after {
-                            content: "";
-                            position: relative;
-                            bottom: 0;
-                            left: 15px;
-                            right: 0;
-                            height: 0.5em;
-                            border-right: 1.5px solid $white;
-                        }
-                        .navlinks-item:last-of-type .navlinks-item-link:after {
-                            border-right: none;
-                        }
-                    }
-                }
-                .site__social-media {
-                    display: flex;
-                    justify-content: center;
-                    margin: 20px 0 10px;
-                    li {
-                        margin-right: 10px;
-                        a {
-                            padding: 10px;
-                            i {
-                                font-size: 20px;
-                                color: $white;
-                            }
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                opacity: 0.8;
-                            }
-                        }
-                    }
-                }
-                .footer_address {
-                    display: block;
-                    color: $white;
-                    font-weight: 500;
-                    font-size: 14px;
-                    margin-right: 20px;
-                    padding: 5px;
-                    &:hover,
-                    &:active, 
-                    &:focus {
-                        opacity: 0.8;
-                    }
-                }
-                //Phone numbers
-                a[class^='footer_phone']{
-                    display: block;
-                    color: $white;
-                    font-weight: 500;
-                    font-size: 14px;
-                    margin-right: 15px;
-                    padding: 5px;
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        opacity: 0.8;
-                    }
-                }
-                > a:last-of-type {
-                    margin-right: 0;
+            > a:last-of-type {
+                margin-right: 0;
+            }
+            #footer_company_info {
+                margin-top: 20px;
+            }
+            .site__footer_logo {
+                display: block;
+                padding: 10px;
+                > div {
+                    height: 90px;
+                    max-width: 250px;
+                    margin: 0 auto;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center center;
                 }
             }
-            > div.site__copyright_banner {
+            #footer_nav {
+                border-top: 2px solid $white;
+                border-bottom: 2px solid $white;
+                .navlinks {
+                    display: flex;
+                    justify-content: center;
+                    .navlinks-item-link {
+                        line-height: 50px;
+                        padding: 15px;
+                        text-transform: uppercase;
+                        color: $white;
+                        font-weight: 500;
+                        font-size: 14px;    
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            opacity: 0.8;
+                        }
+                    }
+                    .navlinks-item-link:after {
+                        content: "";
+                        position: relative;
+                        bottom: 0;
+                        left: 15px;
+                        right: 0;
+                        height: 0.5em;
+                        border-right: 1.5px solid $white;
+                    }
+                    .navlinks-item:last-of-type .navlinks-item-link:after {
+                        border-right: none;
+                    }
+                }
+            }
+            .site__social-media {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0 10px;
+                li {
+                    margin-right: 10px;
+                    a {
+                        padding: 10px;
+                        i {
+                            font-size: 20px;
+                            color: $white;
+                        }
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+            .footer_address {
+                display: block;
+                color: $white;
+                font-weight: 500;
+                font-size: 14px;
+                margin-right: 20px;
+                padding: 5px;
+                &:hover,
+                &:active, 
+                &:focus {
+                    opacity: 0.8;
+                }
+            }
+            //Phone numbers
+            a[class^='footer_phone']{
+                display: block;
+                color: $white;
+                font-weight: 500;
+                font-size: 14px;
+                margin-right: 15px;
+                padding: 5px;
+                &:hover,
+                &:active,
+                &:focus {
+                    opacity: 0.8;
+                }
+            }
+            .site__copyright_banner {
                 > a {
                     display: block;
                     font-size: 1.4rem;
@@ -136,21 +130,20 @@ $color_white_not_transparent: rgba(255,255,255,1);
                     }
                 }
             }
-        }
-
-        .footer_badges,
-        .footer_payment_types {
-            margin: 10px 0;
-            > ul {
-                > li {
-                    display: inline-block;
-                    margin-right: 10px;
-                    img {
-                        max-width: 44px;
+            .footer_badges,
+            .footer_payment_types {
+                margin: 10px 0;
+                > ul {
+                    > li {
+                        display: inline-block;
+                        margin-right: 10px;
+                        img {
+                            max-width: 44px;
+                        }
                     }
-                }
-                > li:last-of-type {
-                    margin-right: 0;
+                    > li:last-of-type {
+                        margin-right: 0;
+                    }
                 }
             }
         }
@@ -158,7 +151,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 }	
 
 @media only screen and (min-width: 1280px){
-    footer > div.container > section {
+    footer > div.container {
         .footer_address,
         a[class^='footer_phone'] {
             display: inline-block;
