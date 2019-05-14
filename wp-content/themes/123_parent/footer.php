@@ -10,9 +10,6 @@
  *  copyright section
  */
 
-    
- 
- 
     function _get_copyright_banner()
     {
         $return = '';
@@ -75,10 +72,29 @@
         return $return;
     }
 
+    function _get_footer_logo(){
+        $return = '';
+        $field = get_field('footer', 'options');
+        if( !empty($field['logo']) )
+        {
+            $format = '
+                <a class="site__footer_logo" href="%s" title="Footer logo button">
+                    <div style="background-image:url(%s);"></div>
+                </a>
+            ';
+            $return .= sprintf(
+                $format
+                ,site_url()
+                ,$field['logo']['url']
+            );
+        }
+        return $return;
+    }
+
     function _get_company_info()
     {
-        $logo = _get_site_logo();
-        $address = (!empty(_get_full_address_br()) ? '<a class="footer_address" href="javascript:;">'._get_full_address_br().'</a>': '');
+        $logo = _get_footer_logo();
+        $address = (!empty(_get_full_address()) ? '<a class="footer_address" href="javascript:;">'._get_full_address().'</a>': '');
         $phone_number_1 = (!empty(_get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'._get_phone_number_1().'">'._get_phone_number_1().'</a>': '');
         $phone_number_2 =(!empty(_get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'._get_phone_number_2().'">'._get_phone_number_2().'</a>': '');
         $social_icons = _get_social_icons();
@@ -90,15 +106,17 @@
                 %s
                 %s
                 %s
+                %s
             </section>
         ';
         $company_info = sprintf(
             $format_company_info
             ,$logo
+            ,_get_nav()
+            ,$social_icons
             ,$address
             ,$phone_number_1
             ,$phone_number_2
-            ,$social_icons
         );
         return $company_info;
     }
@@ -107,7 +125,6 @@
     {
         $format_nav = '
             <section>
-                %s
                 <nav id="footer_nav">
                     %s
                 </nav>
@@ -115,7 +132,6 @@
         ';
         $nav = sprintf(
             $format_nav
-            ,'<h3>Links</h3>'
             ,_get_site_nav()
         );
         return $nav;
@@ -130,16 +146,14 @@
                 %s
                 %s
             </div>
-                %s
         ';
 
         $footer_content = sprintf(
             $format_footer_content
             ,_get_company_info()
-            ,_get_nav()
-            ,_get_payment_types()
-            ,_get_badges()
             ,_get_copyright_banner()
+            ,_get_badges()
+            ,_get_payment_types()
         );
         
         return $footer_content;

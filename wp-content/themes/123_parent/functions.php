@@ -143,7 +143,7 @@ function _get_full_address(){
 	$postcode = $location['address_postcode'];
 	$country = $location['address_country'];
 
-	$format_full_address = '%s %s, %s, %s, %s'; 
+	$format_full_address = '%s %s, %s, %s %s'; 
 
 	$full_address = sprintf(
 		$format_full_address
@@ -156,7 +156,6 @@ function _get_full_address(){
 	);
 	return $full_address; 
 }
-
 
 
 function _get_site_logo(){
@@ -216,9 +215,7 @@ function _get_site_nav($pre = 'navlinks'){
     // if long scroll is disabled
     else {
         $return_nav = '<ul class="'.$pre.'">';
-        $format_nav_item = '
-            <li class="'.$pre.'-item"><a class="'.$pre.'-item-link" href="%s" title="Scroll to the %s section">%s</a></li>
-        ';
+        $format_nav_item = '<li class="'.$pre.'-item"><a class="'.$pre.'-item-link" href="%s" title="Scroll to the %s section">%s</a></li>';
         // each page object reference module
         foreach($sections as $section){
             $section = $section['section'];

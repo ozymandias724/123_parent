@@ -478,8 +478,7 @@ Theme.Menu = {
   menu_section: (0, _jquery["default"])("#mod_menu .menu_section"),
   images: (0, _jquery["default"])(".image_prov"),
   _init: function _init() {
-    Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click); //Theme.Menu._images_width();
-    //$(window).on("resize", Theme.Menu._images_width());
+    Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
   },
   _tab_link_click: function _tab_link_click(e) {
     var menu_name = e.target.dataset.tab;

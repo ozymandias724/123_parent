@@ -490,8 +490,6 @@ Theme.Menu = {
 
     _init: function () {
         Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
-        //Theme.Menu._images_width();
-        //$(window).on("resize", Theme.Menu._images_width());
     },
     _tab_link_click: function (e) {
         var menu_name = e.target.dataset.tab;
