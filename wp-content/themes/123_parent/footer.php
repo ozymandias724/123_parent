@@ -130,10 +130,13 @@
                 </nav>
             </section>
         ';
-        $nav = sprintf(
-            $format_nav
-            ,_get_site_nav()
-        );
+        if(strlen(_get_site_nav()) > 26)
+        {
+            $nav = sprintf(
+                $format_nav
+                ,_get_site_nav()
+            );  
+        }
         return $nav;
     }
 
