@@ -1,9 +1,6 @@
 @media only screen {
     // Menu Area for Tabs Style Side Menu
     #tabs_sidebar {
-        margin: 0 auto;
-        display: flex;
-        flex-flow: column nowrap; 
         // Menu tabs
         #menu_tabs {
             font-size: 14px;
@@ -41,10 +38,6 @@
     }
     // Menu with Tabs Pills
     #tabs_pills {
-        max-width: $max_width;
-        margin: 0 auto;
-        display: flex;
-        flex-flow: column nowrap;
         // Tabs
         #menu_tabs {
             font-size: 14px;
@@ -82,10 +75,6 @@
         }
     }
     #tabs_divider {
-        max-width: $max_width;
-        margin: 0 auto;
-        display: flex;
-        flex-flow: column nowrap;
         #menu_tabs {
             padding: 0 0 30px 0; 
         }
@@ -130,6 +119,9 @@
     #tabs_divider {
         padding: 0 3%;
         min-height: 60vh;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column nowrap; 
         // Common CSS for the different Menu Styles
         .menu_text_half, 
         .menu_text_list_left,
@@ -481,24 +473,15 @@
     }
     #tabs_pills,
     #tabs_divider {
+        .menu_text_half .menu_items,
         .menu_photo_tiled_x3 .menu_items {
-            $w: 100%;
+            $w: 92vw;
             $c: 2;
-            $g: 1%;
+            $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
             ul .image_prov {
-                height: 340px;
-            }
-        }
-        .menu_text_half .menu_items {
-            $w: 100%;
-            $c: 2;
-            $g: 2%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 340px;
+                height: 30vh;
             }
         }
         .menu_text_sub_group_half { 
@@ -507,7 +490,7 @@
                 margin-right: 15px;
             }
             ul .image_prov {
-                height: 340px;
+                height: 30vh;
             }
         }
     }
@@ -515,7 +498,7 @@
     #tabs_sidebar,
     #tabs_divider {
         .menu_photo_list ul .image_prov{
-            height: 239px;
+            height: 30vh;
         }
         .menu_text_list_left,
         .menu_text_list_center {
@@ -570,41 +553,23 @@
                 height: 320px;
             }
         }
-    }
-    #tabs_sidebar,
+    } 
     #tabs_pills,
     #tabs_divider {
-        .menu_photo_list {
-            ul .image_prov {
-                height: 320px;
-            }
-        }
-    }   
-    #tabs_pills,
-    #tabs_divider {
-        .menu_photo_tiled_x3 .menu_items {
-            $w: 100%;
-            $c: 3;
-            $g: 1%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 300px;
-            }
-        }
-        .menu_text_half .menu_items {
-            $w: 100%;
-            $c: 2;
-            $g: 2%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 450px;
-            }
-        }
+        .menu_text_half .menu_items, 
         .menu_text_sub_group_half {
             ul .image_prov {
-                height: 400px;
+                height: 40vh;
+            }
+        }
+        .menu_photo_tiled_x3 .menu_items {
+            $w: 92vw;
+            $c: 3;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 30vh;
             }
         }
     }
@@ -617,7 +582,7 @@
         padding: 0;
         .menu_photo_list {
             ul .image_prov {
-                height: 400px;
+                height: 40vh;
             }
         }
         .menu_text_list_left,
@@ -625,6 +590,30 @@
             ul .image_prov {
                 height: 500px;
                 max-width: 500px;
+            }
+        }
+    }
+    #tabs_pills,
+    #tabs_divider {
+        max-width: getVar($sizing, content, medium);
+        .menu_text_half .menu_items {
+            $w: getVar($sizing, content, medium);
+            $c: 2;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 40vh;
+            }
+        }
+        .menu_photo_tiled_x3 .menu_items {
+            $w: getVar($sizing, content, medium);
+            $c: 4;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+            ul .image_prov {
+                height: 20vh;
             }
         }
     }
@@ -659,30 +648,6 @@
             }
         }
     }
-    #tabs_pills,
-    #tabs_divider {
-        max-width: getVar($sizing, content, medium);
-        .menu_photo_tiled_x3 .menu_items {
-            $w: 100%;
-            $c: 4;
-            $g: 1%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 290px;
-            }
-        }
-        .menu_text_half .menu_items {
-            $w: 100%;
-            $c: 2;
-            $g: 2%;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            ul .image_prov {
-                height: 500px;
-            }
-        }
-    }
 }
     
 @media only screen and (min-width: 1600px){
@@ -692,6 +657,33 @@
             max-width: none;
             margin: 0 0 15px;
             background-position: center center;
+        }
+        .menu_photo_tiled_x3 .menu_items {
+            ul .image_prov {
+                height: 30vh;
+            }
+        }
+        .menu_text_half .menu_items,
+        .menu_text_sub_group_half .menu_items {
+            ul .image_prov { 
+                height: 50vh;
+            }
+        }
+    }
+    
+    #tabs_pills,
+    #tabs_divider {
+        .menu_photo_list {
+            ul .image_prov {
+                height: 50vh;
+            }
+        }
+    }
+    #tabs_sidebar {
+        .menu_photo_list {
+            ul .image_prov {
+                height: 40vh;
+            }
         }
     }
 }
