@@ -47,8 +47,8 @@
                     $format_service
                     ,$service_fields['image']['url']
                     ,$service['service']->post_title
-                    ,$service_fields['price']
                     ,$service_fields['details']
+                    ,$service_fields['price']
                 );
             }
         }
