@@ -1,34 +1,97 @@
 @media only screen {
 
     section.mod__coupons-featuredcoupons {
-
-        >.container {
+        >div.container {
             text-align: center;
+            width: 92vw;
+            > h2 {
+                font-size: 2.8rem;
+                text-align: center;
+                margin: 40px 0;
+                font-family: "Gotham", Helvetica, sans-serif;
+            }
+            > div > p {
+                color: $black;
+                font-weight: 400;
+                font-size: 14px;
+                text-align: justify;
+            }
             div.site_grid {
-
+                margin: 0 auto;
+                $w: getVar($sizing, content, small);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, large);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
                 .block {
-                    border: 1px solid black;
+                    border: 2px dashed $accent;
                     display: flex;
                     flex-flow: column nowrap;
                     justify-content: center;
                     align-items: center;
+                    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.1);
+                    h5 {
+                        font-size: 16px;
+                        color: $black;
+                        font-weight: 700;
+                        border-bottom: 1px solid $accent;
+                        padding-bottom: 10px;
+                    }
+                    .coupon_expiration {
+                        color: $black;
+                        font-size: 14px;
+                        margin: 10px 0;
+                        font-weight: 500;
+                    }
+                    .coupon_code {
+                        border: 2px dotted $accent;
+                        background: #f5f5f5;
+                        padding: 0px 10px;
+                        margin: 10px 0;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        border-radius: 4px;
+                        font-weight: 500;
+                    }
                 }
             }
-
             > a.site__button {
                 margin: 0 auto;
+                background-color: $accent;
+                color: $white;
+                border: none;
+                font-size: 16px;
+                border-radius: 4px;
+                text-align: center;
+                padding: 15px 20px;
+                font-weight: 600;
+                line-height: initial;
+                height: auto;
+                &:hover,
+                &:active,
+                &:focus {
+                    opacity: 0.8;
+                }
             }
-
         }
-
     }
+}
 
+@media only screen and (min-width: 768px){
+    section.mod__coupons-featuredcoupons > div.container div.site_grid {
+        $w: getVar($sizing, content, medium);
+        $c: 2;
+        $g: getVar($sizing, gutter, vw, normal);
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+    }
 }
 
 @media only screen and (min-width: 1024px) {
-    $w: 80vw;
+
+    $w: getVar($sizing, content, medium);
     $c: 4;
-    $g: 1.5vw;
+    $g: getVar($sizing, gutter, vw, normal);
     $s: true;
 
     section.mod__coupons-featuredcoupons {

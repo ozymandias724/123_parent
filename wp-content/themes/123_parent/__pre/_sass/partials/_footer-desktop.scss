@@ -16,18 +16,17 @@ $color_white_not_transparent: rgba(255,255,255,1);
         background-color: $accent;
         > div.container {
             margin: 0 auto;
-            max-width: getVar($sizing, content, medium);
             display: flex;
             flex-flow: column wrap;
             > a:last-of-type {
                 margin-right: 0;
             }
             #footer_company_info {
-                margin-top: 20px;
+                margin-top: 10px;
             }
             .site__footer_logo {
                 display: inline-block;
-                padding: 10px;
+                padding: 5px;
                 width: 250px;
                 > div {
                     height: 90px;
@@ -44,13 +43,16 @@ $color_white_not_transparent: rgba(255,255,255,1);
                 .navlinks {
                     display: flex;
                     justify-content: center;
+                    flex-flow: row wrap;
                     .navlinks-item-link {
                         line-height: 50px;
-                        padding: 15px;
                         text-transform: uppercase;
                         color: $white;
-                        font-weight: 500;
-                        font-size: 15px;     
+                        font-weight: 700;
+                        font-size: 15px;
+                        letter-spacing: 0.5px;  
+                        margin: 0 15px;
+                        padding: 10px 0;   
                         &:hover,
                         &:active,
                         &:focus {
@@ -94,7 +96,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
             .footer_address {
                 display: block;
                 color: $white;
-                font-weight: 500;
+                font-weight: 700;
                 font-size: 14px;
                 margin-right: 20px;
                 padding: 5px;
@@ -108,7 +110,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
             a[class^='footer_phone']{
                 display: block;
                 color: $white;
-                font-weight: 500;
+                font-weight: 700;
                 font-size: 14px;
                 margin-right: 15px;
                 padding: 5px;
@@ -153,6 +155,7 @@ $color_white_not_transparent: rgba(255,255,255,1);
 
 @media only screen and (min-width: 1280px){
     footer > div.container {
+        max-width: getVar($sizing, content, medium);
         .footer_address,
         a[class^='footer_phone'] {
             display: inline-block;

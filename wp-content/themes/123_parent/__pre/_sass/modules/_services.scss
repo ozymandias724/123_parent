@@ -1,26 +1,54 @@
 @media only screen {
 
-
     #mod_services {
 
-
         section.mod__services-featuredservice {
-            $w: getVar($sizing, content, medium);
-            $c: 3;
-            $g: 2vw;
-            $s: true;
             margin: getVar($sizing, gutter, px, large) auto;
             text-align: center;
-            width: $w;
-
+            > div.container {
+                width: getVar($sizing, content, full);
+                > h2 {
+                    font-size: 2.8rem;
+                    text-align: center;
+                    margin: 40px 0;
+                    font-family: "Gotham", Helvetica, sans-serif;
+                }
+                > div > p {
+                    color: #000;
+                    font-weight: 400;
+                    font-size: 14px;
+                    text-align: justify;
+                }
+                > a.site__button {
+                    margin: 0 auto;
+                    background-color: $accent;
+                    color: $white;
+                    border: none;
+                    font-size: 16px;
+                    border-radius: 4px;
+                    text-align: center;
+                    padding: 15px 20px;
+                    font-weight: 600;
+                    line-height: initial;
+                    height: auto;
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        opacity: 0.8;
+                    }
+                }
+            }
             .site_grid {
+                margin: 0 auto;
+                $w: getVar($sizing, content, medium);
+                $c: 1;
+                $g: 2vw;
+                $s: true;
                 @include gridLayout($w, $c, $g, $s);
-
                 >ul {
                     >li {
-                        border: 1px solid black;
+                        border: 1px solid #ddd;
                         text-align: center;
-                        padding: 30px;
                         flex: 1 0 auto;
                         display: flex;
                         flex-flow: column nowrap;
@@ -28,16 +56,32 @@
                         justify-content: center;
                         min-height: 245px;
                         position: relative;
-
+ 
                         > .site__bgimg {
-                            position: absolute;
+                            position: relative;
                             top: 0;
                             left: 0;
                             width: 100%;
                             height: 100%;
+                            .site__bgimg_img {
+                                position:relative;
+                                top:0;
+                                left: 0;
+                                width: 100%;
+                                transform: scale(1);
+                                transition: transform 0.4s ease;
+                                background-size: cover;
+                                background-position: center center;
+                                background-repeat: no-repeat;
+                                z-index: 1;
+                            }
                         }
 
-                        >h5 {
+                        h5 {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
                             position: relative;
                             z-index: 9;
                             font-size: 2rem;
@@ -45,17 +89,46 @@
                             color: white;
                         }
 
-                        >h5,
+                        h5,
                         >p {
                             margin-bottom: 10px;
+                            padding: 0 30px;
                         }
 
                     }
                 }
             }
         }
-
     }
+}
 
+@media only screen and (min-width: 768px){
+    #mod_services {
+        section.mod__services-featuredservice {
+            .site_grid {
+                $w: getVar($sizing, content, medium);
+                $c: 2;
+                $g: 2vw;
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
 
+@media only screen and (min-width: 1280px){
+    #mod_services {
+        section.mod__services-featuredservice {
+            .site_grid {
+                $w: getVar($sizing, content, medium);
+                $c: 3;
+                $g: 2vw;
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+            >div.container {
+                width: getVar($sizing, content, medium);
+            }
+        }
+    }
 }

@@ -34,8 +34,8 @@
             <li>
                 <div class="block">
                     <h5>%s</h5>
-                    <p>%s</p>
-                    <p>%s</p>
+                    <p class="coupon_expiration">Expiration: %s</p>
+                    <p class="coupon_code">%s</p>
                 </div>
             </li>
         ';

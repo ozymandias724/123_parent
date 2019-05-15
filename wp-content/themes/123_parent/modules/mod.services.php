@@ -27,13 +27,14 @@
                 <div class="container">
                     '.$heading.'
                     '.$details.'
-                    <div class="site_grid"><ul>
+                    <div class="site_grid"><ul> 
         ';
         
         $format_service = '
             <li>
-                <h5>%s</h5>
-                <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="site__bgimg_img" style="background-image: url(%s)"></div></div>
+                <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="site__bgimg_img block" style="background-image: url(%s)"><h5>%s</h5></div></div>
+                <div class="service_details">%s</div>
+                <p class="service_price">%s</p>
             </li>
         ';
 
@@ -44,8 +45,10 @@
             if( $service_fields['status'] ){ 
                 $return_services .= sprintf(
                     $format_service
-                    ,$service['service']->post_title
                     ,$service_fields['image']['url']
+                    ,$service['service']->post_title
+                    ,$service_fields['price']
+                    ,$service_fields['details']
                 );
             }
         }
