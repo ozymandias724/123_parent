@@ -1,35 +1,47 @@
 @media only screen {
-    #mod_coupons {
-        section.mod__coupons-featuredcoupons {
-            text-align: center;
-            $w: getVar($sizing, content, medium);
-            $c: 3;
-            $g: 2vw;
-            $s: true;
-            .site_grid {
-                @include gridLayout($w, $c, $g, $s);
-                >ul {
-                    >li {
-                        border: 1px solid black;
-                        text-align: center;
-                        padding: 30px;
-                        flex: 1 0 auto;
-                        display: flex;
-                        flex-flow: column nowrap;
-                        align-items: center;
-                        justify-content: center;
-                        >h5 {
-                            font-size: 2rem;
-                            text-transform: uppercase;
-                        }
-                        >h5,
-                        >p {
-                            margin-bottom: 10px;
-                        }
 
-                    }
+    section.mod__coupons-featuredcoupons {
+
+        >.container {
+            text-align: center;
+            div.site_grid {
+
+                .block {
+                    border: 1px solid black;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
+
+            > a.site__button {
+                margin: 0 auto;
+            }
+
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    $w: 80vw;
+    $c: 4;
+    $g: 1.5vw;
+    $s: true;
+
+    section.mod__coupons-featuredcoupons {
+        > div.container {
+            width: $w;
+
+            div.site_grid {
+                @include gridLayout($w, $c, $g, $s);
+
+            }
+
         }
     }
+
+
 }

@@ -32,9 +32,11 @@
         
         $format_coupon = '
             <li>
-                <h5>%s</h5>
-                <p>%s</p>
-                <p>%s</p>
+                <div class="block">
+                    <h5>%s</h5>
+                    <p>%s</p>
+                    <p>%s</p>
+                </div>
             </li>
         ';
 

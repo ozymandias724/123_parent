@@ -75,19 +75,24 @@
 
 
     section.mod__featured_grid {
-        text-align: center;
-        margin: getVar($sizing, gutter, px, large) auto;
         > div.container {
             margin: 0 auto getVar($sizing, gutter, px, normal) auto;
             width: getVar($sizing, content, medium);
+            // title
             > h2 {
+                text-align: center;
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;
             }
+            // details wysiwyg
             > div:first-of-type {
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;
             }
+            // overrides for the site grid
+            // > div.site_grid{}
         }
     }
+
+    
     
     
     

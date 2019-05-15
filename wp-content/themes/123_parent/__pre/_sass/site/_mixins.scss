@@ -14,45 +14,45 @@
 }
 
 // legacy, but already integrated in the site
-@mixin gridLayout($w, $c, $g, $s) {
-    text-align: center;
-    margin: 0 auto 0 auto;
-    width: $w;
-    ul {
-        text-align: left;
-        width: $w;
-        margin: 0 auto 0 auto;
-        display: inline-block;
-        list-style: none;
-        @include clearfix;
+// @mixin gridLayout($w, $c, $g, $s) {
+//     text-align: center;
+//     margin: 0 auto 0 auto;
+//     width: $w;
+//     ul {
+//         text-align: left;
+//         width: $w;
+//         margin: 0 auto 0 auto;
+//         display: inline-block;
+//         list-style: none;
+//         @include clearfix;
 
-        >li {
-            $d: colWidth($w, $c, $g);
-            width: $d;
-            height: auto;
-            float: left;
+//         >li {
+//             $d: colWidth($w, $c, $g);
+//             width: $d;
+//             height: auto;
+//             float: left;
 
-            div.image {
-                @if $s==true {
-                    height: $d
-                }
-            }
+//             div.image {
+//                 @if $s==true {
+//                     height: $d
+//                 }
+//             }
 
-            &:nth-child(n+1) {
-                // this will reset each child before applying to the target
-                margin: 0 $g $g 0;
-            }
+//             &:nth-child(n+1) {
+//                 // this will reset each child before applying to the target
+//                 margin: 0 $g $g 0;
+//             }
 
-            &:nth-child(#{$c}n) {
-                margin: 0 0 $g 0;
-            }
-        }
-    }
-}
+//             &:nth-child(#{$c}n) {
+//                 margin: 0 0 $g 0;
+//             }
+//         }
+//     }
+// }
 
 // updated, production worthy gridLayout mixin
 @mixin gridLayout($w, $c, $g, $s) {
-    ul {
+    > ul {
         display: inline-block;
         width: $w;
         margin: 0 auto 0 auto;
@@ -63,9 +63,10 @@
             height: auto;
             float: left;
 
-            div.image {
+            div.image
+            ,div.block {
                 overflow: hidden;
-
+                // width: 100%;
                 @if $s==true {
                     height: $d
                 }
