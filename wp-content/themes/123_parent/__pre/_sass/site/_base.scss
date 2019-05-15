@@ -29,9 +29,12 @@
         }
     }
 
+    // <div class><div class style></div></div>
+    // basically this wrapper is like a <figure>
     .site__bgimg {
         overflow: hidden;
         position: relative;
+        // basically this class goes on the <div> background-image
         .site__bgimg_img {
             position: absolute;
             top: 50%;
@@ -99,18 +102,12 @@
     div.site_grid {
         $w: getVar($sizing, content, medium);
         $c: 1;
-        $g: 1.5vw;
+        $g: getVar($sizing, gutter, vw, normal);
         $s: false;
         @include gridLayout($w, $c, $g, $s);
         width: $w;
         >h2 {
             margin: 15px 0;
-        }
-        .image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
         >ul {
             list-style: none;
@@ -118,9 +115,9 @@
     }
     @media only screen and (min-width: 550px) {
         div.site_grid {
-            $w: 80vw;
+            $w: getVar($sizing, content, medium);
             $c: 2;
-            $g: 1.5vw;
+            $g: getVar($sizing, gutter, vw, normal);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
         }
@@ -128,9 +125,9 @@
 
     @media only screen and (min-width: 768px) {
         div.site_grid {
-            $w: 80vw;
+            $w: getVar($sizing, content, medium);
             $c: 4;
-            $g: 1.5vw;
+            $g: getVar($sizing, gutter, vw, normal);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
         }
@@ -138,9 +135,9 @@
 
     @media only screen and (min-width: 1024px) {
         div.site_grid {
-            $w: 80vw;
+            $w: getVar($sizing, content, medium);
             $c: 6;
-            $g: 1.5vw;
+            $g: getVar($sizing, gutter, vw, normal);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
         }
