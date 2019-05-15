@@ -235,7 +235,7 @@
             $ul = '<div class="menu_items"><ul>';
             foreach($section['item'] as $k => $item)
             {   
-                $image = (!empty($item['image']['url'])) ? '<div class="image_prov" style="background-image:url('.$item['image']['url'].');"></div>' : '';
+                $image = (!empty($item['image']['url'])) ? '<div class="image_prov block" style="background-image:url('.$item['image']['url'].');"></div>' : '';
                 $title = (!empty($item['title'])) ? $item['title'] : '';
                 $description = (!empty($item['description'])) ? $item['description'] : '';
                 $price = (!empty($item['price'])) ? $item['price'] : '';

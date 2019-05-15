@@ -6,7 +6,7 @@
     #gallery {
         margin: 0 auto 20px;  
         max-width: getVar($sizing, content, full);
-        min-height: 70vh;
+        min-height: 75vh;
         $w: getVar($sizing, content, full);
         $c: 2;
         $g: getVar($sizing, gutter, vw, small);
@@ -15,9 +15,8 @@
         .gallery_item {
             justify-content: center;
             .gallery_image {
-                height: 20vh;
                 width: 100%;
-                background-size: cover;
+                background-size: cover; 
                 background-position: center;
                 background-repeat: no-repeat;
                 margin: 0 auto;
@@ -57,16 +56,6 @@
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item {
-                    justify-content: center;
-                    .gallery_image {
-                        height: 20vh;
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        margin: 0 auto;
-                    }
-                }
             }
             h3 {
                 display: block;
@@ -113,16 +102,6 @@
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item {
-                    justify-content: center;
-                    .gallery_image {
-                        height: 20vh;
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        margin: 0 auto;
-                    }
-                }
             }
             h3 {
                 display: block;
@@ -165,20 +144,9 @@
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item {
-                    justify-content: center;
-                    .gallery_image {
-                        height: 20vh;
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        margin: 0 auto;
-                    }
-                }
             }
             #gallery_titles {
                 margin-bottom: 15px;
-                padding: 0 10px;
                 h3:first-of-type > a {
                     border-top: 1px solid $gray_one;
                 }
@@ -220,9 +188,6 @@
         $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_item .gallery_image {
-            height: 15vh;
-        }
         &.tab_sidebar {
             flex-flow: row nowrap;
             #gallery_titles {
@@ -236,9 +201,6 @@
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item .gallery_image {
-                    height: 15vh;
-                }
             }
         }
         &.tab_pill h3{
@@ -255,13 +217,20 @@
         $g: getVar($sizing, gutter, vw, small);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_item .gallery_image {
-            height: 20vh;
+        .gallery_item {
+            display: flex;
+            justify-content: center;
         }
         &.tab_divider {
             #gallery_titles {
                 text-align: left;
             }
+            h3 {
+                display: inline-block;
+            }
+        }
+        &.tab_pill,
+        &.tab_divider {
             #gallery_rows {
                 margin-bottom: 20px;
                 $w: getVar($sizing, content, full);
@@ -269,34 +238,6 @@
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item .gallery_image {
-                    height: 20vh;
-                }
-            }
-            h3 {
-                display: inline-block;
-            }
-        }
-        .gallery_item {
-            display: flex;
-            justify-content: center;
-        }
-        &.tab_sidebar {
-            #gallery_rows {
-                .gallery_item .gallery_image {
-                    height: 20vh;
-                }
-            }
-        }
-        &.tab_pill #gallery_rows {
-            margin-bottom: 20px;
-            $w: getVar($sizing, content, full);
-            $c: 3;
-            $g: getVar($sizing, gutter, vw, small);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            .gallery_item .gallery_image {
-                height: 20vh;
             }
         }
     }
@@ -307,12 +248,9 @@
     #gallery {
         $w: getVar($sizing, content, full);
         $c: 4;
-        $g: getVar($sizing, gutter, vw, small);
+        $g: getVar($sizing, gutter, vw, tiny);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_item .gallery_image {
-            height: 20vh;
-        }
         &.tab_sidebar {
             #gallery_rows {
                 $w: getVar($sizing, content, medium);
@@ -320,9 +258,6 @@
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item .gallery_image {
-                    height: 20vh;
-                }
             }
         }
         &.tab_pill #gallery_rows {
@@ -340,9 +275,6 @@
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
-            .gallery_item .gallery_image {
-                height: 20vh;
-            }
         }
     }
 }
@@ -351,56 +283,39 @@
     // Standard gallery
     #gallery {
         $w: getVar($sizing, content, medium);
-        $c: 4;
-        $g: getVar($sizing, gutter, vw, small);
+        $c: 4;  
+        $g: getVar($sizing, gutter, vw, tiny);
         $s: true;
         @include gridLayout($w, $c, $g, $s);
-        .gallery_item .gallery_image {
-            height: 25vh;
-        }
         #gallery_rows {
             padding: 0;
         }
         &.tab_divider {
             #gallery_titles {
-                padding: 0 5px 10px;
+                padding: 0 0px 10px;
             }
+        }
+        &.tab_divider,
+        &.tab_pill {
+            width: getVar($sizing, content, medium);
             #gallery_rows {
-                margin-bottom: 20px;
+                margin-bottom: 20px; 
                 $w: getVar($sizing, content, medium);
                 $c: 4;
                 $g: getVar($sizing, gutter, vw, tiny);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item .gallery_image {
-                    height: 25vh;
-                }
             }
         }
         &.tab_sidebar {
+            width: getVar($sizing, content, medium);
             #gallery_rows {
                 $w: 45vw;
                 $c: 3;
                 $g: getVar($sizing, gutter, vw, tiny);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
-                .gallery_item .gallery_image {
-                    height: 30vh;
-                }
-            }
-        }
-        &.tab_pill #gallery_rows {
-            margin-bottom: 20px;
-            $w: getVar($sizing, content, medium);
-            $c: 4;
-            $g: getVar($sizing, gutter, vw, tiny);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-            .gallery_item .gallery_image {
-                height: 25vh;
             }
         }
     }
 }
-
-

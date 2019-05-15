@@ -69,7 +69,7 @@
                 $image = (!empty($image['url'])) ? $image['url'] : '';
                 $content .= '
                     <li class="gallery_item">
-                        <div class="gallery_image" style="background-image:url(' . $image . ');"></div>
+                        <div class="gallery_image block" style="background-image:url(' . $image . ');"></div>
                     </li>'; 
             }
 
@@ -104,7 +104,7 @@
                 $image = (!empty($image['url'])) ? $image['url'] : '';
                 $content .= '
                     <li class="gallery_item">
-                        <div class="gallery_image" style="background-image:url(' . $image . ');"></div>
+                        <div class="gallery_image block" style="background-image:url(' . $image . ');"></div>
                     </li>'; 
             }
 
