@@ -19,18 +19,20 @@
 
     $company_info = get_field('company_info','options');
 
-    function _get_testimonials($fields)
+    function _get_testimonials($fields, $res)
     {
         $format = '
             <div class="container">
                 %s
                 %s
             </div>
+            %s
         ';
         $return = sprintf(
             $format
             ,_get_header($fields)
             ,_get_body($fields)
+            ,'<a href="'.get_permalink($res).'" title="View all Testimonials" class="site__button">View All Testimonials</a>'
         );
         return $return;
     }
@@ -121,7 +123,7 @@
 <section id="mod_testimonials">
 <?php 
     echo get_section_banner($res[0]->post_title);
-    echo _get_testimonials($fields);
+    echo _get_testimonials($fields, $res[0]->ID); 
  ?>
 </section>
 <?php 

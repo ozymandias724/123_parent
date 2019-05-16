@@ -2,7 +2,7 @@
     #mod_testimonials {
         >div.container {
             width: getVar($sizing, content, full);
-            margin: 0 auto;
+            margin: 0 auto 30px auto;
             $w: getVar($sizing, content, medium);
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
@@ -44,6 +44,27 @@
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
+            }
+        }
+        a.site__button {
+            background-color: $accent;
+            color: $white;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            text-align: center;
+            padding: 15px 20px;
+            font-weight: 600;
+            line-height: initial;
+            height: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            margin: 0 0 60px 0;
+            &:hover,
+            &:active,
+            &:focus {
+                opacity: 0.8;
             }
         }
     }   
