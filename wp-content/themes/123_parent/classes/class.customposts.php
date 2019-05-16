@@ -43,7 +43,7 @@ class CustomPosts
             'show_in_menu'       => true,
             'query_var'          => true,
             'capability_type'    => 'post',
-            'has_archive'        => true,
+            'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
@@ -77,7 +77,7 @@ class CustomPosts
             'show_in_menu'       => true,
             'query_var'          => true,
             'capability_type'    => 'post',
-            'has_archive'        => true,
+            'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
@@ -112,7 +112,7 @@ class CustomPosts
             'show_in_menu'       => true,
             'query_var'          => true,
             'capability_type'    => 'post',
-            'has_archive'        => true,
+            'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
@@ -146,7 +146,7 @@ class CustomPosts
             'show_in_menu'       => true,
             'query_var'          => true,
             'capability_type'    => 'post',
-            'has_archive'        => true,
+            'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
@@ -180,7 +180,7 @@ class CustomPosts
             'show_in_menu'       => true,
             'query_var'          => true,
             'capability_type'    => 'post',
-            'has_archive'        => true,
+            'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )

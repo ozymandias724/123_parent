@@ -6,8 +6,8 @@
     // get header
     get_header();
 
-    // i think this should redirect to the 404????
-    
+    echo get_section_banner($res[0]->post_title);
+
     // get footer
     get_footer();
  ?>
