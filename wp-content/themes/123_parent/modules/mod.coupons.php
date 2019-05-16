@@ -33,9 +33,11 @@
         $format_coupon = '
             <li>
                 <div class="block">
-                    <h5>%s</h5>
-                    <p class="coupon_expiration">Expiration: %s</p>
-                    <p class="coupon_code">%s</p>
+                    <a href="%s">
+                        <h5>%s</h5>
+                        <p class="coupon_expiration">Expiration: %s</p>
+                        <p class="coupon_code">%s</p>
+                    </a>
                 </div>
             </li>
         ';
@@ -47,6 +49,7 @@
             if( $coupon_fields['status'] ){ 
                 $return_coupons .= sprintf(
                     $format_coupon
+                    ,get_permalink($coupon['coupon']->ID)
                     ,$coupon['coupon']->post_title
                     ,date('M j, Y',$coupon_fields['expiration'])
                     ,$coupon_fields['code']

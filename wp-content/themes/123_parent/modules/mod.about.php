@@ -17,6 +17,40 @@
     // get the gallery page fields
     $fields = get_fields($res[0]);
 
+    // if we have staff members
+    if( !empty($fields['staff_members']) ){
+
+        // $return_staff = '<div class="container"><div class="site__grid"><ul>';
+        $return_staff = '<div class="site__grid"><ul>';
+        // format string for staff member
+        $format_staff = '
+            <li>
+                <a href="%s">
+                    <div class="image" style="background-image: url(%s)"></div>
+                    <h5>%s</h5>
+                </a>
+            </li>
+        ';
+        // loop thru the staff members (post objects)
+        foreach ($fields['staff_members'] as $i => $rec) {
+            // get the fields of each staff member post object
+            $rec_fields = get_fields($rec['staff_member']->ID);
+            // if the staff member status is active
+            if( $rec_fields['status'] ){
+                $return_staff .= sprintf(
+                    $format_staff
+                    ,get_permalink($rec['staff_member']->ID)
+                    ,$rec_fields['image']['url']
+                    ,$rec['staff_member']->post_title
+                );
+            }
+        }
+        // close return_staff[0] string for staff members grid
+        $return_staff .= '</ul></div>';
+    } else {
+        $return_staff = '';
+    }
+    
     // company bio
     if( !empty($fields['company_bio']) ){
 
@@ -28,6 +62,8 @@
                     <div>
                         %s
                     </div>
+                    %s
+                    <a href="'.get_permalink($res[0]->ID).'" title="View all Staff" class="site__button">View All Staff</a></div>
                 </div>
             </section>
         ';
@@ -37,46 +73,17 @@
             $format_company
             ,$fields['company_bio']['heading']
             ,$fields['company_bio']['details']
+            ,$return_staff
         );
 
     }
-    // if we have staff members
-    if( !empty($fields['staff_members']) ){
-
-        $return_staff = '<div class="container"><div class="site__grid"><ul>';
-        // format string for staff member
-        $format_staff = '
-            <li>
-                <div class="block" style="background-image: url(%s)"></div>
-                <h5>%s</h5>
-            </li>
-        ';
-        // loop thru the staff members (post objects)
-        foreach ($fields['staff_members'] as $i => $rec) {
-            // get the fields of each staff member post object
-            $rec_fields = get_fields($rec['staff_member']->ID);
-            // if the staff member status is active
-            if( $rec_fields['status'] ){
-                $return_staff .= sprintf(
-                    $format_staff
-                    ,$rec_fields['image']['url']
-                    ,$rec['staff_member']->post_title
-                );
-            }
-        }
-        // close return_staff[0] string for staff members grid
-        $return_staff .= '</ul></div>';
-        $return_staff .= '
-            <a href="'.get_permalink($res[0]->ID).'" title="View all Staff" class="site__button">View All Staff</a></div>
-        ';
-    }
+    
     
  ?>
 <section id="mod_about">
 <?php 
     echo get_section_banner($res[0]->post_title);
-
     echo $return_company;
-    echo $return_staff;
+
  ?>
 </section>
