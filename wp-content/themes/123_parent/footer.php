@@ -188,7 +188,7 @@
                 </div>
             ';
 
-            $footer_content = sprintf(
+            $return = sprintf(
                 $format_footer_content
                 ,_get_company_info()
                 ,_get_copyright_banner()
@@ -213,7 +213,7 @@
                 </div>
             ';
 
-            $footer_content = sprintf(
+            $return = sprintf(
                 $format_footer_content
                 ,_get_company_info()
                 ,_get_copyright_banner()
@@ -222,9 +222,12 @@
                 ,(!empty(_get_social_icons()) ? '<p>Follow Us</p>'._get_social_icons():'')
             );
         }
-        
-        
-        return $footer_content;
+        else if($footer_style == 'footer_three')
+        {
+
+        }
+            
+        return $return;
     }
     
 ?>
