@@ -17,6 +17,102 @@
                     font-size: 14px;
                     text-align: justify;
                     margin: 20px 0;
+                } 
+                div.site_grid {
+                    margin: 0 auto;
+                    $w: getVar($sizing, content, medium);  
+                    $c: 1;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                    li {
+                        background-color: #efefef;
+                        >div{
+                            padding: 30px;
+                            >a>h5 {
+                                font-family: "Gotham", "Helvetica", sans-serif;
+                                display: block;
+                                text-decoration: none;
+                                color: black;
+                                text-align: left;
+                                font-weight: 900;
+                                font-size: 2rem;
+                                margin: 0 0 20px;
+                                &:hover, &:active, &:focus {
+                                    color: $accent;
+                                }
+                            }
+                        }
+                    }
+                    .block {
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    
+                    p {
+                        color: $black;
+                        font-weight: 400;
+                        font-size: 14px;
+                        text-align: justify;
+                        margin: 20px 0;
+                    }
+                }
+                a.site__button {
+                    background-color: $accent;
+                    color: $white;
+                    border: none;
+                    font-size: 16px;
+                    border-radius: 4px;
+                    text-align: center;
+                    padding: 15px 20px;
+                    font-weight: 600;
+                    line-height: initial;
+                    height: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: relative;
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    #mod_blog {
+        >div.container {
+            width: getVar($sizing, content, full);
+            .mod__blog-featuredposts {
+                div.site_grid {
+                    margin: 0 auto;
+                    $w: getVar($sizing, content, medium);  
+                    $c: 2;
+                    $g: getVar($sizing, gutter, vw, normal);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    #mod_blog {
+        >div.container {
+            width: getVar($sizing, content, full);
+            .mod__blog-featuredposts {
+                div.site_grid {
+                    margin: 0 auto;
+                    $w: getVar($sizing, content, medium);  
+                    $c: 3;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }

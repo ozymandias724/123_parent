@@ -4884,6 +4884,137 @@ section#mod_about > div.container .site__grid > ul > li div.block {
     text-align: justify;
     margin: 20px 0;
   }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid {
+    margin: 0 auto;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul {
+    display: inline-block;
+    width: 65vw;
+    margin: 0 auto 0 auto;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li {
+    width: 65vw;
+    height: auto;
+    float: left;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li div.image,
+#mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li div.block {
+    overflow: hidden;
+    height: 65vw;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(n+1) {
+    margin: 0 1vw 1vw 0;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(1n) {
+    margin: 0 0 1vw 0;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li {
+    background-color: #efefef;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div {
+    padding: 30px;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5 {
+    font-family: "Gotham", "Helvetica", sans-serif;
+    display: block;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0 0 20px;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5:hover, #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5:active, #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5:focus {
+    color: #386591;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid .block {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid p {
+    color: #000;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: justify;
+    margin: 20px 0;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts a.site__button {
+    background-color: #386591;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 15px 20px;
+    font-weight: 600;
+    line-height: initial;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts a.site__button:hover, #mod_blog > div.container .mod__blog-featuredposts a.site__button:active, #mod_blog > div.container .mod__blog-featuredposts a.site__button:focus {
+    opacity: 0.8;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #mod_blog > div.container {
+    width: 92vw;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid {
+    margin: 0 auto;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul {
+    display: inline-block;
+    width: 65vw;
+    margin: 0 auto 0 auto;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li {
+    width: 31.5vw;
+    height: auto;
+    float: left;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li div.image,
+#mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li div.block {
+    overflow: hidden;
+    height: 31.5vw;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(2n) {
+    margin: 0 0 2vw 0;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #mod_blog > div.container {
+    width: 92vw;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid {
+    margin: 0 auto;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul {
+    display: inline-block;
+    width: 65vw;
+    margin: 0 auto 0 auto;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li {
+    width: 21vw;
+    height: auto;
+    float: left;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li div.image,
+#mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li div.block {
+    overflow: hidden;
+    height: 21vw;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(n+1) {
+    margin: 0 1vw 1vw 0;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(3n) {
+    margin: 0 0 1vw 0;
+  }
 }
 @media only screen and (min-width: 1280px) {
   #mod_blog > div.container {

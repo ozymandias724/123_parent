@@ -38,11 +38,13 @@
         
         $format_post = '
             <li>
-                <h5>%s</h5>
-                <div class="image" style="background-image: url(%s)"></div>
-                <div>
-                    %s
-                </div>
+                <a href="%s">
+                    <div class="site__bgimg site__bgimg--zoom"><div class="block" style="background-image: url(%s)"></div></div>
+                    <div>
+                        <a href="%s"><h5>%s</h5></a>
+                        %s
+                    </div>
+                </a>
             </li>
         ';
 
@@ -53,16 +55,18 @@
             if( $post_fields['status'] ){
                 $return_posts .= sprintf(
                     $format_post
-                    ,$post['post']->post_title
+                    ,get_post_permalink($post['post'])
                     ,$post_fields['featured_image']['url']
-                    ,$post_fields['excerpt']
+                    ,get_post_permalink($post['post'])
+                    ,$post['post']->post_title
+                    ,(!empty($post_fields['excerpt']) ? $post_fields['excerpt'] : '')
                 );
             }
         }
         $return_posts .= '</ul></div>';
 
         $return_posts .= '
-            <a href="javascript:;" title="View all blog posts" class="site__button">View All</a>
+            <a href="'.get_permalink($res[0]->ID).'" title="View all blog posts" class="site__button">View All</a>
             </section></div>
         ';
     }
