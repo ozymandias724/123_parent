@@ -2,70 +2,125 @@
 
     // Gallery section 
     section#mod_about {
-
-        >div {
-            $w: 80vw;
-            $c: 1;
-            $g: 1.5vw;
-            $s: false;
-            @include gridLayout($w, $c, $g, $s);
-
-            >h2 {
-                margin: 15px 0;
-            }
-
-            .image {
-                height: 250px;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-
-            >ul {
-                list-style: none;
-
-                >li {
-
-                    h5 {
-                        text-align: center;
-                        font-size: 2rem;
-                    }
-                    
+        .mod__featured_grid {
+            div.container {
+                width: getVar($sizing, content, full);
+                margin: 60px auto 0 auto;
+                > h2 {
+                    margin: 15px 0px;
+                    font-size: 2.8rem;
+                    text-align: center;
+                    margin: 40px 0;
+                    font-family: "Gotham", Helvetica, sans-serif;
+                }
+                > div > p {
+                    color: #000;
+                    font-weight: 400;
+                    font-size: 14px;
+                    text-align: justify;
                 }
             }
         }
-
+        >div.container {
+            margin: 0 auto 60px auto;
+            .site__grid {
+                $w: getVar($sizing, content, medium);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                >ul {
+                    list-style: none;
+                    display: block;
+                    >li {
+                        h5 {
+                            text-align: center;
+                            font-size: 2rem;
+                            margin: 10px 0;
+                        }
+                        .block {
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+            a.site__button {
+                background-color: $accent;
+                color: $white;
+                border: none;
+                font-size: 16px;
+                border-radius: 4px;
+                text-align: center;
+                padding: 15px 20px;
+                font-weight: 600;
+                line-height: initial;
+                height: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                position: relative;
+                &:hover,
+                &:active,
+                &:focus {
+                    opacity: 0.8;
+                }
+            }
+        }
     }
 }
 
 @media only screen and (min-width: 550px) {
-
-    // Gallery section 
     section#mod_about {
-
-        >div {
-            $w: 80vw;
-            $c: 2;
-            $g: 1.5vw;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
+        >div.container {
+            .site__grid {
+                $w: getVar($sizing, content, full);
+                $c: 2;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                >ul{
+                    display: block;
+                }
+            }
         }
-
     }
 }
 
-@media only screen and (min-width: 768px) {
-
-    // Gallery section 
+@media only screen and (min-width: 1000px) {
     section#mod_about {
-
-        >div {
-            $w: 80vw;
-            $c: 3;
-            $g: 1.5vw;
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
+        >div.container {
+            .site__grid {
+                $w: getVar($sizing, content, full);
+                $c: 4;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                >ul{
+                    display:block;
+                }
+            }
         }
-
     }
 }
+
+@media only screen and (min-width: 1280px) {
+    section#mod_about {
+        .mod__featured_grid {
+            div.container {
+                width: getVar($sizing, content, medium);
+            }
+        }
+        >div.container {
+            width: getVar($sizing, content, medium);
+            .site__grid {
+                $w: getVar($sizing, content, medium);
+                $c: 4;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
+

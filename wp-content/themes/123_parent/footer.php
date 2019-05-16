@@ -93,10 +93,11 @@
 
     function _get_company_info()
     {
+        $footer_style = 'footer_two';
         $logo = _get_footer_logo();
         $address = (!empty(_get_full_address()) ? '<a class="footer_address" href="javascript:;">'._get_full_address().'</a>': '');
-        $phone_number_1 = (!empty(_get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'._get_phone_number_1().'">'._get_phone_number_1().'</a>': '');
-        $phone_number_2 =(!empty(_get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'._get_phone_number_2().'">'._get_phone_number_2().'</a>': '');
+        $phone_number_1 = (!empty(_get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'._get_phone_number_1().'">P: '._get_phone_number_1().'</a>': '');
+        $phone_number_2 =(!empty(_get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'._get_phone_number_2().'">F: '._get_phone_number_2().'</a>': '');
         $social_icons = _get_social_icons();
 
         $format_company_info = '
@@ -109,15 +110,48 @@
                 %s
             </section>
         ';
-        $company_info = sprintf(
-            $format_company_info
-            ,$logo
-            ,_get_nav()
-            ,$social_icons
-            ,$address
-            ,$phone_number_1
-            ,$phone_number_2
-        );
+        if($footer_style == 'footer_one')
+        {
+            $format = '
+            <section id="footer_company_info">
+                %s
+                %s
+                %s
+                %s
+                %s
+                %s
+            </section>
+        ';
+            $company_info = sprintf(
+                $format
+                ,$logo
+                ,_get_nav()
+                ,$social_icons
+                ,$address
+                ,$phone_number_1
+                ,$phone_number_2
+            );
+        }
+        else if($footer_style == 'footer_two')
+        {
+            $format = '
+                <section id="footer_company_info">
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </section>
+            ';
+            $company_info = sprintf(
+                $format
+                ,$logo
+                ,_get_nav()
+                ,$address
+                ,$phone_number_1
+                ,$phone_number_2
+            );
+        }
         return $company_info;
     }
 
@@ -142,22 +176,53 @@
 
     function _get_footer_content()
     {
-        $format_footer_content = '
-            <div class="container">
-                %s
-                %s
-                %s
-                %s
-            </div>
-        ';
+        $footer_style = 'footer_two';
+        if($footer_style == 'footer_one')
+        {
+            $format_footer_content = '
+                <div class="container">
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
+            ';
 
-        $footer_content = sprintf(
-            $format_footer_content
-            ,_get_company_info()
-            ,_get_copyright_banner()
-            ,_get_badges()
-            ,_get_payment_types()
-        );
+            $footer_content = sprintf(
+                $format_footer_content
+                ,_get_company_info()
+                ,_get_copyright_banner()
+                ,_get_badges()
+                ,_get_payment_types()
+            );
+
+        }
+        else if($footer_style == 'footer_two')
+        {
+            $format_footer_content = '
+                <div class="container">
+                    %s
+                    %s
+                    %s
+                    <div class="footer_two_last_div">
+                        %s
+                        <div class="footer_two_social_media">
+                            %s
+                        </div>
+                    </div>
+                </div>
+            ';
+
+            $footer_content = sprintf(
+                $format_footer_content
+                ,_get_company_info()
+                ,_get_copyright_banner()
+                ,_get_badges()
+                ,_get_payment_types()
+                ,(!empty(_get_social_icons()) ? '<p>Follow Us</p>'._get_social_icons():'')
+            );
+        }
+        
         
         return $footer_content;
     }

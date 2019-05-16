@@ -26,7 +26,7 @@
                 <div class="container">
                     <h2>%s</h2>
                     <div>
-                        <p>%s</p>
+                        %s
                     </div>
                 </div>
             </section>
@@ -47,7 +47,7 @@
         // format string for staff member
         $format_staff = '
             <li>
-                <div class="image" style="background-image: url(%s)"></div>
+                <div class="block" style="background-image: url(%s)"></div>
                 <h5>%s</h5>
             </li>
         ';
