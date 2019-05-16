@@ -303,9 +303,6 @@
                 @include gridLayout($w, $c, $g, $s);
                 // Menu items unordered list items
                 > ul {
-                    position: relative;
-                    left: 50%;
-                    transform: translateX(-50%);
                     > li {
                     margin-bottom: 20px;
                     }
@@ -498,7 +495,7 @@
         }
         .menu_text_list_left .menu_items,
         .menu_text_list_center .menu_items {
-            $w: getVar($sizing, content, small);
+            $w: 40vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
@@ -601,7 +598,7 @@
         }
         .menu_text_list_left .menu_items 
         .menu_text_list_center .menu_items {
-            $w: getVar($sizing, content, small);
+            $w: 30vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
