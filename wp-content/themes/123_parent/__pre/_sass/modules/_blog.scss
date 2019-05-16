@@ -22,11 +22,12 @@
                     margin: 0 auto;
                     $w: getVar($sizing, content, medium);  
                     $c: 1;
-                    $g: getVar($sizing, gutter, vw, small);
+                    $g: getVar($sizing, gutter, vw, normal);
                     $s: true;
                     @include gridLayout($w, $c, $g, $s);
                     li {
                         background-color: #efefef;
+                        box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.3);
                         >div{
                             padding: 30px;
                             >a>h5 {
@@ -42,20 +43,36 @@
                                     color: $accent;
                                 }
                             }
+                            p {
+                                color: $black;
+                                font-weight: 400;
+                                font-size: 14px;
+                                text-align: justify;
+                                margin: 20px 0;
+                            }
+                            >a:last-of-type {
+                                color: $black;
+                                padding: 5px;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                display: inline-block;
+                                align-items: center;
+                                i {
+                                    font-size: 14px;
+                                    margin-left: 5px;
+                                    position: relative;
+                                    bottom: 1px;
+                                }
+                                &:hover, &:active, &:focus {
+                                    color: $accent;
+                                }
+                            }
                         }
                     }
                     .block {
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
-                    }
-                    
-                    p {
-                        color: $black;
-                        font-weight: 400;
-                        font-size: 14px;
-                        text-align: justify;
-                        margin: 20px 0;
                     }
                 }
                 a.site__button {
@@ -101,10 +118,10 @@
     }
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1280px){
     #mod_blog {
-        >div.container {
-            width: getVar($sizing, content, full);
+        > div.container {
+            width: getVar($sizing, content, medium);
             .mod__blog-featuredposts {
                 div.site_grid {
                     margin: 0 auto;
@@ -115,14 +132,6 @@
                     @include gridLayout($w, $c, $g, $s);
                 }
             }
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px){
-    #mod_blog {
-        > div.container {
-            width: getVar($sizing, content, medium);
         }
     }
 }

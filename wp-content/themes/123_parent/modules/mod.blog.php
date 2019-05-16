@@ -39,10 +39,11 @@
         $format_post = '
             <li>
                 <a href="%s">
-                    <div class="site__bgimg site__bgimg--zoom"><div class="block" style="background-image: url(%s)"></div></div>
+                    <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="block" style="background-image: url(%s)"></div></div>
                     <div>
                         <a href="%s"><h5>%s</h5></a>
                         %s
+                        <a href="%s">Read More <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </a>
             </li>
@@ -60,6 +61,7 @@
                     ,get_post_permalink($post['post'])
                     ,$post['post']->post_title
                     ,(!empty($post_fields['excerpt']) ? $post_fields['excerpt'] : '')
+                    ,get_post_permalink($post['post'])
                 );
             }
         }

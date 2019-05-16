@@ -4903,13 +4903,14 @@ section#mod_about > div.container .site__grid > ul > li div.block {
     height: 65vw;
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(n+1) {
-    margin: 0 1vw 1vw 0;
+    margin: 0 2vw 2vw 0;
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(1n) {
-    margin: 0 0 1vw 0;
+    margin: 0 0 2vw 0;
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid li {
     background-color: #efefef;
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.3);
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div {
     padding: 30px;
@@ -4927,17 +4928,34 @@ section#mod_about > div.container .site__grid > ul > li div.block {
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5:hover, #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5:active, #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a > h5:focus {
     color: #386591;
   }
-  #mod_blog > div.container .mod__blog-featuredposts div.site_grid .block {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  #mod_blog > div.container .mod__blog-featuredposts div.site_grid p {
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div p {
     color: #000;
     font-weight: 400;
     font-size: 14px;
     text-align: justify;
     margin: 20px 0;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a:last-of-type {
+    color: #000;
+    padding: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    align-items: center;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a:last-of-type i {
+    font-size: 14px;
+    margin-left: 5px;
+    position: relative;
+    bottom: 1px;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a:last-of-type:hover, #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a:last-of-type:active, #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a:last-of-type:focus {
+    color: #386591;
+  }
+  #mod_blog > div.container .mod__blog-featuredposts div.site_grid .block {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   #mod_blog > div.container .mod__blog-featuredposts a.site__button {
     background-color: #386591;
@@ -4987,9 +5005,9 @@ section#mod_about > div.container .site__grid > ul > li div.block {
     margin: 0 0 2vw 0;
   }
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1280px) {
   #mod_blog > div.container {
-    width: 92vw;
+    width: 65vw;
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid {
     margin: 0 auto;
@@ -5014,11 +5032,6 @@ section#mod_about > div.container .site__grid > ul > li div.block {
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid > ul > li:nth-child(3n) {
     margin: 0 0 1vw 0;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  #mod_blog > div.container {
-    width: 65vw;
   }
 }
 @media only screen {
@@ -5335,10 +5348,10 @@ section.mod__coupons-featuredcoupons > div.container div.site_grid > ul > li div
     height: 65vw;
   }
   #mod_testimonials > div.container > ul > li:nth-child(n+1) {
-    margin: 0 1vw 1vw 0;
+    margin: 0 2vw 2vw 0;
   }
   #mod_testimonials > div.container > ul > li:nth-child(1n) {
-    margin: 0 0 1vw 0;
+    margin: 0 0 2vw 0;
   }
   #mod_testimonials > div.container .testimonials_header {
     margin: 15px 0px;
