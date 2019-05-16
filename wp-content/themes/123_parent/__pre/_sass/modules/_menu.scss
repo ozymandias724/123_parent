@@ -118,7 +118,6 @@
     #tabs_pills,
     #tabs_divider {
         padding: 0 3%;
-        min-height: 60vh;
         margin: 60px auto;
         display: flex;
         flex-flow: column nowrap; 
@@ -255,11 +254,16 @@
                 }
             }
             .menu_items {
-                $w: getVar($sizing, content, full);
+                $w: getVar($sizing, content, medium);
                 $c: 2;
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
+                ul {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
             }
 
         }
@@ -273,8 +277,8 @@
             .menu_items {
                 width: getVar($sizing, content, full);
                 .block {
-                    width: getVar($sizing, content, full);
-                    height: getVar($sizing, content, full);
+                    width: getVar($sizing, content, small);
+                    height: getVar($sizing, content,  small);
                 }
             }
         }
@@ -292,14 +296,19 @@
             }
             // Menu items
             .menu_items {
-                $w: getVar($sizing, content, full);
+                $w: getVar($sizing, content, medium);
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
                 // Menu items unordered list items
-                > ul > li {
+                > ul {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    > li {
                     margin-bottom: 20px;
+                    }
                 }
                 // Menu items title
                 > ul > li > h3 {
@@ -321,7 +330,7 @@
         .menu_text_list_center {
             // Menu items
             .menu_items {
-                $w: getVar($sizing, content, full);
+                $w: getVar($sizing, content, medium);
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, large);
                 $s: true;
@@ -416,7 +425,7 @@
             }
             // Menu items 
             .menu_items {
-                $w: getVar($sizing, content, full);
+                $w: getVar($sizing, content, medium);
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, small);
                 $s: true;
@@ -425,12 +434,17 @@
                     margin-bottom: 10px;
                 }
                 // Menu items title
-                > ul > li > h3 {
+                > ul {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    > li > h3 {
                     display: flex;
                     font-weight: 700;
                     justify-content: space-between;
                     font-size: 20px;
                     margin-bottom: 5px;
+                    }
                 }
                 // Menu items priceg
                 > ul > li > h3 > div > span {
@@ -514,7 +528,7 @@
                 width: getVar($sizing, content, small);
                 .block {
                     width: getVar($sizing, content, small);
-                    height: getVar($sizing, content, small);
+                    height: getVar($sizing, content, normal);
                 }
             }
         }
@@ -705,10 +719,10 @@
                 width: 22.4vw;
             }
             .menu_items {
-                width: 22vw;
+                width: 21vw;
                 .block {
-                    width: 22vw;
-                    height: 22vw;
+                    width: 21vw;
+                    height: 21vw;
                 }
             }
         }

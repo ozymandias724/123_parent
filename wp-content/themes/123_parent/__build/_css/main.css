@@ -4,6 +4,7 @@
 .slick-slider {
   position: relative;
   display: block;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -11,6 +12,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -32,6 +34,10 @@
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -114,6 +120,8 @@
   top: 50%;
   margin-top: -10px\9 ;
   /*lte IE 8*/
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
@@ -714,8 +722,7 @@ h6 {
   }
 
   img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     height: auto;
     width: 100%;
   }
@@ -2405,8 +2412,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   .mobilefooter > div:nth-of-type(1) > a > img {
     height: auto;
     max-width: 200px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mobilefooter > div:nth-of-type(1) > div {
     display: flex;
@@ -2530,6 +2536,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
 
   footer.mobilefooter.invertlogo > div > a > img {
+    -webkit-filter: invert(100%);
     filter: invert(100%);
   }
 }
@@ -2749,8 +2756,7 @@ section.hero .hero_foreground a:active {
     margin-bottom: 0;
   }
   section.hero#hero_slider .slick_slider_img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     position: relative;
     top: 0;
     left: 50%;
@@ -2918,7 +2924,6 @@ section#banner_popup .popup_close {
   #gallery {
     margin: 60px auto;
     max-width: 92vw;
-    min-height: 65vh;
   }
   #gallery > ul {
     display: inline-block;
@@ -3684,7 +3689,6 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills,
 #tabs_divider {
     padding: 0 3%;
-    min-height: 60vh;
     margin: 60px auto;
     display: flex;
     flex-flow: column nowrap;
@@ -3899,13 +3903,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_text_half .menu_items > ul,
 #tabs_divider .menu_text_half .menu_items > ul {
     display: inline-block;
-    width: 92vw;
+    width: 65vw;
     margin: 0 auto 0 auto;
   }
   #tabs_sidebar .menu_text_half .menu_items > ul > li,
 #tabs_pills .menu_text_half .menu_items > ul > li,
 #tabs_divider .menu_text_half .menu_items > ul > li {
-    width: 45.5vw;
+    width: 32vw;
     height: auto;
     float: left;
   }
@@ -3916,7 +3920,7 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_divider .menu_text_half .menu_items > ul > li div.image,
 #tabs_divider .menu_text_half .menu_items > ul > li div.block {
     overflow: hidden;
-    height: 45.5vw;
+    height: 32vw;
   }
   #tabs_sidebar .menu_text_half .menu_items > ul > li:nth-child(n+1),
 #tabs_pills .menu_text_half .menu_items > ul > li:nth-child(n+1),
@@ -3927,6 +3931,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_text_half .menu_items > ul > li:nth-child(2n),
 #tabs_divider .menu_text_half .menu_items > ul > li:nth-child(2n) {
     margin: 0 0 1vw 0;
+  }
+  #tabs_sidebar .menu_text_half .menu_items ul,
+#tabs_pills .menu_text_half .menu_items ul,
+#tabs_divider .menu_text_half .menu_items ul {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #tabs_sidebar .menu_text_sub_group_half,
 #tabs_pills .menu_text_sub_group_half,
@@ -3947,8 +3958,8 @@ section#mod_about > div.container .site__grid > ul > li div.block {
   #tabs_sidebar .menu_text_sub_group_half .menu_items .block,
 #tabs_pills .menu_text_sub_group_half .menu_items .block,
 #tabs_divider .menu_text_sub_group_half .menu_items .block {
-    width: 92vw;
-    height: 92vw;
+    width: 50vw;
+    height: 50vw;
   }
   #tabs_sidebar .menu_text_list_left .menu_header,
 #tabs_pills .menu_text_list_left .menu_header,
@@ -3966,13 +3977,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_text_list_left .menu_items > ul,
 #tabs_divider .menu_text_list_left .menu_items > ul {
     display: inline-block;
-    width: 92vw;
+    width: 65vw;
     margin: 0 auto 0 auto;
   }
   #tabs_sidebar .menu_text_list_left .menu_items > ul > li,
 #tabs_pills .menu_text_list_left .menu_items > ul > li,
 #tabs_divider .menu_text_list_left .menu_items > ul > li {
-    width: 92vw;
+    width: 65vw;
     height: auto;
     float: left;
   }
@@ -3983,7 +3994,7 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_divider .menu_text_list_left .menu_items > ul > li div.image,
 #tabs_divider .menu_text_list_left .menu_items > ul > li div.block {
     overflow: hidden;
-    height: 92vw;
+    height: 65vw;
   }
   #tabs_sidebar .menu_text_list_left .menu_items > ul > li:nth-child(n+1),
 #tabs_pills .menu_text_list_left .menu_items > ul > li:nth-child(n+1),
@@ -3994,6 +4005,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_text_list_left .menu_items > ul > li:nth-child(1n),
 #tabs_divider .menu_text_list_left .menu_items > ul > li:nth-child(1n) {
     margin: 0 0 1vw 0;
+  }
+  #tabs_sidebar .menu_text_list_left .menu_items > ul,
+#tabs_pills .menu_text_list_left .menu_items > ul,
+#tabs_divider .menu_text_list_left .menu_items > ul {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #tabs_sidebar .menu_text_list_left .menu_items > ul > li,
 #tabs_pills .menu_text_list_left .menu_items > ul > li,
@@ -4025,13 +4043,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_text_list_center .menu_items > ul,
 #tabs_divider .menu_text_list_center .menu_items > ul {
     display: inline-block;
-    width: 92vw;
+    width: 65vw;
     margin: 0 auto 0 auto;
   }
   #tabs_sidebar .menu_text_list_center .menu_items > ul > li,
 #tabs_pills .menu_text_list_center .menu_items > ul > li,
 #tabs_divider .menu_text_list_center .menu_items > ul > li {
-    width: 92vw;
+    width: 65vw;
     height: auto;
     float: left;
   }
@@ -4042,7 +4060,7 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_divider .menu_text_list_center .menu_items > ul > li div.image,
 #tabs_divider .menu_text_list_center .menu_items > ul > li div.block {
     overflow: hidden;
-    height: 92vw;
+    height: 65vw;
   }
   #tabs_sidebar .menu_text_list_center .menu_items > ul > li:nth-child(n+1),
 #tabs_pills .menu_text_list_center .menu_items > ul > li:nth-child(n+1),
@@ -4182,13 +4200,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_photo_tiled_x3 .menu_items > ul,
 #tabs_divider .menu_photo_tiled_x3 .menu_items > ul {
     display: inline-block;
-    width: 92vw;
+    width: 65vw;
     margin: 0 auto 0 auto;
   }
   #tabs_sidebar .menu_photo_tiled_x3 .menu_items > ul > li,
 #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li,
 #tabs_divider .menu_photo_tiled_x3 .menu_items > ul > li {
-    width: 92vw;
+    width: 65vw;
     height: auto;
     float: left;
   }
@@ -4199,7 +4217,7 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_divider .menu_photo_tiled_x3 .menu_items > ul > li div.image,
 #tabs_divider .menu_photo_tiled_x3 .menu_items > ul > li div.block {
     overflow: hidden;
-    height: 92vw;
+    height: 65vw;
   }
   #tabs_sidebar .menu_photo_tiled_x3 .menu_items > ul > li:nth-child(n+1),
 #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li:nth-child(n+1),
@@ -4215,6 +4233,13 @@ section#mod_about > div.container .site__grid > ul > li div.block {
 #tabs_pills .menu_photo_tiled_x3 .menu_items .menu_item,
 #tabs_divider .menu_photo_tiled_x3 .menu_items .menu_item {
     margin-bottom: 10px;
+  }
+  #tabs_sidebar .menu_photo_tiled_x3 .menu_items > ul,
+#tabs_pills .menu_photo_tiled_x3 .menu_items > ul,
+#tabs_divider .menu_photo_tiled_x3 .menu_items > ul {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #tabs_sidebar .menu_photo_tiled_x3 .menu_items > ul > li > h3,
 #tabs_pills .menu_photo_tiled_x3 .menu_items > ul > li > h3,
@@ -4365,7 +4390,6 @@ section#mod_about > div.container .site__grid > ul > li div.block {
   }
   #tabs_sidebar .menu_text_sub_group_half .menu_items .block {
     width: 50vw;
-    height: 50vw;
   }
   #tabs_sidebar .active_menu_section {
     width: 52vw;
@@ -4824,11 +4848,11 @@ section#mod_about > div.container .site__grid > ul > li div.block {
     width: 22.4vw;
   }
   #tabs_sidebar .menu_text_sub_group_half.active_menu_section .menu_items {
-    width: 22vw;
+    width: 21vw;
   }
   #tabs_sidebar .menu_text_sub_group_half.active_menu_section .menu_items .block {
-    width: 22vw;
-    height: 22vw;
+    width: 21vw;
+    height: 21vw;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -4927,7 +4951,7 @@ section#mod_about > div.container .site__grid > ul > li div.block {
     font-weight: 400;
     font-size: 14px;
     text-align: justify;
-    margin: 20px 0;
+    margin: 20px 0 15px;
   }
   #mod_blog > div.container .mod__blog-featuredposts div.site_grid li > div > a:last-of-type {
     color: #000;
@@ -5075,7 +5099,7 @@ section.mod__coupons-featuredcoupons > div.container div.site_grid > ul > li div
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.2);
   }
   section.mod__coupons-featuredcoupons > div.container div.site_grid .block h5 {
     font-size: 16px;
@@ -5481,3 +5505,5 @@ section.mod__coupons-featuredcoupons > div.container div.site_grid > ul > li div
     width: 65vw;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
