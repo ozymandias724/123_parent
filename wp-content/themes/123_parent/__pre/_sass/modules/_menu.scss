@@ -270,15 +270,12 @@
                 background: $white;
                 padding-right: 15px;
             }
-            > div {
-                flex: 0 1 48.2%;
-            }
             .menu_items {
-                $w: getVar($sizing, content, full);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
+                width: getVar($sizing, content, full);
+                .block {
+                    width: getVar($sizing, content, full);
+                    height: getVar($sizing, content, full);
+                }
             }
         }
         // Menu Text List Left
@@ -479,7 +476,7 @@
         flex-flow: row nowrap;
         .menu_photo_tiled_x3 .menu_items,
         .menu_text_half .menu_items {
-            $w: getVar($sizing, content, medium);
+            $w: getVar($sizing, content, small);
             $c: 2;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
@@ -487,38 +484,42 @@
         }
         .menu_text_list_left .menu_items,
         .menu_text_list_center .menu_items {
-            $w: getVar($sizing, content, medium);
+            $w: getVar($sizing, content, small);
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
         }
-        .menu_text_sub_group_half { 
-            flex-flow: row wrap;
-            > div:nth-child(odd) {
-                margin-right: 10px;
-            }
-            .menu_items {
-                $w: 30vw;
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
         #menu_tabs {
-            flex: 0 1 25%;
+            width: 35vw;
             margin: 0 30px 0 0;
         }
         .menu_photo_list .menu_items {
-            $w: getVar($sizing, content, medium);
+            $w: getVar($sizing, content, small);
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
             .block{
-                max-height: 30vw;
+                max-height: 22vw;
+                max-width: 22vw;
             }
+        }
+        .menu_text_sub_group_half {
+            flex-flow: row wrap;
+            > div {
+                width: getVar($sizing, content, small);
+            }
+            .menu_items {
+                width: getVar($sizing, content, small);
+                .block {
+                    width: getVar($sizing, content, small);
+                    height: getVar($sizing, content, small);
+                }
+            }
+        }
+        .active_menu_section {
+            width: 52vw;
         }
     }
     #tabs_pills,
@@ -548,24 +549,10 @@
             > div:nth-child(odd) {
                 margin-right: 10px;
             }
-            .menu_items {
-                $w: 43vw;
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-            }
         }
-    }
-    // Tabs Style of Pills
-    #tabs_pills #menu_tabs > h4,
-    #tabs_divider #menu_tabs > h4 {
-        display: inline-block;
-        text-align: left;
-    }
-    #tabs_sidebar {
-        .active_menu_section {
-            width: 65vw;
+        #menu_tabs > h4 {
+            display: inline-block;
+            text-align: left;
         }
     }
     #tabs_sidebar,
@@ -580,6 +567,7 @@
             .menu_header {
                 > h2 {
                     font-size: 44px;
+                    line-height: 60px;
                 }
             }
         }
@@ -591,7 +579,7 @@
     #tabs_sidebar {
         .menu_text_half .menu_items,
         .menu_photo_tiled_x3 .menu_items {
-            $w: getVar($sizing, content, medium);
+            $w: getVar($sizing, content, small);
             $c: 2;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
@@ -604,6 +592,18 @@
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
+        }
+        .menu_text_sub_group_half {
+            > div {
+                width: 25vw;
+            }
+            .menu_items {
+                width: 24vw;
+                .block {
+                    width: 24vw;
+                    height: 24vw;
+                }
+            }
         }
     } 
     #tabs_pills,
@@ -667,32 +667,23 @@
     #tabs_sidebar {
         max-width: getVar($sizing, content, medium);
         .menu_text_half .menu_items {
-            $w: getVar($sizing, content, small);
+            $w: 45vw;
             $c: 2;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
         }
         .menu_photo_tiled_x3 .menu_items {
-            $w: getVar($sizing, content, small);
+            $w: 45vw;
             $c: 3;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
         }
-        .menu_text_sub_group_half { 
-            .menu_items {
-                $w: 24vw;
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
         .menu_text_list_left .menu_items,
         .menu_text_list_center .menu_items,
         .menu_photo_list .menu_items {
-            $w: getVar($sizing, content, small);
+            $w: 45vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
@@ -703,9 +694,22 @@
             }
         }
         .menu_photo_list .menu_items {
-            .block{
+            ul .block{
                 max-height: 20vw;
                 max-width: 20vw;
+            }
+        }
+        .menu_text_sub_group_half.active_menu_section {
+            width: 89vw;
+            > div {
+                width: 22.4vw;
+            }
+            .menu_items {
+                width: 22vw;
+                .block {
+                    width: 22vw;
+                    height: 22vw;
+                }
             }
         }
     }
@@ -718,6 +722,11 @@
             max-width: none;
             margin: 0 0 15px;
             background-position: center center;
+        }
+    }
+    #tabs_sidebar {
+        .menu_text_sub_group_half.active_menu_section {
+            width: 85.2vw; 
         }
     }
 }

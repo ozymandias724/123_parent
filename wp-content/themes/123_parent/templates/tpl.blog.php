@@ -7,7 +7,7 @@
  ?>
 <main id="page_blog">
 
-
+   
 </main>
 <?php 
     get_footer();

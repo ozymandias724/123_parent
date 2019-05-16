@@ -14,7 +14,7 @@
     $args = array(
         'posts_per_page' => 1
         ,'post_type' => 'page'
-        ,'pagename' => 'blog'
+        ,'pagename' => 'blog' 
     );
     $res = get_posts($args);
 
@@ -23,25 +23,29 @@
 
     if( !empty($fields['featured_posts']['posts']) ){
 
-        $heading = ( !empty( $fields['featured_posts']['heading'] ) ? '<h4>'.$fields['featured_posts']['heading'].'</h4>' : '');
-        $details = ( !empty( $fields['featured_posts']['details'] ) ? '<p>'.$fields['featured_posts']['details'].'</p>' : '');
+        $heading = ( !empty( $fields['featured_posts']['heading'] ) ? '<h2>'.$fields['featured_posts']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['featured_posts']['details'] ) ? $fields['featured_posts']['details'] : '');
         
         $return_posts = '
-            <section class="mod__blog-featuredposts">
-                <div>
-                    '.$heading.'
-                    '.$details.'
-                </div>
-                <div class="site_grid"><ul>
+            <div class="container">
+                <section class="mod__blog-featuredposts">
+                    <div>
+                        '.$heading.'
+                        '.$details.'
+                    </div>
+                    <div class="site_grid"><ul>
         ';
         
         $format_post = '
             <li>
-                <h5>%s</h5>
-                <div class="image" style="background-image: url(%s)"></div>
-                <div>
-                    %s
-                </div>
+                <a href="%s">
+                    <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="block" style="background-image: url(%s)"></div></div>
+                    <div>
+                        <a href="%s"><h5>%s</h5></a>
+                        %s
+                        <a href="%s">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </a>
             </li>
         ';
 
@@ -52,17 +56,20 @@
             if( $post_fields['status'] ){
                 $return_posts .= sprintf(
                     $format_post
-                    ,$post['post']->post_title
+                    ,get_post_permalink($post['post'])
                     ,$post_fields['featured_image']['url']
-                    ,$post_fields['excerpt']
+                    ,get_post_permalink($post['post'])
+                    ,$post['post']->post_title
+                    ,(!empty($post_fields['excerpt']) ? $post_fields['excerpt'] : '')
+                    ,get_post_permalink($post['post'])
                 );
             }
         }
         $return_posts .= '</ul></div>';
 
         $return_posts .= '
-            <a href="javascript:;" title="View all blog posts" class="site__button">View All</a>
-            </section>
+            <a href="'.get_permalink($res[0]->ID).'" title="View all blog posts" class="site__button">View All</a>
+            </section></div>
         ';
     }
 
