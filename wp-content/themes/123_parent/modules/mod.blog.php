@@ -14,7 +14,7 @@
     $args = array(
         'posts_per_page' => 1
         ,'post_type' => 'page'
-        ,'pagename' => 'blog'
+        ,'pagename' => 'blog' 
     );
     $res = get_posts($args);
 
@@ -23,16 +23,17 @@
 
     if( !empty($fields['featured_posts']['posts']) ){
 
-        $heading = ( !empty( $fields['featured_posts']['heading'] ) ? '<h4>'.$fields['featured_posts']['heading'].'</h4>' : '');
-        $details = ( !empty( $fields['featured_posts']['details'] ) ? '<p>'.$fields['featured_posts']['details'].'</p>' : '');
+        $heading = ( !empty( $fields['featured_posts']['heading'] ) ? '<h2>'.$fields['featured_posts']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['featured_posts']['details'] ) ? $fields['featured_posts']['details'] : '');
         
         $return_posts = '
-            <section class="mod__blog-featuredposts">
-                <div>
-                    '.$heading.'
-                    '.$details.'
-                </div>
-                <div class="site_grid"><ul>
+            <div class="container">
+                <section class="mod__blog-featuredposts">
+                    <div>
+                        '.$heading.'
+                        '.$details.'
+                    </div>
+                    <div class="site_grid"><ul>
         ';
         
         $format_post = '
@@ -62,7 +63,7 @@
 
         $return_posts .= '
             <a href="javascript:;" title="View all blog posts" class="site__button">View All</a>
-            </section>
+            </section></div>
         ';
     }
 

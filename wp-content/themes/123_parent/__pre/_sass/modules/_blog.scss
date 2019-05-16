@@ -1,19 +1,32 @@
 @media only screen {
-
-
     #mod_blog {
-
-
-        section.mod__blog-featuredposts {
-
-            margin: 0 auto;
-            width: getVar($sizing, content, medium);
-            text-align: center;
-
-
+        >div.container {
+            width: getVar($sizing, content, full);
+            margin: 0 auto 60px auto;
+            .mod__blog-featuredposts {
+                >div>h2 {
+                    margin: 15px 0px;
+                    font-size: 2.8rem;
+                    text-align: center;
+                    margin: 40px 0;
+                    font-family: "Gotham", Helvetica, sans-serif;
+                }
+                >div>p {
+                    color: $black;
+                    font-weight: 400;
+                    font-size: 14px;
+                    text-align: justify;
+                    margin: 20px 0;
+                }
+            }
         }
-        
     }
-    
-    
+}
+
+@media only screen and (min-width: 1280px){
+    #mod_blog {
+        > div.container {
+            width: getVar($sizing, content, medium);
+        }
+    }
 }
