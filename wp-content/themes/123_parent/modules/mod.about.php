@@ -26,7 +26,7 @@
         $format_staff = '
             <li>
                 <a href="%s">
-                    <div class="image" style="background-image: url(%s)"></div>
+                    <div class="block" style="background-image: url(%s)"></div>
                     <h5>%s</h5>
                 </a>
             </li>
@@ -54,18 +54,18 @@
     // company bio
     if( !empty($fields['company_bio']) ){
 
-
         $format_company = '
-            <section class="mod__featured_grid">
-                <div class="container">
-                    <h2>%s</h2>
-                    <div>
+            <div class="container">
+                <section id="mod__featured_grid">
+                        <h2>%s</h2>
+                        <div>
+                            %s
+                        </div>
                         %s
+                        <a href="'.get_permalink($res[0]->ID).'" title="View all Staff" class="site__button">View All Staff</a></div>
                     </div>
-                    %s
-                    <a href="'.get_permalink($res[0]->ID).'" title="View all Staff" class="site__button">View All Staff</a></div>
-                </div>
-            </section>
+                </section>
+            </div>
         ';
 
         $return_company = '';
@@ -75,15 +75,12 @@
             ,$fields['company_bio']['details']
             ,$return_staff
         );
-
     }
-    
     
  ?>
 <section id="mod_about">
 <?php 
     echo get_section_banner($res[0]->post_title);
     echo $return_company;
-
  ?>
 </section>
