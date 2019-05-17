@@ -1,21 +1,94 @@
 @media only screen {
     #mod_services {
-        section.mod__services-featuredservice {
+        div.container {
             margin: getVar($sizing, gutter, px, large) auto;
+            width: getVar($sizing, content, full);
             text-align: center;
-            > div.container {
-                width: getVar($sizing, content, full);
+            section.mod__services-featuredservice {
                 > h2 {
-                    font-size: 2.8rem;
+                    font-size: 4.5rem;
                     text-align: center;
-                    margin: 40px 0;
+                    margin: 40px 0 20px;
                     font-family: "Gotham", Helvetica, sans-serif;
+                    text-transform: uppercase;
+                    font-weight: 500;
                 }
-                > div > p {
+                > p {
                     color: #000;
                     font-weight: 400;
-                    font-size: 14px;
-                    text-align: justify;
+                    font-size: 18px;
+                    text-align: center;
+                    margin: 0 auto 40px auto;
+                }
+                .site_grid {
+                    margin: 0 auto;
+                    $w: getVar($sizing, content, medium);
+                    $c: 1;
+                    $g: getVar($sizing, gutter, vw, large);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                    >ul {
+                        >li {
+                            text-align: center;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            align-items: center;
+                            justify-content: center;
+                            min-height: 520px;
+                            position: relative;
+                            >a {
+                                color: $black;
+                                &:hover, &:active, &:focus {
+                                    color: $accent;
+                                }
+                                >div:first-of-type {
+                                    width: 100%;
+                                    div {
+                                        max-width: 55vw;
+                                        max-height: 55vw;
+                                        background-size: cover;
+                                        background-position: center center;
+                                        background-repeat: no-repeat;
+                                        margin: 0 auto;
+                                        display: block;
+                                        border-radius: 100%; 
+                                        border: 5px solid #eee;
+                                        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3); 
+                                    }
+                                }
+                                >div:last-of-type{
+                                    padding-top: 154px;
+                                    position: relative;
+                                    margin-top: -137px;
+                                    background-color: #dedede;
+                                    z-index: -1;
+                                    border-radius: 10px;
+                                    >h5,
+                                    >p {
+                                        padding: 0 30px;
+                                    }
+                                    >h5 {   
+                                        margin: 10px 0 20px;
+                                        font-family: "Gotham", Helvetica, sans-serif;
+                                        font-size: 3.3rem;
+                                        font-weight: 500;
+                                    }
+                                    >p{
+                                        font-weight: 600;
+                                        line-height: 30px;
+                                        font-size: 14px;
+                                    }
+                                    >.service_price {
+                                        font-family: "Gotham", Helvetica, sans-serif;
+                                        font-weight: 500;
+                                        font-size: 3.3rem;
+                                        margin-top: 20px;
+                                        padding-bottom: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 > a.site__button {
                     margin: 0 auto;
@@ -36,62 +109,23 @@
                     }
                 }
             }
-            .site_grid {
-                margin: 0 auto;
-                $w: getVar($sizing, content, medium);
-                $c: 1;
-                $g: 2vw;
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                >ul {
-                    >li {
-                        border: 1px solid #ddd;
-                        text-align: center;
-                        flex: 1 0 auto;
-                        display: flex;
-                        flex-flow: column nowrap;
-                        align-items: center;
-                        justify-content: center;
-                        min-height: 245px;
-                        position: relative;
- 
-                        > .site__bgimg {
-                            position: relative;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            .site__bgimg_img {
-                                position:relative;
-                                top:0;
-                                left: 0;
-                                width: 100%;
-                                transform: scale(1);
-                                transition: transform 0.4s ease;
-                                background-size: cover;
-                                background-position: center center;
-                                background-repeat: no-repeat;
-                                z-index: 1;
-                            }
-                        }
+        }
+    }
+}
 
-                        h5 {
-                            position: absolute;
-                            top: 30%; 
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            z-index: 9;
-                            font-size: 2rem;
-                            text-transform: uppercase;
-                            color: white;
-                        }
-
-                        h5,
-                        >p {
-                            margin-bottom: 10px;
-                            padding: 0 30px;
-                        }
-
+@media only screen and (min-width: 1000px){
+    #mod_services {
+        div.container {
+            section.mod__services-featuredservice {
+                .site_grid {
+                    $w: getVar($sizing, content, medium);
+                    $c: 2;
+                    $g: 2vw;
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                    > ul > li > a > div:first-of-type div {
+                        max-width: 27vw;
+                        max-height: 27vw;
                     }
                 }
             }
@@ -99,32 +133,22 @@
     }
 }
 
-@media only screen and (min-width: 768px){
-    #mod_services {
-        section.mod__services-featuredservice {
-            .site_grid {
-                $w: getVar($sizing, content, medium);
-                $c: 2;
-                $g: 2vw;
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
-    }
-}
-
 @media only screen and (min-width: 1280px){
     #mod_services {
-        section.mod__services-featuredservice {
-            .site_grid {
-                $w: getVar($sizing, content, medium);
-                $c: 3;
-                $g: 2vw;
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-            }
-            >div.container {
-                width: getVar($sizing, content, medium);
+        div.container {
+            width: getVar($sizing, content, medium);
+            section.mod__services-featuredservice {
+                .site_grid {
+                    $w: getVar($sizing, content, medium);
+                    $c: 3;
+                    $g: 2vw;
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                    > ul > li > a > div:first-of-type div {
+                        max-width: 17vw;
+                        max-height: 17vw;
+                    }
+                }
             }
         }
     }
