@@ -5,7 +5,7 @@
             margin: 0 auto 30px auto;
             $w: getVar($sizing, content, medium);
             $c: 1;
-            $g: getVar($sizing, gutter, vw, normal);
+            $g: getVar($sizing, gutter, vw, large);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
             .testimonials_header {

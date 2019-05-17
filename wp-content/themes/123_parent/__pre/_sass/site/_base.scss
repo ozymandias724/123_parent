@@ -76,7 +76,6 @@
     section.mod__featured_grid {
         > div.container {
             margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            width: getVar($sizing, content, medium);
             // title
             > h2 {
                 text-align: center;
@@ -96,7 +95,6 @@
         $g: getVar($sizing, gutter, vw, normal);
         $s: false;
         @include gridLayout($w, $c, $g, $s);
-        width: $w;
         >h2 {
             margin: 15px 0;
         }
