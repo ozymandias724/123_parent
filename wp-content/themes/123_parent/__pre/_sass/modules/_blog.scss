@@ -135,3 +135,21 @@
         }
     }
 }
+
+@media only screen and (min-width: 1500px){
+    #mod_blog {
+        > div.container {
+            width: 55vw;
+            .mod__blog-featuredposts {
+                div.site_grid {
+                    margin: 0 auto;
+                    $w: 55vw;  
+                    $c: 3;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                }
+            }
+        }
+    }
+}
