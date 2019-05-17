@@ -162,15 +162,32 @@
             width: getVar($sizing, content, medium);
             section.mod__services-featuredservice {
                 .site_grid {
-                    $w: 55vw;
+                    $w: getVar($sizing, content, medium);
                     $c: 3;
                     $g: 2vw;
                     $s: true;
                     @include gridLayout($w, $c, $g, $s);
                     > ul > li > a > div:first-of-type div {
-                        max-width: 14vw;
+                        max-width: 14vw; 
                         max-height: 14vw;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    #mod_services {
+        div.container {
+            width: 55vw;
+            section.mod__services-featuredservice { 
+                .site_grid {
+                    $w: 55vw;
+                    $c: 3;
+                    $g: 2vw;
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }
