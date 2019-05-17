@@ -38,7 +38,9 @@
                             >a {
                                 color: $black;
                                 &:hover, &:active, &:focus {
-                                    color: $accent;
+                                    >div:last-of-type{ 
+                                        border: 3px solid #c4c4c4;
+                                    }
                                 }
                                 >div:first-of-type {
                                     width: 100%;
@@ -56,6 +58,7 @@
                                     }
                                 }
                                 >div:last-of-type{
+                                    border: 3px solid transparent;
                                     padding-top: 154px;
                                     position: relative;
                                     margin-top: -137px;
@@ -84,7 +87,7 @@
                                         font-size: 3.3rem;
                                         margin-top: 20px;
                                         padding-bottom: 40px;
-                                    }
+                                    }   
                                 }
                             }
                         }
@@ -106,6 +109,26 @@
                     &:active,
                     &:focus {
                         opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    #mod_services {
+        div.container {
+            section.mod__services-featuredservice {
+                .site_grid {
+                    $w: getVar($sizing, content, medium);
+                    $c: 2;
+                    $g: 2vw;
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                    > ul > li > a > div:first-of-type div {
+                        max-width: 27vw;
+                        max-height: 27vw;
                     }
                 }
             }
@@ -139,14 +162,14 @@
             width: getVar($sizing, content, medium);
             section.mod__services-featuredservice {
                 .site_grid {
-                    $w: getVar($sizing, content, medium);
+                    $w: 55vw;
                     $c: 3;
                     $g: 2vw;
                     $s: true;
                     @include gridLayout($w, $c, $g, $s);
                     > ul > li > a > div:first-of-type div {
-                        max-width: 17vw;
-                        max-height: 17vw;
+                        max-width: 13vw;
+                        max-height: 13vw;
                     }
                 }
             }

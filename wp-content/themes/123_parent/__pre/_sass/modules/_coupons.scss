@@ -34,53 +34,45 @@
                         padding: 10px;
                         background-color: #DEDEDE;
                         border-radius: 20px;
-                        .block {
-                            position: relative;
+                        > a {
                             border-radius: 20px;
-                            border: 6px dashed $white;
-                            > a {
-                                display: flex;
-                                flex-flow: column nowrap;
-                                justify-content: center;
-                                align-items: center;
-                                padding: 30px;
-                                width: 100%;
-                                height: 100%;
-                            }
-                            h5 {
-                                color: $black;
-                                margin: 10px 0 10px;
-                                font-family: "Gotham", Helvetica, sans-serif;
-                                font-size: 3.8rem;
-                                font-weight: 500;
-                                line-height: 40px;
-                            }
-                            .coupon_description {
-                                font-size: 14px;
-                                color: #a6a6a6;
+                            border: 6px dashed #fff;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            padding: 30px;
+                        }
+                        h5 {
+                            color: $black;
+                            margin: 10px 0 10px;
+                            font-family: "Gotham", Helvetica, sans-serif;
+                            font-size: 3.8rem;
+                            font-weight: 500;
+                            line-height: 40px;
+                        }
+                        .coupon_description {
+                            font-size: 14px;
+                            color: #a6a6a6;
+                            font-weight: 500;
+                            margin-bottom: 10px;
+                            line-height: 22px;
+                        }
+                        .coupon_expiration {
+                            color: $black;
+                            font-size: 14px;
+                            margin: 10px 0;
+                            font-weight: 500;
+                        }
+                        .coupon_code {
+                            background: #fff;
+                            padding: 0 25px;
+                            margin: 10px 0;
+                            border-radius: 20px;
+                            font-weight: 700;
+                            line-height: 40px;
+                            color: black;
+                            >span{
+                                text-transform: uppercase;
                                 font-weight: 600;
-                                margin-bottom: 10px;
-                                line-height: 22px;
-                            }
-                            .coupon_expiration {
-                                color: $black;
-                                font-size: 14px;
-                                margin: 10px 0;
-                                font-weight: 500;
-                            }
-                            .coupon_code {
-                                background: #fff;
-                                padding: 0 35px;
-                                margin: 10px 0;
-                                letter-spacing: 1px;
-                                border-radius: 20px;
-                                font-weight: 700;
-                                line-height: 40px;
-                                color: black;
-                                >span{
-                                    text-transform: uppercase;
-                                    font-weight: 600;
-                                }
                             }
                         }
                     }
@@ -158,13 +150,12 @@
 }
 
 @media only screen and (min-width: 1500px) {
-    $w: 65vw;
+    $w: 55vw;
     $c: 3;
     $g: getVar($sizing, gutter, vw, normal);
     $s: true;
     section.mod__coupons-featuredcoupons {
         > div.container {
-            width: $w;
             div.site_grid {
                 @include gridLayout($w, $c, $g, $s);
             }
