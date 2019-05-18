@@ -123,3 +123,19 @@
     }
 }
 
+@media only screen and (min-width: 1500px){
+    section#mod_about {
+        div.container {
+            width: 55vw;
+            #mod__featured_grid {
+                .site__grid {
+                    $w: 55vw;
+                    $c: 4;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                }
+            }
+        }
+    }
+}

@@ -32,13 +32,11 @@
         
         $format_coupon = '
             <li>
-                <div class="block">
-                    <a href="%s">
-                        <h5>%s</h5>
-                        <p class="coupon_expiration">Expiration: %s</p>
-                        <p class="coupon_code">%s</p>
-                    </a>
-                </div>
+                <a href="%s">
+                    <h5>%s</h5>
+                    <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
+                    <p class="coupon_code">Code: <span>%s</span></p>
+                </a>
             </li>
         ';
 
@@ -51,7 +49,7 @@
                     $format_coupon
                     ,get_permalink($coupon['coupon']->ID)
                     ,$coupon['coupon']->post_title
-                    ,date('M j, Y',$coupon_fields['expiration'])
+                    //,date('M j, Y',$coupon_fields['expiration'])
                     ,$coupon_fields['code']
                 );
             }

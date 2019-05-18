@@ -5,7 +5,7 @@
             margin: 0 auto 30px auto;
             $w: getVar($sizing, content, medium);
             $c: 1;
-            $g: getVar($sizing, gutter, vw, normal);
+            $g: getVar($sizing, gutter, vw, large);
             $s: true;
             @include gridLayout($w, $c, $g, $s);
             .testimonials_header {
@@ -113,7 +113,7 @@
     #mod_testimonials {
         > div.container {
             width: getVar($sizing, content, full);
-            $w: getVar($sizing, content, small);
+            $w: getVar($sizing, content, medium);
             $c: 1;
             $g: getVar($sizing, gutter, vw, small);
             $s: true;
@@ -145,7 +145,25 @@
     #mod_testimonials {
         > div.container {
             width: getVar($sizing, content, medium);
+            $w: getVar($sizing, content, medium);
+            $c: 1;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
         }
     }
 }
 
+
+@media only screen and (min-width: 1500px){
+    #mod_testimonials {
+        > div.container {
+            width: 55vw;
+            $w: 55vw;
+            $c: 1;
+            $g: getVar($sizing, gutter, vw, small);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+    }
+}

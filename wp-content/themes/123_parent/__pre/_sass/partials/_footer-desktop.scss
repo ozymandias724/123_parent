@@ -144,6 +144,7 @@
         text-align: left;
         background-color: $accent;
         >div.container {
+            padding: 0 10px;
             margin: 0 auto;
             display: flex;
             flex-flow: column wrap;
@@ -300,6 +301,7 @@
 
 @media only screen and (min-width: 1280px){
     footer > div.container {
+        padding: 0;
         max-width: getVar($sizing, content, medium);
         .footer_address,
         a[class^='footer_phone'] {
@@ -308,5 +310,11 @@
         .site__social-media > li:last-of-type {
             margin-right: -10px;
         }
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    footer > div.container {
+        max-width: 55vw;
     }
 }

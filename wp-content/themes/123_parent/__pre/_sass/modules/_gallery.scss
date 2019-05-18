@@ -247,7 +247,7 @@
     #gallery {
         $w: getVar($sizing, content, full);
         $c: 4;
-        $g: getVar($sizing, gutter, vw, tiny);
+        $g: getVar($sizing, gutter, vw, tiny); 
         $s: true;
         @include gridLayout($w, $c, $g, $s);
         &.tab_sidebar {
@@ -318,3 +318,44 @@
         }
     }
 }
+@media only screen and (min-width:1500px){
+    // Standard gallery
+    #gallery {
+        $w: 55vw;
+        $c: 4;  
+        $g: getVar($sizing, gutter, vw, tiny);
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        #gallery_rows {
+            padding: 0;
+        }
+        &.tab_divider {
+            #gallery_titles {
+                padding: 0 0px 10px;
+            }
+        }
+        &.tab_divider,
+        &.tab_pill {
+            width: 55vw;
+            #gallery_rows {
+                margin-bottom: 20px; 
+                $w: getVar($sizing, content, medium);
+                $c: 4;
+                $g: getVar($sizing, gutter, vw, tiny);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+        &.tab_sidebar {
+            width: 55vw;
+            #gallery_rows {
+                $w: 35vw;
+                $c: 3;
+                $g: getVar($sizing, gutter, vw, tiny);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
+

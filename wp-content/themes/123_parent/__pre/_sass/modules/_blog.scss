@@ -22,9 +22,14 @@
                     margin: 0 auto;
                     $w: getVar($sizing, content, medium);  
                     $c: 1;
-                    $g: getVar($sizing, gutter, vw, normal);
+                    $g: getVar($sizing, gutter, vw, large);  
                     $s: true;
                     @include gridLayout($w, $c, $g, $s);
+                    ul {
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
                     li {
                         background-color: #efefef;
                         box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.2);
@@ -126,6 +131,24 @@
                 div.site_grid {
                     margin: 0 auto;
                     $w: getVar($sizing, content, medium);  
+                    $c: 3;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    @include gridLayout($w, $c, $g, $s);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    #mod_blog {
+        > div.container {
+            width: 55vw;
+            .mod__blog-featuredposts {
+                div.site_grid {
+                    margin: 0 auto;
+                    $w: 55vw;  
                     $c: 3;
                     $g: getVar($sizing, gutter, vw, small);
                     $s: true;
