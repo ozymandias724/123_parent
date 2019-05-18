@@ -241,14 +241,16 @@ function get_section_banner($title = null, $text = null){
     $text = ( !empty($text) ) ? $text : '';
     
     $format_banner = '
-        <div class="banner">
-            %s
-            %s
+        <div class="site__banner">
+            <div class="container">
+                %s
+                %s
+            </div>
         </div>
     ';
     $return_banner .= sprintf(
         $format_banner
-        ,'<h1>'.$title.'</h1>'
+        ,'<h2><span>'.$title.'</span></h2>'
         ,( !empty($text) ) ? '<h3>'.$text.'</h3>' : ''
     );
     return $return_banner;

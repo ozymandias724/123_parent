@@ -27,12 +27,12 @@
                 <div class="container">
                 '.$heading.'
                 '.$details.'
-                <div class="site_grid"><ul>
+                <div class="site__grid"><ul>
         ';
         
         $format_coupon = '
             <li>
-                <a href="%s">
+                <a href="%s" class="block">
                     <h5>%s</h5>
                     <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
                     <p class="coupon_code">Code: <span>%s</span></p>

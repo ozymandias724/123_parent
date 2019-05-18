@@ -1,32 +1,8 @@
 @media only screen {
     #mod_services {
-        div.container {
-            margin: getVar($sizing, gutter, px, large) auto;
-            width: getVar($sizing, content, full);
-            text-align: center;
-            section.mod__services-featuredservice {
-                > h2 {
-                    font-size: 4.5rem;
-                    text-align: center;
-                    margin: 40px 0 20px;
-                    font-family: "Gotham", Helvetica, sans-serif;
-                    text-transform: uppercase;
-                    font-weight: 500;
-                }
-                > p {
-                    color: #000;
-                    font-weight: 400;
-                    font-size: 18px;
-                    text-align: center;
-                    margin: 0 auto 40px auto;
-                }
-                .site_grid {
-                    margin: 0 auto;
-                    $w: getVar($sizing, content, medium);
-                    $c: 1;
-                    $g: getVar($sizing, gutter, vw, large);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
+        section.mod__services-featuredservice {
+            div.container {
+                .site__grid {
                     >ul {
                         >li {
                             text-align: center;
@@ -92,102 +68,6 @@
                             }
                         }
                     }
-                }
-                > a.site__button {
-                    margin: 0 auto;
-                    background-color: $accent;
-                    color: $white;
-                    border: none;
-                    font-size: 16px;
-                    border-radius: 4px;
-                    text-align: center;
-                    padding: 15px 20px;
-                    font-weight: 600;
-                    line-height: initial;
-                    height: auto;
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        opacity: 0.8;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 768px){
-    #mod_services {
-        div.container {
-            section.mod__services-featuredservice {
-                .site_grid {
-                    $w: getVar($sizing, content, medium);
-                    $c: 2;
-                    $g: 2vw;
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                    > ul > li > a > div:first-of-type div {
-                        max-width: 27vw;
-                        max-height: 27vw;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1000px){
-    #mod_services {
-        div.container {
-            section.mod__services-featuredservice {
-                .site_grid {
-                    $w: getVar($sizing, content, medium);
-                    $c: 2;
-                    $g: 2vw;
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                    > ul > li > a > div:first-of-type div {
-                        max-width: 27vw;
-                        max-height: 27vw;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px){
-    #mod_services {
-        div.container {
-            width: getVar($sizing, content, medium);
-            section.mod__services-featuredservice {
-                .site_grid {
-                    $w: getVar($sizing, content, medium);
-                    $c: 3;
-                    $g: 2vw;
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                    > ul > li > a > div:first-of-type div {
-                        max-width: 14vw; 
-                        max-height: 14vw;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1500px){
-    #mod_services {
-        div.container {
-            width: 55vw;
-            section.mod__services-featuredservice { 
-                .site_grid {
-                    $w: 55vw;
-                    $c: 3;
-                    $g: 2vw;
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }

@@ -1,36 +1,161 @@
 //  after reset,
 //  adjust elements to brand guidelines
 @media only screen {
-    body {
-        font-family: "Montserrat", serif;
-        font-size: 1.6rem;
-        line-height: 2.8rem;
-    }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Montserrat", serif;
-    }
-
-    a {
+    // generic button class; needs some work
+    // could be more scalable
+    .site__button {
+        $accent: #386591;
         text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        white-space: nowrap;
+        @include fontS-20;
+        font-weight: 600;
+        border: 1px solid $accent;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        padding: getVar($sizing, gutter, px, small) getVar($sizing, gutter, px, normal);
+        min-width: 120px;
+        text-align: center;
+        // 
+        // 
+        background-color: $accent;
+        color: white;
+        box-shadow: inset 0px 0px 15px transparentize(white, 1), 0px 0px 15px transparentize(black, 1);
+        transition: box-shadow 0.4s ease;
+        // 
+        &:focus,
+        &:active,
+        &:hover {
+            box-shadow: inset 0px 0px 15px transparentize(white, 0.5), 0px 0px 15px transparentize(black, 0.5);
+        }
     }
 
-    figure {
-        position: relative;
+    // <div class><div class style></div></div>
+    // basically this wrapper is like a <figure>
+    .site__bgimg {
         overflow: hidden;
+        position: relative;
+
+        // basically this class goes on the <div> background-image
+        .site__bgimg_img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: scale(1) translate(-50%, -50%);
+            transition: transform 0.4s ease;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        &.site__bgimg--zoom {
+
+            &:hover,
+            &:active,
+            &:focus {
+                .site__bgimg_img {
+                    transform: scale(1.2) translate(-50%, -50%);
+                }
+            }
+        }
+
+        &.site__bgimg--gradient {
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                content: '';
+                background-color: transparentize(black, 0.5);
+                z-index: 2;
+                transition: opacity 0.4s ease;
+                opacity: 1;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                &:after {
+                    opacity: 0.2;
+                }
+            }
+        }
     }
 
-    img {
-        object-fit: cover;
-        height: auto;
-        width: 100%;
+
+    .mod__featured_grid {
+        .container {
+            text-align: center;
+            margin: 0 auto getVar($sizing, gutter, px, large) auto;
+            // title
+            >h2 {
+                text-align: center;
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            // details wysiwyg
+            >div:first-of-type {
+                text-align: left;
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            // grid
+            $w: getVar($sizing, content, full);
+            $c: 1;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            width: $w;  // a/r must have
+            .site__grid {
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
     }
 
+    .site_grid {
+        // resets
+        >ul {
+            list-style-type: none;
+        }
+        // styles
+        >h2 {
+            margin: 15px 0;
+        }
+        // mobile first grid
+        $w: getVar($sizing, content, full);
+        $c: 1;
+        $g: getVar($sizing, gutter, vw, normal);
+        $s: true;
+        @include gridLayout($w, $c, $g, $s);
+        // grid breakpoint
+        @media only screen and (min-width: 640px) {
+            $w: getVar($sizing, content, large);
+            $c: 3;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // grid breakpoint
+        @media only screen and (min-width: 960px) {
+            $w: getVar($sizing, content, large);
+            $c: 4;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+        // grid breakpoint
+        @media only screen and (min-width: 1280px) {
+            $w: getVar($sizing, content, medium);
+            $c: 6;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            @include gridLayout($w, $c, $g, $s);
+        }
+    }
+    
     .site__iconlink {
         display: inline-block;
         vertical-align: top;
@@ -55,5 +180,50 @@
             content: '\f3c5';
         }
     }
-    
+}// end media query
+@media only screen and (min-width: 640px){
+    .mod__featured_grid {
+        .container {
+            // grid
+            $w: getVar($sizing, content, large);
+            $c: 2;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            width: $w; // a/r must have
+            .site__grid {
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
+@media only screen and (min-width: 960px){
+    .mod__featured_grid {
+        .container {
+            // grid
+            $w: getVar($sizing, content, large);
+            $c: 3;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            width: $w; // a/r must have
+
+            .site__grid {
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
+}
+@media only screen and (min-width: 1280px){
+    .mod__featured_grid {
+        .container {
+            // grid
+            $w: getVar($sizing, content, medium);
+            $c: 3;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            width: $w; // a/r must have
+            .site__grid {
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+    }
 }
