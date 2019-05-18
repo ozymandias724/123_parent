@@ -241,7 +241,7 @@ function get_section_banner($title = null, $text = null){
     $text = ( !empty($text) ) ? $text : '';
     
     $format_banner = '
-        <div class="site__banner">
+        <div class="site__banner site__fade site__fade-up">
             <div class="container">
                 %s
                 %s

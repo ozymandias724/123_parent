@@ -1073,15 +1073,21 @@ h6 {
   }
 }
 @media only screen {
-  .fade {
+  .site__fade {
     opacity: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(0);
   }
 
-  .fade-in,
-.fade-up,
-.fade-left,
-.fade-right {
+  .site__fade-in,
+.site__fade-up,
+.site__fade-left,
+.site__fade-right {
     opacity: 0;
+  }
+
+  .site__fade-up {
+    transform: translateY(100px);
   }
 }
 @media only screen {

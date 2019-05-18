@@ -5,6 +5,37 @@ var Theme = {};
 var Hero = {};
 var Headers = {};
 
+(function ($, window, document, Theme, undefined) {
+    $(document).ready(function() {
+       
+        /**
+        * FadeEffects
+        * @type {Object}
+        */
+        Theme.FadeEffects = {
+        
+            elements : $('.site__fade')
+            ,_init : function(){
+                $(window).on('scroll load', Theme.FadeEffects._scrollLoadHandler);
+            }
+            ,_scrollLoadHandler : function(e){
+                for (let index = 0; index < Theme.FadeEffects.elements.length; index++) {
+                    const element = Theme.FadeEffects.elements[index];
+                    if ($(window).scrollTop() + $(window).height() > ( $(element).offset().top + 50 ) ) {
+                        $(element).removeClass('site__fade-up site__fade-in site__fade-left site__fade-right');
+                    }
+                }
+            }
+            
+        }
+        Theme.FadeEffects._init();
+
+    });
+})($, window, document, Theme);
+
+
+
+
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),
     _init: function () {
@@ -31,7 +62,7 @@ Theme.CookieMonster = {
 
             // if there's no cookies ie. first time on the site
             if (Theme.CookieMonster._cookieExists('ad_notset') == false && Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_firsttime') == false) {
-                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false); 
+                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false);
             }
             // if the other cookies don't exist then listen for the expiration of the firstitme cookie
             if (Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_notset') == false) {
@@ -208,7 +239,7 @@ Theme.Popups = {
         }
     },
 }
-Theme.Popups._init(); 
+Theme.Popups._init();
 
 
 Theme.PA = {
@@ -272,7 +303,7 @@ Theme.Gallery = {
             }
         });
         Theme.Gallery.image_galleries.each(function () {
-            
+
             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
                 $(this).css("display", "flex");
             } else {
@@ -281,12 +312,12 @@ Theme.Gallery = {
 
         });
     },
-    _hide_non_active : function(){
-        Theme.Gallery.image_galleries.each(function(){
-            if(Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")){
-                if(!$(this).hasClass("active_row")){
+    _hide_non_active: function () {
+        Theme.Gallery.image_galleries.each(function () {
+            if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
+                if (!$(this).hasClass("active_row")) {
                     $(this).hide();
-                }else{
+                } else {
                     $(this).show();
                 }
             }
@@ -361,13 +392,13 @@ Theme.Gallery.Tabs_Classic = {
 Theme.Gallery.Tabs_Classic._init();
 
 Theme.Nav = {
-    nav_links : $(".navlinks-item-link"),
+    nav_links: $(".navlinks-item-link"),
 
-    _init : function(){
+    _init: function () {
         Theme.Nav.nav_links.on("click", Theme.Nav._active_nav_link);
     },
-    _active_nav_link : function(){
-        Theme.Nav.nav_links.each(function(){
+    _active_nav_link: function () {
+        Theme.Nav.nav_links.each(function () {
             $(this).removeClass("active_menu_link");
         });
         $(this).addClass("active_menu_link");
@@ -605,28 +636,22 @@ Hero.Padding_Top = {
                 Hero.Padding_Top.header_id !== "opt_header_eight") {
                 Hero.Padding_Top.header_height = $("header").height();
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
-            }
-            else if (
+            } else if (
                 Hero.Padding_Top.header_id === "opt_header_four"
-            )
-            {
+            ) {
                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:last-of-type").height();
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
-            } 
-            else if (Hero.Padding_Top.header_id === "opt_header_nine")
-            {
+            } else if (Hero.Padding_Top.header_id === "opt_header_nine") {
                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:first-of-type").height();
                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
-            }
-            else 
-            {
+            } else {
                 //Do not adding padding-top to hero
                 Hero.Padding_Top.main.css("padding-top", "0");
             }
         },
-    _mobile_header_function: function () {
-        Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
-        Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
-    }
-},
-Hero.Padding_Top._init();
+        _mobile_header_function: function () {
+            Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
+            Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
+        }
+    },
+    Hero.Padding_Top._init();

@@ -93,7 +93,7 @@
 
     function _get_company_info()
     {
-        $footer_style = get_field('footer')['style'];
+        $footer_style = get_field('footer', 'options')['style'];
         $logo = _get_footer_logo();
         $address = (!empty(_get_full_address()) ? '<a class="footer_address" href="javascript:;">'._get_full_address().'</a>': '');
         $phone_number_1 = (!empty(_get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'._get_phone_number_1().'">P: '._get_phone_number_1().'</a>': '');
