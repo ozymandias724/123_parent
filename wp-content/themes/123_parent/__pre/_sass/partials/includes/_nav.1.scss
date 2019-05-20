@@ -4,14 +4,14 @@
     header#opt_header_one {
         position: relative;
         padding: 0;
-        background-color: $black;
+        background-color: $black; 
     } 
     
     // Header 1 top part
     header#opt_header_one>div:first-of-type {
         background-color: $nav_1_top_bar_background;
         color: $nav_1_top_bar_text;
-        max-width: getVar($sizing, content, full);
+        max-width: getVar($sizing, content, medium);
         display: flex;
         align-items: center;
         height: 80px;
