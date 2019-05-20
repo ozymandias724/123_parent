@@ -19,20 +19,20 @@
 
     if( !empty($fields['featured_coupons']['coupons']) ){
 
-        $heading = ( !empty( $fields['featured_coupons']['heading'] ) ? '<h2>'.$fields['featured_coupons']['heading'].'</h2>' : '');
-        $details = ( !empty( $fields['featured_coupons']['details'] ) ? '<div>'.$fields['featured_coupons']['details'].'</div>' : '');
+        $heading = ( !empty( $fields['featured_coupons']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['featured_coupons']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['featured_coupons']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['featured_coupons']['details'].'</div>' : '');
         
         $return_coupons = '
             <section class="mod__coupons-featuredcoupons mod__featured_grid">
                 <div class="container">
                 '.$heading.'
                 '.$details.'
-                <div class="site_grid"><ul>
+                <div class="site__grid"><ul>
         ';
         
         $format_coupon = '
-            <li>
-                <a href="%s">
+            <li class="site__fade site__fade-up">
+                <a href="%s" class="block">
                     <h5>%s</h5>
                     <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
                     <p class="coupon_code">Code: <span>%s</span></p>
@@ -57,7 +57,7 @@
         $return_coupons .= '</ul></div>';
 
         $return_coupons .= '
-                    <a href="'.get_permalink($res[0]->ID).'" title="View all coupons" class="site__button">View All Coupons</a>
+                    <a href="'.get_permalink($res[0]->ID).'" title="View all coupons" class="site__button site__fade site__fade-up">View All Coupons</a>
                 </div>
             </section>
         ';

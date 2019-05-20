@@ -19,14 +19,11 @@
 
     // if we have staff members
     if( !empty($fields['staff_members']) ){
-
-        // $return_staff = '<div class="container"><div class="site__grid"><ul>';
-        $return_staff = '<div class="site__grid"><ul>';
-        // format string for staff member
+        $return_staff = '';
         $format_staff = '
             <li>
                 <a href="%s">
-                    <div class="block" style="background-image: url(%s)"></div>
+                    <div class="image site__bgimg site__bgimg--zoom site__bgimg--gradient"><div style="background-image: url(%s)" class="site__bgimg_img"></div></div>
                     <h5>%s</h5>
                 </a>
             </li>
@@ -45,8 +42,6 @@
                 );
             }
         }
-        // close return_staff[0] string for staff members grid
-        $return_staff .= '</ul></div>';
     } else {
         $return_staff = '';
     }
@@ -54,29 +49,22 @@
     // company bio
     if( !empty($fields['company_bio']) ){
 
-        $format_company = '
-            <div class="container">
-                <section id="mod__featured_grid">
-                        <h2>%s</h2>
-                        <div>
-                            %s
-                        </div>
-                        %s
-                        <a href="'.get_permalink($res[0]->ID).'" title="View all Staff" class="site__button">View All Staff</a></div>
-                    </div>
-                </section>
-            </div>
-        ';
-
+        $heading = ( !empty( $fields['company_bio']['heading'] ) ? '<h2>'.$fields['company_bio']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['company_bio']['details'] ) ? '<div>'.$fields['company_bio']['details'].'</div>' : '');
         $return_company = '';
-        $return_company .= sprintf(
-            $format_company
-            ,$fields['company_bio']['heading']
-            ,$fields['company_bio']['details']
-            ,$return_staff
-        );
+        $return_company = '
+            <section class="mod__featured_grid">
+                <div class="container">
+                    '.$heading.'
+                    '.$details.'
+                    <div class="site__grid"><ul>
+                        '.$return_staff.'
+                    </ul></div>
+                    <a href="'.get_permalink($res[0]->ID).'" title="View all Staff Members" class="site__button">View All Staff Members</a>
+                </div>
+            </section>
+        ';
     }
-    
  ?>
 <section id="mod_about">
 <?php 

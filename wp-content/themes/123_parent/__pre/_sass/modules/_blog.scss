@@ -1,35 +1,8 @@
 @media only screen {
     #mod_blog {
-        >div.container {
-            width: getVar($sizing, content, full);
-            margin: 0 auto 60px auto;
-            .mod__blog-featuredposts {
-                >div>h2 {
-                    margin: 15px 0px;
-                    font-size: 2.8rem;
-                    text-align: center;
-                    margin: 40px 0;
-                    font-family: "Gotham", Helvetica, sans-serif;
-                }
-                >div>p {
-                    color: $black;
-                    font-weight: 400;
-                    font-size: 14px;
-                    text-align: justify;
-                    margin: 20px 0;
-                } 
-                div.site_grid {
-                    margin: 0 auto;
-                    $w: getVar($sizing, content, medium);  
-                    $c: 1;
-                    $g: getVar($sizing, gutter, vw, large);  
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                    ul {
-                        position: relative;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
+        .mod__featured_grid {
+            .container {
+                .site__grid {
                     li {
                         background-color: #efefef;
                         box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.2);
@@ -74,85 +47,6 @@
                             }
                         }
                     }
-                    .block {
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                    }
-                }
-                a.site__button {
-                    background-color: $accent;
-                    color: $white;
-                    border: none;
-                    font-size: 16px;
-                    border-radius: 4px;
-                    text-align: center;
-                    padding: 15px 20px;
-                    font-weight: 600;
-                    line-height: initial;
-                    height: auto;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    position: relative;
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        opacity: 0.8;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 768px){
-    #mod_blog {
-        >div.container {
-            width: getVar($sizing, content, full);
-            .mod__blog-featuredposts {
-                div.site_grid {
-                    margin: 0 auto;
-                    $w: getVar($sizing, content, medium);  
-                    $c: 2;
-                    $g: getVar($sizing, gutter, vw, normal);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px){
-    #mod_blog {
-        > div.container {
-            width: getVar($sizing, content, medium);
-            .mod__blog-featuredposts {
-                div.site_grid {
-                    margin: 0 auto;
-                    $w: getVar($sizing, content, medium);  
-                    $c: 3;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1500px){
-    #mod_blog {
-        > div.container {
-            width: 55vw;
-            .mod__blog-featuredposts {
-                div.site_grid {
-                    margin: 0 auto;
-                    $w: 55vw;  
-                    $c: 3;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }

@@ -5,6 +5,166 @@ var Theme = {};
 var Hero = {};
 var Headers = {};
 
+
+
+$(document).ready(function () {
+
+    /**
+     * FadeEffects
+     * @type {Object}
+     */
+    Theme.FadeEffects = {
+
+        elements: $('.site__fade'),
+        _init: function () {
+            $(window).on('scroll load', Theme.FadeEffects._scrollLoadHandler);
+        },
+        _scrollLoadHandler: function (e) {
+            for (let index = 0; index < Theme.FadeEffects.elements.length; index++) {
+                const element = Theme.FadeEffects.elements[index];
+                if ($(window).scrollTop() + $(window).height() > ($(element).offset().top + 50)) {
+                    $(element).removeClass('site__fade-up site__fade-in site__fade-left site__fade-right');
+                }
+            }
+        }
+
+    }
+    Theme.FadeEffects._init();
+});
+
+
+
+
+Headers.Eight = {
+
+    header: $("header.header#opt_header_eight"),
+
+    _init: function () {
+
+        if ($(Headers.Eight.header).length) {
+            Headers.Eight.offset_top = Headers.Eight.header.offset().top;
+            window.onscroll = function () {
+                Headers.Eight._sticky_header();
+            }
+            Headers.Eight._sticky_header();
+        }
+
+    },
+    _sticky_header: function () {
+
+        if (window.pageYOffset >= Headers.Eight.offset_top) {
+            Headers.Eight.header.addClass("sticky");
+        } else {
+            Headers.Eight.header.removeClass("sticky");
+        }
+
+    },
+
+}
+Headers.Eight._init();
+
+
+Headers.Site_Bars = {
+
+    site_bars: $(".site__bars"),
+    sidebar: $(".sidebar_menu"),
+    outside: $("body, html"),
+
+    _init: function () {
+
+        Headers.Site_Bars.site_bars.on("click", Headers.Site_Bars._site_bars_click);
+
+        Headers.Site_Bars.outside.on("click", Headers.Site_Bars._close_sidebar);
+
+        Headers.Site_Bars.sidebar.on("blur", Headers.Site_Bars._close_sidebar);
+
+        //On browser resize
+        window.addEventListener('resize', function () {
+            Headers.Site_Bars._close_sidebar();
+        });
+
+    },
+
+    _site_bars_click: function (e) {
+        e.stopPropagation();
+        //If header 10 hamburger icon link has class of ...
+        if (!Headers.Site_Bars.site_bars.hasClass("site_bars_changed")) {
+            Headers.Site_Bars._open_sidebar();
+        } else {
+            Headers.Site_Bars._close_sidebar();
+        }
+    },
+    _close_sidebar: function () {
+        //Add hamburger icon link class
+        Headers.Site_Bars.site_bars.removeClass("site_bars_changed");
+
+        //Open sidebar navigational menu
+        Headers.Site_Bars.sidebar.removeClass("header_sidebar_cover_all");
+    },
+    _open_sidebar: function () {
+        //Remove hamburger icon link class
+        Headers.Site_Bars.site_bars.addClass("site_bars_changed");
+
+        //Close sidebar navigational menu
+        Headers.Site_Bars.sidebar.addClass("header_sidebar_cover_all");
+    }
+
+}
+Headers.Site_Bars._init();
+
+
+Headers.Sidebar = {
+
+    //Mobile header sidebar menu
+    sidebar: $(".mobile_header_sidebar"),
+    //Mobile header sidebar and mobile header first div element
+    outside: $("body, html"),
+    //Link which is the parent of the hamburger icons (spans)
+    toggle: $("header.mobileheader > div:first-of-type > a"),
+
+    _init: function () {
+
+        //When hamburger icon spans link is clicked
+        Headers.Sidebar.toggle.on("click", Headers.Sidebar._clickHandler);
+        Headers.Sidebar.outside.on("click", Headers.Sidebar._close_sidebar);
+        Headers.Sidebar.sidebar.on("blur", Headers.Sidebar._close_sidebar);
+
+        //On resize of browser
+        window.addEventListener('resize', function () {
+            //Remove mobile nav sidebar menu width
+            Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+            //Remove mobile nav hamburger icon class
+            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
+        });
+
+    },
+    _clickHandler: function (e) {
+        e.stopPropagation();
+        //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
+        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar")) {
+            //Open sidebar
+            Headers.Sidebar._open_sidebar();
+        } else {
+            //Close sidebar
+            Headers.Sidebar._close_sidebar();
+        }
+    },
+    _open_sidebar: function () {
+        //Hamburger icon link add class
+        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar");
+        //Make the sidebar menu cover the whole page
+        Headers.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
+    },
+    _close_sidebar: function () {
+        //Hamburger icon link remove class
+        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
+        //Make the sidebar menu to not cover the whole page
+        Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
+    }
+
+}
+Headers.Sidebar._init();
+
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),
     _init: function () {
@@ -23,6 +183,10 @@ Theme.Slick = {
 Theme.Slick._init();
 
 
+
+
+
+
 Theme.CookieMonster = {
     _init: function () {
         if (DisableTimedPopup === 'false') {
@@ -31,7 +195,7 @@ Theme.CookieMonster = {
 
             // if there's no cookies ie. first time on the site
             if (Theme.CookieMonster._cookieExists('ad_notset') == false && Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_firsttime') == false) {
-                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false); 
+                Theme.CookieMonster._setCookie('ad_firsttime', 'active', parseInt(PopupTimes.short), false);
             }
             // if the other cookies don't exist then listen for the expiration of the firstitme cookie
             if (Theme.CookieMonster._cookieExists('ad_set') == false && Theme.CookieMonster._cookieExists('ad_notset') == false) {
@@ -208,7 +372,7 @@ Theme.Popups = {
         }
     },
 }
-Theme.Popups._init(); 
+Theme.Popups._init();
 
 
 Theme.PA = {
@@ -272,7 +436,7 @@ Theme.Gallery = {
             }
         });
         Theme.Gallery.image_galleries.each(function () {
-            
+
             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
                 $(this).css("display", "flex");
             } else {
@@ -281,12 +445,12 @@ Theme.Gallery = {
 
         });
     },
-    _hide_non_active : function(){
-        Theme.Gallery.image_galleries.each(function(){
-            if(Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")){
-                if(!$(this).hasClass("active_row")){
+    _hide_non_active: function () {
+        Theme.Gallery.image_galleries.each(function () {
+            if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
+                if (!$(this).hasClass("active_row")) {
                     $(this).hide();
-                }else{
+                } else {
                     $(this).show();
                 }
             }
@@ -361,13 +525,13 @@ Theme.Gallery.Tabs_Classic = {
 Theme.Gallery.Tabs_Classic._init();
 
 Theme.Nav = {
-    nav_links : $(".navlinks-item-link"),
+    nav_links: $(".navlinks-item-link"),
 
-    _init : function(){
+    _init: function () {
         Theme.Nav.nav_links.on("click", Theme.Nav._active_nav_link);
     },
-    _active_nav_link : function(){
-        Theme.Nav.nav_links.each(function(){
+    _active_nav_link: function () {
+        Theme.Nav.nav_links.each(function () {
             $(this).removeClass("active_menu_link");
         });
         $(this).addClass("active_menu_link");
@@ -432,201 +596,69 @@ Headers.One = {
 Headers.One._init();
 
 
-Headers.Eight = {
-
-    header: $("header.header#opt_header_eight"),
-
-    _init: function () {
-
-        if ($(Headers.Eight.header).length) {
-            Headers.Eight.offset_top = Headers.Eight.header.offset().top;
-            window.onscroll = function () {
-                Headers.Eight._sticky_header();
-            }
-            Headers.Eight._sticky_header();
-        }
-
-    },
-    _sticky_header: function () {
-
-        if (window.pageYOffset >= Headers.Eight.offset_top) {
-            Headers.Eight.header.addClass("sticky");
-        } else {
-            Headers.Eight.header.removeClass("sticky");
-        }
-
-    },
-
-}
-Headers.Eight._init();
 
 
-Headers.Site_Bars = {
 
-    site_bars: $(".site__bars"),
-    sidebar: $(".sidebar_menu"),
-    outside: $("body, html"),
+// NOPE. no reason to add window resize just for this. well find another way
 
-    _init: function () {
+// Hero.Padding_Top = {
 
-        Headers.Site_Bars.site_bars.on("click", Headers.Site_Bars._site_bars_click);
+//         header_id: $("header").attr("id"),
+//         header_height: $("header").height(),
 
-        Headers.Site_Bars.outside.on("click", Headers.Site_Bars._close_sidebar);
+//         mobile_header_height: $(".mobileheader").height(),
+//         main: $(".mobileheader").next(),
 
-        Headers.Site_Bars.sidebar.on("blur", Headers.Site_Bars._close_sidebar);
+//         _init: function () {
 
-        //On browser resize
-        window.addEventListener('resize', function () {
-            Headers.Site_Bars._close_sidebar();
-        });
+//             //On init, if browser width is greater than 1280
+//             if (window.innerWidth >= 1280) {
+//                 Hero.Padding_Top._header_function();
+//             } else {
+//                 Hero.Padding_Top._mobile_header_function();
+//             }
 
-    },
+//             //On resize, if browser width is greater than 1280 
+//             window.addEventListener('resize', function () {
 
-    _site_bars_click: function (e) {
-        e.stopPropagation();
-        //If header 10 hamburger icon link has class of ...
-        if (!Headers.Site_Bars.site_bars.hasClass("site_bars_changed")) {
-            Headers.Site_Bars._open_sidebar();
-        } else {
-            Headers.Site_Bars._close_sidebar();
-        }
-    },
-    _close_sidebar: function () {
-        //Add hamburger icon link class
-        Headers.Site_Bars.site_bars.removeClass("site_bars_changed");
+//                 if (window.innerWidth >= 1280) {
+//                     Hero.Padding_Top._header_function();
+//                 } else {
+//                     Hero.Padding_Top._mobile_header_function();
+//                 }
 
-        //Open sidebar navigational menu
-        Headers.Site_Bars.sidebar.removeClass("header_sidebar_cover_all");
-    },
-    _open_sidebar: function () {
-        //Remove hamburger icon link class
-        Headers.Site_Bars.site_bars.addClass("site_bars_changed");
+//             });
+//         },
+//         _header_function: function () {
+//             //Get header position value
+//             Hero.Padding_Top.header_position = $("header").css("position");
 
-        //Close sidebar navigational menu
-        Headers.Site_Bars.sidebar.addClass("header_sidebar_cover_all");
-    }
-
-}
-Headers.Site_Bars._init();
-
-
-Headers.Sidebar = {
-
-    //Mobile header sidebar menu
-    sidebar: $(".mobile_header_sidebar"),
-    //Mobile header sidebar and mobile header first div element
-    outside: $("body, html"),
-    //Link which is the parent of the hamburger icons (spans)
-    toggle: $("header.mobileheader > div:first-of-type > a"),
-
-    _init: function () {
-
-        //When hamburger icon spans link is clicked
-        Headers.Sidebar.toggle.on("click", Headers.Sidebar._clickHandler);
-        Headers.Sidebar.outside.on("click", Headers.Sidebar._close_sidebar);
-        Headers.Sidebar.sidebar.on("blur", Headers.Sidebar._close_sidebar);
-
-        //On resize of browser
-        window.addEventListener('resize', function () {
-            //Remove mobile nav sidebar menu width
-            Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
-            //Remove mobile nav hamburger icon class
-            Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
-        });
-
-    },
-    _clickHandler: function (e) {
-        e.stopPropagation();
-        //If the hamburger icon spans link does not have class of mobile_nav_sidebar_menu_1
-        if (!Headers.Sidebar.toggle.hasClass("mobile_nav_sidebar")) {
-            //Open sidebar
-            Headers.Sidebar._open_sidebar();
-        } else {
-            //Close sidebar
-            Headers.Sidebar._close_sidebar();
-        }
-    },
-    _open_sidebar: function () {
-        //Hamburger icon link add class
-        Headers.Sidebar.toggle.addClass("mobile_nav_sidebar");
-        //Make the sidebar menu cover the whole page
-        Headers.Sidebar.sidebar.addClass("mobile_sidebar_cover_all");
-    },
-    _close_sidebar: function () {
-        //Hamburger icon link remove class
-        Headers.Sidebar.toggle.removeClass("mobile_nav_sidebar");
-        //Make the sidebar menu to not cover the whole page
-        Headers.Sidebar.sidebar.removeClass("mobile_sidebar_cover_all");
-    }
-
-}
-Headers.Sidebar._init();
-
-
-Hero.Padding_Top = {
-
-        header_id: $("header").attr("id"),
-        header_height: $("header").height(),
-
-        mobile_header_height: $(".mobileheader").height(),
-        main: $(".mobileheader").next(),
-
-        _init: function () {
-
-            //On init, if browser width is greater than 1280
-            if (window.innerWidth >= 1280) {
-                Hero.Padding_Top._header_function();
-            } else {
-                Hero.Padding_Top._mobile_header_function();
-            }
-
-            //On resize, if browser width is greater than 1280 
-            window.addEventListener('resize', function () {
-
-                if (window.innerWidth >= 1280) {
-                    Hero.Padding_Top._header_function();
-                } else {
-                    Hero.Padding_Top._mobile_header_function();
-                }
-
-            });
-        },
-        _header_function: function () {
-            //Get header position value
-            Hero.Padding_Top.header_position = $("header").css("position");
-
-            //If header has a position of fixed and not header 1, 4, 9 or 3
-            if (
-                Hero.Padding_Top.header_position === "fixed" &&
-                Hero.Padding_Top.header_id !== "opt_header_one" &&
-                Hero.Padding_Top.header_id !== "opt_header_four" &&
-                Hero.Padding_Top.header_id !== "opt_header_nine" &&
-                Hero.Padding_Top.header_id !== "opt_header_three" &&
-                Hero.Padding_Top.header_id !== "opt_header_eight") {
-                Hero.Padding_Top.header_height = $("header").height();
-                Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
-            }
-            else if (
-                Hero.Padding_Top.header_id === "opt_header_four"
-            )
-            {
-                Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:last-of-type").height();
-                Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
-            } 
-            else if (Hero.Padding_Top.header_id === "opt_header_nine")
-            {
-                Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:first-of-type").height();
-                Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
-            }
-            else 
-            {
-                //Do not adding padding-top to hero
-                Hero.Padding_Top.main.css("padding-top", "0");
-            }
-        },
-    _mobile_header_function: function () {
-        Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
-        Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
-    }
-},
-Hero.Padding_Top._init();
+//             //If header has a position of fixed and not header 1, 4, 9 or 3
+//             if (
+//                 Hero.Padding_Top.header_position === "fixed" &&
+//                 Hero.Padding_Top.header_id !== "opt_header_one" &&
+//                 Hero.Padding_Top.header_id !== "opt_header_four" &&
+//                 Hero.Padding_Top.header_id !== "opt_header_nine" &&
+//                 Hero.Padding_Top.header_id !== "opt_header_three" &&
+//                 Hero.Padding_Top.header_id !== "opt_header_eight") {
+//                 Hero.Padding_Top.header_height = $("header").height();
+//                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
+//             } else if (
+//                 Hero.Padding_Top.header_id === "opt_header_four"
+//             ) {
+//                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:last-of-type").height();
+//                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
+//             } else if (Hero.Padding_Top.header_id === "opt_header_nine") {
+//                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:first-of-type").height();
+//                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
+//             } else {
+//                 //Do not adding padding-top to hero
+//                 Hero.Padding_Top.main.css("padding-top", "0");
+//             }
+//         },
+//         _mobile_header_function: function () {
+//             Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
+//             Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
+//         }
+// },
+// Hero.Padding_Top._init();

@@ -1,34 +1,9 @@
 @media only screen {
     section#mod_about {
-        div.container {
-            width: getVar($sizing, content, full);
-            margin: 0 auto 60px auto;
-            #mod__featured_grid {
-                > h2 {
-                    margin: 15px 0px;
-                    font-size: 2.8rem;
-                    text-align: center;
-                    margin: 40px 0;
-                    font-family: "Gotham", Helvetica, sans-serif;
-                }
-                > div {
-                    margin: 0 auto 30px auto;
-                    > p {
-                        color: #000;
-                        font-weight: 400;
-                        font-size: 14px;
-                        text-align: justify;
-                    }
-                }
+        .mod__featured_grid {
+            .container {
                 .site__grid {
-                    $w: getVar($sizing, content, medium);
-                    $c: 1;
-                    $g: getVar($sizing, gutter, vw, normal);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
                     >ul {
-                        list-style: none;
-                        display: block;
                         >li {
                             a {
                                 h5 {
@@ -40,102 +15,11 @@
                                         opacity: 0.8;
                                     }
                                 }
-                                .block {
-                                    background-size: cover;
-                                    background-position: center;
-                                    background-repeat: no-repeat;
-                                }
                             }
                         }
                     }
                 }
             }
         } 
-        a.site__button {
-            background-color: $accent;
-            color: $white;
-            border: none;
-            font-size: 16px;
-            border-radius: 4px;
-            text-align: center;
-            padding: 15px 20px;
-            font-weight: 600;
-            line-height: initial;
-            height: auto;
-            left: 50%;
-            transform: translateX(-50%);
-            position: relative;
-            &:hover,
-            &:active,
-            &:focus {
-                opacity: 0.8;
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 550px) {
-    section#mod_about {
-        div.container {
-            #mod__featured_grid {
-                .site__grid {
-                    $w: getVar($sizing, content, full);
-                    $c: 2;
-                    $g: getVar($sizing, gutter, vw, normal);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    section#mod_about {
-        div.container {
-            #mod__featured_grid {
-                .site__grid {
-                    $w: getVar($sizing, content, full);
-                    $c: 3;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-            }
-        } 
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    section#mod_about {
-        div.container {
-            width: getVar($sizing, content, medium);
-            #mod__featured_grid {
-                .site__grid {
-                    $w: getVar($sizing, content, medium);
-                    $c: 4;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1500px){
-    section#mod_about {
-        div.container {
-            width: 55vw;
-            #mod__featured_grid {
-                .site__grid {
-                    $w: 55vw;
-                    $c: 4;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-            }
-        }
     }
 }

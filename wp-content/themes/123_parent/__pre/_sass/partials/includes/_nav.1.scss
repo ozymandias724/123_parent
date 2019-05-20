@@ -1,4 +1,3 @@
-$nav1_width: 1050px;
 
 @media only screen {
     //Header 1
@@ -12,7 +11,7 @@ $nav1_width: 1050px;
     header#opt_header_one>div:first-of-type {
         background-color: $nav_1_top_bar_background;
         color: $nav_1_top_bar_text;
-        max-width: $nav1_width;
+        max-width: getVar($sizing, content, full);
         display: flex;
         align-items: center;
         height: 80px;
@@ -99,14 +98,13 @@ $nav1_width: 1050px;
         background-color: $nav_1_bottom_bar_background;
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         width:100%;
-        display: flex;
+        display: block;
         //Navigational menu
         >nav {
             align-items: center;
             display: flex;
-            flex: 1 0 85%;
             text-transform: uppercase;
-            max-width: $nav1_width;
+            width: getVar($sizing, content, large);
             margin: 0 auto;
         }
 
@@ -172,6 +170,13 @@ $nav1_width: 1050px;
         //Last social icon list item
         .site__social-media li:last-of-type {
             padding-right: 0;
+        }
+    }
+}
+@media only screen and (min-width: 1280px){
+    header#opt_header_one > div:last-of-type {
+        > nav {
+            width: getVar($sizing, content, medium);
         }
     }
 }

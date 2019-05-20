@@ -50,13 +50,11 @@ $banner_height : 52px;
 $bp__lg : 1280px;
 $max_width: 1200px; 
 
-@media only screen and (min-width: $bp__lg) {
-    
-    // Mobile Header
+@media only screen and (min-width: 960px) {
+    // hide mobile header
     header.mobileheader {
         display: none;
     }
-
     header {
         .header-logo
         ,.custom-logo-link
@@ -95,7 +93,7 @@ $max_width: 1200px;
 
         // Navigational menu unordered list items
         li.navlinks-item {
-            display: inline-block;
+            // display: inline-block;
             margin-right: 10px;
 
             // Last navigational menu unordered list item

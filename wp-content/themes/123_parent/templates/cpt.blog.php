@@ -1,7 +1,4 @@
 <?php 
-<<<<<<< HEAD
-
-=======
 /**
  * Template Name: Blog Post
  * Template Post Type: post
@@ -10,5 +7,4 @@
 ?>
 <?php 
     get_footer();
->>>>>>> gustavo/develop/working
  ?>

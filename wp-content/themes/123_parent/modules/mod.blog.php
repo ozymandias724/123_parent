@@ -24,22 +24,20 @@
     if( !empty($fields['featured_posts']['posts']) ){
 
         $heading = ( !empty( $fields['featured_posts']['heading'] ) ? '<h2>'.$fields['featured_posts']['heading'].'</h2>' : '');
-        $details = ( !empty( $fields['featured_posts']['details'] ) ? $fields['featured_posts']['details'] : '');
+        $details = ( !empty( $fields['featured_posts']['details'] ) ? '<div>'.$fields['featured_posts']['details'].'</div>' : '');
         
         $return_posts = '
-            <div class="container">
-                <section class="mod__blog-featuredposts">
-                    <div>
-                        '.$heading.'
-                        '.$details.'
-                    </div>
-                    <div class="site_grid"><ul>
+            <section class="mod__featured_grid">
+                <div class="container">
+                    '.$heading.'
+                    '.$details.'
+                    <div class="site__grid"><ul>
         ';
         
         $format_post = '
             <li>
                 <a href="%s">
-                    <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="block" style="background-image: url(%s)"></div></div>
+                    <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="image" style="background-image: url(%s)"></div></div>
                     <div>
                         <a href="%s"><h5>%s</h5></a>
                         %s
@@ -69,7 +67,8 @@
 
         $return_posts .= '
             <a href="'.get_permalink($res[0]->ID).'" title="View all blog posts" class="site__button">View All</a>
-            </section></div>
+            </div>
+            </section>
         ';
     }
 

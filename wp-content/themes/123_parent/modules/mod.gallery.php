@@ -28,7 +28,7 @@
 
         $format_title = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
 
-        $tab_titles = '<div id="gallery_titles">';
+        $tab_titles = '<div id="gallery_titles" class="site__fade site__fade-up">';
 
         foreach($gallery as $i => $row)
         {
@@ -68,7 +68,7 @@
             foreach($row['images'] as $image){
                 $image = (!empty($image['url'])) ? $image['url'] : '';
                 $content .= '
-                    <li class="gallery_item">
+                    <li class="gallery_item site__fade site__fade-up">
                         <div class="gallery_image block" style="background-image:url(' . $image . ');"></div>
                     </li>'; 
             }

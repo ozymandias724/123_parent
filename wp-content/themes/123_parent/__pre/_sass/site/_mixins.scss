@@ -1,3 +1,44 @@
+// style fonts
+@mixin fontS-12 {
+    font-size: 1.2rem;
+    line-height: 2.0rem;
+}
+
+@mixin fontS-14 {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+}
+
+@mixin fontS-16 {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+
+@mixin fontS-20 {
+    font-size: 2rem;
+    line-height: 3.2rem;
+}
+
+@mixin fontS-24 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+}
+
+@mixin fontS-34 {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+}
+
+@mixin fontS-50 {
+    font-size: 5rem;
+    line-height: 7.2rem;
+}
+
+@mixin fontS-72 {
+    font-size: 7.2rem;
+    line-height: 9.6rem;
+}
+
 @mixin centerer {
     position: absolute;
     top: 50%;
@@ -13,43 +54,6 @@
     }
 }
 
-// legacy, but already integrated in the site
-// @mixin gridLayout($w, $c, $g, $s) {
-//     text-align: center;
-//     margin: 0 auto 0 auto;
-//     width: $w;
-//     ul {
-//         text-align: left;
-//         width: $w;
-//         margin: 0 auto 0 auto;
-//         display: inline-block;
-//         list-style: none;
-//         @include clearfix;
-
-//         >li {
-//             $d: colWidth($w, $c, $g);
-//             width: $d;
-//             height: auto;
-//             float: left;
-
-//             div.image {
-//                 @if $s==true {
-//                     height: $d
-//                 }
-//             }
-
-//             &:nth-child(n+1) {
-//                 // this will reset each child before applying to the target
-//                 margin: 0 $g $g 0;
-//             }
-
-//             &:nth-child(#{$c}n) {
-//                 margin: 0 0 $g 0;
-//             }
-//         }
-//     }
-// }
-
 // updated, production worthy gridLayout mixin
 @mixin gridLayout($w, $c, $g, $s) {
     > ul {
@@ -63,8 +67,9 @@
             height: auto;
             float: left;
 
-            div.image
-            ,div.block {
+            .image,
+            .block {
+                display: block;
                 overflow: hidden;
                 @if $s==true {
                     height: $d

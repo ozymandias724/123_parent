@@ -23,6 +23,14 @@ include_once('classes/class.Customizer.php');
 
 include_once('classes/class.NavHandler.php');
 
+
+function get_gmaps_api_key(){
+
+    return 'AIzaSyCm3DUlMvghNSFqCUw9InFgQbDC--_PQyY';
+}
+
+
+
 function _print_c($data)
 {
 	echo '<pre style="font-size:20px;">'.print_r($data, true).'</pre>';
@@ -241,14 +249,16 @@ function get_section_banner($title = null, $text = null){
     $text = ( !empty($text) ) ? $text : '';
     
     $format_banner = '
-        <div class="banner">
-            %s
-            %s
+        <div class="site__banner site__fade site__fade-up">
+            <div class="container">
+                %s
+                %s
+            </div>
         </div>
     ';
     $return_banner .= sprintf(
         $format_banner
-        ,'<h1>'.$title.'</h1>'
+        ,'<h2><span>'.$title.'</span></h2>'
         ,( !empty($text) ) ? '<h3>'.$text.'</h3>' : ''
     );
     return $return_banner;

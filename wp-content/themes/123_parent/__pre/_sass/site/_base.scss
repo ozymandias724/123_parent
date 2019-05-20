@@ -7,128 +7,53 @@
             margin: 0 auto;
         }
     }
-    
-    .site__button {
-        display: inline-block; 
-        padding: 0 15px;
-        font-size: 16px;
-        text-transform: uppercase;
-        transition: background-color 0.2s ease; 
-        min-width: 180px;
-        text-align: center;
+    body {
+        font-family: "Lato", serif;
+        font-weight: 300;
+        @include fontS-16;
+        letter-spacing: 0.33px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Montserrat", serif;
+    }
+    h1 {
+        @include fontS-50;
+    }
+    h2 {
+        @include fontS-34;
+    }
+    h3 {
+        @include fontS-24;
+    }
+    h4 {
+        @include fontS-20;
+    }
+    h5 {
+        @include fontS-16;
+    }
+    h6 {
+        @include fontS-14;
+    }
+
+    a {
         text-decoration: none;
-        color: black;
-        background-color: rgba(0,0,0,0);
-        white-space: nowrap;
-        &:focus, &:active, &:hover {
-            background-color: rgba(0,0,0, 0.2);
-        }
     }
 
-    // <div class><div class style></div></div>
-    // basically this wrapper is like a <figure>
-    .site__bgimg {
-        overflow: hidden;
+    figure {
         position: relative;
-        // basically this class goes on the <div> background-image
-        .site__bgimg_img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            transform: scale(1) translate(-50%, -50%);
-            transition: transform 0.4s ease;
-            background-size: cover;   
-            background-position: center center;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-        &.site__bgimg--zoom {
-            &:hover, &:active, &:focus {
-                .site__bgimg_img {
-                    transform: scale(1.2) translate(-50%, -50%);
-                }
-            }
-        }
-        &.site__bgimg--gradient {
-            &:after {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                content: '';
-                background-color: transparentize(black, 0.5);
-                z-index: 2;
-                transition: opacity 0.4s ease;
-                opacity: 1;
-            }
-            &:hover, &:focus, &:active {
-                &:after {
-                    opacity: 0;
-                }
-            }
-        }
+        overflow: hidden;
     }
 
-
-    section.mod__featured_grid {
-        > div.container {
-            margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            // title
-            > h2 {
-                text-align: center;
-                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            }
-            // details wysiwyg
-            > div:first-of-type {
-                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            }
-        }
+    img {
+        object-fit: cover;
+        height: auto;
+        width: 100%;
     }
-
     
-    div.site_grid {
-        $w: getVar($sizing, content, medium);
-        $c: 1;
-        $g: getVar($sizing, gutter, vw, normal);
-        $s: false;
-        @include gridLayout($w, $c, $g, $s);
-        >h2 {
-            margin: 15px 0;
-        }
-        >ul {
-            list-style: none;
-        }
-    }
-    @media only screen and (min-width: 550px) {
-        div.site_grid {
-            $w: getVar($sizing, content, medium);
-            $c: 2;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-    }
-
-    @media only screen and (min-width: 768px) {
-        div.site_grid {
-            $w: getVar($sizing, content, medium);
-            $c: 4;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-    }
-
-    @media only screen and (min-width: 1024px) {
-        div.site_grid {
-            $w: getVar($sizing, content, medium);
-            $c: 6;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-    }
 }
