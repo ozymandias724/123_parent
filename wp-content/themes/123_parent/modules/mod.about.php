@@ -60,7 +60,7 @@
                     <div class="site__grid"><ul>
                         '.$return_staff.'
                     </ul></div>
-                    <a href="'.get_permalink($res[0]->ID).'" title="View all services" class="site__button">View All Services</a>
+                    <a href="'.get_permalink($res[0]->ID).'" title="View all Staff Members" class="site__button">View All Staff Members</a>
                 </div>
             </section>
         ';
