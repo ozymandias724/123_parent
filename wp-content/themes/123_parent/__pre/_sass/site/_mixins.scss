@@ -67,8 +67,9 @@
             height: auto;
             float: left;
 
-            .image
-            ,.block {
+            .image,
+            .block {
+                display: block;
                 overflow: hidden;
                 @if $s==true {
                     height: $d

@@ -2,6 +2,35 @@
 //  adjust elements to brand guidelines
 @media only screen {
 
+    .site__iconlink {
+        display: inline-block;
+        vertical-align: top;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        &.site__iconlink-phone {
+            &:before {
+                content: '\f095';
+            }
+        }
+
+        &.site__iconlink-address {
+            &:before {
+                content: '\f3c5';
+            }
+        }
+    }
+    
+
     // generic button class; needs some work
     // could be more scalable
     .site__button {
@@ -89,99 +118,44 @@
     }
 
 
-    .mod__featured_grid {
+    .mod__featured_grid,
+    .mod__form_block {
+        text-align: center;
+        margin: 0 auto getVar($sizing, gutter, px, large) auto;
         .container {
-            text-align: center;
-            margin: 0 auto getVar($sizing, gutter, px, large) auto;
             // title
             >h2 {
                 text-align: center;
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;
             }
+    
             // details wysiwyg
             >div:first-of-type {
                 text-align: left;
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;
             }
+        }
+    }
+
+    .mod__form_block,
+    .mod__featured_grid {
+        .container {
             // grid
             $w: getVar($sizing, content, full);
             $c: 1;
             $g: getVar($sizing, gutter, vw, normal);
             $s: true;
             width: $w;  // a/r must have
+            margin: 0 auto getVar($sizing, gutter, px, normal) auto;
             .site__grid {
                 @include gridLayout($w, $c, $g, $s);
             }
         }
     }
-
-    .site_grid {
-        // resets
-        >ul {
-            list-style-type: none;
-        }
-        // styles
-        >h2 {
-            margin: 15px 0;
-        }
-        // mobile first grid
-        $w: getVar($sizing, content, full);
-        $c: 1;
-        $g: getVar($sizing, gutter, vw, normal);
-        $s: true;
-        @include gridLayout($w, $c, $g, $s);
-        // grid breakpoint
-        @media only screen and (min-width: 640px) {
-            $w: getVar($sizing, content, large);
-            $c: 3;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-        // grid breakpoint
-        @media only screen and (min-width: 960px) {
-            $w: getVar($sizing, content, large);
-            $c: 4;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-        // grid breakpoint
-        @media only screen and (min-width: 1280px) {
-            $w: getVar($sizing, content, medium);
-            $c: 6;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            @include gridLayout($w, $c, $g, $s);
-        }
-    }
     
-    .site__iconlink {
-        display: inline-block;
-        vertical-align: top;
-        &:before {
-            content: "";
-            display: inline-block;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-        }
-    }
-    .site__iconlink-phone {
-        &:before{
-            content: '\f095';
-        }
-    }
-    .site__iconlink-address {
-        &:before{
-            content: '\f3c5';
-        }
-    }
 }// end media query
 @media only screen and (min-width: 640px){
+    .mod__form_block,
     .mod__featured_grid {
         .container {
             // grid
@@ -197,6 +171,7 @@
     }
 }
 @media only screen and (min-width: 960px){
+    .mod__form_block,
     .mod__featured_grid {
         .container {
             // grid
@@ -213,6 +188,7 @@
     }
 }
 @media only screen and (min-width: 1280px){
+    .mod__form_block,
     .mod__featured_grid {
         .container {
             // grid

@@ -23,6 +23,14 @@ include_once('classes/class.Customizer.php');
 
 include_once('classes/class.NavHandler.php');
 
+
+function get_gmaps_api_key(){
+
+    return 'AIzaSyCm3DUlMvghNSFqCUw9InFgQbDC--_PQyY';
+}
+
+
+
 function _print_c($data)
 {
 	echo '<pre style="font-size:20px;">'.print_r($data, true).'</pre>';

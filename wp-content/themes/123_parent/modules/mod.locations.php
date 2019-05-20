@@ -17,31 +17,53 @@
     $fields = get_fields($res[0]);
 
     // if we have locations
-    if( !empty($fields['locations']) ){
+    if( !empty($fields['content']['locations']) ){
+        $apikey = get_gmaps_api_key();
         
-        $return_maps = '';    
+        $heading = ( !empty( $fields['content']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['content']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['content']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['content']['details'].'</div>' : '');
+        
+        $return_locations = '
+            <section class="mod__featured_grid">
+                <div class="container">
+                '.$heading.'
+                '.$details.'
+                <div class="site__grid"><ul>
+        ';
+        
+        $format_location = '
+            <li class="site__fade site__fade-up">
+                <a href="%s">
+                    <div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url(%s)"></div></div>
+                    <p>%s</p>
+                </a>
+            </li>
+        ';
 
-        foreach( $fields['locations'] as $location ){    
-            // get fields of this areas-served post
-            $lo_fields = get_fields($location['location']->ID);            
-            $lat = $lo_fields['open_street_map']['center_lat'];
-            $lng = $lo_fields['open_street_map']['center_lng'];
-            $title = $location['location']->post_title;
-            $rad = $lo_fields['radius'];
+        foreach( $fields['content']['locations'] as $location ){
+
+            $location_fields = get_fields($location['location']->ID);
             
-            $return_maps .= '
-                <div class="mod_locations-location">
-                    <h3>'.$title.'</h3>
-                    <div id="mapid" data-rad="'.$rad.'" data-lat="'.$lat.'" data-lng="'.$lng.'"></div>
-                </div>
-            ';
+            $return_locations .= sprintf(
+                $format_location
+                ,get_permalink($location['location']->ID)
+                ,$location_fields['content']['image']['url']
+                ,$location_fields['content']['heading']
+            );
         }
+        $return_locations .= '</ul></div>';
+
+        $return_locations .= '
+                    <a href="'.get_permalink($res[0]->ID).'" title="View all locations" class="site__button site__fade site__fade-up">View All Locations</a>
+                </div>
+            </section>
+        ';
     }
  ?>
 <section id="mod_locations">
 <?php 
     echo get_section_banner($res[0]->post_title);
-    echo $return_maps;
+    echo $return_locations;
 ?>
 </section>
 <?php 
