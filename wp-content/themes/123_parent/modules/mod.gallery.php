@@ -26,7 +26,7 @@
     {
         $gallery = $fields['gallery'];
 
-        $format_title = '<h3><a class="%s %s" href="javascript:;">%s</a></h3>';
+        $format_title = '<h5><a class="%s %s" href="javascript:;">%s</a></h5>';
 
         $tab_titles = '<div id="gallery_titles" class="site__fade site__fade-up">';
 

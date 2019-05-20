@@ -540,8 +540,8 @@ Theme.Nav = {
 Theme.Nav._init();
 
 Theme.Menu = {
-    tab_header: $("#mod_menu #menu_tabs > h4"),
-    tab_link: $("#mod_menu #menu_tabs > h4 > a"),
+    tab_header: $("#mod_menu #menu_tabs > h5"),
+    tab_link: $("#mod_menu #menu_tabs > h5 > a"),
     menu_section: $("#mod_menu .menu_section"),
     images: $(".image_prov"),
 

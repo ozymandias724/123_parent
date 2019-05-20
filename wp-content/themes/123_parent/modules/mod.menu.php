@@ -171,9 +171,9 @@
     // Tabs area
     $tabs_area = '<div id="menu_tabs">';
     $format_tab = '
-        <h4 class="%s">
+        <h5 class="%s">
             <a data-tab="%s" class="%s" href="javascript:;">%s</a>
-        </h4>
+        </h5>
     ';
     // Loop through all the menus
     foreach($fields['menus'] as $i => $menu)

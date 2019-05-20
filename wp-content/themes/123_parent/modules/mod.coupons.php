@@ -32,7 +32,7 @@
         
         $format_coupon = '
             <li class="site__fade site__fade-up">
-                <a href="%s" class="block">
+                <a href="%s" class="">
                     <h5>%s</h5>
                     <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
                     <p class="coupon_code">Code: <span>%s</span></p>
