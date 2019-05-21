@@ -126,7 +126,7 @@
             <li class="site__fade site__fade-up">
                 <a href="%s">
                     <div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url(%s)"></div></div>
-                    </a>
+                </a>
                 <div>
                     <a class="location_heading" href="%s">
                         <p>%s</p>

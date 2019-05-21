@@ -4342,20 +4342,22 @@ section#banner_popup .popup_close {
     width: 100%;
     margin: 0 auto 30px;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li {
-    background-color: #dedddd;
-  }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div {
     padding: 0 20px;
+    background-color: #dedddd;
   }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading {
     text-transform: uppercase;
     font-weight: 500;
+    color: #000;
     font-size: 2.4rem;
     line-height: 3.2rem;
   }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading > p {
     padding: 20px 0 10px;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading:focus {
+    color: #386591;
   }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media {
     padding: 10px 0;
@@ -4372,9 +4374,6 @@ section#banner_popup .popup_close {
     color: #000;
     transition: color 0.3s;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:focus {
-    color: #386591;
-  }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a > div.location_social_image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -4382,17 +4381,20 @@ section#banner_popup .popup_close {
     width: 25px;
     height: 25px;
   }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:focus {
+    color: #386591;
+  }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a {
     font-weight: 500;
     font-size: 2rem;
     line-height: 3.2rem;
     color: #000;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:focus {
-    color: #386591;
-  }
   section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a > div.location_address {
     padding: 10px 0 20px;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:focus {
+    color: #386591;
   }
 }
 @media only screen {

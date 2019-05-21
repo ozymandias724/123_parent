@@ -14,15 +14,19 @@
                 div.site__grid {
                     > ul {
                         > li {
-                            background-color: #dedddd;
                             > div {
                                 padding: 0 20px;
+                                background-color: #dedddd;
                                 > .location_heading {
                                     text-transform: uppercase;
                                     font-weight: 500;
+                                    color: $black;
                                     @include fontS-24;
                                     > p {
                                         padding: 20px 0 10px;
+                                    }
+                                    &:hover, &:active, &:focus {
+                                        color: $accent;
                                     }
                                 }
                                 > ul.site__social-media {
@@ -38,9 +42,6 @@
                                             text-align: center;
                                             color: $black;
                                             transition: color 0.3s; 
-                                            &:hover, &:active, &:focus {
-                                                color: $accent;
-                                            }
                                             > div.location_social_image {
                                                 background-repeat: no-repeat;
                                                 background-size: cover;
@@ -48,18 +49,21 @@
                                                 width: 25px;
                                                 height: 25px;
                                             }
+                                            &:hover, &:active, &:focus {
+                                                color: $accent;
+                                            }
                                         }
                                     }
                                 }
                                 > a {
                                     font-weight: 500;
                                     @include fontS-20;
-                                    color: $black; 
-                                    &:hover, &:active, &:focus {
-                                        color: $accent;
-                                    }
+                                    color: $black;
                                     > div.location_address {
                                         padding: 10px 0 20px;  
+                                    }
+                                    &:hover, &:active, &:focus {
+                                        color: $accent;
                                     }
                                 }
                             }
