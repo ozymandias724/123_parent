@@ -21,8 +21,8 @@
                                 >div:first-of-type {
                                     width: 100%;
                                     div {
-                                        max-width: 35vw;
-                                        max-height: 35vw;
+                                        max-width: 70vw;
+                                        max-height: 70vw;
                                         background-size: cover;
                                         background-position: center center;
                                         background-repeat: no-repeat;
@@ -72,6 +72,29 @@
             }
         }
     }
+}
+
+@media only screen and (min-width: 640px){
+    #mod_services {
+        section.mod__services-featuredservice {
+            div.container {
+                .site__grid {
+                    >ul {
+                        >li {
+                            >a {
+                                >div:first-of-type {
+                                    div {
+                                        max-width: 35vw;
+                                        max-height: 35vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }                                    
 }
 
 @media only screen and (min-width: 960px){

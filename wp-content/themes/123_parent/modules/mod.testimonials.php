@@ -22,11 +22,13 @@
     function _get_testimonials($fields, $res)
     {
         $format = '
-            <div class="container">
-                %s
-                %s
-            </div>
-            %s
+            <section class="mod__testimonials-featuredtestimonial mod__featured_grid">
+                <div class="container">
+                    %s
+                    %s
+                    %s
+                </div>
+            </section>
         ';
         $return = sprintf(
             $format
@@ -41,7 +43,7 @@
     {
         $heading = (!empty($fields['featured_testimonials']['heading']) ? $fields['featured_testimonials']['heading'] : '');
         $details = (!empty($fields['featured_testimonials']['details']) ? $fields['featured_testimonials']['details'] : '');
-        $format = '<h2 class="testimonials_header">%s</h2>%s';
+        $format = '<h2>%s</h2><div>%s</div>';
         $return = sprintf(
             $format
             ,$heading
@@ -51,11 +53,13 @@
     }
     function _get_body($fields)
     {
-        $return = '<ul>';
+        $return = '<ul id="slick_slider_testimonials">';
         $format_text = '
             <li class="testimonial_text">
-                %s
-                %s
+                <div>
+                    %s
+                    %s
+                </div>
             </li>
         ';
         $format_image = '

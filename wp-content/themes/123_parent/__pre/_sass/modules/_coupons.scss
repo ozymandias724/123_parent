@@ -1,6 +1,12 @@
 @media only screen {
     section.mod__coupons-featuredcoupons {
         .container {
+            > div:first-of-type {
+                > div > p {
+                    font-weight: 500;
+                    @include fontS-20;
+                }
+            }
             // grid
             .site__grid {
                 >ul {

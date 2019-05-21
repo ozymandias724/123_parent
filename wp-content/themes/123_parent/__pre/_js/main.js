@@ -168,7 +168,11 @@ Headers.Sidebar._init();
 Theme.Slick = {
     rand: Math.floor(Math.random() * $(".img-slick").length),
     _init: function () {
-        $('#slick_slider').slick({
+        Theme.Slick._hero_slider();
+        Theme.Slick._testimonials_slider();
+    },
+    _hero_slider : function(){
+        $('#slick_slider_hero').slick({
             autoplay: Boolean(hero_fields.autoplay),
             adaptiveHeight: true,
             arrows: false,
@@ -177,6 +181,20 @@ Theme.Slick = {
             pauseOnHover: false,
             pauseOnFocus: false,
             initialSlider: Boolean(hero_fields.random) ? Theme.Slick.rand : ''
+        });
+    },
+    _testimonials_slider : function(){
+        $('#slick_slider_testimonials').slick({
+            autoplay: true,
+            adaptiveHeight: true,
+            arrows: true,
+            fade: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            initialSlider: true,
+            nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>',
+            prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
         });
     }
 }

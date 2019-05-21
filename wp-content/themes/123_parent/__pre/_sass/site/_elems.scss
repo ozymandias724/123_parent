@@ -127,12 +127,17 @@
             >h2 {
                 text-align: center;
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+                font-weight: 900;
+                text-transform: uppercase;
             }
-    
             // details wysiwyg
             >div:first-of-type {
-                text-align: left;
+                text-align: center;
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+                > p {
+                    font-weight: 500;
+                    @include fontS-20;
+                }
             }
         }
     }

@@ -59,7 +59,7 @@
         else if($type == 'slider' && !empty($slider_images))
         {  
             // open return string
-            $return_slider = '<div id="slick_slider">';
+            $return_slider = '<div id="slick_slider_hero">';
 
             foreach( $slider_images as $i => $rec )
             {

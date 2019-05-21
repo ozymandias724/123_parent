@@ -37,11 +37,13 @@
         $format_post = '
             <li>
                 <a href="%s">
-                    <div class="site__bgimg site__bgimg--zoom site__bgimg--gradient"><div class="image" style="background-image: url(%s)"></div></div>
+                    <div class="image" style="background-image: url(%s)"></div>
                     <div>
                         <a href="%s"><h5>%s</h5></a>
                         %s
-                        <a href="%s">Read More <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div>
+                        <a href="%s">Read More</a>
                     </div>
                 </a>
             </li>

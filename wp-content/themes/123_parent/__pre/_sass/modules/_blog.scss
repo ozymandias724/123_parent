@@ -4,46 +4,114 @@
             .container {
                 .site__grid {
                     li {
+                        border-radius: 20px;
                         background-color: #efefef;
-                        box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.2);
+                        border: 3px solid #fff;
+                        box-shadow: 0px 0px 0px 3px #e2e2e2; 
+                        > a {
+                            > div {
+                                border-top-left-radius: 20px;
+                                border-top-right-radius: 20px;
+                                max-height: 50vw;
+                            }
+                        }
                         >div{
-                            padding: 30px;
+                            padding: 15px 30px;
+                            background-color: #dedede;
                             >a>h5 {
                                 font-family: "Gotham", "Helvetica", sans-serif;
                                 display: block;
                                 text-decoration: none;
                                 color: black;
                                 text-align: left;
-                                font-weight: 900;
-                                font-size: 2rem;
-                                margin: 0 0 20px;
+                                font-weight: 500;
+                                @include fontS-34;
+                                letter-spacing: -1px;
+                                border-bottom: 4px dotted #fff;
                                 &:hover, &:active, &:focus {
                                     color: $accent;
                                 }
                             }
                             p {
-                                color: $black;
+                                color: gray;
                                 font-weight: 400;
                                 font-size: 14px;
+                                line-height: 20px;
                                 text-align: justify;
-                                margin: 20px 0 15px;
+                                margin: 5px 0 15px;
+                                padding: 0 5px; 
                             }
-                            >a:last-of-type {
-                                color: $black;
+                        }
+                        >div:last-of-type {
+                            background-color: $accent;
+                            border-bottom-left-radius: 20px;
+                            border-bottom-right-radius: 20px;
+                            padding: 10px;
+                            a {
+                                color: #fff;
                                 padding: 5px;
+                                @include fontS-20;
                                 font-weight: 600;
                                 text-transform: uppercase;
                                 display: inline-block;
                                 align-items: center;
-                                i {
-                                    font-size: 14px;
-                                    margin-left: 5px;
-                                    position: relative;
-                                    bottom: 1px;
-                                }
                                 &:hover, &:active, &:focus {
-                                    color: $accent;
+                                    opacity: 0.8;   
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 640px){
+    #mod_blog {
+        .mod__featured_grid {
+            .container {
+                .site__grid {
+                    li {
+                        > a {
+                            > div {
+                                max-height: 30vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 960px){
+    #mod_blog {
+        .mod__featured_grid {
+            .container {
+                .site__grid {
+                    li {
+                        > a {
+                            > div {
+                                max-height: 20vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    #mod_blog {
+        .mod__featured_grid {
+            .container {
+                .site__grid {
+                    li {
+                        > a {
+                            > div {
+                                max-height: 12vw;
                             }
                         }
                     }

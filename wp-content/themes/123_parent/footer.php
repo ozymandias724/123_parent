@@ -110,7 +110,7 @@
                 %s
             </section>
         ';
-        if($footer_style == 'one')
+        if($footer_style == 'two')
         {
             $format = '
             <section id="footer_company_info">
@@ -132,7 +132,7 @@
                 ,$phone_number_2
             );
         }
-        else if($footer_style == 'two')
+        else if($footer_style == 'three')
         {
             $format = '
                 <section id="footer_company_info">
@@ -176,8 +176,8 @@
 
     function _get_footer_content()
     {
-        $footer_style = 'footer_two';
-        if($footer_style == 'footer_one')
+        $footer_style = get_field('footer', 'options')['style'];
+        if($footer_style == 'two')
         {
             $format_footer_content = '
                 <div class="container">
@@ -197,7 +197,7 @@
             );
 
         }
-        else if($footer_style == 'footer_two')
+        else if($footer_style == 'three')
         {
             $format_footer_content = '
                 <div class="container">
@@ -222,11 +222,6 @@
                 ,(!empty(_get_social_icons()) ? '<p>Follow Us</p>'._get_social_icons():'')
             );
         }
-        else if($footer_style == 'footer_three')
-        {
-
-        }
-            
         return $return;
     }
     
