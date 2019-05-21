@@ -1,22 +1,72 @@
 @media only screen {
-
-    #mod_locations {
+    section#mod_locations {
         text-align: center;
         width: 100%;
         margin: 0 auto 30px;
-        #mapid {
-            height: 20vw;
-            width: 100%;
-            margin: 0 auto 30px;
-            max-width: 720px;
-        }
-        .mod_locations-location{
-            h3 {
-                font-size: 2rem;
+        // #mapid {
+        //     height: 20vw;
+        //     width: 100%;
+        //     margin: 0 auto 30px;
+        //     max-width: 720px;
+        // }
+        section.mod__featured_grid {
+            div.container {
+                div.site__grid {
+                    > ul {
+                        > li {
+                            background-color: #dedddd;
+                            > div {
+                                padding: 0 20px;
+                                > .location_heading {
+                                    text-transform: uppercase;
+                                    font-weight: 500;
+                                    @include fontS-24;
+                                    > p {
+                                        padding: 20px 0 10px;
+                                    }
+                                }
+                                > ul.site__social-media {
+                                    padding: 10px 0;
+                                    display: flex;
+                                    justify-content: center;
+                                    > li {
+                                        > a {
+                                            @include fontS-20;
+                                            display: inline-block;
+                                            line-height: 0;
+                                            padding: 0 10px;
+                                            text-align: center;
+                                            color: $black;
+                                            transition: color 0.3s; 
+                                            &:hover, &:active, &:focus {
+                                                color: $accent;
+                                            }
+                                            > div.location_social_image {
+                                                background-repeat: no-repeat;
+                                                background-size: cover;
+                                                background-position: center center;
+                                                width: 25px;
+                                                height: 25px;
+                                            }
+                                        }
+                                    }
+                                }
+                                > a {
+                                    font-weight: 500;
+                                    @include fontS-20;
+                                    color: $black; 
+                                    &:hover, &:active, &:focus {
+                                        color: $accent;
+                                    }
+                                    > div.location_address {
+                                        padding: 10px 0 20px;  
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-
-
     }
-
 }

@@ -1646,11 +1646,9 @@ header#opt_header_four .inner_div > span {
   }
   header#opt_header_four .inner_div .site__social-media li a {
     font-size: 16px;
-    border-radius: 50%;
     display: inline-block;
     padding: 0 10px;
     text-align: center;
-    overflow: hidden;
     color: #fff;
     transition: color 0.3s;
     line-height: 68px;
@@ -4183,7 +4181,7 @@ section#banner_popup .popup_close {
     margin: 0 0 1vw 0;
   }
   #tabs_sidebar .menu_text_sub_group_half.menu_section {
-    width: 85vw;
+    width: 85.2vw;
   }
   #tabs_sidebar .menu_text_sub_group_half > div {
     width: 22vw;
@@ -4339,19 +4337,62 @@ section#banner_popup .popup_close {
   }
 }
 @media only screen {
-  #mod_locations {
+  section#mod_locations {
     text-align: center;
     width: 100%;
     margin: 0 auto 30px;
   }
-  #mod_locations #mapid {
-    height: 20vw;
-    width: 100%;
-    margin: 0 auto 30px;
-    max-width: 720px;
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li {
+    background-color: #dedddd;
   }
-  #mod_locations .mod_locations-location h3 {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div {
+    padding: 0 20px;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading > p {
+    padding: 20px 0 10px;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a {
     font-size: 2rem;
+    line-height: 3.2rem;
+    display: inline-block;
+    line-height: 0;
+    padding: 0 10px;
+    text-align: center;
+    color: #000;
+    transition: color 0.3s;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:focus {
+    color: #386591;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a > div.location_social_image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    color: #000;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:focus {
+    color: #386591;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a > div.location_address {
+    padding: 10px 0 20px;
   }
 }
 @media only screen {

@@ -16,6 +16,97 @@
     // get the fields
     $fields = get_fields($res[0]);
 
+    function _get_social_media($ID){
+
+        $return = '<ul class="site__social-media">';
+        $format = '
+            <li>
+                <a href="%s" title="%s">
+                    %s
+                </a>
+            </li>
+        ';
+        
+        $location_content = get_fields($ID);
+        $social_icons = $location_content['content']['social_media'];
+
+        if(!empty($social_icons))
+        {
+            foreach($social_icons['icons'] as $social_icon)
+            {
+                $link = (!empty($social_icon['link']) ? $social_icon['link']['url'] : '');
+                $title = (!empty($social_icon['link']) ? $social_icon['link']['title'] : '');
+
+                if(!empty($social_icon['icon']))
+                {
+                    $icon = (!empty($social_icon['icon']) ? $social_icon['icon'] : '');
+                    $return .= sprintf(
+                        $format
+                        ,$link
+                        ,$title
+                        ,$icon
+                    );
+                }
+                else if(!empty($social_icon['image']))
+                {
+                    $image = (!empty($social_icon['image']) ? '<div class="location_social_image" style="background-image:url('.$social_icon['image']['url'].');"></div>' : '');
+                    $return .= sprintf(
+                        $format
+                        ,$link
+                        ,$title
+                        ,$image
+                    );
+                }
+            }
+        }
+        
+        $return .= '</ul>';
+
+        return $return;
+    }
+
+    function _get_address($ID)
+    {
+        $return = '';
+        $location_content = get_fields($ID);
+        $address = (!empty($location_content['content']['address']) ? $location_content['content']['address'] : '');
+        if(!empty($address))
+        {
+            $postal = '';
+            if(!empty($address['address_is_postal']))
+            {
+                $is_postal = $address['address_is_postal'];
+                if($is_postal)
+                {
+                    $postal = '<p>This is a postal address.</p>';
+                }
+            }  
+            $street_1 = (!empty($address['address_street']) ? $address['address_street'] : '');
+            $street_2 = (!empty($address['address_street_2']) ? $address['address_street_2'] : '');
+            $city = (!empty($address['address_city']) ? $address['address_city'] : '');
+            $state = (!empty($address['address_state']) ? $address['address_state'] : '');
+            $postcode = (!empty($address['address_postcode']) ? $address['address_postcode'] : '');
+
+            $format = '
+                <div class="location_address">
+                    %s
+                    <p>%s %s</p> 
+                    <p>%s, %s %s</p>
+                </div>'; 
+            $return = sprintf(
+                $format
+                ,$postal
+                ,$street_1
+                ,$street_2
+                ,$city
+                ,$state
+                ,$postcode
+            );
+        }
+        
+        return $return; 
+    }
+    
     // if we have locations
     if( !empty($fields['content']['locations']) ){
         $apikey = get_gmaps_api_key();
@@ -35,10 +126,18 @@
             <li class="site__fade site__fade-up">
                 <a href="%s">
                     <div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url(%s)"></div></div>
-                    <p>%s</p>
-                </a>
+                    </a>
+                <div>
+                    <a class="location_heading" href="%s">
+                        <p>%s</p>
+                    </a>
+                    %s
+                    <a href="%s">
+                        %s
+                    </a>
+                </div>
             </li>
-        ';
+        '; 
 
         foreach( $fields['content']['locations'] as $location ){
 
@@ -48,7 +147,11 @@
                 $format_location
                 ,get_permalink($location['location']->ID)
                 ,$location_fields['content']['image']['url']
+                ,get_permalink($location['location']->ID)
                 ,$location_fields['content']['heading']
+                ,_get_social_media($location['location']->ID)
+                ,get_permalink($location['location']->ID)
+                ,_get_address($location['location']->ID)
             );
         }
         $return_locations .= '</ul></div>';
