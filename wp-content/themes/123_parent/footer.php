@@ -227,7 +227,7 @@
     
 ?>
 </main>
-<footer>
+<footer id="footer_<?php echo get_field('footer', 'options')['style'] ?>">
 <?php 
     
     echo _get_footer_content();
