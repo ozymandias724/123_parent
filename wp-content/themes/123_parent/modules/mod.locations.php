@@ -78,7 +78,7 @@
                 $is_postal = $address['address_is_postal'];
                 if($is_postal)
                 {
-                    $postal = '<p>This is a postal address.</p>';
+                    $postal = '<p>Postal Address:</p>';
                 }
             }  
             $street_1 = (!empty($address['address_street']) ? $address['address_street'] : '');
