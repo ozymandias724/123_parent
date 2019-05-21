@@ -8,55 +8,50 @@
                         background-color: #efefef;
                         border: 3px solid #fff;
                         box-shadow: 0px 0px 0px 3px #e2e2e2; 
+                        &:hover, &:active, &:focus {
+                            box-shadow: 0px 0px 0px 5px #e2e2e2; 
+                        }
                         > a {
-                            > div {
+                            > .image {
+                                max-height: 50vw;
                                 border-top-left-radius: 20px;
                                 border-top-right-radius: 20px;
-                                max-height: 50vw;
                             }
-                        }
-                        >div{
-                            padding: 15px 30px;
-                            background-color: #dedede;
-                            >a>h5 {
-                                font-family: "Gotham", "Helvetica", sans-serif;
-                                display: block;
-                                text-decoration: none;
-                                color: black;
-                                text-align: left;
-                                font-weight: 500;
-                                @include fontS-34;
-                                letter-spacing: -1px;
-                                border-bottom: 4px dotted #fff;
-                                &:hover, &:active, &:focus {
-                                    color: $accent;
+                            >div.blog_item_content{
+                                background-color: #dedede;
+                                border-bottom-left-radius: 20px;
+                                border-bottom-right-radius: 20px;
+                                >h5 {
+                                    margin: 0 30px;
+                                    padding: 15px 0 0;
+                                    font-family: "Gotham", "Helvetica", sans-serif;
+                                    display: block;
+                                    text-decoration: none;
+                                    color: black;
+                                    text-align: left;
+                                    font-weight: 500;
+                                    @include fontS-34;
+                                    letter-spacing: -1px;
+                                    border-bottom: 4px dotted #fff;
                                 }
-                            }
-                            p {
-                                color: gray;
-                                font-weight: 400;
-                                font-size: 14px;
-                                line-height: 20px;
-                                text-align: justify;
-                                margin: 5px 0 15px;
-                                padding: 0 5px; 
-                            }
-                        }
-                        >div:last-of-type {
-                            background-color: $accent;
-                            border-bottom-left-radius: 20px;
-                            border-bottom-right-radius: 20px;
-                            padding: 10px;
-                            a {
-                                color: #fff;
-                                padding: 5px;
-                                @include fontS-20;
-                                font-weight: 600;
-                                text-transform: uppercase;
-                                display: inline-block;
-                                align-items: center;
-                                &:hover, &:active, &:focus {
-                                    opacity: 0.8;   
+                                > div.blog_item_excerpt > p {
+                                    margin: 0 35px 30px;
+                                    padding: 5px 0 0;
+                                    color: gray;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    text-align: justify;
+                                }
+                                > p.blog_item_read_more {
+                                    background-color: $accent;
+                                    border-bottom-left-radius: 20px;
+                                    border-bottom-right-radius: 20px;
+                                    padding: 10px;
+                                    color: #fff;
+                                    @include fontS-20;
+                                    font-weight: 600;
+                                    text-transform: uppercase;
                                 }
                             }
                         }
@@ -74,7 +69,7 @@
                 .site__grid {
                     li {
                         > a {
-                            > div {
+                            > .image {
                                 max-height: 30vw;
                             }
                         }
@@ -110,7 +105,7 @@
                 .site__grid {
                     li {
                         > a {
-                            > div {
+                            > .image {
                                 max-height: 12vw;
                             }
                         }

@@ -185,7 +185,7 @@ Theme.Slick = {
     },
     _testimonials_slider : function(){
         $('#slick_slider_testimonials').slick({
-            autoplay: true,
+            autoplay: false,
             adaptiveHeight: true,
             arrows: true,
             fade: true,

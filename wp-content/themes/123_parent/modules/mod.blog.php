@@ -38,12 +38,10 @@
             <li>
                 <a href="%s">
                     <div class="image" style="background-image: url(%s)"></div>
-                    <div>
-                        <a href="%s"><h5>%s</h5></a>
-                        %s
-                    </div>
-                    <div>
-                        <a href="%s">Read More</a>
+                    <div class="blog_item_content">
+                        <h5>%s</h5>
+                        <div class="blog_item_excerpt">%s</div>
+                        <p class="blog_item_read_more">Read More</p>
                     </div>
                 </a>
             </li>
@@ -58,17 +56,15 @@
                     $format_post
                     ,get_post_permalink($post['post'])
                     ,$post_fields['featured_image']['url']
-                    ,get_post_permalink($post['post'])
                     ,$post['post']->post_title
                     ,(!empty($post_fields['excerpt']) ? $post_fields['excerpt'] : '')
-                    ,get_post_permalink($post['post'])
                 );
             }
         }
         $return_posts .= '</ul></div>';
 
         $return_posts .= '
-            <a href="'.get_permalink($res[0]->ID).'" title="View all blog posts" class="site__button">View All</a>
+            <a href="'.get_permalink($res[0]->ID).'" title="View all blog posts" class="site__button">View All Posts</a>
             </div>
             </section>
         ';

@@ -125,17 +125,12 @@
         $format_location = '
             <li class="site__fade site__fade-up">
                 <a href="%s">
-                    <div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url(%s)"></div></div>
-                </a>
-                <div>
-                    <a class="location_heading" href="%s">
-                        <p>%s</p>
-                    </a>
                     %s
-                    <a href="%s">
+                    <div class="location_content">
+                        <p class="location_heading">%s</p>
                         %s
-                    </a>
-                </div>
+                    </div>
+                </a>
             </li>
         '; 
 
@@ -146,12 +141,10 @@
             $return_locations .= sprintf(
                 $format_location
                 ,get_permalink($location['location']->ID)
-                ,$location_fields['content']['image']['url']
-                ,get_permalink($location['location']->ID)
-                ,$location_fields['content']['heading']
-                ,_get_social_media($location['location']->ID)
-                ,get_permalink($location['location']->ID)
+                ,(!empty($location_fields['content']['image']['url']) ? '<div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url('.$location_fields['content']['image']['url'].')"></div></div>': '')
+                ,(!empty($location_fields['content']['heading']) ? $location_fields['content']['heading'] : '')
                 ,_get_address($location['location']->ID)
+                //,_get_social_media($location['location']->ID)
             );
         }
         $return_locations .= '</ul></div>';

@@ -163,7 +163,7 @@ Theme.Slick = {
   },
   _testimonials_slider: function _testimonials_slider() {
     (0, _jquery["default"])('#slick_slider_testimonials').slick({
-      autoplay: true,
+      autoplay: false,
       adaptiveHeight: true,
       arrows: true,
       fade: true,

@@ -4336,29 +4336,37 @@ section#banner_popup .popup_close {
     width: 100%;
     margin: 0 auto 30px;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li {
+    border: 3px solid transparent;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li:focus {
+    border: 3px solid #c4c4c4;
+  }
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div {
     padding: 0 20px;
     background-color: #dedddd;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > .location_heading {
     text-transform: uppercase;
     font-weight: 500;
     color: #000;
     font-size: 2.4rem;
     line-height: 3.2rem;
-  }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading > p {
     padding: 20px 0 10px;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > .location_heading:focus {
-    color: #386591;
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > .location_address {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    color: #000;
+    padding: 0 0 20px;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > ul.site__social-media {
     padding: 10px 0;
     display: flex;
     justify-content: center;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > ul.site__social-media > li > a {
     font-size: 2rem;
     line-height: 3.2rem;
     display: inline-block;
@@ -4368,26 +4376,14 @@ section#banner_popup .popup_close {
     color: #000;
     transition: color 0.3s;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a > div.location_social_image {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > ul.site__social-media > li > a > div.location_social_image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     width: 25px;
     height: 25px;
   }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > ul.site__social-media > li > a:focus {
-    color: #386591;
-  }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a {
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    color: #000;
-  }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a > div.location_address {
-    padding: 10px 0 20px;
-  }
-  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > div > a:focus {
+  section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > ul.site__social-media > li > a:hover, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > ul.site__social-media > li > a:active, section#mod_locations section.mod__featured_grid div.container div.site__grid > ul > li > a > div > ul.site__social-media > li > a:focus {
     color: #386591;
   }
 }
@@ -4398,16 +4394,22 @@ section#banner_popup .popup_close {
     border: 3px solid #fff;
     box-shadow: 0px 0px 0px 3px #e2e2e2;
   }
-  #mod_blog .mod__featured_grid .container .site__grid li > a > div {
+  #mod_blog .mod__featured_grid .container .site__grid li:hover, #mod_blog .mod__featured_grid .container .site__grid li:active, #mod_blog .mod__featured_grid .container .site__grid li:focus {
+    box-shadow: 0px 0px 0px 5px #e2e2e2;
+  }
+  #mod_blog .mod__featured_grid .container .site__grid li > a > .image {
+    max-height: 50vw;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    max-height: 50vw;
   }
-  #mod_blog .mod__featured_grid .container .site__grid li > div {
-    padding: 15px 30px;
+  #mod_blog .mod__featured_grid .container .site__grid li > a > div.blog_item_content {
     background-color: #dedede;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
-  #mod_blog .mod__featured_grid .container .site__grid li > div > a > h5 {
+  #mod_blog .mod__featured_grid .container .site__grid li > a > div.blog_item_content > h5 {
+    margin: 0 30px;
+    padding: 15px 0 0;
     font-family: "Gotham", "Helvetica", sans-serif;
     display: block;
     text-decoration: none;
@@ -4419,40 +4421,29 @@ section#banner_popup .popup_close {
     letter-spacing: -1px;
     border-bottom: 4px dotted #fff;
   }
-  #mod_blog .mod__featured_grid .container .site__grid li > div > a > h5:hover, #mod_blog .mod__featured_grid .container .site__grid li > div > a > h5:active, #mod_blog .mod__featured_grid .container .site__grid li > div > a > h5:focus {
-    color: #386591;
-  }
-  #mod_blog .mod__featured_grid .container .site__grid li > div p {
+  #mod_blog .mod__featured_grid .container .site__grid li > a > div.blog_item_content > div.blog_item_excerpt > p {
+    margin: 0 35px 30px;
+    padding: 5px 0 0;
     color: gray;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     text-align: justify;
-    margin: 5px 0 15px;
-    padding: 0 5px;
   }
-  #mod_blog .mod__featured_grid .container .site__grid li > div:last-of-type {
+  #mod_blog .mod__featured_grid .container .site__grid li > a > div.blog_item_content > p.blog_item_read_more {
     background-color: #386591;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 10px;
-  }
-  #mod_blog .mod__featured_grid .container .site__grid li > div:last-of-type a {
     color: #fff;
-    padding: 5px;
     font-size: 2rem;
     line-height: 3.2rem;
     font-weight: 600;
     text-transform: uppercase;
-    display: inline-block;
-    align-items: center;
-  }
-  #mod_blog .mod__featured_grid .container .site__grid li > div:last-of-type a:hover, #mod_blog .mod__featured_grid .container .site__grid li > div:last-of-type a:active, #mod_blog .mod__featured_grid .container .site__grid li > div:last-of-type a:focus {
-    opacity: 0.8;
   }
 }
 @media only screen and (min-width: 640px) {
-  #mod_blog .mod__featured_grid .container .site__grid li > a > div {
+  #mod_blog .mod__featured_grid .container .site__grid li > a > .image {
     max-height: 30vw;
   }
 }
@@ -4462,7 +4453,7 @@ section#banner_popup .popup_close {
   }
 }
 @media only screen and (min-width: 1280px) {
-  #mod_blog .mod__featured_grid .container .site__grid li > a > div {
+  #mod_blog .mod__featured_grid .container .site__grid li > a > .image {
     max-height: 12vw;
   }
 }
@@ -4619,17 +4610,60 @@ section#banner_popup .popup_close {
     border: 3px solid #fff;
     box-shadow: 0px 0px 0px 3px #e2e2e2;
     border-radius: 20px;
+    background-color: #DEDEDE;
   }
   #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li {
-    background-color: #DEDEDE;
-    padding: 30px;
+    border-radius: 20px;
   }
-  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li h3 {
-    margin: 15px 0px;
-    font-size: 1.8rem;
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li.testimonial_image {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li .testimonial_content {
     text-align: left;
-    margin: 0 0 40px;
-    font-family: "Gotham", Helvetica, sans-serif;
+    padding: 15px 30px;
+    min-height: 250px;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li .testimonial_content > div {
+    display: flex;
+    align-items: center;
+    border-bottom: 4px dotted #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    flex-flow: column nowrap;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li .testimonial_content > div > h3 {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-weight: 500;
+    font-family: "Gotham", "Helvetica", sans-serif;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    line-height: 35px;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li .testimonial_content > div > p {
+    text-align: justify;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    margin: 0 10px;
+    line-height: 35px;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li .testimonial_content > div > i {
+    order: -1;
+    margin-left: auto;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li .testimonial_content > p {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: #858585;
+    font-weight: 500;
+    margin-bottom: 10px;
   }
   #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul > .testimonial_prev, #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul > .testimonial_next {
     position: absolute;
@@ -4653,6 +4687,7 @@ section#banner_popup .popup_close {
     right: -60px;
   }
   #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container .block {
+    height: 250px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -4666,11 +4701,30 @@ section#banner_popup .popup_close {
     width: 72vw;
   }
 }
+@media only screen and (min-width: 960px) {
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li.testimonial_image {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container .block {
+    flex: 1 0 50%;
+    height: initial;
+  }
+}
 @media only screen and (min-width: 1280px) {
   #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container {
     width: 59vw;
   }
   #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul {
     width: 40vw;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li > .testimonial_content > div {
+    flex-flow: row nowrap;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container ul li > .testimonial_content > div > i {
+    order: 0;
+  }
+  #mod_testimonials section.mod__testimonials-featuredtestimonial > div.container .block {
+    flex: 1 0 35%;
   }
 }

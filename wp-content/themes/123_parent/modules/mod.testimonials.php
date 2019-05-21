@@ -56,8 +56,11 @@
         $return = '<ul id="slick_slider_testimonials">';
         $format_text = '
             <li class="testimonial_text">
-                <div>
-                    %s
+                <div class="testimonial_content">
+                    <div>
+                        %s
+                        %s
+                    </div>
                     %s
                 </div>
             </li>
@@ -65,8 +68,11 @@
         $format_image = '
             <li class="testimonial_image">
                 %s
-                <div>
-                    %s
+                <div class="testimonial_content">
+                    <div>
+                        %s
+                        %s
+                    </div>
                     %s
                 </div>
             </li>
@@ -74,8 +80,10 @@
         $format_video = '
             <li class="testimonial_video">
                 %s
-                <div>
-                    %s
+                <div class="testimonial_content">
+                    <div class="testimonial_address">
+                        %s
+                    </div>
                     %s
                 </div>
             </li>
@@ -88,8 +96,9 @@
             {
                 $return .= sprintf(
                     $format_text
+                    ,'<h3>Jane Doe</h3>'
+                    ,'<p> - Irvine, CA </p><i class="fas fa-quote-left"></i>'
                     ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
-                    ,(!empty($testimonial['image']) ? '<h3>'.$item['testimonial']->post_title.'</h3>' : '')
                 );
             }
             else if($testimonial['status'] && $testimonial['type'] == 'image')
@@ -97,8 +106,9 @@
                 $return .= sprintf(
                     $format_image
                     ,(!empty($testimonial['image']) ? '<div class="block" style="background-image:url('.$testimonial['image']['url'].');"></div>' : '')
+                    ,'<h3>Jane Doe</h3>'
+                    ,'<p> - Irvine, CA </p><i class="fas fa-quote-left"></i>'
                     ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
-                    ,(!empty($testimonial['image']) ? '<h3>'.$item['testimonial']->post_title.'</h3>' : '')
                 );
             }
             else if($testimonial['status'] && $testimonial['type'] == 'video')
@@ -116,7 +126,6 @@
                     $format_video
                     ,$video_tag
                     ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
-                    ,(!empty($testimonial['image']) ? '<h3>'.$item['testimonial']->post_title.'</h3>' : '')
                 );
             }
         }
