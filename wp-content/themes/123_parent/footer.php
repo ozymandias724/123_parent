@@ -204,9 +204,9 @@
                     %s
                     %s
                     %s
-                    <div class="footer_two_last_div">
+                    <div class="footer_three_last_div">
                         %s
-                        <div class="footer_two_social_media">
+                        <div class="footer_three_social_media">
                             %s
                         </div>
                     </div>
