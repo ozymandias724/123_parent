@@ -24,6 +24,26 @@ $nav4_width : 1025px;
             }
             .site__social-media {
                 height: 68px;
+                //Social icons list items
+                li {
+                    display: inline-block;
+                    //Social icons list items links
+                    a {
+                        font-size: 16px;
+                        display: inline-block;
+                        padding: 0 10px;
+                        text-align: center;
+                        color: $white;
+                        transition: color 0.3s;
+                        line-height: 68px;
+                        //Social icons list items links actions on hover, active and focus 
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: getVar($colors, primary);
+                        }
+                    }
+                }
             }
             //Social icons underordered list and phone number section
             .site__social-media, 
@@ -31,26 +51,6 @@ $nav4_width : 1025px;
                 flex: 0 1 auto;
                 font-size: 1.6rem;
 
-            }
-            //Social icons list items
-            .site__social-media li {
-                display: inline-block;
-            }
-            //Social icons list items links
-            .site__social-media li a {
-                font-size: 16px;
-                display: inline-block;
-                padding: 0 10px;
-                text-align: center;
-                color: $white;
-                transition: color 0.3s;
-                line-height: 68px;
-            }
-            //Social icons list items links actions on hover, active and focus 
-            .site__social-media li a:hover,
-            .site__social-media li a:active,
-            .site__social-media li a:focus {
-                color: getVar($colors, primary);
             }
             //Phone number link
             > .site__iconlink-phone {
@@ -68,12 +68,12 @@ $nav4_width : 1025px;
                     margin-right: 10px;
                     transform: rotate(90deg);
                 }
-            }
-            //Phone number link actions on hover, active and focus
-            > .site__iconlink-phone:hover,
-            > .site__iconlink-phone:active,
-            > .site__iconlink-phone:focus {
-                opacity: 0.8;
+                //Phone number link actions on hover, active and focus
+                &:hover,
+                &:active,
+                &:focus {
+                    opacity: 0.8;
+                }
             }
         }
         // Nav bar
@@ -89,59 +89,58 @@ $nav4_width : 1025px;
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: center;
-            }
-            //Navigational menu list items
-            .navlinks-item {
-                flex: 0 1 auto;
-                display: inline-block;
-                vertical-align: middle;
-            }
-            //Navigational menu list items links 
-            .navlinks-item-link {
-                text-decoration: none;
-                color: $nav_4_menu_text;
-                text-transform: uppercase;
-                padding: 0px; 
-                font-size: 14px;
-                line-height: 56px;
-                letter-spacing: 1px;
-                opacity: 1;
-                display: inline-block;
-                margin-right: 20px; 
-                font-weight: 500;
-            }
-            .navlinks-item:last-of-type {
-                margin-right: 0;
-            }
-            //Navigational menu list items links actions on hover, active and focus
-            .navlinks-item-link:hover,
-            .navlinks-item-link:active,
-            .navlinks-item-link:focus,
-            .active_menu_link {
-                opacity: 0.8;
-            }
-            //Shapes before and after the navigational menu
-            .navlinks-item:before,
-            .navlinks-item:after {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: -30px;
-                width: 50px;
-                height: 100%;
-                flex: 1 0 auto;
-                top: 0;
-                background-color: getVar($colors, primary);
-                transform: skewX(37deg);
-                z-index: -1;
-            }
-            //Shape after the navigational menu
-            .navlinks-item:after {
-                transform: skewX(-37deg);
-                left: auto;
-                right: -30px;
-            }
+                //Navigational menu list items
+                .navlinks-item {
+                    flex: 0 1 auto;
+                    display: inline-block;
+                    vertical-align: middle;
+                    //Navigational menu list items links 
+                    .navlinks-item-link {
+                        text-decoration: none;
+                        color: $nav_4_menu_text;
+                        text-transform: uppercase;
+                        padding: 0px; 
+                        font-size: 14px;
+                        line-height: 56px;
+                        letter-spacing: 1px;
+                        opacity: 1;
+                        display: inline-block;
+                        margin-right: 20px; 
+                        font-weight: 500;
+                        //Navigational menu list items links actions on hover, active and focus
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            opacity: 0.8;
+                        }
+                    }
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                    //Shapes before and after the navigational menu
+                    &:before,
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: -30px;
+                        width: 50px;
+                        height: 100%;
+                        flex: 1 0 auto;
+                        top: 0;
+                        background-color: getVar($colors, primary);
+                        transform: skewX(37deg);
+                        z-index: -1;
+                    }
+                    //Shape after the navigational menu
+                    &:after {
+                        transform: skewX(-37deg);
+                        left: auto;
+                        right: -30px;
+                    }
+                }
+            } 
         }
     }
 }

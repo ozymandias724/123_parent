@@ -32,34 +32,34 @@ $nav2_width : 1050px;
                 display: flex;
                 flex-flow: column nowrap;
                 align-items: flex-end;
-            }
-            //Phone number link
-            > div > a {
-                display: inline-block;
-                text-align: right;
-                font-size: 24px;
-                padding: 0 5px;
-                letter-spacing: 0.5px;
-                margin-right: -10px;
-                color: $nav_2_top_bar_phone;
-                margin-bottom: 5px;
-                //Phone number link icon
-                > i {
-                    display: none;
+                //Phone number link
+                > a {
+                    display: inline-block;
+                    text-align: right;
+                    font-size: 24px;
+                    padding: 0 5px;
+                    letter-spacing: 0.5px;
+                    margin-right: -10px;
+                    color: $nav_2_top_bar_phone;
+                    margin-bottom: 5px;
+                    //Phone number link icon
+                    > i {
+                        display: none;
+                    }
                 }
-            }
-            //Menu items navigation element
-            > div > nav {
-                margin-right: -10px;
-            }
-            //Menu items unordered list items links
-            .navlinks-item-link {
-                font-size: 14px;
-                padding: 0 5px;
-                color: $nav_2_menu_text;
-                display: inline-block;
-                text-transform: uppercase;
-                margin-right: 0px;
+                //Menu items navigation element
+                > nav {
+                    margin-right: -10px;
+                    //Menu items unordered list items links
+                    .navlinks-item-link {
+                        font-size: 14px;
+                        padding: 0 5px;
+                        color: $nav_2_menu_text;
+                        display: inline-block;
+                        text-transform: uppercase;
+                        margin-right: 0px;
+                    }
+                }
             }
             //Quote button link
             .site__button-quote {
@@ -76,19 +76,21 @@ $nav2_width : 1050px;
                 margin: 0 0 0 15px;
             }
         }
-        //Phone number
-        > div > div > a,
-        //Nav bar
-        > div > div > nav > ul > li > a,
-        //Quote button link
-        > div > a:last-of-type {
-            transition: opacity 0.3s;
-            //Actions on hover, focus and active of selected elements links above
-            &:hover,
-            &:focus,
-            &:active,
-            .active_menu_link {
-                opacity: 0.8;
+        > div {
+            //Phone number
+            > div > a,
+            //Nav bar
+            > div > nav > ul > li > a,
+            //Quote button link
+            > a:last-of-type {
+                transition: opacity 0.3s;
+                //Actions on hover, focus and active of selected elements links above
+                &:hover,
+                &:focus,
+                &:active,
+                .active_menu_link {
+                    opacity: 0.8;
+                }
             }
         }
     }

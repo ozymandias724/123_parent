@@ -565,6 +565,7 @@ Theme.Menu = {
 
     _init: function () {
         Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
+        
     },
     _tab_link_click: function (e) {
         var menu_name = e.target.dataset.tab;
@@ -581,6 +582,7 @@ Theme.Menu = {
         $(this).addClass("active_menu_link");
         $(this).parent().addClass("active_menu_header");
     },
+    
 }
 Theme.Menu._init();
 
