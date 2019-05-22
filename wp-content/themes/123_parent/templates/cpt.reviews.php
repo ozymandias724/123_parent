@@ -1,56 +1,10 @@
 <?php 
 /**
- * Template Name: Testimonials
+ * Template Name: Testimonial
+ * Template Post Type: testimonials
  */
-$args_posts = array(
-    'posts_per_page' => -1
-    ,'post_type' => 'testimonials'
-);
 
-$res1 = get_posts($args_posts);
-
-$args_page = array(
-    'posts_per_page' => 1
-    ,'post_type' => 'page'
-    ,'pagename' => 'testimonials'
-);
-
-$res2 = get_posts($args_page);
-
-$fields = get_fields($res2[0]);
-
-function _get_testimonials($fields, $res)
-{
-    $format = '
-        <section class="mod__testimonials-featuredtestimonial mod__featured_grid">
-            <div class="container">
-                %s
-                %s
-            </div>
-        </section>
-    ';
-    $return = sprintf(
-        $format
-        ,_get_header($fields)
-        ,_get_body($fields, $res)
-    );
-    return $return;
-}
-
-function _get_header($fields)
-{
-    $heading = (!empty($fields['featured_testimonials']['heading']) ? $fields['featured_testimonials']['heading'] : '');
-    $details = (!empty($fields['featured_testimonials']['details']) ? $fields['featured_testimonials']['details'] : '');
-    $format = '<h2>%s</h2><div>%s</div>';
-    $return = sprintf(
-        $format
-        ,$heading
-        ,$details
-    );
-    return $return;
-}
-
-function _get_body($fields, $res)
+function _get_testimonial($fields)
 {
     $return = '<div class="site__grid"><ul>';
     $format_text = '
@@ -88,9 +42,7 @@ function _get_body($fields, $res)
         </li>
     ';
     
-    foreach($res as $i => $item)
-    {
-        $testimonial = get_fields($item->ID);
+        $testimonial = get_fields($post->ID);
         
         if($testimonial['status'] && $testimonial['type'] == 'text')
         {
@@ -128,19 +80,14 @@ function _get_body($fields, $res)
                 ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
             );
         }
-    }
     $return .= '</ul></div>';
     return $return;
 }
-
-?>
-<?php
     get_header();
-    get_hero();
 ?>
-<main class="page__template testimonials_page_template">
+<main class="single__template testimonial__single__template site__fade site__fade-up">
 <?php
-    echo _get_testimonials($fields, $res1);
+    echo _get_testimonial($fields);
 ?>
 <?php 
     get_footer();
