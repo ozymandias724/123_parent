@@ -1,0 +1,63 @@
+@media only screen {
+    main.page__template.locations__page__template {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        div.container {
+            div.site__grid {
+                > ul {
+                    > li {
+                        border: 3px solid transparent;
+                        &:hover, &:active, &:focus {
+                            border: 3px solid #c4c4c4;
+                        }
+                        > a {
+                            > div {
+                                padding: 0 20px;
+                                background-color: #dedddd;
+                                > .location_heading {
+                                    text-transform: uppercase;
+                                    font-weight: 500;
+                                    color: $black;
+                                    @include fontS-24;
+                                    padding: 20px 0 10px;
+                                }
+                                > .location_address {
+                                    font-weight: 500;
+                                    @include fontS-20;
+                                    color: $black;
+                                    padding: 0 0 20px;
+                                }
+                                > ul.site__social-media {
+                                    padding: 10px 0;
+                                    display: flex;
+                                    justify-content: center;
+                                    > li {
+                                        > a {
+                                            @include fontS-20;
+                                            display: inline-block;
+                                            line-height: 0;
+                                            padding: 0 10px;
+                                            text-align: center;
+                                            color: $black;
+                                            transition: color 0.3s; 
+                                            > div.location_social_image {
+                                                background-repeat: no-repeat;
+                                                background-size: cover;
+                                                background-position: center center;
+                                                width: 25px;
+                                                height: 25px;
+                                            }
+                                            &:hover, &:active, &:focus {
+                                                color: $accent;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

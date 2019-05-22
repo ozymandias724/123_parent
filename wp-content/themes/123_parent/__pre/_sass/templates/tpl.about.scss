@@ -1,0 +1,25 @@
+@media only screen {
+    main.page__template.about__page__template {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        .container {
+            .site__grid {
+                >ul {
+                    >li {
+                        a {
+                            h5 {
+                                text-align: center;
+                                font-size: 2rem;
+                                margin: 10px 0;
+                                color: $black;
+                                &:hover, &:active, &:focus {
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ $fields = get_fields($post->ID);
 function _get_coupon($fields){
 
     $format_coupon = '
-        <div class="site__fade site__fade-up">
+        <div class="container site__fade site__fade-up">
             <div>
                 <h5>%s</h5>
                 <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
