@@ -70,7 +70,8 @@
 
     get_header();
  ?>
-<main class="page__template about__page__template">
+<main id="page_about">
+<?php include( get_template_directory() . '/parts/part.hero.php');   ?>
    <div class="container">
 <?php
    echo $return_company;

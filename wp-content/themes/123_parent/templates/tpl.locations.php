@@ -160,7 +160,8 @@
 
     get_header();
  ?>
-<main class="page__template locations__page__template">
+<main id="page_locations">
+<?php include( get_template_directory() . '/parts/part.hero.php'); ?>
 <?php 
    echo $return_locations;
 ?>

@@ -33,7 +33,7 @@ function _get_coupon($fields){
 <?php
     get_header();
 ?>
-<main class="single__template coupon__single__template">
+<main id="single_coupon">
 <?php
     echo _get_coupon($fields);
 ?>

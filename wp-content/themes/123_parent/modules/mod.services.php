@@ -51,9 +51,9 @@
                 $return_services .= sprintf(
                     $format_service
                     ,get_permalink($service['service']->ID)
-                    ,$service_fields['image']['url']
+                    ,(!empty($service_fields['image']['url']) ? $service_fields['image']['url'] : '')
                     ,$service['service']->post_title 
-                    ,$service_fields['details']
+                    ,(!empty($service_fields['details']) ? $service_fields['details'] : '')
                     ,(!empty($service_fields['price']) ? '$'.$service_fields['price'] : '')
                 );
             }

@@ -67,9 +67,9 @@ if( !empty($fields['featured_coupons']['coupons']) ){
 ?>
 <?php
     get_header();
-    get_hero();
 ?>
-<main class="page__template coupon_page_template">
+<main class="page__template coupons__page__template">
+<?php include( get_template_directory() . '/parts/part.hero.php');   ?>
 <?php
     echo $return_coupons;
 ?>

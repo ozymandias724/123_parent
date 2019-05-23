@@ -8,9 +8,11 @@
 
     if( $fields['status'] ){
         $format_staff = '
-            <li>
-                <div class="image site__bgimg site__bgimg--zoom site__bgimg--gradient"><div style="background-image: url(%s)" class="site__bgimg_img"></div></div>
-            </li>
+            <ul>    
+                <li>
+                    <div class="image site__bgimg site__bgimg--zoom site__bgimg--gradient"><div style="background-image: url(%s)" class="site__bgimg_img"></div></div>
+                </li>
+            </ul>
             <div>
                 <h5>%s</h5>
                 %s
@@ -29,10 +31,8 @@
     $return = '
         <section class="mod__featured_grid">
             <div class="container">
-                <div class="site__grid">
-                    <ul>
-                        '.$return_staff.'
-                    </ul>
+                <div class="site__grid site__fade site__fade-up">
+                    '.$return_staff.'
                 </div>
             </div>
         </section>
@@ -40,7 +40,7 @@
 
     get_header();
 ?>
-<main class="single__template staff__single__template">
+<main id="single_about">
 <?php 
     echo $return;
     get_footer();

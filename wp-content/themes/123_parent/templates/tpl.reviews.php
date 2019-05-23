@@ -136,9 +136,9 @@
 ?>
 <?php
     get_header();
-    get_hero();
 ?>
-<main class="page__template testimonials_page_template">
+<main id="page_reviews">
+<?php include( get_template_directory() . '/parts/part.hero.php');   ?>
 <?php
     echo _get_testimonials($fields, $res1);
 ?>
