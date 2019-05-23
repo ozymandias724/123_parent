@@ -16,7 +16,7 @@
                 display: flex;
                 flex-flow: column nowrap;
                 align-items: center;
-                justify-content: center;
+                justify-content: center; 
                 h5 {
                     color: $black;
                     font-family: "Gotham", Helvetica, sans-serif;
@@ -50,6 +50,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    main.single__template.coupon__single__template {
+        > div {
+            width: 40vw; 
         }
     }
 }

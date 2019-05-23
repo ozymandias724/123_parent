@@ -4811,62 +4811,14 @@ section#banner_popup .popup_close {
     font-weight: 600;
   }
 }
-@media only screen {
-  main.single__template.coupon__single__template {
-    padding-top: 150px;
-    padding-bottom: 166px;
-  }
+@media only screen and (min-width: 1280px) {
   main.single__template.coupon__single__template > div {
-    width: 65vw;
-    padding: 10px;
-    margin: 0 auto;
-    background-color: #DEDEDE;
-    border-radius: 20px;
-    border: 3px solid transparent;
+    width: 40vw;
   }
-  main.single__template.coupon__single__template > div > div {
-    padding: 20px;
-    border-radius: 20px;
-    border: 6px dashed #fff;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-  }
-  main.single__template.coupon__single__template > div > div h5 {
-    color: #000;
-    font-family: "Gotham", Helvetica, sans-serif;
-    margin: 10px 0 10px;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
-    font-weight: 600;
-  }
-  main.single__template.coupon__single__template > div > div .coupon_description {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    color: #a6a6a6;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  main.single__template.coupon__single__template > div > div .coupon_expiration {
-    color: #000;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    margin: 10px 0;
-    font-weight: 500;
-  }
-  main.single__template.coupon__single__template > div > div .coupon_code {
-    background: #fff;
-    padding: 0 25px;
-    margin: 10px 0;
-    border-radius: 20px;
-    font-weight: 700;
-    line-height: 40px;
-    color: black;
-  }
-  main.single__template.coupon__single__template > div > div .coupon_code > span {
-    text-transform: uppercase;
-    font-weight: 600;
+}
+@media only screen {
+  main.single__template.staff__single__template {
+    padding-top: 150px;
   }
 }
 @media only screen {
@@ -4931,8 +4883,7 @@ section#banner_popup .popup_close {
 }
 @media only screen {
   main.page__template.about__page__template {
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding-top: 100px;
   }
   main.page__template.about__page__template .container .site__grid > ul > li a h5 {
     text-align: center;
