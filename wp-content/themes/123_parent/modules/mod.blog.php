@@ -69,8 +69,6 @@
             </section>
         ';
     }
-
-    
     
  ?>
 <section id="mod_blog">

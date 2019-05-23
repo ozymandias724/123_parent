@@ -1,7 +1,8 @@
 @media only screen {
-    #mod_blog {
+    main#page_blog {
         .mod__featured_grid {
             .container {
+                margin: 60px auto;
                 $w: getVar($sizing, content, full);
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, normal);
@@ -67,7 +68,7 @@
 }
 
 @media only screen and (min-width: 640px) {
-    #mod_blog {
+    main#page_blog {
         .mod__featured_grid {
             .container {
                 $w: getVar($sizing, content, large);
@@ -89,7 +90,7 @@
 }
 
 @media only screen and (min-width: 960px) {
-    #mod_blog {
+    main#page_blog {
         .mod__featured_grid {
             .container {
                 $w: getVar($sizing, content, large);
@@ -111,7 +112,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-    #mod_blog {
+    main#page_blog {
         .mod__featured_grid {
             .container {
                 $w: getVar($sizing, content, medium);

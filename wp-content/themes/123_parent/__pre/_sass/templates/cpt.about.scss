@@ -11,6 +11,19 @@
                             transform: translateX(-50%);
                         }
                     }
+                    > div {
+                        > h3 {
+                            text-align: center;
+                            margin: 0 auto 30px auto;
+                            font-weight: 900;
+                            text-transform: uppercase; 
+                        }
+                        > p {
+                            font-weight: 500;
+                            @include fontS-14;
+                            text-align: justify;
+                        }
+                    }
                 }
             }
         }

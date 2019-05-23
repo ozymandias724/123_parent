@@ -1,0 +1,97 @@
+@media only screen {
+    main#single_blog {
+        section.mod__featured_grid {
+            div.container {
+                padding-top: 150px;
+                div.site__fade {
+                    div.image {
+                        $w: getVar($sizing, content, full);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        width: $w;
+                        height: (colWidth($w, $c, $g) / 1.6);
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }
+                    div.post__content {
+                        text-align: left;
+                        >h2 {
+                            color: $black;
+                            font-family: "Gotham", "Helvetica", sans-serif;
+                        }
+                        >.post__date{
+                            margin-bottom: 20px;
+                            font-weight: 500;
+                            @include fontS-16;
+                            text-align: justify;
+                        }
+                        >.post__details > p {
+                            font-weight: 500;
+                            @include fontS-16;
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    main#single_blog {
+        section.mod__featured_grid {
+            div.container {
+                div.site__fade {
+                    div.image {
+                        $w: 70vw;
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        width: $w;
+                        height: (colWidth($w, $c, $g) / 1.6);            
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    main#single_blog {
+        section.mod__featured_grid {
+            div.container {
+                div.site__fade {
+                    div.image {
+                        $w: getVar($sizing, content, small);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        width: $w;
+                        height: (colWidth($w, $c, $g) / 1.6);            
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    main#single_blog {
+        section.mod__featured_grid {
+            div.container {
+                div.site__fade {
+                    div.image {
+                        $w: 40vw;
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        width: $w;
+                        height: (colWidth($w, $c, $g) / 1.6);            
+                    }
+                }
+            }
+        }
+    }
+}
