@@ -51,16 +51,12 @@
     $format = '
         <section class="mod__featured_grid">
             <div class="container">
-                <div class="site__grid">
-                    <ul>
-                        <li class="site__fade site__fade-up">
-                            %s
-                            <div class="location_content">
-                                <p class="location_heading">%s</p>
-                                %s
-                            </div>
-                        </li>
-                    </ul>
+                <div class="site__fade site__fade-up">
+                    %s
+                    <div class="location_content">
+                        <p class="location_heading">%s</p>
+                        %s
+                    </div>
                 </div>
             </div>
         </section>
@@ -68,7 +64,7 @@
 
     $return = sprintf(
         $format
-        ,(!empty($fields['content']['image']['url']) ? '<div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url('.$fields['content']['image']['url'].')"></div></div>': '')
+        ,(!empty($fields['content']['image']['url']) ? '<div class="site__bgimg block"><div class="site__bgimg_img" style="background-image: url('.$fields['content']['image']['url'].')"></div></div>': '')
         ,(!empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
         ,_get_address($post->ID)
     );

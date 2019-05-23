@@ -34,14 +34,16 @@
       ';
       
       $format_service = '
-          <li>
+         <li class="site__fade site__fade-up">
+            <a href="%s">
                <div><div class="block" style="background-image:url(%s);"></div></div>
                <div>
                   <h5>%s</h5>
                   %s
                   <p class="service_price">%s</p>
                </div>
-          </li>
+            </a>
+         </li>
       ';
 
       foreach( $res1 as $i => $service ){
@@ -51,6 +53,7 @@
           if( $service_fields['status'] ){ 
               $return_services .= sprintf(
                   $format_service
+                  ,get_permalink($service->ID)
                   ,(!empty($service_fields['image']['url']) ? $service_fields['image']['url'] : '')
                   ,$service->post_title 
                   ,(!empty($service_fields['details']) ? $service_fields['details'] : '')
