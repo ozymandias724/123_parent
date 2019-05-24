@@ -110,18 +110,38 @@
                 %s
             </section>
         ';
-        if($footer_style == 'two')
+        if($footer_style == 'one')
         {
             $format = '
-            <section id="footer_company_info">
-                %s
-                %s
-                %s
-                %s
-                %s
-                %s
-            </section>
-        ';
+                <section id="footer_company_info">
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </section>
+            ';
+            $company_info = sprintf(
+                $format
+                ,$logo
+                ,$phone_number_1
+                ,$phone_number_2
+                ,$address
+                ,$social_icons
+            );
+        }
+        else if($footer_style == 'two')
+        {
+            $format = '
+                <section id="footer_company_info">
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </section>
+            ';
             $company_info = sprintf(
                 $format
                 ,$logo
@@ -177,7 +197,30 @@
     function _get_footer_content()
     {
         $footer_style = get_field('footer', 'options')['style'];
-        if($footer_style == 'two')
+        if($footer_style == 'one')
+        {
+            $format_footer_content = '
+                <div class="container">
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
+                <div class="container footer_one_copyright">
+                    %s
+                </div>
+            ';
+
+            $return = sprintf(
+                $format_footer_content
+                ,_get_company_info()
+                ,_get_nav()
+                ,_get_payment_types() 
+                ,_get_badges()
+                ,_get_copyright_banner()
+            );
+        }
+        else if($footer_style == 'two')
         {
             $format_footer_content = '
                 <div class="container">
@@ -193,7 +236,7 @@
                 ,_get_company_info()
                 ,_get_copyright_banner()
                 ,_get_badges()
-                ,_get_payment_types()
+                ,_get_payment_types() 
             );
 
         }

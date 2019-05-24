@@ -1,6 +1,8 @@
 @media only screen {
     // COMMON FOOTER DESIGNS SCSS
-    footer#footer_two, footer#footer_three {
+    footer#footer_one, 
+    footer#footer_two,
+    footer#footer_three {
         background-color: $accent;
         > div.container {
             margin: 0 auto;
@@ -132,7 +134,9 @@
     }
     // FOOTER 1
     footer#footer_one { 
-
+        > div.container {
+            flex-flow: row nowrap;
+        }
     }
     // FOOTER 2
     footer#footer_two {
