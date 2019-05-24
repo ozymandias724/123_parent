@@ -111,7 +111,7 @@
         {
             case 'menu_photo_list':
             $format_item = '
-                <li class="menu_item">
+                <li class="menu_item site__fade site__fade-up">
                     %s
                     <div>
                         <h3>%s</h3>
@@ -254,7 +254,7 @@
     $format_menu = '
         <section id="mod_menu">
             %s
-            <div id="tabs_%s">
+            <div id="tabs_%s" class="site__fade site__fade-up">
                 %s
                 %s
             </div>

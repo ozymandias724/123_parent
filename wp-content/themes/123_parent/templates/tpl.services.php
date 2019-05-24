@@ -22,8 +22,8 @@
 
    if( !empty($fields['featured_services']['services']) ){
 
-      $heading = ( !empty( $fields['featured_services']['heading'] ) ? '<h2>'.$fields['featured_services']['heading'].'</h2>' : '');
-      $details = ( !empty( $fields['featured_services']['details'] ) ? '<div>'.$fields['featured_services']['details'].'</div>' : '');
+      $heading = ( !empty( $fields['featured_services']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['featured_services']['heading'].'</h2>' : '');
+      $details = ( !empty( $fields['featured_services']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['featured_services']['details'].'</div>' : '');
       
       $return_services = '
           <section class="mod__services-featuredservice mod__featured_grid">

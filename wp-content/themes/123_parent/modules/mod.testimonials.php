@@ -34,7 +34,7 @@
             $format
             ,_get_header($fields)
             ,_get_body($fields)
-            ,'<a href="'.get_permalink($res).'" title="View all Testimonials" class="site__button">View All Testimonials</a>'
+            ,'<a href="'.get_permalink($res).'" title="View all Testimonials" class="site__button site__fade site__fade-up">View All Testimonials</a>'
         );
         return $return;
     }
@@ -43,7 +43,7 @@
     {
         $heading = (!empty($fields['featured_testimonials']['heading']) ? $fields['featured_testimonials']['heading'] : '');
         $details = (!empty($fields['featured_testimonials']['details']) ? $fields['featured_testimonials']['details'] : '');
-        $format = '<h2>%s</h2><div>%s</div>';
+        $format = '<h2 class="site__fade site__fade-up">%s</h2><div class="site__fade site__fade-up">%s</div>';
         $return = sprintf(
             $format
             ,$heading
@@ -53,7 +53,7 @@
     }
     function _get_body($fields)
     {
-        $return = '<ul id="slick_slider_testimonials">';
+        $return = '<ul id="slick_slider_testimonials" class="site__fade site__fade-up">';
         $format_text = '
             <li class="testimonial_text">
                 <div class="testimonial_content">

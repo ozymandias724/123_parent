@@ -41,7 +41,7 @@
     {
         $heading = (!empty($fields['featured_testimonials']['heading']) ? $fields['featured_testimonials']['heading'] : '');
         $details = (!empty($fields['featured_testimonials']['details']) ? $fields['featured_testimonials']['details'] : '');
-        $format = '<h2>%s</h2><div>%s</div>';
+        $format = '<h2 class="site__fade site__fade-up">%s</h2><div class="site__fade site__fade-up">%s</div>';
         $return = sprintf(
             $format
             ,$heading
@@ -52,7 +52,7 @@
 
     function _get_body($fields, $res)
     {
-        $return = '<div class="site__grid"><ul>';
+        $return = '<div class="site__grid"><ul class="site__fade site__fade-up">';
         $format_text = '
             <li class="testimonial_text">
                 <div class="testimonial_content">

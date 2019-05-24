@@ -24,7 +24,7 @@
    if( !empty($res1) ){
       $return_staff = '';
       $format_staff = '
-          <li>
+          <li class="site__fade site__fade-up">
               <a href="%s">
                   <div class="image site__bgimg site__bgimg--zoom site__bgimg--gradient"><div style="background-image: url(%s)" class="site__bgimg_img"></div></div>
                   <h5>%s</h5>
@@ -52,8 +52,8 @@
   // company bio
   if( !empty($fields['company_bio']) ){
 
-      $heading = ( !empty( $fields['company_bio']['heading'] ) ? '<h2>'.$fields['company_bio']['heading'].'</h2>' : '');
-      $details = ( !empty( $fields['company_bio']['details'] ) ? '<div>'.$fields['company_bio']['details'].'</div>' : '');
+      $heading = ( !empty( $fields['company_bio']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['company_bio']['heading'].'</h2>' : '');
+      $details = ( !empty( $fields['company_bio']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['company_bio']['details'].'</div>' : '');
       $return_company = '';
       $return_company = '
           <section class="mod__featured_grid">

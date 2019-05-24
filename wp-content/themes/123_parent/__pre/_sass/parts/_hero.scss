@@ -10,7 +10,7 @@
             transform: translate(-50%, -50%);
             top: 50%; 
             left: 50%;
-            width: 100%;
+            width: getVar($sizing, content, full);
             //Title
             h2 {
                 font-size: 50px;
@@ -96,13 +96,23 @@
     }
 }
 
-@media only screen and (min-width: 768px){
-    //Title
-    section.hero .hero_foreground > h2 {
-        font-size: 65px;
+
+@media only screen and (min-width: 960px){
+    section.hero .hero_foreground {
+        width: getVar($sizing, content, large);
+        //Title
+        > h2 {
+            font-size: 65px;
+        }
+        //Subtitle
+        > p {
+            font-size: 32px;
+        }
     }
-    //Subtitle
-    section.hero .hero_foreground > p {
-        font-size: 32px;
+}
+
+@media only screen and (min-width: 1280px){
+    section.hero .hero_foreground {
+        width: getVar($sizing, content, medium);
     }
 }

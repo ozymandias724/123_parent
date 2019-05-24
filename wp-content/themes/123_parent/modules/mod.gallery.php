@@ -103,7 +103,7 @@
             foreach($row['images'] as $image){
                 $image = (!empty($image['url'])) ? $image['url'] : '';
                 $content .= '
-                    <li class="gallery_item">
+                    <li class="gallery_item site__fade site__fade-up">
                         <div class="gallery_image block" style="background-image:url(' . $image . ');"></div>
                     </li>'; 
             }

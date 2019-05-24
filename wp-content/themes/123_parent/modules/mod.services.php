@@ -19,8 +19,8 @@
 
     if( !empty($fields['featured_services']['services']) ){
 
-        $heading = ( !empty( $fields['featured_services']['heading'] ) ? '<h2>'.$fields['featured_services']['heading'].'</h2>' : '');
-        $details = ( !empty( $fields['featured_services']['details'] ) ? '<div>'.$fields['featured_services']['details'].'</div>' : '');
+        $heading = ( !empty( $fields['featured_services']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['featured_services']['heading'].'</h2>' : '');
+        $details = ( !empty( $fields['featured_services']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['featured_services']['details'].'</div>' : '');
         
         $return_services = '
             <section class="mod__services-featuredservice mod__featured_grid">
@@ -31,7 +31,7 @@
         ';
         
         $format_service = '
-            <li>
+            <li class="site__fade site__fade-up">
                 <a href="%s">
                     <div><div class="block" style="background-image:url(%s);"></div></div>
                     <div>
@@ -61,7 +61,7 @@
         $return_services .= '</ul></div>';
 
         $return_services .= '
-            <a href="'.get_permalink($res[0]->ID).'" title="View all services" class="site__button">View All Services</a>
+            <a href="'.get_permalink($res[0]->ID).'" title="View all services" class="site__button site__fade site__fade-up">View All Services</a>
             </div>
             </section>
         ';

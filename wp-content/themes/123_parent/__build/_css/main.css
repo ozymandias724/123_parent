@@ -3040,7 +3040,7 @@ footer#footer_one div.container div.site__copyright_banner {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    width: 100%;
+    width: 92vw;
   }
   section.hero .hero_foreground h2 {
     font-size: 50px;
@@ -3114,13 +3114,20 @@ section.hero .hero_foreground a:active {
     transform: translate(-50%, -50%);
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
+  section.hero .hero_foreground {
+    width: 80vw;
+  }
   section.hero .hero_foreground > h2 {
     font-size: 65px;
   }
-
   section.hero .hero_foreground > p {
     font-size: 32px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  section.hero .hero_foreground {
+    width: 65vw;
   }
 }
 @media only screen {
