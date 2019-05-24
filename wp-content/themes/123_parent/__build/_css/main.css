@@ -2671,8 +2671,8 @@ footer#footer_three > div.container #footer_nav .navlinks .navlinks-item-link {
     text-transform: uppercase;
     color: #fff;
     font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
     margin: 0 15px;
     padding: 10px 0;
   }
@@ -2739,7 +2739,8 @@ footer#footer_three > div.container .footer_address {
     display: block;
     color: #fff;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     padding: 5px;
   }
   footer#footer_one > div.container .footer_address:hover, footer#footer_one > div.container .footer_address:active, footer#footer_one > div.container .footer_address:focus,
@@ -2757,7 +2758,8 @@ footer#footer_three > div.container a[class^=footer_phone] {
     display: block;
     color: #fff;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     margin-right: 15px;
     padding: 5px;
   }
@@ -2814,7 +2816,86 @@ footer#footer_three > div.container .footer_payment_types > ul > li:last-of-type
   }
 
   footer#footer_one > div.container {
-    flex-flow: row nowrap;
+    width: 65vw;
+    flex-flow: column nowrap;
+  }
+  footer#footer_one > div.container section,
+footer#footer_one > div.container .site__copyright_banner {
+    margin-bottom: 30px;
+  }
+  footer#footer_one > div.container #footer_company_info {
+    text-align: center;
+  }
+  footer#footer_one > div.container #footer_company_info .footer_phone_1,
+footer#footer_one > div.container #footer_company_info .footer_phone_2,
+footer#footer_one > div.container #footer_company_info .footer_address {
+    font-size: 2rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+  }
+  footer#footer_one > div.container #footer_company_info .site__social-media {
+    margin: 30px 0 10px;
+    justify-content: center;
+  }
+  footer#footer_one > div.container #footer_company_info .site__social-media li {
+    margin-right: 0;
+  }
+  footer#footer_one > div.container #footer_company_info .site__social-media li a {
+    padding: 5px;
+  }
+  footer#footer_one > div.container #footer_company_info .site__social-media li a i {
+    font-size: 16px;
+    color: #386591;
+    background-color: white;
+    padding: 10px 12px;
+    border-radius: 100%;
+  }
+  footer#footer_one > div.container #footer_nav .navlinks {
+    flex-flow: column wrap;
+    max-height: 250px;
+  }
+  footer#footer_one > div.container #footer_nav .navlinks .navlinks-item .navlinks-item-link {
+    text-transform: initial;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    line-height: 40px;
+    margin: 0;
+    font-weight: 500;
+  }
+  footer#footer_one > div.container #footer_nav .navlinks .navlinks-item .navlinks-item-link:after {
+    display: none;
+  }
+  footer#footer_one > div.container section.footer_payment_types ul,
+footer#footer_one > div.container section.footer_badges ul {
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 200px;
+    align-items: inherit;
+  }
+  footer#footer_one > div.container section.footer_payment_types ul > li,
+footer#footer_one > div.container section.footer_badges ul > li {
+    display: initial;
+  }
+  footer#footer_one > div.container section.footer_payment_types ul > li img,
+footer#footer_one > div.container section.footer_badges ul > li img {
+    max-width: 70px;
+    max-height: 70px;
+    margin: 10px 0;
+  }
+  footer#footer_one > div.container section.footer_payment_types h3.payment_title,
+footer#footer_one > div.container section.footer_badges h3.payment_title {
+    margin-top: 10px;
+  }
+  footer#footer_one > div.container h3 {
+    border-bottom: 2px solid white;
+    color: #fff;
+    padding: 3px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  footer#footer_one > div.container div.site__copyright_banner {
+    text-align: center;
+    margin-top: 10px;
   }
 
   footer#footer_two {
@@ -2884,6 +2965,27 @@ footer#footer_three > div.container .footer_three_social_media {
     letter-spacing: 0.5px;
   }
 }
+@media only screen and (min-width: 960px) {
+  footer#footer_one div.container {
+    flex-flow: row wrap;
+  }
+  footer#footer_one div.container #footer_company_info, footer#footer_one div.container .footer_badges {
+    flex: 1 0 100%;
+  }
+  footer#footer_one div.container section#footer_nav_section {
+    margin-right: 20px;
+  }
+  footer#footer_one div.container .footer_payment_types {
+    margin-top: -10px;
+  }
+  footer#footer_one div.container section#footer_nav_section,
+footer#footer_one div.container .footer_payment_types {
+    flex: 1 0 45%;
+  }
+  footer#footer_one div.container div.site__copyright_banner {
+    margin: 10px auto 30px auto;
+  }
+}
 @media only screen and (min-width: 1280px) {
   footer > div.container {
     padding: 0;
@@ -2895,6 +2997,36 @@ footer > div.container a[class^=footer_phone] {
   }
   footer > div.container .site__social-media > li:last-of-type {
     margin-right: -10px;
+  }
+
+  footer#footer_one div.container:first-of-type {
+    padding-top: 40px;
+  }
+  footer#footer_one div.container #footer_company_info {
+    flex: 1 0 25%;
+    margin-top: 0;
+    text-align: left;
+    margin-right: 5px;
+  }
+  footer#footer_one div.container #footer_company_info .site__social-media {
+    justify-content: flex-start;
+    margin: 10px 0 10px;
+  }
+  footer#footer_one div.container section#footer_nav_section,
+footer#footer_one div.container section.footer_payment_types {
+    margin-right: 40px;
+  }
+  footer#footer_one div.container section#footer_nav_section,
+footer#footer_one div.container section.footer_payment_types,
+footer#footer_one div.container section.footer_badges {
+    flex: 1 0 20%;
+  }
+  footer#footer_one div.container section,
+footer#footer_one div.container div.site__copyright_banner {
+    margin-bottom: 0;
+  }
+  footer#footer_one div.container div.site__copyright_banner {
+    margin: 10px auto;
   }
 }
 @media only screen {

@@ -33,8 +33,16 @@
     {
         $return = '';
         $field = get_field('footer', 'options');
+        $footer_style = get_field('footer', 'options')['style'];
         if( !empty($field['badges']) ){
-            $return .= '<section class="footer_badges"><ul>';
+            if($footer_style == 'one')
+            {
+                $return .= '<section class="footer_badges"><h3>Powered By</h3><ul>';
+            }
+            else
+            {
+                $return .= '<section class="footer_badges"><ul>';
+            }
             $format = '
                 <li><a href="%s" title="%s" target="%s"><img src="%s" alt=""></a></li>
             ';
@@ -56,8 +64,17 @@
     {
         $return = '';
         $field = get_field('footer', 'options');
+        $footer_style = get_field('footer', 'options')['style'];
+
         if( !empty($field['payment_types']) ){
-            $return .= '<section class="footer_payment_types"><ul>';
+            if($footer_style == 'one')
+            {
+                $return .= '<section class="footer_payment_types"><h3 class="payment_title">Payment</h3><ul>';
+            }
+            else
+            {
+                $return .= '<section class="footer_payment_types"><ul>';
+            }
             $format = '
                 <li><img src="%s" alt=""></li>
             ';
@@ -177,13 +194,29 @@
 
     function _get_nav()
     {
-        $format_nav = '
-            <section>
-                <nav id="footer_nav">
-                    %s
-                </nav>
-            </section>
-        ';
+        $footer_style = get_field('footer', 'options')['style'];
+        if($footer_style == 'one')
+        {
+            $format_nav = '
+                <section id="footer_nav_section">
+                    <h3 class="nav_title">Links</h3>
+                    <nav id="footer_nav">
+                        %s
+                    </nav>
+                </section>
+            ';
+        }
+        else
+        {
+            $format_nav = '
+                <section id="footer_nav_section">
+                    <nav id="footer_nav">
+                        %s
+                    </nav>
+                </section>
+            ';
+        }
+
         if(strlen(_get_site_nav()) > 26)
         {
             $nav = sprintf(
@@ -272,7 +305,7 @@
 </main>
 <footer class="site__fade site__fade-up" id="footer_<?php echo get_field('footer', 'options')['style'] ?>">
 <?php 
-    
+
     echo _get_footer_content();
     
     // live reload script
