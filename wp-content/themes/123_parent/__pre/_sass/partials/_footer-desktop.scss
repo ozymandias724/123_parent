@@ -64,7 +64,7 @@
                     a {
                         padding: 10px;
                         i {
-                            font-size: 20px;
+                            @include fontS-20;
                             color: $white;
                         }
                         &:hover,
@@ -159,7 +159,7 @@
                                 font-size: 16px;
                                 color: $accent;
                                 background-color: white;
-                                padding: 10px 12px;
+                                padding: 3px 12px;
                                 border-radius: 100%;
                             }
                         }
@@ -282,7 +282,7 @@
                     color: $white;
                     text-transform: uppercase;
                     font-weight: 700;
-                    font-size: 15px;
+                    @include fontS-14;
                     letter-spacing: 0.5px;
                 }
             }

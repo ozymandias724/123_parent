@@ -201,10 +201,6 @@ Theme.Slick = {
 Theme.Slick._init();
 
 
-
-
-
-
 Theme.CookieMonster = {
     _init: function () {
         if (DisableTimedPopup === 'false') {
@@ -310,22 +306,6 @@ Theme.FadeEffects = {
 Theme.FadeEffects._init();
 
 
-Theme.Open_Address = {
-
-    address_link: $(".google-address"),
-    address_text: $(".google-address").text(),
-
-    _init: function () {
-        Theme.Open_Address.address_link.on("click", Theme.Open_Address._open_google_search);
-    },
-    _open_google_search: function () {
-        window.open('https://google.com/search?q=' + Theme.Open_Address.address_text);
-    },
-
-}
-Theme.Open_Address._init();
-
-
 Theme.Popups = {
     popups: $(".popup"),
     quote_btn: $(".site__button-quote"),
@@ -344,7 +324,7 @@ Theme.Popups = {
         $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
         $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
         window.addEventListener('resize', function () {
-            Theme.Popups._resize_close();
+            //Theme.Popups._resize_close();
         });
     },
     _click_handler: function () {
@@ -477,71 +457,6 @@ Theme.Gallery = {
 }
 Theme.Gallery._init();
 
-
-Theme.Gallery.Tabs_Classic = {
-
-    links: $("#tabbed_gallery.tabs_classic > div:first-of-type > h3 > a"),
-    tabs_titles: $("#tabbed_gallery.tabs_classic > div:first-of-type > h3"),
-
-    _init: function () {
-        Theme.Gallery.Tabs_Classic.links.on("click", Theme.Gallery.Tabs_Classic._tab_click);
-        Theme.Gallery.Tabs_Classic._tabs_margin();
-    },
-    _tabs_order: function () {
-        var tabs_section_height = $("#tabbed_gallery.tabs_classic > div:first-of-type").height();
-        if (tabs_section_height > 52) {
-            Theme.Gallery.Tabs_Classic.links.each(function () {
-                if ($(this).hasClass("active_gallery")) {
-                    $(this).parent().insertAfter("#tabbed_gallery > div:first-of-type > h3:last-of-type");
-                }
-            });
-        }
-    },
-    _tab_click: function () {
-        var tabs_section_height = $("#tabbed_gallery.tabs_classic > div:first-of-type").height();
-        if (tabs_section_height > 52) {
-            $(this).parent().insertAfter("#tabbed_gallery > div:first-of-type > h3:last-of-type");
-            $(this).parent().css("margin", "5px 2px 0px");
-            Theme.Gallery.Tabs_Classic._each_tab_add_margin();
-        } else {
-            $(this).parent().css("margin", "5px 2px 0px");
-        }
-    },
-    _tabs_margin: function () {
-
-        Theme.Gallery.Tabs_Classic._tabs_order();
-
-        Theme.Gallery.Tabs_Classic._tabs_add_margin();
-
-        $(window).on('resize', function () {
-
-            Theme.Gallery.Tabs_Classic._tabs_order();
-
-            Theme.Gallery.Tabs_Classic._tabs_add_margin();
-
-        });
-    },
-    _each_tab_add_margin: function () {
-        var tabs_section_height = $("#tabbed_gallery.tabs_classic > div:first-of-type").height();
-        Theme.Gallery.Tabs_Classic.links.each(function () {
-            if (!$(this).hasClass("active_gallery")) {
-                if (tabs_section_height > 52) {
-                    $(this).parent().css("margin", "5px 2px 8px");
-                }
-            }
-        });
-    },
-    _tabs_add_margin: function () {
-        var tabs_section_height = $("#tabbed_gallery.tabs_classic > div:first-of-type").height();
-        if (tabs_section_height > 52) {
-            Theme.Gallery.Tabs_Classic.tabs_titles.not(":last-of-type").css("margin", "5px 2px 8px");
-        } else {
-            Theme.Gallery.Tabs_Classic.tabs_titles.css("margin", "5px 2px 0px");
-        }
-    }
-}
-Theme.Gallery.Tabs_Classic._init();
-
 Theme.Nav = {
     nav_links: $(".navlinks-item-link"),
 
@@ -614,71 +529,3 @@ Headers.One = {
 
 }
 Headers.One._init();
-
-
-
-
-
-// NOPE. no reason to add window resize just for this. well find another way
-
-// Hero.Padding_Top = {
-
-//         header_id: $("header").attr("id"),
-//         header_height: $("header").height(),
-
-//         mobile_header_height: $(".mobileheader").height(),
-//         main: $(".mobileheader").next(),
-
-//         _init: function () {
-
-//             //On init, if browser width is greater than 1280
-//             if (window.innerWidth >= 1280) {
-//                 Hero.Padding_Top._header_function();
-//             } else {
-//                 Hero.Padding_Top._mobile_header_function();
-//             }
-
-//             //On resize, if browser width is greater than 1280 
-//             window.addEventListener('resize', function () {
-
-//                 if (window.innerWidth >= 1280) {
-//                     Hero.Padding_Top._header_function();
-//                 } else {
-//                     Hero.Padding_Top._mobile_header_function();
-//                 }
-
-//             });
-//         },
-//         _header_function: function () {
-//             //Get header position value
-//             Hero.Padding_Top.header_position = $("header").css("position");
-
-//             //If header has a position of fixed and not header 1, 4, 9 or 3
-//             if (
-//                 Hero.Padding_Top.header_position === "fixed" &&
-//                 Hero.Padding_Top.header_id !== "opt_header_one" &&
-//                 Hero.Padding_Top.header_id !== "opt_header_four" &&
-//                 Hero.Padding_Top.header_id !== "opt_header_nine" &&
-//                 Hero.Padding_Top.header_id !== "opt_header_three" &&
-//                 Hero.Padding_Top.header_id !== "opt_header_eight") {
-//                 Hero.Padding_Top.header_height = $("header").height();
-//                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.header_height);
-//             } else if (
-//                 Hero.Padding_Top.header_id === "opt_header_four"
-//             ) {
-//                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:last-of-type").height();
-//                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
-//             } else if (Hero.Padding_Top.header_id === "opt_header_nine") {
-//                 Hero.Padding_Top.height = $("header#" + Hero.Padding_Top.header_id + ">div:first-of-type").height();
-//                 Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.height);
-//             } else {
-//                 //Do not adding padding-top to hero
-//                 Hero.Padding_Top.main.css("padding-top", "0");
-//             }
-//         },
-//         _mobile_header_function: function () {
-//             Hero.Padding_Top.mobiler_header_height = $(".mobileheader").height();
-//             Hero.Padding_Top.main.css("padding-top", Hero.Padding_Top.mobile_header_height);
-//         }
-// },
-// Hero.Padding_Top._init();

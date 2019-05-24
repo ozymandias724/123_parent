@@ -111,22 +111,12 @@
             <section class="popup" id="banner_popup">
                 <div>
                     %s
-                    %s
-                    %s
-                    %s
-                    %s
-                    %s
                 </div>
             </section>
         ';
 
         $banner_popup = sprintf(
             $format_popup
-            ,_get_times()
-            ,$bar_text
-            ,$image
-            ,$heading
-            ,_get_form()
             ,$text
         );
 

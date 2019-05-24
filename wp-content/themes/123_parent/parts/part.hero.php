@@ -28,7 +28,7 @@
       $slider_images = (!empty($background['hero_slider_images']) ? $background['hero_slider_images'] : '' );
 
       // open hero container
-      $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$type.'">';
+      $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$type.'">'; 
 
       // hero type is static image
       if( $type == 'image' && !empty($static_image))
@@ -103,7 +103,7 @@
                      <source src="%s" type="video/mp4">
                   </video>
                </div>
-               <div class="hero_foreground">
+               <div class="hero_foreground"> 
                   %s
                   %s
                   %s

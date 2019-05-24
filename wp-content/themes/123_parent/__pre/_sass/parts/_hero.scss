@@ -2,6 +2,17 @@
     //Hero section
     section.hero {
         overflow: hidden;
+        &:after {
+            content: "";
+            display: block;
+            position: fixed;
+            padding: 100px 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.4);
+        }
         //Hero Foreground
         .hero_foreground {
             font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
@@ -11,10 +22,12 @@
             top: 50%; 
             left: 50%;
             width: getVar($sizing, content, full);
+            z-index: 2;
             //Title
             h2 {
-                font-size: 50px;
-                line-height: 1em;
+                @include fontS-34;
+                z-index: 2;
+                color: $white;
             }
             //Logo
             img {
@@ -23,14 +36,15 @@
             }
             //Subtitle
             p {
-                font-size: 28px;
+                color: $white;
+                z-index: 2;
+                @include fontS-24;
                 margin: 20px 0 30px;
-                line-height: 1em;
             }
             //Button
             a {
                 padding: 10px;
-                font-size: 18px;
+                @include fontS-20;
                 padding: 13px 30px 15px;
                 border-radius: 30px;
                 text-transform: uppercase;
@@ -38,14 +52,14 @@
                 line-height: 1em; 
                 color: $white;
                 display: inline-block;
-                background-color: $primary;
+                background-color: $accent;
                 transition: background-color 0.25s;
             }
             //Button actions on hover, focus and active
             a:hover, 
             a:focus, 
             a:active {
-                background-color: $second_primary;
+                opacity: 0.8;
             }
         }
     }
@@ -102,11 +116,11 @@
         width: getVar($sizing, content, large);
         //Title
         > h2 {
-            font-size: 65px;
+            @include fontS-72;
         }
         //Subtitle
         > p {
-            font-size: 32px;
+            @include fontS-34;
         }
     }
 }

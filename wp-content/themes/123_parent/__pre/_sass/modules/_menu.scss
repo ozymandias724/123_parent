@@ -49,7 +49,7 @@
     #tabs_pills {
         // Tabs
         #menu_tabs {
-            font-size: 14px;
+            @include fontS-14;
             margin: 0 auto 15px;
             // Tabs titles
             > h5 {
@@ -96,7 +96,7 @@
         }
         h5 {
             padding: 10px 0;
-            font-size: 14px;
+            @include fontS-14;
             margin: 0 2px;
             text-transform: uppercase;
             a {
@@ -144,7 +144,7 @@
         .menu_header {
             // All menus header title
             > h2 {
-                font-size: 32px;
+                @include fontS-34;
                 letter-spacing: -1px;
                 font-weight: 800;
             }
@@ -154,7 +154,7 @@
                 font-family: "Times New Roman";
                 line-height: 1em;
                 font-style: italic;
-                font-size: 24px;
+                @include fontS-24;
                 font-weight: 500;
                 color: $gray_three;
             }
@@ -163,7 +163,7 @@
     // menu item paragraph
     .menu_text_list_left .menu_items > ul > li > p, 
     .menu_text_list_center .menu_items > ul > li > p {
-        font-size: 13px;
+        @include fontS-14;
         font-family: "Times New Roman";
         line-height: 1.8rem;
         color: $gray_three;
@@ -203,7 +203,7 @@
                 // menu items title
                 > h3 {
                     display: flex;
-                    font-size: 20px; 
+                    @include fontS-20;
                     font-weight: 700;
                     justify-content: space-between;
                     border-bottom: 3px solid $accent;
@@ -216,7 +216,7 @@
                 }
                 // menu items description
                 > p {
-                    font-size: 13px;
+                    @include fontS-14;
                     color: $gray_three;
                     line-height: 1.8rem;
                 }
@@ -301,7 +301,7 @@
                 > h3 {
                     text-transform: uppercase;
                     display: flex;
-                    font-size: 20px;
+                    @include fontS-20;
                     font-weight: 700;
                     justify-content: space-between;
                 }
@@ -320,7 +320,7 @@
             margin-bottom: 30px;
             // Menu items title
             >  h3 {
-                font-size: 20px;
+                @include fontS-20;
                 text-align: center;
                 font-weight: 800;
                 text-transform: uppercase;
@@ -372,17 +372,17 @@
                     display: flex;
                     font-weight: 700;
                     justify-content: space-between;
-                    font-size: 20px;
+                    @include fontS-20;
                     margin-bottom: 5px;
                 }
                 > div > span {
-                    font-size: 14px;
+                    @include fontS-14;
                     position: relative;
                     top: -5px;
                 }
                 > p {
                     color: $gray_three;
-                    font-size: 13px;
+                    @include fontS-14;
                     text-align: justify;
                     line-height: 1.8rem;
                 }
@@ -410,10 +410,10 @@
                 vertical-align: top;
                 > h3 {
                     font-weight: 900;
-                    font-size: 20px;
+                    @include fontS-20
                 }
                 > p:first-of-type {
-                    font-size: 13px;
+                    @include fontS-14;
                     font-style: italic;
                     color: $gray_three;
                     line-height: 1.8rem;
@@ -423,7 +423,7 @@
                     font-family: "Times New Roman";
                 }
                 > p:last-of-type {
-                    font-size: 22px;
+                    @include fontS-24;
                     color: $gray_two;
                     font-weight: 500;
                 }

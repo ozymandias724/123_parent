@@ -2720,7 +2720,8 @@ footer#footer_three > div.container .site__social-media li a {
   footer#footer_one > div.container .site__social-media li a i,
 footer#footer_two > div.container .site__social-media li a i,
 footer#footer_three > div.container .site__social-media li a i {
-    font-size: 20px;
+    font-size: 2rem;
+    line-height: 3.2rem;
     color: #fff;
   }
   footer#footer_one > div.container .site__social-media li a:hover, footer#footer_one > div.container .site__social-media li a:active, footer#footer_one > div.container .site__social-media li a:focus,
@@ -2847,7 +2848,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     font-size: 16px;
     color: #386591;
     background-color: white;
-    padding: 10px 12px;
+    padding: 3px 12px;
     border-radius: 100%;
   }
   footer#footer_one > div.container #footer_nav .navlinks {
@@ -2961,7 +2962,8 @@ footer#footer_three > div.container .footer_three_social_media {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     letter-spacing: 0.5px;
   }
 }
@@ -3033,6 +3035,17 @@ footer#footer_one div.container div.site__copyright_banner {
   section.hero {
     overflow: hidden;
   }
+  section.hero:after {
+    content: "";
+    display: block;
+    position: fixed;
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
   section.hero .hero_foreground {
     font-family: "Futura-Bold", "Trebuchet MS", Arial, sans-serif;
     text-align: center;
@@ -3041,23 +3054,29 @@ footer#footer_one div.container div.site__copyright_banner {
     top: 50%;
     left: 50%;
     width: 92vw;
+    z-index: 2;
   }
   section.hero .hero_foreground h2 {
-    font-size: 50px;
-    line-height: 1em;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    z-index: 2;
+    color: #fff;
   }
   section.hero .hero_foreground img {
     max-width: 200px;
     margin: 35px auto 0;
   }
   section.hero .hero_foreground p {
-    font-size: 28px;
+    color: #fff;
+    z-index: 2;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
     margin: 20px 0 30px;
-    line-height: 1em;
   }
   section.hero .hero_foreground a {
     padding: 10px;
-    font-size: 18px;
+    font-size: 2rem;
+    line-height: 3.2rem;
     padding: 13px 30px 15px;
     border-radius: 30px;
     text-transform: uppercase;
@@ -3065,13 +3084,13 @@ footer#footer_one div.container div.site__copyright_banner {
     line-height: 1em;
     color: #fff;
     display: inline-block;
-    background-color: green;
+    background-color: #386591;
     transition: background-color 0.25s;
   }
   section.hero .hero_foreground a:hover,
 section.hero .hero_foreground a:focus,
 section.hero .hero_foreground a:active {
-    background-color: #b21717;
+    opacity: 0.8;
   }
 
   section.hero#hero_image > #hero_staticimage {
@@ -3119,10 +3138,12 @@ section.hero .hero_foreground a:active {
     width: 80vw;
   }
   section.hero .hero_foreground > h2 {
-    font-size: 65px;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
   }
   section.hero .hero_foreground > p {
-    font-size: 32px;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -3181,6 +3202,7 @@ section#banner_popup {
     height: 100%;
     right: 0;
     top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   section#header_popup .popup_close,
 section#timed_overlay_popup .popup_close,
@@ -3201,6 +3223,17 @@ section#banner_popup .popup_close {
     margin-right: 5%;
     padding: 2%;
   }
+  section#header_popup > div h3,
+section#timed_overlay_popup > div h3,
+section#banner_popup > div h3 {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    color: #000;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
 
   section#header_popup {
     background-color: rgba(0, 0, 0, 0.3);
@@ -3210,23 +3243,20 @@ section#banner_popup .popup_close {
     top: 0;
     position: absolute;
     background-color: #fff;
-    width: 35%;
-    padding: 5%;
+    padding: 30px;
     margin: 0.5% 0.5% 0 0;
     box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    width: 80vw;
+    height: min-content;
   }
   section#header_popup > div > div:first-of-type {
-    height: 350px;
+    width: 70vw;
+    height: 43.75vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin: 30px auto;
-  }
-  section#header_popup > div > h3 {
-    font-size: 16px;
-    color: #484848;
-    text-align: center;
+    margin: 10px auto;
   }
   section#header_popup > div > p:first-of-type {
     font-size: 16px;
@@ -3244,22 +3274,20 @@ section#banner_popup .popup_close {
     transform: translateX(-50%);
     position: absolute;
     background-color: #fff;
-    width: 90%;
-    padding: 5%;
+    padding: 30px;
     margin: 5% 0;
     border-radius: 10px;
+    width: 80vw;
+    height: min-content;
   }
   section#timed_overlay_popup > div > div:first-of-type {
-    height: 350px;
+    width: 70vw;
+    height: 43.75vw;
+    padding: 5%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin: 30px auto;
-  }
-  section#timed_overlay_popup > div > h3 {
-    font-size: 16px;
-    color: #484848;
-    text-align: center;
+    margin: 10px auto;
   }
   section#timed_overlay_popup > div > p:first-of-type {
     font-size: 16px;
@@ -3270,9 +3298,37 @@ section#banner_popup .popup_close {
     color: #484848;
   }
 }
-@media only screen and (min-width: 768px) {
-  section#timed_overlay_popup > div {
-    width: 50%;
+@media only screen and (min-width: 640px) {
+  section#timed_overlay_popup > div,
+section#header_popup > div {
+    width: 80vw;
+  }
+  section#timed_overlay_popup > div > div:first-of-type,
+section#header_popup > div > div:first-of-type {
+    width: 50vw;
+    height: 31.25vw;
+  }
+}
+@media only screen and (min-width: 960px) {
+  section#timed_overlay_popup > div,
+section#header_popup > div {
+    width: 65vw;
+  }
+  section#timed_overlay_popup > div > div:first-of-type,
+section#header_popup > div > div:first-of-type {
+    width: 40vw;
+    height: 25vw;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  section#timed_overlay_popup > div,
+section#header_popup > div {
+    width: 50vw;
+  }
+  section#timed_overlay_popup > div > div:first-of-type,
+section#header_popup > div > div:first-of-type {
+    width: 25vw;
+    height: 15.625vw;
   }
 }
 @media only screen {
@@ -3713,6 +3769,7 @@ section#banner_popup .popup_close {
   section#mod_about .mod__featured_grid .container .site__grid > ul > li a h5 {
     text-align: center;
     font-size: 2rem;
+    line-height: 3.2rem;
     margin: 10px 0;
     color: #000;
   }
@@ -3766,7 +3823,8 @@ section#banner_popup .popup_close {
   }
 
   #tabs_pills #menu_tabs {
-    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     margin: 0 auto 15px;
   }
   #tabs_pills #menu_tabs > h5 {
@@ -3804,7 +3862,8 @@ section#banner_popup .popup_close {
   }
   #tabs_divider h5 {
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     margin: 0 2px;
     text-transform: uppercase;
   }
@@ -3848,7 +3907,8 @@ section#banner_popup .popup_close {
 .menu_photo_list .menu_header > h2,
 .menu_photo_tiled_x3 .menu_header > h2,
 .menu_text_sub_group_half .menu_header > h2 {
-    font-size: 32px;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     letter-spacing: -1px;
     font-weight: 800;
   }
@@ -3862,14 +3922,16 @@ section#banner_popup .popup_close {
     font-family: "Times New Roman";
     line-height: 1em;
     font-style: italic;
-    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
     font-weight: 500;
     color: #aaabad;
   }
 
   .menu_text_list_left .menu_items > ul > li > p,
 .menu_text_list_center .menu_items > ul > li > p {
-    font-size: 13px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     font-family: "Times New Roman";
     line-height: 1.8rem;
     color: #aaabad;
@@ -3906,7 +3968,8 @@ section#banner_popup .popup_close {
   .menu_text_half .menu_items > ul > li > h3,
 .menu_text_sub_group_half .menu_items > ul > li > h3 {
     display: flex;
-    font-size: 20px;
+    font-size: 2rem;
+    line-height: 3.2rem;
     font-weight: 700;
     justify-content: space-between;
     border-bottom: 3px solid #386591;
@@ -3920,7 +3983,8 @@ section#banner_popup .popup_close {
   }
   .menu_text_half .menu_items > ul > li > p,
 .menu_text_sub_group_half .menu_items > ul > li > p {
-    font-size: 13px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     color: #aaabad;
     line-height: 1.8rem;
   }
@@ -4033,7 +4097,8 @@ section#banner_popup .popup_close {
   .menu_text_list_left ul > li > h3 {
     text-transform: uppercase;
     display: flex;
-    font-size: 20px;
+    font-size: 2rem;
+    line-height: 3.2rem;
     font-weight: 700;
     justify-content: space-between;
   }
@@ -4047,7 +4112,8 @@ section#banner_popup .popup_close {
     margin-bottom: 30px;
   }
   .menu_text_list_center ul > li > h3 {
-    font-size: 20px;
+    font-size: 2rem;
+    line-height: 3.2rem;
     text-align: center;
     font-weight: 800;
     text-transform: uppercase;
@@ -4095,17 +4161,20 @@ section#banner_popup .popup_close {
     display: flex;
     font-weight: 700;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 2rem;
+    line-height: 3.2rem;
     margin-bottom: 5px;
   }
   .menu_photo_tiled_x3 ul > li > div > span {
-    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     position: relative;
     top: -5px;
   }
   .menu_photo_tiled_x3 ul > li > p {
     color: #aaabad;
-    font-size: 13px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     text-align: justify;
     line-height: 1.8rem;
   }
@@ -4129,10 +4198,12 @@ section#banner_popup .popup_close {
   }
   .menu_photo_list ul > li > div:last-of-type > h3 {
     font-weight: 900;
-    font-size: 20px;
+    font-size: 2rem;
+    line-height: 3.2rem;
   }
   .menu_photo_list ul > li > div:last-of-type > p:first-of-type {
-    font-size: 13px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     font-style: italic;
     color: #aaabad;
     line-height: 1.8rem;
@@ -4142,7 +4213,8 @@ section#banner_popup .popup_close {
     font-family: "Times New Roman";
   }
   .menu_photo_list ul > li > div:last-of-type > p:last-of-type {
-    font-size: 22px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
     color: #484848;
     font-weight: 500;
   }
@@ -4666,8 +4738,8 @@ section#banner_popup .popup_close {
     padding: 5px 0 0;
     color: gray;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     text-align: justify;
   }
   #mod_blog .mod__featured_grid .container .site__grid li > a > div.blog_item_content > p.blog_item_read_more {
@@ -4804,7 +4876,8 @@ section#banner_popup .popup_close {
   #mod_services section.mod__services-featuredservice div.container .site__grid > ul > li > a > div:last-of-type > h5 {
     margin: 10px 0 20px;
     font-family: "Gotham", Helvetica, sans-serif;
-    font-size: 3.3rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     font-weight: 500;
   }
   #mod_services section.mod__services-featuredservice div.container .site__grid > ul > li > a > div:last-of-type > p {
@@ -4909,8 +4982,9 @@ section#banner_popup .popup_close {
     position: absolute;
     height: 20px;
     width: 20px;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
     line-height: 0px;
-    font-size: 80px;
     top: 50%;
     cursor: pointer;
     color: #d6d6d6;
@@ -5130,7 +5204,8 @@ section#banner_popup .popup_close {
   main#single_service section.mod__featured_grid div.container div.site__fade h5 {
     margin: 10px 0 20px;
     font-family: "Gotham", Helvetica, sans-serif;
-    font-size: 3.3rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     font-weight: 500;
   }
   main#single_service section.mod__featured_grid div.container div.site__fade p {
@@ -5296,6 +5371,7 @@ section#banner_popup .popup_close {
   main#page_about .container .site__grid > ul > li a h5 {
     text-align: center;
     font-size: 2rem;
+    line-height: 3.2rem;
     margin: 10px 0;
     color: #000;
   }
@@ -5408,18 +5484,20 @@ main#page_services section.mod__services-featuredservice div.container .site__gr
   main#page_services section.mod__services-featuredservice div.container .site__grid > ul > li > a > div:last-of-type > h5 {
     margin: 10px 0 20px;
     font-family: "Gotham", Helvetica, sans-serif;
-    font-size: 3.3rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     font-weight: 500;
   }
   main#page_services section.mod__services-featuredservice div.container .site__grid > ul > li > a > div:last-of-type > p {
     font-weight: 600;
-    line-height: 30px;
-    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
   }
   main#page_services section.mod__services-featuredservice div.container .site__grid > ul > li > a > div:last-of-type > .service_price {
     font-family: "Gotham", Helvetica, sans-serif;
     font-weight: 500;
-    font-size: 3.3rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     margin-top: 20px;
     padding-bottom: 40px;
   }
@@ -5484,8 +5562,8 @@ main#page_services section.mod__services-featuredservice div.container .site__gr
     padding: 5px 0 0;
     color: gray;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     text-align: justify;
   }
   main#page_blog .mod__featured_grid .container .site__grid li > a > div.blog_item_content > p.blog_item_read_more {
