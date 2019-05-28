@@ -25,7 +25,7 @@
                 }
                 > a {
                     padding: 10px 15px;
-                    color: $gray_two;
+                    color: getVar($gustavo, colors, gray2);
                     border-bottom: 1px solid getVar($gustavo, colors, gray1);
                     display: block;
                     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
@@ -100,7 +100,7 @@
             margin: 0 2px;
             text-transform: uppercase;
             a {
-                color: $gray_two;
+                color: getVar($gustavo, colors, gray2);
                 padding: 10px 15px;
                 background-color: getVar($gustavo, colors, gray1);
                 border-top-left-radius: 5px;
@@ -156,7 +156,7 @@
                 font-style: italic;
                 @include fontS-24;
                 font-weight: 500;
-                color: $gray_three;
+                color: getVar($gustavo, colors, gray3);
             }
         }
     }
@@ -166,7 +166,7 @@
         @include fontS-14;
         font-family: "Times New Roman";
         line-height: 1.8rem;
-        color: $gray_three;
+        color: getVar($gustavo, colors, gray3);
         font-style: italic;
     }
     // Menu Text 1/2 and Menu Sub Group 1/2 
@@ -210,14 +210,14 @@
                     padding-bottom: 15px;
                     margin-bottom: 15px;
                     > span {
-                        color: $gray_three;
+                        color: getVar($gustavo, colors, gray3);
                         font-weight: 600;
                     }
                 }
                 // menu items description
                 > p {
                     @include fontS-14;
-                    color: $gray_three;
+                    color: getVar($gustavo, colors, gray3);
                     line-height: 1.8rem;
                 }
             }
@@ -238,9 +238,6 @@
         margin-bottom: 30px;
     }
     // Menu Section
-    .menu_section {
-        display: none;
-    }
     // Menu section unordered list
     .menu_section ul {
         list-style: none;
@@ -329,7 +326,7 @@
                     font-weight: 500;
                     &:before {
                         content: "";
-                        border-left: 2px solid $gray_three;
+                        border-left: 2px solid getVar($gustavo, colors, gray3);
                         margin: 0 15px 0 10px;
                     }  
                 }
@@ -381,7 +378,7 @@
                     top: -5px;
                 }
                 > p {
-                    color: $gray_three;
+                    color: getVar($gustavo, colors, gray3);
                     @include fontS-14;
                     text-align: justify;
                     line-height: 1.8rem;
@@ -415,7 +412,7 @@
                 > p:first-of-type {
                     @include fontS-14;
                     font-style: italic;
-                    color: $gray_three;
+                    color: getVar($gustavo, colors, gray3);
                     line-height: 1.8rem;
                     padding-bottom: 10px;
                     border-bottom: 4px dotted getVar($gustavo, colors, gray1);
@@ -424,7 +421,7 @@
                 }
                 > p:last-of-type {
                     @include fontS-24;
-                    color: $gray_two;
+                    color: getVar($gustavo, colors, gray2);
                     font-weight: 500;
                 }
             }

@@ -1,11 +1,117 @@
 <?php 
 
-    $guide = [];
+    $guide = []; 
     $return = [];
 
+    // Functions
+    function _get_menu_header_format($menu_style){
+        $return = '';
+        if(
+            $menu_style == 'menu_text_list_center' || 
+            $menu_style == 'menu_text_list_left' ||
+            $menu_style == 'menu_photo_tiled_x3' || 
+            $menu_style == 'menu_photo_list'
+        )
+        {
+            $return = '
+                <h2>%s</h2>
+                %s
+            ';
+        }
+        else 
+        {
+            $return = '
+                <h2><span>%s</span></h2>
+                %s 
+            ';
+        }
+        return $return;
+    }  
+
+    function _get_menu_items($menu_style, $item){
+        $return = '';
+        switch($menu_style)
+        {
+            case 'menu_photo_list':
+            $format = '
+                <li class="menu_item site__fade site__fade-up">
+                    <div style="background-image:url(%s);"></div>
+                    <div>
+                        <h3>%s</h3>
+                        <p class="menu_price">%s</p>
+                        %s
+                    </div>
+                </li>
+            ';
+
+            $return = sprintf(
+                $format
+                ,(!empty($item['image']) ? $item['image']['url'] : '')
+                ,(!empty($item['title']) ? $item['title'] : '')
+                ,(!empty($item['price']) ? $item['price'] : '')
+                ,(!empty($item['description']) ? $item['description'] : '')
+            );
+            break;
+
+            case 'menu_photo_tiled_x3':
+            $format = '
+                <li class="menu_item">
+                    <div style="background-image:url(%s);"></div>
+                    <h3>%s <div>%s.<span class="menu_item_price_decimal">%s</span></div></h3>
+                    %s
+                </li>
+            ';
+
+            $price = (!empty($item['price'])) ? explode('.',$item['price']) : '';
+            $return = sprintf(
+                $format
+                ,(!empty($item['image']) ? $item['image']['url'] : '')
+                ,(!empty($item['title']) ? $item['title'] : '')
+                ,$price[0]
+                ,$price[1]
+                ,(!empty($item['description']) ? $item['description'] : '')
+            );
+            break;
+
+            default: 
+            $format = '
+                <li class="menu_item">
+                    <div style="background-image:url(%s);"></div>
+                    <h3>%s <span>%s</span></h3>
+                    %s
+                </li>
+            ';
+            
+            $return = sprintf(
+                $format
+                ,(!empty($item['image']) ? $item['image']['url'] : '')
+                ,(!empty($item['title']) ? $item['title'] : '')
+                ,(!empty($item['price']) ? $item['price'] : '')
+                ,(!empty($item['description']) ? $item['description'] : '')
+            );
+            break;
+        }
+
+        return $return;
+    }
+
+    // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
+
         // guide for a menu section
-        $guide['menu_sections'] = '<li>%s</li>';
+        $guide['menu_section_header'] = '
+            <h2>%s</h2>
+            %s
+        ';
+
+        $guide['menu_section_item'] = '
+            <li>
+                <div class="block" style="background-image:url(%s);"></div>
+                <h3>%s <span>%s</span></h3>
+                %s
+            </li>    
+        ';
+
         // guide for a button (pill etc)
         $guide['buttons'] = '
             <li>
@@ -24,9 +130,9 @@
 
         // for each menu
         foreach( $cB['menus'] as $i => $menu ){
+
             // get fields for this menu post object
             $fields = get_fields($menu['menu_post']->ID);
-
             
             // write to the button group
             $return['buttons'] .= sprintf(
@@ -34,20 +140,39 @@
                 ,$menu['menu_post']->post_title
             );
 
-
             // if this menu post has menu sections
             if( !empty($fields['menu_sections']) ){
+
                 // open the wrapper for the menu sections
-                $return['menu_sections'] = '<ul>';
+                $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].'">';
+
+
                 // loop thru each menu section (rows in the repeater)
                 foreach( $fields['menu_sections'] as $i => $section ){
+
+                    
+                    // 1) Menu Title and Description
                     $return['menu_sections'] .= sprintf(
-                        $guide['menu_sections']
-                        ,$menu['menu_post']->post_title . 'menu section' .($i+1)  // this is just a example data point
+                        //$guide['menu_section_header']
+                        _get_menu_header_format($fields['style'])
+                        ,(!empty($section['title']) ? $section['title'] : '')
+                        ,(!empty($section['description']) ? $section['description'] : '')
                     );
+
+                    // Open Menu Items Content
+                    $return['menu_sections'] .= '<ul>';
+
+                    foreach( $section['item'] as $i => $item){
+                        $return['menu_sections'] .=  _get_menu_items($fields['style'], $item);
+                    }
+
+                    // Close Menu Items Content
+                    $return['menu_sections'] .= '</ul>';
                 }
+
                 // close the menu sections wrapper
                 $return['menu_sections'] .= '</ul>';
+
                 // write this menu into the menus wrapper
                 $return['menus'] .= $return['menu_sections'];
             }
@@ -75,14 +200,19 @@
             </div>
         </section>
     ';
+
     $return['section'] .= sprintf(
+
          $guide['section']
         ,$cB['width']
         ,$cB['background_color']
         ,$cB['foreground_color']
         ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['text']) ? '<p>'.$cB['text'].'</p>' : '' )
+
+        // Return the food menus block content which is the buttons and menus
         ,( !empty($return['buttons_and_menus']) ? $return['buttons_and_menus'] : '' )
+
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 

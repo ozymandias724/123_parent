@@ -64,8 +64,8 @@
                     padding: 10px 15px;
                     border-radius: 20px;
                     background-color: transparent;
-                    border: 2px solid $gray_one;
-                    color: $gray_three;
+                    border: 2px solid getVar($gustavo, colors, gray1);
+                    color: getVar($gustavo, colors, gray3);
                     &:active,
                     &:focus,
                     &.active_title,
@@ -75,8 +75,8 @@
                         border: 2px solid transparent;
                     }
                     &:hover {
-                        border: 2px solid $gray_three;
-                        background-color: $gray_three;
+                        border: 2px solid getVar($gustavo, colors, gray3);
+                        background-color: getVar($gustavo, colors, gray3);
                         color: $white;
                     }
                 }
@@ -89,7 +89,7 @@
             #gallery_titles:after {
                 content: "";
                 display: block;
-                border-bottom: 2px solid $gray_one;
+                border-bottom: 2px solid getVar($gustavo, colors, gray1);
                 margin-top: -5px;
             }
             #gallery_rows {
@@ -106,14 +106,14 @@
                 margin: 0 2px;
                 text-transform: uppercase;
                 a {
-                    color: $gray_two;
+                    color: getVar($gustavo, colors, gray2);
                     padding: 10px 15px;
-                    background-color: $gray_one;
+                    background-color: getVar($gustavo, colors, gray1);
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
-                    border-top: 2px solid $gray_one;
-                    border-left: 2px solid $gray_one;
-                    border-right: 2px solid $gray_one;
+                    border-top: 2px solid getVar($gustavo, colors, gray1);
+                    border-left: 2px solid getVar($gustavo, colors, gray1);
+                    border-right: 2px solid getVar($gustavo, colors, gray1);
                     transition: color 0.3s ease-in-out;
                     &:focus,
                     &.active_title,
@@ -144,17 +144,17 @@
             #gallery_titles {
                 margin-bottom: 15px;
                 h5:first-of-type > a {
-                    border-top: 1px solid $gray_one;
+                    border-top: 1px solid getVar($gustavo, colors, gray1);
                 }
                 h5 {
                     display: block;
                     margin: 0;
                     > a {
-                        color: $gray_two;
+                        color: getVar($gustavo, colors, gray2);
                         padding: 10px 15px;
                         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
                         display: block;
-                        border-bottom: 1px solid $gray_one;
+                        border-bottom: 1px solid getVar($gustavo, colors, gray1);
                         &:active, 
                         &:focus,
                         &.active_title,
@@ -164,8 +164,8 @@
                             border-bottom: 1px solid $accent;
                         }
                         &:hover {
-                            color: $gray_two;
-                            background-color: $gray_one;
+                            color: getVar($gustavo, colors, gray2);
+                            background-color: getVar($gustavo, colors, gray1);
                             border-bottom: 1px solid transparent;
                         }
                     }
