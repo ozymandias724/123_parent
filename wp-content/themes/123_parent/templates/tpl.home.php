@@ -7,6 +7,7 @@
     
     get_header();
     include( get_template_directory() . '/parts/part.popups.php');
+    
  ?>
 <main id="page_home">
 <?php 
