@@ -1,8 +1,27 @@
 @media only screen {
     // Popups
-    section#header_popup,
-    section#timed_overlay_popup,
     section#banner_popup {
+        display: block;
+        position: relative;
+        background-color: black;
+        z-index: 100;
+        text-align: center;
+        margin-bottom: -1px;
+        > a {
+            padding: 0 5px;
+            margin-left: 0;
+            background-color: transparent;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            @include fontS-16;
+            &:hover, &:active, &:focus {
+                opacity: 0.8;
+            }
+        }
+    }
+    section#header_popup,
+    section#timed_overlay_popup {
         display: none;
         position: fixed;
         z-index: 100;
@@ -123,9 +142,6 @@
                 color: getVar($gustavo, colors, gray2);
             }
         }
-    }
-    section#banner_popup {
-        
     }
 }
 

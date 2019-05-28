@@ -5,16 +5,16 @@ $nav8_width : 1110px;
     header#opt_header_eight {
         padding: 0px;
         width: 100%;
-        position: absolute;
         top: 25px;
+        max-width: $nav8_width;
+        left: 50%;
+        transform: translateX(-50%);
         //First div to apply a max-width
         > div:first-of-type {
             display: flex;
             justify-content: space-between;
             background-color: white;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-            max-width: $nav8_width;
-            margin: 0 auto;  
             transition: width 0.3s;
             align-items: center;
             height: 92px;

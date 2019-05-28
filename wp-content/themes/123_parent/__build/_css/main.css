@@ -2077,16 +2077,16 @@ header#opt_header_seven > nav .navlinks-item-link .active_menu_link {
   header#opt_header_eight {
     padding: 0px;
     width: 100%;
-    position: absolute;
     top: 25px;
+    max-width: 1110px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   header#opt_header_eight > div:first-of-type {
     display: flex;
     justify-content: space-between;
     background-color: white;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
-    max-width: 1110px;
-    margin: 0 auto;
     transition: width 0.3s;
     align-items: center;
     height: 92px;
@@ -3181,9 +3181,30 @@ section.hero .hero_foreground a:active {
   }
 }
 @media only screen {
+  section#banner_popup {
+    display: block;
+    position: relative;
+    background-color: black;
+    z-index: 100;
+    text-align: center;
+    margin-bottom: -1px;
+  }
+  section#banner_popup > a {
+    padding: 0 5px;
+    margin-left: 0;
+    background-color: transparent;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  section#banner_popup > a:hover, section#banner_popup > a:active, section#banner_popup > a:focus {
+    opacity: 0.8;
+  }
+
   section#header_popup,
-section#timed_overlay_popup,
-section#banner_popup {
+section#timed_overlay_popup {
     display: none;
     position: fixed;
     z-index: 100;
@@ -3194,8 +3215,7 @@ section#banner_popup {
     background-color: rgba(0, 0, 0, 0.5);
   }
   section#header_popup .popup_close,
-section#timed_overlay_popup .popup_close,
-section#banner_popup .popup_close {
+section#timed_overlay_popup .popup_close {
     content: "";
     display: inline-block;
     font-family: "Font Awesome 5 Free";
@@ -3213,8 +3233,7 @@ section#banner_popup .popup_close {
     padding: 2%;
   }
   section#header_popup > div h3,
-section#timed_overlay_popup > div h3,
-section#banner_popup > div h3 {
+section#timed_overlay_popup > div h3 {
     font-size: 3.4rem;
     line-height: 4.8rem;
     color: #000;

@@ -101,23 +101,17 @@
     function _banner_popup($popups)
     {
         $popup = array_slice($popups['banner'], 0);
-        $bar_text = (!empty($popup['bar_text'])) ? '<h3>'.$popup['bar_text'].'</h3>' : '';
-        $image = (!empty($popup['popup_image']['url'])) ? '<div style="background-image:url('.$popup['popup_image']['url'].');"></div>' : '';
-        $heading = (!empty($popup['popup_heading'])) ? '<h3>'.$popup['popup_heading'].'</h3>' : '';
-        $text = (!empty($popup['popup_text'])) ? $popup['popup_text'] : '';
-        $email = (!empty($popup['email'])) ? '<p>'.$popup['email'].'</p>' : '';
+        $bar_text = (!empty($popup['bar_text'])) ? $popup['bar_text'] : '';
 
         $format_popup = '
             <section class="popup" id="banner_popup">
-                <div>
-                    %s
-                </div>
+                <a href="javascript:;" class="site__button-quote">%s</a>
             </section>
         ';
 
         $banner_popup = sprintf(
             $format_popup
-            ,$text
+            ,$bar_text
         );
 
         return $banner_popup; 

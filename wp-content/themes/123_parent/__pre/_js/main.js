@@ -316,6 +316,7 @@ Theme.Popups = {
     timed_popup_times: $("#timed_overlay_popup .popup_close"),
     timed_first_view: $("#timed_overlay_popup").attr("data-first-view"),
     timed_second_view: $("#timed_overlay_popup").attr("data-second-view"),
+    banner_popup: $("#banner_popup"),
 
     _init: function () {
         $(Theme.Popups.quote_btn).on("click", Theme.Popups._click_handler);
@@ -324,9 +325,7 @@ Theme.Popups = {
         if (Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
         $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
         $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
-        window.addEventListener('resize', function () {
-            //Theme.Popups._resize_close();
-        });
+        Theme.Popups._banner_popup();
     },
     _click_handler: function () {
         Theme.Popups.header_popup.fadeIn(250);
@@ -370,6 +369,9 @@ Theme.Popups = {
             }, Theme.Popups.timed_second_view * 1000);
         }
     },
+    _banner_popup: function(){
+        $("header.header").prepend(Theme.Popups.banner_popup);
+    }
 }
 Theme.Popups._init();
 

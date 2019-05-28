@@ -29,7 +29,9 @@
     }  
 
     function _get_menu_items($menu_style, $item){
+
         $return = '';
+
         switch($menu_style)
         {
             case 'menu_photo_list':
@@ -57,7 +59,7 @@
             $format = '
                 <li class="menu_item">
                     <div style="background-image:url(%s);"></div>
-                    <h3>%s <div>%s.<span class="menu_item_price_decimal">%s</span></div></h3>
+                    <h3>%s <div class="menu_price">%s.<span class="price_decimal">%s</span></div></h3>
                     %s
                 </li>
             ';
@@ -77,7 +79,7 @@
             $format = '
                 <li class="menu_item">
                     <div style="background-image:url(%s);"></div>
-                    <h3>%s <span>%s</span></h3>
+                    <h3>%s <span class="menu_price">%s</span></h3>
                     %s
                 </li>
             ';
@@ -97,20 +99,6 @@
 
     // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
-
-        // guide for a menu section
-        $guide['menu_section_header'] = '
-            <h2>%s</h2>
-            %s
-        ';
-
-        $guide['menu_section_item'] = '
-            <li>
-                <div class="block" style="background-image:url(%s);"></div>
-                <h3>%s <span>%s</span></h3>
-                %s
-            </li>    
-        ';
 
         // guide for a button (pill etc)
         $guide['buttons'] = '
@@ -146,14 +134,11 @@
                 // open the wrapper for the menu sections
                 $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].'">';
 
-
                 // loop thru each menu section (rows in the repeater)
                 foreach( $fields['menu_sections'] as $i => $section ){
 
-                    
-                    // 1) Menu Title and Description
+                    // Menu Title and Description
                     $return['menu_sections'] .= sprintf(
-                        //$guide['menu_section_header']
                         _get_menu_header_format($fields['style'])
                         ,(!empty($section['title']) ? $section['title'] : '')
                         ,(!empty($section['description']) ? $section['description'] : '')
@@ -216,7 +201,6 @@
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 
-    
     echo $return['section'];
      
      // clear the $cB, $return, $index and $guide vars for the next block
