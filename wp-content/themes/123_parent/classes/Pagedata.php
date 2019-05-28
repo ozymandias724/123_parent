@@ -128,5 +128,8 @@ class Pagedata
 	}
 
 }
-new Pagedata();
+add_action('init', 'do_init_pagedata', 100, 1);
+function do_init_pagedata(){
+    new Pagedata();
+}
  ?>

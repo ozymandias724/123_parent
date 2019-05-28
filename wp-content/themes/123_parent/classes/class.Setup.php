@@ -23,8 +23,10 @@ class SetupTheme
 	public static function after_setup_theme(){
 		add_theme_support( 'html5' );
 		add_theme_support( 'post-thumbnails' );
-        register_nav_menu( 'main-nav', 'Main Navigation' );
         add_theme_support( 'custom-logo' );
+
+        register_nav_menu( 'nav__header', 'Header' );
+        register_nav_menu( 'nav__footer', 'Footer' );
 	}
 	// 
 	public static function init(){

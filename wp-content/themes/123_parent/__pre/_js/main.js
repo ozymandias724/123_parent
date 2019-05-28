@@ -30,6 +30,41 @@ $(document).ready(function () {
 
     }
     Theme.FadeEffects._init();
+
+    Theme.Slick = {
+        rand: Math.floor(Math.random() * $(".img-slick").length),
+        _init: function () {
+            Theme.Slick._hero_slider();
+            Theme.Slick._testimonials_slider();
+        },
+        _hero_slider: function () {
+            $('#slick_slider_hero').slick({
+                autoplay: Boolean(hero_fields.autoplay),
+                adaptiveHeight: true,
+                arrows: false,
+                fade: Boolean(hero_fields.fade),
+                autoplaySpeed: hero_fields.speed,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                initialSlider: Boolean(hero_fields.random) ? Theme.Slick.rand : ''
+            });
+        },
+        _testimonials_slider: function () {
+            $('section#block__testimonials .site__grid').slick({
+                autoplay: false,
+                adaptiveHeight: true,
+                arrows: true,
+                fade: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: true,
+                pauseOnFocus: true,
+                initialSlider: true,
+                nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>',
+                prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
+            });
+        }
+    }
+    Theme.Slick._init();
 });
 
 
@@ -165,40 +200,6 @@ Headers.Sidebar = {
 }
 Headers.Sidebar._init();
 
-Theme.Slick = {
-    rand: Math.floor(Math.random() * $(".img-slick").length),
-    _init: function () {
-        Theme.Slick._hero_slider();
-        Theme.Slick._testimonials_slider();
-    },
-    _hero_slider : function(){
-        $('#slick_slider_hero').slick({
-            autoplay: Boolean(hero_fields.autoplay),
-            adaptiveHeight: true,
-            arrows: false,
-            fade: Boolean(hero_fields.fade),
-            autoplaySpeed: hero_fields.speed,
-            pauseOnHover: false,
-            pauseOnFocus: false,
-            initialSlider: Boolean(hero_fields.random) ? Theme.Slick.rand : ''
-        });
-    },
-    _testimonials_slider : function(){
-        $('#slick_slider_testimonials').slick({
-            autoplay: false,
-            adaptiveHeight: true,
-            arrows: true,
-            fade: true,
-            autoplaySpeed: 5000,
-            pauseOnHover: true,
-            pauseOnFocus: true,
-            initialSlider: true,
-            nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>',
-            prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
-        });
-    }
-}
-Theme.Slick._init();
 
 
 Theme.CookieMonster = {
@@ -473,9 +474,9 @@ Theme.Nav = {
 Theme.Nav._init();
 
 Theme.Menu = {
-    tab_header: $("#mod_menu #menu_tabs > h5"),
-    tab_link: $("#mod_menu #menu_tabs > h5 > a"),
-    menu_section: $("#mod_menu .menu_section"),
+    tab_header: $(" #menu_tabs > h5"),
+    tab_link: $(" #menu_tabs > h5 > a"),
+    menu_section: $(" .menu_section"),
     images: $(".image_prov"),
 
     _init: function () {

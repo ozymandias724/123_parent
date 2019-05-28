@@ -1,8 +1,20 @@
 <?php 
 
 // built-in acf
-include_once('reqs/localize-acf.php');
-include_once('reqs/ext/acfext.address.php');
+if( function_exists('acf_add_options_page') ) {
+
+	// Main Theme Settings
+	acf_add_options_page(array(
+		'page_title' 	=> 'Sitewide Theme Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'general-settings',
+		'capability'	=> 'read_private_posts',
+		'icon_url'      => 'dashicons-admin-settings',
+		'redirect'		=> false,
+        'position' 		=> 3,
+	));
+}
+include_once('reqs/acfext.address.php');
 
 // acf handler for page publish/private status
 include_once('classes/Pagedata.php');
@@ -16,12 +28,12 @@ include_once('classes/class.UserRoles.php');
 // custom post types
 include_once( 'classes/class.customposts.php' );
 
-// footer stuff
-include_once('components/reqs/footer-helpers.php');
 
 include_once('classes/class.Customizer.php');
 
 include_once('classes/class.NavHandler.php');
+
+include_once('parts/nav/site.nav.php');
 
 
 function get_gmaps_api_key(){
@@ -192,7 +204,7 @@ function _get_site_logo(){
 
 function _get_site_nav($pre = 'navlinks'){
     $return_nav = '';
-    $page = get_page_by_path('home-page', OBJECT, 'page');
+    $page = get_page_by_path('home', OBJECT, 'page');
     $fields = get_fields($page->ID);
     $longscroll = $fields['long_scroll'];
     $sections = $fields['sections'];
@@ -220,24 +232,15 @@ function _get_site_nav($pre = 'navlinks'){
     }
     // if long scroll is disabled
     else {
-        $return_nav = '<ul class="'.$pre.'">';
-        $format_nav_item = '<li class="'.$pre.'-item"><a class="'.$pre.'-item-link" href="%s" title="Scroll to the %s section">%s</a></li>';
-        // each page object reference module
-        foreach($sections as $section){
-            $section = $section['section'];
-            // create the nav
-			$href = 'mod_'.$section->post_name;
-			$href = site_url($section->post_name);
-            $title = $section->post_title;
-            $return_nav .= sprintf(
-                $format_nav_item
-                ,$href
-                ,$title
-                ,$title
-            );
-        }
-        $return_nav .= '</ul>';
-        return $return_nav;
+        // create an unwrapped site nav
+        $site__nav = wp_nav_menu(array(
+            'menu' => 'nav__header'
+            ,'container' => ''
+            ,'items_wrap' => '<ul class="nav-menu navlinks">%3$s</ul>'
+            ,'walker' => new NavWalker
+            ,'echo' => false
+        ));
+        return $site__nav;
     }
 }
 
@@ -535,6 +538,126 @@ if( !function_exists('wpdocs_custom_excerpt_length')){
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
+
+// get the phone number for headers & footers
+	if( !function_exists('get_the_phone') ){
+		function get_the_phone($phonetel = 'phone'){
+			$social_phone = get_field('social-phone-number', 'option');
+			if( !empty( str_replace( ' ', '', $social_phone) ) ){
+				$search_for = array('(',')','-',' ','.');
+				$replace_with = array('','','','','');
+				$tel = str_replace($search_for, $replace_with, $social_phone);
+				if($phonetel == 'tel'){
+					return $tel;
+				}
+				else{
+					return $social_phone;
+				}
+			}
+			else{
+				return '';
+			}
+		}
+	}
+	// returns tel: href safe (just numbers)
+	if( !function_exists('get_tel') ){
+		function get_tel($the_phone){
+			$search_for = array('(',')','-',' ','.');
+			$replace_with = array('','','','','');
+			$tel = str_replace($search_for, $replace_with, $the_phone);
+			return $tel;
+		}
+	}
+
+	// get the email address for footers
+	if( !function_exists('get_the_email') ){
+		function get_the_email(){
+			$social_email = get_field('social-email-address', 'option');
+			$the_email = null;
+			if( !empty($social_email) ){
+				$the_email = $social_email;
+			}
+			else{
+				$the_email = 'example@domain.com';
+			}
+			return $the_email;
+		}
+	}
+
+	// get the fax number for footers
+	if( !function_exists('get_the_fax') ){
+		function get_the_fax($phonetel = 'phone'){
+			$social_fax = get_field('social-fax-number', 'option');
+
+			if(!empty($social_fax)){
+				$search_for = array('(',')','-',' ','.');
+				$replace_with = array('','','','','');
+				$tel = str_replace($search_for, $replace_with, $social_fax);
+				if($phonetel == 'tel'){
+					return $tel;
+				}
+				else{
+					return $social_fax;
+				}
+			}
+			else{
+				return '';
+			}
+		}
+	}
+
+	if( !function_exists('get_master_address') ){
+
+		/**
+		 * gets relevent fields to the site owner address and creates a formatted string
+		 * @return string formatted 'the address' string
+		 */
+		function get_master_address()
+		{
+			// vars
+			$address_1_object = get_field('social-address', 'option');
+			$address_2_string = get_field('social-address-line2', 'option');
+			// filter
+			if( !empty($address_1_object) ){
+				$ugly_address = str_replace(', United States', '', $address_1_object['address']);
+				$trimmed_address_line_1 = preg_replace('/,/', '', $ugly_address, 1);
+			}
+			// render
+			if( !empty($address_1_object) && !empty( $address_2_string ) ){
+				// both
+				return $trimmed_address_line_1 . "<br>" . $address_2_string;
+			} else if( !empty( $address_1_object ) && empty( $address_2_string ) ){
+				// just 1
+				return $trimmed_address_line_1;
+			} else if( empty( $address_1_object ) && !empty( $address_2_string )){
+				// just 2
+				return $address_2_string;
+			} else {
+				// empty
+				return '';
+			}
+		}
+	}
+
+
+//	TO BE DEPRICATED
+//	get the address for footers
+	if( !function_exists('get_the_address') ){
+		
+		function get_the_address(){
+			
+			if( !empty(get_field('social-address-line2', 'option')) && !empty(get_field('social-address', 'option')) ){
+				$address_line2 = get_field('social-address-line2', 'option');
+				return strstr(get_field('social-address', 'option')['address'],',', true) . ' ' . $address_line2 . strstr(get_field('social-address', 'option')['address'],',');
+			}
+			else if( !empty( get_field('social-address', 'option') ) ){
+				return get_field( 'social-address', 'option' )['address'];
+			}
+			else{
+				return '';
+			}
+		}
+	}
 
 
 ?>
