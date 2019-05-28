@@ -1,0 +1,65 @@
+section.site__block {
+    width: 100%;
+
+    .container {
+        text-align: center;
+        padding: getVar($sizing, gutter, px, normal) 0;
+        margin: 0 auto getVar($sizing, gutter, px, normal);
+        
+        &.narrow {
+            width: getVar($sizing, content, small);
+            .site__grid {
+                $w: getVar($sizing, content, medium);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+
+        &.medium {
+            width: getVar($sizing, content, medium);
+            .site__grid {
+                $w: getVar($sizing, content, medium);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+        }
+
+        &.wide {
+            width: getVar($sizing, content, large);
+            .site__grid {
+                $w: getVar($sizing, content, medium);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+
+        }
+
+        &.full {
+            width: getVar($sizing, content, container);
+            .site__grid {
+                $w: getVar($sizing, content, medium);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+            }
+
+        }
+
+    }
+}
+
+//Do the rest of the media queries with max-width, not min-width
+
+
+@import 'blocks/heading_block';
+@import 'blocks/copy_block';
+@import 'blocks/services_block';
+@import 'blocks/coupons_block';
+@import 'blocks/food_menus_block';

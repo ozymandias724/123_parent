@@ -21,12 +21,12 @@
             > h5 {
                 display: block;
                 &:first-of-type > a {
-                    border-top: 1px solid $gray_one;
+                    border-top: 1px solid getVar($gustavo, colors, gray1);
                 }
                 > a {
                     padding: 10px 15px;
                     color: $gray_two;
-                    border-bottom: 1px solid $gray_one;
+                    border-bottom: 1px solid getVar($gustavo, colors, gray1);
                     display: block;
                     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
                     &.active_menu_link,
@@ -38,7 +38,7 @@
                         border-bottom: 1px solid $accent;
                     }
                     &:hover {
-                        background-color: $gray_one;
+                        background-color: getVar($gustavo, colors, gray1);
                         border-bottom: 1px solid transparent;
                     }
                 }
@@ -60,10 +60,10 @@
                 // Tabs links
                 > a {
                     background-color: transparent;
-                    border: 2px solid $gray_one;
+                    border: 2px solid getVar($gustavo, colors, gray1);
                     border-radius: 20px;
                     padding: 10px 25px;
-                    color: $gray_one;
+                    color: getVar($gustavo, colors, gray1);
                     // Tabs links actions on active, active menu link, and focus
                     &.active_menu_link,
                     &:active,
@@ -75,9 +75,9 @@
                     }
                     // Tabs links actions on hover
                     &:hover {
-                        border: 2px solid $gray_one;
+                        border: 2px solid getVar($gustavo, colors, gray1);
                         color: $white;
-                        background-color: $gray_one;
+                        background-color: getVar($gustavo, colors, gray1);
                     } 
                 }
             }
@@ -91,7 +91,7 @@
         #menu_tabs:after {
             content: "";
             display: block;
-            border-bottom: 2px solid $gray_one;
+            border-bottom: 2px solid getVar($gustavo, colors, gray1);
             margin-top: -5px;
         }
         h5 {
@@ -102,12 +102,12 @@
             a {
                 color: $gray_two;
                 padding: 10px 15px;
-                background-color: $gray_one;
+                background-color: getVar($gustavo, colors, gray1);
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
-                border-top: 2px solid $gray_one;
-                border-left: 2px solid $gray_one;
-                border-right: 2px solid $gray_one;
+                border-top: 2px solid getVar($gustavo, colors, gray1);
+                border-left: 2px solid getVar($gustavo, colors, gray1);
+                border-right: 2px solid getVar($gustavo, colors, gray1);
                 transition: color 0.3s ease-in-out;
                 &:focus,
                 &.active_menu_link,
@@ -180,7 +180,7 @@
                 position: relative;
                 letter-spacing: normal; 
                 &:before {
-                    border-top: 1px solid $gray_one;
+                    border-top: 1px solid getVar($gustavo, colors, gray1);
                     bottom: 0;
                     content: "";
                     left: 0;
@@ -418,7 +418,7 @@
                     color: $gray_three;
                     line-height: 1.8rem;
                     padding-bottom: 10px;
-                    border-bottom: 4px dotted $gray_one;
+                    border-bottom: 4px dotted getVar($gustavo, colors, gray1);
                     margin-bottom: 20px;
                     font-family: "Times New Roman";
                 }
