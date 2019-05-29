@@ -10,20 +10,6 @@
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
                 width: $w;
-                .menu_photo_list,
-                .menu_text_list_center,
-                .menu_text_list_left {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_text_half {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_photo_tiled_x3 {
-                    $c: 4;
-                    @include gridLayout($w, $c, $g, $s);
-                }
             }
             &.wide {
                 $w: getVar($sizing, content, large);
@@ -32,20 +18,6 @@
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
                 width: $w;
-                .menu_photo_list,
-                .menu_text_list_center,
-                .menu_text_list_left {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_text_half {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_photo_tiled_x3 {
-                    $c: 4;
-                    @include gridLayout($w, $c, $g, $s);
-                }
             }
             &.medium {
                 $w: getVar($sizing, content, medium);
@@ -76,20 +48,6 @@
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
                 width: $w;
-                .menu_photo_list,
-                .menu_text_list_center,
-                .menu_text_list_left {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_text_half {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_photo_tiled_x3 {
-                    $c: 4;
-                    @include gridLayout($w, $c, $g, $s);
-                }
             }
             .image_provided {
                 max-width: 20vw;

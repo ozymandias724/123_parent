@@ -8,7 +8,7 @@
 
         switch($menu_style)
         {
-            case 'menu_photo_list':
+            case 'menu_photo_list': 
             $format = '
                 <li class="menu_item site__fade site__fade-up">
                     %s
