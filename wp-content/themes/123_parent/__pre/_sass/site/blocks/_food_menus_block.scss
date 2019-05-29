@@ -64,8 +64,11 @@
                 .button_group {
                     margin: 30px auto 0px;
                     display: flex; 
-                    flex-flow: row nowrap; 
+                    flex-flow: row wrap; 
                     justify-content: center;
+                    li {
+                        margin: 5px 0;
+                    }
                 }
             }
             #tabs_style__pills {
@@ -111,7 +114,6 @@
                 // Menu Block Heading
                 > h2 {
                     @include fontS-34;
-                    letter-spacing: -1px;
                     font-weight: 800;
                     text-transform: capitalize;
                     margin-top: 30px;
@@ -220,25 +222,40 @@
         }
     }    
 }
-@media only screen and (max-width:960px){
-    
-}
 @media only screen and (max-width:1280px){
-    
-}
-@media only screen and (max-width:640px){
     section#block__food_menus {
         > .container {
-            #tabs_style__pills {
-                .button_group {
-                    flex-flow: column nowrap;
-                    li {
-                        margin: 5px 0;
+            &.medium {
+                $w: getVar($sizing, content, medium);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, large);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                .menu_section {
+                    .image_provided {
+                        max-width: 30vw;
+                        max-height: 30vw;
                     }
                 }
+                .menu_photo_list {
+                    $c: 1;
+                    @include gridLayout($w, $c, $g, $s);
+                    
+                }
+                .menu_text_half {
+                    $c: 2;
+                    @include gridLayout($w, $c, $g, $s);
+                }
             }
+        }
+    }
+}
+@media only screen and (max-width:960px){
+    section#block__food_menus {
+        > .container {
             &.medium {
-                $w: getVar($sizing, content, full);
+                $w: getVar($sizing, content, large);
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, large);
                 $s: true;
@@ -253,12 +270,35 @@
                     }
                 }
                 .menu_text_half {
-                    $c: 1;
+                    $c: 2;
                     @include gridLayout($w, $c, $g, $s);
                     .image_provided {
                         max-width: 65vw;
                         max-height: 65vw;
                     }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:640px){
+    section#block__food_menus {
+        > .container {
+            #tabs_style__pills {
+                .button_group {
+                    flex-flow: column nowrap;
+                }
+            }
+            &.medium {
+                $w: getVar($sizing, content, full);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, large);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                .menu_section {
+                    $c: 1;
+                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }
