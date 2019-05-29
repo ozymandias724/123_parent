@@ -33,7 +33,9 @@
                     max-width: 20vw;
                     max-height: 20vw;
                 }
-                .menu_photo_list {
+                .menu_photo_list,
+                .menu_text_list_center,
+                .menu_text_list_left {
                     $c: 1;
                     @include gridLayout($w, $c, $g, $s);
                 }
@@ -200,7 +202,6 @@
                                 padding-bottom: 15px;
                                 margin-bottom: 15px;
                                 > span {
-                                    color: getVar($gustavo, colors, gray3);
                                     font-weight: 600;
                                 }
                             }
@@ -209,6 +210,60 @@
                                 @include fontS-14;
                                 text-align: left;
                             }
+                        }
+                    }
+                }
+                &.menu_text_list_center {
+                    > p {
+                        border-bottom: 3px solid $accent;
+                        margin-bottom: 30px;
+                        padding-bottom: 20px;
+                    }
+                    .menu_item {
+                        > h3 {
+                            @include fontS-20;
+                            text-align: center;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            > span {
+                                font-weight: 500;
+                                &:before {
+                                    content: "";
+                                    border-left: 2px solid #aaabad;
+                                    margin: 0 15px 0 10px;
+                                }
+                            }
+                        }
+                        > p {
+                            @include fontS-14;
+                            font-family: "Times New Roman";
+                            font-style: italic;
+                        }
+                    }
+                }
+                &.menu_text_list_left {
+                    text-align: left;
+                    > p {
+                        border-bottom: 5px dotted $accent;
+                        margin-bottom: 30px;
+                        padding-bottom: 20px;
+                    }
+                    .menu_item {
+                        > h3 {
+                            text-transform: uppercase;
+                            display: flex;
+                            @include fontS-20;
+                            font-weight: 700;
+                            justify-content: space-between;  
+                        }
+                        > p {
+                            @include fontS-14;
+                            font-family: "Times New Roman";
+                            font-style: italic;
+                        }
+                        .block {
+                            margin: 0 0 20px 0;
                         }
                     }
                 }
@@ -225,6 +280,9 @@
 @media only screen and (max-width:1280px){
     section#block__food_menus {
         > .container {
+            &.narrow,
+            &.wide,
+            &.full,
             &.medium {
                 $w: getVar($sizing, content, medium);
                 $c: 1;
@@ -238,7 +296,9 @@
                         max-height: 30vw;
                     }
                 }
-                .menu_photo_list {
+                .menu_photo_list,
+                .menu_text_list_center,
+                .menu_text_list_left {
                     $c: 1;
                     @include gridLayout($w, $c, $g, $s);
                     
@@ -254,6 +314,9 @@
 @media only screen and (max-width:960px){
     section#block__food_menus {
         > .container {
+            &.narrow,
+            &.wide,
+            &.full,
             &.medium {
                 $w: getVar($sizing, content, large);
                 $c: 1;
@@ -261,7 +324,9 @@
                 $s: true;
                 @include gridLayout($w, $c, $g, $s);
                 width: $w;
-                .menu_photo_list {
+                .menu_photo_list,
+                .menu_text_list_center,
+                .menu_text_list_left {
                     $c: 1;
                     @include gridLayout($w, $c, $g, $s);
                     .image_provided {
@@ -269,13 +334,16 @@
                         max-height: 40vw;
                     }
                 }
-                .menu_text_half {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
+                .menu_text_half{
                     .image_provided {
                         max-width: 65vw;
                         max-height: 65vw;
                     }
+                }
+                .menu_text_half {
+                    $c: 2;
+                    @include gridLayout($w, $c, $g, $s);
+                    
                 }
             }
         }
@@ -289,6 +357,9 @@
                     flex-flow: column nowrap;
                 }
             }
+            &.narrow,
+            &.wide,
+            &.full,
             &.medium {
                 $w: getVar($sizing, content, full);
                 $c: 1;
@@ -299,6 +370,14 @@
                 .menu_section {
                     $c: 1;
                     @include gridLayout($w, $c, $g, $s);
+                }
+                .menu_text_half,
+                .menu_text_list_center,
+                .menu_text_list_left {
+                    .image_provided {
+                        max-width: 65vw;
+                        max-height: 65vw;
+                    }
                 }
             }
         }
