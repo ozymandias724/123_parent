@@ -476,31 +476,48 @@ Theme.Nav = {
 Theme.Nav._init();
 
 Theme.Menu = {
-    tab_header: $(" #menu_tabs > h5"),
-    tab_link: $(" #menu_tabs > h5 > a"),
-    menu_section: $(" .menu_section"),
-    images: $(".image_prov"),
+    tab_link: $(" #block__food_menus .button_group a "),
+    menu_section: $(" .menu_section "),
 
     _init: function () {
         Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
-        
+        Theme.Menu._show_menu_sections();
+        Theme.Menu._activate_menu_links();
     },
-    _tab_link_click: function (e) {
-        var menu_name = e.target.dataset.tab;
+    _tab_link_click: function () {
+
+        var tab_link_index = $(this).parent().index();
+
         Theme.Menu.menu_section.each(function () {
-            $(this).removeClass("active_menu_section");
+            
+            if($(this).index() !== tab_link_index){
+                $(this).removeClass("active_menu_section");
+            }else{
+                $(this).addClass("active_menu_section");
+            }
+
         });
         Theme.Menu.tab_link.each(function () {
+            
             $(this).removeClass("active_menu_link");
+
         });
-        Theme.Menu.tab_header.each(function () {
-            $(this).removeClass("active_menu_header");
-        });
-        $(".menu_section[data-tab^='" + menu_name + "']").addClass("active_menu_section");
         $(this).addClass("active_menu_link");
-        $(this).parent().addClass("active_menu_header");
     },
-    
+    _show_menu_sections: function(){
+        Theme.Menu.menu_section.each(function(index){
+            if(index == 0){
+                $(this).addClass("active_menu_section");
+            }
+        });
+    },
+    _activate_menu_links: function(){
+        Theme.Menu.tab_link.each(function(index){
+            if(index == 0){
+                $(this).addClass("active_menu_link");
+            }
+        })
+    }
 }
 Theme.Menu._init();
 

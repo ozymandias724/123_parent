@@ -41,28 +41,28 @@
             case 'menu_photo_list':
             $format = '
                 <li class="menu_item site__fade site__fade-up">
-                    <div style="background-image:url(%s);"></div>
+                    %s
                     <div>
                         <h3>%s</h3>
-                        <p class="menu_price">%s</p>
                         %s
+                        <p class="menu_price">%s</p>
                     </div>
                 </li>
             ';
 
             $return = sprintf(
                 $format
-                ,(!empty($item['image']) ? $item['image']['url'] : '')
+                ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
-                ,(!empty($item['price']) ? $item['price'] : '')
                 ,(!empty($item['description']) ? $item['description'] : '')
+                ,(!empty($item['price']) ? $item['price'] : '')
             );
             break;
 
             case 'menu_photo_tiled_x3':
             $format = '
                 <li class="menu_item site__fade site__fade-up">
-                    <div style="background-image:url(%s);"></div>
+                    %s
                     <h3>%s <div class="menu_price">%s.<span class="price_decimal">%s</span></div></h3>
                     %s
                 </li>
@@ -71,7 +71,7 @@
             $price = (!empty($item['price'])) ? explode('.',$item['price']) : '';
             $return = sprintf(
                 $format
-                ,(!empty($item['image']) ? $item['image']['url'] : '')
+                ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
                 ,$price[0]
                 ,$price[1]
@@ -82,7 +82,7 @@
             default: 
             $format = '
                 <li class="menu_item site__fade site__fade-up">
-                    <div style="background-image:url(%s);"></div>
+                    %s
                     <h3>%s <span class="menu_price">%s</span></h3>
                     %s
                 </li>
@@ -90,7 +90,7 @@
             
             $return = sprintf(
                 $format
-                ,(!empty($item['image']) ? $item['image']['url'] : '')
+                ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
                 ,(!empty($item['price']) ? $item['price'] : '')
                 ,(!empty($item['description']) ? $item['description'] : '')
@@ -101,9 +101,50 @@
         return $return;
     }
 
+    function _get_tabs_style_tag($cB){
+
+        $format = '<div id="tabs_style__%s" class="tabs">'; 
+
+        if(!empty($cB['tabs_style']))
+        {
+            switch($cB['tabs_style'])
+            {
+                //tabs_pills
+                case 'pills':
+                $tabs_style = sprintf(
+                    $format
+                    ,'pills'
+                );
+                break;
+                //tabs_sidebar
+                case 'sidebar':
+                $tabs_style = sprintf(
+                    $format
+                    ,'sidebar'
+                );
+                break;
+                //tabs_divider
+                case 'divider':
+                $tabs_style = sprintf(
+                    $format
+                    ,'divider'
+                );
+                break;
+            }
+        }
+        else
+        {
+            //tabs_none
+            $tabs_style = sprintf(
+                $format
+                ,'none'
+            );
+        }
+        return $tabs_style;
+    }
+
     // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
-
 
         // guide for a button (pill etc)
         $guide['buttons'] = '
@@ -113,7 +154,9 @@
         ';
 
         // open buttons and menus container
-        $return['buttons_and_menus'] = '<div id="tabs_style__pills" class="tabs">';            
+        $return['buttons_and_menus'] = '<div id="tabs_style__pills" class="tabs">';  
+        
+        $return['buttons_and_menus'] = _get_tabs_style_tag($cB);
         
         // open buttons wrapper (sibling of content area)
         $return['buttons'] = '<ul class="button_group">';
@@ -150,7 +193,7 @@
                     );
 
                     // Open Menu Items Content
-                    $return['menu_sections'] .= '<ul>';
+                    $return['menu_sections'] .= '<ul class="menu_items">';
 
                     foreach( $section['item'] as $i => $item){
                         $return['menu_sections'] .=  _get_menu_items($fields['style'], $item);

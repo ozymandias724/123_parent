@@ -458,27 +458,42 @@ Theme.Nav = {
 Theme.Nav._init();
 
 Theme.Menu = {
-  tab_header: (0, _jquery["default"])(" #menu_tabs > h5"),
-  tab_link: (0, _jquery["default"])(" #menu_tabs > h5 > a"),
-  menu_section: (0, _jquery["default"])(" .menu_section"),
-  images: (0, _jquery["default"])(".image_prov"),
+  tab_link: (0, _jquery["default"])(" #block__food_menus .button_group a "),
+  menu_section: (0, _jquery["default"])(" .menu_section "),
   _init: function _init() {
     Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
+
+    Theme.Menu._show_menu_sections();
+
+    Theme.Menu._activate_menu_links();
   },
-  _tab_link_click: function _tab_link_click(e) {
-    var menu_name = e.target.dataset.tab;
+  _tab_link_click: function _tab_link_click() {
+    var tab_link_index = (0, _jquery["default"])(this).parent().index();
     Theme.Menu.menu_section.each(function () {
-      (0, _jquery["default"])(this).removeClass("active_menu_section");
+      if ((0, _jquery["default"])(this).index() !== tab_link_index) {
+        (0, _jquery["default"])(this).removeClass("active_menu_section");
+      } else {
+        (0, _jquery["default"])(this).addClass("active_menu_section");
+      }
     });
     Theme.Menu.tab_link.each(function () {
       (0, _jquery["default"])(this).removeClass("active_menu_link");
     });
-    Theme.Menu.tab_header.each(function () {
-      (0, _jquery["default"])(this).removeClass("active_menu_header");
-    });
-    (0, _jquery["default"])(".menu_section[data-tab^='" + menu_name + "']").addClass("active_menu_section");
     (0, _jquery["default"])(this).addClass("active_menu_link");
-    (0, _jquery["default"])(this).parent().addClass("active_menu_header");
+  },
+  _show_menu_sections: function _show_menu_sections() {
+    Theme.Menu.menu_section.each(function (index) {
+      if (index == 0) {
+        (0, _jquery["default"])(this).addClass("active_menu_section");
+      }
+    });
+  },
+  _activate_menu_links: function _activate_menu_links() {
+    Theme.Menu.tab_link.each(function (index) {
+      if (index == 0) {
+        (0, _jquery["default"])(this).addClass("active_menu_link");
+      }
+    });
   }
 };
 
