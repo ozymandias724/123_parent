@@ -71,48 +71,6 @@
         return $return;
     }
 
-    function get_tabs_style_tag($cB){
-
-        $format = '<div id="tabs_style__%s" class="tabs">'; 
-
-        if(!empty($cB['tabs_style']))
-        {
-            switch($cB['tabs_style'])
-            {
-                //tabs_pills
-                case 'pills':
-                $tabs_style = sprintf(
-                    $format
-                    ,'pills'
-                );
-                break;
-                //tabs_sidebar
-                case 'sidebar':
-                $tabs_style = sprintf(
-                    $format
-                    ,'sidebar'
-                );
-                break;
-                //tabs_divider
-                case 'divider':
-                $tabs_style = sprintf(
-                    $format
-                    ,'divider'
-                );
-                break;
-            }
-        }
-        else
-        {
-            //tabs_none
-            $tabs_style = sprintf(
-                $format
-                ,'none'
-            );
-        }
-        return $tabs_style;
-    }
-
     // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
 
@@ -124,9 +82,7 @@
         ';
 
         // open buttons and menus container
-        $return['buttons_and_menus'] = '<div id="tabs_style__pills" class="tabs">';  
-        
-        $return['buttons_and_menus'] = get_tabs_style_tag($cB);
+        $return['buttons_and_menus'] = '<div id="tabs_style__'.$cB['tabs_style'].'" class="tabs">'; 
         
         // open buttons wrapper (sibling of content area)
         $return['buttons'] = '<ul class="button_group">';
