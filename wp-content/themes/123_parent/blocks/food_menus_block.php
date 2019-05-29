@@ -57,7 +57,7 @@
 
             case 'menu_photo_tiled_x3':
             $format = '
-                <li class="menu_item">
+                <li class="menu_item site__fade site__fade-up">
                     <div style="background-image:url(%s);"></div>
                     <h3>%s <div class="menu_price">%s.<span class="price_decimal">%s</span></div></h3>
                     %s
@@ -77,7 +77,7 @@
 
             default: 
             $format = '
-                <li class="menu_item">
+                <li class="menu_item site__fade site__fade-up">
                     <div style="background-image:url(%s);"></div>
                     <h3>%s <span class="menu_price">%s</span></h3>
                     %s
@@ -188,7 +188,7 @@
 
     $return['section'] .= sprintf(
 
-         $guide['section']
+        $guide['section']
         ,$cB['width']
         ,$cB['background_color']
         ,$cB['foreground_color']
@@ -203,6 +203,6 @@
 
     echo $return['section'];
      
-     // clear the $cB, $return, $index and $guide vars for the next block
+    // clear the $cB, $return, $index and $guide vars for the next block
     unset($cB, $return, $guide);
 ?>

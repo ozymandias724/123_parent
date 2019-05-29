@@ -107,28 +107,15 @@
         $text = (!empty($popup['popup_text'])) ? $popup['popup_text'] : '';
         $email = (!empty($popup['email'])) ? '<p>'.$popup['email'].'</p>' : ''; 
 
-
         $format_popup = '
             <section class="popup" id="banner_popup">
-                <a href="javascript:;" class="site__button-quote">%s</a>
-                <div>
-                    %s
-                    %s
-                    %s
-                    %s
-                    %s
-                </div>
+                <a href="javascript:;">%s</a>
             </section>
         ';
 
         $banner_popup = sprintf(
             $format_popup
             ,$bar_text
-            ,_get_times()
-            ,$heading
-            ,$image
-            ,_get_form()
-            ,$text
         );
 
         return $banner_popup; 
