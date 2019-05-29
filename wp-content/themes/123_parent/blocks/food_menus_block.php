@@ -3,38 +3,8 @@
     $guide = []; 
     $return = [];
 
-    // Functions
-    // 
-    // there is no need for this... just looking at it, theres no way this is needed.
-    function _get_menu_header_format($menu_style){
-        $return = '';
-        if(
-            $menu_style == 'menu_text_list_center' || 
-            $menu_style == 'menu_text_list_left' ||
-            $menu_style == 'menu_photo_tiled_x3' || 
-            $menu_style == 'menu_photo_list'
-        )
-        {
-            $return = '
-                <h2>%s</h2>
-                %s
-            ';
-        }
-        else 
-        {
-            $return = '
-                <h2><span>%s</span></h2>
-                %s 
-            ';
-        }
-        return $return;
-    }  
-
-    // this makes a lot of sense and i want to keep this
-    // you dont need to start with an _ for your functions, please stop
-    function _get_menu_items($menu_style, $item){
-
-        $return = '';
+    // Functions 
+    function get_menu_items($menu_style, $item){
 
         switch($menu_style)
         {
@@ -101,7 +71,7 @@
         return $return;
     }
 
-    function _get_tabs_style_tag($cB){
+    function get_tabs_style_tag($cB){
 
         $format = '<div id="tabs_style__%s" class="tabs">'; 
 
@@ -156,7 +126,7 @@
         // open buttons and menus container
         $return['buttons_and_menus'] = '<div id="tabs_style__pills" class="tabs">';  
         
-        $return['buttons_and_menus'] = _get_tabs_style_tag($cB);
+        $return['buttons_and_menus'] = get_tabs_style_tag($cB);
         
         // open buttons wrapper (sibling of content area)
         $return['buttons'] = '<ul class="button_group">';
@@ -185,9 +155,14 @@
                 // loop thru each menu section (rows in the repeater)
                 foreach( $fields['menu_sections'] as $i => $section ){
 
+                    $header_format = '
+                        <h2><span>%s</span></h2>
+                        %s
+                    ';
+
                     // Menu Title and Description
                     $return['menu_sections'] .= sprintf(
-                        _get_menu_header_format($fields['style'])   // REVIEW: there is no need for this. see declaration.
+                        $header_format
                         ,(!empty($section['title']) ? $section['title'] : '')
                         ,(!empty($section['description']) ? $section['description'] : '')
                     );
@@ -196,7 +171,7 @@
                     $return['menu_sections'] .= '<ul class="menu_items">';
 
                     foreach( $section['item'] as $i => $item){
-                        $return['menu_sections'] .=  _get_menu_items($fields['style'], $item);
+                        $return['menu_sections'] .=  get_menu_items($fields['style'], $item);
                     }
 
                     // Close Menu Items Content
