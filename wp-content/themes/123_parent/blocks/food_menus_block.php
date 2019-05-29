@@ -105,16 +105,35 @@
             // if this menu post has menu sections
             if( !empty($fields['menu_sections']) ){
 
-                // open the wrapper for the menu sections
-                $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].'">';
+                if($fields['style'] !== 'menu_text_sub_group_half')
+                {
+                    // open the wrapper for the menu sections
+                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].'">';
+                }
+                else
+                {
+                    // open the wrapper for the menu sections
+                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].' menu_flex">';
+                }
 
                 // loop thru each menu section (rows in the repeater)
                 foreach( $fields['menu_sections'] as $i => $section ){
 
-                    $header_format = '
-                        <h2><span>%s</span></h2>
-                        %s
-                    ';
+                    // Menu Header Format
+                    if($fields['style'] !== 'menu_text_sub_group_half')
+                    {
+                        $header_format = '
+                            <h2><span>%s</span></h2>
+                            %s
+                        ';
+                    }
+                    else
+                    {
+                        $header_format = '
+                            <div><h2><span>%s</span></h2>
+                            %s
+                        ';
+                    }
 
                     // Menu Title and Description
                     $return['menu_sections'] .= sprintf(
@@ -131,7 +150,14 @@
                     }
 
                     // Close Menu Items Content
-                    $return['menu_sections'] .= '</ul>';
+                    if($fields['style'] !== 'menu_text_sub_group_half')
+                    {
+                        $return['menu_sections'] .= '</ul>';
+                    }
+                    else
+                    {
+                        $return['menu_sections'] .= '</ul></div>';
+                    }
                 }
 
                 // close the menu sections wrapper

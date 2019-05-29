@@ -119,14 +119,16 @@
                     max-height: 20vw;
                 }
                 // Menu Block Heading
-                > h2 {
+                > h2,
+                &.menu_text_sub_group_half > div > h2 {
                     @include fontS-34;
                     font-weight: 800;
                     text-transform: capitalize;
                     margin-top: 30px;
                 }
                 // Menu Block Description
-                > p {
+                > p,
+                &.menu_text_sub_group_half > div > p {
                     margin: 15px 0 20px;
                     font-family: "Times New Roman";
                     line-height: 1em;
@@ -202,6 +204,7 @@
                             border-bottom: 3px solid $accent;
                             padding-bottom: 15px;
                             margin-bottom: 15px;
+                            text-align: center;
                             > span {
                                 font-weight: 600;
                             }
@@ -276,17 +279,73 @@
                     }
                 }
                 &.menu_text_sub_group_half {
-                    > p {
-                        border-bottom: none;
+                    flex-flow: row wrap;
+                    >div:nth-child(odd){
+                        padding-right: 20px;
                     }
+                    > div {
+                        width: 50%;
+                        text-align: left;
+                        > h2 {
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            position: relative;
+                            letter-spacing: normal;
+                            @include fontS-34;
+                            &:before {
+                                border-top: 1px solid #c2c2c2;
+                                bottom: 0;
+                                content: "";
+                                left: 0;
+                                margin: 0 auto;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                            }
+                            span {
+                                background: #fff;
+                                padding: 0 15px 0 0;
+                                position: relative;
+                            }
+                        }
+                        > p {
+                            border-bottom: none;
+                        }
+                        .menu_item {
+                            margin: 20px 0;
+                            > h3 {
+                                display: flex;
+                                @include fontS-20;
+                                font-weight: 700;
+                                justify-content: space-between;
+                                border-bottom: 3px solid #386591;
+                                padding-bottom: 15px;
+                                margin-bottom: 15px;
+                            }
+                            > p {
+                                @include fontS-14;
+                            }
+                            > ul {
+                                width: 31vw;
+                                > li {
+                                    max-width: 31vw;   
+                                }
+                            }
+                            .image_provided {
+                                width: 65vw;
+                                height: 65vw;
+                            }
+                        }
+                    }
+                    
                 }
             }
             .active_menu_section {
                 display: block;
             }
-            .flex_menu {
+            .active_menu_section.menu_flex {
                 display: flex;
-            }         
+            }       
         }
     }    
 }
@@ -349,16 +408,12 @@
                 }
                 .menu_text_half,
                 .menu_photo_tiled_x3 {
+                    $c: 2;
+                    @include gridLayout($w, $c, $g, $s);
                     .image_provided {
                         max-width: 65vw;
                         max-height: 65vw;
                     }
-                }
-                .menu_text_half,
-                .menu_photo_tiled_x3 {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
-                    
                 }
             }
         }
@@ -394,6 +449,15 @@
                     .image_provided {
                         max-width: 40vw;
                         max-height: 40vw;
+                    }
+                }
+                .menu_text_sub_group_half {
+                    flex-flow: column wrap;
+                    > div:nth-child(odd){
+                        padding-right: 0;
+                    }
+                    > div {
+                        width: 100%;
                     }
                 }
             }
