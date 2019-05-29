@@ -4,6 +4,8 @@
     $return = [];
 
     // Functions
+    // 
+    // there is no need for this... just looking at it, theres no way this is needed.
     function _get_menu_header_format($menu_style){
         $return = '';
         if(
@@ -28,6 +30,8 @@
         return $return;
     }  
 
+    // this makes a lot of sense and i want to keep this
+    // you dont need to start with an _ for your functions, please stop
     function _get_menu_items($menu_style, $item){
 
         $return = '';
@@ -100,6 +104,7 @@
     // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
 
+
         // guide for a button (pill etc)
         $guide['buttons'] = '
             <li>
@@ -139,7 +144,7 @@
 
                     // Menu Title and Description
                     $return['menu_sections'] .= sprintf(
-                        _get_menu_header_format($fields['style'])
+                        _get_menu_header_format($fields['style'])   // REVIEW: there is no need for this. see declaration.
                         ,(!empty($section['title']) ? $section['title'] : '')
                         ,(!empty($section['description']) ? $section['description'] : '')
                     );
