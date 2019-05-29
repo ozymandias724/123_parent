@@ -5,6 +5,51 @@
         
 
         > .container {
+            //Narrow , medium , wide , full
+            &.full {
+                $w: getVar($sizing, content, full);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+            }
+            &.wide {
+                $w: getVar($sizing, content, large);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+            }
+            &.medium {
+                $w: getVar($sizing, content, medium);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                .image_provided {
+                    max-width: 20vw;
+                    max-height: 20vw;
+                }
+                .menu_photo_list {
+                    $c: 1;
+                    @include gridLayout($w, $c, $g, $s);
+                }
+                .menu_text_half {
+                    $c: 2;
+                    @include gridLayout($w, $c, $g, $s);
+                }
+            }
+            &.narrow {
+                $w: getVar($sizing, content, small);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, small);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+            } 
             > h2 {
                 margin: 0 auto 30px auto;
                 font-weight: 900;
@@ -53,11 +98,6 @@
             }
             .menu_section {
                 display: none;
-                $w: 65vw;
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
                 .image_provided {
                     width: 100%;
                     margin: 0 auto;
@@ -103,7 +143,7 @@
                         }
                         >div:last-of-type {
                             text-align: left;
-                            width: inherit;
+                            width: 100%;
                             vertical-align: top;
                             > h3 {
                                 font-weight: 900;
@@ -125,16 +165,6 @@
                     }
                 }
                 &.menu_text_half {
-                    text-align: center;
-                    $w: getVar($sizing, content, medium);
-                    $c: 2;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
-                    .image_prov {
-                        max-width: 20vw;
-                        max-height: 20vw;
-                    }
                     > h2 {
                         text-transform: uppercase;
                         font-weight: 700;
@@ -186,20 +216,7 @@
             }
             .flex_menu {
                 display: flex;
-            }
-            //Narrow , medium , wide , full
-            &.full {
-                width: getVar($sizing, content, full);
-            }
-            &.wide {
-                width: getVar($sizing, content, large);
-            }
-            &.medium {
-                width: getVar($sizing, content, medium);
-            }
-            &.narrow {
-                width: getVar($sizing, content, small);
-            }          
+            }         
         }
     }    
 }
@@ -217,6 +234,30 @@
                     flex-flow: column nowrap;
                     li {
                         margin: 5px 0;
+                    }
+                }
+            }
+            &.medium {
+                $w: getVar($sizing, content, full);
+                $c: 1;
+                $g: getVar($sizing, gutter, vw, large);
+                $s: true;
+                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                .menu_photo_list {
+                    $c: 1;
+                    @include gridLayout($w, $c, $g, $s);
+                    .image_provided {
+                        max-width: 40vw;
+                        max-height: 40vw;
+                    }
+                }
+                .menu_text_half {
+                    $c: 1;
+                    @include gridLayout($w, $c, $g, $s);
+                    .image_provided {
+                        max-width: 65vw;
+                        max-height: 65vw;
                     }
                 }
             }
