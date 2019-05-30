@@ -487,7 +487,7 @@ Theme.Menu = {
     _tab_link_click: function () {
 
         var tab_link_index = $(this).parent().index();
-
+ 
         Theme.Menu.menu_section.each(function () {
             
             if($(this).index() !== tab_link_index){

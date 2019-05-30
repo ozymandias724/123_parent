@@ -20,25 +20,50 @@
                 width: $w;
             }
             &.medium {
-                $w: getVar($sizing, content, medium);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-                .menu_photo_list,
-                .menu_text_list_center,
-                .menu_text_list_left {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
+                #tabs_style__pills {
+                    > .menu_area {
+                        $w: getVar($sizing, content, medium);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        width: $w;
+                        .menu_photo_list,
+                        .menu_text_list_center,
+                        .menu_text_list_left {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 4;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
                 }
-                .menu_text_half {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
-                }
-                .menu_photo_tiled_x3 {
-                    $c: 4;
-                    @include gridLayout($w, $c, $g, $s);
+                #tabs_style__sidebar {
+                    > .menu_area {
+                        $w: getVar($sizing, content, small);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        .menu_photo_list,
+                        .menu_text_list_center,
+                        .menu_text_list_left {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 3;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
                 }
             }
             &.narrow {
@@ -63,43 +88,81 @@
                 @include fontS-20;
             }
             .tabs {
-                margin-bottom: 30px;
+                margin: 30px 0;
+            }
+            #tabs_style__pills {
                 .button_group {
-                    margin: 30px auto 0px;
                     display: flex; 
                     flex-flow: row wrap; 
                     justify-content: center;
+                    margin-bottom: 30px;
+                    a {
+                        @include fontS-16;
+                        font-weight: 700;
+                        margin: 0 5px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        background-color: white;
+                        border: 2px solid getVar($gustavo, colors, gray1);
+                        border-radius: 30px;
+                        padding: 5px 25px;
+                        color: inherit;
+                        display: inline-block;
+                        &:active,
+                        &:focus,
+                        &.active_menu_link,
+                        &.active_menu_link:hover {
+                            border: 2px solid $accent;
+                            background-color: $accent;
+                            color: $white;
+                        }
+                        &:hover {
+                            border: 2px solid getVar($gustavo, colors, gray1);
+                            color: $white;
+                            background-color: getVar($gustavo, colors, gray1);
+                        } 
+                    }
                     li {
                         margin: 5px 0;
                     }
                 }
             }
-            #tabs_style__pills {
-                a {
-                    @include fontS-16;
-                    font-weight: 700;
-                    margin: 0 5px;
-                    text-transform: uppercase;
-                    text-align: center;
-                    background-color: white;
-                    border: 2px solid getVar($gustavo, colors, gray1);
-                    border-radius: 30px;
-                    padding: 5px 25px;
-                    color: inherit;
-                    display: inline-block;
-                    &:active,
-                    &:focus,
-                    &.active_menu_link,
-                    &.active_menu_link:hover {
-                        border: 2px solid $accent;
-                        background-color: $accent;
-                        color: $white;
+            #tabs_style__sidebar {
+                display: flex;
+                flex-flow: row nowrap;
+                > ul.button_group {
+                    width: 20%;
+                    margin-right: 2%;
+                    flex-flow: column wrap;
+                    justify-content: end;
+                    text-align: left;
+                    a {
+                        @include fontS-16;
+                        font-weight: 700;
+                        padding: 10px 15px;
+                        color: inherit;
+                        border-bottom: 1px solid #c2c2c2;
+                        display: block;
+                        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+                        &.active_menu_link,
+                        &:active,
+                        &:focus,
+                        &.active_menu_link:hover {
+                            background-color: $accent;
+                            color: $white;
+                            border-bottom: 1px solid $accent;
+                        }
+                        &:hover {
+                            background-color: getVar($gustavo, colors, gray1);
+                            border-bottom: 1px solid transparent;
+                        }
                     }
-                    &:hover {
-                        border: 2px solid getVar($gustavo, colors, gray1);
-                        color: $white;
-                        background-color: getVar($gustavo, colors, gray1);
-                    } 
+                    li:first-of-type a {
+                        border-top: 1px solid #c2c2c2;
+                    }
+                }
+                > .menu_area {
+                    width: 80%;
                 }
             }
             .menu_section {
@@ -114,13 +177,15 @@
                     max-width: 20vw;
                     max-height: 20vw;
                 }
+                > ul.menu_items {
+                    display: inline-block;
+                }
                 // Menu Block Heading
                 > h2,
                 &.menu_text_sub_group_half > div > h2 {
                     @include fontS-34;
                     font-weight: 800;
                     text-transform: capitalize;
-                    margin-top: 30px;
                 }
                 // Menu Block Description
                 > p,
@@ -132,7 +197,6 @@
                     @include fontS-24;
                     font-weight: 500;
                     border-bottom: 3px solid $accent;
-                    margin-bottom: 30px;
                     padding-bottom: 20px;
                 }
                 &.menu_photo_list {
@@ -200,7 +264,7 @@
                             border-bottom: 3px solid $accent;
                             padding-bottom: 15px;
                             margin-bottom: 15px;
-                            text-align: center;
+                            text-align: left;
                             > span {
                                 font-weight: 600;
                             }
@@ -267,6 +331,7 @@
                             justify-content: space-between;
                             margin-bottom: 5px;
                             @include fontS-20;
+                            text-align: left;
                         }
                         > p {
                             text-align: justify;
@@ -348,32 +413,33 @@
 @media only screen and (max-width:1280px){
     section#block__food_menus {
         > .container {
-            &.narrow,
-            &.wide,
-            &.full,
             &.medium {
-                $w: getVar($sizing, content, medium);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, large);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-                .menu_section {
-                    .image_provided {
-                        max-width: 30vw;
-                        max-height: 30vw;
+                #tabs_style__pills {
+                    > .menu_area {
+                        $w: getVar($sizing, content, medium);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, large);
+                        $s: true;
+                        @include gridLayout($w, $c, $g, $s);
+                        width: $w;
+                        .menu_section {
+                            .image_provided {
+                                max-width: 30vw;
+                                max-height: 30vw;
+                            }
+                        }
+                        .menu_photo_list,
+                        .menu_text_list_center,
+                        .menu_text_list_left {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                            
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
                     }
-                }
-                .menu_photo_list,
-                .menu_text_list_center,
-                .menu_text_list_left {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
-                    
-                }
-                .menu_text_half {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }
@@ -382,33 +448,62 @@
 @media only screen and (max-width:960px){
     section#block__food_menus {
         > .container {
-            &.narrow,
-            &.wide,
-            &.full,
             &.medium {
-                $w: getVar($sizing, content, large);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, large);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-                .menu_photo_list,
-                .menu_text_list_center,
-                .menu_text_list_left {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
-                    .image_provided {
-                        max-width: 40vw;
-                        max-height: 40vw;
+                #tabs_style__pills {
+                    > .menu_area {
+                        $w: getVar($sizing, content, large);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, large);
+                        $s: true;
+                        @include gridLayout($w, $c, $g, $s);
+                        width: $w;
+                        .menu_photo_list,
+                        .menu_text_list_center,
+                        .menu_text_list_left {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                            .image_provided {
+                                max-width: 40vw;
+                                max-height: 40vw;
+                            }
+                        }
+                        .menu_text_half,
+                        .menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                            .image_provided {
+                                max-width: 65vw;
+                                max-height: 65vw;
+                            }
+                        }
                     }
                 }
-                .menu_text_half,
-                .menu_photo_tiled_x3 {
-                    $c: 2;
-                    @include gridLayout($w, $c, $g, $s);
+                #tabs_style__sidebar {
+                    flex-flow: row nowrap;
                     .image_provided {
-                        max-width: 65vw;
-                        max-height: 65vw;
+                        max-width: 24vw;
+                        max-height: 24vw;
+                    }
+                    > .menu_area {
+                        $w: getVar($sizing, content, small);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        @include gridLayout($w, $c, $g, $s);
+                        .menu_photo_list,
+                        .menu_text_list_center,
+                        .menu_text_list_left {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
                     }
                 }
             }
@@ -423,37 +518,80 @@
                     flex-flow: column nowrap;
                 }
             }
-            &.narrow,
-            &.wide,
-            &.full,
             &.medium {
-                $w: getVar($sizing, content, full);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, large);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-                .menu_section {
-                    $c: 1;
-                    @include gridLayout($w, $c, $g, $s);
+                #tabs_style__pills {
+                    > ul.button_group {
+                        margin-right: 0;
+                    }
+                    > .menu_area {
+                        $w: getVar($sizing, content, medium);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, large);
+                        $s: true;
+                        @include gridLayout($w, $c, $g, $s);
+                        width: $w;
+                        .menu_section {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                            .image_provided {
+                                max-width: 65vw;
+                                max-height: 65vw;
+                            }
+                        }
+                        .menu_photo_list {
+                            .image_provided {
+                                max-width: 40vw;
+                                max-height: 40vw;
+                            }
+                        }
+                        .menu_text_sub_group_half {
+                            flex-flow: column wrap;
+                            > div:nth-child(odd){
+                                padding-right: 0;
+                            }
+                            > div {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                #tabs_style__sidebar {
+                    flex-flow: column nowrap;
+                    > ul.button_group {
+                        width: 100%;
+                        margin-bottom: 30px;
+                    }
                     .image_provided {
                         max-width: 65vw;
                         max-height: 65vw;
                     }
-                }
-                .menu_photo_list {
-                    .image_provided {
-                        max-width: 40vw;
-                        max-height: 40vw;
-                    }
-                }
-                .menu_text_sub_group_half {
-                    flex-flow: column wrap;
-                    > div:nth-child(odd){
-                        padding-right: 0;
-                    }
-                    > div {
+                    > .menu_area {
+                        $w: getVar($sizing, content, medium);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, large);
+                        $s: true;
+                        @include gridLayout($w, $c, $g, $s);
                         width: 100%;
+                        .menu_text_sub_group_half {
+                            flex-flow: column wrap;
+                            > div:nth-child(odd){
+                                padding-right: 0;
+                            }
+                            > div {
+                                width: 100%;
+                            }
+                        }
+                        .menu_photo_list,
+                        .menu_text_list_center,
+                        .menu_text_list_left,
+                        .menu_text_half {
+                            $c: 1;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
                     }
                 }
             }
