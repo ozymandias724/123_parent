@@ -1,82 +1,54 @@
+
+// For everything over 1280px 
 @media only screen {
     section#block__food_menus {
 
         > .container {
-            //Narrow , medium , wide , full
-            &.full {
-                $w: getVar($sizing, content, full);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-            }
-            &.wide {
-                $w: getVar($sizing, content, large);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-            }
-            &.medium {
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    > .menu_area {
-                        $w: getVar($sizing, content, medium);
+            #tabs_style__pills,
+            #tabs_style__divider {
+                > .site__grid {
+                    $w: getVar($sizing, content, medium);
+                    $c: 1;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    width: $w;
+                    .menu_section {
                         $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                    .menu_text_half {
+                        $c: 2;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                    .menu_photo_tiled_x3 {
+                        $c: 4;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                }
+            }
+            #tabs_style__sidebar {
+                > .site__grid {
+                    $w: getVar($sizing, content, small);
+                    $c: 1;
+                    $g: getVar($sizing, gutter, vw, small);
+                    $s: true;
+                    .menu_section {
                         width: $w;
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                        .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                        .menu_photo_tiled_x3 {
-                            $c: 4;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-                #tabs_style__sidebar {
-                    > .menu_area {
-                        $w: getVar($sizing, content, small);
                         $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                        .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                        .menu_photo_tiled_x3 {
-                            $c: 3;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                        .menu_text_sub_group_half {
-                            width: $w;
-                        }
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                    .menu_text_half {
+                        $c: 2;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                    .menu_photo_tiled_x3 {
+                        $c: 3;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                    .menu_text_sub_group_half {
+                        width: $w;
                     }
                 }
-            }
-            &.narrow {
-                $w: getVar($sizing, content, small);
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, small);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
-                width: $w;
-            }
-            .image_provided {
-                max-width: 20vw;
-                max-height: 20vw;
             }
             > h2 {
                 margin: 0 auto 30px auto;
@@ -94,45 +66,45 @@
                 > ul.button_group {
                     margin-bottom: 30px;
                     text-align: left;
-                    > li {
-                        display: inline-block;
-                    }
-                    > li:last-of-type {
-                        margin-bottom: 0;
-                    }
                     &:after {
                         content: "";
                         display: block;
                         border-bottom: 2px solid getVar($gustavo, colors, gray1);
                         margin-top: -3px
                     }
-                    a {
+                    > li {
                         display: inline-block;
-                        margin: 0 2px;
-                        padding: 10px 15px;
                         text-transform: uppercase;
                         @include fontS-14;
                         font-weight: 700;
-                        color: getVar($gustavo, colors, gray2);
-                        background-color: getVar($gustavo, colors, gray1);
+                        margin: 0 2px;
                         border-top-left-radius: 5px;
                         border-top-right-radius: 5px;
                         border-top: 2px solid getVar($gustavo, colors, gray1);
                         border-left: 2px solid getVar($gustavo, colors, gray1);
                         border-right: 2px solid getVar($gustavo, colors, gray1);
                         transition: color 0.3s ease-in-out;
-                        &:focus,
-                        &.active_menu_link,
-                        &.active_menu_link:hover {
-                            color: $accent;
-                            background: $white;
-                            border-bottom: 2px solid transparent;
+                        a {
+                            color: getVar($gustavo, colors, gray2);
+                            background-color: getVar($gustavo, colors, gray1);
+                            display: block;   
+                            padding: 10px 15px;
+                            &:focus,
+                            &.active_menu_link,
+                            &.active_menu_link:hover {
+                                color: $accent;
+                                background: $white;
+                                border-bottom: 2px solid transparent;
+                            }
+                            &:hover,
+                            &:active {
+                                color: $white;
+                                background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                            }
                         }
-                        &:hover,
-                        &:active {
-                            color: $white;
-                            background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
-                        }
+                    }
+                    > li:last-of-type {
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -142,42 +114,47 @@
                     flex-flow: row wrap; 
                     justify-content: center;
                     margin-bottom: 30px;
-                    a {
-                        @include fontS-16;
-                        font-weight: 700;
-                        margin: 0 5px;
-                        text-transform: uppercase;
-                        text-align: center;
-                        background-color: white;
-                        border: 2px solid getVar($gustavo, colors, gray1);
-                        border-radius: 30px;
-                        padding: 5px 25px;
-                        color: inherit;
-                        display: inline-block;
-                        &:active,
-                        &:focus,
-                        &.active_menu_link,
-                        &.active_menu_link:hover {
-                            border: 2px solid $accent;
-                            background-color: $accent;
-                            color: $white;
-                        }
-                        &:hover {
-                            border: 2px solid getVar($gustavo, colors, gray1);
-                            color: $white;
-                            background-color: getVar($gustavo, colors, gray1);
-                        } 
-                    }
+                    align-items: stretch;
                     li {
                         margin: 5px 0;
+                        flex: 1 0 33%;
+                        a {
+                            @include fontS-16;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            text-align: center;
+                            background-color: white;
+                            border: 2px solid getVar($gustavo, colors, gray1);
+                            border-radius: 30px;
+                            padding: 5px 25px;
+                            color: inherit;
+                            display: block;
+                            margin: 0 5px;
+                            &:active,
+                            &:focus,
+                            &.active_menu_link,
+                            &.active_menu_link:hover {
+                                border: 2px solid $accent;
+                                background-color: $accent;
+                                color: $white;
+                            }
+                            &:hover {
+                                border: 2px solid getVar($gustavo, colors, gray1);
+                                color: $white;
+                                background-color: getVar($gustavo, colors, gray1);
+                            } 
+                        }
                     }
                 }
             }
             #tabs_style__sidebar {
                 display: flex;
                 flex-flow: row nowrap;
+                > .menu_area {
+                    flex: 1 0 70%;
+                }
                 > ul.button_group {
-                    width: 23%;
+                    flex: 1 0 30%;
                     margin-right: 2%;
                     flex-flow: column wrap;
                     justify-content: end;
@@ -207,9 +184,6 @@
                         border-top: 1px solid #c2c2c2;
                     }
                 }
-                > .menu_area {
-                    width: 77%;
-                }
             }
             .menu_section {
                 display: none;
@@ -220,8 +194,8 @@
                     background-size: cover;
                     background-position: center center;
                     margin-bottom: 15px;
-                    max-width: 20vw;
-                    max-height: 20vw;
+                    max-width: 24vw;
+                    max-height: 24vw;
                 }
                 > ul.menu_items {
                     display: inline-block;
@@ -388,10 +362,10 @@
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
                     >div:nth-child(odd){
-                        padding-right: 20px;
+                        margin-right: 20px
                     }
                     > div {
-                        width: 50%;
+                        flex: 1 0 48%;
                         text-align: left;
                         > h2 {
                             text-transform: uppercase;
@@ -456,213 +430,6 @@
         }
     }    
 }
-@media only screen and (max-width:1280px){
-    section#block__food_menus {
-        > .container {
-            &.medium {
-                #tabs_style__divider {
-                    > ul.button_group { 
-                        > li {
-                            margin: 5px 0;
-                        }
-                        &:after {
-                            margin-top: -7px;
-                        }
-                    }
-                }
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    > .menu_area {
-                        $w: getVar($sizing, content, medium);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, large);
-                        $s: true;
-                        @include gridLayout($w, $c, $g, $s);
-                        width: $w;
-                        .menu_section {
-                            .image_provided {
-                                max-width: 30vw;
-                                max-height: 30vw;
-                            }
-                        }
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                            
-                        }
-                        .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-                #tabs_style__sidebar {
-                    > .menu_area {
-                        $w: getVar($sizing, content, small);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, normal);
-                        $s: true;
-                        @include gridLayout($w, $c, $g, $s);
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                            .image_provided {
-                                max-width: 35vw;
-                                max-height: 35vw;
-                            }
-                        }
-                        .menu_photo_list {
-                            .image_provided {
-                                max-width: 40vw;
-                                max-height: 20vw;
-                            }
-                        }
-                        .menu_text_sub_group_half {
-                            .image_provided {
-                                max-width: 24vw;
-                                max-height: 24vw;
-                            }
-                        }
-                        .menu_text_half,
-                        .menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media only screen and (max-width:960px){
-    section#block__food_menus {
-        > .container {
-            &.medium {
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    > .menu_area {
-                        $w: getVar($sizing, content, large);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, large);
-                        $s: true;
-                        @include gridLayout($w, $c, $g, $s);
-                        width: $w;
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                            .image_provided {
-                                max-width: 40vw;
-                                max-height: 40vw;
-                            }
-                        }
-                        .menu_text_half,
-                        .menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                            .image_provided {
-                                max-width: 65vw;
-                                max-height: 65vw;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@media only screen and (max-width:640px){
-    section#block__food_menus {
-        > .container {
-            #tabs_style__pills,
-            #tabs_style__divider {
-                .button_group {
-                    flex-flow: column nowrap;
-                }
-            }
-            &.medium {
-                #tabs_style__pills {
-                    > ul.button_group {
-                        margin-right: 0;
-                        > li a {
-                            display: block;
-                            margin: 5px 0;
-                        }
-                    }
-                }
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    > .menu_area {
-                        $w: getVar($sizing, content, medium);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, large);
-                        $s: true;
-                        @include gridLayout($w, $c, $g, $s);
-                        width: $w;
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                            .image_provided {
-                                max-width: 65vw;
-                                max-height: 65vw;
-                            }
-                        }
-                        .menu_photo_list {
-                            .image_provided {
-                                max-width: 40vw;
-                                max-height: 40vw;
-                            }
-                        }
-                        .menu_text_sub_group_half {
-                            flex-flow: column wrap;
-                            > div:nth-child(odd){
-                                padding-right: 0;
-                            }
-                            > div {
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-                #tabs_style__sidebar {
-                    flex-flow: column nowrap;
-                    > ul.button_group {
-                        width: 100%;
-                        margin-bottom: 30px;
-                    }
-                    > .menu_area {
-                        $w: getVar($sizing, content, medium);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, large);
-                        $s: true;
-                        @include gridLayout($w, $c, $g, $s);
-                        width: 100%;
-                        .menu_section {
-                            $c: 1;
-                            @include gridLayout($w, $c, $g, $s);
-                            .image_provided {
-                                max-width: 65vw;
-                                max-height: 65vw;
-                            }
-                        }
-                        .menu_photo_list {
-                            .image_provided {
-                                max-width: 40vw;
-                                max-height: 30vw;
-                            }
-                        }
-                        .menu_text_sub_group_half {
-                            .image_provided {
-                                max-width: 30vw;
-                                max-height: 30vw;
-                            }
-                        }
-                        .menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+
+
+

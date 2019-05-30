@@ -88,7 +88,7 @@
         $return['buttons'] = '<ul class="button_group">';
         
         // open wrapper for the menus area (sibling of buttons)
-        $return['menus'] = '<div class="menu_area">';
+        $return['menus'] = '<div class="menu_area site__grid">';
 
         // for each menu
         foreach( $cB['menus'] as $i => $menu ){
