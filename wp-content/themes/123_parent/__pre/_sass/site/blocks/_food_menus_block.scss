@@ -106,43 +106,30 @@ $s_true: true;
                 .site__grid {
                     &.tabs_style__sidebar {
                         $w: getVar($sizing, content, medium);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         // For all the menu styles
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 3;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c3, $g_small, $s_true);
                         }
-                        .menu_text_sub_group_half {
-                            width: $w;
-                        } 
                     }
                     &.tabs_style__divider,
                     &.tabs_style__pills {
                         $w: getVar($sizing, content, large);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 4;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c4, $g_small, $s_true);
                         }
                     }
                 }
