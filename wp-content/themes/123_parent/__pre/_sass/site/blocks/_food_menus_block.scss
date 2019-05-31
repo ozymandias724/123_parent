@@ -1,192 +1,250 @@
-
-// For everything over 1280px 
 @media only screen {
-    section#block__food_menus {
-
+    section.site__block {
+        &#block__food_menus {
+            > .container {
+                // Heading
+                > h2 {
+                    margin: 0 auto 30px auto;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+                // Description
+                > p {
+                    font-weight: 500;
+                    @include fontS-20;
+                }
+                // All Tabs Style
+                .tabs {
+                    margin: 30px 0;
+                }  
+            }
+        }
         > .container {
-            #tabs_style__pills,
-            #tabs_style__divider {
-                > .site__grid {
-                    $w: getVar($sizing, content, medium);
-                    $c: 1;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    width: $w;
-                    .menu_section {
+            // Width Sizes
+            .menu_section {
+                &.menu_text_sub_group_half {
+                    .image_provided {
+                        width: 24vw;
+                        height: 24vw;
+                    }
+                }
+            }
+            &.narrow {  
+                // site__grid class or menu_area class
+                .site__grid {
+                    &.tabs_style__sidebar {
+                        $w: 39vw;
                         $c: 1;
-                        @include gridLayout($w, $c, $g, $s);
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        // For all the menu styles
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 3;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_sub_group_half {
+                            width: $w;
+                        } 
                     }
-                    .menu_text_half {
-                        $c: 2;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                    .menu_photo_tiled_x3 {
-                        $c: 4;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                }
-            }
-            #tabs_style__sidebar {
-                > .site__grid {
-                    $w: getVar($sizing, content, small);
-                    $c: 1;
-                    $g: getVar($sizing, gutter, vw, small);
-                    $s: true;
-                    .menu_section {
-                        width: $w;
+                    &.tabs_style__divider,
+                    &.tabs_style__pills {
+                        $w: getVar($sizing, content, small);
                         $c: 1;
-                        @include gridLayout($w, $c, $g, $s);
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 4;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
                     }
-                    .menu_text_half {
-                        $c: 2;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                    .menu_photo_tiled_x3 {
-                        $c: 3;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                    .menu_text_sub_group_half {
-                        width: $w;
-                    }
-                }
-            }
-            > h2 {
-                margin: 0 auto 30px auto;
-                font-weight: 900;
-                text-transform: uppercase;
-            }
-            > p {
-                font-weight: 500;
-                @include fontS-20;
-            }
-            .tabs {
-                margin: 30px 0;
-            }
-            #tabs_style__divider {
-                > ul.button_group {
-                    margin-bottom: 30px;
-                    text-align: left;
-                    &:after {
-                        content: "";
-                        display: block;
-                        border-bottom: 2px solid getVar($gustavo, colors, gray1);
-                        margin-top: -3px
-                    }
-                    > li {
-                        display: inline-block;
-                        text-transform: uppercase;
-                        @include fontS-14;
-                        font-weight: 700;
-                        margin: 0 2px;
-                        border-top-left-radius: 5px;
-                        border-top-right-radius: 5px;
-                        border-top: 2px solid getVar($gustavo, colors, gray1);
-                        border-left: 2px solid getVar($gustavo, colors, gray1);
-                        border-right: 2px solid getVar($gustavo, colors, gray1);
-                        transition: color 0.3s ease-in-out;
-                        a {
-                            color: getVar($gustavo, colors, gray2);
-                            background-color: getVar($gustavo, colors, gray1);
-                            display: block;   
-                            padding: 10px 15px;
-                            &:focus,
-                            &.active_menu_link,
-                            &.active_menu_link:hover {
-                                color: $accent;
-                                background: $white;
-                                border-bottom: 2px solid transparent;
+                    .menu_section {
+                        &.menu_text_sub_group_half {
+                            >div:nth-child(odd){
+                                margin-right: 12px;
+                                flex: 0 0 48%;
                             }
-                            &:hover,
-                            &:active {
-                                color: $white;
-                                background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                            > div {
+                                flex: 0 0 50%; 
+                            }
+                            .image_provided {
+                                width: 18vw;
+                                height: 18vw;
+                            }
+                        }
+                        &.menu_photo_list {
+                            .image_provided {
+                                max-height: 19vw;
                             }
                         }
                     }
-                    > li:last-of-type {
-                        margin-bottom: 0;
-                    }
                 }
             }
-            #tabs_style__pills {
-                >ul.button_group {
-                    display: flex; 
-                    flex-flow: row wrap; 
-                    justify-content: center;
-                    margin-bottom: 30px;
-                    align-items: stretch;
-                    li {
-                        margin: 5px 0;
-                        flex: 1 0 33%;
-                        a {
-                            @include fontS-16;
-                            font-weight: 700;
-                            text-transform: uppercase;
-                            text-align: center;
-                            background-color: white;
-                            border: 2px solid getVar($gustavo, colors, gray1);
-                            border-radius: 30px;
-                            padding: 5px 25px;
-                            color: inherit;
-                            display: block;
-                            margin: 0 5px;
-                            &:active,
-                            &:focus,
-                            &.active_menu_link,
-                            &.active_menu_link:hover {
-                                border: 2px solid $accent;
-                                background-color: $accent;
-                                color: $white;
+            &.medium {
+                // site__grid class or menu_area class
+                .site__grid {
+                    &.tabs_style__sidebar {
+                        $w: getVar($sizing, content, small);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        // For all the menu styles
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 3;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_sub_group_half {
+                            width: $w;
+                        } 
+                    }
+                    &.tabs_style__divider,
+                    &.tabs_style__pills {
+                        $w: getVar($sizing, content, medium);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 4;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                    .menu_section {
+                        &.menu_text_sub_group_half {
+                            .image_provided {
+                                width: 24vw;
+                                height: 24vw;
                             }
-                            &:hover {
-                                border: 2px solid getVar($gustavo, colors, gray1);
-                                color: $white;
-                                background-color: getVar($gustavo, colors, gray1);
-                            } 
                         }
                     }
                 }
             }
-            #tabs_style__sidebar {
-                display: flex;
-                flex-flow: row nowrap;
-                > .menu_area {
-                    flex: 1 0 70%;
-                }
-                > ul.button_group {
-                    flex: 1 0 30%;
-                    margin-right: 2%;
-                    flex-flow: column wrap;
-                    justify-content: end;
-                    text-align: left;
-                    a {
-                        @include fontS-16;
-                        font-weight: 700;
-                        padding: 10px 15px;
-                        color: inherit;
-                        border-bottom: 1px solid #c2c2c2;
-                        display: block;
-                        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-                        &.active_menu_link,
-                        &:active,
-                        &:focus,
-                        &.active_menu_link:hover {
-                            background-color: $accent;
-                            color: $white;
-                            border-bottom: 1px solid $accent;
+            &.wide {
+                // site__grid class or menu_area class
+                .site__grid {
+                    &.tabs_style__sidebar {
+                        $w: getVar($sizing, content, medium);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        // For all the menu styles
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
                         }
-                        &:hover {
-                            background-color: getVar($gustavo, colors, gray1);
-                            border-bottom: 1px solid transparent;
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
                         }
+                        .menu_photo_tiled_x3 {
+                            $c: 3;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_sub_group_half {
+                            width: $w;
+                        } 
                     }
-                    li:first-of-type a {
-                        border-top: 1px solid #c2c2c2;
+                    &.tabs_style__divider,
+                    &.tabs_style__pills {
+                        $w: getVar($sizing, content, large);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 4;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
                     }
                 }
             }
+            &.full {
+                // site__grid class or menu_area class
+                .site__grid {
+                    &.tabs_style__sidebar {
+                        $w: 75vw;
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        // For all the menu styles
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 3;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_sub_group_half {
+                            width: $w;
+                        } 
+                    }
+                    &.tabs_style__divider,
+                    &.tabs_style__pills {
+                        $w: getVar($sizing, content, full);
+                        $c: 1;
+                        $g: getVar($sizing, gutter, vw, small);
+                        $s: true;
+                        .menu_section {
+                            width: $w;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_text_half {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                        .menu_photo_tiled_x3 {
+                            $c: 4;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+            }
+            // For all menu styles
             .menu_section {
                 display: none;
+                // For all menus styles with an image provided
                 .image_provided {
                     width: 100%;
                     margin: 0 auto;
@@ -197,6 +255,7 @@
                     max-width: 24vw;
                     max-height: 24vw;
                 }
+                // All unordered list menu items
                 > ul.menu_items {
                     display: inline-block;
                 }
@@ -361,11 +420,12 @@
                 }
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
-                    >div:nth-child(odd){
-                        margin-right: 20px
+                    >div:nth-child(odd) {
+                        margin-right: 12px;
+                        flex: 0 0 48%;
                     }
                     > div {
-                        flex: 1 0 48%;
+                        flex: 0 0 50%; 
                         text-align: left;
                         > h2 {
                             text-transform: uppercase;
@@ -412,24 +472,238 @@
                                     max-width: 31vw;   
                                 }
                             }
-                            .image_provided {
-                                width: 65vw;
-                                height: 65vw;
+                        }
+                    }     
+                }
+            }
+            // Menu style
+            #tabs_style__divider {
+                > ul.button_group {
+                    margin-bottom: 30px;
+                    text-align: left;
+                    &:after {
+                        content: "";
+                        display: block;
+                        border-bottom: 2px solid getVar($gustavo, colors, gray1);
+                        margin-top: -3px
+                    }
+                    > li:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    > li {
+                        display: inline-block;
+                        text-transform: uppercase;
+                        @include fontS-14;
+                        font-weight: 700;
+                        margin: 0 2px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        border-top: 2px solid getVar($gustavo, colors, gray1);
+                        border-left: 2px solid getVar($gustavo, colors, gray1);
+                        border-right: 2px solid getVar($gustavo, colors, gray1);
+                        transition: color 0.3s ease-in-out;
+                        a {
+                            color: getVar($gustavo, colors, gray2);
+                            background-color: getVar($gustavo, colors, gray1);
+                            display: block;   
+                            padding: 10px 15px;
+                            &:focus,
+                            &.active_menu_link,
+                            &.active_menu_link:hover {
+                                color: $accent;
+                                background: $white;
+                                border-bottom: 2px solid transparent;
+                            }
+                            &:hover,
+                            &:active {
+                                color: $white;
+                                background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                             }
                         }
                     }
-                    
                 }
             }
+            // Menu style
+            #tabs_style__pills {
+                >ul.button_group {
+                    display: flex; 
+                    flex-flow: row wrap; 
+                    justify-content: center;
+                    margin-bottom: 30px;
+                    align-items: stretch;
+                    li {
+                        margin: 5px 0;
+                        flex: 1 0 33%;
+                        a {
+                            @include fontS-16;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            text-align: center;
+                            background-color: white;
+                            border: 2px solid getVar($gustavo, colors, gray1);
+                            border-radius: 30px;
+                            padding: 5px 25px;
+                            color: inherit;
+                            display: block;
+                            margin: 0 5px;
+                            &:active,
+                            &:focus,
+                            &.active_menu_link,
+                            &.active_menu_link:hover {
+                                border: 2px solid $accent;
+                                background-color: $accent;
+                                color: $white;
+                            }
+                            &:hover {
+                                border: 2px solid getVar($gustavo, colors, gray1);
+                                color: $white;
+                                background-color: getVar($gustavo, colors, gray1);
+                            } 
+                        }
+                    }
+                }
+            }
+            // Menu style
+            #tabs_style__sidebar {
+                display: flex;
+                flex-flow: row nowrap;
+                .site__grid {
+                    flex: 1 0 78%;
+                }
+                > ul.button_group {
+                    flex: 1 0 20%;
+                    margin-right: 2%;
+                    flex-flow: column wrap;
+                    justify-content: end;
+                    text-align: left;
+                    li:first-of-type a {
+                        border-top: 1px solid #c2c2c2;
+                    }
+                    a {
+                        @include fontS-16;
+                        font-weight: 700;
+                        padding: 10px 15px;
+                        color: inherit;
+                        border-bottom: 1px solid #c2c2c2;
+                        display: block;
+                        transition: 
+                            background-color 0.3s ease-in-out, 
+                            color 0.3s ease-in-out, 
+                            border 0.3s ease-in-out;
+                        &.active_menu_link,
+                        &:active,
+                        &:focus,
+                        &.active_menu_link:hover {
+                            background-color: $accent;
+                            color: $white;
+                            border-bottom: 1px solid $accent;
+                        }
+                        &:hover {
+                            background-color: getVar($gustavo, colors, gray1);
+                            border-bottom: 1px solid transparent;
+                        }
+                    }
+                }
+            } 
+            // Menu Section that is active
             .active_menu_section {
                 display: block;
             }
+            // Menu Section that is active and should use flexbox
             .active_menu_section.menu_flex {
                 display: flex;
-            }       
+            }  
         }
     }    
 }
 
+@media only screen and (max-width: 1280px){
+    section#block__food_menus {
+        > .container {
+            .tabs {
+                .menu_section {
+                    .image_provided {
+                        max-width: 24vw;
+                        max-height: 24vw;
+                    }
+                    &.menu_photo_list {
+                        .image_provided {
+                            max-height: 25vw;
+                        }
+                    }
+                    &.menu_text_sub_group_half {
+                        .image_provided {
+                            width: 24vw;
+                            height: 24vw;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
 
+@media only screen and (max-width: 960px){
+    section#block__food_menus {
+        > .container {
+            .tabs {
+                .menu_section {
+                    .image_provided {
+                        max-width: 35vw;
+                        max-height: 35vw;
+                    }
+                    &.menu_text_sub_group_half > div {
+                        flex: 0 0 100%;
+                    }
+                    &.menu_text_sub_group_half {
+                        .image_provided {
+                            width: 35vw;
+                            height: 35vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
+@media only screen and (max-width: 640px){
+    section#block__food_menus {
+        > .container {
+            // All tabs style
+            .tabs {
+                // All menu types
+                .menu_section {
+                    .image_provided {
+                        max-width: 60vw;
+                        max-height: 60vw;
+                    }
+                    &.menu_photo_list {
+                        .image_provided {
+                            max-height: 40vw;
+                        }
+                    }
+                    &.menu_text_sub_group_half {
+                        .image_provided {
+                            width: 60vw;
+                            height: 60vw;
+                        }
+                    }
+                }
+            }
+            // Tab style
+            #tabs_style__sidebar {
+                flex-flow: column wrap;
+                > ul.button_group {
+                    margin-bottom: 30px;
+                }
+            }
+            #tabs_style__divider {
+                > ul.button_group li {
+                    display: block;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}

@@ -55,12 +55,94 @@ section.site__block {
     }
 }
 
+@import 'blocks/food_menus_block';
+
 //Do the rest of the media queries with max-width, not min-width
 @media only screen and (max-width:1280px){
-    
+    section.site__block {
+        > .container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, medium);
+                $w: getVar($sizing, content, medium);
+                $c : 1;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s);
+                }
+                #tabs_style__sidebar {
+                    $w: getVar($sizing, content, small);
+                    .menu_section {
+                        width: $w;
+                        @include gridLayout($w, $c, $g, $s);
+                        &.menu_photo_tiled_x3 {
+                            $c: 3;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+                #tabs_style__pills,
+                #tabs_style__divider {
+                    $w: getVar($sizing, content, medium);
+                    .menu_section {
+                        $c: 1;
+                        width: $w;
+                        @include gridLayout($w, $c, $g, $s);
+                        &.menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media only screen and (max-width:960px){
-    
+    section.site__block {
+        > .container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, large);
+                $w: getVar($sizing, content, large);
+                $c : 1;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s);
+                }
+                #tabs_style__sidebar {
+                    $w: getVar($sizing, content, small);
+                    .menu_section {
+                        width: $w;
+                        @include gridLayout($w, $c, $g, $s);
+                        &.menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+                #tabs_style__pills,
+                #tabs_style__divider {
+                    $w: getVar($sizing, content, large);
+                    .menu_section {
+                        $c: 1;
+                        width: $w;
+                        @include gridLayout($w, $c, $g, $s);
+                        &.menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 @media only screen and (max-width:640px){
     section.site__block {
@@ -70,12 +152,30 @@ section.site__block {
             &.wide,
             &.full {
                 width: getVar($sizing, content, full);
+                $w: getVar($sizing, content, full);
+                $c : 1;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
                 .site__grid {
-                    $w: getVar($sizing, content, full);
-                    $c : 1;
-                    $g: getVar($sizing, gutter, vw, normal);
-                    $s: true;
-                    @include gridLayout($w, $c, $g, $s);
+                    @include gridLayout($w, $c, $g, $s); 
+                }
+                #tabs_style__sidebar {
+                    .menu_section {
+                        width: $w;
+                        @include gridLayout($w, $c, $g, $s);
+                        &.menu_photo_tiled_x3 {
+                            $c: 2;
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+                #tabs_style__pills,
+                #tabs_style__divider {
+                    .menu_section {
+                        $c: 1;
+                        width: $w;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
                 }
             }
         }
@@ -87,4 +187,3 @@ section.site__block {
 @import 'blocks/copy_block';
 @import 'blocks/services_block';
 @import 'blocks/coupons_block';
-@import 'blocks/food_menus_block';

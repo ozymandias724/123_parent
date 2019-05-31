@@ -88,7 +88,7 @@
         $return['buttons'] = '<ul class="button_group">';
         
         // open wrapper for the menus area (sibling of buttons)
-        $return['menus'] = '<div class="menu_area site__grid">';
+        $return['menus'] = '<div class="menu_area site__grid tabs_style__'.$cB['tabs_style'].'">';
 
         // for each menu
         foreach( $cB['menus'] as $i => $menu ){
@@ -192,7 +192,6 @@
     ';
 
     $return['section'] .= sprintf(
-
         $guide['section']
         ,$cB['width']
         ,$cB['background_color']
