@@ -4859,10 +4859,6 @@ section.site__block .container.full .site__grid > ul > li:nth-child(3n) {
   section.site__block#block__food_menus > .container .tabs {
     margin: 30px 0;
   }
-  section.site__block > .container .menu_section.menu_text_sub_group_half .image_provided {
-    width: 24vw;
-    height: 24vw;
-  }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section {
     width: 39vw;
   }
@@ -4937,9 +4933,6 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_ph
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li:nth-child(3n) {
     margin: 0 0 1vw 0;
-  }
-  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_sub_group_half {
-    width: 39vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section {
     width: 50vw;
@@ -5025,10 +5018,6 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_phot
   }
   section.site__block > .container.narrow .site__grid .menu_section.menu_text_sub_group_half > div {
     flex: 0 0 50%;
-  }
-  section.site__block > .container.narrow .site__grid .menu_section.menu_text_sub_group_half .image_provided {
-    width: 18vw;
-    height: 18vw;
   }
   section.site__block > .container.narrow .site__grid .menu_section.menu_photo_list .image_provided {
     max-height: 19vw;
@@ -5424,9 +5413,6 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_phot
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li:nth-child(3n) {
     margin: 0 0 1vw 0;
   }
-  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_sub_group_half {
-    width: 75vw;
-  }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_section, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section {
     width: 92vw;
   }
@@ -5674,6 +5660,12 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   section.site__block > .container .menu_section.menu_text_sub_group_half {
     flex-flow: row wrap;
   }
+  section.site__block > .container .menu_section.menu_text_sub_group_half .image_provided {
+    width: 65vw;
+    height: 65vw;
+    max-width: 18vw;
+    max-height: 18vw;
+  }
   section.site__block > .container .menu_section.menu_text_sub_group_half > div:nth-child(odd) {
     margin-right: 12px;
     flex: 0 0 48%;
@@ -5856,13 +5848,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     max-width: 24vw;
     max-height: 24vw;
   }
-  section#block__food_menus > .container .tabs .menu_section.menu_photo_list .image_provided {
-    max-height: 25vw;
-  }
-  section#block__food_menus > .container .tabs .menu_section.menu_text_sub_group_half .image_provided {
-    width: 24vw;
-    height: 24vw;
-  }
 }
 @media only screen and (max-width: 960px) {
   section#block__food_menus > .container .tabs .menu_section .image_provided {
@@ -5872,10 +5857,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   section#block__food_menus > .container .tabs .menu_section.menu_text_sub_group_half > div {
     flex: 0 0 100%;
   }
-  section#block__food_menus > .container .tabs .menu_section.menu_text_sub_group_half .image_provided {
-    width: 35vw;
-    height: 35vw;
-  }
 }
 @media only screen and (max-width: 640px) {
   section#block__food_menus > .container .tabs .menu_section .image_provided {
@@ -5884,10 +5865,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   }
   section#block__food_menus > .container .tabs .menu_section.menu_photo_list .image_provided {
     max-height: 40vw;
-  }
-  section#block__food_menus > .container .tabs .menu_section.menu_text_sub_group_half .image_provided {
-    width: 60vw;
-    height: 60vw;
   }
   section#block__food_menus > .container #tabs_style__sidebar {
     flex-flow: column wrap;

@@ -1,3 +1,10 @@
+$c1 : 1;
+$c2 : 2;
+$c3 : 3;
+$c4 : 4;
+$g_small : getVar($sizing, gutter, vw, small);
+$s_true: true;
+
 @media only screen {
     section.site__block {
         &#block__food_menus {
@@ -21,56 +28,35 @@
         }
         > .container {
             // Width Sizes
-            .menu_section {
-                &.menu_text_sub_group_half {
-                    .image_provided {
-                        width: 24vw;
-                        height: 24vw;
-                    }
-                }
-            }
             &.narrow {  
                 // site__grid class or menu_area class
                 .site__grid {
                     &.tabs_style__sidebar {
                         $w: 39vw;
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         // For all the menu styles
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 3;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c3, $g_small, $s_true);
                         }
-                        .menu_text_sub_group_half {
-                            width: $w;
-                        } 
                     }
                     &.tabs_style__divider,
                     &.tabs_style__pills {
                         $w: getVar($sizing, content, small);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 4;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c4, $g_small, $s_true);
                         }
                     }
                     .menu_section {
@@ -81,10 +67,6 @@
                             }
                             > div {
                                 flex: 0 0 50%; 
-                            }
-                            .image_provided {
-                                width: 18vw;
-                                height: 18vw;
                             }
                         }
                         &.menu_photo_list {
@@ -100,21 +82,16 @@
                 .site__grid {
                     &.tabs_style__sidebar {
                         $w: getVar($sizing, content, small);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         // For all the menu styles
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 3;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c3, $g_small, $s_true);
                         }
                         .menu_text_sub_group_half {
                             width: $w;
@@ -123,20 +100,15 @@
                     &.tabs_style__divider,
                     &.tabs_style__pills {
                         $w: getVar($sizing, content, medium);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 4;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c4, $g_small, $s_true);
                         }
                     }
                     .menu_section {
@@ -200,43 +172,30 @@
                 .site__grid {
                     &.tabs_style__sidebar {
                         $w: 75vw;
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         // For all the menu styles
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 3;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c3, $g_small, $s_true);
                         }
-                        .menu_text_sub_group_half {
-                            width: $w;
-                        } 
                     }
                     &.tabs_style__divider,
                     &.tabs_style__pills {
                         $w: getVar($sizing, content, full);
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, small);
-                        $s: true;
                         .menu_section {
                             width: $w;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c1, $g_small, $s_true);
                         }
                         .menu_text_half {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c2, $g_small, $s_true);
                         }
                         .menu_photo_tiled_x3 {
-                            $c: 4;
-                            @include gridLayout($w, $c, $g, $s);
+                            @include gridLayout($w, $c4, $g_small, $s_true);
                         }
                     }
                 }
@@ -278,6 +237,7 @@
                     border-bottom: 3px solid $accent;
                     padding-bottom: 20px;
                 }
+                // Menu Type
                 &.menu_photo_list {
                     // Menu Section Title
                     > h2 {
@@ -311,6 +271,7 @@
                         }
                     }
                 }
+                // Menu Type
                 &.menu_text_half {
                     > h2 {
                         text-transform: uppercase;
@@ -355,6 +316,7 @@
                         }
                     }
                 }
+                // Menu Type
                 &.menu_text_list_center {
                     .menu_item {
                         > h3 {
@@ -379,6 +341,7 @@
                         }
                     }
                 }
+                // Menu Type
                 &.menu_text_list_left {
                     text-align: left;
                     > p {
@@ -402,6 +365,7 @@
                         }
                     }
                 }
+                // Menu Type 
                 &.menu_photo_tiled_x3  {
                     .menu_item {
                         > h3 {
@@ -418,8 +382,15 @@
                         }
                     }
                 }
+                // Menu Type
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
+                    .image_provided {
+                        width: 65vw;
+                        height: 65vw;
+                        max-width: 18vw;
+                        max-height: 18vw;
+                    }
                     >div:nth-child(odd) {
                         margin-right: 12px;
                         flex: 0 0 48%;
@@ -626,17 +597,6 @@
                         max-width: 24vw;
                         max-height: 24vw;
                     }
-                    &.menu_photo_list {
-                        .image_provided {
-                            max-height: 25vw;
-                        }
-                    }
-                    &.menu_text_sub_group_half {
-                        .image_provided {
-                            width: 24vw;
-                            height: 24vw;
-                        }
-                    }
                 }
             }
         } 
@@ -652,13 +612,9 @@
                         max-width: 35vw;
                         max-height: 35vw;
                     }
-                    &.menu_text_sub_group_half > div {
-                        flex: 0 0 100%;
-                    }
                     &.menu_text_sub_group_half {
-                        .image_provided {
-                            width: 35vw;
-                            height: 35vw;
+                        > div {
+                            flex: 0 0 100%;
                         }
                     }
                 }
@@ -681,12 +637,6 @@
                     &.menu_photo_list {
                         .image_provided {
                             max-height: 40vw;
-                        }
-                    }
-                    &.menu_text_sub_group_half {
-                        .image_provided {
-                            width: 60vw;
-                            height: 60vw;
                         }
                     }
                 }
