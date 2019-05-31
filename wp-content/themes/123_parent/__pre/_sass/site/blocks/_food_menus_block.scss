@@ -60,15 +60,6 @@ $s_true: true;
                         }
                     }
                     .menu_section {
-                        &.menu_text_sub_group_half {
-                            >div:nth-child(odd){
-                                margin-right: 12px;
-                                flex: 0 0 48%;
-                            }
-                            > div {
-                                flex: 0 0 50%; 
-                            }
-                        }
                         &.menu_photo_list {
                             .image_provided {
                                 max-height: 19vw;
@@ -93,9 +84,6 @@ $s_true: true;
                         .menu_photo_tiled_x3 {
                             @include gridLayout($w, $c3, $g_small, $s_true);
                         }
-                        .menu_text_sub_group_half {
-                            width: $w;
-                        } 
                     }
                     &.tabs_style__divider,
                     &.tabs_style__pills {
@@ -248,6 +236,10 @@ $s_true: true;
                                 font-weight: 900;
                                 @include fontS-20;
                             }
+                            > p:last-of-type {
+                                @include fontS-24;
+                                font-weight: 500;
+                            }
                             > p:first-of-type {
                                 @include fontS-14;
                                 font-style: italic;
@@ -255,10 +247,6 @@ $s_true: true;
                                 padding-bottom: 10px;
                                 border-bottom: 4px dotted getVar($gustavo, colors, gray1);
                                 margin-bottom: 20px;
-                            }
-                            > p:last-of-type {
-                                @include fontS-24;
-                                font-weight: 500;
                             }
                         }
                     }
@@ -288,6 +276,11 @@ $s_true: true;
                     }
                     .menu_item {
                         margin-bottom: 30px;
+                        // menu items description
+                        > p {
+                            @include fontS-14;
+                            text-align: left;
+                        }
                         // menu items title
                         > h3 {
                             display: flex;
@@ -301,16 +294,16 @@ $s_true: true;
                                 font-weight: 600;
                             }
                         }
-                        // menu items description
-                        > p {
-                            @include fontS-14;
-                            text-align: left;
-                        }
                     }
                 }
                 // Menu Type
                 &.menu_text_list_center {
                     .menu_item {
+                        > p {
+                            @include fontS-14;
+                            font-family: "Times New Roman";
+                            font-style: italic;
+                        }
                         > h3 {
                             @include fontS-20;
                             text-align: center;
@@ -325,11 +318,6 @@ $s_true: true;
                                     margin: 0 15px 0 10px;
                                 }
                             }
-                        }
-                        > p {
-                            @include fontS-14;
-                            font-family: "Times New Roman";
-                            font-style: italic;
                         }
                     }
                 }
@@ -390,12 +378,20 @@ $s_true: true;
                     > div {
                         flex: 0 0 50%; 
                         text-align: left;
+                        > p {
+                            border-bottom: none;
+                        }
                         > h2 {
                             text-transform: uppercase;
                             font-weight: 700;
                             position: relative;
                             letter-spacing: normal;
                             @include fontS-34;
+                            span {
+                                background: #fff;
+                                padding: 0 15px 0 0;
+                                position: relative;
+                            }
                             &:before {
                                 border-top: 1px solid #c2c2c2;
                                 bottom: 0;
@@ -406,26 +402,9 @@ $s_true: true;
                                 right: 0;
                                 top: 50%;
                             }
-                            span {
-                                background: #fff;
-                                padding: 0 15px 0 0;
-                                position: relative;
-                            }
-                        }
-                        > p {
-                            border-bottom: none;
                         }
                         .menu_item {
                             margin: 20px 0;
-                            > h3 {
-                                display: flex;
-                                @include fontS-20;
-                                font-weight: 700;
-                                justify-content: space-between;
-                                border-bottom: 3px solid #386591;
-                                padding-bottom: 15px;
-                                margin-bottom: 15px;
-                            }
                             > p {
                                 @include fontS-14;
                             }
@@ -434,6 +413,15 @@ $s_true: true;
                                 > li {
                                     max-width: 31vw;   
                                 }
+                            }
+                            > h3 {
+                                display: flex;
+                                @include fontS-20;
+                                font-weight: 700;
+                                justify-content: space-between;
+                                border-bottom: 3px solid #386591;
+                                padding-bottom: 15px;
+                                margin-bottom: 15px;
                             }
                         }
                     }     
@@ -470,17 +458,17 @@ $s_true: true;
                             background-color: getVar($gustavo, colors, gray1);
                             display: block;   
                             padding: 10px 15px;
+                            &:hover,
+                            &:active {
+                                color: $white;
+                                background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                            }
                             &:focus,
                             &.active_menu_link,
                             &.active_menu_link:hover {
                                 color: $accent;
                                 background: $white;
                                 border-bottom: 2px solid transparent;
-                            }
-                            &:hover,
-                            &:active {
-                                color: $white;
-                                background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                             }
                         }
                     }
@@ -509,6 +497,11 @@ $s_true: true;
                             color: inherit;
                             display: block;
                             margin: 0 5px;
+                            &:hover {
+                                border: 2px solid getVar($gustavo, colors, gray1);
+                                color: $white;
+                                background-color: getVar($gustavo, colors, gray1);
+                            } 
                             &:active,
                             &:focus,
                             &.active_menu_link,
@@ -517,11 +510,6 @@ $s_true: true;
                                 background-color: $accent;
                                 color: $white;
                             }
-                            &:hover {
-                                border: 2px solid getVar($gustavo, colors, gray1);
-                                color: $white;
-                                background-color: getVar($gustavo, colors, gray1);
-                            } 
                         }
                     }
                 }
@@ -553,6 +541,10 @@ $s_true: true;
                             background-color 0.3s ease-in-out, 
                             color 0.3s ease-in-out, 
                             border 0.3s ease-in-out;
+                        &:hover {
+                            background-color: getVar($gustavo, colors, gray1);
+                            border-bottom: 1px solid transparent;
+                        }
                         &.active_menu_link,
                         &:active,
                         &:focus,
@@ -560,10 +552,6 @@ $s_true: true;
                             background-color: $accent;
                             color: $white;
                             border-bottom: 1px solid $accent;
-                        }
-                        &:hover {
-                            background-color: getVar($gustavo, colors, gray1);
-                            border-bottom: 1px solid transparent;
                         }
                     }
                 }
