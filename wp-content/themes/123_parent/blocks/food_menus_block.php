@@ -33,18 +33,16 @@
             $format = '
                 <li class="menu_item site__fade site__fade-up">
                     %s
-                    <h3>%s <div class="menu_price">%s.<span class="price_decimal">%s</span></div></h3>
+                    <h3>%s <span class="menu_price">%s</span></h3>
                     %s
                 </li>
             ';
 
-            $price = (!empty($item['price'])) ? explode('.',$item['price']) : '';
             $return = sprintf(
                 $format
                 ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
-                ,$price[0]
-                ,$price[1]
+                ,(!empty($item['price']) ? $item['price'] : '')
                 ,(!empty($item['description']) ? $item['description'] : '')
             );
             break;
@@ -98,7 +96,7 @@
             
             // write to the button group
             $return['buttons'] .= sprintf(
-                $guide['buttons']
+                $guide['buttons'] 
                 ,$menu['menu_post']->post_title
             );
 
