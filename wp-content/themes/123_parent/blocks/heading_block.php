@@ -12,7 +12,7 @@
     // empty guide string 
     $guide[1] = '
         <section id="block__heading" class="site__block">
-            <div class="container %s" style="background-color: %s; text-align: %s">
+            <div class="container %s %s" style="%s %s">
                 %s
             </div>
         </section>
@@ -20,9 +20,10 @@
 
     $return[1] .= sprintf(
         $guide[1]
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['alignment']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )
+        ,( !empty( $cB['alignment'] ) ? 'text-align:'.$cB['alignment'].';' : '' )
         ,'<'.$cB['level'].' style="color: '.$cB['foreground_color'].'">'.$cB['content'] . '</'.$cB['level'].'>'
     );
 

@@ -1,10 +1,13 @@
 section.site__block {
     width: 100%;
-
+    
     .container {
         text-align: center;
         padding: getVar($sizing, gutter, px, normal) 0;
         margin: 0 auto getVar($sizing, gutter, px, normal);
+        &.hasbg {
+            margin: 0 auto 0 auto;
+        }
         
         &.narrow {
             width: getVar($sizing, content, small);
