@@ -46,7 +46,7 @@
             transform: translate(-50%, -50%);
             position: absolute;
             background-color: $white;
-            border-radius: 10px;
+            border-radius: 20px;
             $w: 25vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, normal);
@@ -63,8 +63,8 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center center;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
             }
             .popup_details {
                 padding: 0 40px;
@@ -86,6 +86,7 @@
                         color: white;
                         background-color: $accent;
                         border: none;
+                        borer-radius: 20px;
                     }
                     input {
                         @include fontS-16;
