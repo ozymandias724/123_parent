@@ -340,17 +340,24 @@ Theme.Popups = {
   timed_first_view: (0, _jquery["default"])("#timed_overlay_popup").attr("data-first-view"),
   timed_second_view: (0, _jquery["default"])("#timed_overlay_popup").attr("data-second-view"),
   banner_popup: (0, _jquery["default"])("#banner_popup"),
+  banner_popup_button: (0, _jquery["default"])("#banner_popup_button"),
+  banner_popup_link: (0, _jquery["default"])("#banner_popup_button a"),
+  banner_popup_times: (0, _jquery["default"])("#banner_popup .popup_close"),
   _init: function _init() {
-    (0, _jquery["default"])(Theme.Popups.quote_btn).on("click", Theme.Popups._click_handler);
+    (0, _jquery["default"])(Theme.Popups.quote_btn).on("click", Theme.Popups.header_click_handler);
     (0, _jquery["default"])(Theme.Popups.header_popup_times).on("click", Theme.Popups._header_popup_close);
     (0, _jquery["default"])(Theme.Popups.header_popup).on("click", Theme.Popups._header_popup_section_close);
     if (Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
     (0, _jquery["default"])(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
     (0, _jquery["default"])(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
 
-    Theme.Popups._banner_popup();
+    Theme.Popups._banner_popup_button();
+
+    (0, _jquery["default"])(Theme.Popups.banner_popup).on("click", Theme.Popups._banner_popup_section_close);
+    (0, _jquery["default"])(Theme.Popups.banner_popup_link).on("click", Theme.Popups._banner_click_handler);
+    (0, _jquery["default"])(Theme.Popups.banner_popup_times).on("click", Theme.Popups._banner_popup_close);
   },
-  _click_handler: function _click_handler() {
+  header_click_handler: function header_click_handler() {
     Theme.Popups.header_popup.fadeIn(250);
   },
   _header_popup_close: function _header_popup_close() {
@@ -396,8 +403,17 @@ Theme.Popups = {
       }, Theme.Popups.timed_second_view * 1000);
     }
   },
-  _banner_popup: function _banner_popup() {
-    (0, _jquery["default"])("header.header").prepend(Theme.Popups.banner_popup);
+  _banner_click_handler: function _banner_click_handler() {
+    Theme.Popups.banner_popup.fadeIn(250);
+  },
+  _banner_popup_close: function _banner_popup_close() {
+    Theme.Popups.banner_popup.fadeOut(250);
+  },
+  _banner_popup_section_close: function _banner_popup_section_close(event) {
+    if (event.target == event.currentTarget) Theme.Popups.banner_popup.fadeOut(250);
+  },
+  _banner_popup_button: function _banner_popup_button() {
+    (0, _jquery["default"])("header.header").prepend(Theme.Popups.banner_popup_button);
   }
 };
 
@@ -441,46 +457,7 @@ Theme.PA = {
         Theme.PA.container.fadeIn(250);
       }
     }
-  } // Theme.Gallery = {
-  //     links: $("#gallery #gallery_titles a"),
-  //     active_link_text: $("a.active_title").text(),
-  //     image_galleries: $(".gallery_row"),
-  //     gallery: $("#gallery"),
-  //     _init: function () {
-  //         Theme.Gallery.links.on("click", Theme.Gallery._tab_click);
-  //         Theme.Gallery._hide_non_active();
-  //     },
-  //     _tab_click: function (e) {
-  //         Theme.Gallery.link_text = e.target.classList[0];
-  //         Theme.Gallery.links.each(function () {
-  //             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_title")) {
-  //                 $(this).addClass('active_title');
-  //             } else {
-  //                 $(this).removeClass('active_title');
-  //             }
-  //         });
-  //         Theme.Gallery.image_galleries.each(function () {
-  //             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
-  //                 $(this).css("display", "flex");
-  //             } else {
-  //                 $(this).css("display", "none");
-  //             }
-  //         });
-  //     },
-  //     _hide_non_active: function () {
-  //         Theme.Gallery.image_galleries.each(function () {
-  //             if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
-  //                 if (!$(this).hasClass("active_row")) {
-  //                     $(this).hide();
-  //                 } else {
-  //                     $(this).show();
-  //                 }
-  //             }
-  //         })
-  //     },
-  // }
-  // Theme.Gallery._init();
-
+  }
 };
 Theme.Nav = {
   nav_links: (0, _jquery["default"])(".navlinks-item-link"),

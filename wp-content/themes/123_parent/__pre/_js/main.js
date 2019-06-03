@@ -359,17 +359,26 @@ Theme.Popups = {
     timed_first_view: $("#timed_overlay_popup").attr("data-first-view"),
     timed_second_view: $("#timed_overlay_popup").attr("data-second-view"),
     banner_popup: $("#banner_popup"),
+    banner_popup_button: $("#banner_popup_button"),
+    banner_popup_link : $("#banner_popup_button a"),
+    banner_popup_times: $("#banner_popup .popup_close"),
 
     _init: function () {
-        $(Theme.Popups.quote_btn).on("click", Theme.Popups._click_handler);
+        $(Theme.Popups.quote_btn).on("click", Theme.Popups.header_click_handler);
         $(Theme.Popups.header_popup_times).on("click", Theme.Popups._header_popup_close);
         $(Theme.Popups.header_popup).on("click", Theme.Popups._header_popup_section_close);
+
         if (Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
         $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
         $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
-        Theme.Popups._banner_popup();
+
+        Theme.Popups._banner_popup_button();
+        $(Theme.Popups.banner_popup).on("click", Theme.Popups._banner_popup_section_close);
+        $(Theme.Popups.banner_popup_link).on("click", Theme.Popups._banner_click_handler);
+        $(Theme.Popups.banner_popup_times).on("click", Theme.Popups._banner_popup_close);
+
     },
-    _click_handler: function () {
+    header_click_handler: function () {
         Theme.Popups.header_popup.fadeIn(250);
     },
     _header_popup_close: function () {
@@ -411,9 +420,18 @@ Theme.Popups = {
             }, Theme.Popups.timed_second_view * 1000);
         }
     },
-    _banner_popup: function(){
-        $("header.header").prepend(Theme.Popups.banner_popup);
-    }
+    _banner_click_handler: function(){
+        Theme.Popups.banner_popup.fadeIn(250);
+    },
+    _banner_popup_close: function(){
+        Theme.Popups.banner_popup.fadeOut(250);
+    },
+    _banner_popup_section_close: function (event) {
+        if (event.target == event.currentTarget) Theme.Popups.banner_popup.fadeOut(250);
+    },
+    _banner_popup_button: function(){
+        $("header.header").prepend(Theme.Popups.banner_popup_button);
+    },
 }
 Theme.Popups._init();
 
@@ -454,54 +472,6 @@ Theme.PA = {
 }
 
 
-// Theme.Gallery = {
-//     links: $("#gallery #gallery_titles a"),
-//     active_link_text: $("a.active_title").text(),
-//     image_galleries: $(".gallery_row"),
-//     gallery: $("#gallery"),
-
-//     _init: function () {
-//         Theme.Gallery.links.on("click", Theme.Gallery._tab_click);
-//         Theme.Gallery._hide_non_active();
-//     },
-
-//     _tab_click: function (e) {
-//         Theme.Gallery.link_text = e.target.classList[0];
-//         Theme.Gallery.links.each(function () {
-//             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_title")) {
-
-//                 $(this).addClass('active_title');
-
-//             } else {
-
-//                 $(this).removeClass('active_title');
-
-//             }
-//         });
-//         Theme.Gallery.image_galleries.each(function () {
-
-//             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
-//                 $(this).css("display", "flex");
-//             } else {
-//                 $(this).css("display", "none");
-//             }
-
-//         });
-//     },
-//     _hide_non_active: function () {
-//         Theme.Gallery.image_galleries.each(function () {
-//             if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
-//                 if (!$(this).hasClass("active_row")) {
-//                     $(this).hide();
-//                 } else {
-//                     $(this).show();
-//                 }
-//             }
-//         })
-//     },
-// }
-// Theme.Gallery._init();
-
 Theme.Nav = {
     nav_links: $(".navlinks-item-link"),
 
@@ -516,6 +486,7 @@ Theme.Nav = {
     }
 }
 Theme.Nav._init();
+
 
 Theme.Menu = {
     tab_link: $(" #block__food_menus .button_group a "),

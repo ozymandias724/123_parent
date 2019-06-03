@@ -1,7 +1,8 @@
 @media only screen {
     // Popups
     section#header_popup,
-    section#timed_overlay_popup {
+    section#timed_overlay_popup, 
+    section#banner_popup {
         display: none;
         position: fixed;
         z-index: 100;
@@ -9,7 +10,7 @@
         height: 100%;
         right: 0;
         top: 0;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.7);
         .popup_close {
             content: '\f00d';
             display: inline-block;
@@ -18,46 +19,42 @@
             font-style: normal;
             font-variant: normal;
             text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: getVar($gustavo, colors, gray2);
+            color: white;
             font-size: 40px;
-            margin-right: 5%;
+            margin-right: 2%;
             padding: 2%;
+            position: absolute;
+            top:0;
+            right:0;
         }
         > div {
             h3 {
                 @include fontS-34;
-                color: $black;
                 text-align: center;
-                font-weight: 900;
-                text-transform: uppercase;
-                margin-top: 10px;
+                font-family: "Gotham", "Helvetica", sans-serif;
+                margin: 10px 0;
+                text-transform: none;
             }
         }
     }
-    section#header_popup {
-        background-color: rgba(0,0,0,0.3);
-        > div {
-            right: 0;
-            top: 0;
+    section#header_popup,
+    section#banner_popup {
+        background-color: rgba(0,0,0,0.7);
+        > div { 
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             position: absolute;
             background-color: $white;
-            padding: 30px;
-            margin: 0.5% 0.5% 0 0;
-            box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            $w: getVar($sizing, content, large);
+            $w: 25vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, normal);
             $s: true;
             width: $w;
-            height: min-content;
             // Image
             > div:first-of-type {
-                $w: 70vw;
+                $w: 25vw;
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
@@ -66,32 +63,47 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center center;
-                margin: 10px auto;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
             }
-            // Text
-            > p:first-of-type {
-                font-size: 16px;
-                color: getVar($gustavo, colors, gray2);
-            }
-            // Email
-            > p:last-of-type {
-                font-size: 16px;
-                color: getVar($gustavo, colors, gray2);
+            .popup_details {
+                padding: 0 40px;
+                // Text
+                > p:first-of-type {
+                    @include fontS-16; 
+                }
+                .container {
+                    margin: 0;
+                    padding: 10px 0 30px;
+                    div.wpforms-container-full {
+                        margin: 0;
+                    }
+                    div.wpforms-container-full .wpforms-form button[type=submit] {
+                        width: 100%;
+                        @include fontS-20;
+                        font-weight: 500;
+                        padding: 5px 0;
+                        color: white;
+                        background-color: $accent;
+                        border: none;
+                    }
+                    input {
+                        @include fontS-16;
+                        padding: 10px;
+                    }
+                }
             }
         }
     }
     section#timed_overlay_popup {
         > div {
-            top: 0;
-            bottom: 0;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, 0%);
             position: absolute;
             background-color: $white;
             padding: 30px;
-            margin: 5% 0;
             border-radius: 10px;
-            $w: getVar($sizing, content, large);
+            $w: 25vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, normal);
             $s: true;
@@ -99,7 +111,7 @@
             height: min-content;
             // Image
             > div:first-of-type {
-                $w: 70vw;
+                $w: 25vw;
                 $c: 1;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
@@ -111,19 +123,16 @@
                 background-position: center center;
                 margin: 10px auto;
             }
-            // Text
-            > p:first-of-type {
-                font-size: 16px;
-                color: getVar($gustavo, colors, gray2);
-            }
-            // Email
-            > p:last-of-type {
-                font-size: 16px;
-                color: getVar($gustavo, colors, gray2);
+            .popup_details {
+                padding: 20px;
+                // Text
+                > p:first-of-type {
+                    @include fontS-16;
+                }
             }
         }
     }
-    section#banner_popup {
+    section#banner_popup_button {
         display: block;
         position: relative;
         background-color: black;
@@ -135,7 +144,7 @@
             margin-left: 0;
             background-color: transparent;
             text-decoration: none;
-            display: inline-block;
+            display: block;
             color: white;
             font-weight: 500;
             @include fontS-16;
@@ -146,14 +155,28 @@
     }
 }
 
-@media only screen and (min-width: 640px){
+@media only screen and (max-width: 1280px){
     section#timed_overlay_popup > div,
-    section#header_popup > div {
-        $w: getVar($sizing, content, large);
-        $c: 1;
-        $g: getVar($sizing, gutter, vw, normal);
-        $s: true;
-        width: $w;
+    section#header_popup > div,
+    section#banner_popup > div {
+        width: 40vw; 
+        // Image
+        > div:first-of-type {
+            $w: 40vw;
+            $c: 1;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
+            width: $w;
+            height: (colWidth($w, $c, $g) / 1.6);
+        }
+    }
+} 
+
+@media only screen and (max-width: 960px){
+    section#timed_overlay_popup > div,
+    section#header_popup > div
+    section#banner_popup > div {
+        width: 50vw;
         // Image
         > div:first-of-type {
             $w: 50vw;
@@ -166,29 +189,18 @@
     }
 }
 
-@media only screen and (min-width: 960px){
+@media only screen and (max-width: 640px){
     section#timed_overlay_popup > div,
-    section#header_popup > div {
-        width: getVar($sizing, content, medium);
+    section#header_popup > div, 
+    section#banner_popup > div {
+        $w: 65vw;
+        $c: 1;
+        $g: getVar($sizing, gutter, vw, normal);
+        $s: true;
+        width: $w;
         // Image
         > div:first-of-type {
-            $w: 40vw;
-            $c: 1;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w;
-            height: (colWidth($w, $c, $g) / 1.6);
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px){
-    section#timed_overlay_popup > div,
-    section#header_popup > div {
-        width: getVar($sizing, content, small);
-        // Image
-        > div:first-of-type {
-            $w: 25vw;
+            $w: 65vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, normal);
             $s: true;
