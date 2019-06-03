@@ -62,6 +62,43 @@
         return $header_popup;
     }
 
+    function _banner_popup($popups)
+    {
+        $popup = array_slice($popups['banner'], 0);
+        $bar_text = (!empty($popup['bar_text'])) ? $popup['bar_text'] : '';
+        $image = (!empty($popup['popup_image']['url'])) ? '<div style="background-image:url('.$popup['popup_image']['url'].');"></div>' : '';
+        $heading = (!empty($popup['popup_heading'])) ? '<h3>'.$popup['popup_heading'].'</h3>' : '';
+        $text = (!empty($popup['popup_text'])) ? $popup['popup_text'] : '';
+        $email = (!empty($popup['email'])) ? '<p>'.$popup['email'].'</p>' : ''; 
+
+        $format_popup = '
+            <section class="popup" id="banner_popup_button">
+                <a href="javascript:;">%s</a>
+            </section>
+            <section class="popup" id="banner_popup">
+                <div>
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>     
+            </section>
+        '; 
+
+        $banner_popup = sprintf(
+            $format_popup
+            ,$bar_text
+            ,_get_times()
+            ,$heading
+            ,$image
+            ,_get_form()
+            ,$text
+        );
+
+        return $banner_popup; 
+    }
+
     function _timed_overlay_popup($popups)
     {
         $popup = array_slice($popups['timed_overlay'], 0);
@@ -97,28 +134,6 @@
 
         return $timed_overlay_popup; 
     }
-
-    function _banner_popup($popups)
-    {
-        $popup = array_slice($popups['banner'], 0);
-        $bar_text = (!empty($popup['bar_text'])) ? $popup['bar_text'] : '';
-        $image = (!empty($popup['popup_image']['url'])) ? '<div style="background-image:url('.$popup['popup_image']['url'].');"></div>' : '';
-        $heading = (!empty($popup['popup_heading'])) ? '<h3>'.$popup['popup_heading'].'</h3>' : '';
-        $text = (!empty($popup['popup_text'])) ? $popup['popup_text'] : '';
-        $email = (!empty($popup['email'])) ? '<p>'.$popup['email'].'</p>' : ''; 
-
-        $format_popup = '
-            <section class="popup" id="banner_popup">
-                <a href="javascript:;">%s</a>
-            </section>
-        ';
-
-        $banner_popup = sprintf(
-            $format_popup
-            ,$bar_text
-        );
-
-        return $banner_popup; 
-    }
+ 
     _echo_popups($popups);
 ?>

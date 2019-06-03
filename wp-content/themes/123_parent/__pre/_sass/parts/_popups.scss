@@ -1,7 +1,8 @@
 @media only screen {
     // Popups
     section#header_popup,
-    section#timed_overlay_popup {
+    section#timed_overlay_popup, 
+    section#banner_popup {
         display: none;
         position: fixed;
         z-index: 100;
@@ -38,7 +39,8 @@
             }
         }
     }
-    section#header_popup {
+    section#header_popup,
+    section#banner_popup {
         background-color: rgba(0,0,0,0.3);
         > div {
             right: 0;
@@ -123,7 +125,7 @@
             }
         }
     }
-    section#banner_popup {
+    section#banner_popup_button {
         display: block;
         position: relative;
         background-color: black;
@@ -148,7 +150,8 @@
 
 @media only screen and (min-width: 640px){
     section#timed_overlay_popup > div,
-    section#header_popup > div {
+    section#header_popup > div, 
+    section#banner_popup > div {
         $w: getVar($sizing, content, large);
         $c: 1;
         $g: getVar($sizing, gutter, vw, normal);
@@ -168,7 +171,8 @@
 
 @media only screen and (min-width: 960px){
     section#timed_overlay_popup > div,
-    section#header_popup > div {
+    section#header_popup > div
+    section#banner_popup > div {
         width: getVar($sizing, content, medium);
         // Image
         > div:first-of-type {
@@ -184,7 +188,8 @@
 
 @media only screen and (min-width: 1280px){
     section#timed_overlay_popup > div,
-    section#header_popup > div {
+    section#header_popup > div,
+    section#banner_popup > div {
         width: getVar($sizing, content, small);
         // Image
         > div:first-of-type {

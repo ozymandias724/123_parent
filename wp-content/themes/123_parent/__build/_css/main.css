@@ -3222,7 +3222,8 @@ section.hero .hero_foreground a:active {
 }
 @media only screen {
   section#header_popup,
-section#timed_overlay_popup {
+section#timed_overlay_popup,
+section#banner_popup {
     display: none;
     position: fixed;
     z-index: 100;
@@ -3233,7 +3234,8 @@ section#timed_overlay_popup {
     background-color: rgba(0, 0, 0, 0.5);
   }
   section#header_popup .popup_close,
-section#timed_overlay_popup .popup_close {
+section#timed_overlay_popup .popup_close,
+section#banner_popup .popup_close {
     content: "";
     display: inline-block;
     font-family: "Font Awesome 5 Free";
@@ -3251,7 +3253,8 @@ section#timed_overlay_popup .popup_close {
     padding: 2%;
   }
   section#header_popup > div h3,
-section#timed_overlay_popup > div h3 {
+section#timed_overlay_popup > div h3,
+section#banner_popup > div h3 {
     font-size: 3.4rem;
     line-height: 4.8rem;
     color: #000;
@@ -3261,10 +3264,12 @@ section#timed_overlay_popup > div h3 {
     margin-top: 10px;
   }
 
-  section#header_popup {
+  section#header_popup,
+section#banner_popup {
     background-color: rgba(0, 0, 0, 0.3);
   }
-  section#header_popup > div {
+  section#header_popup > div,
+section#banner_popup > div {
     right: 0;
     top: 0;
     position: absolute;
@@ -3276,7 +3281,8 @@ section#timed_overlay_popup > div h3 {
     width: 80vw;
     height: min-content;
   }
-  section#header_popup > div > div:first-of-type {
+  section#header_popup > div > div:first-of-type,
+section#banner_popup > div > div:first-of-type {
     width: 70vw;
     height: 43.75vw;
     background-repeat: no-repeat;
@@ -3284,11 +3290,13 @@ section#timed_overlay_popup > div h3 {
     background-position: center center;
     margin: 10px auto;
   }
-  section#header_popup > div > p:first-of-type {
+  section#header_popup > div > p:first-of-type,
+section#banner_popup > div > p:first-of-type {
     font-size: 16px;
     color: #484848;
   }
-  section#header_popup > div > p:last-of-type {
+  section#header_popup > div > p:last-of-type,
+section#banner_popup > div > p:last-of-type {
     font-size: 16px;
     color: #484848;
   }
@@ -3324,7 +3332,7 @@ section#timed_overlay_popup > div h3 {
     color: #484848;
   }
 
-  section#banner_popup {
+  section#banner_popup_button {
     display: block;
     position: relative;
     background-color: black;
@@ -3332,7 +3340,7 @@ section#timed_overlay_popup > div h3 {
     text-align: center;
     margin-bottom: -1px;
   }
-  section#banner_popup > a {
+  section#banner_popup_button > a {
     padding: 0 5px;
     margin-left: 0;
     background-color: transparent;
@@ -3343,39 +3351,43 @@ section#timed_overlay_popup > div h3 {
     font-size: 1.6rem;
     line-height: 2.8rem;
   }
-  section#banner_popup > a:hover, section#banner_popup > a:active, section#banner_popup > a:focus {
+  section#banner_popup_button > a:hover, section#banner_popup_button > a:active, section#banner_popup_button > a:focus {
     opacity: 0.8;
   }
 }
 @media only screen and (min-width: 640px) {
   section#timed_overlay_popup > div,
-section#header_popup > div {
+section#header_popup > div,
+section#banner_popup > div {
     width: 80vw;
   }
   section#timed_overlay_popup > div > div:first-of-type,
-section#header_popup > div > div:first-of-type {
+section#header_popup > div > div:first-of-type,
+section#banner_popup > div > div:first-of-type {
     width: 50vw;
     height: 31.25vw;
   }
 }
 @media only screen and (min-width: 960px) {
   section#timed_overlay_popup > div,
-section#header_popup > div {
+section#header_popup > div section#banner_popup > div {
     width: 65vw;
   }
   section#timed_overlay_popup > div > div:first-of-type,
-section#header_popup > div > div:first-of-type {
+section#header_popup > div section#banner_popup > div > div:first-of-type {
     width: 40vw;
     height: 25vw;
   }
 }
 @media only screen and (min-width: 1280px) {
   section#timed_overlay_popup > div,
-section#header_popup > div {
+section#header_popup > div,
+section#banner_popup > div {
     width: 50vw;
   }
   section#timed_overlay_popup > div > div:first-of-type,
-section#header_popup > div > div:first-of-type {
+section#header_popup > div > div:first-of-type,
+section#banner_popup > div > div:first-of-type {
     width: 25vw;
     height: 15.625vw;
   }
