@@ -10,6 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var Theme = {};
 var Hero = {};
 var Headers = {};
+var Blocks = {};
 (0, _jquery["default"])(document).ready(function () {
   /**
    * FadeEffects
@@ -69,7 +70,49 @@ var Headers = {};
   };
 
   Theme.Slick._init();
-});
+}); // 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+
+/**
+ * 
+ * 
+ */
+
+if ((0, _jquery["default"])('section#block__galleries').length && (0, _jquery["default"])('section#block__galleries div.tabs').length) {
+  Blocks.Gallery = {
+    tabs: (0, _jquery["default"])('#block__galleries div.tabs > ul > li > a'),
+    galleries: (0, _jquery["default"])('#block__galleries div.galleries > .site__grid'),
+    _init: function _init() {
+      // when clicking tabs
+      Blocks.Gallery.tabs.on('click', Blocks.Gallery._didClickTab);
+    },
+    _didClickTab: function _didClickTab(e) {
+      // toggle visible gallery
+      Blocks.Gallery.galleries.addClass('hidden_gallery');
+      Blocks.Gallery.galleries.removeClass('current_gallery');
+      (0, _jquery["default"])(Blocks.Gallery.galleries[(0, _jquery["default"])(this).parent('li').index()]).addClass('current_gallery');
+    }
+  };
+
+  Blocks.Gallery._init();
+} // 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+
+
 Headers.Eight = {
   header: (0, _jquery["default"])("header.header#opt_header_eight"),
   _init: function _init() {
@@ -398,50 +441,47 @@ Theme.PA = {
         Theme.PA.container.fadeIn(250);
       }
     }
-  }
+  } // Theme.Gallery = {
+  //     links: $("#gallery #gallery_titles a"),
+  //     active_link_text: $("a.active_title").text(),
+  //     image_galleries: $(".gallery_row"),
+  //     gallery: $("#gallery"),
+  //     _init: function () {
+  //         Theme.Gallery.links.on("click", Theme.Gallery._tab_click);
+  //         Theme.Gallery._hide_non_active();
+  //     },
+  //     _tab_click: function (e) {
+  //         Theme.Gallery.link_text = e.target.classList[0];
+  //         Theme.Gallery.links.each(function () {
+  //             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_title")) {
+  //                 $(this).addClass('active_title');
+  //             } else {
+  //                 $(this).removeClass('active_title');
+  //             }
+  //         });
+  //         Theme.Gallery.image_galleries.each(function () {
+  //             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
+  //                 $(this).css("display", "flex");
+  //             } else {
+  //                 $(this).css("display", "none");
+  //             }
+  //         });
+  //     },
+  //     _hide_non_active: function () {
+  //         Theme.Gallery.image_galleries.each(function () {
+  //             if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
+  //                 if (!$(this).hasClass("active_row")) {
+  //                     $(this).hide();
+  //                 } else {
+  //                     $(this).show();
+  //                 }
+  //             }
+  //         })
+  //     },
+  // }
+  // Theme.Gallery._init();
+
 };
-Theme.Gallery = {
-  links: (0, _jquery["default"])("#gallery #gallery_titles a"),
-  active_link_text: (0, _jquery["default"])("a.active_title").text(),
-  image_galleries: (0, _jquery["default"])(".gallery_row"),
-  gallery: (0, _jquery["default"])("#gallery"),
-  _init: function _init() {
-    Theme.Gallery.links.on("click", Theme.Gallery._tab_click);
-
-    Theme.Gallery._hide_non_active();
-  },
-  _tab_click: function _tab_click(e) {
-    Theme.Gallery.link_text = e.target.classList[0];
-    Theme.Gallery.links.each(function () {
-      if ((0, _jquery["default"])(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_title")) {
-        (0, _jquery["default"])(this).addClass('active_title');
-      } else {
-        (0, _jquery["default"])(this).removeClass('active_title');
-      }
-    });
-    Theme.Gallery.image_galleries.each(function () {
-      if ((0, _jquery["default"])(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
-        (0, _jquery["default"])(this).css("display", "flex");
-      } else {
-        (0, _jquery["default"])(this).css("display", "none");
-      }
-    });
-  },
-  _hide_non_active: function _hide_non_active() {
-    Theme.Gallery.image_galleries.each(function () {
-      if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
-        if (!(0, _jquery["default"])(this).hasClass("active_row")) {
-          (0, _jquery["default"])(this).hide();
-        } else {
-          (0, _jquery["default"])(this).show();
-        }
-      }
-    });
-  }
-};
-
-Theme.Gallery._init();
-
 Theme.Nav = {
   nav_links: (0, _jquery["default"])(".navlinks-item-link"),
   _init: function _init() {

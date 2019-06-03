@@ -1,39 +1,34 @@
 <?php 
 /**
- * copy Block
- * 
- */
-    // data source
-
-    // empty return string
+*  Copy Content Block
+* 
+* 
+*/
+    // set return and guide string arrays
     $return = [];
     $guide = [];
-    $return[0] ='';
-    $guide[0] ='';
-
-
     
-    // empty guide string 
-    $guide[1] = '
+    // guide string for the section
+    $guide['section'] = '
         <section id="block__copy" class="site__block">
-            <div class="container %s" style="color: %s; background-color: %s">
+            <div class="container %s %s" style="%s">
                 %s
             </div>
         </section>
     ';
 
-    $return[1] .= sprintf(
-        $guide[1]
-        ,$cB['width']
-        ,$cB['foreground_color']
-        ,$cB['background_color']
-        ,( !empty($cB['copy']) ? '<div class="copy">'.$cB['copy'].'</div' : '' )
+    $return['section'] .= sprintf(
+        $guide['section']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,'<div style="color: '.$cB['foreground_color'].'">'.$cB['copy'].'</div>'                              // copy content w/ foreground color on container for easy override
     );
 
 
     // echo return string
-    echo $return[1];
+    echo $return['section'];
 
-    // clear the $cB, $return, $index and $guide vars for the next block
+    // clear the $cB, $return and $guide vars
     unset($cB, $return, $guide);
  ?>

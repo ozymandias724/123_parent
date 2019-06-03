@@ -36,7 +36,7 @@
     // empty guide string 
     $guide[1] = '
         <section id="block__coupons" class="site__block">
-            <div class="container %s" style="background-color: %s; color: %s;">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 %s
@@ -47,9 +47,9 @@
 
     $return[1] .= sprintf(
          $guide[1]
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['foreground_color']
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
         ,( !empty($return[0]) ? '<div class="site__grid">'.$return[0].'</div>' : '' )

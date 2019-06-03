@@ -1,49 +1,13 @@
-// style fonts
-@mixin fontS-12 {
-    font-size: 1.2rem;
-    line-height: 2.0rem;
-}
-
-@mixin fontS-14 {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-}
-
-@mixin fontS-16 {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-}
-
-@mixin fontS-20 {
-    font-size: 2rem;
-    line-height: 3.2rem;
-}
-
-@mixin fontS-24 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-}
-
-@mixin fontS-34 {
-    font-size: 3.4rem;
-    line-height: 4.8rem;
-}
-
-@mixin fontS-50 {
-    font-size: 5rem;
-    line-height: 7.2rem;
-}
-
-@mixin fontS-72 {
-    font-size: 7.2rem;
-    line-height: 9.6rem;
-}
-
 @mixin centerer {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+@mixin bgimage {
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
 }
 
 @mixin clearfix {
@@ -54,6 +18,47 @@
     }
 }
 
+
+@mixin site__bgimage( $z : false, $g : false){
+    overflow: hidden;
+    position: relative;
+    .image {
+        @include bgimage;
+        width: 100%;
+        transform: scale(1);
+        transition: transform 0.4s ease;
+    }
+    @if ($z == true) {
+        &:hover, &:active, &:focus {
+            .image {
+                transform: scale(1.2);
+            }
+        }
+    }
+    @if($g == true){
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background-color: transparentize(black, 0.5);
+            z-index: 2;
+            transition: opacity 0.4s ease;
+            opacity: 1;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:after {
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
 // updated, production worthy gridLayout mixin
 @mixin gridLayout($w, $c, $g, $s) {
     > ul {
@@ -61,12 +66,16 @@
         width: $w;
         margin: 0 auto 0 auto;
         @include clearfix;
- 
         >li {
             $d: colWidth($w, $c, $g);
             width: $d;
             height: auto;
             float: left;
+            
+            > a {
+                display: block;
+                width: 100%;
+            }
 
             .image,
             .block {

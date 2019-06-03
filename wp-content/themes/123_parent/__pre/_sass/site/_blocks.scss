@@ -1,105 +1,116 @@
-section.site__block {
-    width: 100%;
+@media only screen {
+
+    // grids here will only apply over 1280px
+    section.site__block {
+        width: 100%;
+        .container {
+            text-align: center;
+            padding: getVar($sizing, gutter, px, normal) 0;
+            margin: 0 auto getVar($sizing, gutter, px, normal);
     
-    .container {
-        text-align: center;
-        padding: getVar($sizing, gutter, px, normal) 0;
-        margin: 0 auto getVar($sizing, gutter, px, normal);
-        &.hasbg {
-            margin: 0 auto 0 auto;
-        }
-        
-        &.narrow {
-            width: getVar($sizing, content, small);
-            .site__grid {
+            // set most sections heading margin
+            >h2 {
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            > .block__details {
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            // bg sections have no margin (they touch seamlessly)
+            &.hasbg {
+                margin: 0 auto 0 auto;
+            }
+            // grid layouts by block width
+            &.narrow {
+                $w: getVar($sizing, content, small);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                $s: true;
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s);
+                }
+            }
+            &.medium {
                 $w: getVar($sizing, content, medium);
                 $c : 3;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
-                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s);
+                }
             }
-        }
-
-        &.medium {
-            width: getVar($sizing, content, medium);
-            .site__grid {
-                $w: getVar($sizing, content, medium);
+            &.wide {
+                $w: getVar($sizing, content, large);
                 $c : 3;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
-                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s);
+                }
+    
             }
-        }
-
-        &.wide {
-            width: getVar($sizing, content, large);
-            .site__grid {
-                $w: getVar($sizing, content, medium);
+            &.full {
+                $w: getVar($sizing, content, full);
                 $c : 3;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
-                @include gridLayout($w, $c, $g, $s);
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s);
+                }
             }
-
+            // end grid layouts by block width
+    
         }
-
-        &.full {
-            width: getVar($sizing, content, container);
-            .site__grid {
-                $w: getVar($sizing, content, medium);
-                $c : 3;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
-                @include gridLayout($w, $c, $g, $s);
+    
+    }
+    // reset the heading blocks h2 margin
+    section.site__block#block__heading {
+        > .container {
+            > h2 {
+                margin: 0 0 0 0;
             }
-
         }
-
     }
 }
-
-@import 'blocks/food_menus_block';
-
 //Do the rest of the media queries with max-width, not min-width
 @media only screen and (max-width:1280px){
     section.site__block {
         > .container {
+            // narrow and medium bumped up to large
+            $w: getVar($sizing, content, large);
+            $c : 3;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             &.narrow,
-            &.medium,
-            &.wide,
-            &.full {
-                width: getVar($sizing, content, medium);
-                $w: getVar($sizing, content, medium);
-                $c : 1;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
+            &.medium{
+                width: $w;
+                &.hasbg {
+                    width: ($w + (2 * $g));
+                    padding: $g;
+                }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
                 }
-                #tabs_style__sidebar {
-                    $w: getVar($sizing, content, small);
-                    .menu_section {
-                        width: $w;
-                        @include gridLayout($w, $c, $g, $s);
-                        &.menu_photo_tiled_x3 {
-                            $c: 3;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    $w: getVar($sizing, content, medium);
-                    .menu_section {
-                        $c: 1;
-                        width: $w;
-                        @include gridLayout($w, $c, $g, $s);
-                        &.menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
+                
             }
         }
     }
@@ -107,42 +118,23 @@ section.site__block {
 @media only screen and (max-width:960px){
     section.site__block {
         > .container {
+            // drop to 2 cols
+            $w: getVar($sizing, content, large);
+            $c : 2;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             &.narrow,
-            &.medium,
             &.wide,
-            &.full {
-                width: getVar($sizing, content, large);
-                $w: getVar($sizing, content, large);
-                $c : 1;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
+            &.medium {
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
                 }
-                #tabs_style__sidebar {
-                    $w: getVar($sizing, content, small);
-                    .menu_section {
-                        width: $w;
-                        @include gridLayout($w, $c, $g, $s);
-                        &.menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    $w: getVar($sizing, content, large);
-                    .menu_section {
-                        $c: 1;
-                        width: $w;
-                        @include gridLayout($w, $c, $g, $s);
-                        &.menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
+
             }
         }
     }
@@ -150,36 +142,25 @@ section.site__block {
 @media only screen and (max-width:640px){
     section.site__block {
         > .container {
+
+            // set all to 1 col
+            $w: getVar($sizing, content, full);
+            $c : 1;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             &.narrow,
             &.medium,
             &.wide,
             &.full {
-                width: getVar($sizing, content, full);
-                $w: getVar($sizing, content, full);
-                $c : 1;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s); 
                 }
-                #tabs_style__sidebar {
-                    .menu_section {
-                        width: $w;
-                        @include gridLayout($w, $c, $g, $s);
-                        &.menu_photo_tiled_x3 {
-                            $c: 2;
-                            @include gridLayout($w, $c, $g, $s);
-                        }
-                    }
-                }
-                #tabs_style__pills,
-                #tabs_style__divider {
-                    .menu_section {
-                        $c: 1;
-                        width: $w;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                }
+                
             }
         }
     }
@@ -189,4 +170,7 @@ section.site__block {
 @import 'blocks/heading_block';
 @import 'blocks/copy_block';
 @import 'blocks/services_block';
+@import 'blocks/galleries_block';
 @import 'blocks/coupons_block';
+@import 'blocks/staff_block';
+@import 'blocks/food_menus_block';

@@ -1,0 +1,36 @@
+@media only screen {
+
+    section#block__staff {
+        > .container {
+
+            > h2 {
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            > div:not(.site__grid){
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+
+            .site__grid {
+
+                > ul {
+                    > li {
+                        > a {
+                            color: getVar($colors, whites, full);
+                            > h5 {
+                                background-color: rgba(getVar($colors, grays, mid), 1);
+                            }
+                            > div {
+                                border-radius: 50%;
+                                overflow: hidden;
+                                border: 2px solid rgba(getVar($colors, grays, mid), 1.0);
+                                @include site__bgimage($g : true, $z : true);
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+    }
+}

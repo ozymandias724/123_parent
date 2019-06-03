@@ -556,6 +556,10 @@ $s_true: true;
 }
 
 @media only screen and (max-width: 1280px){
+    $w: getVar($sizing, content, large);
+    $c : 3;
+    $g: getVar($sizing, gutter, vw, normal);
+    $s: true;
     section#block__food_menus {
         > .container {
             .tabs {
@@ -566,6 +570,35 @@ $s_true: true;
                     }
                 }
             }
+            #tabs_style__sidebar {
+                $w: getVar($sizing, content, small);
+
+                .menu_section {
+                    width: $w;
+                    @include gridLayout($w, $c, $g, $s);
+
+                    &.menu_photo_tiled_x3 {
+                        $c: 3;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                }
+            }
+
+            #tabs_style__pills,
+            #tabs_style__divider {
+                $w: getVar($sizing, content, medium);
+
+                .menu_section {
+                    $c: 1;
+                    width: $w;
+                    @include gridLayout($w, $c, $g, $s);
+
+                    &.menu_photo_tiled_x3 {
+                        $c: 2;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                }
+            }
         } 
     }
 }
@@ -573,6 +606,10 @@ $s_true: true;
 @media only screen and (max-width: 960px){
     section#block__food_menus {
         > .container {
+            $w: getVar($sizing, content, large);
+            $c : 2;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             .tabs {
                 .menu_section {
                     .image_provided {
@@ -586,6 +623,35 @@ $s_true: true;
                     }
                 }
             }
+            #tabs_style__sidebar {
+                $w: getVar($sizing, content, small);
+
+                .menu_section {
+                    width: $w;
+                    @include gridLayout($w, $c, $g, $s);
+
+                    &.menu_photo_tiled_x3 {
+                        $c: 2;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                }
+            }
+
+            #tabs_style__pills,
+            #tabs_style__divider {
+                $w: getVar($sizing, content, large);
+
+                .menu_section {
+                    $c: 1;
+                    width: $w;
+                    @include gridLayout($w, $c, $g, $s);
+
+                    &.menu_photo_tiled_x3 {
+                        $c: 2;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                }
+            }
         }
     }
 }
@@ -593,6 +659,10 @@ $s_true: true;
 @media only screen and (max-width: 640px){
     section#block__food_menus {
         > .container {
+            $w: getVar($sizing, content, full);
+            $c : 1;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             // All tabs style
             .tabs {
                 // All menu types
@@ -619,6 +689,27 @@ $s_true: true;
                 > ul.button_group li {
                     display: block;
                     margin: 5px 0;
+                }
+            }
+
+            #tabs_style__sidebar {
+                .menu_section {
+                    width: $w;
+                    @include gridLayout($w, $c, $g, $s);
+
+                    &.menu_photo_tiled_x3 {
+                        $c: 2;
+                        @include gridLayout($w, $c, $g, $s);
+                    }
+                }
+            }
+
+            #tabs_style__pills,
+            #tabs_style__divider {
+                .menu_section {
+                    $c: 1;
+                    width: $w;
+                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }

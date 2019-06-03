@@ -1,36 +1,33 @@
 <?php 
 /**
- * services Block
- * 
- */
-    // data source
-
-    // empty return string
+*  Heading Content Block
+* 
+* 
+*/
+    // set return and guide string arrays
     $return = [];
     $guide = [];
     
-    // empty guide string 
-    $guide[1] = '
+    // guide string for the section
+    $guide['section'] = '
         <section id="block__heading" class="site__block">
-            <div class="container %s %s" style="%s %s">
+            <div class="container %s %s" style="%s">
                 %s
             </div>
         </section>
     ';
-
-    $return[1] .= sprintf(
-        $guide[1]
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )
-        ,( !empty( $cB['alignment'] ) ? 'text-align:'.$cB['alignment'].';' : '' )
-        ,'<'.$cB['level'].' style="color: '.$cB['foreground_color'].'">'.$cB['content'] . '</'.$cB['level'].'>'
+    // return string for the section
+    $return['section'] .= sprintf(
+        $guide['section']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,'<'.$cB['level'].' style="color: '.$cB['foreground_color'].'">'.$cB['content'] . '</'.$cB['level'].'>' // heading content w/ level and alignment
     );
 
-
     // echo return string
-    echo $return[1];
+    echo $return['section'];
 
-    // clear the $cB, $return, $index and $guide vars for the next block
+    // clear the $cB, $return and $guide vars
     unset($cB, $return, $guide);
  ?>

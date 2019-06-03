@@ -1,45 +1,50 @@
 <?php 
 /**
- * Staff Block
- * 
- */
-    // empty return string
+*  Heading Content Block
+* 
+* 
+*/
+     // set return and guide string arrays
     $return = [];
     $guide = [];
-    $return['grid'] ='<ul>';
-    $guide['grid'] = '
-        <li class="site__fade site__fade-up">
-            <a href="%s">
-                <div class="image site__bgimg site__bgimg--zoom site__bgimg--gradient"><div style="background-image: url(%s)" class="site__bgimg_img"></div></div>
-                <h5>%s</h5>
-            </a>
-        </li>
-    ';
     
-
     // build a grid of post objects
     if( !empty($cB['staff_members']) ){
+
+        // set grid return string
+        $return['staff'] = '<ul>';
+        // set grid guide string
+        $guide['staff'] = '
+            <li class="site__fade site__fade-up">
+                <a href="%s">
+                    <div><div class="image" style="background-image: url(%s)" class="site__bgimg_img"></div></div>
+                    <h5>%s</h5>
+                </a>
+            </li>
+        ';
+
+        // loop thru each staff member
         foreach($cB['staff_members'] as $i => $staff_member) {
             
-            // get fields for this post
+            // get fields for this sttaff member
             $fields = get_fields($staff_member['staff_member']->ID);
             
             // write to return string
-            $return['grid'] .= sprintf(
-                $guide['grid']
+            $return['staff'] .= sprintf(
+                $guide['staff']
                 ,get_permalink($staff_member['staff_member']->ID)
                 ,$fields['image']['url']
                 ,$staff_member['staff_member']->post_title
             );
         }
+        $return['staff'] .= '</ul>';
     }
-    $return['grid'] .= '</ul>';
 
     
     // empty guide string 
     $guide['section'] = '
         <section id="block__staff" class="site__block">
-            <div class="container %s" style="background-color: %s; color: %s;">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 %s
@@ -50,12 +55,13 @@
 
     $return['section'] .= sprintf(
          $guide['section']
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['foreground_color']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
-        ,( !empty($return['grid']) ? '<div class="site__grid">'.$return['grid'].'</div>' : '' )
+        ,( !empty($return['staff']) ? '<div class="site__grid">'.$return['staff'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 

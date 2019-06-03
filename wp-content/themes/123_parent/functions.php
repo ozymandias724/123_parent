@@ -36,39 +36,9 @@ include_once('classes/class.NavHandler.php');
 include_once('parts/nav/site.nav.php');
 
 
-function my_post_object_query( $args, $field, $post_id ) {
-	
-    // only show children of the current post being edited
-    // $args['post_parent'] = $post_id;
-    
-    error_log(print_r($args, true));
-	
-	// return
-    return $args;
-    
-}
-
-
-// filter for every field
-add_filter('acf/fields/post_object/query', 'my_post_object_query', 10, 3);
-
-
-// filter for a specific field based on it's name
-//add_filter('acf/fields/post_object/query/name=my_post_object', 'my_post_object_query', 10, 3);
-
-
-// filter for a specific field based on it's key
-//add_filter('acf/fields/post_object/query/key=field_508a263b40457', 'my_post_object_query', 10, 3);
-
-
-
-
-
-
-
 function get_gmaps_api_key(){
 
-    return 'AIzaSyCm3DUlMvghNSFqCUw9InFgQbDC--_PQyY';
+    return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
 }
 
 function _print_c($data)

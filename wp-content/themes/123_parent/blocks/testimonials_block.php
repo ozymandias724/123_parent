@@ -90,7 +90,7 @@
     // empty guide string 
     $guide['section'] = '
         <section id="block__testimonials" class="site__block">
-            <div class="container %s" style="background-color: %s; color: %s;">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 %s
@@ -101,9 +101,10 @@
 
     $return['section'] .= sprintf(
          $guide['section']
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['foreground_color']
+                  ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
         ,( !empty($return['grid']) ? '<div class="site__grid">'.$return['grid'].'</div>' : '' )

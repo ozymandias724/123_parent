@@ -85,7 +85,7 @@ function _get_address($ID)
     // empty guide string 
     $guide['section'] = '
         <section id="block__locations" class="site__block">
-            <div class="container %s" style="background-color: %s; color: %s;">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 %s
@@ -96,9 +96,10 @@ function _get_address($ID)
 
     $return['section'] .= sprintf(
          $guide['section']
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['foreground_color']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
         ,( !empty($return['locations']) ? $return['locations'] : '' )
