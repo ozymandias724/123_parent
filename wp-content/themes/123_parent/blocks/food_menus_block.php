@@ -179,8 +179,8 @@
     }
 
     $guide['section'] = '
-        <section id="block__food_menus" class="site__block">
-            <div class="container %s" style="background-color: %s; color: %s;">
+        <section id="block__services" class="site__block">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 %s
@@ -191,9 +191,10 @@
 
     $return['section'] .= sprintf(
         $guide['section']
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['foreground_color']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<p>'.$cB['text'].'</p>' : '' )
 
