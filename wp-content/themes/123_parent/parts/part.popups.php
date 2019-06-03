@@ -24,6 +24,7 @@
     }
 
 
+    // 
     function echo_popups($popups)
     {
         if(get_status($popups, 'banner')) echo banner_popup($popups);
