@@ -159,10 +159,10 @@
     section#timed_overlay_popup > div,
     section#header_popup > div,
     section#banner_popup > div {
-        width: 30vw; 
+        width: 40vw; 
         // Image
         > div:first-of-type {
-            $w: 30vw;
+            $w: 40vw;
             $c: 1;
             $g: getVar($sizing, gutter, vw, normal);
             $s: true;
@@ -170,7 +170,7 @@
             height: (colWidth($w, $c, $g) / 1.6);
         }
     }
-}
+} 
 
 @media only screen and (max-width: 960px){
     section#timed_overlay_popup > div,
