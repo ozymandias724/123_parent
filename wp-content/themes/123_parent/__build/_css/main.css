@@ -3231,7 +3231,7 @@ section#banner_popup {
     height: 100%;
     right: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   section#header_popup .popup_close,
 section#timed_overlay_popup .popup_close,
@@ -3243,93 +3243,110 @@ section#banner_popup .popup_close {
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: #484848;
+    color: white;
     font-size: 40px;
-    margin-right: 5%;
+    margin-right: 2%;
     padding: 2%;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   section#header_popup > div h3,
 section#timed_overlay_popup > div h3,
 section#banner_popup > div h3 {
     font-size: 3.4rem;
     line-height: 4.8rem;
-    color: #000;
     text-align: center;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-top: 10px;
+    font-family: "Gotham", "Helvetica", sans-serif;
+    margin: 10px 0;
+    text-transform: none;
   }
 
   section#header_popup,
 section#banner_popup {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   section#header_popup > div,
 section#banner_popup > div {
-    right: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     position: absolute;
     background-color: #fff;
-    padding: 30px;
-    margin: 0.5% 0.5% 0 0;
-    box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    width: 80vw;
-    height: min-content;
+    width: 25vw;
   }
   section#header_popup > div > div:first-of-type,
 section#banner_popup > div > div:first-of-type {
-    width: 70vw;
-    height: 43.75vw;
+    width: 25vw;
+    height: 15.625vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin: 10px auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
-  section#header_popup > div > p:first-of-type,
-section#banner_popup > div > p:first-of-type {
-    font-size: 16px;
-    color: #484848;
+  section#header_popup > div .popup_details,
+section#banner_popup > div .popup_details {
+    padding: 0 40px;
   }
-  section#header_popup > div > p:last-of-type,
-section#banner_popup > div > p:last-of-type {
-    font-size: 16px;
-    color: #484848;
+  section#header_popup > div .popup_details > p:first-of-type,
+section#banner_popup > div .popup_details > p:first-of-type {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  section#header_popup > div .popup_details .container,
+section#banner_popup > div .popup_details .container {
+    margin: 0;
+    padding: 10px 0 30px;
+  }
+  section#header_popup > div .popup_details .container div.wpforms-container-full,
+section#banner_popup > div .popup_details .container div.wpforms-container-full {
+    margin: 0;
+  }
+  section#header_popup > div .popup_details .container div.wpforms-container-full .wpforms-form button[type=submit],
+section#banner_popup > div .popup_details .container div.wpforms-container-full .wpforms-form button[type=submit] {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+    padding: 5px 0;
+    color: white;
+    background-color: #386591;
+    border: none;
+  }
+  section#header_popup > div .popup_details .container input,
+section#banner_popup > div .popup_details .container input {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    padding: 10px;
   }
 
   section#timed_overlay_popup > div {
-    top: 0;
-    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 0%);
     position: absolute;
     background-color: #fff;
     padding: 30px;
-    margin: 5% 0;
     border-radius: 10px;
-    width: 80vw;
+    width: 25vw;
     height: min-content;
   }
   section#timed_overlay_popup > div > div:first-of-type {
-    width: 70vw;
-    height: 43.75vw;
+    width: 25vw;
+    height: 15.625vw;
     padding: 5%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     margin: 10px auto;
   }
-  section#timed_overlay_popup > div > p:first-of-type {
-    font-size: 16px;
-    color: #484848;
+  section#timed_overlay_popup > div .popup_details {
+    padding: 20px;
   }
-  section#timed_overlay_popup > div > p:last-of-type {
-    font-size: 16px;
-    color: #484848;
+  section#timed_overlay_popup > div .popup_details > p:first-of-type {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
   }
 
   section#banner_popup_button {
@@ -3345,7 +3362,7 @@ section#banner_popup > div > p:last-of-type {
     margin-left: 0;
     background-color: transparent;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     color: white;
     font-weight: 500;
     font-size: 1.6rem;
@@ -3355,41 +3372,41 @@ section#banner_popup > div > p:last-of-type {
     opacity: 0.8;
   }
 }
-@media only screen and (min-width: 640px) {
+@media only screen and (max-width: 1280px) {
   section#timed_overlay_popup > div,
 section#header_popup > div,
 section#banner_popup > div {
-    width: 80vw;
+    width: 30vw;
   }
   section#timed_overlay_popup > div > div:first-of-type,
 section#header_popup > div > div:first-of-type,
 section#banner_popup > div > div:first-of-type {
+    width: 30vw;
+    height: 18.75vw;
+  }
+}
+@media only screen and (max-width: 960px) {
+  section#timed_overlay_popup > div,
+section#header_popup > div section#banner_popup > div {
+    width: 50vw;
+  }
+  section#timed_overlay_popup > div > div:first-of-type,
+section#header_popup > div section#banner_popup > div > div:first-of-type {
     width: 50vw;
     height: 31.25vw;
   }
 }
-@media only screen and (min-width: 960px) {
-  section#timed_overlay_popup > div,
-section#header_popup > div section#banner_popup > div {
-    width: 65vw;
-  }
-  section#timed_overlay_popup > div > div:first-of-type,
-section#header_popup > div section#banner_popup > div > div:first-of-type {
-    width: 40vw;
-    height: 25vw;
-  }
-}
-@media only screen and (min-width: 1280px) {
+@media only screen and (max-width: 640px) {
   section#timed_overlay_popup > div,
 section#header_popup > div,
 section#banner_popup > div {
-    width: 50vw;
+    width: 65vw;
   }
   section#timed_overlay_popup > div > div:first-of-type,
 section#header_popup > div > div:first-of-type,
 section#banner_popup > div > div:first-of-type {
-    width: 25vw;
-    height: 15.625vw;
+    width: 65vw;
+    height: 40.625vw;
   }
 }
 @media only screen {

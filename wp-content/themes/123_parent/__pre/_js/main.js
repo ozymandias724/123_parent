@@ -472,54 +472,6 @@ Theme.PA = {
 }
 
 
-// Theme.Gallery = {
-//     links: $("#gallery #gallery_titles a"),
-//     active_link_text: $("a.active_title").text(),
-//     image_galleries: $(".gallery_row"),
-//     gallery: $("#gallery"),
-
-//     _init: function () {
-//         Theme.Gallery.links.on("click", Theme.Gallery._tab_click);
-//         Theme.Gallery._hide_non_active();
-//     },
-
-//     _tab_click: function (e) {
-//         Theme.Gallery.link_text = e.target.classList[0];
-//         Theme.Gallery.links.each(function () {
-//             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_title")) {
-
-//                 $(this).addClass('active_title');
-
-//             } else {
-
-//                 $(this).removeClass('active_title');
-
-//             }
-//         });
-//         Theme.Gallery.image_galleries.each(function () {
-
-//             if ($(this).hasClass(Theme.Gallery.link_text.substring(0, Theme.Gallery.link_text.length - 6) + "_row")) {
-//                 $(this).css("display", "flex");
-//             } else {
-//                 $(this).css("display", "none");
-//             }
-
-//         });
-//     },
-//     _hide_non_active: function () {
-//         Theme.Gallery.image_galleries.each(function () {
-//             if (Theme.Gallery.gallery.hasClass("tab_divider") || Theme.Gallery.gallery.hasClass("tab_pill") || Theme.Gallery.gallery.hasClass("tab_sidebar")) {
-//                 if (!$(this).hasClass("active_row")) {
-//                     $(this).hide();
-//                 } else {
-//                     $(this).show();
-//                 }
-//             }
-//         })
-//     },
-// }
-// Theme.Gallery._init();
-
 Theme.Nav = {
     nav_links: $(".navlinks-item-link"),
 
@@ -534,6 +486,7 @@ Theme.Nav = {
     }
 }
 Theme.Nav._init();
+
 
 Theme.Menu = {
     tab_link: $(" #block__food_menus .button_group a "),
