@@ -3235,6 +3235,8 @@ section.hero .hero_foreground a:active {
     right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.7);
+    max-height: 100vh;
+    overflow-x: auto;
   }
   section.popup .popup_close {
     content: "";
@@ -3272,8 +3274,6 @@ section.hero .hero_foreground a:active {
   }
   section.popup > div.container .popup_details {
     padding: 0 40px 10px;
-    max-height: 50vh;
-    overflow-x: auto;
   }
   section.popup > div.container .popup_details > h3 {
     font-size: 3.4rem;

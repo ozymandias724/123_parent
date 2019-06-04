@@ -12,6 +12,8 @@
         right: 0;
         top: 0;
         background-color: rgba(0,0,0,0.7);
+        max-height: 100vh;
+        overflow-x: auto;
         .popup_close {
             content: '\f00d'; 
             display: inline-block;
@@ -52,8 +54,6 @@
             }
             .popup_details {
                 padding: 0 40px 10px;
-                max-height: 50vh;
-                overflow-x: auto;
                 // Heading
                 > h3 {
                     @include fontS-34;
