@@ -25,9 +25,14 @@
 </head>
 <body <?php body_class(); ?>>
 <?php 
-    // -Gus-
-    include( get_template_directory() . '/parts/part.popups.php');
-    echo banner_popup($popups);
+
+    // if the banner popup is enabled
+    if( !empty( get_field('popups', 'options')['banner']['status'] ) ){
+        // include the banner popup
+        include_once(get_template_directory() . '/parts/popups/popup.banner.php' );
+    }
+
+
 	if( $post->post_name !== 'disabled' ) {
 		include('parts/nav/header/nav-desktop.php');
 		include('parts/nav/header/nav-mobile.php');
