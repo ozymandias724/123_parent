@@ -33,7 +33,7 @@
             $details = (!empty($popups['banner']['overlay']['details']) ? $popups['banner']['overlay']['details'] : '');
      
             $format_popup = '
-                <section class="popup" id="banner_popup_button">
+                <section id="banner_popup_button">
                         <a href="javascript:;">%s</a>
                 </section>
                 <section class="popup" id="banner_popup">
