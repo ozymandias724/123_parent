@@ -34,7 +34,9 @@
      
             $format_popup = '
                 <section class="popup" id="banner_popup_button">
-                    <a href="javascript:;">%s</a>
+                    <div class="container">
+                        <a href="javascript:;">%s</a>
+                    </div>
                 </section>
                 <section class="popup" id="banner_popup">
                     %s
