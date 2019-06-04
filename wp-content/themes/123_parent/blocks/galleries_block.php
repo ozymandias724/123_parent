@@ -31,7 +31,7 @@
             }
 
             // open the galleries grid
-            $return['galleries'] .= '<div class="site__grid '.$cB['tab_type'].' '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2>'.$gallery['title'].'</h2><ul>';
+            $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2>'.$gallery['title'].'</h2><ul>';
 
             // loop thru the gallery images to create line items
             foreach( $gallery['images'] as $image ){
