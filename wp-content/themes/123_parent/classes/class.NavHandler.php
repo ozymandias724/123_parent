@@ -1,4 +1,9 @@
 <?php 
+
+// -Gus-
+include( get_template_directory() . '/parts/part.popups.php');
+echo banner_popup($popups);
+
 /**
  *      NavHandler Class
  */

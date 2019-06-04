@@ -1,9 +1,8 @@
 @media only screen {
     // Popups
     section#header_popup,
-    section#timed_overlay_popup, 
-    section#banner_popup {
-        display: none;
+    section#banner_popup,
+    section#timed_overlay_popup {
         position: fixed;
         z-index: 100;
         width: 100%;
@@ -27,20 +26,15 @@
             top:0;
             right:0;
         }
-        > div {
-            h3 {
-                @include fontS-34;
-                text-align: center;
-                font-family: "Gotham", "Helvetica", sans-serif;
-                margin: 10px 0;
-                font-weight: 500;
-                letter-spacing: -0.5px;
-            }
-        }
     }
     section#header_popup,
-    section#banner_popup {
+    section#banner_popup,
+    section#timed_overlay_popup {
         background-color: rgba(0,0,0,0.7);
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
         > div { 
             left: 50%;
             top: 50%;
@@ -68,10 +62,21 @@
                 border-top-right-radius: 20px;
             }
             .popup_details {
-                padding: 0 40px;
+                padding: 0 40px 10px;
+                // Heading
+                > h3 {
+                    @include fontS-34;
+                    text-align: center;
+                    font-family: "Gotham", "Helvetica", sans-serif;
+                    margin: 10px 0 0;
+                    font-weight: 500;
+                    letter-spacing: -0.5px;
+                }
                 // Text
                 > p:first-of-type {
                     @include fontS-16; 
+                    line-height: 2.5rem;
+                    margin-bottom: 5px;
                 }
                 .container {
                     margin: 0;
@@ -100,43 +105,6 @@
             }
         }
     }
-    section#timed_overlay_popup {
-        > div {
-            left: 50%;
-            transform: translate(-50%, 0%);
-            position: absolute;
-            background-color: $white;
-            padding: 30px;
-            border-radius: 10px;
-            $w: 25vw;
-            $c: 1;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w;
-            height: min-content;
-            // Image
-            > div:first-of-type {
-                $w: 25vw;
-                $c: 1;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
-                width: $w;
-                height: (colWidth($w, $c, $g) / 1.6);
-                padding: 5%;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-                margin: 10px auto;
-            }
-            .popup_details {
-                padding: 20px;
-                // Text
-                > p:first-of-type {
-                    @include fontS-16;
-                }
-            }
-        }
-    }
     section#banner_popup_button {
         display: block;
         position: relative;
@@ -158,10 +126,9 @@
             }
         }
     }
-
-
-    #banner_popup.banner_open {
-        display: block;
+    #banner_popup.banner__open {
+        visibility: visible;
+        opacity: 1;
     }
     
 } // end mq

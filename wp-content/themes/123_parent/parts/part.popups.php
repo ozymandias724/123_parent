@@ -23,62 +23,46 @@
         return $form;
     }
 
-
-    // 
-    function echo_popups($popups)
-    {
-        if(get_status($popups, 'banner')) echo banner_popup($popups);
-
-        if(get_status($popups, 'header')) echo header_popup($popups);
-
-        if(get_status($popups, 'timed_overlay')) echo timed_overlay_popup($popups);
-
-    }
-
-    function get_status($popups, $popup_name)
-    {
-        return ($popups[$popup_name]['status'] == 1) ? true : false;
-    }
-
     function banner_popup($popups)
     {
-
-        $button_text = (!empty($popups['banner']['button']['text']) ? $popups['banner']['button']['text'] : '' );
-        $image = (!empty($popups['banner']['overlay']['image']['url']) ? '<div style="background-image:url('.$popups['banner']['overlay']['image']['url'].');"></div>' : '');
-        $heading = (!empty($popups['banner']['overlay']['heading']) ? '<h3>'.$popups['banner']['overlay']['heading'].'</h3>' : '');
-        $details = (!empty($popups['banner']['overlay']['details']) ? $popups['banner']['overlay']['details'] : '');
- 
-        $format_popup = '
-            <section class="popup" id="banner_popup_button">
-                <a href="javascript:;">%s</a>
-            </section>
-            <section class="popup" id="banner_popup">
-                %s
-                <div class="container" style="%s %s">
+        if($popups['banner']['status'])
+        {
+            $button_text = (!empty($popups['banner']['button']['text']) ? $popups['banner']['button']['text'] : '' );
+            $image = (!empty($popups['banner']['overlay']['image']['url']) ? '<div style="background-image:url('.$popups['banner']['overlay']['image']['url'].');"></div>' : '');
+            $heading = (!empty($popups['banner']['overlay']['heading']) ? '<h3>'.$popups['banner']['overlay']['heading'].'</h3>' : '');
+            $details = (!empty($popups['banner']['overlay']['details']) ? $popups['banner']['overlay']['details'] : '');
+     
+            $format_popup = '
+                <section class="popup" id="banner_popup_button">
+                    <a href="javascript:;">%s</a>
+                </section>
+                <section class="popup" id="banner_popup">
                     %s
-                    <div class="popup_details">
+                    <div class="container" style="%s %s">
                         %s
-                        %s
-                        %s
-                    </div>
-                </div>     
-            </section>
-        '; 
+                        <div class="popup_details">
+                            %s
+                            %s
+                            %s
+                        </div>
+                    </div>     
+                </section>
+            '; 
+    
+            $banner_popup = sprintf(
+                $format_popup
+                ,$button_text
+                ,get_times()
+                ,( !empty( $popups['banner']['overlay']['background_color'] ) ? 'background-color:'.$popups['banner']['overlay']['background_color'].';' : '' )           // container bg color style
+                ,( !empty( $popups['banner']['overlay']['foreground_color'] ) ? 'color:'.$popups['banner']['overlay']['foreground_color'].';' : '' )           // container bg color style
+                ,$image
+                ,$heading
+                ,$details
+                ,get_form($popups, 'banner')
+            );
 
-        $banner_popup = sprintf(
-            $format_popup
-            ,$button_text
-            ,get_times()
-            ,( !empty( $popups['banner']['overlay']['background_color'] ) ? 'background-color:'.$popups['banner']['overlay']['background_color'].';' : '' )           // container bg color style
-            ,( !empty( $popups['banner']['overlay']['foreground_color'] ) ? 'color:'.$popups['banner']['overlay']['foreground_color'].';' : '' )           // container bg color style
-            ,$image
-            ,$heading
-            ,$details
-            ,get_form($popups, 'banner')
-        );
-        
-
-        return $banner_popup; 
+            return $banner_popup; 
+        }
     }
 
 
@@ -154,5 +138,5 @@
         return $timed_overlay_popup; 
     }
  
-    echo_popups($popups);
+    
 ?>
