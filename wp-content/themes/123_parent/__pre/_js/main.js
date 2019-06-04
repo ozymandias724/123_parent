@@ -396,10 +396,6 @@ Theme.Popups = {
             Theme.Popups._increase_timed_views();
         });
     },
-    _resize_close: function () {
-        Theme.Popups.popups.hide();
-        Theme.Popups._increase_timed_views();
-    },
     _increase_timed_views: function () {
         var views = $("#timed_overlay_popup").attr("data-viewed");
         views++;
