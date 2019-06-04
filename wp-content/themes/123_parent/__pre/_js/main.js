@@ -75,13 +75,13 @@ $(document).ready(function () {
 // 
 // 
 // 
-//  n
+//  
 // GOOD CHUNK OF CODE INSIDE HERE
-
 /**
  * 
  */
 if ($('#banner_popup').length) {
+    
     var PopUps = {};
 
     PopUps.Banner = {
