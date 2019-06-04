@@ -1,32 +1,17 @@
 <?php 
+/**
+* 
+*/
+include_once('classes/class.Setup.php');        // Theme Setup / Init
 
-// built-in acf
-if( function_exists('acf_add_options_page') ) {
-
-	// Main Theme Settings
-	acf_add_options_page(array(
-		'page_title' 	=> 'Sitewide Theme Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'general-settings',
-		'capability'	=> 'read_private_posts',
-		'icon_url'      => 'dashicons-admin-settings',
-		'redirect'		=> false,
-        'position' 		=> 3,
-	));
-}
-include_once('reqs/acfext.address.php');
-
-// acf handler for page publish/private status
-include_once('classes/Pagedata.php');
-
-// general theme setup
-include_once('classes/class.Setup.php');
-
-// custom users
-include_once('classes/class.UserRoles.php');
+include_once('classes/class.UserRoles.php');    // Custom Users and Roles
 
 // custom post types
 include_once( 'classes/class.customposts.php' );
+
+
+// ACF Extensions (options pages, other stuff)
+include_once('includes/acf.extensions.php');
 
 
 include_once('classes/class.Customizer.php');
@@ -202,36 +187,49 @@ function _get_site_logo(){
     return $content_logo;
 }
 
-function _get_site_nav($pre = 'navlinks'){
-    $return_nav = '';
-    $page = get_page_by_path('home', OBJECT, 'page');
-    $fields = get_fields($page->ID);
-    $longscroll = $fields['long_scroll'];
-    $sections = $fields['sections'];
-    // if long scroll is enabled
-    if (!empty($longscroll) && !empty($sections) ) {
-        $return_nav = '<ul class="'.$pre.'">';
-        $format_nav_item = '
-            <li class="'.$pre.'-item"><a class="'.$pre.'-item-link" href="%s" title="Scroll to the %s section">%s</a></li>
-        ';
-        // each page object reference module
-        foreach($sections as $section){
-            $section = $section['section'];
-            // create the nav
-            $href = '#mod_'.$section->post_name;
-            $title = $section->post_title;
-            $return_nav .= sprintf(
-                $format_nav_item
-                ,$href
-                ,$title
-                ,$title
-            );
-        }
-        $return_nav .= '</ul>';
-        return $return_nav;
+
+
+add_filter('acf/load_field/name=anchor_enabled', 'do_hide_acf_fields');
+add_filter('acf/load_field/name=anchor_link_text', 'do_hide_acf_fields');
+function do_hide_acf_fields( $field ) {
+    
+    if( !get_field('header', 'options')['long_scroll'] ){
+        return;
+    }else {
+        return $field;
     }
-    // if long scroll is disabled
+}
+
+
+function _get_site_nav($pre = 'navlinks'){
+
+    if( get_field('header', 'options')['long_scroll'] ){
+
+        // get them fields
+        $fields = get_fields( get_option('page_on_front') );
+        
+        
+        $guide['blocks_links'] = '<li class="navlinks-item"><a class="navlinks-item-link" href="javascript:;">%s</a></li>';
+        $return['blocks_links'] = '<ul class="navlinks nav__spyscroll">';
+        
+        foreach( $fields['content_blocks'] as $cB ){
+
+            if( $cB['anchor_enabled'] ){
+                $return['blocks_links'] .= sprintf(
+                    $guide['blocks_links']
+                    ,$cB['anchor_link_text']
+                );
+            }
+
+            
+        }
+        $return['blocks_links'] .= '</ul>';
+        
+        return $return['blocks_links'];
+        
+    }
     else {
+        
         // create an unwrapped site nav
         $site__nav = wp_nav_menu(array(
             'menu' => 'nav__header'

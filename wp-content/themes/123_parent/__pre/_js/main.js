@@ -77,17 +77,6 @@ $(document).ready(function () {
 // 
 // 
 // GOOD CHUNK OF CODE INSIDE HERE
-
-$(document).on('click', function(){
-
-    // we did not click our target element, or within a parent element that we set
-    // if( !$('target__element').closest('parent__element').length ){
-        // then do some stuff;
-        // such as close a nav, or a overlay... for instance...
-    // }
-
-});
-
 /**
  * 
  */
