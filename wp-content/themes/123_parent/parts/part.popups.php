@@ -28,15 +28,13 @@
         if($popups['banner']['status'])
         {
             $button_text = (!empty($popups['banner']['button']['text']) ? $popups['banner']['button']['text'] : '' );
-            $image = (!empty($popups['banner']['overlay']['image']['url']) ? '<div style="background-image:url('.$popups['banner']['overlay']['image']['url'].');"></div>' : '');
+            $image = (!empty($popups['banner']['overlay']['image']['url']) ? '<div class="image" style="background-image:url('.$popups['banner']['overlay']['image']['url'].');"></div>' : '');
             $heading = (!empty($popups['banner']['overlay']['heading']) ? '<h3>'.$popups['banner']['overlay']['heading'].'</h3>' : '');
             $details = (!empty($popups['banner']['overlay']['details']) ? $popups['banner']['overlay']['details'] : '');
      
             $format_popup = '
                 <section class="popup" id="banner_popup_button">
-                    <div class="container">
                         <a href="javascript:;">%s</a>
-                    </div>
                 </section>
                 <section class="popup" id="banner_popup">
                     %s

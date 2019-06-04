@@ -3223,9 +3223,11 @@ section.hero .hero_foreground a:active {
   }
 }
 @media only screen {
-  section#header_popup,
-section#banner_popup,
-section#timed_overlay_popup {
+  section.popup {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
     position: fixed;
     z-index: 100;
     width: 100%;
@@ -3234,18 +3236,7 @@ section#timed_overlay_popup {
     top: 0;
     background-color: rgba(0, 0, 0, 0.7);
   }
-
-  section#header_popup,
-section#banner_popup,
-section#timed_overlay_popup {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  }
-  section#header_popup .popup_close,
-section#banner_popup .popup_close,
-section#timed_overlay_popup .popup_close {
+  section.popup .popup_close {
     content: "";
     display: inline-block;
     font-family: "Font Awesome 5 Free";
@@ -3261,39 +3252,30 @@ section#timed_overlay_popup .popup_close {
     top: 0;
     right: 0;
   }
-  section#header_popup > div,
-section#banner_popup > div,
-section#timed_overlay_popup > div {
-    overflow: hidden;
+  section.popup > div.container {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     background-color: #fff;
     border-radius: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     max-width: 470px;
-    max-height: 80vh;
-    min-height: 66vh;
   }
-  section#header_popup > div > div:first-of-type,
-section#banner_popup > div > div:first-of-type,
-section#timed_overlay_popup > div > div:first-of-type {
+  section.popup > div.container > div.image {
     width: 470px;
     height: 293.75px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
-  section#header_popup > div .popup_details,
-section#banner_popup > div .popup_details,
-section#timed_overlay_popup > div .popup_details {
+  section.popup > div.container .popup_details {
     padding: 0 40px 10px;
+    max-height: 50vh;
+    overflow-x: auto;
   }
-  section#header_popup > div .popup_details > h3,
-section#banner_popup > div .popup_details > h3,
-section#timed_overlay_popup > div .popup_details > h3 {
+  section.popup > div.container .popup_details > h3 {
     font-size: 3.4rem;
     line-height: 4.8rem;
     text-align: center;
@@ -3302,33 +3284,24 @@ section#timed_overlay_popup > div .popup_details > h3 {
     font-weight: 500;
     letter-spacing: -0.5px;
   }
-  section#header_popup > div .popup_details > p:first-of-type,
-section#banner_popup > div .popup_details > p:first-of-type,
-section#timed_overlay_popup > div .popup_details > p:first-of-type {
+  section.popup > div.container .popup_details > p:first-of-type {
     font-size: 1.6rem;
     line-height: 2.8rem;
     line-height: 2.5rem;
     margin-bottom: 5px;
+    text-align: justify;
   }
-  section#header_popup > div .popup_details .container,
-section#banner_popup > div .popup_details .container,
-section#timed_overlay_popup > div .popup_details .container {
+  section.popup > div.container .popup_details div.container {
     margin: 0;
     padding: 10px 0 30px;
   }
-  section#header_popup > div .popup_details .container div.wpforms-container-full,
-section#banner_popup > div .popup_details .container div.wpforms-container-full,
-section#timed_overlay_popup > div .popup_details .container div.wpforms-container-full {
+  section.popup > div.container .popup_details div.container div.wpforms-container-full {
     margin: 0;
   }
-  section#header_popup > div .popup_details .container div.wpforms-container-full .wpforms-form .wpforms-field,
-section#banner_popup > div .popup_details .container div.wpforms-container-full .wpforms-form .wpforms-field,
-section#timed_overlay_popup > div .popup_details .container div.wpforms-container-full .wpforms-form .wpforms-field {
+  section.popup > div.container .popup_details div.container div.wpforms-container-full .wpforms-form .wpforms-field {
     padding: 5px 0;
   }
-  section#header_popup > div .popup_details .container div.wpforms-container-full .wpforms-form button[type=submit],
-section#banner_popup > div .popup_details .container div.wpforms-container-full .wpforms-form button[type=submit],
-section#timed_overlay_popup > div .popup_details .container div.wpforms-container-full .wpforms-form button[type=submit] {
+  section.popup > div.container .popup_details div.container div.wpforms-container-full .wpforms-form button[type=submit] {
     width: 100%;
     font-size: 2rem;
     line-height: 3.2rem;
@@ -3339,9 +3312,7 @@ section#timed_overlay_popup > div .popup_details .container div.wpforms-containe
     border: none;
     border-radius: 30px;
   }
-  section#header_popup > div .popup_details .container input,
-section#banner_popup > div .popup_details .container input,
-section#timed_overlay_popup > div .popup_details .container input {
+  section.popup > div.container .popup_details div.container input {
     font-size: 1.6rem;
     line-height: 2.8rem;
     padding: 25px 20px;
@@ -3349,14 +3320,20 @@ section#timed_overlay_popup > div .popup_details .container input {
 
   section#banner_popup_button {
     display: block;
+    visibility: visible;
+    opacity: 1;
     position: fixed;
     background-color: black;
     z-index: 100;
     text-align: center;
     margin-bottom: -1px;
     width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    transform: none;
   }
-  section#banner_popup_button > div.container > a {
+  section#banner_popup_button > a {
     padding: 0 5px;
     margin-left: 0;
     background-color: transparent;
@@ -3368,7 +3345,7 @@ section#timed_overlay_popup > div .popup_details .container input {
     line-height: 2.8rem;
     line-height: 44px;
   }
-  section#banner_popup_button > div.container > a:hover, section#banner_popup_button > div.container > a:active, section#banner_popup_button > div.container > a:focus {
+  section#banner_popup_button > a:hover, section#banner_popup_button > a:active, section#banner_popup_button > a:focus {
     opacity: 0.8;
   }
 
@@ -3376,16 +3353,17 @@ section#timed_overlay_popup > div .popup_details .container input {
     visibility: visible;
     opacity: 1;
   }
+
+  header.header,
+header.mobileheader {
+    margin-top: 43px;
+  }
 }
 @media only screen and (max-width: 640px) {
-  section#timed_overlay_popup > div,
-section#header_popup > div,
-section#banner_popup > div {
+  section.popup > div.container {
     width: 65vw;
   }
-  section#timed_overlay_popup > div > div:first-of-type,
-section#header_popup > div > div:first-of-type,
-section#banner_popup > div > div:first-of-type {
+  section.popup > div.container > div.image {
     width: 65vw;
     height: 40.625vw;
   }

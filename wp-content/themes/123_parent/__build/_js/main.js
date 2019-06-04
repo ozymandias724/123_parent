@@ -90,18 +90,17 @@ if ((0, _jquery["default"])('#banner_popup').length) {
       (0, _jquery["default"])('#banner_popup').show();
       (0, _jquery["default"])('#banner_popup_button a').on('click', PopUps.Banner._didClickBanner);
       (0, _jquery["default"])('.popup_close').on('click', PopUps.Banner._closeHandler);
-
-      PopUps.Banner._headerMarginTop();
+      (0, _jquery["default"])('#banner_popup').on('click', PopUps.Banner._backgroundClickHandler);
     },
     _didClickBanner: function _didClickBanner(e) {
-      (0, _jquery["default"])('#banner_popup').addClass('banner__open');
+      (0, _jquery["default"])('#banner_popup, .popup_background').addClass('banner__open');
     },
     _closeHandler: function _closeHandler(e) {
       (0, _jquery["default"])(this).parent().removeClass('banner__open');
     },
-    _headerMarginTop: function _headerMarginTop() {
-      if ((0, _jquery["default"])('#banner_popup_button').length) {
-        (0, _jquery["default"])('header.header, header.mobileheader').css('margin-top', '43px');
+    _backgroundClickHandler: function _backgroundClickHandler(e) {
+      if (e.target == e.currentTarget) {
+        (0, _jquery["default"])('#banner_popup').removeClass('banner__open');
       }
     }
   };
