@@ -35,7 +35,6 @@
             right:0;
         }
         > div { 
-            max-height: 80vh;
             overflow: hidden;
             left: 50%;
             top: 50%;
@@ -44,8 +43,10 @@
             background-color: $white;
             border-radius: 20px;
             border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
+            border-top-right-radius: 20px; 
             max-width: 470px;
+            max-height: 80vh;
+            min-height: 66vh;
             // Image
             > div:first-of-type {
                 $w: 470px;

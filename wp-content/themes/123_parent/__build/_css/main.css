@@ -3264,7 +3264,6 @@ section#timed_overlay_popup .popup_close {
   section#header_popup > div,
 section#banner_popup > div,
 section#timed_overlay_popup > div {
-    max-height: 80vh;
     overflow: hidden;
     left: 50%;
     top: 50%;
@@ -3275,6 +3274,8 @@ section#timed_overlay_popup > div {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     max-width: 470px;
+    max-height: 80vh;
+    min-height: 66vh;
   }
   section#header_popup > div > div:first-of-type,
 section#banner_popup > div > div:first-of-type,
