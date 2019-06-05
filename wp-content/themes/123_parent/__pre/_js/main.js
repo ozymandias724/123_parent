@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import slick from 'slick-carousel-browserify';
-
+import magnific from 'magnific-popup';
 import zenscroll from 'zenscroll';
 
 // kick off the polyfill!
@@ -145,6 +145,31 @@ $(document).ready(function() {
      *  If we have a gallery block
      * 
      */
+    if($('section.block__galleries').length && $('section.block__galleries div.tabs').length) {
+
+        $('.galleries ul li .image').magnificPopup({
+            'type' : 'image'
+        });
+        
+        Blocks.Gallery = {
+            tabs: $('.block__galleries div.tabs > ul > li'),
+            galleries: $('.block__galleries div.galleries > .site__grid'),
+            _init: function () {
+                // when clicking tabs
+                Blocks.Gallery.tabs.on('click', '>a', Blocks.Gallery._didClickTab);
+            },
+            _didClickTab: function (e) {
+                // toggle visible gallery
+                Blocks.Gallery.galleries.addClass('hidden_gallery');
+                Blocks.Gallery.galleries.removeClass('current_gallery');
+                $(Blocks.Gallery.galleries[$(this).parent('li').index()]).addClass('current_gallery');
+                // toggle tab
+                Blocks.Gallery.tabs.removeClass('tab_active');
+                $(this).parent('li').addClass('tab_active')
+            }
+        }
+        Blocks.Gallery._init();
+    }
 
     /**
      * Handle the basics of the nav unspecific to a header style
