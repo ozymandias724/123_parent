@@ -107,6 +107,29 @@ $(document).ready(function() {
      *  If we have a gallery block
      * 
      */
+<<<<<<< HEAD
+    PopUps.Banner = {
+        overlay: $('#popups__banner_overlay')
+        ,_init : function(){
+            $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
+            $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+            $('.overlay__closebutton').on('click', PopUps.Banner._closePopUp);
+        }
+        ,_openPopUp : function(e){
+            $('body').addClass('js__noscroll');
+            PopUps.Banner.overlay.addClass('popups__banner_active');
+        }
+        ,_closePopUp : function(){
+            $('body').removeClass('js__noscroll');
+            PopUps.Banner.overlay.removeClass('popups__banner_active');
+        }
+        ,_clickedOverlayBG : function(e){
+            if(e.target === e.currentTarget){
+                $('body').removeClass('js__noscroll');
+                PopUps.Banner.overlay.removeClass('popups__banner_active');
+            }
+        }
+=======
     if ($('section.block__galleries').length && $('section.block__galleries div.tabs').length) {
     
         Blocks.Gallery = {
@@ -124,6 +147,7 @@ $(document).ready(function() {
             }
         }
         Blocks.Gallery._init();
+>>>>>>> master
     }
 
     /**

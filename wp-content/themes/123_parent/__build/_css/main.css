@@ -3200,20 +3200,75 @@ section.hero .hero_foreground a:active {
   #popups__banner_overlay.popups__banner_active {
     display: flex;
   }
+  #popups__banner_overlay .overlay__closebutton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    z-index: 10000;
+    cursor: pointer;
+    color: white;
+    margin: 2% 4%;
+  }
   #popups__banner_overlay > .container {
     position: relative;
     z-index: 9;
     background-color: #ffffff;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    max-width: 65vw;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    max-width: 470px;
     margin: 10vh auto 0 auto;
-    padding: 30px;
+    border-radius: 20px;
   }
-  #popups__banner_overlay > .container > .overlay__closebutton {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 3rem;
+  #popups__banner_overlay > .container > figure img {
+    width: 100%;
+    max-width: 470px;
+    height: 293.75px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  #popups__banner_overlay > .container > div {
+    padding: 0 40px 10px;
+  }
+  #popups__banner_overlay > .container > div > div.banner_heading {
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    text-align: center;
+    font-family: "Gotham", "Helvetica", sans-serif;
+    margin: 10px 0 0;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+  }
+  #popups__banner_overlay > .container > div > div.banner_details {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    line-height: 2.5rem;
+    margin-bottom: 5px;
+    text-align: justify;
+  }
+  #popups__banner_overlay > .container > div > div.banner_form {
+    margin: 0;
+    padding: 10px 0 0;
+  }
+  #popups__banner_overlay > .container > div > div.banner_form input {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    padding: 25px 20px;
+  }
+  #popups__banner_overlay > .container > div > div.banner_form .wpforms-form .wpforms-field {
+    padding: 5px 0;
+  }
+  #popups__banner_overlay > .container > div > div.banner_form .wpforms-form button[type=submit] {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    font-weight: 500;
+    padding: 10px 10px;
+    color: white;
+    background-color: #386591;
+    border: none;
+    border-radius: 30px;
   }
 }
 @media only screen {
