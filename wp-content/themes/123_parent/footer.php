@@ -102,8 +102,8 @@
         $footer_style = get_field('footer', 'options')['style'];
         $logo = get_footer_logo();
         $address = (!empty(get_full_address_br()) ? '<a class="footer_address" href="javascript:;">'.get_full_address_br().'</a>': '');
-        $phone_number_1 = (!empty(get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'.get_phone_number_1().'">P: '.get_phone_number_1().'</a>': '');
-        $phone_number_2 =(!empty(get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'.get_phone_number_2().'">F: '.get_phone_number_2().'</a>': '');
+        $phone_number_1 = (!empty(get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'.get_phone_number_1().'"><span>P:</span> '.get_phone_number_1().'</a>': '');
+        $phone_number_2 =(!empty(get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'.get_phone_number_2().'"><span>F:</span> '.get_phone_number_2().'</a>': '');
 
         $format_company_info = '
             <div id="footer_company_info">
@@ -262,9 +262,11 @@
                         %s
                     </div>
                 </div>
-                <div class="container footer_copyright">
-                    %s
-                    %s
+                <div class="footer_copyright">
+                    <div class="container">
+                        %s
+                        %s
+                    </div>
                 </div>
             ';
 

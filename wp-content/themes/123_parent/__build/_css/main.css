@@ -2676,7 +2676,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
 }
 @media only screen {
   footer {
-    background-color: #386591;
+    background-color: #376494;
   }
   footer > div.container {
     margin: 0 auto;
@@ -2706,7 +2706,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   footer > div.container #footer_nav .navlinks .navlinks-item-link {
     line-height: 50px;
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
     font-size: 1.6rem;
     line-height: 2.8rem;
@@ -2723,7 +2723,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     left: 15px;
     right: 0;
     height: 0.5em;
-    border-right: 2px solid #fff;
+    border-right: 2px solid #ffffff;
   }
   footer > div.container #footer_nav .navlinks .navlinks-item:last-of-type .navlinks-item-link:after {
     border-right: none;
@@ -2749,7 +2749,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   footer > div.container .footer_address {
     margin-right: 20px;
     display: block;
-    color: #fff;
+    color: #ffffff;
     font-weight: 700;
     font-size: 1.4rem;
     line-height: 2.8rem;
@@ -2772,7 +2772,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
   footer > div.container .site__copyright_banner > a {
     display: inline-block;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.4rem;
     line-height: 2.8rem;
   }
@@ -2797,49 +2797,88 @@ footer > div.container .footer_payment_types > ul > li:last-of-type {
     width: 65vw;
     flex-flow: row nowrap;
   }
+  footer#footer_one > div.container > div {
+    flex: 1 0 23%;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+  footer#footer_one > div.container > div:last-of-type {
+    margin-right: 0;
+  }
   footer#footer_one > div.container h3 {
-    border-bottom: 2px solid white;
+    border-bottom: 5px dotted #ffffff;
     color: #fff;
-    padding: 3px;
-    font-weight: 400;
-    margin-bottom: 20px;
+    padding: 0 0 10px 0;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 3.2rem;
   }
-  footer#footer_one > div.container .site__copyright_banner {
-    margin-bottom: 30px;
-  }
-  footer#footer_one > div.container #footer_company_info,
-footer#footer_one > div.container #footer_nav,
-footer#footer_one > div.container #footer_posts,
-footer#footer_one > div.container #footer_social {
-    flex: 1 0 25%;
+  footer#footer_one > div.container #footer_company_info {
+    margin-top: 10px;
+    margin-right: 0;
   }
   footer#footer_one > div.container #footer_company_info .footer_phone_1,
 footer#footer_one > div.container #footer_company_info .footer_phone_2,
 footer#footer_one > div.container #footer_company_info .footer_address {
-    font-size: 2rem;
-    line-height: 3.2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
     font-weight: 400;
+    margin-right: 0;
+    display: block;
+  }
+  footer#footer_one > div.container #footer_company_info a[class^=footer_phone] {
+    line-height: 15px;
+  }
+  footer#footer_one > div.container #footer_company_info a[class^=footer_phone] > span {
+    font-weight: bold;
+  }
+  footer#footer_one > div.container #footer_company_info .footer_address {
+    margin-bottom: 10px;
+    line-height: 25px;
   }
   footer#footer_one > div.container #footer_nav {
     flex: 1 0 25%;
   }
   footer#footer_one > div.container #footer_nav .navlinks {
     flex-flow: column wrap;
-    max-height: 250px;
   }
   footer#footer_one > div.container #footer_nav .navlinks .navlinks-item .navlinks-item-link {
     text-transform: initial;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    line-height: 40px;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    line-height: 20px;
     margin: 0;
-    font-weight: 500;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
   }
   footer#footer_one > div.container #footer_nav .navlinks .navlinks-item .navlinks-item-link:after {
     display: none;
   }
+  footer#footer_one > div.container #footer_nav .navlinks .navlinks-item:last-of-type > a {
+    border-bottom: 1px solid transparent;
+  }
+  footer#footer_one > div.container #footer_posts > ul > li > a {
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    line-height: 20px;
+    margin: 0;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+  }
+  footer#footer_one > div.container #footer_posts > ul > li > a:hover, footer#footer_one > div.container #footer_posts > ul > li > a:active, footer#footer_one > div.container #footer_posts > ul > li > a:focus {
+    opacity: 0.8;
+  }
+  footer#footer_one > div.container #footer_posts > ul > li:last-of-type > a {
+    border-bottom: 1px solid transparent;
+  }
   footer#footer_one > div.container #footer_social .site__social-media {
-    margin: 30px 0 10px;
+    margin: 20px 0 10px;
     justify-content: flex-start;
   }
   footer#footer_one > div.container #footer_social .site__social-media li {
@@ -2850,30 +2889,61 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   footer#footer_one > div.container #footer_social .site__social-media li a i {
     font-size: 16px;
-    color: #386591;
-    background-color: white;
+    color: white;
+    border: 3px solid rgba(255, 255, 255, 0.4);
     padding: 3px 12px;
     border-radius: 100%;
   }
-  footer#footer_one > div.container .footer_copyright {
+  footer#footer_one > div.footer_copyright {
+    margin-top: 30px;
     text-align: center;
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #294b6f;
+    padding: 20px 0;
   }
-  footer#footer_one > div.container section.footer_payment_types ul {
+  footer#footer_one > div.footer_copyright > div.container {
+    margin: 0 auto;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 65vw;
+    justify-content: center;
+  }
+  footer#footer_one > div.footer_copyright > div.container > div {
+    flex: 1 0 50%;
+  }
+  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner {
+    display: flex;
+    justify-content: flex-start;
+  }
+  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a {
+    color: #ffffff;
+  }
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types {
+    display: flex;
+    justify-content: flex-end;
+  }
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul {
+    display: flex;
+    flex-flow: row wrap;
     max-height: 200px;
     align-items: inherit;
+    justify-content: flex-start;
   }
-  footer#footer_one > div.container section.footer_payment_types ul > li {
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li {
+    margin-right: 10px;
     display: initial;
   }
-  footer#footer_one > div.container section.footer_payment_types ul > li img {
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li img {
     max-width: 70px;
     max-height: 70px;
     margin: 10px 0;
   }
-  footer#footer_one > div.container section.footer_payment_types h3.payment_title {
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li:last-of-type {
+    margin-right: 0;
+  }
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types h3.payment_title {
     margin-top: 10px;
   }
 
@@ -2994,16 +3064,6 @@ footer#footer_one div.container div.site__copyright_banner {
   }
   footer#footer_one div.container #footer_company_info, footer#footer_one div.container .footer_badges {
     flex: 1 0 100%;
-  }
-  footer#footer_one div.container section#footer_nav_section {
-    margin-right: 20px;
-  }
-  footer#footer_one div.container .footer_payment_types {
-    margin-top: -10px;
-  }
-  footer#footer_one div.container section#footer_nav_section,
-footer#footer_one div.container .footer_payment_types {
-    flex: 1 0 45%;
   }
   footer#footer_one div.container div.site__copyright_banner {
     margin: 10px auto 30px auto;

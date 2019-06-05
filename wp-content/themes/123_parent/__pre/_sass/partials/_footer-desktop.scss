@@ -1,7 +1,7 @@
 @media only screen {
     // COMMON FOOTER DESIGNS SCSS
     footer {
-        background-color: $accent;
+        background-color: getVar($colors, accent);
         > div.container {
             margin: 0 auto;
             display: flex;
@@ -29,7 +29,7 @@
                     .navlinks-item-link {
                         line-height: 50px;
                         text-transform: uppercase;
-                        color: $white;
+                        color: getVar($colors, white, full);
                         font-weight: 700;
                         @include fontS-16;
                         margin: 0 15px;
@@ -46,7 +46,7 @@
                             left: 15px;
                             right: 0;
                             height: 0.5em;
-                            border-right: 2px solid $white;
+                            border-right: 2px solid getVar($colors, white, full);
                         }
                     }
                     .navlinks-item:last-of-type .navlinks-item-link:after {
@@ -76,7 +76,7 @@
             .footer_address {
                 margin-right: 20px;
                 display: block;
-                color: $white;
+                color: getVar($colors, white, full);
                 font-weight: 700;
                 @include fontS-14;
                 padding: 5px;
@@ -103,7 +103,7 @@
             .site__copyright_banner {
                 > a {
                     display: inline-block;
-                    color: $white;
+                    color: getVar($colors, white, full);
                     @include fontS-14;
                     &:hover,
                     &:active,
@@ -134,52 +134,95 @@
         > div.container {
             width: getVar($sizing, content, medium);
             flex-flow: row nowrap;
+            > div {
+                flex: 1 0 23%;
+                margin-right: 40px;
+                margin-top: 20px;
+            }
+            > div:last-of-type {
+                margin-right: 0;
+            }
             h3 {
-                border-bottom: 2px solid white;
+                border-bottom: 5px dotted getVar($colors, white, full);
                 color: $white;
-                padding: 3px;
-                font-weight: 400;
-                margin-bottom: 20px;
-            }
-            .site__copyright_banner {
-                margin-bottom: 30px;
-            }
-            #footer_company_info,
-            #footer_nav,
-            #footer_posts,
-            #footer_social {
-                flex: 1 0 25%;
+                padding: 0 0 10px 0;
+                font-weight: 600;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                @include fontS-20;
             }
             #footer_company_info {
+                margin-top: 10px;
+                margin-right: 0;
                 .footer_phone_1, 
                 .footer_phone_2,
                 .footer_address {
-                    @include fontS-20;
+                    @include fontS-16;
                     font-weight: 400;
+                    margin-right: 0;
+                    display: block;
+                }
+                a[class^='footer_phone'] {
+                    line-height: 15px;
+                    > span {
+                        font-weight: bold;
+                    }
+                }
+                .footer_address {
+                    margin-bottom: 10px;
+                    line-height: 25px;
                 }
             }
             #footer_nav {
                 flex: 1 0 25%;
                 .navlinks {
                     flex-flow: column wrap;
-                    max-height: 250px;
                     .navlinks-item {
                         .navlinks-item-link {
                             text-transform: initial;
-                            @include fontS-20;
-                            line-height: 40px;
+                            @include fontS-18;
+                            line-height: 20px;
                             margin: 0;
-                            font-weight: 500;
+                            font-weight: 400;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                            display: block;
                             &:after {
                                 display: none;
                             }
                         }
                     }
+                    .navlinks-item:last-of-type > a {
+                        border-bottom: 1px solid transparent; 
+                    }
+                }
+            }
+            #footer_posts {
+                > ul {
+                    > li {
+                        > a {
+                            color: #fff;
+                            padding: 10px 0;
+                            @include fontS-18;
+                            line-height: 20px;
+                            margin: 0;
+                            font-weight: 400;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                            display: block;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                    > li:last-of-type > a {
+                        border-bottom: 1px solid transparent;
+                    }
                 }
             }
             #footer_social {
                 .site__social-media {
-                    margin: 30px 0 10px;
+                    margin: 20px 0 10px;
                     justify-content: flex-start;
                     li {
                         margin-right: 0;
@@ -187,8 +230,8 @@
                             padding: 5px;
                             i {
                                 font-size: 16px;
-                                color: $accent;
-                                background-color: white;
+                                color: white;
+                                border: 3px solid rgba(255, 255, 255, 0.4);
                                 padding: 3px 12px;
                                 border-radius: 100%;
                             }
@@ -196,28 +239,57 @@
                     }
                 }
             }
-            .footer_copyright {
-                text-align: center;
-                margin-top: 10px;
-            }
-            section.footer_payment_types {
-                ul {
-                    display: flex;
-                    flex-flow: column wrap;
-                    max-height: 200px;
-                    align-items: inherit;
-                    > li {
-                        display: initial;
-                        img {
-                            max-width: 70px;
-                            max-height: 70px;
-                            margin: 10px 0;
-                        }
-                    }
-                } 
-                h3.payment_title { 
-                    margin-top: 10px; 
+        }
+        > div.footer_copyright {
+            margin-top: 30px;
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            background-color: darken(getVar($colors, accent), 10%);
+            padding: 20px 0;
+            > div.container {
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                width: getVar($sizing, content, medium);
+                justify-content: center;
+                > div {
+                    flex: 1 0 50%;
                 }
+                .site__copyright_banner {
+                    display: flex;
+                    justify-content: flex-start;
+                    > a {
+                        color: getVar($colors, white, full);
+                    }
+                }
+                .footer_payment_types {
+                    display: flex;
+                    justify-content: flex-end;
+                    ul {
+                        display: flex;
+                        flex-flow: row wrap;
+                        max-height: 200px;
+                        align-items: inherit;
+                        justify-content: flex-start;
+                        > li {
+                            margin-right: 10px;
+                            display: initial;
+                            img {
+                                max-width: 70px;
+                                max-height: 70px;
+                                margin: 10px 0;
+                            }
+                        }
+                        > li:last-of-type {
+                            margin-right: 0;
+                        }
+                    } 
+                    h3.payment_title { 
+                        margin-top: 10px; 
+                    }
+                }  
             }
         }
     }
@@ -347,16 +419,6 @@
             flex-flow: row wrap;
             #footer_company_info, .footer_badges {
                 flex: 1 0 100%;
-            }
-            section#footer_nav_section {
-                margin-right: 20px;
-            }
-            .footer_payment_types {
-                margin-top: -10px;
-            }
-            section#footer_nav_section,
-            .footer_payment_types {
-                flex: 1 0 45%;
             }
             div.site__copyright_banner {
                 margin: 10px auto 30px auto;
