@@ -1,143 +1,63 @@
+// Banner PopUp
 @media only screen {
-    // Popups
-    section.popup {
-        display: none;
-        position: fixed;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-        right: 0;
-        top: 0;
-        background-color: rgba(0,0,0,0.7);
-        .popup_close {
-            content: '\f00d'; 
-            display: inline-block;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            color: white;
-            font-size: 40px;
-            margin-right: 2%;
-            padding: 2%;
-            position: absolute;
-            top:0;
-            right:0;
-        }
-        > div.container { 
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            background-color: $white;
-            border-radius: 20px;
-            max-width: 470px;
-            // Image
-            > div.image {
-                $w: 470px;
-                $c: 1;
-                $g: 0;
-                $s: true;
-                width: $w;
-                height: (colWidth($w, $c, $g) / 1.6);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px; 
-            }
-            .popup_details {
-                padding: 0 40px 10px;
-                // Heading
-                > h3 {
-                    @include fontS-34;
-                    text-align: center;
-                    font-family: "Gotham", "Helvetica", sans-serif;
-                    margin: 10px 0 0;
-                    font-weight: 500;
-                    letter-spacing: -0.5px;
-                }
-                // Text
-                > p:first-of-type {
-                    @include fontS-16; 
-                    line-height: 2.5rem;
-                    margin-bottom: 5px;
-                    text-align: justify;
-                }
-                div.container {
-                    margin: 0;
-                    padding: 10px 0 30px;
-                    div.wpforms-container-full {
-                        margin: 0;
-                        .wpforms-form { 
-                            .wpforms-field {
-                                padding: 5px 0;
-                            }
-                            button[type=submit] {
-                                width: 100%;
-                                @include fontS-20;
-                                font-weight: 500;
-                                padding: 10px 10px;
-                                color: white; 
-                                background-color: $accent;
-                                border: none;
-                                border-radius: 30px;
-                            }
-                        }
-                    }
-                    input {
-                        @include fontS-16;
-                        padding: 25px 20px;
-                    }
-                }
-            }
-        }
-    }
-    section#banner_popup_button {
-        display: block;
-        position: fixed;
-        background-color: black;
-        z-index: 100; 
+
+
+    // the 'banner' part of the banner popup
+    #popups__banner {
+        position: relative;
+        background-color: rgba(getVar($colors, black, full), 1);
         text-align: center;
-        margin-bottom: -1px;
-        width: 100%; 
         > a {
-            padding: 0 5px;
-            margin-left: 0;
-            background-color: transparent;
-            text-decoration: none;
             display: block;
-            color: white;
-            font-weight: 500;
-            @include fontS-16;
-            line-height: 44px;
-            &:hover, &:active, &:focus {
-                opacity: 0.8;
+            margin: 0 auto 0 auto;
+            color: getVar($colors, white, full);
+            font-weight: 400;
+        }
+    }
+    #popups__banner_overlay {
+        // initial state hidden
+        display: none;
+        // fill entire screen with darkened overlay
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        min-height: 100vh;
+        overflow-y: auto;
+        background-color: rgba(getVar($colors, black, full), 0.8);
+        backdrop-filter: blur(2px);
+        // align container
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        // active state visibile
+        &.popups__banner_active {
+            display: flex;
+        }
+        // floating container for the popup
+        > .container {
+            // float container over the overlay
+            position: relative;
+            z-index: 9;
+            // default to black on white
+            background-color: getVar($colors, white, full);
+            box-shadow: 0px 0px 5px rgba(getVar($colors, black, full), 0.5);
+            // basic layout
+            max-width: getVar($sizing, content, medium);
+            margin: 10vh auto 0 auto;
+            padding: getVar($sizing, gutter, px, normal);
+            > .overlay__closebutton {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 3rem;
+
             }
         }
     }
-    #banner_popup.banner__open {
-        display: block;
-    }
-} // end mq
-
-
-@media only screen and (max-width: 640px){
-    section.popup > div.container {
-        $w: 65vw;
-        $c: 1;
-        $g: getVar($sizing, gutter, vw, normal);
-        $s: true;
-        width: $w;
-        // Image
-        > div.image {
-            $w: 65vw;
-            $c: 1;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w;
-            height: (colWidth($w, $c, $g) / 1.6);
-        }
-    }
-}
+} // end of all screen mq
+// probably wont need any media queries!
+// test for that tho.
