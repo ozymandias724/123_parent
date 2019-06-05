@@ -27,7 +27,7 @@
     ';
     
     // button guide
-    $guide['button'] = '<div id="popups__banner"><a href="javascript:;">%s</a></div>';
+    $guide['button'] = '<div id="popups__banner"><a href="javascript:;"><span>%s</span></a></div>';
     
     // write the button (so semantic!)
     $return['button'] .= sprintf(

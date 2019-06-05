@@ -7,12 +7,32 @@
         text-align: center;
         z-index: 100;
         width: 100%;
+        left: 0;
+        top: 0;
         > a {
             display: block;
-            margin: 0 auto 0 auto;
-            color: getVar($colors, white, full);
-            font-weight: 400;
-            line-height: 30px;
+            margin: 0 0 0 0;
+            > span {
+                padding-bottom: 2px;
+                border-bottom: 1px solid transparent;
+                color: getVar($colors, white, full);
+                font-weight: 600;
+                line-height: 44px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                > span {
+                    border-bottom: 1px solid #fff;
+                }
+            }
+        }
+        ~ header.header,
+        ~ header.header > div.sticky,
+        ~ header.mobileheader {
+            margin-top: 43px;
         }
     }
     #popups__banner_overlay {
@@ -30,23 +50,19 @@
         overflow-y: auto;
         background-color: rgba(getVar($colors, black, full), 0.8);
         backdrop-filter: blur(2px);
-        // align container
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
         // active state visibile
         &.popups__banner_active {
-            display: flex;
+            display: block;
         }
         .overlay__closebutton {
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             font-size: 3rem;
             z-index: 10000;
             cursor: pointer;
             color: white;
-            margin: 2% 4%;
+            margin: 5vh 5vw;
         }
         // floating container for the popup
         > .container {
@@ -59,9 +75,8 @@
             border-top-left-radius: 20px;
             border-top-right-radius: 20px; 
             // basic layout
-            //max-width: getVar($sizing, content, medium);
             max-width: 470px;
-            margin: 10vh auto 0 auto;
+            margin: 10vh auto;
             border-radius: 20px;
             // Banner Image
             > figure img {
@@ -82,7 +97,7 @@
                     @include fontS-34;
                     text-align: center;
                     font-family: "Gotham", "Helvetica", sans-serif;
-                    margin: 10px 0 0;
+                    margin: getVar($sizing, gutter, px, small) 0;
                     font-weight: 500;
                     letter-spacing: -0.5px;
                 }

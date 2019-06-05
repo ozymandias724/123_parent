@@ -77,6 +77,7 @@ $(document).ready(function() {
      * 
      * 
      */
+    // if banner popup bar is present 
     if ($('#popups__banner').length) {
         
         var PopUps = {};
