@@ -1,19 +1,17 @@
 <?php 
 /**
-*  Banner Popup
-*  This file is only loaded if the banner popup exists; conditionals handled before call
+*  Header Popup
+*  This file is only loaded if the header popup exists; conditionals handled before call
 */
     // empty overlay return
     $return['overlay'] = '';
-    // empty button return
-    $return['button'] = '';
 
     // get fields
-    $fields = get_field('popups', 'options')['banner'];
+    $fields = get_field('popups', 'options')['header'];
 
     // overlay guide
     $guide['overlay'] = '
-        <div id="popups__banner_overlay">
+        <div id="popups__header_overlay">
             <i class="fas fa-times overlay__closebutton"></i>
             <div class="container">
                 <figure><img src="%s"></figure>
@@ -26,14 +24,6 @@
         </div>
     ';
     
-    // button guide
-    $guide['button'] = '<div id="popups__banner"><a href="javascript:;"><span>%s</span></a></div>';
-    
-    // write the button (so semantic!)
-    $return['button'] .= sprintf(
-        $guide['button']
-        ,$fields['button']['text']
-    );
     // write the overlay
     $return['overlay'] .= sprintf(
         $guide['overlay']
@@ -42,10 +32,9 @@
         ,(!empty($fields['overlay']['details']) ? '<div class="popup_details">'.$fields['overlay']['details'].'</div>': '')
     );
     
-    // echo the overlay and the button
+    // echo the overlay
     // the overlay is initially hidden
     // this will be the first content within the <body>
-    echo $return['button'];
     echo $return['overlay'];
 
     // clear all the vars we used to protect the rest of the document

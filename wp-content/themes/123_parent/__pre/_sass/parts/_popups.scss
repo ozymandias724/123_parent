@@ -2,17 +2,41 @@
 @media only screen {
     // the 'banner' part of the banner popup
     #popups__banner {
-        position: relative;
+        position: fixed;
         background-color: rgba(getVar($colors, black, full), 1);
         text-align: center;
+        z-index: 100;
+        width: 100%;
+        left: 0;
+        top: 0;
         > a {
             display: block;
-            margin: 0 auto 0 auto;
-            color: getVar($colors, white, full);
-            font-weight: 400;
+            margin: 0 0 0 0;
+            > span {
+                padding-bottom: 2px;
+                color: getVar($colors, white, full);
+                font-weight: 600;
+                line-height: 30px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                > span {
+                    opacity: 0.8;
+                }
+            }
+        }
+        ~ header.header,
+        ~ header.header > div.sticky,
+        ~ header.mobileheader {
+            margin-top: 29px;
         }
     }
-    #popups__banner_overlay {
+    #popups__banner_overlay,
+    #popups__header_overlay,
+    #popups__timed_overlay {
         // initial state hidden
         display: none; 
         // fill entire screen with darkened overlay
@@ -26,24 +50,22 @@
         min-height: 100vh;
         overflow-y: auto;
         background-color: rgba(getVar($colors, black, full), 0.8);
-        backdrop-filter: blur(2px);
-        // align container
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
+        //backdrop-filter: blur(2px);
         // active state visibile
-        &.popups__banner_active {
-            display: flex;
+        &.popups__banner_active,
+        &.popups__header_active,
+        &.popups__timed_overlay_active {
+            display: block;
         }
         .overlay__closebutton {
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             font-size: 3rem;
             z-index: 10000;
             cursor: pointer;
             color: white;
-            margin: 2% 4%;
+            margin: 5vh 5vw;
         }
         // floating container for the popup
         > .container {
@@ -56,9 +78,8 @@
             border-top-left-radius: 20px;
             border-top-right-radius: 20px; 
             // basic layout
-            //max-width: getVar($sizing, content, medium);
             max-width: 470px;
-            margin: 10vh auto 0 auto;
+            margin: 10vh auto;
             border-radius: 20px;
             // Banner Image
             > figure img {
@@ -69,27 +90,27 @@
                 $s: true;
                 max-width: $w;
                 height: (colWidth($w, $c, $g) / 1.6);
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px; 
+                border-top-left-radius: 19px;
+                border-top-right-radius: 19px; 
             }
             // Banner Content
             > div {
                 padding: 0 40px 10px;
-                > div.banner_heading {
+                > div.popup_heading {
                     @include fontS-34;
                     text-align: center;
                     font-family: "Gotham", "Helvetica", sans-serif;
-                    margin: 10px 0 0;
+                    margin: getVar($sizing, gutter, px, small) 0;
                     font-weight: 500;
                     letter-spacing: -0.5px;
                 }
-                > div.banner_details {
+                > div.popup_details {
                     @include fontS-16; 
                     line-height: 2.5rem;
                     margin-bottom: 5px;
                     text-align: justify;
                 }
-                > div.banner_form {
+                > div.popup_form {
                     margin: 0;
                     padding: 10px 0 0;
                     input {
@@ -115,6 +136,7 @@
             }
         }
     }
+    
 } // end of all screen mq
 // probably wont need any media queries!
 // test for that tho.

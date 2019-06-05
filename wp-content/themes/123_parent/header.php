@@ -11,7 +11,7 @@
 		<meta property="og:url" content="<?php global $wp;
 		echo home_url(add_query_arg(array(),$wp->request)); ?>"/>
 		<?php else: ?>
-		<meta property="og:image" content="<?php // echo get_logo(); ?>"/>
+		<meta property="og:image" content="<?php // echo get_logo(); ?>"/> 
 		<meta property="og:title" content="<?php echo get_bloginfo('name'); ?>"/>
 		<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>"/>
 		<meta property="og:url" content="<?php global $wp; echo home_url(add_query_arg(array(),$wp->request)); ?>"/>
@@ -31,7 +31,17 @@
     if( !empty( get_field('popups', 'options')['banner']['status'] ) ){
         // include the banner popup
         include_once(get_template_directory() . '/parts/popups/popup.banner.php' );
-    }
+	}
+	// if the header popup is enabled 
+	if( !empty( get_field('popups', 'options')['header']['status'] ) ){
+		// include the header popup
+		include_once(get_template_directory() . '/parts/popups/popup.header.php' );
+	}
+	// if the timed overlay popup is enabled 
+	if( !empty( get_field('popups', 'options')['timed_overlay']['status'] ) ){
+		// include the timed overlay popup
+		include_once(get_template_directory() . '/parts/popups/popup.timed.php' );
+	}
 
 
 	if( $post->post_name !== 'disabled' ) {
