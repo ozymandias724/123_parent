@@ -14,10 +14,9 @@
             margin: 0 0 0 0;
             > span {
                 padding-bottom: 2px;
-                border-bottom: 1px solid transparent;
                 color: getVar($colors, white, full);
                 font-weight: 600;
-                line-height: 44px;
+                line-height: 30px;
                 text-transform: uppercase;
                 letter-spacing: 2px;
             }
@@ -25,17 +24,19 @@
             &:active,
             &:focus {
                 > span {
-                    border-bottom: 1px solid #fff;
+                    opacity: 0.8;
                 }
             }
         }
         ~ header.header,
         ~ header.header > div.sticky,
         ~ header.mobileheader {
-            margin-top: 43px;
+            margin-top: 29px;
         }
     }
-    #popups__banner_overlay {
+    #popups__banner_overlay,
+    #popups__header_overlay,
+    #popups__timed_overlay {
         // initial state hidden
         display: none; 
         // fill entire screen with darkened overlay
@@ -49,9 +50,11 @@
         min-height: 100vh;
         overflow-y: auto;
         background-color: rgba(getVar($colors, black, full), 0.8);
-        backdrop-filter: blur(2px);
+        //backdrop-filter: blur(2px);
         // active state visibile
-        &.popups__banner_active {
+        &.popups__banner_active,
+        &.popups__header_active,
+        &.popups__timed_overlay_active {
             display: block;
         }
         .overlay__closebutton {
@@ -87,13 +90,13 @@
                 $s: true;
                 max-width: $w;
                 height: (colWidth($w, $c, $g) / 1.6);
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px; 
+                border-top-left-radius: 19px;
+                border-top-right-radius: 19px; 
             }
             // Banner Content
             > div {
                 padding: 0 40px 10px;
-                > div.banner_heading {
+                > div.popup_heading {
                     @include fontS-34;
                     text-align: center;
                     font-family: "Gotham", "Helvetica", sans-serif;
@@ -101,13 +104,13 @@
                     font-weight: 500;
                     letter-spacing: -0.5px;
                 }
-                > div.banner_details {
+                > div.popup_details {
                     @include fontS-16; 
                     line-height: 2.5rem;
                     margin-bottom: 5px;
                     text-align: justify;
                 }
-                > div.banner_form {
+                > div.popup_form {
                     margin: 0;
                     padding: 10px 0 0;
                     input {
@@ -133,6 +136,7 @@
             }
         }
     }
+    
 } // end of all screen mq
 // probably wont need any media queries!
 // test for that tho.

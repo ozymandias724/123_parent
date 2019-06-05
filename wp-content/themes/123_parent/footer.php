@@ -9,7 +9,6 @@
  *  badges
  *  copyright section
  */
-
     function get_copyright_banner()
     {
         $return = '';
@@ -217,7 +216,8 @@
         $query = new WP_Query(array(
             'posts_per_page' => 3
         ));
-        if($query->have_posts())
+        $posts = get_posts($query);
+        if(!empty($posts))
         {
             $format = '
                 <div id="footer_posts">
@@ -229,16 +229,18 @@
             $format_post = '
                 <li><a href="%s">%s</a></li>
             ';
-            $posts = '';
-            $posts .= sprintf(
-                $format_post
-                ,the_permalink()
-                ,the_title()
-            );
+            foreach($posts as $i => $post)
+            {
+                $the_posts .= sprintf(
+                    $format_post
+                    ,get_post_permalink($post)
+                    ,$post->post_title
+                );
+            }
 
             $return .= sprintf(
                 $format
-                ,$posts
+                ,$the_posts
             );
         }
 

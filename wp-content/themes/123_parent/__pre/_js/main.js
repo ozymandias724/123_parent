@@ -89,7 +89,7 @@ $(document).ready(function() {
             overlay: $('#popups__banner_overlay')
             ,_init : function(){
                 $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
-                $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+                PopUps.Banner.overlay.on('click', PopUps.Banner._clickedOverlayBG);
                 $('.overlay__closebutton').on('click', PopUps.Banner._closePopUp);
             }
             ,_openPopUp : function(e){
@@ -107,7 +107,37 @@ $(document).ready(function() {
                 }
             }
         }
+        PopUps.Header = {
+            overlay : $('#popups__header_overlay')
+            ,_init : function(){
+                $('.site__button-quote').on('click', PopUps.Header._openPopUp);
+                PopUps.Header.overlay.on('click', PopUps.Header._clickedOverlayBG);
+                $('.overlay__closebutton').on('click', PopUps.Header._closePopUp);
+            }
+            ,_openPopUp : function(e){
+                $('body').addClass('js__noscroll');
+                PopUps.Header.overlay.addClass('popups__header_active');
+            }
+            ,_closePopUp : function(){
+                $('body').removeClass('js__noscroll');
+                PopUps.Header.overlay.removeClass('popups__header_active');
+            }
+            ,_clickedOverlayBG : function(e){
+                if(e.target === e.currentTarget){
+                    $('body').removeClass('js__noscroll');
+                    PopUps.Header.overlay.removeClass('popups__header_active');
+                }
+            }
+        }
+        PopUps.Timed = {
+            overlay : $('#popups__timed_overlay')
+            ,_init : function(){
+                
+            }
+        }
         PopUps.Banner._init();
+        PopUps.Header._init();
+        PopUps.Timed._init();
     }
 
     /**
@@ -115,29 +145,6 @@ $(document).ready(function() {
      *  If we have a gallery block
      * 
      */
-    PopUps.Banner = {
-        overlay: $('#popups__banner_overlay')
-        ,_init : function(){
-            $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
-            $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
-            $('.overlay__closebutton').on('click', PopUps.Banner._closePopUp);
-        }
-        ,_openPopUp : function(e){
-            $('body').addClass('js__noscroll');
-            PopUps.Banner.overlay.addClass('popups__banner_active');
-        }
-        ,_closePopUp : function(){
-            $('body').removeClass('js__noscroll');
-            PopUps.Banner.overlay.removeClass('popups__banner_active');
-        }
-        ,_clickedOverlayBG : function(e){
-            if(e.target === e.currentTarget){
-                $('body').removeClass('js__noscroll');
-                PopUps.Banner.overlay.removeClass('popups__banner_active');
-            }
-        }
-    }
-    PopUps.Banner._init();
 
     /**
      * Handle the basics of the nav unspecific to a header style
@@ -420,7 +427,7 @@ Theme.Parallax = {
 //     },
 //     _timed_popup_section_close: function (event) {
 //         if (event.target == event.currentTarget) Theme.Popups.timed_popup.fadeOut(250, function () {
-//             Theme.Popups._increase_timed_views();
+//              Theme.Popups._increase_timed_views();
 //         });
 //     },
 //     _resize_close: function () {
@@ -497,9 +504,6 @@ Theme.Parallax = {
 //         }
 //     }
 // }
-
-
-
 
 
 Theme.Menu = {

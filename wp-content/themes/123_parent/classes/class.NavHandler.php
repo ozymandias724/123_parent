@@ -159,8 +159,8 @@ class NavHandler
         
         // header popup button
         $quickquote = '';
-        if( $popups['header']['status'] ){
-            $quickquote = '<a href="javascript:;" class="site__button site__button-quote site__colors_buttons_bg" title="Get a quote button">' . $popups['header']['button']['text'] . '</a>';
+        if( get_field('popups', 'options')['header']['status'] ){
+            $quickquote = '<a href="javascript:;" class="site__button site__button-quote site__colors_buttons_bg" title="'.get_field('popups', 'options')['header']['button']['text'].'">' . get_field('popups', 'options')['header']['button']['text'] . '</a>';
         }
 
         // banner popup

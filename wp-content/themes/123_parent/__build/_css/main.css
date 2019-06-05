@@ -1509,6 +1509,7 @@ header#opt_header_one > div:first-of-type .site__iconlink-phone:before {
     height: auto;
     min-width: initial;
     margin: 0 0 0 15px;
+    text-transform: none;
   }
   header#opt_header_two > div > div > a,
 header#opt_header_two > div > div > nav > ul > li > a,
@@ -2838,7 +2839,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   footer#footer_one > div.container #footer_social .site__social-media {
     margin: 30px 0 10px;
-    justify-content: center;
+    justify-content: flex-start;
   }
   footer#footer_one > div.container #footer_social .site__social-media li {
     margin-right: 0;
@@ -3183,23 +3184,24 @@ section.hero .hero_foreground a:active {
   }
   #popups__banner > a > span {
     padding-bottom: 2px;
-    border-bottom: 1px solid transparent;
     color: #ffffff;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
   #popups__banner > a:hover > span, #popups__banner > a:active > span, #popups__banner > a:focus > span {
-    border-bottom: 1px solid #fff;
+    opacity: 0.8;
   }
   #popups__banner ~ header.header,
 #popups__banner ~ header.header > div.sticky,
 #popups__banner ~ header.mobileheader {
-    margin-top: 43px;
+    margin-top: 29px;
   }
 
-  #popups__banner_overlay {
+  #popups__banner_overlay,
+#popups__header_overlay,
+#popups__timed_overlay {
     display: none;
     z-index: 9999;
     position: fixed;
@@ -3211,12 +3213,19 @@ section.hero .hero_foreground a:active {
     min-height: 100vh;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(2px);
   }
-  #popups__banner_overlay.popups__banner_active {
+  #popups__banner_overlay.popups__banner_active, #popups__banner_overlay.popups__header_active, #popups__banner_overlay.popups__timed_overlay_active,
+#popups__header_overlay.popups__banner_active,
+#popups__header_overlay.popups__header_active,
+#popups__header_overlay.popups__timed_overlay_active,
+#popups__timed_overlay.popups__banner_active,
+#popups__timed_overlay.popups__header_active,
+#popups__timed_overlay.popups__timed_overlay_active {
     display: block;
   }
-  #popups__banner_overlay .overlay__closebutton {
+  #popups__banner_overlay .overlay__closebutton,
+#popups__header_overlay .overlay__closebutton,
+#popups__timed_overlay .overlay__closebutton {
     position: fixed;
     top: 0;
     right: 0;
@@ -3226,7 +3235,9 @@ section.hero .hero_foreground a:active {
     color: white;
     margin: 5vh 5vw;
   }
-  #popups__banner_overlay > .container {
+  #popups__banner_overlay > .container,
+#popups__header_overlay > .container,
+#popups__timed_overlay > .container {
     position: relative;
     z-index: 9;
     background-color: #ffffff;
@@ -3237,17 +3248,23 @@ section.hero .hero_foreground a:active {
     margin: 10vh auto;
     border-radius: 20px;
   }
-  #popups__banner_overlay > .container > figure img {
+  #popups__banner_overlay > .container > figure img,
+#popups__header_overlay > .container > figure img,
+#popups__timed_overlay > .container > figure img {
     width: 100%;
     max-width: 470px;
     height: 293.75px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
   }
-  #popups__banner_overlay > .container > div {
+  #popups__banner_overlay > .container > div,
+#popups__header_overlay > .container > div,
+#popups__timed_overlay > .container > div {
     padding: 0 40px 10px;
   }
-  #popups__banner_overlay > .container > div > div.banner_heading {
+  #popups__banner_overlay > .container > div > div.popup_heading,
+#popups__header_overlay > .container > div > div.popup_heading,
+#popups__timed_overlay > .container > div > div.popup_heading {
     font-size: 3.4rem;
     line-height: 4.8rem;
     text-align: center;
@@ -3256,26 +3273,36 @@ section.hero .hero_foreground a:active {
     font-weight: 500;
     letter-spacing: -0.5px;
   }
-  #popups__banner_overlay > .container > div > div.banner_details {
+  #popups__banner_overlay > .container > div > div.popup_details,
+#popups__header_overlay > .container > div > div.popup_details,
+#popups__timed_overlay > .container > div > div.popup_details {
     font-size: 1.6rem;
     line-height: 2.8rem;
     line-height: 2.5rem;
     margin-bottom: 5px;
     text-align: justify;
   }
-  #popups__banner_overlay > .container > div > div.banner_form {
+  #popups__banner_overlay > .container > div > div.popup_form,
+#popups__header_overlay > .container > div > div.popup_form,
+#popups__timed_overlay > .container > div > div.popup_form {
     margin: 0;
     padding: 10px 0 0;
   }
-  #popups__banner_overlay > .container > div > div.banner_form input {
+  #popups__banner_overlay > .container > div > div.popup_form input,
+#popups__header_overlay > .container > div > div.popup_form input,
+#popups__timed_overlay > .container > div > div.popup_form input {
     font-size: 1.6rem;
     line-height: 2.8rem;
     padding: 25px 20px;
   }
-  #popups__banner_overlay > .container > div > div.banner_form .wpforms-form .wpforms-field {
+  #popups__banner_overlay > .container > div > div.popup_form .wpforms-form .wpforms-field,
+#popups__header_overlay > .container > div > div.popup_form .wpforms-form .wpforms-field,
+#popups__timed_overlay > .container > div > div.popup_form .wpforms-form .wpforms-field {
     padding: 5px 0;
   }
-  #popups__banner_overlay > .container > div > div.banner_form .wpforms-form button[type=submit] {
+  #popups__banner_overlay > .container > div > div.popup_form .wpforms-form button[type=submit],
+#popups__header_overlay > .container > div > div.popup_form .wpforms-form button[type=submit],
+#popups__timed_overlay > .container > div > div.popup_form .wpforms-form button[type=submit] {
     width: 100%;
     font-size: 2rem;
     line-height: 3.2rem;
