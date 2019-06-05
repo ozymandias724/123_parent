@@ -129,6 +129,7 @@ $(document).ready(function() {
             }
         }
     }
+    PopUps.Banner._init();
 
     /**
      * Handle the basics of the nav unspecific to a header style
