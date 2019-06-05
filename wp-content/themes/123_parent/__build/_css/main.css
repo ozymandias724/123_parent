@@ -3169,15 +3169,18 @@ section.hero .hero_foreground a:active {
 }
 @media only screen {
   #popups__banner {
-    position: relative;
+    position: fixed;
     background-color: black;
     text-align: center;
+    z-index: 100;
+    width: 100%;
   }
   #popups__banner > a {
     display: block;
     margin: 0 auto 0 auto;
     color: #ffffff;
     font-weight: 400;
+    line-height: 30px;
   }
 
   #popups__banner_overlay {
