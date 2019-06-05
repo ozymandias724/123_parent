@@ -44,6 +44,23 @@
 
                     }
                 }
+
+                // adjustments for the different tab styles
+                &.none {}
+                &.divider {
+                    .tabs {
+                        > ul {
+                            border-bottom: 1px solid getVar($colors, black, full);
+                            > li {
+                                background-color: getVar($colors, black,full);
+                                color: getVar($colors, white,full);
+                            }
+                        }
+                    }
+                }
+                &.pills {}
+                &.sidebar {}
+                
             }
         }
     }
