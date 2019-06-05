@@ -174,7 +174,6 @@
                 }
             }
             #footer_nav {
-                flex: 1 0 25%;
                 .navlinks {
                     flex-flow: column wrap;
                     .navlinks-item {
@@ -415,13 +414,10 @@
 
 @media only screen and (max-width: 960px){
     footer#footer_one {
-        div.container {
+        > div.container {
             flex-flow: row wrap;
-            #footer_company_info, .footer_badges {
+            #footer_company_info {
                 flex: 1 0 100%;
-            }
-            div.site__copyright_banner {
-                margin: 10px auto 30px auto;
             }
         }
     }

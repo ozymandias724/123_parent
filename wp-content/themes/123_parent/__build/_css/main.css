@@ -2837,9 +2837,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     margin-bottom: 10px;
     line-height: 25px;
   }
-  footer#footer_one > div.container #footer_nav {
-    flex: 1 0 25%;
-  }
   footer#footer_one > div.container #footer_nav .navlinks {
     flex-flow: column wrap;
   }
@@ -3058,14 +3055,11 @@ footer#footer_one div.container div.site__copyright_banner {
   }
 }
 @media only screen and (max-width: 960px) {
-  footer#footer_one div.container {
+  footer#footer_one > div.container {
     flex-flow: row wrap;
   }
-  footer#footer_one div.container #footer_company_info, footer#footer_one div.container .footer_badges {
+  footer#footer_one > div.container #footer_company_info {
     flex: 1 0 100%;
-  }
-  footer#footer_one div.container div.site__copyright_banner {
-    margin: 10px auto 30px auto;
   }
 }
 @media only screen {
