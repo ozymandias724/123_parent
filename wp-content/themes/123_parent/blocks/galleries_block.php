@@ -19,7 +19,7 @@
 
         // open the tabs list
         if( $cB['tab_type'] != 'none' ){
-            $return['tabs'] .= '<div class="tabs '.$cB['tab_type'].'"><ul>';
+            $return['tabs'] .= '<div class="tabs"><ul>';
         }
 
         // loop thru the galleries
@@ -53,11 +53,13 @@
     // empty guide string 
     $guide['section'] = '
         <section %s class="site__block block__galleries">
-                <div class="container %s %s" style="%s %s">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
-                %s
-                %s
+                <div class="tabsandgrids_container '.$cB['tab_type'].'">
+                    %s
+                    %s
+                </div>
                 %s
             </div>
         </section>

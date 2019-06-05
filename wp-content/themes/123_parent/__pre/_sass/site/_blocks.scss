@@ -50,7 +50,7 @@
             }
             &.wide {
                 $w: getVar($sizing, content, large);
-                $c : 3;
+                $c : 4;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
                 width: $w;
@@ -65,7 +65,7 @@
             }
             &.full {
                 $w: getVar($sizing, content, full);
-                $c : 3;
+                $c : 6;
                 $g: getVar($sizing, gutter, vw, normal);
                 $s: true;
                 width: $w;
@@ -101,6 +101,8 @@
             $g: getVar($sizing, gutter, vw, normal);
             $s: true;
             &.narrow,
+            &.full,
+            &.wide,
             &.medium{
                 width: $w;
                 &.hasbg {
@@ -125,6 +127,7 @@
             $s: true;
             &.narrow,
             &.wide,
+            &.full,
             &.medium {
                 width: $w;
                 &.hasbg {
