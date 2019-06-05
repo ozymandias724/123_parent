@@ -77,34 +77,33 @@ $(document).ready(function () {
 // 
 //  
 // GOOD CHUNK OF CODE INSIDE HERE
+
 /**
  * 
+ *      If we have a Banner PopUp
+ * 
+ * 
  */
-if ($('#banner_popup').length) {
+if ($('#popups__banner').length) {
     
     var PopUps = {};
 
+    /**
+     * This baby is semantic. No description needed.
+     */
     PopUps.Banner = {
-
-        _init : function(){
-            $('#banner_popup').show();
-            $('#banner_popup_button a').on('click', PopUps.Banner._didClickBanner);
-            $('.popup_close').on('click', PopUps.Banner._closeHandler);
-            $('#banner_popup').on('click', PopUps.Banner._backgroundClickHandler);
+        overlay: $('#popups__banner_overlay')
+        ,_init : function(){
+            $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
+            $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
         }
-        ,_didClickBanner : function(e){
-            
-            $('#banner_popup, .popup_background').addClass('banner__open');
+        ,_openPopUp : function(e){
+            $('body').addClass('js__noscroll');
+            PopUps.Banner.overlay.addClass('popups__banner_active');
         }
-        ,_closeHandler : function(e){
-
-            $(this).parent().removeClass('banner__open');
-
-        }
-        ,_backgroundClickHandler : function(e){
-            if(e.target == e.currentTarget){
-                $('#banner_popup').removeClass('banner__open');
-            }
+        ,_closePopUp : function(){
+            $('body').removeClass('js__noscroll');
+            PopUps.Banner.overlay.removeClass('popups__banner_active');
         }
     }
     PopUps.Banner._init();

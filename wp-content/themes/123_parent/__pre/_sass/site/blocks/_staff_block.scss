@@ -15,14 +15,14 @@
                 > ul {
                     > li {
                         > a {
-                            color: getVar($colors, whites, full);
+                            color: getVar($colors, white, full);
                             > h5 {
-                                background-color: rgba(getVar($colors, grays, mid), 1);
+                                background-color: rgba(getVar($colors, gray, mid), 1);
                             }
                             > div {
                                 border-radius: 50%;
                                 overflow: hidden;
-                                border: 2px solid rgba(getVar($colors, grays, mid), 1.0);
+                                border: 2px solid rgba(getVar($colors, gray, mid), 1.0);
                                 @include site__bgimage($g : true, $z : true);
                             }
                         }

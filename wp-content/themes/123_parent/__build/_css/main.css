@@ -1002,6 +1002,9 @@ img {
     line-height: 2.8rem;
     letter-spacing: 0.33px;
   }
+  body.js__noscroll {
+    overflow: hidden;
+  }
 
   h1,
 h2,
@@ -1054,7 +1057,6 @@ h6 {
   img {
     object-fit: cover;
     height: auto;
-    width: 100%;
   }
 }
 @media only screen {
@@ -3223,138 +3225,52 @@ section.hero .hero_foreground a:active {
   }
 }
 @media only screen {
-  section.popup {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0.2s, opacity 0.2s;
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    max-height: 100vh;
-    overflow-x: auto;
-  }
-  section.popup .popup_close {
-    content: "";
-    display: inline-block;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    color: white;
-    font-size: 40px;
-    margin-right: 2%;
-    padding: 2%;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  section.popup > div.container {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    background-color: #fff;
-    border-radius: 20px;
-    max-width: 470px;
-  }
-  section.popup > div.container > div.image {
-    width: 470px;
-    height: 293.75px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-  section.popup > div.container .popup_details {
-    padding: 0 40px 10px;
-  }
-  section.popup > div.container .popup_details > h3 {
-    font-size: 3.4rem;
-    line-height: 4.8rem;
-    text-align: center;
-    font-family: "Gotham", "Helvetica", sans-serif;
-    margin: 10px 0 0;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-  }
-  section.popup > div.container .popup_details > p:first-of-type {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    line-height: 2.5rem;
-    margin-bottom: 5px;
-    text-align: justify;
-  }
-  section.popup > div.container .popup_details div.container {
-    margin: 0;
-    padding: 10px 0 30px;
-  }
-  section.popup > div.container .popup_details div.container div.wpforms-container-full {
-    margin: 0;
-  }
-  section.popup > div.container .popup_details div.container div.wpforms-container-full .wpforms-form .wpforms-field {
-    padding: 5px 0;
-  }
-  section.popup > div.container .popup_details div.container div.wpforms-container-full .wpforms-form button[type=submit] {
-    width: 100%;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    font-weight: 500;
-    padding: 10px 10px;
-    color: white;
-    background-color: #386591;
-    border: none;
-    border-radius: 30px;
-  }
-  section.popup > div.container .popup_details div.container input {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    padding: 25px 20px;
-  }
-
-  section#banner_popup_button {
-    display: block;
-    position: fixed;
+  #popups__banner {
+    position: relative;
     background-color: black;
-    z-index: 100;
     text-align: center;
-    margin-bottom: -1px;
-    width: 100%;
   }
-  section#banner_popup_button > a {
-    padding: 0 5px;
-    margin-left: 0;
-    background-color: transparent;
-    text-decoration: none;
+  #popups__banner > a {
     display: block;
-    color: white;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    line-height: 44px;
-  }
-  section#banner_popup_button > a:hover, section#banner_popup_button > a:active, section#banner_popup_button > a:focus {
-    opacity: 0.8;
+    margin: 0 auto 0 auto;
+    color: #ffffff;
+    font-weight: 400;
   }
 
-  #banner_popup.banner__open {
-    visibility: visible;
-    opacity: 1;
+  #popups__banner_overlay {
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
   }
-}
-@media only screen and (max-width: 640px) {
-  section.popup > div.container {
-    width: 65vw;
+  #popups__banner_overlay.popups__banner_active {
+    display: flex;
   }
-  section.popup > div.container > div.image {
-    width: 65vw;
-    height: 40.625vw;
+  #popups__banner_overlay > .container {
+    position: relative;
+    z-index: 9;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    max-width: 65vw;
+    margin: 10vh auto 0 auto;
+    padding: 30px;
+  }
+  #popups__banner_overlay > .container > .overlay__closebutton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
   }
 }
 @media only screen {
@@ -5217,7 +5133,7 @@ section#block__services > .container .site__grid > ul > li > a > div:last-of-typ
     align-items: center;
   }
   section#block__galleries > .container > div.tabs > ul > li {
-    border: 5px solid gray;
+    border: 5px solid lightgray;
     margin: 0 30px 30px 0;
     padding: 0 30px;
     overflow: hidden;
@@ -5303,7 +5219,7 @@ section#block__services > .container .site__grid > ul > li > a > div:last-of-typ
     margin: 0 auto 30px auto;
   }
   section#block__staff > .container .site__grid > ul > li > a {
-    color: #fff;
+    color: #ffffff;
   }
   section#block__staff > .container .site__grid > ul > li > a > h5 {
     background-color: #1d1d1d;

@@ -12,7 +12,12 @@
         font-weight: 300;
         @include fontS-16;
         letter-spacing: 0.33px;
+
+        &.js__noscroll {
+            overflow: hidden;
+        }
     }
+    
 
     h1,
     h2,
@@ -53,7 +58,6 @@
     img {
         object-fit: cover;
         height: auto;
-        width: 100%;
     }
     
 }
