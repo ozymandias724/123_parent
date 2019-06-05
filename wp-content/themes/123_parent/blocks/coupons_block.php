@@ -35,7 +35,7 @@
     
     // empty guide string 
     $guide[1] = '
-        <section id="block__coupons" class="site__block">
+        <section %s class="site__block block__coupons">
             <div class="container %s %s" style="%s %s">
                 %s
                 %s
@@ -47,6 +47,7 @@
 
     $return[1] .= sprintf(
          $guide[1]
+        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style

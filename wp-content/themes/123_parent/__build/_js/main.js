@@ -5,8 +5,12 @@ var _jquery = _interopRequireDefault(require("jquery"));
 
 var _slickCarouselBrowserify = _interopRequireDefault(require("slick-carousel-browserify"));
 
+var _zenscroll = _interopRequireDefault(require("zenscroll"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+// kick off the polyfill!
+// smoothscroll.polyfill();
 var Theme = {};
 var Hero = {};
 var Headers = {};
@@ -33,6 +37,10 @@ var Blocks = {};
   };
 
   Theme.FadeEffects._init();
+  /**
+   * 
+   */
+
 
   Theme.Slick = {
     rand: Math.floor(Math.random() * (0, _jquery["default"])(".img-slick").length),
@@ -54,7 +62,7 @@ var Blocks = {};
       });
     },
     _testimonials_slider: function _testimonials_slider() {
-      (0, _jquery["default"])('section#block__testimonials .site__grid').slick({
+      (0, _jquery["default"])('section.block__testimonials .site__grid').slick({
         autoplay: false,
         adaptiveHeight: true,
         arrows: true,
@@ -70,81 +78,81 @@ var Blocks = {};
   };
 
   Theme.Slick._init();
-}); // 
-// 
-// 
-// 
-// 
-// 
-//  
-// GOOD CHUNK OF CODE INSIDE HERE
-
-/**
- * 
- *      If we have a Banner PopUp
- * 
- * 
- */
-
-if ((0, _jquery["default"])('#popups__banner').length) {
-  var PopUps = {};
   /**
-   * This baby is semantic. No description needed.
+   * 
+   *      If we have a Banner PopUp
+   * 
+   * 
    */
 
-  PopUps.Banner = {
-    overlay: (0, _jquery["default"])('#popups__banner_overlay'),
+
+  if ((0, _jquery["default"])('#popups__banner').length) {
+    var PopUps = {};
+    /**
+     * This baby is semantic. No description needed.
+     */
+
+    PopUps.Banner = {
+      overlay: (0, _jquery["default"])('#popups__banner_overlay'),
+      _init: function _init() {
+        (0, _jquery["default"])('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
+        (0, _jquery["default"])('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+      },
+      _openPopUp: function _openPopUp(e) {
+        (0, _jquery["default"])('body').addClass('js__noscroll');
+        PopUps.Banner.overlay.addClass('popups__banner_active');
+      },
+      _closePopUp: function _closePopUp() {
+        (0, _jquery["default"])('body').removeClass('js__noscroll');
+        PopUps.Banner.overlay.removeClass('popups__banner_active');
+      }
+    };
+
+    PopUps.Banner._init();
+  }
+  /**
+   * 
+   *  If we have a gallery block
+   * 
+   */
+
+
+  if ((0, _jquery["default"])('section.block__galleries').length && (0, _jquery["default"])('section.block__galleries div.tabs').length) {
+    Blocks.Gallery = {
+      tabs: (0, _jquery["default"])('.block__galleries div.tabs > ul > li > a'),
+      galleries: (0, _jquery["default"])('.block__galleries div.galleries > .site__grid'),
+      _init: function _init() {
+        // when clicking tabs
+        Blocks.Gallery.tabs.on('click', Blocks.Gallery._didClickTab);
+      },
+      _didClickTab: function _didClickTab(e) {
+        // toggle visible gallery
+        Blocks.Gallery.galleries.addClass('hidden_gallery');
+        Blocks.Gallery.galleries.removeClass('current_gallery');
+        (0, _jquery["default"])(Blocks.Gallery.galleries[(0, _jquery["default"])(this).parent('li').index()]).addClass('current_gallery');
+      }
+    };
+
+    Blocks.Gallery._init();
+  }
+  /**
+   * Handle the basics of the nav unspecific to a header style
+   */
+
+
+  Theme.Nav = {
+    links: (0, _jquery["default"])(".navlinks-item-link"),
     _init: function _init() {
-      (0, _jquery["default"])('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
-      (0, _jquery["default"])('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+      Theme.Nav.links.on("click", Theme.Nav._clickedNavLink);
     },
-    _openPopUp: function _openPopUp(e) {
-      (0, _jquery["default"])('body').addClass('js__noscroll');
-      PopUps.Banner.overlay.addClass('popups__banner_active');
-    },
-    _closePopUp: function _closePopUp() {
-      (0, _jquery["default"])('body').removeClass('js__noscroll');
-      PopUps.Banner.overlay.removeClass('popups__banner_active');
+    _clickedNavLink: function _clickedNavLink(e) {
+      Theme.Nav.links.removeClass("active_menu_link");
+      (0, _jquery["default"])(this).addClass("active_menu_link");
     }
   };
 
-  PopUps.Banner._init();
-}
-/**
- * 
- * 
- */
-
-
-if ((0, _jquery["default"])('section#block__galleries').length && (0, _jquery["default"])('section#block__galleries div.tabs').length) {
-  Blocks.Gallery = {
-    tabs: (0, _jquery["default"])('#block__galleries div.tabs > ul > li > a'),
-    galleries: (0, _jquery["default"])('#block__galleries div.galleries > .site__grid'),
-    _init: function _init() {
-      // when clicking tabs
-      Blocks.Gallery.tabs.on('click', Blocks.Gallery._didClickTab);
-    },
-    _didClickTab: function _didClickTab(e) {
-      // toggle visible gallery
-      Blocks.Gallery.galleries.addClass('hidden_gallery');
-      Blocks.Gallery.galleries.removeClass('current_gallery');
-      (0, _jquery["default"])(Blocks.Gallery.galleries[(0, _jquery["default"])(this).parent('li').index()]).addClass('current_gallery');
-    }
-  };
-
-  Blocks.Gallery._init();
-} // END OF A CHUNK OF CODE I KNOW IS GOOD
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-
-
+  Theme.Nav._init();
+});
 Headers.Eight = {
   header: (0, _jquery["default"])("header.header#opt_header_eight"),
   _init: function _init() {
@@ -344,156 +352,125 @@ Theme.Parallax = {
     for (var i = 0; i < Theme.Parallax.imagesections.length; i++) {
       (0, _jquery["default"])(Theme.Parallax.imagesections[i]).css('transform', 'translate3d(-50%, ' + Theme.Parallax._getAmount(Theme.Parallax.imagesections[i], Theme.Parallax.strength) + ',0)');
     }
-  }
+  } // Theme.Popups = {
+  //     popups: $(".popup"),
+  //     quote_btn: $(".site__button-quote"),
+  //     header_popup: $("#header_popup"),
+  //     timed_popup: $("#timed_overlay_popup"),
+  //     header_popup_times: $("#header_popup .popup_close"),
+  //     timed_popup_times: $("#timed_overlay_popup .popup_close"),
+  //     timed_first_view: $("#timed_overlay_popup").attr("data-first-view"),
+  //     timed_second_view: $("#timed_overlay_popup").attr("data-second-view"),
+  //     banner_popup: $("#banner_popup"),
+  //     banner_popup_button: $("#banner_popup_button"),
+  //     banner_popup_link: $("#banner_popup_button a"),
+  //     banner_popup_times: $("#banner_popup .popup_close"),
+  //     _init: function () {
+  //         $(Theme.Popups.quote_btn).on("click", Theme.Popups.header_click_handler);
+  //         $(Theme.Popups.header_popup_times).on("click", Theme.Popups._header_popup_close);
+  //         $(Theme.Popups.header_popup).on("click", Theme.Popups._header_popup_section_close);
+  //         if (Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
+  //         $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
+  //         $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
+  //         Theme.Popups._banner_popup_button();
+  //         $(Theme.Popups.banner_popup).on("click", Theme.Popups._banner_popup_section_close);
+  //         $(Theme.Popups.banner_popup_link).on("click", Theme.Popups._banner_click_handler);
+  //         $(Theme.Popups.banner_popup_times).on("click", Theme.Popups._banner_popup_close);
+  //     },
+  //     header_click_handler: function () {
+  //         Theme.Popups.header_popup.fadeIn(250);
+  //     },
+  //     _header_popup_close: function () {
+  //         Theme.Popups.header_popup.fadeOut(250);
+  //     },
+  //     _header_popup_section_close: function (event) {
+  //         if (event.target == event.currentTarget) Theme.Popups.header_popup.fadeOut(250);
+  //     },
+  //     _timed_popup_close: function () {
+  //         Theme.Popups.timed_popup.fadeOut(250);
+  //         Theme.Popups._increase_timed_views();
+  //     },
+  //     _timed_popup_section_close: function (event) {
+  //         if (event.target == event.currentTarget) Theme.Popups.timed_popup.fadeOut(250, function () {
+  //             Theme.Popups._increase_timed_views();
+  //         });
+  //     },
+  //     _resize_close: function () {
+  //         Theme.Popups.popups.hide();
+  //         Theme.Popups._increase_timed_views();
+  //     },
+  //     _increase_timed_views: function () {
+  //         var views = $("#timed_overlay_popup").attr("data-viewed");
+  //         views++;
+  //         $("#timed_overlay_popup").attr("data-viewed", views);
+  //         Theme.Popups._start_timed_popup_second();
+  //     },
+  //     _start_timed_popup: function () {
+  //         setTimeout(function () {
+  //             Theme.Popups.timed_popup.fadeIn(100);
+  //         }, Theme.Popups.timed_first_view * 1000);
+  //     },
+  //     _start_timed_popup_second: function () {
+  //         var views = $("#timed_overlay_popup").attr("data-viewed");
+  //         views = parseInt(views);
+  //         if (!(views > 1)) {
+  //             setTimeout(function () {
+  //                 Theme.Popups.timed_popup.fadeIn(100);
+  //             }, Theme.Popups.timed_second_view * 1000);
+  //         }
+  //     },
+  //     _banner_click_handler: function () {
+  //         Theme.Popups.banner_popup.fadeIn(250);
+  //     },
+  //     _banner_popup_close: function () {
+  //         Theme.Popups.banner_popup.fadeOut(250);
+  //     },
+  //     _banner_popup_section_close: function (event) {
+  //         if (event.target == event.currentTarget) Theme.Popups.banner_popup.fadeOut(250);
+  //     },
+  //     _banner_popup_button: function () {
+  //         $("header.header").prepend(Theme.Popups.banner_popup_button);
+  //     },
+  // }
+  // Theme.Popups._init();
+  // Theme.PA = {
+  //     container: $('.pa.popupcontainer'),
+  //     submit: $('.pa.popupcontainer input[type="submit"]'),
+  //     _init: function () {
+  //         if (Theme.PA.container.length > 0) {
+  //             Theme.PA.container.click(Theme.PA._clickHandler);
+  //         }
+  //     },
+  //     _clickHandler: function (e) {
+  //         if ($(e.target).hasClass('pa') || $(e.target).hasClass('popupcontainer-times')) {
+  //             if ($(e.target).has('.ginput_container').length == 0) {
+  //                 Theme.CookieMonster._setCookie('ad_set', 'active', 30, true);
+  //                 Theme.CookieMonster._deleteCookie('ad_notset');
+  //                 Theme.CookieMonster._deleteCookie('ad_firsttime');
+  //                 Theme.PA.container.off('click');
+  //             }
+  //             Theme.PA._hidePA();
+  //         }
+  //     },
+  //     _hidePA: function () {
+  //         Theme.PA.container.fadeOut(250);
+  //         if (Theme.CookieMonster._cookieExists('ad_set') == false) {
+  //             Theme.CookieMonster._setCookie('ad_notset', 'active', parseInt(PopupTimes.long), false);
+  //             Theme.CookieMonster._listenCookieExpire('ad_notset', Theme.CookieMonster._firstTimeExpire);
+  //         }
+  //     },
+  //     _showPA: function () {
+  //         if (Theme.PA.container.length > 0 && $(window).width() >= 1025) {
+  //             if (Theme.PA.container.css('display') == 'none') {
+  //                 Theme.PA.container.fadeIn(250);
+  //             }
+  //         }
+  //     }
+  // }
+
 };
-Theme.FadeEffects = {
-  elements: (0, _jquery["default"])('.fade-up, .fade-left, .fade-right, .fade-in'),
-  _resizeLoadScrollHandler: function _resizeLoadScrollHandler() {
-    for (var i = 0; i < Theme.FadeEffects.elements.length; i++) {
-      if ((0, _jquery["default"])(window).scrollTop() + (0, _jquery["default"])(window).height() > (0, _jquery["default"])(Theme.FadeEffects.elements[i]).offset().top) {
-        (0, _jquery["default"])(Theme.FadeEffects.elements[i]).removeClass('fade-up fade-left fade-right fade-in');
-      }
-    }
-  },
-  _init: function _init() {
-    (0, _jquery["default"])(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
-  }
-};
-
-Theme.FadeEffects._init(); // Theme.Popups = {
-//     popups: $(".popup"),
-//     quote_btn: $(".site__button-quote"),
-//     header_popup: $("#header_popup"),
-//     timed_popup: $("#timed_overlay_popup"),
-//     header_popup_times: $("#header_popup .popup_close"),
-//     timed_popup_times: $("#timed_overlay_popup .popup_close"),
-//     timed_first_view: $("#timed_overlay_popup").attr("data-first-view"),
-//     timed_second_view: $("#timed_overlay_popup").attr("data-second-view"),
-//     banner_popup: $("#banner_popup"),
-//     banner_popup_button: $("#banner_popup_button"),
-//     banner_popup_link: $("#banner_popup_button a"),
-//     banner_popup_times: $("#banner_popup .popup_close"),
-//     _init: function () {
-//         $(Theme.Popups.quote_btn).on("click", Theme.Popups.header_click_handler);
-//         $(Theme.Popups.header_popup_times).on("click", Theme.Popups._header_popup_close);
-//         $(Theme.Popups.header_popup).on("click", Theme.Popups._header_popup_section_close);
-//         if (Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
-//         $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
-//         $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
-//         Theme.Popups._banner_popup_button();
-//         $(Theme.Popups.banner_popup).on("click", Theme.Popups._banner_popup_section_close);
-//         $(Theme.Popups.banner_popup_link).on("click", Theme.Popups._banner_click_handler);
-//         $(Theme.Popups.banner_popup_times).on("click", Theme.Popups._banner_popup_close);
-//     },
-//     header_click_handler: function () {
-//         Theme.Popups.header_popup.fadeIn(250);
-//     },
-//     _header_popup_close: function () {
-//         Theme.Popups.header_popup.fadeOut(250);
-//     },
-//     _header_popup_section_close: function (event) {
-//         if (event.target == event.currentTarget) Theme.Popups.header_popup.fadeOut(250);
-//     },
-//     _timed_popup_close: function () {
-//         Theme.Popups.timed_popup.fadeOut(250);
-//         Theme.Popups._increase_timed_views();
-//     },
-//     _timed_popup_section_close: function (event) {
-//         if (event.target == event.currentTarget) Theme.Popups.timed_popup.fadeOut(250, function () {
-//             Theme.Popups._increase_timed_views();
-//         });
-//     },
-//     _resize_close: function () {
-//         Theme.Popups.popups.hide();
-//         Theme.Popups._increase_timed_views();
-//     },
-//     _increase_timed_views: function () {
-//         var views = $("#timed_overlay_popup").attr("data-viewed");
-//         views++;
-//         $("#timed_overlay_popup").attr("data-viewed", views);
-//         Theme.Popups._start_timed_popup_second();
-//     },
-//     _start_timed_popup: function () {
-//         setTimeout(function () {
-//             Theme.Popups.timed_popup.fadeIn(100);
-//         }, Theme.Popups.timed_first_view * 1000);
-//     },
-//     _start_timed_popup_second: function () {
-//         var views = $("#timed_overlay_popup").attr("data-viewed");
-//         views = parseInt(views);
-//         if (!(views > 1)) {
-//             setTimeout(function () {
-//                 Theme.Popups.timed_popup.fadeIn(100);
-//             }, Theme.Popups.timed_second_view * 1000);
-//         }
-//     },
-//     _banner_click_handler: function () {
-//         Theme.Popups.banner_popup.fadeIn(250);
-//     },
-//     _banner_popup_close: function () {
-//         Theme.Popups.banner_popup.fadeOut(250);
-//     },
-//     _banner_popup_section_close: function (event) {
-//         if (event.target == event.currentTarget) Theme.Popups.banner_popup.fadeOut(250);
-//     },
-//     _banner_popup_button: function () {
-//         $("header.header").prepend(Theme.Popups.banner_popup_button);
-//     },
-// }
-// Theme.Popups._init();
-// Theme.PA = {
-//     container: $('.pa.popupcontainer'),
-//     submit: $('.pa.popupcontainer input[type="submit"]'),
-//     _init: function () {
-//         if (Theme.PA.container.length > 0) {
-//             Theme.PA.container.click(Theme.PA._clickHandler);
-//         }
-//     },
-//     _clickHandler: function (e) {
-//         if ($(e.target).hasClass('pa') || $(e.target).hasClass('popupcontainer-times')) {
-//             if ($(e.target).has('.ginput_container').length == 0) {
-//                 Theme.CookieMonster._setCookie('ad_set', 'active', 30, true);
-//                 Theme.CookieMonster._deleteCookie('ad_notset');
-//                 Theme.CookieMonster._deleteCookie('ad_firsttime');
-//                 Theme.PA.container.off('click');
-//             }
-//             Theme.PA._hidePA();
-//         }
-//     },
-//     _hidePA: function () {
-//         Theme.PA.container.fadeOut(250);
-//         if (Theme.CookieMonster._cookieExists('ad_set') == false) {
-//             Theme.CookieMonster._setCookie('ad_notset', 'active', parseInt(PopupTimes.long), false);
-//             Theme.CookieMonster._listenCookieExpire('ad_notset', Theme.CookieMonster._firstTimeExpire);
-//         }
-//     },
-//     _showPA: function () {
-//         if (Theme.PA.container.length > 0 && $(window).width() >= 1025) {
-//             if (Theme.PA.container.css('display') == 'none') {
-//                 Theme.PA.container.fadeIn(250);
-//             }
-//         }
-//     }
-// }
-
-
-Theme.Nav = {
-  nav_links: (0, _jquery["default"])(".navlinks-item-link"),
-  _init: function _init() {
-    Theme.Nav.nav_links.on("click", Theme.Nav._active_nav_link);
-  },
-  _active_nav_link: function _active_nav_link() {
-    Theme.Nav.nav_links.each(function () {
-      (0, _jquery["default"])(this).removeClass("active_menu_link");
-    });
-    (0, _jquery["default"])(this).addClass("active_menu_link");
-  }
-};
-
-Theme.Nav._init();
-
 Theme.Menu = {
-  tab_link: (0, _jquery["default"])(" #block__food_menus .button_group a "),
+  tab_link: (0, _jquery["default"])(" .food_menus .button_group a "),
   menu_section: (0, _jquery["default"])(" .menu_section "),
   _init: function _init() {
     Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
@@ -559,7 +536,7 @@ Headers.One = {
 
 Headers.One._init();
 
-},{"jquery":2,"slick-carousel-browserify":3}],2:[function(require,module,exports){
+},{"jquery":2,"slick-carousel-browserify":3,"zenscroll":4}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.4.0
  * https://jquery.com/
@@ -13845,5 +13822,364 @@ return jQuery;
 
 }));
 
-},{"jquery":2}]},{},[1])
+},{"jquery":2}],4:[function(require,module,exports){
+/**
+ * Zenscroll 4.0.2
+ * https://github.com/zengabor/zenscroll/
+ *
+ * Copyright 2015–2018 Gabor Lenard
+ *
+ * This is free and unencumbered software released into the public domain.
+ * 
+ * Anyone is free to copy, modify, publish, use, compile, sell, or
+ * distribute this software, either in source code form or as a compiled
+ * binary, for any purpose, commercial or non-commercial, and by any
+ * means.
+ * 
+ * In jurisdictions that recognize copyright laws, the author or authors
+ * of this software dedicate any and all copyright interest in the
+ * software to the public domain. We make this dedication for the benefit
+ * of the public at large and to the detriment of our heirs and
+ * successors. We intend this dedication to be an overt act of
+ * relinquishment in perpetuity of all present and future rights to this
+ * software under copyright law.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ * For more information, please refer to <http://unlicense.org>
+ * 
+ */
+
+/*jshint devel:true, asi:true */
+
+/*global define, module */
+
+
+(function (root, factory) {
+	if (typeof define === "function" && define.amd) {
+		define([], factory())
+	} else if (typeof module === "object" && module.exports) {
+		module.exports = factory()
+	} else {
+		(function install() {
+			// To make sure Zenscroll can be referenced from the header, before `body` is available
+			if (document && document.body) {
+				root.zenscroll = factory()
+			} else {
+				// retry 9ms later
+				setTimeout(install, 9)
+			}
+		})()
+	}
+}(this, function () {
+	"use strict"
+
+
+	// Detect if the browser already supports native smooth scrolling (e.g., Firefox 36+ and Chrome 49+) and it is enabled:
+	var isNativeSmoothScrollEnabledOn = function (elem) {
+		return elem && "getComputedStyle" in window &&
+			window.getComputedStyle(elem)["scroll-behavior"] === "smooth"
+	}
+
+
+	// Exit if it’s not a browser environment:
+	if (typeof window === "undefined" || !("document" in window)) {
+		return {}
+	}
+
+
+	var makeScroller = function (container, defaultDuration, edgeOffset) {
+
+		// Use defaults if not provided
+		defaultDuration = defaultDuration || 999 //ms
+		if (!edgeOffset && edgeOffset !== 0) {
+			// When scrolling, this amount of distance is kept from the edges of the container:
+			edgeOffset = 9 //px
+		}
+
+		// Handling the life-cycle of the scroller
+		var scrollTimeoutId
+		var setScrollTimeoutId = function (newValue) {
+			scrollTimeoutId = newValue
+		}
+
+		/**
+		 * Stop the current smooth scroll operation immediately
+		 */
+		var stopScroll = function () {
+			clearTimeout(scrollTimeoutId)
+			setScrollTimeoutId(0)
+		}
+
+		var getTopWithEdgeOffset = function (elem) {
+			return Math.max(0, container.getTopOf(elem) - edgeOffset)
+		}
+
+		/**
+		 * Scrolls to a specific vertical position in the document.
+		 *
+		 * @param {targetY} The vertical position within the document.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 *        If not provided the default duration is used.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollToY = function (targetY, duration, onDone) {
+			stopScroll()
+			if (duration === 0 || (duration && duration < 0) || isNativeSmoothScrollEnabledOn(container.body)) {
+				container.toY(targetY)
+				if (onDone) {
+					onDone()
+				}
+			} else {
+				var startY = container.getY()
+				var distance = Math.max(0, targetY) - startY
+				var startTime = new Date().getTime()
+				duration = duration || Math.min(Math.abs(distance), defaultDuration);
+				(function loopScroll() {
+					setScrollTimeoutId(setTimeout(function () {
+						// Calculate percentage:
+						var p = Math.min(1, (new Date().getTime() - startTime) / duration)
+						// Calculate the absolute vertical position:
+						var y = Math.max(0, Math.floor(startY + distance*(p < 0.5 ? 2*p*p : p*(4 - p*2)-1)))
+						container.toY(y)
+						if (p < 1 && (container.getHeight() + y) < container.body.scrollHeight) {
+							loopScroll()
+						} else {
+							setTimeout(stopScroll, 99) // with cooldown time
+							if (onDone) {
+								onDone()
+							}
+						}
+					}, 9))
+				})()
+			}
+		}
+
+		/**
+		 * Scrolls to the top of a specific element.
+		 *
+		 * @param {elem} The element to scroll to.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollToElem = function (elem, duration, onDone) {
+			scrollToY(getTopWithEdgeOffset(elem), duration, onDone)
+		}
+
+		/**
+		 * Scrolls an element into view if necessary.
+		 *
+		 * @param {elem} The element.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollIntoView = function (elem, duration, onDone) {
+			var elemHeight = elem.getBoundingClientRect().height
+			var elemBottom = container.getTopOf(elem) + elemHeight
+			var containerHeight = container.getHeight()
+			var y = container.getY()
+			var containerBottom = y + containerHeight
+			if (getTopWithEdgeOffset(elem) < y || (elemHeight + edgeOffset) > containerHeight) {
+				// Element is clipped at top or is higher than screen.
+				scrollToElem(elem, duration, onDone)
+			} else if ((elemBottom + edgeOffset) > containerBottom) {
+				// Element is clipped at the bottom.
+				scrollToY(elemBottom - containerHeight + edgeOffset, duration, onDone)
+			} else if (onDone) {
+				onDone()
+			}
+		}
+
+		/**
+		 * Scrolls to the center of an element.
+		 *
+		 * @param {elem} The element.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 * @param {offset} Optionally the offset of the top of the element from the center of the screen.
+		 *        A value of 0 is ignored.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollToCenterOf = function (elem, duration, offset, onDone) {
+			scrollToY(Math.max(0, container.getTopOf(elem) - container.getHeight()/2 + (offset || elem.getBoundingClientRect().height/2)), duration, onDone)
+		}
+
+		/**
+		 * Changes default settings for this scroller.
+		 *
+		 * @param {newDefaultDuration} Optionally a new value for default duration, used for each scroll method by default.
+		 *        Ignored if null or undefined.
+		 * @param {newEdgeOffset} Optionally a new value for the edge offset, used by each scroll method by default. Ignored if null or undefined.
+		 * @returns An object with the current values.
+		 */
+		var setup = function (newDefaultDuration, newEdgeOffset) {
+			if (newDefaultDuration === 0 || newDefaultDuration) {
+				defaultDuration = newDefaultDuration
+			}
+			if (newEdgeOffset === 0 || newEdgeOffset) {
+				edgeOffset = newEdgeOffset
+			}
+			return {
+				defaultDuration: defaultDuration,
+				edgeOffset: edgeOffset
+			}
+		}
+
+		return {
+			setup: setup,
+			to: scrollToElem,
+			toY: scrollToY,
+			intoView: scrollIntoView,
+			center: scrollToCenterOf,
+			stop: stopScroll,
+			moving: function () { return !!scrollTimeoutId },
+			getY: container.getY,
+			getTopOf: container.getTopOf
+		}
+
+	}
+
+
+	var docElem = document.documentElement
+	var getDocY = function () { return window.scrollY || docElem.scrollTop }
+
+	// Create a scroller for the document:
+	var zenscroll = makeScroller({
+		body: document.scrollingElement || document.body,
+		toY: function (y) { window.scrollTo(0, y) },
+		getY: getDocY,
+		getHeight: function () { return window.innerHeight || docElem.clientHeight },
+		getTopOf: function (elem) { return elem.getBoundingClientRect().top + getDocY() - docElem.offsetTop }
+	})
+
+
+	/**
+	 * Creates a scroller from the provided container element (e.g., a DIV)
+	 *
+	 * @param {scrollContainer} The vertical position within the document.
+	 * @param {defaultDuration} Optionally a value for default duration, used for each scroll method by default.
+	 *        Ignored if 0 or null or undefined.
+	 * @param {edgeOffset} Optionally a value for the edge offset, used by each scroll method by default. 
+	 *        Ignored if null or undefined.
+	 * @returns A scroller object, similar to `zenscroll` but controlling the provided element.
+	 */
+	zenscroll.createScroller = function (scrollContainer, defaultDuration, edgeOffset) {
+		return makeScroller({
+			body: scrollContainer,
+			toY: function (y) { scrollContainer.scrollTop = y },
+			getY: function () { return scrollContainer.scrollTop },
+			getHeight: function () { return Math.min(scrollContainer.clientHeight, window.innerHeight || docElem.clientHeight) },
+			getTopOf: function (elem) { return elem.offsetTop }
+		}, defaultDuration, edgeOffset)
+	}
+
+
+	// Automatic link-smoothing on achors
+	// Exclude IE8- or when native is enabled or Zenscroll auto- is disabled
+	if ("addEventListener" in window && !window.noZensmooth && !isNativeSmoothScrollEnabledOn(document.body)) {
+
+		var isHistorySupported = "history" in window && "pushState" in history
+		var isScrollRestorationSupported = isHistorySupported && "scrollRestoration" in history
+
+		// On first load & refresh make sure the browser restores the position first
+		if (isScrollRestorationSupported) {
+			history.scrollRestoration = "auto"
+		}
+
+		window.addEventListener("load", function () {
+
+			if (isScrollRestorationSupported) {
+				// Set it to manual
+				setTimeout(function () { history.scrollRestoration = "manual" }, 9)
+				window.addEventListener("popstate", function (event) {
+					if (event.state && "zenscrollY" in event.state) {
+						zenscroll.toY(event.state.zenscrollY)
+					}
+				}, false)
+			}
+
+			// Add edge offset on first load if necessary
+			// This may not work on IE (or older computer?) as it requires more timeout, around 100 ms
+			if (window.location.hash) {
+				setTimeout(function () {
+					// Adjustment is only needed if there is an edge offset:
+					var edgeOffset = zenscroll.setup().edgeOffset
+					if (edgeOffset) {
+						var targetElem = document.getElementById(window.location.href.split("#")[1])
+						if (targetElem) {
+							var targetY = Math.max(0, zenscroll.getTopOf(targetElem) - edgeOffset)
+							var diff = zenscroll.getY() - targetY
+							// Only do the adjustment if the browser is very close to the element:
+							if (0 <= diff && diff < 9 ) {
+								window.scrollTo(0, targetY)
+							}
+						}
+					}
+				}, 9)
+			}
+
+		}, false)
+
+		// Handling clicks on anchors
+		var RE_noZensmooth = new RegExp("(^|\\s)noZensmooth(\\s|$)")
+		window.addEventListener("click", function (event) {
+			var anchor = event.target
+			while (anchor && anchor.tagName !== "A") {
+				anchor = anchor.parentNode
+			}
+			// Let the browser handle the click if it wasn't with the primary button, or with some modifier keys:
+			if (!anchor || event.which !== 1 || event.shiftKey || event.metaKey || event.ctrlKey || event.altKey) {
+				return
+			}
+			// Save the current scrolling position so it can be used for scroll restoration:
+			if (isScrollRestorationSupported) {
+				var historyState = history.state && typeof history.state === "object" ? history.state : {}
+				historyState.zenscrollY = zenscroll.getY()
+				try {
+					history.replaceState(historyState, "")
+				} catch (e) {
+					// Avoid the Chrome Security exception on file protocol, e.g., file://index.html
+				}
+			}
+			// Find the referenced ID:
+			var href = anchor.getAttribute("href") || ""
+			if (href.indexOf("#") === 0 && !RE_noZensmooth.test(anchor.className)) {
+				var targetY = 0
+				var targetElem = document.getElementById(href.substring(1))
+				if (href !== "#") {
+					if (!targetElem) {
+						// Let the browser handle the click if the target ID is not found.
+						return
+					}
+					targetY = zenscroll.getTopOf(targetElem)
+				}
+				event.preventDefault()
+				// By default trigger the browser's `hashchange` event...
+				var onDone = function () { window.location = href }
+				// ...unless there is an edge offset specified
+				var edgeOffset = zenscroll.setup().edgeOffset
+				if (edgeOffset) {
+					targetY = Math.max(0, targetY - edgeOffset)
+					if (isHistorySupported) {
+						onDone = function () { history.pushState({}, "", href) }
+					}
+				}
+				zenscroll.toY(targetY, null, onDone)
+			}
+		}, false)
+
+	}
+
+
+	return zenscroll
+
+
+}));
+
+},{}]},{},[1])
 //# sourceMappingURL=main.js.map

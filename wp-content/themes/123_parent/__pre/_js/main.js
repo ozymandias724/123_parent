@@ -1,22 +1,24 @@
 import $ from 'jquery';
 import slick from 'slick-carousel-browserify';
 
+import zenscroll from 'zenscroll';
+
+// kick off the polyfill!
+// smoothscroll.polyfill();
+
 var Theme = {};
 var Hero = {};
 var Headers = {};
 var Blocks = {};
 
+$(document).ready(function() {
 
-
-
-$(document).ready(function () {
 
     /**
      * FadeEffects
      * @type {Object}
      */
     Theme.FadeEffects = {
-
         elements: $('.site__fade'),
         _init: function () {
             $(window).on('scroll load', Theme.FadeEffects._scrollLoadHandler);
@@ -29,10 +31,12 @@ $(document).ready(function () {
                 }
             }
         }
-
     }
     Theme.FadeEffects._init();
 
+    /**
+     * 
+     */
     Theme.Slick = {
         rand: Math.floor(Math.random() * $(".img-slick").length),
         _init: function () {
@@ -52,7 +56,7 @@ $(document).ready(function () {
             });
         },
         _testimonials_slider: function () {
-            $('section#block__testimonials .site__grid').slick({
+            $('section.block__testimonials .site__grid').slick({
                 autoplay: false,
                 adaptiveHeight: true,
                 arrows: true,
@@ -67,81 +71,79 @@ $(document).ready(function () {
         }
     }
     Theme.Slick._init();
-});
-
-// 
-// 
-// 
-// 
-// 
-// 
-//  
-// GOOD CHUNK OF CODE INSIDE HERE
-
-/**
- * 
- *      If we have a Banner PopUp
- * 
- * 
- */
-if ($('#popups__banner').length) {
+    /**
+     * 
+     *      If we have a Banner PopUp
+     * 
+     * 
+     */
+    if ($('#popups__banner').length) {
+        
+        var PopUps = {};
     
-    var PopUps = {};
+        /**
+         * This baby is semantic. No description needed.
+         */
+        PopUps.Banner = {
+            overlay: $('#popups__banner_overlay')
+            ,_init : function(){
+                $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
+                $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+            }
+            ,_openPopUp : function(e){
+                $('body').addClass('js__noscroll');
+                PopUps.Banner.overlay.addClass('popups__banner_active');
+            }
+            ,_closePopUp : function(){
+                $('body').removeClass('js__noscroll');
+                PopUps.Banner.overlay.removeClass('popups__banner_active');
+            }
+        }
+        PopUps.Banner._init();
+    }
 
     /**
-     * This baby is semantic. No description needed.
+     * 
+     *  If we have a gallery block
+     * 
      */
-    PopUps.Banner = {
-        overlay: $('#popups__banner_overlay')
-        ,_init : function(){
-            $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
-            $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+    if ($('section.block__galleries').length && $('section.block__galleries div.tabs').length) {
+    
+        Blocks.Gallery = {
+            tabs: $('.block__galleries div.tabs > ul > li > a'),
+            galleries: $('.block__galleries div.galleries > .site__grid'),
+            _init: function () {
+                // when clicking tabs
+                Blocks.Gallery.tabs.on('click', Blocks.Gallery._didClickTab);
+            },
+            _didClickTab: function (e) {
+                // toggle visible gallery
+                Blocks.Gallery.galleries.addClass('hidden_gallery');
+                Blocks.Gallery.galleries.removeClass('current_gallery');
+                $(Blocks.Gallery.galleries[$(this).parent('li').index()]).addClass('current_gallery');
+            }
         }
-        ,_openPopUp : function(e){
-            $('body').addClass('js__noscroll');
-            PopUps.Banner.overlay.addClass('popups__banner_active');
-        }
-        ,_closePopUp : function(){
-            $('body').removeClass('js__noscroll');
-            PopUps.Banner.overlay.removeClass('popups__banner_active');
-        }
+        Blocks.Gallery._init();
     }
-    PopUps.Banner._init();
-}
 
-/**
- * 
- * 
- */
-if ($('section#block__galleries').length && $('section#block__galleries div.tabs').length) {
+    /**
+     * Handle the basics of the nav unspecific to a header style
+     */
+    Theme.Nav = {
+        links: $(".navlinks-item-link"),
 
-    Blocks.Gallery = {
-        tabs: $('#block__galleries div.tabs > ul > li > a'),
-        galleries: $('#block__galleries div.galleries > .site__grid'),
         _init: function () {
-            // when clicking tabs
-            Blocks.Gallery.tabs.on('click', Blocks.Gallery._didClickTab);
+            Theme.Nav.links.on("click", Theme.Nav._clickedNavLink);
         },
-        _didClickTab: function (e) {
-            // toggle visible gallery
-            Blocks.Gallery.galleries.addClass('hidden_gallery');
-            Blocks.Gallery.galleries.removeClass('current_gallery');
-            $(Blocks.Gallery.galleries[$(this).parent('li').index()]).addClass('current_gallery');
+        _clickedNavLink: function (e) {
+            Theme.Nav.links.removeClass("active_menu_link");
+            $(this).addClass("active_menu_link");
         }
     }
-    Blocks.Gallery._init();
-}
+    Theme.Nav._init();
+});
 
-// END OF A CHUNK OF CODE I KNOW IS GOOD
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+
 
 Headers.Eight = {
 
@@ -361,25 +363,6 @@ Theme.Parallax = {
     }
 }
 
-
-Theme.FadeEffects = {
-
-    elements: $('.fade-up, .fade-left, .fade-right, .fade-in'),
-
-    _resizeLoadScrollHandler: function () {
-        for (var i = 0; i < Theme.FadeEffects.elements.length; i++) {
-            if ($(window).scrollTop() + $(window).height() > $(Theme.FadeEffects.elements[i]).offset().top) {
-                $(Theme.FadeEffects.elements[i]).removeClass('fade-up fade-left fade-right fade-in');
-            }
-        }
-    },
-    _init: function () {
-        $(window).on('resize load scroll', Theme.FadeEffects._resizeLoadScrollHandler);
-    },
-}
-Theme.FadeEffects._init();
-
-
 // Theme.Popups = {
 //     popups: $(".popup"),
 //     quote_btn: $(".site__button-quote"),
@@ -503,24 +486,11 @@ Theme.FadeEffects._init();
 // }
 
 
-Theme.Nav = {
-    nav_links: $(".navlinks-item-link"),
 
-    _init: function () {
-        Theme.Nav.nav_links.on("click", Theme.Nav._active_nav_link);
-    },
-    _active_nav_link: function () {
-        Theme.Nav.nav_links.each(function () {
-            $(this).removeClass("active_menu_link");
-        });
-        $(this).addClass("active_menu_link");
-    }
-}
-Theme.Nav._init();
 
 
 Theme.Menu = {
-    tab_link: $(" #block__food_menus .button_group a "),
+    tab_link: $(" .food_menus .button_group a "),
     menu_section: $(" .menu_section "),
 
     _init: function () {

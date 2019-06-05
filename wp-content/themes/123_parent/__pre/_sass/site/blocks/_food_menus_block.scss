@@ -7,7 +7,7 @@ $s_true: true;
 
 @media only screen {
     section.site__block {
-        &#block__food_menus {
+        &.block__food_menus {
             > .container {
                 // Heading
                 > h2 {
@@ -560,7 +560,7 @@ $s_true: true;
     $c : 3;
     $g: getVar($sizing, gutter, vw, normal);
     $s: true;
-    section#block__food_menus {
+    section.block__food_menus {
         > .container {
             .tabs {
                 .menu_section {
@@ -604,7 +604,7 @@ $s_true: true;
 }
 
 @media only screen and (max-width: 960px){
-    section#block__food_menus {
+    section.block__food_menus {
         > .container {
             $w: getVar($sizing, content, large);
             $c : 2;
@@ -657,7 +657,7 @@ $s_true: true;
 }
 
 @media only screen and (max-width: 640px){
-    section#block__food_menus {
+    section.block__food_menus {
         > .container {
             $w: getVar($sizing, content, full);
             $c : 1;
