@@ -10,7 +10,7 @@
  *  copyright section
  */
 
-    function _get_copyright_banner()
+    function get_copyright_banner()
     {
         $return = '';
         $field = get_field('footer', 'options');
@@ -29,20 +29,15 @@
         return $return;
     }
 
-    function _get_badges()
+    function get_badges()
     {
         $return = '';
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
         if( !empty($field['badges']) ){
-            if($footer_style == 'one')
-            {
-                $return .= '<section class="footer_badges"><h3>Powered By</h3><ul>';
-            }
-            else
-            {
-                $return .= '<section class="footer_badges"><ul>';
-            }
+
+            $return .= '<div class="footer_badges"><ul>';
+
             $format = '
                 <li><a href="%s" title="%s" target="%s"><img src="%s" alt=""></a></li>
             ';
@@ -55,26 +50,21 @@
                     ,(!empty($badge['image']['url']) ? $badge['image']['url'] : '')
                 );
             }
-            $return .= '</ul></section>';
+            $return .= '</ul></div>';
         }
         return $return;
     }
 
-    function _get_payment_types()
+    function get_payment_types()
     {
         $return = '';
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
 
         if( !empty($field['payment_types']) ){
-            if($footer_style == 'one')
-            {
-                $return .= '<section class="footer_payment_types"><h3 class="payment_title">Payment</h3><ul>';
-            }
-            else
-            {
-                $return .= '<section class="footer_payment_types"><ul>';
-            }
+
+            $return .= '<div class="footer_payment_types"><ul>';
+
             $format = '
                 <li><img src="%s" alt=""></li>
             ';
@@ -84,12 +74,12 @@
                     ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
                 );
             }
-            $return .= '</ul></section>';
+            $return .= '</ul></div>';
         }
         return $return;
     }
 
-    function _get_footer_logo(){
+    function get_footer_logo(){
         $return = '';
         $field = get_field('footer', 'options');
         if( !empty($field['logo']) )
@@ -108,61 +98,58 @@
         return $return;
     }
 
-    function _get_company_info()
+    function get_company_info()
     {
         $footer_style = get_field('footer', 'options')['style'];
-        $logo = _get_footer_logo();
-        $address = (!empty(_get_full_address()) ? '<a class="footer_address" href="javascript:;">'._get_full_address().'</a>': '');
-        $phone_number_1 = (!empty(_get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'._get_phone_number_1().'">P: '._get_phone_number_1().'</a>': '');
-        $phone_number_2 =(!empty(_get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'._get_phone_number_2().'">F: '._get_phone_number_2().'</a>': '');
-        $social_icons = _get_social_icons();
+        $logo = get_footer_logo();
+        $address = (!empty(get_full_address_br()) ? '<a class="footer_address" href="javascript:;">'.get_full_address_br().'</a>': '');
+        $phone_number_1 = (!empty(get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'.get_phone_number_1().'">P: '.get_phone_number_1().'</a>': '');
+        $phone_number_2 =(!empty(get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'.get_phone_number_2().'">F: '.get_phone_number_2().'</a>': '');
 
         $format_company_info = '
-            <section id="footer_company_info">
+            <div id="footer_company_info">
                 %s
                 %s
                 %s
                 %s
                 %s
                 %s
-            </section>
+            </div>
         ';
         if($footer_style == 'one')
         {
             $format = '
-                <section id="footer_company_info">
+                <div id="footer_company_info">
                     %s
                     %s
                     %s
                     %s
-                    %s
-                </section>
+                </div>
             ';
             $company_info = sprintf(
                 $format
                 ,$logo
+                ,$address
                 ,$phone_number_1
                 ,$phone_number_2
-                ,$address
-                ,$social_icons
             );
         }
         else if($footer_style == 'two')
         {
             $format = '
-                <section id="footer_company_info">
+                <div id="footer_company_info">
                     %s
                     %s
                     %s
                     %s
                     %s
                     %s
-                </section>
+                </div>
             ';
             $company_info = sprintf(
                 $format
                 ,$logo
-                ,_get_nav()
+                ,get_nav()
                 ,$social_icons
                 ,$address
                 ,$phone_number_1
@@ -172,18 +159,18 @@
         else if($footer_style == 'three')
         {
             $format = '
-                <section id="footer_company_info">
+                <div id="footer_company_info">
                     %s
                     %s
                     %s
                     %s
                     %s
-                </section>
+                </div>
             ';
             $company_info = sprintf(
                 $format
                 ,$logo
-                ,_get_nav()
+                ,get_nav()
                 ,$address
                 ,$phone_number_1
                 ,$phone_number_2
@@ -192,44 +179,76 @@
         return $company_info;
     }
 
-    function _get_nav()
+    function get_nav()
     {
         $footer_style = get_field('footer', 'options')['style'];
         if($footer_style == 'one')
         {
             $format_nav = '
-                <section id="footer_nav_section">
-                    <h3 class="nav_title">Links</h3>
-                    <nav id="footer_nav">
+                <div id="footer_nav">
+                    <h3 class="nav_title">Navigate</h3>
+                    <nav>
                         %s
                     </nav>
-                </section>
+                </div>
             ';
         }
         else
         {
             $format_nav = '
-                <section id="footer_nav_section">
-                    <nav id="footer_nav">
+                <div id="footer_nav">
+                    <nav>
                         %s
                     </nav>
-                </section>
+                </div>
             ';
         }
 
-        if(strlen(_get_site_nav()) > 26)
-        {
-            $nav = sprintf(
-                $format_nav
-                ,_get_site_nav()
-            );  
-        }
+        $nav = sprintf(
+            $format_nav
+            ,get_site_nav()
+        );  
         return $nav;
     }
 
-    function _get_footer_content()
+    function get_recent_posts()
+    {
+        $return = '';
+        $query = new WP_Query(array(
+            'posts_per_page' => 3
+        ));
+        if($query->have_posts())
+        {
+            $format = '
+                <div id="footer_posts">
+                    <h3>Recent Posts</h3>
+                    <ul>%s</ul>
+                </div>
+            ';
+
+            $format_post = '
+                <li><a href="%s">%s</a></li>
+            ';
+            $posts = '';
+            $posts .= sprintf(
+                $format_post
+                ,the_permalink()
+                ,the_title()
+            );
+
+            $return .= sprintf(
+                $format
+                ,$posts
+            );
+        }
+
+        return $return;
+    }
+
+    function get_footer_content()
     {
         $footer_style = get_field('footer', 'options')['style'];
+
         if($footer_style == 'one')
         {
             $format_footer_content = '
@@ -237,20 +256,24 @@
                     %s
                     %s
                     %s
-                    %s
+                    <div id="footer_social">
+                        %s
+                    </div>
                 </div>
-                <div class="container footer_one_copyright">
+                <div class="container footer_copyright">
+                    %s
                     %s
                 </div>
             ';
 
             $return = sprintf(
                 $format_footer_content
-                ,_get_company_info()
-                ,_get_nav()
-                ,_get_payment_types() 
-                ,_get_badges()
-                ,_get_copyright_banner()
+                ,get_company_info()
+                ,get_nav()
+                ,get_recent_posts()
+                ,(!empty(get_social_icons()) ? '<h3>Follow Us</h3>'.get_social_icons():'')
+                ,get_copyright_banner()
+                ,get_payment_types()
             );
         }
         else if($footer_style == 'two')
@@ -266,10 +289,10 @@
 
             $return = sprintf(
                 $format_footer_content
-                ,_get_company_info()
-                ,_get_copyright_banner()
-                ,_get_badges()
-                ,_get_payment_types() 
+                ,get_company_info()
+                ,get_copyright_banner()
+                ,get_badges()
+                ,get_payment_types() 
             );
 
         }
@@ -280,9 +303,9 @@
                     %s
                     %s
                     %s
-                    <div class="footer_three_last_div">
+                    <div class="footer_last_div">
                         %s
-                        <div class="footer_three_social_media">
+                        <div id="footer_social">
                             %s
                         </div>
                     </div>
@@ -291,11 +314,11 @@
 
             $return = sprintf(
                 $format_footer_content
-                ,_get_company_info()
-                ,_get_copyright_banner()
-                ,_get_badges()
-                ,_get_payment_types()
-                ,(!empty(_get_social_icons()) ? '<p>Follow Us</p>'._get_social_icons():'')
+                ,get_company_info()
+                ,get_copyright_banner()
+                ,get_badges()
+                ,get_payment_types()
+                ,(!empty(get_social_icons()) ? '<h3>Follow Us</h3>'.get_social_icons():'')
             );
         }
         return $return;
@@ -306,7 +329,7 @@
 <footer class="site__fade site__fade-up" id="footer_<?php echo get_field('footer', 'options')['style'] ?>">
 <?php 
 
-    echo _get_footer_content();
+    echo get_footer_content();
     
     // live reload script
 	if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {

@@ -64,11 +64,11 @@ class NavHandler
         $company_info = get_field('company_info','options');
         // get company info fields
         
-        $company_address_br = _get_full_address_br();
-        $company_address = _get_full_address();
-        $phone_number_1 = _get_phone_number_1();
-        $phone_number_2 = _get_phone_number_2();
-        $company_email = _get_email();
+        $company_address_br = get_full_address_br();
+        $company_address = get_full_address();
+        $phone_number_1 = get_phone_number_1();
+        $phone_number_2 = get_phone_number_2();
+        $company_email = get_email();
         
         // check for social media Icons
         $social_media = ($company_info['social_media'] ? $company_info['social_media'] : '');
@@ -203,8 +203,8 @@ class NavHandler
             ,$content_logo
             ,$site__iconlink_location_br
             ,$header_1_phone 
-            ,_get_site_nav()
-            ,_get_social_icons()
+            ,get_site_nav()
+            ,get_social_icons()
         );
         /**
          * 
@@ -237,7 +237,7 @@ class NavHandler
             ,$fadenav
             ,get_custom_logo()
             ,$desktop_social
-            ,_get_site_nav()
+            ,get_site_nav()
             ,$quickquote
         );
         /**
@@ -269,7 +269,7 @@ class NavHandler
             ,$content_address_phone_number
             ,$quickquote
             ,get_custom_logo()
-            ,_get_site_nav()
+            ,get_site_nav()
         );
         /**
          * End Header Style 3
@@ -296,10 +296,10 @@ class NavHandler
             $format_header
             ,$invertlogo
             ,$fadenav
-            ,_get_social_icons()
+            ,get_social_icons()
             ,get_custom_logo()
             ,$site__iconlink_phone
-            ,_get_site_nav()
+            ,get_site_nav()
         );
         /**
          * 
@@ -333,12 +333,12 @@ class NavHandler
         $this->header_five = sprintf(
             $format_header
             ,$fadenav
-            ,_get_social_icons()
+            ,get_social_icons()
             ,$site__iconlink_location
             ,$site__iconlink_phone
             ,$quickquote
             ,get_custom_logo()
-            ,_get_site_nav()
+            ,get_site_nav()
         );
         /**
          * 
@@ -372,9 +372,9 @@ class NavHandler
             ,$fadenav
             ,$site__iconlink_phone
             ,$site__iconlink_location
-            ,_get_social_icons()
+            ,get_social_icons()
             ,get_custom_logo()
-            ,_get_site_nav()
+            ,get_site_nav()
             ,$quickquote
         );
         /**
@@ -403,10 +403,10 @@ class NavHandler
         $this->header_seven = sprintf(
             $format_header
             ,$fadenav
-            ,_get_social_icons()
+            ,get_social_icons()
             ,get_custom_logo()
             ,$site__iconlink_phone
-            ,_get_site_nav()
+            ,get_site_nav()
         ); 
         /**
          * 
@@ -433,7 +433,7 @@ class NavHandler
             $format_header
             ,$fadenav
             ,get_custom_logo()
-            ,_get_site_nav()
+            ,get_site_nav()
         );
         /**
          * 
@@ -471,9 +471,9 @@ class NavHandler
             ,$fadenav
             ,$site__iconlink_phone
             ,$site__iconlink_location
-            ,_get_social_icons()
+            ,get_social_icons()
             ,get_custom_logo()
-            ,_get_site_nav()
+            ,get_site_nav()
             ,$quickquote
         );
         /**
@@ -507,8 +507,8 @@ class NavHandler
             ,$fadenav
             ,$hamburger_icon
             ,get_custom_logo()
-            ,_get_social_icons()
-            ,_get_site_nav()
+            ,get_social_icons()
+            ,get_site_nav()
             ,$site__iconlink_phone
         ); 
         /**

@@ -2,9 +2,6 @@
     // Popups
     section.popup {
         display: none;
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0.2s, opacity 0.2s;
         position: fixed;
         z-index: 100;
         width: 100%;
@@ -12,8 +9,6 @@
         right: 0;
         top: 0;
         background-color: rgba(0,0,0,0.7);
-        max-height: 100vh;
-        overflow-x: auto;
         .popup_close {
             content: '\f00d'; 
             display: inline-block;
@@ -123,8 +118,7 @@
         }
     }
     #banner_popup.banner__open {
-        visibility: visible;
-        opacity: 1;
+        display: block;
     }
     header.header,
     header.mobileheader {

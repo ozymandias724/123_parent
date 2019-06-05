@@ -26,29 +26,24 @@ function get_gmaps_api_key(){
     return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
 }
 
-function _print_c($data)
-{
-	echo '<pre style="font-size:20px;">'.print_r($data, true).'</pre>';
-}
-
-function _get_phone_number_1()
+function get_phone_number_1()
 {
 	$company_info = get_field('company_info','options');
 	return (!empty($company_info['phone_number_1']) ? $company_info['phone_number_1'] : '');
 }
 
-function _get_phone_number_2()
+function get_phone_number_2()
 {
 	$company_info = get_field('company_info','options');
 	return (!empty($company_info['phone_number_2']) ? $company_info['phone_number_2'] : '');
 }
 
-function _get_email()
+function get_email()
 {
 	return (!empty($company_info['email']) ? $company_info['email'] : '');
 }
 
-function _get_social_icons()
+function get_social_icons()
 {
 	$company_info = get_field('company_info','options');
 	$content_social_icons = '';
@@ -108,7 +103,7 @@ function _get_social_icons()
 	return $content_social_icons;
 }
 
-function _get_full_address_br(){
+function get_full_address_br(){
 	$company_info = get_field('company_info','options');
         
 	$location = ($company_info['location'] ? $company_info['location'] : '');
@@ -134,7 +129,7 @@ function _get_full_address_br(){
 	return $full_address_br; 
 }
 
-function _get_full_address(){
+function get_full_address(){
 	$company_info = get_field('company_info','options');
         
 	$location = ($company_info['location'] ? $company_info['location'] : '');
@@ -161,7 +156,7 @@ function _get_full_address(){
 }
 
 
-function _get_site_logo(){
+function get_site_logo(){
     // look for a 'custom logo'
     $content_logo = '';
     // if we have a custom logo
@@ -201,7 +196,7 @@ function do_hide_acf_fields( $field ) {
 }
 
 
-function _get_site_nav($pre = 'navlinks'){
+function get_site_nav($pre = 'navlinks'){
 
     if( get_field('header', 'options')['long_scroll'] ){
 

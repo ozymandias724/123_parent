@@ -91,7 +91,7 @@
         ,$fadenav
         ,$invertlogo
         ,$hamburger_icon
-        ,_get_site_nav()
+        ,get_site_nav()
         ,$site__iconlink_phone
         ,$content_social_icons
     );

@@ -87,17 +87,16 @@ if ($('#banner_popup').length) {
     PopUps.Banner = {
 
         _init : function(){
-            $('#banner_popup').show();
             $('#banner_popup_button a').on('click', PopUps.Banner._didClickBanner);
             $('.popup_close').on('click', PopUps.Banner._closeHandler);
             $('#banner_popup').on('click', PopUps.Banner._backgroundClickHandler);
         }
         ,_didClickBanner : function(e){
             
-            $('#banner_popup, .popup_background').addClass('banner__open');
+            $('#banner_popup').addClass('banner__open');
         }
         ,_closeHandler : function(e){
-
+            
             $(this).parent().removeClass('banner__open');
 
         }
