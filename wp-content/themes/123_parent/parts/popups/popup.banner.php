@@ -14,14 +14,14 @@
     // overlay guide
     $guide['overlay'] = '
         <div id="popups__banner_overlay">
+            <i class="fas fa-times overlay__closebutton"></i>
             <div class="container">
                 <figure><img src="%s"></figure>
                 <div>
                     %s
                     %s
-                    '.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]', $ignore_html).'
+                    <div class="banner_form">'.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]', $ignore_html).'</div>
                 </div>
-                <i class="fas fa-times overlay__closebutton"></i>
             </div>
         </div>
     ';
@@ -37,9 +37,9 @@
     // write the overlay
     $return['overlay'] .= sprintf(
         $guide['overlay']
-        ,$fields['overlay']['image']['url']
-        ,$fields['overlay']['heading']
-        ,$fields['overlay']['details']
+        ,(!empty($fields['overlay']['image']['url']) ? $fields['overlay']['image']['url'] : '')
+        ,(!empty($fields['overlay']['heading']) ? '<div class="banner_heading">'.$fields['overlay']['heading'].'</div>' : '')
+        ,(!empty($fields['overlay']['details']) ? '<div class="banner_details">'.$fields['overlay']['details'].'</div>': '')
     );
     
     // echo the overlay and the button

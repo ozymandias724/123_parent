@@ -96,6 +96,7 @@ if ($('#popups__banner').length) {
         ,_init : function(){
             $('#popups__banner > a').on('click', PopUps.Banner._openPopUp);
             $('#popups__banner_overlay').on('click', PopUps.Banner._clickedOverlayBG);
+            $('.overlay__closebutton').on('click', PopUps.Banner._closePopUp);
         }
         ,_openPopUp : function(e){
             $('body').addClass('js__noscroll');
@@ -104,6 +105,12 @@ if ($('#popups__banner').length) {
         ,_closePopUp : function(){
             $('body').removeClass('js__noscroll');
             PopUps.Banner.overlay.removeClass('popups__banner_active');
+        }
+        ,_clickedOverlayBG : function(e){
+            if(e.target === e.currentTarget){
+                $('body').removeClass('js__noscroll');
+                PopUps.Banner.overlay.removeClass('popups__banner_active');
+            }
         }
     }
     PopUps.Banner._init();
