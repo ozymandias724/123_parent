@@ -107,7 +107,6 @@ $(document).ready(function() {
      *  If we have a gallery block
      * 
      */
-<<<<<<< HEAD
     PopUps.Banner = {
         overlay: $('#popups__banner_overlay')
         ,_init : function(){
@@ -129,25 +128,6 @@ $(document).ready(function() {
                 PopUps.Banner.overlay.removeClass('popups__banner_active');
             }
         }
-=======
-    if ($('section.block__galleries').length && $('section.block__galleries div.tabs').length) {
-    
-        Blocks.Gallery = {
-            tabs: $('.block__galleries div.tabs > ul > li > a'),
-            galleries: $('.block__galleries div.galleries > .site__grid'),
-            _init: function () {
-                // when clicking tabs
-                Blocks.Gallery.tabs.on('click', Blocks.Gallery._didClickTab);
-            },
-            _didClickTab: function (e) {
-                // toggle visible gallery
-                Blocks.Gallery.galleries.addClass('hidden_gallery');
-                Blocks.Gallery.galleries.removeClass('current_gallery');
-                $(Blocks.Gallery.galleries[$(this).parent('li').index()]).addClass('current_gallery');
-            }
-        }
-        Blocks.Gallery._init();
->>>>>>> master
     }
 
     /**
