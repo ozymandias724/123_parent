@@ -204,14 +204,16 @@ function get_site_nav($pre = 'navlinks'){
         $fields = get_fields( get_option('page_on_front') );
         
         
-        $guide['blocks_links'] = '<li class="navlinks-item"><a class="navlinks-item-link" href="javascript:;">%s</a></li>';
+        $guide['blocks_links'] = '<li class="navlinks-item"><a class="navlinks-item-link scroll" href="#%s">%s</a></li>';
         $return['blocks_links'] = '<ul class="navlinks nav__spyscroll">';
         
-        foreach( $fields['content_blocks'] as $cB ){
+        foreach( $fields['content_blocks'] as $i => $cB ){
 
             if( $cB['anchor_enabled'] ){
+
                 $return['blocks_links'] .= sprintf(
                     $guide['blocks_links']
+                    ,strtolower($cB['anchor_link_text'])
                     ,$cB['anchor_link_text']
                 );
             }

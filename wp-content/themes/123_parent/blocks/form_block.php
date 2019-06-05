@@ -11,8 +11,8 @@
     
     // empty guide string 
     $guide['section'] = '
-        <section id="block__form" class="site__block">
-            <div class="container %s" style="background-color: %s; color: %s;">
+        <section %s class="site__block block__form">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 '. ( !empty($cB['form']) ? do_shortcode('[wpforms id="'.$cB['form']->ID.'" title="false" description="false"]' ) : '' ) . '
@@ -21,10 +21,12 @@
     ';
 
     $return['section'] .= sprintf(
-         $guide['section']
-        ,$cB['width']
-        ,$cB['background_color']
-        ,$cB['foreground_color']
+        $guide['section']
+        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['details']) ? '<div>'.$cB['details'].'</div>' : '' )
     );

@@ -23,7 +23,8 @@
 	    wp_head();
 	 ?>
 </head>
-<body <?php body_class(); ?>>
+
+<body <?php body_class( ( !empty( get_field('header', 'options')['long_scroll'] ) ? 'js__smoothscroll' : '' ) ); ?>>
 <?php 
 
     // if the banner popup is enabled
