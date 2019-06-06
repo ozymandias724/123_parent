@@ -20,6 +20,25 @@ include_once('classes/class.NavHandler.php');
 
 include_once('parts/nav/site.nav.php');
 
+function my_acf_admin_head(){
+	?>
+    <style type="text/css">
+
+	/* css here */
+	.acf-field-5cf9966e5088f .acf-button-group {
+		display: flex;
+		flex-flow: row wrap;
+		width: 300px;
+	}
+	.acf-field-5cf9966e5088f .acf-button-group label {
+		flex: 1 0 25%;
+	}
+
+    </style>
+    <?php
+}
+add_action('acf/input/admin_head', 'my_acf_admin_head');
+
 
 function get_gmaps_api_key(){
 
@@ -218,7 +237,6 @@ function get_site_nav($pre = 'navlinks'){
                 );
             }
 
-            
         }
         $return['blocks_links'] .= '</ul>';
         

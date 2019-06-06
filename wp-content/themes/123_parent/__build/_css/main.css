@@ -2678,21 +2678,23 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   footer {
     background-color: #376494;
   }
-  footer > div.container {
+  footer div.container {
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
+  }
+  footer div.container.medium {
     width: 65vw;
   }
-  footer > div.container #footer_company_info {
+  footer div.container #footer_company_info {
     margin-top: 10px;
   }
-  footer > div.container .site__footer_logo {
+  footer div.container .site__footer_logo {
     display: inline-block;
     padding: 5px;
     width: 250px;
   }
-  footer > div.container .site__footer_logo > div {
+  footer div.container .site__footer_logo > div {
     height: 90px;
     max-width: 250px;
     margin: 0 auto;
@@ -2700,11 +2702,11 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     background-size: contain;
     background-position: center center;
   }
-  footer > div.container #footer_nav .navlinks {
+  footer div.container #footer_nav .navlinks {
     display: flex;
     flex-flow: row wrap;
   }
-  footer > div.container #footer_nav .navlinks .navlinks-item-link {
+  footer div.container #footer_nav .navlinks .navlinks-item-link {
     line-height: 50px;
     text-transform: uppercase;
     color: #ffffff;
@@ -2714,10 +2716,10 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     margin: 0 15px;
     padding: 10px 0;
   }
-  footer > div.container #footer_nav .navlinks .navlinks-item-link:hover, footer > div.container #footer_nav .navlinks .navlinks-item-link:active, footer > div.container #footer_nav .navlinks .navlinks-item-link:focus {
+  footer div.container #footer_nav .navlinks .navlinks-item-link:hover, footer div.container #footer_nav .navlinks .navlinks-item-link:active, footer div.container #footer_nav .navlinks .navlinks-item-link:focus {
     opacity: 0.8;
   }
-  footer > div.container #footer_nav .navlinks .navlinks-item-link:after {
+  footer div.container #footer_nav .navlinks .navlinks-item-link:after {
     content: "";
     position: relative;
     bottom: 0;
@@ -2726,28 +2728,28 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     height: 0.5em;
     border-right: 2px solid #ffffff;
   }
-  footer > div.container #footer_nav .navlinks .navlinks-item:last-of-type .navlinks-item-link:after {
+  footer div.container #footer_nav .navlinks .navlinks-item:last-of-type .navlinks-item-link:after {
     display: none;
   }
-  footer > div.container .site__social-media {
+  footer div.container .site__social-media {
     display: flex;
     justify-content: center;
   }
-  footer > div.container .site__social-media li {
+  footer div.container .site__social-media li {
     margin-right: 10px;
   }
-  footer > div.container .site__social-media li a {
+  footer div.container .site__social-media li a {
     padding: 10px;
   }
-  footer > div.container .site__social-media li a i {
+  footer div.container .site__social-media li a i {
     font-size: 2rem;
     line-height: 3.2rem;
     color: #fff;
   }
-  footer > div.container .site__social-media li a:hover, footer > div.container .site__social-media li a:active, footer > div.container .site__social-media li a:focus {
+  footer div.container .site__social-media li a:hover, footer div.container .site__social-media li a:active, footer div.container .site__social-media li a:focus {
     opacity: 0.8;
   }
-  footer > div.container .footer_address {
+  footer div.container .footer_address {
     margin-right: 20px;
     display: block;
     color: #ffffff;
@@ -2756,10 +2758,10 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     line-height: 2.8rem;
     padding: 5px;
   }
-  footer > div.container .footer_address:hover, footer > div.container .footer_address:active, footer > div.container .footer_address:focus {
+  footer div.container .footer_address:hover, footer div.container .footer_address:active, footer div.container .footer_address:focus {
     opacity: 0.8;
   }
-  footer > div.container a[class^=footer_phone] {
+  footer div.container a[class^=footer_phone] {
     display: block;
     color: #fff;
     font-weight: 400;
@@ -2768,32 +2770,29 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     margin-right: 15px;
     padding: 5px;
   }
-  footer > div.container a[class^=footer_phone]:hover, footer > div.container a[class^=footer_phone]:active, footer > div.container a[class^=footer_phone]:focus {
+  footer div.container a[class^=footer_phone]:hover, footer div.container a[class^=footer_phone]:active, footer div.container a[class^=footer_phone]:focus {
     opacity: 0.8;
   }
-  footer > div.container .site__copyright_banner > a {
+  footer div.container .site__copyright_banner > a {
     display: inline-block;
     color: #ffffff;
     font-size: 1.4rem;
     line-height: 2.8rem;
   }
-  footer > div.container .site__copyright_banner > a:hover, footer > div.container .site__copyright_banner > a:active, footer > div.container .site__copyright_banner > a:focus {
+  footer div.container .site__copyright_banner > a:hover, footer div.container .site__copyright_banner > a:active, footer div.container .site__copyright_banner > a:focus {
     opacity: 0.8;
   }
-  footer > div.container .footer_payment_types > ul > li {
+  footer div.container .footer_payment_types > ul > li {
     display: inline-block;
     margin-right: 10px;
   }
-  footer > div.container .footer_payment_types > ul > li img {
+  footer div.container .footer_payment_types > ul > li img {
     max-width: 44px;
   }
-  footer > div.container .footer_payment_types > ul > li:last-of-type {
+  footer div.container .footer_payment_types > ul > li:last-of-type {
     margin-right: 0;
   }
 
-  footer#footer_one > div.container {
-    flex-flow: row nowrap;
-  }
   footer#footer_one > div.container > div {
     flex: 1 0 18%;
     margin-right: 40px;
@@ -2905,49 +2904,48 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     background-color: #223e5c;
     padding: 20px 0;
   }
-  footer#footer_one > div.footer_copyright > div.container {
+  footer#footer_one > div.footer_copyright > div {
     margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 65vw;
     justify-content: center;
   }
-  footer#footer_one > div.footer_copyright > div.container > div {
+  footer#footer_one > div.footer_copyright > div > div {
     flex: 1 0 50%;
   }
-  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner {
     display: flex;
     justify-content: flex-start;
   }
-  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a {
     color: #ffffff;
     text-align: left;
     width: 75%;
     font-weight: 500;
   }
-  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a > span {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a > span {
     display: block;
   }
-  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a > span:first-of-type {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a > span:first-of-type {
     border-bottom: 1px solid #3b6c9e;
     padding-bottom: 3px;
   }
-  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a > span:last-of-type {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a > span:last-of-type {
     color: #3b6c9e;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types {
+  footer#footer_one > div.footer_copyright > div .footer_payment_types {
     display: flex;
     justify-content: flex-end;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul {
+  footer#footer_one > div.footer_copyright > div .footer_payment_types ul {
     display: flex;
     flex-flow: row wrap;
     max-height: 200px;
     align-items: inherit;
     justify-content: flex-start;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li {
+  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li {
     margin-right: 7px;
     margin-top: 10px;
     display: initial;
@@ -2955,13 +2953,13 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     padding: 5px 7px;
     border-radius: 5px;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li > img {
+  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li > img {
     max-width: 45px;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li:last-of-type {
+  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:last-of-type {
     margin-right: 0;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types h3.payment_title {
+  footer#footer_one > div.footer_copyright > div .footer_payment_types h3.payment_title {
     margin-top: 10px;
   }
 
@@ -3053,38 +3051,46 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
 }
 @media only screen and (max-width: 1280px) {
-  footer > div.container {
+  footer div.container {
     padding: 0;
-    max-width: 65vw;
   }
-
-  footer#footer_one > div.container {
+  footer div.container.narrow, footer div.container.medium, footer div.container.wide, footer div.container.full {
+    width: 80vw;
+  }
+  footer #footer_one > div.container {
     flex-flow: row wrap;
   }
-  footer#footer_one > div.container #footer_company_info {
+  footer #footer_one > div.container > div {
+    flex: 1 0 30%;
+  }
+  footer #footer_one > div.container #footer_company_info {
     flex: 1 0 100%;
   }
-  footer#footer_one > div.container #footer_company_info .site__footer_logo {
+  footer #footer_one > div.container #footer_company_info .site__footer_logo {
     display: block;
     margin: 0 auto;
   }
-  footer#footer_one > div.container #footer_company_info > a {
+  footer #footer_one > div.container #footer_company_info > a {
     text-align: center;
   }
-  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a {
+  footer #footer_one > div.footer_copyright > div.container .site__copyright_banner > a {
     width: 100%;
   }
 }
 @media only screen and (max-width: 960px) {
-  footer#footer_one div.footer_copyright > div.container {
+  footer #footer_one div.footer_copyright > div.container {
     flex-flow: column nowrap;
   }
-
-  footer#footer_two > div.container > div.footer_last_div > div#footer_social {
+  footer #footer_two > div.container > div.footer_last_div > div#footer_social {
     flex-flow: column nowrap;
   }
-  footer#footer_two > div.container > div.footer_last_div > div#footer_social > h3 {
+  footer #footer_two > div.container > div.footer_last_div > div#footer_social > h3 {
     margin-right: 0;
+  }
+}
+@media only screen and (max-width: 640px) {
+  footer div.container.narrow, footer div.container.medium, footer div.container.wide, footer div.container.full {
+    width: 92vw;
   }
 }
 @media only screen {
@@ -3166,9 +3172,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     height: 90vh;
   }
 
-  section.hero#hero_video {
-    position: relative;
-  }
   section.hero#hero_video .container {
     width: 100%;
     height: 90vh;
@@ -6585,7 +6588,7 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    background-color: white;
+    background-color: #376494;
     border: 2px solid #c2c2c2;
     border-radius: 30px;
     padding: 5px 25px;

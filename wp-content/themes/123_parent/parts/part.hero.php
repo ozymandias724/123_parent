@@ -5,11 +5,13 @@
  */
     
    $fields = get_fields($post->ID);
+
+   print_r($fields);
    // detect hero type
-   $type = $fields['choose_hero_type'];
+   $style = $fields['style'];
 
    // a hero is either not selected, or no hero is selected
-   if( $type == 'none' || empty($type) ){
+   if( $style == 'none' || empty($style) ){
       
       $content_hero = '';        
      

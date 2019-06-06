@@ -207,7 +207,7 @@
         $footer_style = get_field('footer', 'options')['style'];
         if($footer_style == 'one'){
             $format_footer_content = '
-                <div class="container">
+                <div class="container medium">
                     %s
                     %s
                     %s
@@ -216,7 +216,7 @@
                     </div>
                 </div>
                 <div class="footer_copyright">
-                    <div class="container">
+                    <div class="container medium">
                         %s
                         %s
                     </div>
@@ -233,7 +233,7 @@
             );
         }else if($footer_style == 'two'){
             $format_footer_content = '
-                <div class="container">
+                <div class="container medium">
                     %s
                     %s
                     <div class="footer_last_div">
@@ -255,7 +255,7 @@
 
         }else if($footer_style == 'three'){
             $format_footer_content = '
-                <div class="container">
+                <div class="container medium">
                     %s
                     %s
                     %s

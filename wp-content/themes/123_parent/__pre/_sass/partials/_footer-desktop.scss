@@ -2,16 +2,15 @@
     // COMMON FOOTER DESIGNS SCSS
     footer {
         background-color: getVar($colors, accent);
-        > div.container {
+        div.container {
             margin: 0 auto;
             display: flex;
             flex-flow: row wrap;
-            width: getVar($sizing, content, medium);
             &.narrow {
 
             }
             &.medium {
-
+                width: getVar($sizing, content, medium);
             }
             &.wide {
 
@@ -144,7 +143,6 @@
     // FOOTER 1
     footer#footer_one { 
         > div.container {
-            flex-flow: row nowrap;
             > div {
                 flex: 1 0 18%;
                 margin-right: 40px;
@@ -266,12 +264,11 @@
             align-items: center;
             background-color: darken(getVar($colors, accent), 15%);
             padding: 20px 0;
-            > div.container {
+            > div {
                 margin: 0 auto;
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
-                width: getVar($sizing, content, medium);
                 justify-content: center;
                 > div {
                     flex: 1 0 50%;
@@ -429,29 +426,39 @@
 }	
 
 @media only screen and (max-width: 1280px){
-    footer > div.container {
-        padding: 0;
-        max-width: getVar($sizing, content, medium);
-    }
-    footer#footer_one {
-        > div.container {
-            flex-flow: row wrap;
-            #footer_company_info {            
-                flex: 1 0 100%;
-                .site__footer_logo {
-                    display: block;
-                    margin: 0 auto;
-                }
-                > a {
-                    text-align: center;
-                }
+    footer {
+        div.container {
+            padding: 0;
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, large);
             }
         }
-        > div.footer_copyright {
+        #footer_one {
             > div.container {
-                .site__copyright_banner {
+                flex-flow: row wrap;
+                > div {
+                    flex: 1 0 30%;
+                }
+                #footer_company_info {            
+                    flex: 1 0 100%;
+                    .site__footer_logo {
+                        display: block;
+                        margin: 0 auto;
+                    }
                     > a {
-                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            > div.footer_copyright {
+                > div.container {
+                    .site__copyright_banner {
+                        > a {
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -460,22 +467,37 @@
 }
 
 @media only screen and (max-width: 960px){
-    footer#footer_one {
-        div.footer_copyright {
-            > div.container {
-                flex-flow: column nowrap;
+    footer {
+        #footer_one {
+            div.footer_copyright {
+                > div.container {
+                    flex-flow: column nowrap;
+                }
+            }
+        }
+        #footer_two {
+            > div.container {            
+                > div.footer_last_div {
+                    > div#footer_social {
+                        flex-flow: column nowrap;
+                        > h3 {
+                            margin-right: 0;
+                        }
+                    }
+                }
             }
         }
     }
-    footer#footer_two {
-        > div.container {            
-            > div.footer_last_div {
-                > div#footer_social {
-                    flex-flow: column nowrap;
-                    > h3 {
-                        margin-right: 0;
-                    }
-                }
+}
+
+@media only screen and (max-width: 640px){
+    footer {
+        div.container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, full);
             }
         }
     }
