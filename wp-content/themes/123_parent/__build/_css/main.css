@@ -1893,7 +1893,7 @@ header#opt_header_five > div:first-of-type .site__button-quote:focus {
     transition: color 0.1s, background-color 0.1s;
     display: inline-block;
     color: #000;
-    line-height: 103px;
+    line-height: 100px;
   }
   header#opt_header_five .inner_div .navlinks .navlinks-item .navlinks-item-link:hover, header#opt_header_five .inner_div .navlinks .navlinks-item .navlinks-item-link:active, header#opt_header_five .inner_div .navlinks .navlinks-item .navlinks-item-link:focus {
     background-color: #386591;
@@ -2682,6 +2682,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
+    width: 65vw;
   }
   footer > div.container #footer_company_info {
     margin-top: 10px;
@@ -2794,7 +2795,6 @@ footer > div.container .footer_payment_types > ul > li:last-of-type {
   }
 
   footer#footer_one > div.container {
-    width: 65vw;
     flex-flow: row nowrap;
   }
   footer#footer_one > div.container > div {
@@ -2882,20 +2882,23 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     justify-content: flex-start;
   }
   footer#footer_one > div.container #footer_social .site__social-media li {
-    margin-right: 5px;
+    margin-right: 0px;
   }
   footer#footer_one > div.container #footer_social .site__social-media li a {
-    padding: 5px;
+    padding: 7px;
   }
   footer#footer_one > div.container #footer_social .site__social-media li a i {
-    font-size: 22px;
+    font-size: 20px;
     color: #ffffff;
-  }
-  footer#footer_one > div.container #footer_social .site__social-media li a i:before {
     border-radius: 100%;
     box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
-    padding: 2px 11px;
-    display: inline-block;
+    width: 45px;
+    height: 45px;
+  }
+  footer#footer_one > div.container #footer_social .site__social-media li a i:before {
+    position: relative;
+    left: 13px;
+    top: 7px;
   }
   footer#footer_one > div.footer_copyright {
     margin-top: 40px;
@@ -2969,7 +2972,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     text-align: left;
   }
   footer#footer_two > div.container {
-    width: 65vw;
     padding: 0 10px 30px;
     flex-flow: column nowrap;
     margin: 10px auto 0;
@@ -3028,7 +3030,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     text-align: center;
   }
   footer#footer_three > div.container {
-    width: 65vw;
     flex-flow: column nowrap;
     padding-bottom: 20px;
   }

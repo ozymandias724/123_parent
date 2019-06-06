@@ -6,6 +6,19 @@
             margin: 0 auto;
             display: flex;
             flex-flow: row wrap;
+            width: getVar($sizing, content, medium);
+            &.narrow {
+
+            }
+            &.medium {
+
+            }
+            &.wide {
+
+            }
+            &.full {
+
+            }
             #footer_company_info {
                 margin-top: 10px;
             }
@@ -132,7 +145,6 @@
     // FOOTER 1
     footer#footer_one { 
         > div.container {
-            width: getVar($sizing, content, medium);
             flex-flow: row nowrap;
             > div {
                 flex: 1 0 18%;
@@ -227,17 +239,20 @@
                     margin: 20px 0 10px;
                     justify-content: flex-start;
                     li {
-                        margin-right: 5px;
+                        margin-right: 0px;
                         a {
-                            padding: 5px;
+                            padding: 7px;
                             i {
-                                font-size: 22px;
+                                font-size: 20px;
                                 color: getVar($colors, white, full);
+                                border-radius: 100%;
+                                box-shadow: 0px 0px 0px  3px rgba(255, 255, 255, 0.4);
+                                width: 45px;
+                                height: 45px;
                                 &:before {
-                                    border-radius: 100%;
-                                    box-shadow: 0px 0px 0px  3px rgba(255, 255, 255, 0.4);
-                                    padding: 2px 11px;
-                                    display: inline-block;
+                                    position: relative;
+                                    left: 13px;
+                                    top: 7px;
                                 }
                             }
                         }
@@ -324,7 +339,6 @@
     footer#footer_two {
         text-align: left;
         >div.container {
-            width: getVar($sizing, content, medium);
             padding: 0 10px 30px;
             flex-flow: column nowrap;
             margin: 10px auto 0;
@@ -386,7 +400,6 @@
     footer#footer_three {
         text-align: center;
         > div.container {
-            width: getVar($sizing, content, medium);
             flex-flow: column nowrap;
             padding-bottom: 20px;
             #footer_company_info {
