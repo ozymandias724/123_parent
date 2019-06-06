@@ -292,15 +292,21 @@
                         align-items: inherit;
                         justify-content: flex-start;
                         > li {
-                            margin-right: 5px;
+                            margin-right: 7px;
                             margin-top: 10px;
                             display: initial;
-                            > i:before {
-                                font-size: 25px;
-                                padding: 5px;
-                                color: getVar($colors, white, full);
-                                border-radius: 5px;
-                                background-color: getVar($gustavo, colors, gray5);
+                            background-color: getVar($gustavo, colors, gray5);
+                            padding: 5px 7px;
+                            border-radius: 5px;
+                            // > i:before {
+                                //     font-size: 25px;
+                                //     padding: 5px;
+                                //     color: getVar($colors, white, full);
+                                //     border-radius: 5px;
+                                //     background-color: getVar($gustavo, colors, gray5);
+                            // }
+                            > img {
+                                max-width: 40px;
                             }
                         }
                         > li:last-of-type {
