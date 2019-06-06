@@ -7,14 +7,15 @@
    $fields = get_fields($post->ID);
    // detect hero type
    $type = $fields['choose_hero_type'];
+
    // a hero is either not selected, or no hero is selected
-   if( $type == 'none' || empty($type) )
-   {
+   if( $type == 'none' || empty($type) ){
+      
       $content_hero = '';        
-   }
+     
    // we have a hero type selected
-   else 
-   {
+   }else {
+
       // get all fields (options table)
       $foreground = (!empty(get_field('hero_foreground')) ? get_field('hero_foreground') : '' );
       $background = (!empty(get_field('hero_background')) ? get_field('hero_background') : '' );
@@ -30,43 +31,38 @@
       // open hero container
       $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$type.'">'; 
 
-      // hero type is static image
-      if( $type == 'image' && !empty($static_image))
-      {
+      // static image
+      if( $type == 'image' && !empty($static_image)){
 
          $format_hero = '
-               <div class="hero-bgimg" style="background-image: url(%s)" id="hero_staticimage">
-                  <div class="hero_foreground">
-                     %s
-                     %s
-                     %s
-                     %s
-                  </div>
+            <div class="container" style="background-image: url(%s)" id="hero_staticimage">
+               <div class="hero_foreground">
+                  %s
+                  %s
+                  %s
+                  %s
                </div>
+            </div>
          ';
          $content_hero .= sprintf(
-               $format_hero
-               ,$static_image['url']
-               ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-               ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
-               ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-               ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            $format_hero
+            ,$static_image['url']
+            ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+            ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
+            ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
          );
-
-      }
-
+         
       // slider
-      else if($type == 'slider' && !empty($slider_images))
-      {  
-         // open return string
-         $return_slider = '<div id="slick_slider_hero">';
+      } else if($type == 'slider' && !empty($slider_images)) {  
+         
+         $slider = '<div class="container"><div id="slick_slider_hero">';
 
-         foreach( $slider_images as $i => $rec )
-         {
-               $return_slider .= '<div><img class="slick_slider_img" src="'.$rec['url'].'"></div>';
-         }
+         foreach( $slider_images as $i => $image ){
+            $slider .= '<div><img class="slider_img" src="'.$image['url'].'"></div>';
+         } 
 
-         $return_slider .= '</div>';
+         $slider .= '</div>';
          
          $format_hero = '
                %s
@@ -75,52 +71,45 @@
                   %s    
                   %s
                   %s
-               </div> 
+               </div>
+            </div> 
          ';
          $content_hero .= sprintf(
-               $format_hero
-               ,( !empty($return_slider) ) ? $return_slider : ''
-               ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-               ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
-               ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-               ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            $format_hero
+            ,( !empty($slider) ) ? $slider : ''
+            ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+            ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
+            ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
          );
-      }
-      // /slider
-
-      // hero type is video
-      else if( $type == 'video' )
-      {
-
-         if( !empty($background['hero_video']) )
-         {
-               $video_url = $background['hero_video'];
-         }
          
+      // video
+      }else if( $type == 'video' && !empty($background['hero_video']) ){
+
+         $video_url = $background['hero_video'];
          $format_hero = '
-               <div class="hero_video-container">
-                  <video id="video_tag" autoplay muted loop title="%s"> 
-                     <source src="%s" type="video/mp4">
-                  </video>
-               </div>
+            <div class="container">
+               <video id="video_tag" autoplay muted loop> 
+                  <source src="%s" type="video/mp4">
+               </video>
                <div class="hero_foreground"> 
                   %s
                   %s
                   %s
                   %s
                </div>
+            </div>
          ';
          $content_hero .= sprintf(
-               $format_hero
-               ,( !empty($title) ) ? $title : ''
-               ,( !empty($video_url) ) ? $video_url['url'] : ''
-               ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-               ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
-               ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-               ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            $format_hero
+            ,( !empty($video_url) ) ? $video_url['url'] : ''
+            ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
+            ,( !empty($logo) ) ? '<img src="'.$logo['url'].'"/>' : ''
+            ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
+            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
          );
+         
       }
-
       // close hero container
       $content_hero .= '</section>'; 
    }

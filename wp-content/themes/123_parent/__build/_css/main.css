@@ -2780,17 +2780,14 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   footer > div.container .site__copyright_banner > a:hover, footer > div.container .site__copyright_banner > a:active, footer > div.container .site__copyright_banner > a:focus {
     opacity: 0.8;
   }
-  footer > div.container .footer_badges > ul > li,
-footer > div.container .footer_payment_types > ul > li {
+  footer > div.container .footer_payment_types > ul > li {
     display: inline-block;
     margin-right: 10px;
   }
-  footer > div.container .footer_badges > ul > li img,
-footer > div.container .footer_payment_types > ul > li img {
+  footer > div.container .footer_payment_types > ul > li img {
     max-width: 44px;
   }
-  footer > div.container .footer_badges > ul > li:last-of-type,
-footer > div.container .footer_payment_types > ul > li:last-of-type {
+  footer > div.container .footer_payment_types > ul > li:last-of-type {
     margin-right: 0;
   }
 
@@ -3116,8 +3113,8 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     z-index: 2;
   }
   section.hero .hero_foreground h2 {
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
     z-index: 2;
     color: #fff;
   }
@@ -3128,8 +3125,8 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero .hero_foreground p {
     color: #fff;
     z-index: 2;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     margin: 20px 0 30px;
   }
   section.hero .hero_foreground a {
@@ -3146,23 +3143,21 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     background-color: #386591;
     transition: background-color 0.25s;
   }
-  section.hero .hero_foreground a:hover,
-section.hero .hero_foreground a:focus,
-section.hero .hero_foreground a:active {
+  section.hero .hero_foreground a:hover, section.hero .hero_foreground a:focus, section.hero .hero_foreground a:active {
     opacity: 0.8;
   }
 
-  section.hero#hero_image > #hero_staticimage {
+  section.hero#hero_image .container {
     height: 90vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
   }
 
-  section.hero#hero_slider #slick_slider_hero {
+  section.hero#hero_slider .container #slick_slider_hero {
     margin-bottom: 0;
   }
-  section.hero#hero_slider .slick_slider_img {
+  section.hero#hero_slider .container .slider_img {
     object-fit: cover;
     position: relative;
     top: 0;
@@ -3173,15 +3168,12 @@ section.hero .hero_foreground a:active {
 
   section.hero#hero_video {
     position: relative;
-    width: 100%;
-    height: 66vh;
   }
-  section.hero#hero_video .hero_video-container {
-    position: absolute;
+  section.hero#hero_video .container {
     width: 100%;
-    height: 100%;
+    height: 90vh;
   }
-  section.hero#hero_video video {
+  section.hero#hero_video .container video {
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -3192,22 +3184,19 @@ section.hero .hero_foreground a:active {
     transform: translate(-50%, -50%);
   }
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (max-width: 1280px) {
   section.hero .hero_foreground {
-    width: 80vw;
+    width: 65vw;
   }
+}
+@media only screen and (max-width: 960px) {
   section.hero .hero_foreground > h2 {
-    font-size: 7.2rem;
-    line-height: 9.6rem;
-  }
-  section.hero .hero_foreground > p {
     font-size: 3.4rem;
     line-height: 4.8rem;
   }
-}
-@media only screen and (min-width: 1280px) {
-  section.hero .hero_foreground {
-    width: 65vw;
+  section.hero .hero_foreground > p {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
   }
 }
 @media only screen {

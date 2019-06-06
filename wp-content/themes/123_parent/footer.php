@@ -5,8 +5,7 @@
  *  logo, company info, address
  *  nav links
  *  payment types
- *  social icoms
- *  badges
+ *  social icons
  *  copyright section
  */
 
@@ -24,31 +23,6 @@
                 ,(!empty($field['copyright_banner']['target']) ? $field['copyright_banner']['target'] : '')
                 ,(!empty($field['copyright_banner']['title']) ? $field['copyright_banner']['title'] : '')
             );
-        }
-        return $return;
-    }
-
-    function get_badges(){
-        $return = '';
-        $field = get_field('footer', 'options');
-        $footer_style = get_field('footer', 'options')['style'];
-        if( !empty($field['badges']) ){
-
-            $return .= '<div class="footer_badges"><ul>';
-
-            $format = '
-                <li><a href="%s" title="%s" target="%s"><img src="%s" alt=""></a></li>
-            ';
-            foreach( $field['badges'] as $badge ){
-                $return .= sprintf(
-                    $format
-                    ,(!empty($badge['link']['url']) ? $badge['link']['url'] : 'javascript:;')
-                    ,(!empty($badge['link']['title']) ? $badge['link']['title'] : '')
-                    ,(!empty($badge['link']['target']) ? $badge['link']['target'] : '')
-                    ,(!empty($badge['image']['url']) ? $badge['image']['url'] : '')
-                );
-            }
-            $return .= '</ul></div>';
         }
         return $return;
     }
@@ -262,7 +236,6 @@
                 <div class="container">
                     %s
                     %s
-                    %s
                     <div class="footer_last_div">
                         %s
                         <div id="footer_social">
@@ -276,7 +249,6 @@
                 $format_footer_content
                 ,get_company_info()
                 ,get_copyright_banner()
-                ,get_badges()
                 ,get_payment_types()
                 ,(!empty(get_social_icons()) ? '<h3>Follow Us</h3>'.get_social_icons():'')
             );
@@ -287,14 +259,12 @@
                     %s
                     %s
                     %s
-                    %s
                 </div>
             ';
             $return = sprintf(
                 $format_footer_content
                 ,get_company_info()
                 ,get_copyright_banner()
-                ,get_badges()
                 ,get_payment_types() 
             );
         }
