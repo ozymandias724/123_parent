@@ -132,7 +132,20 @@ $(document).ready(function() {
         PopUps.Timed = {
             overlay : $('#popups__timed_overlay')
             ,_init : function(){
-                
+                setTimeout( function(){ 
+                    $('body').addClass('js__noscroll');
+                    PopUps.Timed.overlay.addClass('popups__timed_active');
+                }, timed_overlay.first_view * 1000);
+                PopUps.Timed.overlay.on('click', PopUps.Timed._clickedOverlayBG);
+                $('.overlay__closebutton').on('click', PopUps.Timed._closePopUp);
+            }
+            ,_closePopUp : function(){
+                $('body').removeClass('js__noscroll');
+                PopUps.Timed.overlay.removeClass('popups__timed_active');
+            }
+            ,_clickedOverlayBG : function(){
+                $('body').removeClass('js__noscroll');
+                PopUps.Timed.overlay.removeClass('popups__timed_active');
             }
         }
         PopUps.Banner._init();
@@ -407,92 +420,6 @@ Theme.Parallax = {
         }
     }
 }
-
-// Theme.Popups = {
-//     popups: $(".popup"),
-//     quote_btn: $(".site__button-quote"),
-//     header_popup: $("#header_popup"),
-//     timed_popup: $("#timed_overlay_popup"),
-//     header_popup_times: $("#header_popup .popup_close"),
-//     timed_popup_times: $("#timed_overlay_popup .popup_close"),
-//     timed_first_view: $("#timed_overlay_popup").attr("data-first-view"),
-//     timed_second_view: $("#timed_overlay_popup").attr("data-second-view"),
-//     banner_popup: $("#banner_popup"),
-//     banner_popup_button: $("#banner_popup_button"),
-//     banner_popup_link: $("#banner_popup_button a"),
-//     banner_popup_times: $("#banner_popup .popup_close"),
-
-//     _init: function () {
-//         $(Theme.Popups.quote_btn).on("click", Theme.Popups.header_click_handler);
-//         $(Theme.Popups.header_popup_times).on("click", Theme.Popups._header_popup_close);
-//         $(Theme.Popups.header_popup).on("click", Theme.Popups._header_popup_section_close);
-
-//         if (Theme.Popups.timed_popup.length) Theme.Popups._start_timed_popup();
-//         $(Theme.Popups.timed_popup_times).on("click", Theme.Popups._timed_popup_close);
-//         $(Theme.Popups.timed_popup).on("click", Theme.Popups._timed_popup_section_close);
-
-//         Theme.Popups._banner_popup_button();
-//         $(Theme.Popups.banner_popup).on("click", Theme.Popups._banner_popup_section_close);
-//         $(Theme.Popups.banner_popup_link).on("click", Theme.Popups._banner_click_handler);
-//         $(Theme.Popups.banner_popup_times).on("click", Theme.Popups._banner_popup_close);
-
-//     },
-//     header_click_handler: function () {
-//         Theme.Popups.header_popup.fadeIn(250);
-//     },
-//     _header_popup_close: function () {
-//         Theme.Popups.header_popup.fadeOut(250);
-//     },
-//     _header_popup_section_close: function (event) {
-//         if (event.target == event.currentTarget) Theme.Popups.header_popup.fadeOut(250);
-//     },
-//     _timed_popup_close: function () {
-//         Theme.Popups.timed_popup.fadeOut(250);
-//         Theme.Popups._increase_timed_views();
-//     },
-//     _timed_popup_section_close: function (event) {
-//         if (event.target == event.currentTarget) Theme.Popups.timed_popup.fadeOut(250, function () {
-//              Theme.Popups._increase_timed_views();
-//         });
-//     },
-//     _resize_close: function () {
-//         Theme.Popups.popups.hide();
-//         Theme.Popups._increase_timed_views();
-//     },
-//     _increase_timed_views: function () {
-//         var views = $("#timed_overlay_popup").attr("data-viewed");
-//         views++;
-//         $("#timed_overlay_popup").attr("data-viewed", views);
-//         Theme.Popups._start_timed_popup_second();
-//     },
-//     _start_timed_popup: function () {
-//         setTimeout(function () {
-//             Theme.Popups.timed_popup.fadeIn(100);
-//         }, Theme.Popups.timed_first_view * 1000);
-//     },
-//     _start_timed_popup_second: function () {
-//         var views = $("#timed_overlay_popup").attr("data-viewed");
-//         views = parseInt(views);
-//         if (!(views > 1)) {
-//             setTimeout(function () {
-//                 Theme.Popups.timed_popup.fadeIn(100);
-//             }, Theme.Popups.timed_second_view * 1000);
-//         }
-//     },
-//     _banner_click_handler: function () {
-//         Theme.Popups.banner_popup.fadeIn(250);
-//     },
-//     _banner_popup_close: function () {
-//         Theme.Popups.banner_popup.fadeOut(250);
-//     },
-//     _banner_popup_section_close: function (event) {
-//         if (event.target == event.currentTarget) Theme.Popups.banner_popup.fadeOut(250);
-//     },
-//     _banner_popup_button: function () {
-//         $("header.header").prepend(Theme.Popups.banner_popup_button);
-//     },
-// }
-// Theme.Popups._init();
 
 
 // Theme.PA = {

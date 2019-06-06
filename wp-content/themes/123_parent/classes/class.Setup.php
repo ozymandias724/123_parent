@@ -132,6 +132,11 @@ class SetupTheme
         // 
 		wp_localize_script( 'main', 'DisableTimedPopup', json_encode(get_field('ad-disable', 'option')) );
 
+		// Pass ACF fields from Timed Overlay
+		wp_localize_script('main', 'timed_overlay' , array(
+			'first_view' => get_field('popups', 'options')['timed_overlay']['first_view_timer']
+		));
+
 		//Pass acf fields from Hero section to main.js
 		wp_localize_script('main', 'hero_fields', array(
             //'title' => get_field('hero_title', 'options')
