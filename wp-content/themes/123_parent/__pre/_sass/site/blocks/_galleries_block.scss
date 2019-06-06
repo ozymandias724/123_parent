@@ -6,35 +6,53 @@
     // 
     section.block__galleries {
 
-        >.container {
+        // 
+        > .container {
 
             // wrapper for tabs and grids, to control the layout for a sidebar etc
             .tabsandgrids_container {
-
+                // general styling for all tabs
+                margin: 0 0 getVar($sizing, gutter, px, normal);
                 .tabs {
+                    // tabs container
                     ul {
                         display: flex;
                         flex-flow: row wrap;
                         align-items: center;
+                        border-bottom: 1px solid getVar($colors, black, full);
+                        // tab
                         li {
-                            margin: 0 getVar($sizing, gutter, px, normal) getVar($sizing, gutter, px, normal) 0;
-                            text-transform: uppercase;
-                            letter-spacing: 0.33px;
+                            margin: 0;
+                            // tab text
                             a {
+                                display: block;
+                                padding: 0 getVar($sizing, gutter, px, small);
+                                text-transform: uppercase;
+                                letter-spacing: 0.33px;
                                 font-weight: 600;
                                 letter-spacing: 1px;
-                                border: 2px solid rgba(getVar($colors, black, full), 1);
-                                padding: 0 getVar($sizing, gutter, px, small);
                                 white-space: nowrap;
                                 line-height: 44px;
-                                display: block;
                                 color: getVar($colors, black, full);
+                            }
+                            &.tab_active {
+                                border: 1px solid getVar($colors, black, full);
+                                border-bottom: none;
                             }
                         }
                     }
                 }
-
+                // 
                 .galleries {
+
+                    // a gallery wrapper
+                    > div.site__grid {
+                        // gallery title
+                        > h2 {
+                            margin: getVar($sizing, gutter, px, normal) 0;
+                        }
+                    }
+
                     >div.site__grid.hidden_gallery {
                         display: none;
                     }
@@ -44,6 +62,82 @@
 
                     }
                 }
+
+                // adjustments for the different tab styles
+                &.none {}
+                &.divider {
+                    .tabs {
+                        > ul {
+                            > li {
+                                > a {
+                                }
+                                &:hover,
+                                &.tab_active {
+                                    >a {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.pill {
+                    .tabs {
+                        >ul {
+                            justify-content: center;
+                            >li {
+                                border-radius: 14px;    
+                                border: 1px solid getVar($colors, black, full);
+                                margin: 0 getVar($sizing, gutter, px, small) getVar($sizing, gutter, px, small) 0;
+                                >a {}
+
+                                &:hover,
+                                &.tab_active {
+                                    >a {}
+                                }
+                            }
+                        }
+                    }
+                }
+                &.sidebar {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    .tabs {
+                        flex: 1;
+                        margin-right: getVar($sizing, gutter, px, large);
+                        > ul {
+                            margin-top: 20%;
+                            height: 80%;
+                            flex-flow: column nowrap;
+                            border: none;
+                            border-right: 1px solid getVar($colors, black, full);
+                            > li {
+                                border: none;
+                                border-bottom: 1px solid getVar($colors, black, full);
+                                margin: getVar($sizing, gutter, px, small) 0;
+                            }
+                        }
+                    }
+                    > .galleries {
+                        $w: getVar($sizing, content, small);
+                        $c : 3;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        width: $w;
+                        margin: 0 auto 0 auto;
+                        
+                        
+                        // --- not sure if this should be here
+                        // &.hasbg {
+                        //     width: ($w + (2 * $g));
+                        //     padding: $g;
+                        // }
+
+                        .site__grid {
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
+                
             }
         }
     }

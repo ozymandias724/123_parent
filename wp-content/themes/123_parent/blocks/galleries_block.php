@@ -27,7 +27,7 @@
 
             // create a tab for each gallery
             if( $cB['tab_type'] !== 'none' ){
-                $return['tabs'] .= '<li><a href="javascript:;" style="color:'.$cB['foreground_color'].';">'.$gallery['title'].'</a></li>';
+                $return['tabs'] .= '<li class="'.( ($i === 0 ) ? 'tab_active' : '' ).'"><a href="javascript:;" style="color:'.$cB['foreground_color'].';">'.$gallery['title'].'</a></li>';
             }
 
             // open the galleries grid

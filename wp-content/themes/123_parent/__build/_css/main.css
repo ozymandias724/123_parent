@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 /* Slider */
+@import '../../node_modules/magnific-popup/dist/magnific-popup.css';
 @import '../../node_modules/paymentfont/css/paymentfont.min.css';
 .slick-slider {
   position: relative;
@@ -5225,31 +5226,106 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
   }
 }
 @media only screen {
+  section.block__galleries > .container .tabsandgrids_container {
+    margin: 0 0 30px;
+  }
   section.block__galleries > .container .tabsandgrids_container .tabs ul {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    border-bottom: 1px solid #000000;
   }
   section.block__galleries > .container .tabsandgrids_container .tabs ul li {
-    margin: 0 30px 30px 0;
-    text-transform: uppercase;
-    letter-spacing: 0.33px;
+    margin: 0;
   }
   section.block__galleries > .container .tabsandgrids_container .tabs ul li a {
+    display: block;
+    padding: 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.33px;
     font-weight: 600;
     letter-spacing: 1px;
-    border: 2px solid black;
-    padding: 0 15px;
     white-space: nowrap;
     line-height: 44px;
-    display: block;
     color: #000000;
+  }
+  section.block__galleries > .container .tabsandgrids_container .tabs ul li.tab_active {
+    border: 1px solid #000000;
+    border-bottom: none;
+  }
+  section.block__galleries > .container .tabsandgrids_container .galleries > div.site__grid > h2 {
+    margin: 30px 0;
   }
   section.block__galleries > .container .tabsandgrids_container .galleries > div.site__grid.hidden_gallery {
     display: none;
   }
   section.block__galleries > .container .tabsandgrids_container .galleries > div.site__grid.current_gallery {
     display: block;
+  }
+  section.block__galleries > .container .tabsandgrids_container.pill .tabs > ul {
+    justify-content: center;
+  }
+  section.block__galleries > .container .tabsandgrids_container.pill .tabs > ul > li {
+    border-radius: 14px;
+    border: 1px solid #000000;
+    margin: 0 15px 15px 0;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar .tabs {
+    flex: 1;
+    margin-right: 60px;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul {
+    margin-top: 20%;
+    height: 80%;
+    flex-flow: column nowrap;
+    border: none;
+    border-right: 1px solid #000000;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul > li {
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin: 15px 0;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries {
+    width: 50vw;
+    margin: 0 auto 0 auto;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul {
+    width: 50vw;
+    margin: 0 auto 0 auto;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li {
+    width: 15.3333333333vw;
+    height: auto;
+    float: left;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li > a {
+    display: block;
+    width: 100%;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
+section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
+    display: block;
+    overflow: hidden;
+    height: 15.3333333333vw;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li:nth-child(3n) {
+    margin: 0 0 2vw 0;
   }
 }
 @media only screen {
