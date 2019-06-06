@@ -61,20 +61,20 @@
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
 
-        if($footer_style == 'one'){
-            $return = '
-                <div class="footer_payment_types">
-                    <ul>
-                        <li><i class="pf pf-stripe"></i></li>
-                        <li><i class="pf pf-paypal"></i></li>
-                        <li><i class="pf pf-visa"></i></li>
-                        <li><i class="pf pf-mastercard"></i></li>
-                        <li><i class="pf pf-discover"></i></li>
-                        <li><i class="pf pf-american-express"></i></li>
-                    </ul>
-                </div>
-            ';
-        }else{
+        // if($footer_style == 'one'){
+        //     $return = '
+        //         <div class="footer_payment_types">
+        //             <ul>
+        //                 <li><i class="pf pf-stripe"></i></li>
+        //                 <li><i class="pf pf-paypal"></i></li>
+        //                 <li><i class="pf pf-visa"></i></li>
+        //                 <li><i class="pf pf-mastercard"></i></li>
+        //                 <li><i class="pf pf-discover"></i></li>
+        //                 <li><i class="pf pf-american-express"></i></li>
+        //             </ul>
+        //         </div>
+        //     ';
+        // }else{
             if( !empty($field['payment_types']) ){
 
                 $return .= '<div class="footer_payment_types"><ul>';
@@ -90,7 +90,7 @@
                 }
                 $return .= '</ul></div>';
             }
-        }
+        // }
         return $return;
     }
 
