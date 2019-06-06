@@ -132,10 +132,12 @@ $(document).ready(function() {
         PopUps.Timed = {
             overlay : $('#popups__timed_overlay')
             ,_init : function(){
-                setTimeout( function(){ 
-                    $('body').addClass('js__noscroll');
-                    PopUps.Timed.overlay.addClass('popups__timed_active');
-                }, timed_overlay.first_view * 1000);
+                if(PopUps.Timed.overlay.length){
+                    setTimeout( function(){ 
+                        $('body').addClass('js__noscroll');
+                        PopUps.Timed.overlay.addClass('popups__timed_active');
+                    }, timed_overlay.first_view * 1000);
+                }
                 PopUps.Timed.overlay.on('click', PopUps.Timed._clickedOverlayBG);
                 $('.overlay__closebutton').on('click', PopUps.Timed._closePopUp);
             }

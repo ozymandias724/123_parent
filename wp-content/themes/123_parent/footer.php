@@ -10,8 +10,7 @@
  *  copyright section
  */
 
-    function get_copyright_banner()
-    {
+    function get_copyright_banner(){
         $return = '';
         $field = get_field('footer', 'options');
         if( !empty($field['copyright_banner']) ){
@@ -29,8 +28,7 @@
         return $return;
     }
 
-    function get_badges()
-    {
+    function get_badges(){
         $return = '';
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
@@ -55,8 +53,7 @@
         return $return;
     }
 
-    function get_payment_types()
-    {
+    function get_payment_types(){
         $return = '';
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
@@ -112,8 +109,7 @@
         return $return;
     }
 
-    function get_company_info()
-    {
+    function get_company_info(){
         $footer_style = get_field('footer', 'options')['style'];
         $logo = get_footer_logo();
         $address = (!empty(get_full_address_br()) ? '<a class="footer_address" href="javascript:;">'.get_full_address_br().'</a>': '');
@@ -147,6 +143,26 @@
                 ,$phone_number_2
             );
         }else if($footer_style == 'two'){
+            $address = (!empty(get_full_address()) ? '<a class="footer_address" href="javascript:;">'.get_full_address().'</a>': '');
+            $format = '
+                <div id="footer_company_info">
+                    %s
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
+            ';
+            $company_info = sprintf(
+                $format
+                ,$logo
+                ,get_nav()
+                ,$address
+                ,$phone_number_1
+                ,$phone_number_2
+            );
+        }else if($footer_style == 'three'){
+            $address = (!empty(get_full_address()) ? '<a class="footer_address" href="javascript:;">'.get_full_address().'</a>': '');
             $format = '
                 <div id="footer_company_info">
                     %s
@@ -166,30 +182,11 @@
                 ,$phone_number_1
                 ,$phone_number_2
             );
-        }else if($footer_style == 'three'){
-            $format = '
-                <div id="footer_company_info">
-                    %s
-                    %s
-                    %s
-                    %s
-                    %s
-                </div>
-            ';
-            $company_info = sprintf(
-                $format
-                ,$logo
-                ,get_nav()
-                ,$address
-                ,$phone_number_1
-                ,$phone_number_2
-            );
         }
         return $company_info;
     }
 
-    function get_nav()
-    {
+    function get_nav(){
         $footer_style = get_field('footer', 'options')['style'];
         if($footer_style == 'one'){
             $format_nav = '
@@ -289,24 +286,6 @@
                     %s
                     %s
                     %s
-                    %s
-                </div>
-            ';
-
-            $return = sprintf(
-                $format_footer_content
-                ,get_company_info()
-                ,get_copyright_banner()
-                ,get_badges()
-                ,get_payment_types() 
-            );
-
-        }else if($footer_style == 'three'){
-            $format_footer_content = '
-                <div class="container">
-                    %s
-                    %s
-                    %s
                     <div class="footer_last_div">
                         %s
                         <div id="footer_social">
@@ -323,6 +302,24 @@
                 ,get_badges()
                 ,get_payment_types()
                 ,(!empty(get_social_icons()) ? '<h3>Follow Us</h3>'.get_social_icons():'')
+            );
+
+        }else if($footer_style == 'three'){
+            $format_footer_content = '
+                <div class="container">
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
+            ';
+
+            $return = sprintf(
+                $format_footer_content
+                ,get_company_info()
+                ,get_copyright_banner()
+                ,get_badges()
+                ,get_payment_types() 
             );
         }
         return $return;

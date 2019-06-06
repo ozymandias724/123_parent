@@ -50,7 +50,7 @@
                         }
                     }
                     .navlinks-item:last-of-type .navlinks-item-link:after {
-                        border-right: none;
+                        display: none;
                     }
                 }
             }
@@ -192,6 +192,9 @@
                     }
                     .navlinks-item:last-of-type > a {
                         border-bottom: 1px solid transparent; 
+                        &:after {
+                            border-right: none;
+                        }
                     }
                 }
             }
@@ -311,8 +314,70 @@
             }
         }
     }
-    // FOOTER 2
+    //FOOTER 2
     footer#footer_two {
+        text-align: left;
+        >div.container {
+            width: getVar($sizing, content, medium);
+            padding: 0 10px 30px;
+            flex-flow: column nowrap;
+            margin: 10px auto 0;
+            > #footer_company_info {
+                margin: 0;
+                > div#footer_nav {
+                    border-bottom: 4px dotted $white;
+                    > nav > ul.navlinks {
+                        margin-bottom: 15px;
+                        margin-left: -10px;
+                    }
+                }
+                > a {
+                    display: inline-block;
+                    margin: 10px 20px 0 0;
+                }
+            }
+            > div.site__copyright_banner {
+                margin: 0 0 20px 0;
+                > a {
+                    max-width: 350px;   
+                    padding: 5px;
+                    line-height: 2rem;
+                    > span {
+                        display: block;
+                    }
+                }
+            }
+            > div.footer_last_div {
+                display: flex;
+                justify-content: space-between;
+                > div.footer_payment_types {
+                    padding: 5px;
+                }
+                > div#footer_social {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    > h3 {
+                        margin-right: 20px;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        @include fontS-14;
+                        letter-spacing: 0.5px;
+                    }
+                    > ul.site__social-media {
+                        > li {
+                            > a {
+                                padding: 0 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // FOOTER 3
+    footer#footer_three {
         text-align: center;
         > div.container {
             > a:last-of-type {
@@ -333,51 +398,6 @@
             }
             .footer_payment_types {
                 margin: 10px 0;
-            }
-        }
-    }
-    //FOOTER 3
-    footer#footer_three {
-        text-align: left;
-        >div.container {
-            padding: 0 10px;
-            #footer_nav {
-                border-bottom: 4px dotted $white;
-                .navlinks {
-                    margin: -10px 0 0 -10px;
-                }
-            }
-            .site__social-media {
-                margin: 0;
-            }
-            .footer_address {   
-                margin: 10px 20px 0 0;
-            }
-            .site__copyright_banner {
-                margin: 0 0 10px 0;
-                > a {
-                    max-width: 350px;   
-                    padding: 5px;
-                }
-            }
-            .footer_payment_types {
-                padding: 5px;
-            }
-            .footer_three_last_div,
-            .footer_three_social_media {
-                align-items: center;
-                display: flex;
-                justify-content: space-between;
-            }
-            .footer_three_social_media {
-                > p {
-                    margin-right: 20px;
-                    color: $white;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    @include fontS-14;
-                    letter-spacing: 0.5px;
-                }
             }
         }
     }
@@ -419,6 +439,18 @@
         div.footer_copyright {
             > div.container {
                 flex-flow: column nowrap;
+            }
+        }
+    }
+    footer#footer_two {
+        > div.container {            
+            > div.footer_last_div {
+                > div#footer_social {
+                    flex-flow: column nowrap;
+                    > h3 {
+                        margin-right: 0;
+                    }
+                }
             }
         }
     }
