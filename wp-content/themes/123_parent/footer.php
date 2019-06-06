@@ -61,20 +61,35 @@
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
 
-        if( !empty($field['payment_types']) ){
-
-            $return .= '<div class="footer_payment_types"><ul>';
-
-            $format = '
-                <li><img src="%s" alt=""></li>
+        if($footer_style == 'one'){
+            $return = '
+                <div class="footer_payment_types">
+                    <ul>
+                        <li><i class="pf pf-stripe"></i></li>
+                        <li><i class="pf pf-paypal"></i></li>
+                        <li><i class="pf pf-visa"></i></li>
+                        <li><i class="pf pf-mastercard"></i></li>
+                        <li><i class="pf pf-discover"></i></li>
+                        <li><i class="pf pf-american-express"></i></li>
+                    </ul>
+                </div>
             ';
-            foreach( $field['payment_types'] as $type ){
-                $return .= sprintf(
-                    $format
-                    ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
-                );
+        }else{
+            if( !empty($field['payment_types']) ){
+
+                $return .= '<div class="footer_payment_types"><ul>';
+    
+                $format = '
+                    <li><img src="%s" alt=""></li>
+                ';
+                foreach( $field['payment_types'] as $type ){
+                    $return .= sprintf(
+                        $format
+                        ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
+                    );
+                }
+                $return .= '</ul></div>';
             }
-            $return .= '</ul></div>';
         }
         return $return;
     }
@@ -82,8 +97,7 @@
     function get_footer_logo(){
         $return = '';
         $field = get_field('footer', 'options');
-        if( !empty($field['logo']) )
-        {
+        if( !empty($field['logo']) ){
             $format = '
                 <a class="site__footer_logo" href="%s" title="Footer logo button">
                     <div style="background-image:url(%s);"></div>
@@ -116,8 +130,7 @@
                 %s
             </div>
         ';
-        if($footer_style == 'one')
-        {
+        if($footer_style == 'one'){
             $format = '
                 <div id="footer_company_info">
                     %s
@@ -133,9 +146,7 @@
                 ,$phone_number_1
                 ,$phone_number_2
             );
-        }
-        else if($footer_style == 'two')
-        {
+        }else if($footer_style == 'two'){
             $format = '
                 <div id="footer_company_info">
                     %s
@@ -155,9 +166,7 @@
                 ,$phone_number_1
                 ,$phone_number_2
             );
-        }
-        else if($footer_style == 'three')
-        {
+        }else if($footer_style == 'three'){
             $format = '
                 <div id="footer_company_info">
                     %s
@@ -182,8 +191,7 @@
     function get_nav()
     {
         $footer_style = get_field('footer', 'options')['style'];
-        if($footer_style == 'one')
-        {
+        if($footer_style == 'one'){
             $format_nav = '
                 <div id="footer_nav">
                     <h3 class="nav_title">Navigate</h3>
@@ -192,9 +200,7 @@
                     </nav>
                 </div>
             ';
-        }
-        else
-        {
+        }else{
             $format_nav = '
                 <div id="footer_nav">
                     <nav>
@@ -211,8 +217,7 @@
         return $nav;
     }
 
-    function get_recent_posts()
-    {
+    function get_recent_posts(){
         $return = '';
         $query = new WP_Query(array(
             'posts_per_page' => 3,
@@ -220,8 +225,7 @@
         ));
         $posts = get_posts($query);
         
-        if(!empty($posts))
-        {
+        if(!empty($posts)){
             $format = '
                 <div id="footer_posts">
                     <h3>Recent Posts</h3>
@@ -249,12 +253,10 @@
         return $return;
     }
 
-    function get_footer_content()
-    {
+    function get_footer_content(){
         $footer_style = get_field('footer', 'options')['style'];
 
-        if($footer_style == 'one')
-        {
+        if($footer_style == 'one'){
             $format_footer_content = '
                 <div class="container">
                     %s
@@ -281,9 +283,7 @@
                 ,get_copyright_banner()
                 ,get_payment_types()
             );
-        }
-        else if($footer_style == 'two')
-        {
+        }else if($footer_style == 'two'){
             $format_footer_content = '
                 <div class="container">
                     %s
@@ -301,9 +301,7 @@
                 ,get_payment_types() 
             );
 
-        }
-        else if($footer_style == 'three')
-        {
+        }else if($footer_style == 'three'){
             $format_footer_content = '
                 <div class="container">
                     %s

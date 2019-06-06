@@ -2798,9 +2798,9 @@ footer > div.container .footer_payment_types > ul > li:last-of-type {
     flex-flow: row nowrap;
   }
   footer#footer_one > div.container > div {
-    flex: 1 0 23%;
+    flex: 1 0 18%;
     margin-right: 40px;
-    margin-top: 50px;
+    margin-top: 40px;
   }
   footer#footer_one > div.container > div:last-of-type {
     margin-right: 0;
@@ -2816,8 +2816,7 @@ footer > div.container .footer_payment_types > ul > li:last-of-type {
     line-height: 3.2rem;
   }
   footer#footer_one > div.container #footer_company_info {
-    margin-top: 30px;
-    margin-right: 0;
+    margin-top: 20px;
   }
   footer#footer_one > div.container #footer_company_info .footer_phone_1,
 footer#footer_one > div.container #footer_company_info .footer_phone_2,
@@ -2895,7 +2894,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     display: inline-block;
   }
   footer#footer_one > div.footer_copyright {
-    margin-top: 50px;
+    margin-top: 40px;
     text-align: center;
     justify-content: space-between;
     align-items: center;
@@ -2920,7 +2919,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a {
     color: #ffffff;
     text-align: left;
-    width: 100%;
+    width: 75%;
     font-weight: 500;
   }
   footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a > span {
@@ -2945,13 +2944,15 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     justify-content: flex-start;
   }
   footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li {
-    margin-right: 10px;
+    margin-right: 5px;
     display: initial;
   }
-  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li img {
-    max-width: 70px;
-    max-height: 70px;
-    margin: 10px 0;
+  footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li > i:before {
+    font-size: 25px;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: rgba(193, 206, 220, 0.2);
   }
   footer#footer_one > div.footer_copyright > div.container .footer_payment_types ul > li:last-of-type {
     margin-right: 0;
@@ -3033,50 +3034,27 @@ footer#footer_three > div.container .footer_three_social_media {
     padding: 0;
     max-width: 65vw;
   }
-  footer > div.container .footer_address,
-footer > div.container a[class^=footer_phone] {
-    display: inline-block;
-  }
-  footer > div.container .site__social-media > li:last-of-type {
-    margin-right: -10px;
-  }
 
-  footer#footer_one div.container:first-of-type {
-    padding-top: 40px;
-  }
-  footer#footer_one div.container #footer_company_info {
-    flex: 1 0 25%;
-    margin-top: 0;
-    text-align: left;
-    margin-right: 5px;
-  }
-  footer#footer_one div.container #footer_company_info .site__social-media {
-    justify-content: flex-start;
-    margin: 10px 0 10px;
-  }
-  footer#footer_one div.container section#footer_nav_section,
-footer#footer_one div.container section.footer_payment_types {
-    margin-right: 40px;
-  }
-  footer#footer_one div.container section#footer_nav_section,
-footer#footer_one div.container section.footer_payment_types,
-footer#footer_one div.container section.footer_badges {
-    flex: 1 0 20%;
-  }
-  footer#footer_one div.container section,
-footer#footer_one div.container div.site__copyright_banner {
-    margin-bottom: 0;
-  }
-  footer#footer_one div.container div.site__copyright_banner {
-    margin: 10px auto;
-  }
-}
-@media only screen and (max-width: 960px) {
   footer#footer_one > div.container {
     flex-flow: row wrap;
   }
   footer#footer_one > div.container #footer_company_info {
     flex: 1 0 100%;
+  }
+  footer#footer_one > div.container #footer_company_info .site__footer_logo {
+    display: block;
+    margin: 0 auto;
+  }
+  footer#footer_one > div.container #footer_company_info > a {
+    text-align: center;
+  }
+  footer#footer_one > div.footer_copyright > div.container .site__copyright_banner > a {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  footer#footer_one div.footer_copyright > div.container {
+    flex-flow: column nowrap;
   }
 }
 @media only screen {

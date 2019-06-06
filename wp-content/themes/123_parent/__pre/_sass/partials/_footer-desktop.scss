@@ -135,9 +135,9 @@
             width: getVar($sizing, content, medium);
             flex-flow: row nowrap;
             > div {
-                flex: 1 0 23%;
+                flex: 1 0 18%;
                 margin-right: 40px;
-                margin-top: 50px;
+                margin-top: 40px;
             }
             > div:last-of-type {
                 margin-right: 0;
@@ -152,8 +152,7 @@
                 @include fontS-20;
             }
             #footer_company_info {
-                margin-top: 30px;
-                margin-right: 0;
+                margin-top: 20px;
                 .footer_phone_1, 
                 .footer_phone_2,
                 .footer_address {
@@ -243,7 +242,7 @@
             }
         }
         > div.footer_copyright {
-            margin-top: 50px;
+            margin-top: 40px;
             text-align: center;
             justify-content: space-between;
             align-items: center;
@@ -265,7 +264,7 @@
                     > a {
                         color: getVar($colors, white, full);
                         text-align: left;
-                        width: 100%;
+                        width: 75%;
                         font-weight: 500;
                         > span {
                             display: block;
@@ -289,12 +288,14 @@
                         align-items: inherit;
                         justify-content: flex-start;
                         > li {
-                            margin-right: 10px;
+                            margin-right: 5px;
                             display: initial;
-                            img {
-                                max-width: 70px;
-                                max-height: 70px;
-                                margin: 10px 0;
+                            > i:before {
+                                font-size: 25px;
+                                padding: 5px;
+                                color: getVar($colors, white, full);
+                                border-radius: 5px;
+                                background-color: getVar($gustavo, colors, gray5);
                             }
                         }
                         > li:last-of-type {
@@ -385,44 +386,28 @@
     footer > div.container {
         padding: 0;
         max-width: getVar($sizing, content, medium);
-        .footer_address,
-        a[class^='footer_phone'] {
-            display: inline-block;
-        }
-        .site__social-media > li:last-of-type {
-            margin-right: -10px;
-        }
     }
     footer#footer_one {
-        div.container {
-            &:first-of-type {
-                padding-top: 40px;
-            }
-            #footer_company_info {
-                flex: 1 0 25%;
-                margin-top: 0;
-                text-align: left;
-                margin-right: 5px;
-                .site__social-media {
-                    justify-content: flex-start;
-                    margin: 10px 0 10px;
+        > div.container {
+            flex-flow: row wrap;
+            #footer_company_info {            
+                flex: 1 0 100%;
+                .site__footer_logo {
+                    display: block;
+                    margin: 0 auto;
+                }
+                > a {
+                    text-align: center;
                 }
             }
-            section#footer_nav_section,
-            section.footer_payment_types {
-                margin-right: 40px;
-            }
-            section#footer_nav_section,
-            section.footer_payment_types,
-            section.footer_badges {
-                flex: 1 0 20%;
-            }
-            section,
-            div.site__copyright_banner {
-                margin-bottom: 0;
-            }
-            div.site__copyright_banner {
-                margin: 10px auto;
+        }
+        > div.footer_copyright {
+            > div.container {
+                .site__copyright_banner {
+                    > a {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
@@ -430,10 +415,9 @@
 
 @media only screen and (max-width: 960px){
     footer#footer_one {
-        > div.container {
-            flex-flow: row wrap;
-            #footer_company_info {
-                flex: 1 0 100%;
+        div.footer_copyright {
+            > div.container {
+                flex-flow: column nowrap;
             }
         }
     }
