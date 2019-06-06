@@ -57,37 +57,21 @@
         $return = '';
         $field = get_field('footer', 'options');
         $footer_style = get_field('footer', 'options')['style'];
+        if( !empty($field['payment_types']) ){
 
-        // if($footer_style == 'one'){
-        //     $return = '
-        //         <div class="footer_payment_types">
-        //             <ul>
-        //                 <li><i class="pf pf-stripe"></i></li>
-        //                 <li><i class="pf pf-paypal"></i></li>
-        //                 <li><i class="pf pf-visa"></i></li>
-        //                 <li><i class="pf pf-mastercard"></i></li>
-        //                 <li><i class="pf pf-discover"></i></li>
-        //                 <li><i class="pf pf-american-express"></i></li>
-        //             </ul>
-        //         </div>
-        //     ';
-        // }else{
-            if( !empty($field['payment_types']) ){
+            $return .= '<div class="footer_payment_types"><ul>';
 
-                $return .= '<div class="footer_payment_types"><ul>';
-    
-                $format = '
-                    <li><img src="%s" alt=""></li>
-                ';
-                foreach( $field['payment_types'] as $type ){
-                    $return .= sprintf(
-                        $format
-                        ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
-                    );
-                }
-                $return .= '</ul></div>';
+            $format = '
+                <li><img src="%s" alt=""></li>
+            ';
+            foreach( $field['payment_types'] as $type ){
+                $return .= sprintf(
+                    $format
+                    ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
+                );
             }
-        // }
+            $return .= '</ul></div>';
+        }
         return $return;
     }
 
@@ -115,7 +99,6 @@
         $address = (!empty(get_full_address_br()) ? '<a class="footer_address" href="javascript:;">'.get_full_address_br().'</a>': '');
         $phone_number_1 = (!empty(get_phone_number_1()) ? '<a class="footer_phone_1" href="tel:'.get_phone_number_1().'"><span>P:</span> '.get_phone_number_1().'</a>': '');
         $phone_number_2 =(!empty(get_phone_number_2()) ? '<a class="footer_phone_2" href="tel:'.get_phone_number_2().'"><span>F:</span> '.get_phone_number_2().'</a>': '');
-
         $format_company_info = '
             <div id="footer_company_info">
                 %s
@@ -206,7 +189,6 @@
                 </div>
             ';
         }
-
         $nav = sprintf(
             $format_nav
             ,get_site_nav()
@@ -221,7 +203,6 @@
             'nopaging' => true
         ));
         $posts = get_posts($query);
-        
         if(!empty($posts)){
             $format = '
                 <div id="footer_posts">
@@ -240,19 +221,16 @@
                     ,$posts[$x]->post_title
                 );
             }
-
             $return .= sprintf(
                 $format
                 ,$the_posts
             );
         }
-
         return $return;
     }
 
     function get_footer_content(){
         $footer_style = get_field('footer', 'options')['style'];
-
         if($footer_style == 'one'){
             $format_footer_content = '
                 <div class="container">
@@ -270,7 +248,6 @@
                     </div>
                 </div>
             ';
-
             $return = sprintf(
                 $format_footer_content
                 ,get_company_info()
@@ -313,7 +290,6 @@
                     %s
                 </div>
             ';
-
             $return = sprintf(
                 $format_footer_content
                 ,get_company_info()
