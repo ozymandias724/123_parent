@@ -177,7 +177,7 @@
                 $format
                 ,$logo
                 ,get_nav()
-                ,$social_icons
+                ,(!empty(get_social_icons()) ? get_social_icons() : '')
                 ,$address
                 ,$phone_number_1
                 ,$phone_number_2

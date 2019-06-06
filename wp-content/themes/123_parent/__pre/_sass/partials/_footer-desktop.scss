@@ -380,14 +380,21 @@
     footer#footer_three {
         text-align: center;
         > div.container {
-            > a:last-of-type {
-                margin-right: 0;
-            }      
-            #footer_nav {
-                border-top: 2px solid $white;
-                border-bottom: 2px solid $white;
-                .navlinks {
-                    justify-content: center;
+            width: getVar($sizing, content, medium);
+            flex-flow: column nowrap;
+            padding-bottom: 20px;
+            #footer_company_info {
+                > a {
+                    display: inline-block;
+                    font-weight: 700;
+                }
+                #footer_nav {
+                    border-top: 2px solid $white;
+                    border-bottom: 2px solid $white;
+                    padding: 10px 0;
+                    .navlinks {
+                        justify-content: center;
+                    }
                 }
             }
             .site__social-media {
@@ -397,7 +404,7 @@
                 margin-right: 20px;
             }
             .footer_payment_types {
-                margin: 10px 0;
+                margin: 20px 0 10px;
             }
         }
     }

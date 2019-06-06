@@ -3028,14 +3028,21 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   footer#footer_three {
     text-align: center;
   }
-  footer#footer_three > div.container > a:last-of-type {
-    margin-right: 0;
+  footer#footer_three > div.container {
+    width: 65vw;
+    flex-flow: column nowrap;
+    padding-bottom: 20px;
   }
-  footer#footer_three > div.container #footer_nav {
+  footer#footer_three > div.container #footer_company_info > a {
+    display: inline-block;
+    font-weight: 700;
+  }
+  footer#footer_three > div.container #footer_company_info #footer_nav {
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
+    padding: 10px 0;
   }
-  footer#footer_three > div.container #footer_nav .navlinks {
+  footer#footer_three > div.container #footer_company_info #footer_nav .navlinks {
     justify-content: center;
   }
   footer#footer_three > div.container .site__social-media {
@@ -3045,7 +3052,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     margin-right: 20px;
   }
   footer#footer_three > div.container .footer_payment_types {
-    margin: 10px 0;
+    margin: 20px 0 10px;
   }
 }
 @media only screen and (max-width: 1280px) {
