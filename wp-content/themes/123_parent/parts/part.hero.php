@@ -92,7 +92,7 @@
          );
          
       // video
-      }else if( $type == 'video' && !empty($background_video) ){
+      }else if( $style == 'video' && !empty($background_video) ){
 
          $format_hero = '
             <div>
