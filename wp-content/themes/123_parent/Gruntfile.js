@@ -29,12 +29,12 @@ grunt.initConfig({
         },
         admin: {
             files: {
-                '__build/_css/_conditional/admin.css': '__pre/_sass/_conditional/admin.scss',
+                '__build/_css/_conditional/admin.css': '__pre/_sass/admin.scss',
             },
         },
         login: {
             files: {
-                '__build/_css/_conditional/login.css': '__pre/_sass/_conditional/login.scss',
+                '__build/_css/_conditional/login.css': '__pre/_sass/login.scss',
             },
         }
     },

@@ -14,6 +14,19 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+
+/**
+ * Populate PaymentFont select field
+ */
+add_filter('acf/load_field/name=paymentfont', 'do_populate_paymentfont_selectfield');
+function do_populate_paymentfont_selectfield($field){
+    $field['choices'] = array(
+        'visa' => 'Visa <i class="pf pf-visa"></i>'
+        ,'mastercard' => 'Mastercard <i class="pf pf-mastercard"></i>'
+    );
+    return $field;
+}
+
 /**
  * Display the ACF address
  * Must be used in the loop
