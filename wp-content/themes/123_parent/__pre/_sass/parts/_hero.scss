@@ -23,6 +23,18 @@
             left: 50%;
             width: getVar($sizing, content, full);
             z-index: 2;
+            &.narrow {
+                width: getVar($sizing, content, small);
+            }
+            &.medium {
+                width: getVar($sizing, content, medium);
+            }
+            &.wide {
+                width: getVar($sizing, content, large);
+            }
+            &.full {
+                width: getVar($sizing, content, full);
+            }
             //Title
             h2 {
                 
@@ -67,44 +79,39 @@
 
     // Hero Image
     section.hero#hero_image {     
-        .container {
-            //First div of hero image 
-            height: 90vh;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+        //First div of hero image 
+        height: 90vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
     // Hero Slider
     section.hero#hero_slider {
-        .container {
-            #slick_slider_hero {
-                margin-bottom: 0;
-            }
-            // Slider images
-            .slider_img {
-                object-fit: cover; 
-                position: relative;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                height: 90vh;
-            }
+        #slick_slider_hero {
+            margin-bottom: 0;
+        }
+        // Slider images
+        .slider_img {
+            object-fit: cover; 
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 90vh;
+            width: 100%;
         }
     }
     // Hero Video
     section.hero#hero_video { 
-        .container {
-            width: 100%;
-            height: 90vh;
-            // Video 
-            video {
-                min-width: 100%;
-                min-height: 100%;
-                width: auto;
-                height: auto;
-                @include centerer;
-            }
+        width: 100%;
+        height: 90vh;
+        // Video 
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            @include centerer;
         }
     }
 }
@@ -117,6 +124,12 @@
 
 @media only screen and (max-width: 960px){
     section.hero .hero_foreground {
+        &.narrow,
+        &.medium,
+        &.wide,
+        &.full {
+            width: getVar($sizing, content, large);
+        }
         //Title
         > h2 {
             @include fontS-34;
@@ -124,6 +137,17 @@
         //Subtitle
         > p {
             @include fontS-24;
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    section.hero .hero_foreground {
+        &.narrow,
+        &.medium,
+        &.wide,
+        &.full {
+            width: getVar($sizing, content, full);
         }
     }
 }

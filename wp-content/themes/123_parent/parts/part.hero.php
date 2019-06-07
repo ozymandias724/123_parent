@@ -44,8 +44,8 @@
       if( $type == 'image' && !empty($background_image)){
 
          $format_hero = '
-            <div class="container" style="background-image: url(%s)" id="hero_staticimage">
-               <div class="hero_foreground">
+            <div style="background-image: url(%s)" id="hero_staticimage">
+               <div class="hero_foreground container '.$width.'">
                   %s
                   %s
                   %s
@@ -65,7 +65,7 @@
       // slider
       } else if($style == 'slider' && !empty($slider_images)) {  
          
-         $slider = '<div class="container"><div id="slick_slider_hero">';
+         $slider = '<div id="slick_slider_hero">';
 
          foreach( $slider_images as $i => $image ){
             $slider .= '<div><img class="slider_img" src="'.$image['url'].'"></div>';
@@ -74,14 +74,13 @@
          $slider .= '</div>';
          
          $format_hero = '
+            %s
+            <div class="hero_foreground container '.$width.'">
                %s
-               <div class="hero_foreground">
-                  %s
-                  %s    
-                  %s
-                  %s
-               </div>
-            </div> 
+               %s    
+               %s
+               %s
+            </div>
          ';
          $content_hero .= sprintf(
             $format_hero
@@ -96,11 +95,11 @@
       }else if( $type == 'video' && !empty($background_video) ){
 
          $format_hero = '
-            <div class="container">
+            <div>
                <video autoplay muted loop> 
                   <source src="%s" type="video/mp4">
                </video>
-               <div class="hero_foreground"> 
+               <div class="hero_foreground container '.$width.'"> 
                   %s
                   %s
                   %s

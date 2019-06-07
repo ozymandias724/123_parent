@@ -36,7 +36,7 @@
             $return .= '<div class="footer_payment_types"><ul>';
 
             $format = '
-                <li><img src="%s" alt="">%s</li>
+                <li><img src="%s" title="%s"></li>
             ';
             foreach( $field['payment_types'] as $type ){
                 $return .= sprintf(
@@ -206,9 +206,10 @@
 
     function get_footer_content(){
         $footer_style = get_field('footer', 'options')['style'];
+        $width = get_field('footer', 'options')['width'];
         if($footer_style == 'one'){
             $format_footer_content = '
-                <div class="container medium">
+                <div class="container '.$width.'">
                     %s
                     %s
                     %s
@@ -217,7 +218,7 @@
                     </div>
                 </div>
                 <div class="footer_copyright">
-                    <div class="container medium">
+                    <div class="container '.$width.'">
                         %s
                         %s
                     </div>
@@ -234,7 +235,7 @@
             );
         }else if($footer_style == 'two'){
             $format_footer_content = '
-                <div class="container medium">
+                <div class="container '.$width.'">
                     %s
                     %s
                     <div class="footer_last_div">
@@ -256,7 +257,7 @@
 
         }else if($footer_style == 'three'){
             $format_footer_content = '
-                <div class="container medium">
+                <div class="container '.$width.'">
                     %s
                     %s
                     %s

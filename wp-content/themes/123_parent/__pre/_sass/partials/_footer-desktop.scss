@@ -7,26 +7,25 @@
             display: flex;
             flex-flow: row wrap;
             &.narrow {
-
+                width: getVar($sizing, content, small);
             }
             &.medium {
                 width: getVar($sizing, content, medium);
             }
             &.wide {
-
+                width: getVar($sizing, content, large);
             }
             &.full {
-
+                width: getVar($sizing, content, full);
             }
             #footer_company_info {
                 margin-top: 10px;
             }
             .site__footer_logo {
                 display: inline-block;
-                padding: 5px;
                 width: 250px;
                 > div {
-                    height: 90px;
+                    height: 100px;
                     max-width: 250px;
                     margin: 0 auto;
                     background-repeat: no-repeat;
@@ -91,7 +90,6 @@
                 color: getVar($colors, white, full);
                 font-weight: 700;
                 @include fontS-14;
-                padding: 5px;
                 &:hover,
                 &:active, 
                 &:focus {
@@ -155,7 +153,7 @@
                 border-bottom: 5px dotted getVar($colors, white, full);
                 color: $white;
                 padding: 0 0 10px 0;
-                font-weight: 600;
+                font-weight: 700;
                 margin-bottom: 5px;
                 text-transform: uppercase;
                 @include fontS-20;
@@ -166,20 +164,23 @@
                 .footer_phone_1, 
                 .footer_phone_2,
                 .footer_address {
-                    @include fontS-16;
+                    @include fontS-14;
                     font-weight: 400;
                     margin-right: 0;
                     display: block;
                 }
                 a[class^='footer_phone'] {
-                    line-height: 15px;
+                    line-height: 12px;
                     > span {
-                        font-weight: bold;
+                        font-weight: 700;
                     }
                 }
                 .footer_address {
                     margin-bottom: 10px;
                     line-height: 25px;
+                }
+                .site__footer_logo {
+                    margin-bottom: -10px;
                 }
             }
             #footer_nav {
@@ -188,7 +189,7 @@
                     .navlinks-item {
                         .navlinks-item-link {
                             text-transform: initial;
-                            @include fontS-18;
+                            @include fontS-14;
                             line-height: 20px;
                             margin: 0;
                             font-weight: 400;
@@ -213,7 +214,7 @@
                         > a {
                             color: #fff;
                             padding: 10px 0;
-                            @include fontS-18;
+                            @include fontS-14;
                             line-height: 20px;
                             margin: 0;
                             font-weight: 400;
@@ -236,9 +237,9 @@
                     margin: 20px 0 10px;
                     justify-content: flex-start;
                     li {
-                        margin-right: 0px;
+                        margin-right: 15px;
                         a {
-                            padding: 7px;
+                            padding: 0;
                             i {
                                 font-size: 20px;
                                 color: getVar($colors, white, full);
