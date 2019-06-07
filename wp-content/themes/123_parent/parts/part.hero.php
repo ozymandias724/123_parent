@@ -21,8 +21,8 @@
       $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
 
       // get background fields
-      $background_image = ( !empty($background['image'] ) ? $background['image']['image']['url'] : '');
-      $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file']['url'] : '');
+      $background_image = ( !empty($background['image'] ) ? $background['image']['image'] : '');
+      $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file'] : '');
       $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
       $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
       if($slider_randomize){
@@ -33,7 +33,7 @@
       $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
       $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
       $title = ( !empty($foreground['hero_title'] ) ? $foreground['hero_title'] : '');
-      $logo = ( !empty($foreground['hero_logo'] ) ? $foreground['hero_logo']['url'] : ''); 
+      $logo = ( !empty($foreground['hero_logo'] ) ? $foreground['hero_logo'] : ''); 
       $tagline = ( !empty($foreground['hero_tagline'] ) ? $foreground['hero_tagline'] : '');
       $button = ( !empty($foreground['hero_button'] ) ? $foreground['hero_button'] : '');
 
@@ -44,7 +44,7 @@
       if( $style == 'image' && !empty($background_image) ){
 
          $format_hero = '
-            <div style="background-image: url(%s)" id="hero_staticimage">
+            <div style="background-image: url(%s)" title="%s" id="hero_staticimage">
                <div class="hero_foreground container '.$width.'">
                   %s
                   %s
@@ -55,20 +55,21 @@
          ';
          $content_hero .= sprintf(
             $format_hero
-            ,$background_image
+            ,$background_image['url']
+            ,$background_image['alt']
             ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-            ,( !empty($logo) ) ? '<img src="'.$logo.'"/>' : ''
+            ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
             ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="'.$button['title'].'" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
          );
          
       // slider
-      } else if($style == 'slider' && !empty($slider_images)) {  
+      } else if( $style == 'slider' && !empty($slider_images) ) {  
          
          $slider = '<div id="slick_slider_hero">';
 
          foreach( $slider_images as $i => $image ){
-            $slider .= '<div><img class="slider_img" src="'.$image['url'].'"></div>';
+            $slider .= '<div><img class="slider_img" alt="'.$image['alt'].'" src="'.$image['url'].'"></div>';
          } 
 
          $slider .= '</div>';
@@ -86,9 +87,9 @@
             $format_hero
             ,$slider
             ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-            ,( !empty($logo) ) ? '<img src="'.$logo.'"/>' : ''
+            ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
             ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="'.$button['title'].'" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
          );
          
       // video
@@ -96,7 +97,7 @@
 
          $format_hero = '
             <div>
-               <video autoplay muted loop> 
+               <video title="%s" autoplay muted loop> 
                   <source src="%s" type="video/mp4">
                </video>
                <div class="hero_foreground container '.$width.'"> 
@@ -109,11 +110,12 @@
          ';
          $content_hero .= sprintf(
             $format_hero
-            ,$background_video
+            ,$background_vide['alt']
+            ,$background_video['url']
             ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-            ,( !empty($logo) ) ? '<img src="'.$logo.'"/>' : ''
+            ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
             ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="'.$button['title'].'" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
          );
          
       }
