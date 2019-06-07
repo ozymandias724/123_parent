@@ -36,13 +36,24 @@
 
       // Foreground fields
       $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
-      $background_color = ( !empty($foreground['background_color'] ) ? $foreground['background_color'] : '');
-      $foreground_color = ( !empty($foreground['foreground_color'] ) ? $foreground['foreground_color'] : '');
+
       $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
-      $title = ( !empty($foreground['hero_title'] ) ? $foreground['hero_title'] : '');
-      $logo = ( !empty($foreground['hero_logo'] ) ? $foreground['hero_logo'] : ''); 
-      $tagline = ( !empty($foreground['hero_tagline'] ) ? $foreground['hero_tagline'] : '');
-      $button = ( $foreground['button'] );
+
+      $background_color = ( !empty($foreground['background_color'] ) ? 'color:'.$foreground['background_color'].';' : '');
+      $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'background-color:'.$foreground['foreground_color'].';' : '');
+      $title = ( !empty($foreground['hero_title'] ) ? '<h2>'.$foreground['hero_title'].'</h2>' : '');
+      $logo = ( !empty($foreground['hero_logo'] ) ? '<img alt="'.$foreground['hero_logo']['alt'].'" src="'.$foreground['hero_logo']['url'].'" />' : ''); 
+      $tagline = ( !empty($foreground['hero_tagline'] ) ? '<p>'.$foreground['hero_tagline'].'</p>' : '');
+      
+      // Foreground Button fields
+      $button = $foreground['button'];
+      $button_text_color = ( !empty($foreground['button']['foreground_color'] ) ? 'color:'.$foreground['button']['foreground_color'].';' : '');
+      $button_bg_color = ( !empty($foreground['button']['background_color'] ) ? 'background-color:'.$foreground['button']['background_color'].';' : '');
+      $button_url = ( !empty($foreground['button']['link']['url'] ) ? $foreground['button']['link']['url'] : '');
+      $button_title = ( !empty($foreground['button']['link']['title'] ) ? $foreground['button']['link']['title'] : '');
+      $button_target = ( !empty($foreground['button']['link']['target'] ) ? $foreground['button']['link']['target'] : '');
+
+      // Video fields
 
       // open hero container
       $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
@@ -52,7 +63,7 @@
 
          $format_hero = '
             <div style="background-image: url(%s)" title="%s" id="hero_staticimage">
-               <div class="hero_foreground container '.$width.'">
+               <div style="%s %s" class="hero_foreground container '.$width.'">
                   %s
                   %s
                   %s
@@ -64,10 +75,13 @@
             $format_hero
             ,$background_image['url']
             ,$background_image['alt']
-            ,( !empty($title) ? '<h2>'.$title.'</h2>' : '')
-            ,( !empty($logo['url'] ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : '')
-            ,( !empty($tagline) ? '<p>'.$tagline.'</p>' : '')
-            ,( !empty($button['link']) ? '<a href="'.$button['link']['url'].'" title="'.$button['link']['title'].'" target="'.$button['link']['target'].'">'.$button['link']['title'].'</a>' : '')
+
+            ,$background_color
+            ,$foreground_color
+            ,$title
+            ,$logo
+            ,$tagline
+            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
          );
          
       // slider
@@ -83,7 +97,7 @@
          
          $format_hero = '
             %s
-            <div class="hero_foreground container '.$width.'">
+            <div style="%s %s" class="hero_foreground container '.$width.'">
                %s
                %s    
                %s
@@ -93,10 +107,13 @@
          $content_hero .= sprintf(
             $format_hero
             ,$slider
-            ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-            ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
-            ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button['link']) ? '<a href="'.$button['link']['url'].'" title="'.$button['link']['title'].'" target="'.$button['link']['target'].'">'.$button['link']['title'].'</a>' : '')
+
+            ,$background_color
+            ,$foreground_color
+            ,$title
+            ,$logo
+            ,$tagline
+            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
          );
          
       // video
@@ -107,7 +124,7 @@
                <video title="%s" autoplay muted loop> 
                   <source src="%s" type="video/mp4">
                </video>
-               <div class="hero_foreground container '.$width.'"> 
+               <div style="%s %s" class="hero_foreground container '.$width.'"> 
                   %s
                   %s
                   %s
@@ -119,10 +136,13 @@
             $format_hero
             ,$background_vide['alt']
             ,$background_video['url']
-            ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-            ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
-            ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button['link']) ? '<a href="'.$button['link']['url'].'" title="'.$button['link']['title'].'" target="'.$button['link']['target'].'">'.$button['link']['title'].'</a>' : '')
+
+            ,$background_color
+            ,$foreground_color
+            ,$title
+            ,$logo
+            ,$tagline
+            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
          );
          
       }

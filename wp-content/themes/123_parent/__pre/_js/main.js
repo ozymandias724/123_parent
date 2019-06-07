@@ -52,32 +52,34 @@ $(document).ready(function() {
     Theme.Slick = {
         _init: function () {
             Theme.Slick._hero_slider();
-            Theme.Slick._testimonials_slider();   
-            console.log(hero_fields);         
+            Theme.Slick._testimonials_slider();
+            console.log(hero_fields);
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({
-                autoplay: Boolean(hero_fields.autoplay),
-                adaptiveHeight: true,
-                arrows: false,
-                fade: Boolean(hero_fields.fade),
-                autoplaySpeed: hero_fields.speed * 1000,
-                pauseOnHover: false,
-                pauseOnFocus: false
+                autoplay: Boolean(hero_fields.autoplay)
+                ,adaptiveHeight: true
+                ,arrows: !Boolean(hero_fields.autoplay)
+                ,fade: Boolean(hero_fields.fade)
+                ,autoplaySpeed: hero_fields.speed * 1000
+                ,pauseOnHover: false
+                ,pauseOnFocus: false
+                ,prevArrow: ( Boolean(hero_fields.autoplay) == false ? '<div class="slick_prev_arrow">'+hero_fields.left_icon+'</div>' : '')
+                ,nextArrow: ( Boolean(hero_fields.autoplay) == false ? '<div class="slick_next_arrow">'+hero_fields.right_icon+'</div>' : '')
             });
         },
         _testimonials_slider: function () {
             $('section.block__testimonials .site__grid').slick({
-                autoplay: false,
-                adaptiveHeight: true,
-                arrows: true,
-                fade: true,
-                autoplaySpeed: 5000,
-                pauseOnHover: true,
-                pauseOnFocus: true,
-                initialSlider: true,
-                nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>',
-                prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
+                autoplay: false
+                ,adaptiveHeight: true
+                ,arrows: true
+                ,fade: true
+                ,autoplaySpeed: 5000
+                ,pauseOnHover: true
+                ,pauseOnFocus: true
+                ,initialSlider: true
+                ,nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>'
+                ,prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
             });
         }
     }

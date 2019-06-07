@@ -139,12 +139,12 @@ class SetupTheme
 
 		$fields = get_fields($post->ID);
 		$background = ( !empty($fields['background'] ) ? $fields['background'] : '');
-		$slider_autoplay = ( !empty($background['slider']['autoplay'] ) ? $background['slider']['autoplay'] : '');
+		$slider_autoplay = ( !empty($background['slider']['autoplay']) ? $background['slider']['autoplay'] : '');
 		$slider_interval = ( !empty($background['slider']['interval'] ) ? $background['slider']['interval'] : '');
 		$slider_transition = ( !empty($background['slider']['transition'] ) ? $background['slider']['transition'] : '');
-		$slider_left_icon = ( !empty($background['slider']['buttons'] ) ? $background['slider']['buttons']['left_icon'] : '');
-		$slider_right_icon = ( !empty($background['slider']['buttons'] ) ? $background['slider']['buttons']['right_icon'] : '');
-		$slider_icons_visibility = ( $background['slider']['buttons']['visibility'] == 1 ? true : false);
+		$slider_left_icon = ( !empty($background['slider']['buttons']['left_icon'] ) ? $background['slider']['buttons']['left_icon'] : '');
+		$slider_right_icon = ( !empty($background['slider']['buttons']['right_icon'] ) ? $background['slider']['buttons']['right_icon'] : '');
+		$slider_icons_visibility = ( !empty($background['slider']['buttons']['visibility'] ) ? $background['slider']['buttons']['visibility'] : '');
 		$fade = ( $slider_transition == 'fade' ) ? true : false;
 
 		//Pass acf fields from Hero section to main.js

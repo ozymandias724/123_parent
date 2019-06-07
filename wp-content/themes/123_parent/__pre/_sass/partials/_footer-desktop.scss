@@ -151,7 +151,7 @@
                 margin-right: 0;
             }
             h3 {
-                border-bottom: 5px dotted getVar($colors, white, full);
+                border-bottom: 4px dotted getVar($colors, white, full);
                 color: $white;
                 padding: 0 0 10px 0;
                 font-weight: 700;
@@ -246,13 +246,11 @@
                                 color: getVar($colors, white, full);
                                 border-radius: 100%;
                                 box-shadow: 0px 0px 0px  3px rgba(255, 255, 255, 0.4);
-                                width: 45px;
-                                height: 45px;
-                                &:before {
-                                    position: relative;
-                                    left: 13px;
-                                    top: 7px;
-                                }
+                                width: 40px;
+                                height: 40px;
+                                line-height: 40px;
+                                vertical-align: bottom;
+                                text-align: center;
                             }
                         }
                     }
@@ -355,6 +353,9 @@
                         display: inline-block;
                         margin-right: 20px;
                     }
+                }
+                .site__footer_logo > div {
+                    margin-bottom: -10px;
                 }
                 .site__footer_logo + div.last_company_info {
                     margin-top: 0;

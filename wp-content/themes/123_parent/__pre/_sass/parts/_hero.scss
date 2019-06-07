@@ -100,6 +100,22 @@
     section.hero#hero_slider {
         #slick_slider_hero {
             margin-bottom: 0;
+            .slick-arrow {
+                position: absolute;
+                top: 50%;
+                font-size: 50px;
+                z-index: 1;
+                padding: 10px;
+                > i {
+                    color: white;
+                }
+                &.slick_next_arrow {
+                    right: 0;
+                }
+                &:hover, &:active, &:focus {
+                    cursor: pointer;
+                }
+            }
         }
         // Slider images
         .slider_img {
