@@ -23,8 +23,6 @@ include_once('parts/nav/site.nav.php');
 function my_acf_admin_head(){
 	?>
     <style type="text/css">
-
-	/* css here */
 	.acf-field-5cf9966e5088f .acf-button-group {
 		display: flex;
 		flex-flow: row wrap;
@@ -33,7 +31,6 @@ function my_acf_admin_head(){
 	.acf-field-5cf9966e5088f .acf-button-group label {
 		flex: 1 0 25%;
 	}
-
     </style>
     <?php
 }

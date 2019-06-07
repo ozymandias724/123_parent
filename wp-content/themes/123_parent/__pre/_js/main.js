@@ -38,10 +38,11 @@ $(document).ready(function() {
      * 
      */
     Theme.Slick = {
-        rand: Math.floor(Math.random() * $(".img-slick").length),
+        rand: Math.floor(Math.random() * $(".slider_img").length),
         _init: function () {
             Theme.Slick._hero_slider();
             Theme.Slick._testimonials_slider();
+            console.log(Theme.Slick.rand);
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({
@@ -49,7 +50,7 @@ $(document).ready(function() {
                 adaptiveHeight: true,
                 arrows: false,
                 fade: Boolean(hero_fields.fade),
-                autoplaySpeed: hero_fields.speed,
+                autoplaySpeed: hero_fields.speed * 1000,
                 pauseOnHover: false,
                 pauseOnFocus: false,
                 initialSlider: Boolean(hero_fields.random) ? Theme.Slick.rand : ''

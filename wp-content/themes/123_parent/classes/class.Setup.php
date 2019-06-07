@@ -137,13 +137,20 @@ class SetupTheme
 			'first_view' => get_field('popups', 'options')['timed_overlay']['first_view_timer']
 		));
 
+		$fields = get_fields($post->ID);
+		$background = ( !empty($fields['background'] ) ? $fields['background'] : '');
+		$slider_autoplay = ( !empty($background['slider']['autoplay'] ) ? $background['slider']['autoplay'] : '');
+		$slider_interval = ( !empty($background['slider']['interval'] ) ? $background['slider']['interval'] : '');
+		$slider_transition = ( !empty($background['slider']['transition'] ) ? $background['slider']['transition'] : '');
+		$slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
+		$fade = ( $slider_transition == 'fade' ) ? true : false;
+
 		//Pass acf fields from Hero section to main.js
 		wp_localize_script('main', 'hero_fields', array(
-            //'title' => get_field('hero_title', 'options')
-			'speed' => 5000,
-			'fade' => true,
-			'random' => true,
-			'autoplay' => true 
+			'speed' => $slider_interval,
+			'fade' => $fade,
+			'random' => $slider_randomize,
+			'autoplay' => $slider_autoplay 
 		)); 
 		// end localize scripts
 	}
