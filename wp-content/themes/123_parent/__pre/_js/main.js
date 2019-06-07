@@ -38,11 +38,9 @@ $(document).ready(function() {
      * 
      */
     Theme.Slick = {
-        rand: Math.floor(Math.random() * $(".slider_img").length),
         _init: function () {
             Theme.Slick._hero_slider();
-            Theme.Slick._testimonials_slider();
-            console.log(Theme.Slick.rand);
+            Theme.Slick._testimonials_slider();            
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({
@@ -52,8 +50,7 @@ $(document).ready(function() {
                 fade: Boolean(hero_fields.fade),
                 autoplaySpeed: hero_fields.speed * 1000,
                 pauseOnHover: false,
-                pauseOnFocus: false,
-                initialSlider: Boolean(hero_fields.random) ? Theme.Slick.rand : ''
+                pauseOnFocus: false
             });
         },
         _testimonials_slider: function () {

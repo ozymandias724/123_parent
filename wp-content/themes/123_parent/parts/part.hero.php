@@ -24,6 +24,10 @@
       $background_image = ( !empty($background['image'] ) ? $background['image']['url'] : '');
       $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file']['url'] : '');
       $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
+      $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
+      if($slider_randomize){
+         shuffle($slider_images);
+      }
 
       // get foreground fields
       $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
