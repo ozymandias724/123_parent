@@ -54,7 +54,9 @@
       }
 
       // Video fields
-      
+      $video_audio_on = ( !empty($background['video']['audio'] && $background['video']['audio'] == 1 ) ? 'muted' : '');
+      $video_loop = ( !empty($background['video']['loop'] && $background['video']['loop'] == 1 ) ? 'loop' : '');
+      $video_show_volume = ( !empty($background['video']['show_volume']) && $background['video']['show_volume'] == 1 ? '' : '');
 
       // open hero container
       $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
@@ -120,7 +122,7 @@
 
          $format_hero = '
             <div>
-               <video title="%s" autoplay muted loop> 
+               <video title="%s" autoplay %s %s> 
                   <source src="%s" type="video/mp4">
                </video>
                <div style="%s %s" class="hero_foreground container '.$width.'"> 
@@ -133,10 +135,13 @@
          ';
          $content_hero .= sprintf(
             $format_hero
-            ,$background_vide['alt']
+            ,$background_video['alt']
+            ,$video_audio_on
+            ,$video_loop
             ,$background_video['url']
             ,$background_color
             ,$foreground_color
+            ,$video_show_volume
             ,$title
             ,$logo
             ,$tagline
