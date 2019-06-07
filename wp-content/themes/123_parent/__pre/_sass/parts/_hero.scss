@@ -80,10 +80,12 @@
     // Hero Image
     section.hero#hero_image {     
         //First div of hero image 
-        height: 90vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        > div#hero_staticimage {
+            height: 90vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
     }
     // Hero Slider
     section.hero#hero_slider {

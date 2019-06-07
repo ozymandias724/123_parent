@@ -21,7 +21,7 @@
       $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
 
       // get background fields
-      $background_image = ( !empty($background['image'] ) ? $background['image']['url'] : '');
+      $background_image = ( !empty($background['image'] ) ? $background['image']['image']['url'] : '');
       $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file']['url'] : '');
       $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
       $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
@@ -41,7 +41,7 @@
       $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
 
       // static image
-      if( $type == 'image' && !empty($background_image)){
+      if( $style == 'image' && !empty($background_image) ){
 
          $format_hero = '
             <div style="background-image: url(%s)" id="hero_staticimage">
