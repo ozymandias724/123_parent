@@ -6,8 +6,6 @@
     
    $fields = get_fields($post->ID);
 
-   print_r($fields);
-
    // detect hero type
    $style = $fields['style'];
 
@@ -18,6 +16,7 @@
      
    // we have a hero type selected
    }else {
+
       // Background and foreground fields
       $background = ( !empty($fields['background'] ) ? $fields['background'] : '');
       $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
@@ -25,14 +24,6 @@
       // Background
       $background_image = ( !empty($background['image'] ) ? $background['image']['image'] : '');
       $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file'] : '');
-
-      // Slider fields
-      $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
-      $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
-
-      if($slider_randomize){
-         shuffle($slider_images);
-      }
 
       // Foreground fields
       $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
@@ -53,7 +44,17 @@
       $button_title = ( !empty($foreground['button']['link']['title'] ) ? $foreground['button']['link']['title'] : '');
       $button_target = ( !empty($foreground['button']['link']['target'] ) ? $foreground['button']['link']['target'] : '');
 
+      
+      // Slider fields
+      $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
+      $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
+
+      if($slider_randomize){
+         shuffle($slider_images);
+      }
+
       // Video fields
+      
 
       // open hero container
       $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
@@ -75,7 +76,6 @@
             $format_hero
             ,$background_image['url']
             ,$background_image['alt']
-
             ,$background_color
             ,$foreground_color
             ,$title
@@ -107,7 +107,6 @@
          $content_hero .= sprintf(
             $format_hero
             ,$slider
-
             ,$background_color
             ,$foreground_color
             ,$title
@@ -136,7 +135,6 @@
             $format_hero
             ,$background_vide['alt']
             ,$background_video['url']
-
             ,$background_color
             ,$foreground_color
             ,$title
