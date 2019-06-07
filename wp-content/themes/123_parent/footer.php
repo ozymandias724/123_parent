@@ -65,12 +65,13 @@
             $return .= '<div class="footer_payment_types"><ul>';
 
             $format = '
-                <li><img src="%s" alt=""></li>
+                <li><img src="%s" alt="">%s</li>
             ';
             foreach( $field['payment_types'] as $type ){
                 $return .= sprintf(
                     $format
                     ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
+                    ,(!empty($type['name']) ? $type['name'] : '')
                 );
             }
             $return .= '</ul></div>';

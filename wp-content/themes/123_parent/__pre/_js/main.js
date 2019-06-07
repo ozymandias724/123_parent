@@ -2,6 +2,7 @@ import $ from 'jquery';
 import slick from 'slick-carousel-browserify';
 import magnific from 'magnific-popup';
 import zenscroll from 'zenscroll';
+import { setTimeout } from 'timers';
 
 // kick off the polyfill!
 // smoothscroll.polyfill();
@@ -13,6 +14,17 @@ var Blocks = {};
 
 $(document).ready(function() {
 
+    // idk
+
+    // if header six
+    if ($('header#opt_header_six').length) {
+        var offset = $('header#opt_header_six').height();
+        $('main#page_home').css('margin-top', offset);
+    }
+    
+    // /end idk
+    
+    
 
     /**
      * FadeEffects
@@ -107,38 +119,65 @@ $(document).ready(function() {
                 }
             }
         }
+        
+        PopUps.Banner._init();
+    }
+
+
+    // can we combined some of this so that its listening for multiple things i.e., $('overlay1bg, overlay2bg).on(click)???
+    // this code isnt DRY
+    /**
+     * 
+     */
+    if ($('#popups__header_overlay').length) {
         PopUps.Header = {
-            overlay : $('#popups__header_overlay')
-            ,_init : function(){
+            overlay: $('#popups__header_overlay'),
+            _init: function () {
                 $('.site__button-quote').on('click', PopUps.Header._openPopUp);
                 PopUps.Header.overlay.on('click', PopUps.Header._clickedOverlayBG);
                 $('.overlay__closebutton').on('click', PopUps.Header._closePopUp);
-            }
-            ,_openPopUp : function(e){
+            },
+            _openPopUp: function (e) {
                 $('body').addClass('js__noscroll');
                 PopUps.Header.overlay.addClass('popups__header_active');
-            }
-            ,_closePopUp : function(){
+            },
+            _closePopUp: function () {
                 $('body').removeClass('js__noscroll');
                 PopUps.Header.overlay.removeClass('popups__header_active');
-            }
-            ,_clickedOverlayBG : function(e){
-                if(e.target === e.currentTarget){
+            },
+            _clickedOverlayBG: function (e) {
+                if (e.target === e.currentTarget) {
                     $('body').removeClass('js__noscroll');
                     PopUps.Header.overlay.removeClass('popups__header_active');
                 }
             }
         }
+        PopUps.Header._init();
+    }
+    /**
+     * 
+     */
+    if ($('#popups__timed_overlay').length) {
+
         PopUps.Timed = {
-            overlay : $('#popups__timed_overlay')
-            ,_init : function(){
-                
+            overlay: $('#popups__timed_overlay')
+            ,_init: function() {
+                $(window).on('load', PopUps.Timed._setInitial);
+            }
+            ,_setInitial : function(){
+
+                setTimeout(function () {
+                    $('body').addClass('js__noscroll');
+                    PopUps.Timed.overlay.addClass('popups__header_active');
+                }, 30000);
             }
         }
-        PopUps.Banner._init();
-        PopUps.Header._init();
-        PopUps.Timed._init();
+        // PopUps.Timed._init();
     }
+
+    
+    
+    
 
     /**
      * 
@@ -186,6 +225,7 @@ $(document).ready(function() {
         }
     }
     Theme.Nav._init();
+
 });
 
 
