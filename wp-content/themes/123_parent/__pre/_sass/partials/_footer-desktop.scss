@@ -180,9 +180,6 @@
                     margin-bottom: 10px;
                     line-height: 25px;
                 }
-                .site__footer_logo {
-                    margin-bottom: -10px;
-                }
             }
             #footer_nav {
                 .navlinks {
@@ -339,7 +336,6 @@
         >div.container {
             padding: 0 10px 30px;
             flex-flow: column nowrap;
-            margin: 10px auto 0;
             > #footer_company_info {
                 margin: 0;
                 > div#footer_nav {
@@ -349,9 +345,15 @@
                         margin-left: -10px;
                     }
                 }
-                > a {
-                    display: inline-block;
-                    margin: 10px 20px 0 0;
+                > div.last_company_info {
+                    margin-top: 10px;
+                    > a {
+                        display: inline-block;
+                        margin-right: 20px;
+                    }
+                }
+                .site__footer_logo + div.last_company_info {
+                    margin-top: 0;
                 }
             }
             > div.site__copyright_banner {
@@ -416,6 +418,9 @@
             }
             .site__social-media {
                 margin: 20px 0 10px;
+            }
+            .site__footer_logo + .site__social-media {
+                margin-top: 0;
             }
             .footer_address {
                 margin-right: 20px;

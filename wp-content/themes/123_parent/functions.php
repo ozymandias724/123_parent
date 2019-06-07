@@ -20,15 +20,6 @@ include_once('classes/class.NavHandler.php');
 
 include_once('parts/nav/site.nav.php');
 
-function my_acf_admin_head(){
-	?>
-    <style type="text/css">
-
-    </style>
-    <?php
-}
-add_action('acf/input/admin_head', 'my_acf_admin_head');
-
 
 function get_gmaps_api_key(){
 
@@ -212,14 +203,12 @@ function get_site_nav($pre = 'navlinks'){
         // get them fields
         $fields = get_fields( get_option('page_on_front') );
         
-        
         $guide['blocks_links'] = '<li class="navlinks-item"><a class="navlinks-item-link scroll" href="#%s">%s</a></li>';
         $return['blocks_links'] = '<ul class="navlinks nav__spyscroll">';
         
         foreach( $fields['content_blocks'] as $i => $cB ){
 
             if( $cB['anchor_enabled'] ){
-
                 $return['blocks_links'] .= sprintf(
                     $guide['blocks_links']
                     ,strtolower($cB['anchor_link_text'])

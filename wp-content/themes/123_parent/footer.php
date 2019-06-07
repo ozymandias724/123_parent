@@ -36,13 +36,13 @@
             $return .= '<div class="footer_payment_types"><ul>';
 
             $format = '
-                <li><img src="%s" title="%s"></li>
+                <li><img alt="%s" src="%s"></li>
             ';
             foreach( $field['payment_types'] as $type ){
                 $return .= sprintf(
                     $format
-                    ,(!empty($type['image']['url']) ? $type['image']['url'] : '')
-                    ,(!empty($type['name']) ? $type['name'] : '')
+                    ,(!empty($type['image']['alt']) ? $type['image']['alt'] : '')
+                    ,(!empty($type['image']) ? $type['image']['url'] : '')
                 );
             }
             $return .= '</ul></div>';
@@ -55,13 +55,14 @@
         $field = get_field('footer', 'options');
         if( !empty($field['logo']) ){
             $format = '
-                <a class="site__footer_logo" href="%s" title="Footer logo button">
+                <a class="site__footer_logo" href="%s" title="%s">
                     <div style="background-image:url(%s);"></div>
                 </a>
             ';
             $return .= sprintf(
                 $format
                 ,site_url()
+                ,( !empty($field['logo']['alt']) ? $field['logo']['alt'] : '')
                 ,$field['logo']['url']
             );
         }
@@ -106,9 +107,11 @@
                 <div id="footer_company_info">
                     %s
                     %s
-                    %s
-                    %s
-                    %s
+                    <div class="last_company_info">
+                        %s
+                        %s
+                        %s
+                    </div>
                 </div>
             ';
             $company_info = sprintf(
@@ -146,28 +149,40 @@
 
     function get_nav(){
         $footer_style = get_field('footer', 'options')['style'];
-        if($footer_style == 'one'){
-            $format_nav = '
-                <div id="footer_nav">
-                    <h3 class="nav_title">Navigate</h3>
-                    <nav>
-                        %s
-                    </nav>
-                </div>
-            ';
-        }else{
-            $format_nav = '
-                <div id="footer_nav">
-                    <nav>
-                        %s
-                    </nav>
-                </div>
-            ';
+
+        $fields = get_fields( get_option('page_on_front') );
+        $anchor_link_count = 0;
+
+        foreach($fields['content_blocks'] as $i => $block){
+            if( !empty($block['anchor_link_text']) ){
+                $anchor_link_count++;
+            }
         }
-        $nav = sprintf(
-            $format_nav
-            ,get_site_nav()
-        );  
+        
+        if($anchor_link_count > 0){
+            if($footer_style == 'one'){
+                $format_nav = '
+                    <div id="footer_nav">
+                        <h3 class="nav_title">Navigate</h3>
+                        <nav>
+                            %s
+                        </nav>
+                    </div>
+                ';
+            }else{
+                $format_nav = '
+                    <div id="footer_nav">
+                        <nav>
+                            %s
+                        </nav>
+                    </div>
+                ';
+            }
+            $nav = sprintf(
+                $format_nav
+                ,get_site_nav()
+            );  
+        }
         return $nav;
     }
 
