@@ -21,7 +21,7 @@
       $background = ( !empty($fields['background'] ) ? $fields['background'] : '');
       $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
 
-      // Background
+      // Background fields
       $background_image = ( !empty($background['image'] ) ? $background['image']['image'] : '');
       $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file'] : '');
 
