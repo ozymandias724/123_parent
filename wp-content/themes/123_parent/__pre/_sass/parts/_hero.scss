@@ -23,17 +23,19 @@
             left: 50%;
             width: getVar($sizing, content, full);
             z-index: 2;
-            &.narrow {
-                width: getVar($sizing, content, small);
-            }
-            &.medium {
-                width: getVar($sizing, content, medium);
-            }
-            &.wide {
-                width: getVar($sizing, content, large);
-            }
-            &.full {
-                width: getVar($sizing, content, full);
+            &.container {
+                &.narrow {
+                    width: getVar($sizing, content, small);
+                }
+                &.medium {
+                    width: getVar($sizing, content, medium);
+                }
+                &.wide {
+                    width: getVar($sizing, content, large);
+                }
+                &.full {
+                    width: getVar($sizing, content, full);
+                }
             }
             //Title
             h2 {
@@ -76,12 +78,18 @@
             }
         }
     }
-
+    // Height
+    section.hero {
+        &#hero_image > div#hero_staticimage,
+        &#hero_slider .slider_img,
+        &#hero_video {
+            height: 90vh;
+        }
+    }
     // Hero Image
     section.hero#hero_image {     
         //First div of hero image 
         > div#hero_staticimage {
-            height: 90vh;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -99,14 +107,12 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            height: 90vh;
             width: 100%;
         }
     }
     // Hero Video
     section.hero#hero_video { 
         width: 100%;
-        height: 90vh;
         // Video 
         video {
             min-width: 100%;
@@ -119,13 +125,13 @@
 }
 
 @media only screen and (max-width: 1280px){
-    section.hero .hero_foreground {
+    section.hero .hero_foreground.container {
         width: getVar($sizing, content, medium);
     }
 }
 
 @media only screen and (max-width: 960px){
-    section.hero .hero_foreground {
+    section.hero .hero_foreground.container {
         &.narrow,
         &.medium,
         &.wide,
@@ -144,7 +150,7 @@
 }
 
 @media only screen and (max-width: 640px){
-    section.hero .hero_foreground {
+    section.hero .hero_foreground.container {
         &.narrow,
         &.medium,
         &.wide,
