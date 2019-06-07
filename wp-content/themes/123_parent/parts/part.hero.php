@@ -6,6 +6,8 @@
     
    $fields = get_fields($post->ID);
 
+   print_r($fields);
+
    // detect hero type
    $style = $fields['style'];
 
@@ -16,26 +18,31 @@
      
    // we have a hero type selected
    }else {
-      // get background and foreground
+      // Background and foreground fields
       $background = ( !empty($fields['background'] ) ? $fields['background'] : '');
       $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
 
-      // get background fields
+      // Background
       $background_image = ( !empty($background['image'] ) ? $background['image']['image'] : '');
       $background_video = ( !empty($background['video']['file'] ) ? $background['video']['file'] : '');
+
+      // Slider fields
       $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
       $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
+
       if($slider_randomize){
          shuffle($slider_images);
       }
 
-      // get foreground fields
+      // Foreground fields
       $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
+      $background_color = ( !empty($foreground['background_color'] ) ? $foreground['background_color'] : '');
+      $foreground_color = ( !empty($foreground['foreground_color'] ) ? $foreground['foreground_color'] : '');
       $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
       $title = ( !empty($foreground['hero_title'] ) ? $foreground['hero_title'] : '');
       $logo = ( !empty($foreground['hero_logo'] ) ? $foreground['hero_logo'] : ''); 
       $tagline = ( !empty($foreground['hero_tagline'] ) ? $foreground['hero_tagline'] : '');
-      $button = ( !empty($foreground['hero_button'] ) ? $foreground['hero_button'] : '');
+      $button = ( $foreground['button'] );
 
       // open hero container
       $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
@@ -57,10 +64,10 @@
             $format_hero
             ,$background_image['url']
             ,$background_image['alt']
-            ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
-            ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
-            ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="'.$button['title'].'" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            ,( !empty($title) ? '<h2>'.$title.'</h2>' : '')
+            ,( !empty($logo['url'] ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : '')
+            ,( !empty($tagline) ? '<p>'.$tagline.'</p>' : '')
+            ,( !empty($button['link']) ? '<a href="'.$button['link']['url'].'" title="'.$button['link']['title'].'" target="'.$button['link']['target'].'">'.$button['link']['title'].'</a>' : '')
          );
          
       // slider
@@ -89,7 +96,7 @@
             ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
             ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
             ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="'.$button['title'].'" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            ,( !empty($button['link']) ? '<a href="'.$button['link']['url'].'" title="'.$button['link']['title'].'" target="'.$button['link']['target'].'">'.$button['link']['title'].'</a>' : '')
          );
          
       // video
@@ -115,7 +122,7 @@
             ,( !empty($title) ) ? '<h2>'.$title.'</h2>' : ''
             ,( !empty($logo['url']) ) ? '<img alt="'.$logo['alt'].'" src="'.$logo['url'].'"/>' : ''
             ,( !empty($tagline) ) ? '<p>'.$tagline.'</p>' : ''
-            ,( !empty($button) ) ? '<a href="'.$button['url'].'" title="'.$button['title'].'" target="'.$button['target'].'">'.$button['title'].'</a>' : ''
+            ,( !empty($button['link']) ? '<a href="'.$button['link']['url'].'" title="'.$button['link']['title'].'" target="'.$button['link']['target'].'">'.$button['link']['title'].'</a>' : '')
          );
          
       }

@@ -52,7 +52,8 @@ $(document).ready(function() {
     Theme.Slick = {
         _init: function () {
             Theme.Slick._hero_slider();
-            Theme.Slick._testimonials_slider();            
+            Theme.Slick._testimonials_slider();   
+            console.log(hero_fields);         
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({

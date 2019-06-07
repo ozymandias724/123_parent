@@ -142,13 +142,20 @@ class SetupTheme
 		$slider_autoplay = ( !empty($background['slider']['autoplay'] ) ? $background['slider']['autoplay'] : '');
 		$slider_interval = ( !empty($background['slider']['interval'] ) ? $background['slider']['interval'] : '');
 		$slider_transition = ( !empty($background['slider']['transition'] ) ? $background['slider']['transition'] : '');
+		$slider_left_icon = ( !empty($background['slider']['buttons'] ) ? $background['slider']['buttons']['left_icon'] : '');
+		$slider_right_icon = ( !empty($background['slider']['buttons'] ) ? $background['slider']['buttons']['right_icon'] : '');
+		$slider_icons_visibility = ( !empty($background['slider']['buttons']['visibility'] ) ? $background['slider']['buttons']['visibility'] : false);
 		$fade = ( $slider_transition == 'fade' ) ? true : false;
 
 		//Pass acf fields from Hero section to main.js
 		wp_localize_script('main', 'hero_fields', array(
-			'speed' => $slider_interval,
-			'fade' => $fade,
-			'autoplay' => $slider_autoplay 
+			'speed' => $slider_interval
+			,'fade' => $fade
+			,'autoplay' => $slider_autoplay 
+			,'left_icon' => $slider_left_icon
+			,'right_icon' => $slider_right_icon
+			,'icons_visible' => $slider_icons_visibility
+			
 		)); 
 		// end localize scripts
 	}
