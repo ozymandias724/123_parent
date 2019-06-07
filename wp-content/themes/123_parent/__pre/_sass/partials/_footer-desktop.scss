@@ -2,10 +2,22 @@
     // COMMON FOOTER DESIGNS SCSS
     footer {
         background-color: getVar($colors, accent);
-        > div.container {
+        div.container {
             margin: 0 auto;
             display: flex;
             flex-flow: row wrap;
+            &.narrow {
+
+            }
+            &.medium {
+                width: getVar($sizing, content, medium);
+            }
+            &.wide {
+
+            }
+            &.full {
+
+            }
             #footer_company_info {
                 margin-top: 10px;
             }
@@ -50,7 +62,7 @@
                         }
                     }
                     .navlinks-item:last-of-type .navlinks-item-link:after {
-                        border-right: none;
+                        display: none;
                     }
                 }
             }
@@ -112,7 +124,6 @@
                     }
                 }
             }
-            .footer_badges,
             .footer_payment_types {
                 > ul {
                     > li {
@@ -132,12 +143,10 @@
     // FOOTER 1
     footer#footer_one { 
         > div.container {
-            width: getVar($sizing, content, medium);
-            flex-flow: row nowrap;
             > div {
-                flex: 1 0 23%;
+                flex: 1 0 18%;
                 margin-right: 40px;
-                margin-top: 20px;
+                margin-top: 40px;
             }
             > div:last-of-type {
                 margin-right: 0;
@@ -152,8 +161,8 @@
                 @include fontS-20;
             }
             #footer_company_info {
-                margin-top: 10px;
-                margin-right: 0;
+                margin-top: 20px;
+                flex: 1 0 10%;
                 .footer_phone_1, 
                 .footer_phone_2,
                 .footer_address {
@@ -174,7 +183,6 @@
                 }
             }
             #footer_nav {
-                flex: 1 0 25%;
                 .navlinks {
                     flex-flow: column wrap;
                     .navlinks-item {
@@ -193,6 +201,9 @@
                     }
                     .navlinks-item:last-of-type > a {
                         border-bottom: 1px solid transparent; 
+                        &:after {
+                            border-right: none;
+                        }
                     }
                 }
             }
@@ -225,15 +236,21 @@
                     margin: 20px 0 10px;
                     justify-content: flex-start;
                     li {
-                        margin-right: 0;
+                        margin-right: 0px;
                         a {
-                            padding: 5px;
+                            padding: 7px;
                             i {
-                                font-size: 16px;
-                                color: white;
-                                border: 3px solid rgba(255, 255, 255, 0.4);
-                                padding: 3px 12px;
+                                font-size: 20px;
+                                color: getVar($colors, white, full);
                                 border-radius: 100%;
+                                box-shadow: 0px 0px 0px  3px rgba(255, 255, 255, 0.4);
+                                width: 45px;
+                                height: 45px;
+                                &:before {
+                                    position: relative;
+                                    left: 13px;
+                                    top: 7px;
+                                }
                             }
                         }
                     }
@@ -241,18 +258,17 @@
             }
         }
         > div.footer_copyright {
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             justify-content: space-between;
             align-items: center;
-            background-color: darken(getVar($colors, accent), 10%);
+            background-color: darken(getVar($colors, accent), 15%);
             padding: 20px 0;
-            > div.container {
+            > div {
                 margin: 0 auto;
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
-                width: getVar($sizing, content, medium);
                 justify-content: center;
                 > div {
                     flex: 1 0 50%;
@@ -262,6 +278,19 @@
                     justify-content: flex-start;
                     > a {
                         color: getVar($colors, white, full);
+                        text-align: left;
+                        width: 75%;
+                        font-weight: 500;
+                        > span {
+                            display: block;
+                            &:first-of-type {
+                                border-bottom: 1px solid getVar($gustavo, colors, blue1);
+                                padding-bottom: 3px;
+                            }
+                            &:last-of-type {
+                                color: getVar($gustavo, colors, blue1);
+                            }
+                        }
                     }
                 }
                 .footer_payment_types {
@@ -274,12 +303,21 @@
                         align-items: inherit;
                         justify-content: flex-start;
                         > li {
-                            margin-right: 10px;
+                            margin-right: 7px;
+                            margin-top: 10px;
                             display: initial;
-                            img {
-                                max-width: 70px;
-                                max-height: 70px;
-                                margin: 10px 0;
+                            background-color: getVar($gustavo, colors, gray5);
+                            padding: 5px 7px; 
+                            border-radius: 5px;
+                            // > i:before {
+                                //     font-size: 25px;
+                                //     padding: 5px;
+                                //     color: getVar($colors, white, full);
+                                //     border-radius: 5px;
+                                //     background-color: getVar($gustavo, colors, gray5);
+                            // }
+                            > img {
+                                max-width: 45px;
                             }
                         }
                         > li:last-of-type {
@@ -293,18 +331,85 @@
             }
         }
     }
-    // FOOTER 2
+    //FOOTER 2
     footer#footer_two {
+        text-align: left;
+        >div.container {
+            padding: 0 10px 30px;
+            flex-flow: column nowrap;
+            margin: 10px auto 0;
+            > #footer_company_info {
+                margin: 0;
+                > div#footer_nav {
+                    border-bottom: 4px dotted $white;
+                    > nav > ul.navlinks {
+                        margin-bottom: 15px;
+                        margin-left: -10px;
+                    }
+                }
+                > a {
+                    display: inline-block;
+                    margin: 10px 20px 0 0;
+                }
+            }
+            > div.site__copyright_banner {
+                margin: 0 0 20px 0;
+                > a {
+                    max-width: 350px;   
+                    padding: 5px;
+                    line-height: 2rem;
+                    > span {
+                        display: block;
+                    }
+                }
+            }
+            > div.footer_last_div {
+                display: flex;
+                justify-content: space-between;
+                > div.footer_payment_types {
+                    padding: 5px;
+                }
+                > div#footer_social {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    > h3 {
+                        margin-right: 20px;
+                        color: $white;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        @include fontS-14;
+                        letter-spacing: 0.5px;
+                    }
+                    > ul.site__social-media {
+                        > li {
+                            > a {
+                                padding: 0 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // FOOTER 3
+    footer#footer_three {
         text-align: center;
         > div.container {
-            > a:last-of-type {
-                margin-right: 0;
-            }      
-            #footer_nav {
-                border-top: 2px solid $white;
-                border-bottom: 2px solid $white;
-                .navlinks {
-                    justify-content: center;
+            flex-flow: column nowrap;
+            padding-bottom: 20px;
+            #footer_company_info {
+                > a {
+                    display: inline-block;
+                    font-weight: 700;
+                }
+                #footer_nav {
+                    border-top: 2px solid $white;
+                    border-bottom: 2px solid $white;
+                    padding: 10px 0;
+                    .navlinks {
+                        justify-content: center;
+                    }
                 }
             }
             .site__social-media {
@@ -313,115 +418,86 @@
             .footer_address {
                 margin-right: 20px;
             }
-            .footer_badges,
             .footer_payment_types {
-                margin: 10px 0;
-            }
-        }
-    }
-    //FOOTER 3
-    footer#footer_three {
-        text-align: left;
-        >div.container {
-            padding: 0 10px;
-            #footer_nav {
-                border-bottom: 4px dotted $white;
-                .navlinks {
-                    margin: -10px 0 0 -10px;
-                }
-            }
-            .site__social-media {
-                margin: 0;
-            }
-            .footer_address {   
-                margin: 10px 20px 0 0;
-            }
-            .site__copyright_banner {
-                margin: 0 0 10px 0;
-                > a {
-                    max-width: 350px;   
-                    padding: 5px;
-                }
-            }
-            .footer_payment_types {
-                padding: 5px;
-            }
-            .footer_three_last_div,
-            .footer_three_social_media {
-                align-items: center;
-                display: flex;
-                justify-content: space-between;
-            }
-            .footer_three_social_media {
-                > p {
-                    margin-right: 20px;
-                    color: $white;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    @include fontS-14;
-                    letter-spacing: 0.5px;
-                }
+                margin: 20px 0 10px;
             }
         }
     }
 }	
 
 @media only screen and (max-width: 1280px){
-    footer > div.container {
-        padding: 0;
-        max-width: getVar($sizing, content, medium);
-        .footer_address,
-        a[class^='footer_phone'] {
-            display: inline-block;
-        }
-        .site__social-media > li:last-of-type {
-            margin-right: -10px;
-        }
-    }
-    footer#footer_one {
+    footer {
         div.container {
-            &:first-of-type {
-                padding-top: 40px;
+            padding: 0;
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, large);
             }
-            #footer_company_info {
-                flex: 1 0 25%;
-                margin-top: 0;
-                text-align: left;
-                margin-right: 5px;
-                .site__social-media {
-                    justify-content: flex-start;
-                    margin: 10px 0 10px;
+        }
+        #footer_one {
+            > div.container {
+                flex-flow: row wrap;
+                > div {
+                    flex: 1 0 30%;
+                }
+                #footer_company_info {            
+                    flex: 1 0 100%;
+                    .site__footer_logo {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    > a {
+                        text-align: center;
+                    }
                 }
             }
-            section#footer_nav_section,
-            section.footer_payment_types {
-                margin-right: 40px;
-            }
-            section#footer_nav_section,
-            section.footer_payment_types,
-            section.footer_badges {
-                flex: 1 0 20%;
-            }
-            section,
-            div.site__copyright_banner {
-                margin-bottom: 0;
-            }
-            div.site__copyright_banner {
-                margin: 10px auto;
+            > div.footer_copyright {
+                > div.container {
+                    .site__copyright_banner {
+                        > a {
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
     }
 }
 
 @media only screen and (max-width: 960px){
-    footer#footer_one {
-        div.container {
-            flex-flow: row wrap;
-            #footer_company_info, .footer_badges {
-                flex: 1 0 100%;
+    footer {
+        #footer_one {
+            div.footer_copyright {
+                > div.container {
+                    flex-flow: column nowrap;
+                }
             }
-            div.site__copyright_banner {
-                margin: 10px auto 30px auto;
+        }
+        #footer_two {
+            > div.container {            
+                > div.footer_last_div {
+                    > div#footer_social {
+                        flex-flow: column nowrap;
+                        > h3 {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    footer {
+        div.container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, full);
             }
         }
     }

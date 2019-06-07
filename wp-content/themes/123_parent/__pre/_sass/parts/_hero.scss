@@ -25,7 +25,8 @@
             z-index: 2;
             //Title
             h2 {
-                @include fontS-34;
+                
+                @include fontS-72;
                 z-index: 2;
                 color: $white;
             }
@@ -38,7 +39,7 @@
             p {
                 color: $white;
                 z-index: 2;
-                @include fontS-24;
+                @include fontS-34;
                 margin: 20px 0 30px;
             }
             //Button
@@ -54,20 +55,20 @@
                 display: inline-block;
                 background-color: $accent;
                 transition: background-color 0.25s;
-            }
-            //Button actions on hover, focus and active
-            a:hover, 
-            a:focus, 
-            a:active {
-                opacity: 0.8;
+                //Button actions on hover, focus and active
+                &:hover, 
+                &:focus, 
+                &:active {
+                    opacity: 0.8;
+                }
             }
         }
     }
 
     // Hero Image
     section.hero#hero_image {     
-        //First div of hero image 
-        > #hero_staticimage {
+        .container {
+            //First div of hero image 
             height: 90vh;
             background-repeat: no-repeat;
             background-size: cover;
@@ -76,57 +77,53 @@
     }
     // Hero Slider
     section.hero#hero_slider {
-        #slick_slider_hero {
-            margin-bottom: 0;
-        }
-        // Slider images
-        .slick_slider_img {
-            object-fit: cover; 
-            position: relative;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 90vh;
+        .container {
+            #slick_slider_hero {
+                margin-bottom: 0;
+            }
+            // Slider images
+            .slider_img {
+                object-fit: cover; 
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 90vh;
+            }
         }
     }
     // Hero Video
     section.hero#hero_video { 
-        position: relative;
-        width: 100%;
-        height: 66vh;
-        .hero_video-container {
-            position: absolute;
+        .container {
             width: 100%;
-            height: 100%;
-        }
-        // Video 
-        video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            @include centerer;
+            height: 90vh;
+            // Video 
+            video {
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                @include centerer;
+            }
         }
     }
 }
 
-
-@media only screen and (min-width: 960px){
+@media only screen and (max-width: 1280px){
     section.hero .hero_foreground {
-        width: getVar($sizing, content, large);
+        width: getVar($sizing, content, medium);
+    }
+}
+
+@media only screen and (max-width: 960px){
+    section.hero .hero_foreground {
         //Title
         > h2 {
-            @include fontS-72;
+            @include fontS-34;
         }
         //Subtitle
         > p {
-            @include fontS-34;
+            @include fontS-24;
         }
-    }
-}
-
-@media only screen and (min-width: 1280px){
-    section.hero .hero_foreground {
-        width: getVar($sizing, content, medium);
     }
 }
