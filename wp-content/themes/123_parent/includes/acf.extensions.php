@@ -14,17 +14,15 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
-
-/**
- * Populate PaymentFont select field
- */
-add_filter('acf/load_field/name=paymentfont', 'do_populate_paymentfont_selectfield');
-function do_populate_paymentfont_selectfield($field){
-    $field['choices'] = array(
-        'visa' => 'Visa <i class="pf pf-visa"></i>'
-        ,'mastercard' => 'Mastercard <i class="pf pf-mastercard"></i>'
-    );
-    return $field;
+add_filter('acf/load_field/name=anchor_enabled', 'do_hide_acf_fields');
+add_filter('acf/load_field/name=anchor_link_text', 'do_hide_acf_fields');
+function do_hide_acf_fields( $field ) {
+    
+    if( !get_field('header', 'options')['long_scroll'] ){
+        return;
+    }else {
+        return $field;
+    }
 }
 
 /**
