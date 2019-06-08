@@ -36,13 +36,12 @@
             $return .= '<div class="footer_payment_types"><ul>';
 
             $format = '
-                <li><img alt="%s" src="%s"></li>
+                <li>%s</li>
             ';
             foreach( $field['payment_types'] as $type ){
                 $return .= sprintf(
                     $format
-                    ,(!empty($type['image']['alt']) ? $type['image']['alt'] : '')
-                    ,(!empty($type['image']) ? $type['image']['url'] : '')
+                    ,(!empty($type['icon']) ? $type['icon'] : '')
                 );
             }
             $return .= '</ul></div>';

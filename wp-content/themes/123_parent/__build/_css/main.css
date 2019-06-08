@@ -2939,20 +2939,19 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul {
     display: flex;
     flex-flow: row wrap;
-    max-height: 200px;
-    align-items: inherit;
-    justify-content: flex-start;
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li {
-    margin-right: 7px;
-    margin-top: 10px;
-    display: initial;
     background-color: rgba(193, 206, 220, 0.2);
-    padding: 5px 7px;
-    border-radius: 5px;
+    border-radius: 7px;
+    margin: 0 15px 15px 0;
   }
-  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li > img {
-    max-width: 45px;
+  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li > i.fab {
+    padding: 5px 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 28px;
+  }
+  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:hover > i.fab, footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:focus > i.fab, footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:active > i.fab {
+    color: white;
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:last-of-type {
     margin-right: 0;
@@ -3104,6 +3103,53 @@ footer#footer_one > div.container #footer_company_info .footer_address {
 }
 @media only screen {
   section.hero {
+    height: 80vh;
+  }
+  section.hero#hero_image > #hero_staticimage {
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+  }
+  section.hero#hero_image > #hero_staticimage.topleft {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  section.hero#hero_image > #hero_staticimage.topcenter {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  section.hero#hero_image > #hero_staticimage.topright {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  section.hero#hero_image > #hero_staticimage.middleleft {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  section.hero#hero_image > #hero_staticimage.middlecenter {
+    align-items: center;
+    justify-content: center;
+  }
+  section.hero#hero_image > #hero_staticimage.middleright {
+    align-items: center;
+    justify-content: flex-end;
+  }
+  section.hero#hero_image > #hero_staticimage.bottomleft {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  section.hero#hero_image > #hero_staticimage.bottomcenter {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  section.hero#hero_image > #hero_staticimage.bottomright {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  section.hero {
     overflow: hidden;
   }
   section.hero:after {
@@ -3120,10 +3166,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero .hero_foreground {
     font-family: "Futura-Bold", "Trebuchet MS", Arial, sans-serif;
     text-align: center;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     width: 92vw;
     z-index: 2;
   }
@@ -3172,10 +3214,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   section.hero .hero_foreground a:hover, section.hero .hero_foreground a:focus, section.hero .hero_foreground a:active {
     opacity: 0.8;
-  }
-
-  section.hero#hero_image > div#hero_staticimage, section.hero#hero_slider .slider_img, section.hero#hero_video {
-    height: 90vh;
   }
 
   section.hero#hero_image > div#hero_staticimage {
@@ -3334,6 +3372,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     min-height: 100vh;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
   }
   #popups__banner_overlay.popups__banner_active, #popups__banner_overlay.popups__header_active, #popups__banner_overlay.popups__timed_active,
 #popups__header_overlay.popups__banner_active,

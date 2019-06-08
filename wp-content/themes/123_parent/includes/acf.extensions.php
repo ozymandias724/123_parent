@@ -23,7 +23,7 @@ function do_hide_acf_fields( $field ) {
     }else {
         return $field;
     }
-}
+}   
 
 /**
  * Display the ACF address
