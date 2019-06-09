@@ -56,7 +56,10 @@
 
 
                 
-                > .heroforeground {
+                > .hero_foreground {
+                    &.hasbg {
+                        padding: getVar($sizing, gutter, px, normal);
+                    }
                 }
             }
             
@@ -136,7 +139,7 @@
                 margin: 20px 0 30px;
             }
             //Button
-            a {
+            a.site__button {
                 padding: 10px;
                 @include fontS-20;
                 padding: 13px 30px 15px;

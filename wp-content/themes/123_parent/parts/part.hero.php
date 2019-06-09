@@ -31,10 +31,23 @@
 
         $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
 
-        $background_color = ( !empty($foreground['background_color'] ) ? 'color:'.$foreground['background_color'].';' : '');
-        $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'background-color:'.$foreground['foreground_color'].';' : '');
+        $background_color = ( !empty($foreground['background_color'] ) ? 'background-color: rgba('.hex2RGB($foreground['background_color'], true).','.$foreground['background_opacity'].');' : '');
+        $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'color:'.$foreground['foreground_color'].';' : '');
+
         $title = ( !empty($foreground['hero_title'] ) ? '<h2>'.$foreground['hero_title'].'</h2>' : '');
-        $logo = ( !empty($foreground['hero_logo'] ) ? '<img alt="'.$foreground['hero_logo']['alt'].'" src="'.$foreground['hero_logo']['url'].'" />' : ''); 
+        
+        
+        if( !empty($foreground['hero_logo']) ){
+            
+            if( !empty($foreground['logo_url']) ){
+
+                $logo = '<a href="'.$foreground['logo_url'].'"><img alt="'.$foreground['hero_logo']['alt'].'" src="'.$foreground['hero_logo']['url'].'" /></a>';
+            }
+            else {
+                $logo = '<img alt="'.$foreground['hero_logo']['alt'].'" src="'.$foreground['hero_logo']['url'].'" />';
+            }
+        }
+        
         $tagline = ( !empty($foreground['hero_tagline'] ) ? '<p>'.$foreground['hero_tagline'].'</p>' : '');
         
         // Foreground Button fields
@@ -68,7 +81,7 @@
 
         $format_hero = '
             <div class="%s" style="background-image: url(%s)" title="%s" id="hero_staticimage">
-                <div style="%s %s" class="hero_foreground container '.$width.'">
+                <div style="%s %s" class="%s hero_foreground container '.$width.'">
                     %s
                     %s
                     %s
@@ -83,6 +96,7 @@
             ,$background_image['alt']
             ,$background_color
             ,$foreground_color
+            ,( !empty($background_color) ? 'hasbg' : '' )
             ,$title
             ,$logo
             ,$tagline
