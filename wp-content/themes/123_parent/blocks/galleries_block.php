@@ -74,8 +74,8 @@
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         // post object grid options
-        ,( !empty($cB['heading']) ? '<h2 class="site__fade site__fade-up block__heading">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up block__details">'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class=" block__heading site__fade site__fade-up">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up">'.$cB['text'].'</div>' : '' )
         // gallery options
         ,( !empty($return['tabs']) ? $return['tabs'] : '' )
         ,( !empty($return['galleries']) ? $return['galleries'] : '' )

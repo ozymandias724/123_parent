@@ -1,4 +1,4 @@
-<?php 
+<?php  
 /**
  * Part: Footer
  * Description:
@@ -13,9 +13,7 @@
         $return = '';
         $field = get_field('footer', 'options');
 
-
         $company_name = get_field('company_info', 'options')['company_name'];
-
 
         $format = '
             <div class="site__copyright_banner">
@@ -26,8 +24,8 @@
         $return .= sprintf(
             $format
             ,( !empty($field['copyright_banner']['text']) 
-            ? '<a href="'.$field['copyright_banner']['url'].'" target="_blank">Website created by '.$field['copyright_banner']['text'].'</a>' 
-            : '<a href="http://123websites.com" target="_blank">Website created by 123Websites.com</a>'
+            ? '<a href="'.$field['copyright_banner']['url'].'" target="_blank">Website Created By '.$field['copyright_banner']['text'].'</a>' 
+            : '<a href="https://123websites.com" target="_blank">Website Created By 123Websites.com</a>'
             )
         );
         return $return;

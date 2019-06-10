@@ -91,7 +91,7 @@ var Blocks = {}; // tbd
       });
     },
     _testimonials_slider: function _testimonials_slider() {
-      (0, _jquery["default"])('section.block__testimonials .site__grid').slick({
+      (0, _jquery["default"])('section.block__testimonials ul').slick({
         autoplay: false,
         adaptiveHeight: true,
         arrows: true,

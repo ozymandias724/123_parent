@@ -78,7 +78,7 @@ $(document).ready(function()
             });
         },
         _testimonials_slider: function () {
-            $('section.block__testimonials .site__grid').slick({
+            $('section.block__testimonials ul').slick({
                 autoplay: false
                 ,adaptiveHeight: true
                 ,arrows: true
