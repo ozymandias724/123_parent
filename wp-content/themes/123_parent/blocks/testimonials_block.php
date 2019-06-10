@@ -21,7 +21,8 @@
                     <div>
                         %s
                         <div class="testimonial_content">
-                            <div>
+                            %s
+                            <div class="testimonial_name">
                                 %s
                                 %s
                             </div>
@@ -30,12 +31,14 @@
                     </div>
                 </li>
             ';
-            // HARD CODED CONTENT
             $return['grid'] .= sprintf(
                 $guide['grid']
                 ,(!empty($fields['image']) ? '<div class="block" style="background-image:url('.$fields['image']['url'].');"></div>' : '')
+                ,'<i class="fas fa-quote-left"></i>'
+                // HARD CODED CONTENT
                 ,'<h3>Joe Doe</h3>'
-                ,'<p> - Irvine, CA </p><i class="fas fa-quote-left"></i>'
+                // HARD CODED CONTENT
+                ,'<p> - Irvine, CA </p>'
                 ,(!empty($fields['details']) ? $fields['details'] : '')
             );    
         }
@@ -45,7 +48,8 @@
                     <div>
                         %s
                         <div class="testimonial_content">
-                            <div>
+                            %s
+                            <div class="testimonial_name">
                                 %s
                                 %s
                             </div>
@@ -54,12 +58,14 @@
                     </div>
                 </li>
             ';
-            // HARD CODED CONTENT
             $return['grid'] .= sprintf(
                 $guide['grid']
                 ,(!empty($fields['image']) ? '<div class="block" style="background-image:url('.$fields['image']['url'].');"></div>' : '')
+                ,'<i class="fas fa-quote-left"></i>'
+                // HARD CODED CONTENT
                 ,'<h3>Jane Doe</h3>'
-                ,'<p> - Irvine, CA </p><i class="fas fa-quote-left"></i>'
+                // HARD CODED CONTENT
+                ,'<p> - Irvine, CA </p>'
                 ,(!empty($fields['details']) ? $fields['details'] : '')
             );
         }

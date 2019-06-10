@@ -26,10 +26,16 @@
                             text-align: left;
                             padding: 15px 30px;
                             min-height: 250px;
+                            > i {
+                                color: $white;
+                                @include fontS-24;
+                                position: absolute;
+                                right: 30px;
+                            }
                             > div:first-of-type {
                                 border-bottom: 4px dotted getVar($colors, white, full);
                             }
-                            > div {
+                            > div.testimonial_name {
                                 display: flex;
                                 align-items: center;
                                 padding-bottom: 10px;
@@ -48,14 +54,6 @@
                                     text-align: justify;
                                     @include fontS-24;
                                     margin: 0 10px;
-                                }
-                                > i {
-                                    order: -1;
-                                    margin-left: auto;
-                                    color: $white;
-                                    margin-bottom: 15px;
-                                    @include fontS-24;
-                                    order: 3;
                                 }
                             }
                             > div.testimonial_details {
@@ -93,12 +91,6 @@
                     right: -60px;
                 }
             }
-            // .block {
-            //     height: 250px;
-            //     background-size: cover;
-            //     background-position: center;
-            //     background-repeat: no-repeat;
-            // }
             a.site__button {
                 margin-top: 30px;
             }
@@ -114,6 +106,17 @@
                 li {
                     > div {
                         display: block;
+                        .testimonial_content {
+                            padding: 15px 10px;
+                            > i {
+                                position: relative;
+                                width: 100%;
+                                text-align: right;
+                            }
+                            > div.testimonial_name {
+                                flex-flow: column nowrap;
+                            }
+                        }
                     }
                 }
             }
