@@ -16,7 +16,7 @@
 
         if( $fields['type'] == 'text' ){
             $guide['grid'] = '
-                <li class="testimonial_text">
+                <li class="testimonial_text site__fade site__fade-up">
                     <div class="testimonial_content">
                         <div>
                             %s
@@ -35,7 +35,7 @@
         }
         else if( $fields['type'] == 'image' ){
             $guide['grid'] = '
-                <li class="testimonial_image">
+                <li class="testimonial_image site__fade site__fade-up">
                     %s
                     <div class="testimonial_content">
                         <div>
@@ -65,7 +65,7 @@
                 ,(!empty($testimonial['video_url']) ? $testimonial['video_url'] : '')
             );
             $guide['grid'] = '
-                <li class="testimonial_video">
+                <li class="testimonial_video site__fade site__fade-up">
                     %s
                     <div class="testimonial_content">
                         <div class="testimonial_address">
@@ -106,8 +106,8 @@
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="site__fade site__fade-up" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<div class="site__fade site__fade-up">'.$cB['text'].'</div>' : '' )
         ,( !empty($return['grid']) ? '<div class="site__grid">'.$return['grid'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );

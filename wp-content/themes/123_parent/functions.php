@@ -1,7 +1,13 @@
 <?php 
+
 /**
 * 
 */
+function get_gmaps_api_key(){
+    return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
+}
+
+// 
 include_once('classes/class.Setup.php');        // Theme Setup / Init
 
 include_once('classes/class.UserRoles.php');    // Custom Users and Roles
@@ -16,15 +22,11 @@ include_once('includes/acf.extensions.php');
 
 include_once('classes/class.Customizer.php');
 
-include_once('classes/class.NavHandler.php');
+include_once('classes/class.NavWalker.php');    // wordpress built in nav
+include_once('classes/class.NavHandler.php');   // handler for creating theme headers
 
-include_once('parts/nav/site.nav.php');
 
 
-function get_gmaps_api_key(){
-
-    return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
-}
 
 function get_phone_number_1()
 {
@@ -181,20 +183,6 @@ function get_site_logo(){
     }
     return $content_logo;
 }
-
-
-
-add_filter('acf/load_field/name=anchor_enabled', 'do_hide_acf_fields');
-add_filter('acf/load_field/name=anchor_link_text', 'do_hide_acf_fields');
-function do_hide_acf_fields( $field ) {
-    
-    if( !get_field('header', 'options')['long_scroll'] ){
-        return;
-    }else {
-        return $field;
-    }
-}
-
 
 function get_site_nav($pre = 'navlinks'){
 

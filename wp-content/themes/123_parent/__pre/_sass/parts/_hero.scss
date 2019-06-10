@@ -1,4 +1,166 @@
+// 
+// 
+// 
 @media only screen {
+    // 
+    // 
+    // 
+    section.hero {
+        margin: 0 0 getVar($sizing, gutter, px, large) 0;
+        height: 80vh;
+        
+        
+
+        
+        
+        &#hero_image {
+            > #hero_staticimage {
+                height: 100%;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+                padding: getVar($sizing, gutter, px, large);
+
+                // handle placement
+                &.topleft {
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                }
+                &.topcenter {
+                    align-items: flex-start;
+                    justify-content: center;
+                }
+                &.topright {
+                    align-items: flex-start;
+                    justify-content: flex-end;
+                }
+                &.middleleft {
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+                &.middlecenter {
+                    align-items: center;
+                    justify-content: center;
+                }
+                &.middleright {
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+                &.bottomleft {
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                }
+                &.bottomcenter {
+                    align-items: flex-end;
+                    justify-content: center;
+                }
+                &.bottomright {
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+
+
+                
+                > .hero_foreground {
+                    &.hasbg {
+                        padding: getVar($sizing, gutter, px, normal);
+                    }
+                }
+            }
+            
+        }
+
+        &#hero_slider {
+
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            // handle placement
+            &.topleft {
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            &.topcenter {
+                align-items: flex-start;
+                justify-content: center;
+            }
+
+            &.topright {
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+
+            &.middleleft {
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            &.middlecenter {
+                align-items: center;
+                justify-content: center;
+            }
+
+            &.middleright {
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            &.bottomleft {
+                align-items: flex-end;
+                justify-content: flex-start;
+            }
+
+            &.bottomcenter {
+                align-items: flex-end;
+                justify-content: center;
+            }
+
+            &.bottomright {
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+            
+            > div#slick_slider_hero {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin: 0 0 0 0;
+                &.slick-slider,
+                .slick-list,
+                .slider_img,
+                .slick-track {
+                    height: 100%;
+                }
+                // wait until initialize?
+                &.slick-initialized {
+                    // opacity maybe?
+                }
+            }
+
+            > .hero_foreground {
+                position: relative;
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //Hero section
     section.hero {
         overflow: hidden;
@@ -18,37 +180,15 @@
         .hero_foreground {
             font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
             text-align: center;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%; 
-            left: 50%;
-            width: getVar($sizing, content, full);
             z-index: 2;
-            &.container {
-                &.narrow {
-                    width: getVar($sizing, content, small);
-                }
-                &.medium {
-                    width: getVar($sizing, content, medium);
-                }
-                &.wide {
-                    width: getVar($sizing, content, large);
-                }
-                &.full {
-                    width: getVar($sizing, content, full);
-                }
-            }
             //Title
             h2 {
-                
                 @include fontS-72;
                 z-index: 2;
                 color: $white;
             }
-            //Logo
             img {
-                max-width: 200px;
-                margin: 35px auto 0;
+                margin: 0 auto;
             }
             //Subtitle
             p {
@@ -58,7 +198,7 @@
                 margin: 20px 0 30px;
             }
             //Button
-            a {
+            a.site__button {
                 padding: 10px;
                 @include fontS-20;
                 padding: 13px 30px 15px;
@@ -77,14 +217,6 @@
                     opacity: 0.8;
                 }
             }
-        }
-    }
-    // Height
-    section.hero {
-        &#hero_image > div#hero_staticimage,
-        &#hero_slider .slider_img,
-        &#hero_video {
-            height: 90vh;
         }
     }
     // Hero Image

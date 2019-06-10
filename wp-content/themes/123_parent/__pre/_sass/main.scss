@@ -1,13 +1,13 @@
+// 
 // NPM Libs
-@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'; // bake in font awesome
-@import '../../node_modules/slick-carousel-browserify/slick/slick.scss';    // bane in slick 
-@import '../../node_modules/slick-carousel-browserify/slick/slick-theme.scss';  // bake in slicks basic styles
-@import '../../node_modules/magnific-popup/dist/magnific-popup.css';
-@import '../../node_modules/paymentfont/css/paymentfont.min.css';
-
-// Libs
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css'; // font awesome
+@import '../../node_modules/slick-carousel-browserify/slick/slick.scss';    // slick carousel
+@import '../../node_modules/slick-carousel-browserify/slick/slick-theme.scss';  // slicks basic styles
+@import '../../node_modules/magnific-popup/dist/magnific-popup.css';        // magnific popup for lightboxes
+// @import '../../node_modules/paymentfont/css/paymentfont.min.css';
 
 
+// 
 // Site
 @import 'site/fonts';   // font declarations
 @import 'site/vars';    // variables
@@ -17,30 +17,17 @@
 @import 'site/base';    // soft-restyle for larger features and components to match brand (general layout, grid styles, etc)
 @import 'site/anim';    // animation and transition classes and such
 
-// partials
-@import "partials/nav-mobile";      // mobile nav
-@import "partials/nav-desktop";     // desktop nav
-@import "partials/footer-mobile";   // mobile footer
-@import "partials/footer-desktop";  // desktop footer
-
+// 
 // parts
+@import "parts/nav.mobile";      // mobile nav
+@import "parts/nav.desktop";     // desktop nav
+@import "parts/footer.mobile";   // mobile footer
+@import "parts/footer.desktop";  // desktop footer
 @import "parts/hero";       // hero
 @import "parts/banner";     // longscroll banners
 @import "parts/popups";     // popups
 
-
-// Long Scroll Modules
-// These features only appear if the site is using a 'long scroll' i.e., 1 pager
-@import "modules/gallery";      // gallery module
-@import "modules/about";        // about / company module
-@import "modules/reviews";      // reviews / testimonials module
-@import "modules/menu";      // reviews / testimonials module
-@import "modules/locations";      // areas served
-@import "modules/blog";      // blog
-@import "modules/coupons";      // coupons
-@import "modules/services";      // services
-@import "modules/testimonials";  // testimonials
-
+// 
 // Templates
 @import "templates/cpt.coupon";
 @import "templates/cpt.about";
@@ -56,4 +43,4 @@
 
 
 // blocks
-@import 'site/blocks';
+@import 'blocks';

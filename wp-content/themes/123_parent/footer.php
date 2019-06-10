@@ -12,18 +12,24 @@
     function get_copyright_banner(){
         $return = '';
         $field = get_field('footer', 'options');
-        if( !empty($field['copyright_banner']) ){
-            $format = '
-                <div class="site__copyright_banner"><a href="%s" title="%s" target="%s">%s</a></div>
-            ';
-            $return .= sprintf(
-                $format
-                ,(!empty($field['copyright_banner']['url']) ? $field['copyright_banner']['url'] : '')
-                ,(!empty($field['copyright_banner']['title']) ? $field['copyright_banner']['title'] : '')
-                ,(!empty($field['copyright_banner']['target']) ? $field['copyright_banner']['target'] : '')
-                ,(!empty($field['copyright_banner']['title']) ? $field['copyright_banner']['title'] : '')
-            );
-        }
+
+
+        $company_name = get_field('company_info', 'options')['company_name'];
+
+
+        $format = '
+            <div class="site__copyright_banner">
+                <span>Copyright &copy; '.date('Y', time()).' '.$company_name.'</span>
+                %s
+            </div>
+        ';
+        $return .= sprintf(
+            $format
+            ,( !empty($field['copyright_banner']['text']) 
+            ? '<a href="'.$field['copyright_banner']['url'].'" target="_blank">Website created by '.$field['copyright_banner']['text'].'</a>' 
+            : '<a href="http://123websites.com" target="_blank">Website created by 123Websites.com</a>'
+            )
+        );
         return $return;
     }
 
@@ -36,13 +42,12 @@
             $return .= '<div class="footer_payment_types"><ul>';
 
             $format = '
-                <li><img alt="%s" src="%s"></li>
+                <li>%s</li>
             ';
             foreach( $field['payment_types'] as $type ){
                 $return .= sprintf(
                     $format
-                    ,(!empty($type['image']['alt']) ? $type['image']['alt'] : '')
-                    ,(!empty($type['image']) ? $type['image']['url'] : '')
+                    ,(!empty($type['icon']) ? $type['icon'] : '')
                 );
             }
             $return .= '</ul></div>';

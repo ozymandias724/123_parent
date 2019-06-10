@@ -1,29 +1,39 @@
-import $ from 'jquery';
-import slick from 'slick-carousel-browserify';
-import magnific from 'magnific-popup';
-import zenscroll from 'zenscroll';
-import { setTimeout } from 'timers';
+/**
+*  The Main JS File
+*/
 
-// kick off the polyfill!
-// smoothscroll.polyfill();
 
-var Theme = {};
-var Hero = {};
-var Headers = {};
-var Blocks = {};
+// get libraries
+import $ from 'jquery';                         // latest jquery prereq
+import slick from 'slick-carousel-browserify';  // slick slider (carousels)
+import magnific from 'magnific-popup';          // magnific popup (lightboxes)
+import zenscroll from 'zenscroll';              // smoothscroll
+import { setTimeout } from 'timers';            // discuss what this is and why it is here
 
-$(document).ready(function() {
 
-    // idk
+// create some 'classes'
+var Theme = {};     // tbd
+var Hero = {};      // tbd
+var Headers = {};   // tbd
+var Blocks = {};    // tbd
 
-    // if header six
-    if ($('header#opt_header_six').length) {
-        var offset = $('header#opt_header_six').height();
+
+
+
+// certain things should wait until the document is ready
+$(document).ready(function()
+{
+
+    /**
+     * 
+     *      This is NOT DRY
+     * 
+     *  If Header Six Exists
+     */
+    if ($('header').length) {
+        var offset = $('header').height() + $('#popups__banner').height() ;
         $('main#page_home').css('margin-top', offset);
     }
-    
-    // /end idk
-    
     
 
     /**
@@ -53,7 +63,6 @@ $(document).ready(function() {
         _init: function () {
             Theme.Slick._hero_slider();
             Theme.Slick._testimonials_slider();
-            console.log(hero_fields);
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({
@@ -123,8 +132,6 @@ $(document).ready(function() {
         
         PopUps.Banner._init();
     }
-
-
     // can we combined some of this so that its listening for multiple things i.e., $('overlay1bg, overlay2bg).on(click)???
     // this code isnt DRY
     /**
@@ -183,11 +190,6 @@ $(document).ready(function() {
         }
         // PopUps.Timed._init();
     }
-
-    
-    
-    
-
     /**
      * 
      *  If we have a gallery block
@@ -236,6 +238,7 @@ $(document).ready(function() {
     Theme.Nav._init();
 
 });
+
 
 
 
@@ -369,6 +372,80 @@ Headers.Sidebar = {
 }
 Headers.Sidebar._init();
 
+Theme.Menu = {
+    tab_link: $(" .food_menus .button_group a "),
+    menu_section: $(" .menu_section "),
+
+    _init: function () {
+        Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
+        Theme.Menu._show_menu_sections();
+        Theme.Menu._activate_menu_links();
+    },
+    _tab_link_click: function () {
+
+        var tab_link_index = $(this).parent().index();
+
+        Theme.Menu.menu_section.each(function () {
+
+            if ($(this).index() !== tab_link_index) {
+                $(this).removeClass("active_menu_section");
+            } else {
+                $(this).addClass("active_menu_section");
+            }
+
+        });
+        Theme.Menu.tab_link.each(function () {
+
+            $(this).removeClass("active_menu_link");
+
+        });
+        $(this).addClass("active_menu_link");
+    },
+    _show_menu_sections: function () {
+        Theme.Menu.menu_section.each(function (index) {
+            if (index == 0) {
+                $(this).addClass("active_menu_section");
+            }
+        });
+    },
+    _activate_menu_links: function () {
+        Theme.Menu.tab_link.each(function (index) {
+            if (index == 0) {
+                $(this).addClass("active_menu_link");
+            }
+        })
+    }
+}
+Theme.Menu._init();
+
+
+Headers.One = {
+
+    header: $("header.header#opt_header_one"),
+    div_two: $("header.header#opt_header_one>div:last-of-type"),
+
+    _init: function () {
+
+        if ($(Headers.One.header).length) {
+            Headers.One.div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
+            window.onscroll = function () {
+                Headers.One._sticky_header();
+            }
+            Headers.One._sticky_header();
+        }
+    },
+
+    _sticky_header: function () {
+        if (window.pageYOffset >= Headers.One.div_two_offset_top) {
+            Headers.One.div_two.addClass("sticky");
+        } else {
+            Headers.One.div_two.removeClass("sticky");
+        }
+
+    },
+
+}
+Headers.One._init();
 
 
 Theme.CookieMonster = {
@@ -492,79 +569,3 @@ Theme.Parallax = {
 //         }
 //     }
 // }
-
-
-Theme.Menu = {
-    tab_link: $(" .food_menus .button_group a "),
-    menu_section: $(" .menu_section "),
-
-    _init: function () {
-        Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
-        Theme.Menu._show_menu_sections();
-        Theme.Menu._activate_menu_links();
-    },
-    _tab_link_click: function () {
-
-        var tab_link_index = $(this).parent().index();
-
-        Theme.Menu.menu_section.each(function () {
-
-            if ($(this).index() !== tab_link_index) {
-                $(this).removeClass("active_menu_section");
-            } else {
-                $(this).addClass("active_menu_section");
-            }
-
-        });
-        Theme.Menu.tab_link.each(function () {
-
-            $(this).removeClass("active_menu_link");
-
-        });
-        $(this).addClass("active_menu_link");
-    },
-    _show_menu_sections: function () {
-        Theme.Menu.menu_section.each(function (index) {
-            if (index == 0) {
-                $(this).addClass("active_menu_section");
-            }
-        });
-    },
-    _activate_menu_links: function () {
-        Theme.Menu.tab_link.each(function (index) {
-            if (index == 0) {
-                $(this).addClass("active_menu_link");
-            }
-        })
-    }
-}
-Theme.Menu._init();
-
-
-Headers.One = {
-
-    header: $("header.header#opt_header_one"),
-    div_two: $("header.header#opt_header_one>div:last-of-type"),
-
-    _init: function () {
-
-        if ($(Headers.One.header).length) {
-            Headers.One.div_two_offset_top = $("header#opt_header_one > div:nth-of-type(2)").offset().top;
-            window.onscroll = function () {
-                Headers.One._sticky_header();
-            }
-            Headers.One._sticky_header();
-        }
-    },
-
-    _sticky_header: function () {
-        if (window.pageYOffset >= Headers.One.div_two_offset_top) {
-            Headers.One.div_two.addClass("sticky");
-        } else {
-            Headers.One.div_two.removeClass("sticky");
-        }
-
-    },
-
-}
-Headers.One._init();

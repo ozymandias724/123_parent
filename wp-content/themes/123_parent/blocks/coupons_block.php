@@ -6,9 +6,9 @@
     // empty return string
     $return = [];
     $guide = [];
-    $return[0] ='<ul>';
-    $guide[0] = '
-        <li class="">
+    $return['coupon'] ='<ul>';
+    $guide['coupon'] = '
+        <li class="site__fade site__fade-up">
             <a href="%s">
                 <h5>%s</h5>
                 <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
@@ -21,8 +21,8 @@
         
         $fields = get_fields($coupon['coupon']->ID);
         if( $fields['status'] ){ 
-            $return[0] .= sprintf(
-                $guide[0]
+            $return['coupon'] .= sprintf(
+                $guide['coupon']
                 ,get_permalink($coupon['coupon']->ID)
                 ,$coupon['coupon']->post_title
                 //,date('M j, Y',$coupon_fields['expiration'])
@@ -30,11 +30,11 @@
             );
         }
     }
-    $return[0] .= '</ul>';
+    $return['coupon'] .= '</ul>';
 
     
     // empty guide string 
-    $guide[1] = '
+    $guide['section'] = '
         <section %s class="site__block block__coupons">
             <div class="container %s %s" style="%s %s">
                 %s
@@ -45,21 +45,22 @@
         </section>
     ';
 
-    $return[1] .= sprintf(
-         $guide[1]
+    $return['section'] .= sprintf(
+         $guide['section']
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
-        ,( !empty($return[0]) ? '<div class="site__grid">'.$return[0].'</div>' : '' )
+        ,( !empty($return['coupon']) ? '<div class="site__grid">'.$return['coupon'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 
 
     // echo return string
-    echo $return[1];
+    echo $return['section'];
 
     // clear the $cB, $return, $index and $guide vars for the next block
     unset($cB, $return, $guide);
