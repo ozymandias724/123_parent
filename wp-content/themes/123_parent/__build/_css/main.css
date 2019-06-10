@@ -3012,11 +3012,12 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
 
   section.hero {
     overflow: hidden;
+    position: relative;
   }
   section.hero:after {
     content: "";
     display: block;
-    position: fixed;
+    position: absolute;
     padding: 100px 0;
     width: 100%;
     height: 100%;
@@ -3037,6 +3038,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   }
   section.hero .hero_foreground img {
     margin: 0 auto;
+    max-width: 700px;
   }
   section.hero .hero_foreground p {
     color: #fff;
