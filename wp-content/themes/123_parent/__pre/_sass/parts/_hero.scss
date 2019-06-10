@@ -21,7 +21,7 @@
                 align-items: center;
                 justify-content: center;
                 padding: getVar($sizing, gutter, px, large);
-
+                @include bgimage;
                 // handle placement
                 &.topleft {
                     align-items: flex-start;
@@ -139,6 +139,9 @@
                 &.slick-initialized {
                     // opacity maybe?
                 }
+                img {
+                    @include bgimage;
+                }
             }
 
             > .hero_foreground {
@@ -178,7 +181,6 @@
         }
         //Hero Foreground
         .hero_foreground {
-            font-family: 'Futura-Bold', 'Trebuchet MS', Arial, sans-serif;
             text-align: center;
             z-index: 2;
             //Title
@@ -217,15 +219,6 @@
                     opacity: 0.8;
                 }
             }
-        }
-    }
-    // Hero Image
-    section.hero#hero_image {     
-        //First div of hero image 
-        > div#hero_staticimage {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
         }
     }
     // Hero Slider
@@ -274,37 +267,10 @@
 }
 
 @media only screen and (max-width: 1280px){
-    section.hero .hero_foreground.container {
-        width: getVar($sizing, content, medium);
-    }
 }
 
 @media only screen and (max-width: 960px){
-    section.hero .hero_foreground.container {
-        &.narrow,
-        &.medium,
-        &.wide,
-        &.full {
-            width: getVar($sizing, content, large);
-        }
-        //Title
-        > h2 {
-            @include fontS-34;
-        }
-        //Subtitle
-        > p {
-            @include fontS-24;
-        }
-    }
 }
 
 @media only screen and (max-width: 640px){
-    section.hero .hero_foreground.container {
-        &.narrow,
-        &.medium,
-        &.wide,
-        &.full {
-            width: getVar($sizing, content, full);
-        }
-    }
 }
