@@ -1,98 +1,147 @@
 @media only screen {
-    section.block__testimonials {
+    section.site__block.block__testimonials {
         >div.container {
+            &.narrow {
+                width: getVar($sizing, content, small);
+            }
+
+            &.medium {
+                width: getVar($sizing, content, medium);
+            }
+
+            &.wide {
+                width: getVar($sizing, content, large); 
+            }
+
+            &.full {
+                width: getVar($sizing, content, full);
+            }
             .slick-list {
                 border: 3px solid getVar($colors, white, full);
                 box-shadow: 0px 0px 0px 3px #e2e2e2; 
                 border-radius: 20px;    
-                background-color: #DEDEDE;
+                background-color: getVar($gustavo, colors, gray7);
             }
-            ul {
-                margin: 0 auto;
-                li {
-                    border-radius: 20px;
-                    > div {
-                        display: flex;
-                        flex-flow: row nowrap;
-                        .block {
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center center;
-                            flex: 1 0 25%;
-                            height: 250px;
-                        }
-                        .testimonial_content {
-                            flex: 1 0 75%;
-                            text-align: left;
-                            padding: 15px 30px;
-                            min-height: 250px;
-                            > i {
-                                color: $white;
-                                @include fontS-24;
-                                position: absolute;
-                                right: 30px;
+            > .site__grid {
+                > ul {
+                    width: 48vw;
+                    margin: 0 auto;
+                    li {
+                        border-radius: 20px;
+                        > div {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            .block {
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-position: center center;
+                                flex: 1 0 25%;
+                                height: 250px;
                             }
-                            > div:first-of-type {
-                                border-bottom: 4px dotted getVar($colors, white, full);
-                            }
-                            > div.testimonial_name {
-                                display: flex;
-                                align-items: center;
-                                padding-bottom: 10px;
-                                margin-bottom: 10px;
-                                flex-flow: row nowrap;
-                                > h3 {
-                                    display: inline-block;
-                                    text-decoration: none;
-                                    color: getVar($colors, black, full);
-                                    text-align: left;
-                                    font-weight: 500;
-                                    font-family: "Gotham", "Helvetica", sans-serif;
+                            .testimonial_content {
+                                flex: 1 0 75%;
+                                text-align: left;
+                                padding: 15px 30px;
+                                min-height: 250px;
+                                > i {
+                                    color: $white;
                                     @include fontS-24;
+                                    position: absolute;
+                                    right: 30px;
                                 }
-                                > p {
-                                    text-align: justify;
-                                    @include fontS-24;
-                                    margin: 0 10px;
+                                > div:first-of-type {
+                                    border-bottom: 4px dotted getVar($colors, white, full);
                                 }
-                            }
-                            > div.testimonial_details {
-                                > p {
-                                    @include fontS-14;
-                                    color: #858585;
-                                    font-weight: 500;
+                                > div.testimonial_name {
+                                    display: flex;
+                                    align-items: center;
+                                    padding-bottom: 10px;
                                     margin-bottom: 10px;
-                                    margin: 0;
+                                    flex-flow: row nowrap;
+                                    > h3 {
+                                        display: inline-block;
+                                        text-decoration: none;
+                                        color: getVar($colors, black, full);
+                                        text-align: left;
+                                        font-weight: 500;
+                                        font-family: "Gotham", "Helvetica", sans-serif;
+                                        @include fontS-24;
+                                    }
+                                    > p {
+                                        text-align: justify;
+                                        @include fontS-24;
+                                        margin: 0 10px;
+                                    }
+                                }
+                                > div.testimonial_details {
+                                    > p {
+                                        @include fontS-14;
+                                        color: #858585;
+                                        font-weight: 500;
+                                        margin-bottom: 10px;
+                                        margin: 0;
+                                    }
                                 }
                             }
                         }
+                    }   
+                    > .testimonial_prev, 
+                    > .testimonial_next {
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        @include fontS-72;
+                        line-height: 0px;
+                        top: 50%;
+                        cursor: pointer;
+                        color: getVar($gustavo, colors, gray6);
+                        transform: translate(0,-50%);
+                        padding: 0;
+                        border: none;
+                        outline: none;
+                        background: transparent;
                     }
-                }   
-                > .testimonial_prev, 
-                > .testimonial_next {
-                    position: absolute;
-                    height: 20px;
-                    width: 20px;
-                    @include fontS-72;
-                    line-height: 0px;
-                    top: 50%;
-                    cursor: pointer;
-                    color: getVar($gustavo, colors, gray6);
-                    transform: translate(0,-50%);
-                    padding: 0;
-                    border: none;
-                    outline: none;
-                    background: transparent;
-                }
-                > .testimonial_prev {
-                    left: -100px;
-                }
-                > .testimonial_next {
-                    right: -60px;
+                    > .testimonial_prev {
+                        left: -100px;
+                    }
+                    > .testimonial_next {
+                        right: -60px;
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        border: 37px solid transparent;
+                        border-top-color: getVar($gustavo, colors, gray7);
+                        border-bottom: 0;
+                        margin-left: -37px;
+                        z-index: 500;
+                        margin-bottom: -37px;
+                    }
                 }
             }
+            
             a.site__button {
                 margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    section.site__block.block__testimonials {
+        >div.container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, large);
+            }
+            .site__grid > ul {
+                width: 65vw;
             }
         }
     }
@@ -102,7 +151,6 @@
     section.site__block.block__testimonials {
         >div.container {
             .site__grid > ul {
-                width: 65vw;
                 li {
                     > div {
                         display: block;
@@ -127,6 +175,12 @@
 @media only screen and (max-width: 640px){
     section.site__block.block__testimonials {
         >div.container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, full);
+            }
             .site__grid > ul {
                 width: 55vw;
             }
