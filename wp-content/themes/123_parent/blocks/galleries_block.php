@@ -13,13 +13,13 @@
         $return['galleries'] = '';
 
         // set the galleries guide string
-        $guide['galleries'] = '<li><div><div class="image" style="background-image: url(%s)"></div></div></li>';
+        $guide['galleries'] = '<li class="site__fade site__fade-up"><div><div class="image" style="background-image: url(%s)"></div></div></li>';
         // set the galleries return string
         $return['galleries'] .= '<div class="galleries">';
 
         // open the tabs list
         if( $cB['tab_type'] != 'none' ){
-            $return['tabs'] .= '<div class="tabs"><ul>';
+            $return['tabs'] .= '<div class="tabs site__fade site__fade-up"><ul>';
         }
 
         // loop thru the galleries
@@ -31,7 +31,7 @@
             }
 
             // open the galleries grid
-            $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2>'.$gallery['title'].'</h2><ul>';
+            $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2 class="site__fade site__fade-up">'.$gallery['title'].'</h2><ul>';
 
             // loop thru the gallery images to create line items
             foreach( $gallery['images'] as $image ){
@@ -66,16 +66,20 @@
     ';
 
     $return['section'] .= sprintf(
-         $guide['section']
+        $guide['section']
+        //  options for every block
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
         ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
+        // post object grid options
+        ,( !empty($cB['heading']) ? '<h2 class="site__fade site__fade-up block__heading">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up block__details">'.$cB['text'].'</div>' : '' )
+        // gallery options
         ,( !empty($return['tabs']) ? $return['tabs'] : '' )
         ,( !empty($return['galleries']) ? $return['galleries'] : '' )
+        // view all
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 

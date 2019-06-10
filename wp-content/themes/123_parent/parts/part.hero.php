@@ -1,16 +1,15 @@
 <?php 
 /**
- * Partial
- * Hero Section
- */
-    
-   $fields = get_fields($post->ID);
+*   Partial
+*   Hero Section
+*/
+    $fields = get_fields($post->ID);
 
-   // detect hero type
-   $style = $fields['style'];
+    // detect hero type
+    $style = $fields['style'];
 
-   // a hero is either not selected, or no hero is selected
-   if( $style == 'none' || empty($style) )
+    // a hero is either not selected, or no hero is selected
+    if( $style == 'none' || empty($style) )
     { 
         $content_hero = '';        
     }
@@ -28,15 +27,10 @@
 
         // Foreground fields
         $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
-
         $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
-
         $background_color = ( !empty($foreground['background_color'] ) ? 'background-color: rgba('.hex2RGB($foreground['background_color'], true).','.$foreground['background_opacity'].');' : '');
         $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'color:'.$foreground['foreground_color'].';' : '');
-
         $title = ( !empty($foreground['hero_title'] ) ? '<h2>'.$foreground['hero_title'].'</h2>' : '');
-        
-        
         if( !empty($foreground['hero_logo']) ){
             
             if( !empty($foreground['logo_url']) ){
@@ -47,7 +41,6 @@
                 $logo = '<img alt="'.$foreground['hero_logo']['alt'].'" src="'.$foreground['hero_logo']['url'].'" />';
             }
         }
-        
         $tagline = ( !empty($foreground['hero_tagline'] ) ? '<p>'.$foreground['hero_tagline'].'</p>' : '');
         
         // Foreground Button fields
@@ -58,7 +51,6 @@
         $button_title = ( !empty($foreground['button']['link']['title'] ) ? $foreground['button']['link']['title'] : '');
         $button_target = ( !empty($foreground['button']['link']['target'] ) ? $foreground['button']['link']['target'] : '');
 
-        
         // Slider fields
         $slider_images = ( !empty($background['slider']['images'] ) ? $background['slider']['images'] : '');
         $slider_randomize = ( !empty($background['slider']['randomize'] ) ? $background['slider']['randomize'] : '');
@@ -73,7 +65,7 @@
         $video_show_volume = ( !empty($background['video']['show_volume']) && $background['video']['show_volume'] == 1 ? '' : '');
 
         // open hero container
-        $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
+        $content_hero = '<section class="hero site__fade site__fade-up '.( !empty($placement) ? $placement : '' ).'" id="hero_'.$style.'">'; 
 
     // static image
     if( $style == 'image' && !empty($background_image) )
@@ -103,43 +95,43 @@
             ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
         );
         
+    } 
     // slider
-    } else if( $style == 'slider' && !empty($slider_images) ) {  
-         
-         $slider = '<div id="slick_slider_hero">';
+    else if( $style == 'slider' && !empty($slider_images) )
+    {  
+        
+        $slider = '<div id="slick_slider_hero">';
 
-         foreach( $slider_images as $i => $image ){
+        foreach( $slider_images as $i => $image ){
             $slider .= '<div><img class="slider_img" alt="'.$image['alt'].'" src="'.$image['url'].'"></div>';
-         } 
+        } 
 
-         $slider .= '</div>';
-         
-         $format_hero = '
+        $slider .= '</div>';
+        
+        $format_hero = '
             %s
-            <div style="%s %s" class="%s hero_foreground container '.$width.'">
-               %s
-               %s    
-               %s
-               %s
+            <div style="%s %s" class="hero_foreground '.$width.'">
+                %s
+                %s    
+                %s
+                %s
             </div>
-         ';
-         $content_hero .= sprintf(
+        ';
+        $content_hero .= sprintf(
             $format_hero
             ,$slider
             ,$background_color
             ,$foreground_color
-            ,( !empty($placement) ? $placement : '' ) // placement
             ,$title
             ,$logo
             ,$tagline
             ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
-         );
-         
-        }
+        );
+    }
     //   video
-    else if( $style == 'video' && !empty($background_video) ){
-
-            $format_hero = '
+    else if( $style == 'video' && !empty($background_video) )
+    {
+        $format_hero = '
             <div>
                 <video title="%s" autoplay %s %s> 
                     <source src="%s" type="video/mp4">
@@ -152,8 +144,8 @@
                     %s
                 </div>
             </div>
-            ';
-            $content_hero .= sprintf(
+        ';
+        $content_hero .= sprintf(
             $format_hero
             ,$background_video['alt']
             ,$video_audio_on
@@ -167,9 +159,8 @@
             ,$logo
             ,$tagline
             ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
-            );
-            
-        }
+        );
+    }
         // close hero container
         $content_hero .= '</section>'; 
     }

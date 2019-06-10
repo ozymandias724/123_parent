@@ -2901,6 +2901,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
 }
 @media only screen {
   section.hero {
+    margin: 0 0 60px 0;
     height: 80vh;
   }
   section.hero#hero_image > #hero_staticimage {
@@ -2950,6 +2951,64 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero#hero_image > #hero_staticimage > .hero_foreground.hasbg {
     padding: 30px;
   }
+  section.hero#hero_slider {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  section.hero#hero_slider.topleft {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  section.hero#hero_slider.topcenter {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  section.hero#hero_slider.topright {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  section.hero#hero_slider.middleleft {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  section.hero#hero_slider.middlecenter {
+    align-items: center;
+    justify-content: center;
+  }
+  section.hero#hero_slider.middleright {
+    align-items: center;
+    justify-content: flex-end;
+  }
+  section.hero#hero_slider.bottomleft {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  section.hero#hero_slider.bottomcenter {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  section.hero#hero_slider.bottomright {
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  section.hero#hero_slider > div#slick_slider_hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 0 0 0;
+  }
+  section.hero#hero_slider > div#slick_slider_hero.slick-slider,
+section.hero#hero_slider > div#slick_slider_hero .slick-list,
+section.hero#hero_slider > div#slick_slider_hero .slider_img,
+section.hero#hero_slider > div#slick_slider_hero .slick-track {
+    height: 100%;
+  }
+  section.hero#hero_slider > .hero_foreground {
+    position: relative;
+  }
 
   section.hero {
     overflow: hidden;
@@ -2968,20 +3027,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero .hero_foreground {
     font-family: "Futura-Bold", "Trebuchet MS", Arial, sans-serif;
     text-align: center;
-    width: 92vw;
     z-index: 2;
-  }
-  section.hero .hero_foreground.container.narrow {
-    width: 50vw;
-  }
-  section.hero .hero_foreground.container.medium {
-    width: 65vw;
-  }
-  section.hero .hero_foreground.container.wide {
-    width: 80vw;
-  }
-  section.hero .hero_foreground.container.full {
-    width: 92vw;
   }
   section.hero .hero_foreground h2 {
     font-size: 7.2rem;
@@ -3838,7 +3884,8 @@ main#page_services section.mod__services-featuredservice div.container .site__gr
   section.site__block .container > h2 {
     margin: 0 auto 30px auto;
   }
-  section.site__block .container > .block__details {
+  section.site__block .container > .block__heading,
+section.site__block .container > .block__details {
     margin: 0 auto 30px auto;
   }
   section.site__block .container.hasbg {
