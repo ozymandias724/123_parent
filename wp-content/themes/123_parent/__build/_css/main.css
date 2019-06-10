@@ -2567,13 +2567,14 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   footer div.container a[class^=footer_phone]:hover, footer div.container a[class^=footer_phone]:active, footer div.container a[class^=footer_phone]:focus {
     opacity: 0.8;
   }
-  footer div.container .site__copyright_banner > span {
-    display: inline-block;
-    color: #ffffff;
+  footer div.container .site__copyright_banner {
     font-size: 1.4rem;
     line-height: 2.8rem;
   }
-  footer div.container .site__copyright_banner > span:hover, footer div.container .site__copyright_banner > span:active, footer div.container .site__copyright_banner > span:focus {
+  footer div.container .site__copyright_banner > span {
+    color: #ffffff;
+  }
+  footer div.container .site__copyright_banner > a:hover, footer div.container .site__copyright_banner > a:active, footer div.container .site__copyright_banner > a:focus {
     opacity: 0.8;
   }
   footer div.container .footer_payment_types > ul > li {
@@ -2708,26 +2709,24 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     justify-content: center;
   }
   footer#footer_one > div.footer_copyright > div > div {
-    flex: 1 0 50%;
+    flex: 1 0 48%;
   }
   footer#footer_one > div.footer_copyright > div .site__copyright_banner {
     display: flex;
-    justify-content: flex-start;
-  }
-  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a {
-    color: #ffffff;
+    flex-flow: column nowrap;
     text-align: left;
-    width: 75%;
-    font-weight: 500;
+    margin-right: 20px;
   }
-  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a > span {
-    display: block;
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > span {
+    color: #ffffff;
   }
-  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a > span:first-of-type {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > span:first-of-type {
     border-bottom: 1px solid #3b6c9e;
     padding-bottom: 3px;
   }
-  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a > span:last-of-type {
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner > a {
+    margin-top: 5px;
+    font-weight: 500;
     color: #3b6c9e;
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types {
@@ -2737,6 +2736,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul {
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: -15px;
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li {
     background-color: rgba(193, 206, 220, 0.2);
@@ -2745,11 +2745,8 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li > i.fab {
     padding: 5px 10px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff;
     font-size: 28px;
-  }
-  footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:hover > i.fab, footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:focus > i.fab, footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:active > i.fab {
-    color: white;
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types ul > li:last-of-type {
     margin-right: 0;
@@ -2762,7 +2759,7 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     text-align: left;
   }
   footer#footer_two > div.container {
-    padding: 0 10px 30px;
+    padding: 20px 10px 30px;
     flex-flow: column nowrap;
   }
   footer#footer_two > div.container > #footer_company_info {
@@ -2790,14 +2787,14 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   footer#footer_two > div.container > div.site__copyright_banner {
     margin: 0 0 20px 0;
+    display: flex;
+    flex-flow: column nowrap;
   }
   footer#footer_two > div.container > div.site__copyright_banner > a {
     max-width: 350px;
-    padding: 5px;
+    padding: 5px 0;
     line-height: 2rem;
-  }
-  footer#footer_two > div.container > div.site__copyright_banner > a > span {
-    display: block;
+    color: #ffffff;
   }
   footer#footer_two > div.container > div.footer_last_div {
     display: flex;
@@ -2805,6 +2802,10 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   footer#footer_two > div.container > div.footer_last_div > div.footer_payment_types {
     padding: 5px;
+    color: #ffffff;
+  }
+  footer#footer_two > div.container > div.footer_last_div > div.footer_payment_types i:before {
+    font-size: 40px;
   }
   footer#footer_two > div.container > div.footer_last_div > div#footer_social {
     align-items: center;
@@ -2820,8 +2821,22 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     line-height: 2.8rem;
     letter-spacing: 0.5px;
   }
-  footer#footer_two > div.container > div.footer_last_div > div#footer_social > ul.site__social-media > li > a {
-    padding: 0 10px;
+  footer#footer_two > div.container > div.footer_last_div > div#footer_social > ul.site__social-media li {
+    margin-right: 15px;
+  }
+  footer#footer_two > div.container > div.footer_last_div > div#footer_social > ul.site__social-media li a {
+    padding: 0;
+  }
+  footer#footer_two > div.container > div.footer_last_div > div#footer_social > ul.site__social-media li a i {
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.4);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: bottom;
+    text-align: center;
   }
 
   footer#footer_three {
@@ -2854,6 +2869,14 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   }
   footer#footer_three > div.container .footer_payment_types {
     margin: 20px 0 10px;
+    color: #ffffff;
+  }
+  footer#footer_three > div.container .footer_payment_types i:before {
+    font-size: 40px;
+  }
+  footer#footer_three > div.container > div.site__copyright_banner > a {
+    color: #ffffff;
+    margin-left: 20px;
   }
 }
 @media only screen and (max-width: 1280px) {
@@ -3039,6 +3062,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   section.hero .hero_foreground img {
     margin: 0 auto;
     max-width: 700px;
+    max-height: 500px;
   }
   section.hero .hero_foreground p {
     color: #fff;
@@ -6110,6 +6134,119 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li:nth-child(1n),
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li:nth-child(1n) {
     margin: 0 0 2vw 0;
+  }
+}
+@media only screen {
+  section.block__testimonials > div.container .slick-list {
+    border: 3px solid #ffffff;
+    box-shadow: 0px 0px 0px 3px #e2e2e2;
+    border-radius: 20px;
+    background-color: #DEDEDE;
+  }
+  section.block__testimonials > div.container ul {
+    margin: 0 auto;
+  }
+  section.block__testimonials > div.container ul li {
+    border-radius: 20px;
+  }
+  section.block__testimonials > div.container ul li > div {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  section.block__testimonials > div.container ul li > div .block {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    flex: 1 0 25%;
+    height: 250px;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content {
+    flex: 1 0 75%;
+    text-align: left;
+    padding: 15px 30px;
+    min-height: 250px;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content > div:first-of-type {
+    border-bottom: 4px dotted #ffffff;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content > div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    flex-flow: row nowrap;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content > div > h3 {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    text-align: left;
+    font-weight: 500;
+    font-family: "Gotham", "Helvetica", sans-serif;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content > div > p {
+    text-align: justify;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    margin: 0 10px;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content > div > i {
+    order: -1;
+    margin-left: auto;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    order: 3;
+  }
+  section.block__testimonials > div.container ul li > div .testimonial_content > div.testimonial_details > p {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: #858585;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  section.block__testimonials > div.container ul > .testimonial_prev,
+section.block__testimonials > div.container ul > .testimonial_next {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
+    line-height: 0px;
+    top: 50%;
+    cursor: pointer;
+    color: #d6d6d6;
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  section.block__testimonials > div.container ul > .testimonial_prev {
+    left: -100px;
+  }
+  section.block__testimonials > div.container ul > .testimonial_next {
+    right: -60px;
+  }
+  section.block__testimonials > div.container a.site__button {
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  section.site__block.block__testimonials > div.container .site__grid > ul {
+    width: 65vw;
+  }
+  section.site__block.block__testimonials > div.container .site__grid > ul li > div {
+    display: block;
+  }
+}
+@media only screen and (max-width: 640px) {
+  section.site__block.block__testimonials > div.container .site__grid > ul {
+    width: 55vw;
   }
 }
 
