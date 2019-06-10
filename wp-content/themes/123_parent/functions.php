@@ -1,7 +1,13 @@
 <?php 
+
 /**
 * 
 */
+function get_gmaps_api_key(){
+    return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
+}
+
+// 
 include_once('classes/class.Setup.php');        // Theme Setup / Init
 
 include_once('classes/class.UserRoles.php');    // Custom Users and Roles
@@ -16,14 +22,11 @@ include_once('includes/acf.extensions.php');
 
 include_once('classes/class.Customizer.php');
 
-include_once('classes/class.NavHandler.php');
-include_once('classes/class.NavWalker.php');
+include_once('classes/class.NavWalker.php');    // wordpress built in nav
+include_once('classes/class.NavHandler.php');   // handler for creating theme headers
 
 
-function get_gmaps_api_key(){
 
-    return 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA';
-}
 
 function get_phone_number_1()
 {
@@ -181,10 +184,6 @@ function get_site_logo(){
     return $content_logo;
 }
 
-
-
-
-
 function get_site_nav($pre = 'navlinks'){
 
     if( get_field('header', 'options')['long_scroll'] ){
@@ -224,34 +223,6 @@ function get_site_nav($pre = 'navlinks'){
         return $site__nav;
     }
 }
-
-
-/**
-* Convert a hexa decimal color code to its RGB equivalent
-*
-* @param string $hexStr (hexadecimal color value)
-* @param boolean $returnAsString (if set true, returns the value separated by the separator character. Otherwise returns associative array)
-* @param string $seperator (to separate RGB values. Applicable only if second parameter is true.)
-* @return array or string (depending on second parameter. Returns False if invalid hex color value)
-*/                                                                                                 
-function hex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
-    $hexStr = preg_replace("/[^0-9A-Fa-f]/", '', $hexStr); // Gets a proper hex string
-    $rgbArray = array();
-    if (strlen($hexStr) == 6) { //If a proper hex code, convert using bitwise operation. No overhead... faster
-        $colorVal = hexdec($hexStr);
-        $rgbArray['red'] = 0xFF & ($colorVal >> 0x10);
-        $rgbArray['green'] = 0xFF & ($colorVal >> 0x8);
-        $rgbArray['blue'] = 0xFF & $colorVal;
-    } elseif (strlen($hexStr) == 3) { //if shorthand notation, need some string manipulations
-        $rgbArray['red'] = hexdec(str_repeat(substr($hexStr, 0, 1), 2));
-        $rgbArray['green'] = hexdec(str_repeat(substr($hexStr, 1, 1), 2));
-        $rgbArray['blue'] = hexdec(str_repeat(substr($hexStr, 2, 1), 2));
-    } else {
-        return false; //Invalid hex color code
-    }
-    return $returnAsString ? implode($seperator, $rgbArray) : $rgbArray; // returns the rgb string or the associative array
-} 
-
 
 function get_section_banner($title = null, $text = null){
 

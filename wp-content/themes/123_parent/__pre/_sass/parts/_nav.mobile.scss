@@ -1,4 +1,4 @@
-$black : black; 
+$black : black;
 $black_opacity_none : rgba(0, 0, 0, 0);
 $second_black: #333333;
 $gray: #909090;
@@ -12,15 +12,17 @@ $bp__lg : 1280px;
 $opacity_level_below_one : 0.8;
 
 @media only screen {
+
     /** 
     *
     *   Styles
     *
-    **/  
+    **/
     // Desktop Header
     header.header {
         display: none;
-    } 
+    }
+
     // Mobile header
     header.mobileheader {
         position: fixed;
@@ -33,19 +35,22 @@ $opacity_level_below_one : 0.8;
         font-size: 1.6rem;
         z-index: 19;
         background-color: white;
+
         // Div elements inside header element
-        > div:first-of-type {
+        >div:first-of-type {
             align-items: center;
             padding: 0 5%;
             height: 60px;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+
             // Hamburger icon link
-            > a {
+            >a {
                 padding: 20px;
                 top: 10px;
                 position: absolute;
+
                 // Hamburger icon link spans
-                > span {
+                >span {
                     display: block;
                     width: 33px;
                     height: 4px;
@@ -56,48 +61,55 @@ $opacity_level_below_one : 0.8;
                     z-index: 21;
                     left: 0;
                     transition: transform 0.3s ease-in-out,
-                                background 0.3s ease-in-out,
-                                opacity 0.35s ease-in-out;
+                        background 0.3s ease-in-out,
+                        opacity 0.35s ease-in-out;
                 }
+
                 // First span of hamburger icon link
-                > span:nth-of-type(1) {
+                >span:nth-of-type(1) {
                     transform-origin: 0% 0%;
                     top: 12px;
                 }
+
                 // Second span of hamburger icon link
-                > span:nth-of-type(2) {
+                >span:nth-of-type(2) {
                     transform-origin: 0% 100%;
                     top: 20px;
                 }
+
                 // Third span of hamburger icon link
-                > span:nth-of-type(3) {
-                    top: 28px;  
+                >span:nth-of-type(3) {
+                    top: 28px;
                 }
+
                 // First span of hamburger icon link
-                &.mobile_nav_sidebar > span:nth-of-type(1) {
+                &.mobile_nav_sidebar>span:nth-of-type(1) {
                     opacity: 1;
                     transform: rotate(45deg) translate(0px, -10px);
                     background: #232323;
                 }
+
                 // Second span of hamburger icon link
-                &.mobile_nav_sidebar > span:nth-of-type(2) {
+                &.mobile_nav_sidebar>span:nth-of-type(2) {
                     transform: rotate(-45deg) translate(0px, 10px);
                 }
+
                 // Third span of hamburger icon link
-                &.mobile_nav_sidebar > span:nth-of-type(3) {
+                &.mobile_nav_sidebar>span:nth-of-type(3) {
                     opacity: 0;
                     transform: rotate(0deg) scale(0.2, 0.2);
                 }
             }
         }
     }
+
     // Mobile nav sidebar
     .mobile_header_sidebar {
         height: 100%;
         width: 250px;
         position: fixed;
         z-index: 20;
-        top: 0; 
+        top: 0;
         font-size: 16px;
         text-align: center;
         background-color: white;
@@ -105,22 +117,26 @@ $opacity_level_below_one : 0.8;
         padding: 60px 0;
         transform: translateX(-100%);
         transition: transform 0.25s ease, box-shadow 0.25s ease;
-		// Class to add to mobile sidebar when hamburger icon is clicked
-		&.mobile_sidebar_cover_all {
-			position: fixed;
+
+        // Class to add to mobile sidebar when hamburger icon is clicked
+        &.mobile_sidebar_cover_all {
+            position: fixed;
             transform: translateX(0%);
             box-shadow: -6px 0px 25px 0px $black;
         }
-        > nav {
+
+        >nav {
             margin-top: 90px;
+
             // Telephone number
-            > a,
+            >a,
             // Social media icons
-            > ul {
+            >ul {
                 margin-top: 30px;
             }
+
             // Telephone number link
-            > a {
+            >a {
                 display: inline-block;
                 padding: 10px 15px 10px 15px;
                 border-radius: 20px;
@@ -132,10 +148,12 @@ $opacity_level_below_one : 0.8;
                 background-color: $black;
                 transition: opacity 0.3s, background-color 0.3s, color 0.3s;
                 border: 1px solid $black;
+
                 //Remove phone number icon
                 &:before {
                     display: none;
                 }
+
                 // Actions on hover, active and focus
                 &:hover,
                 &:active,
@@ -145,19 +163,22 @@ $opacity_level_below_one : 0.8;
                     background-color: $black_opacity_none;
                 }
             }
+
             // Mobile nav sidebar navigational menu unordered list
-            > ul.navlinks {
+            >ul.navlinks {
                 display: flex;
                 flex-flow: column nowrap;
                 align-items: center;
             }
+
             // Mobile nav sidebar navigational menu unordered list items
-            > ul.navlinks > li {
-                margin-right: 0; 
+            >ul.navlinks>li {
+                margin-right: 0;
                 width: 100%;
             }
+
             // Mobile nav  sidebar navigational menu unordered list items links
-            > ul.navlinks > li > a {
+            >ul.navlinks>li>a {
                 border-bottom: 1px solid $tint;
                 color: $black;
                 padding: 12px 12px 12px 0;
@@ -167,30 +188,35 @@ $opacity_level_below_one : 0.8;
                 width: 70%;
                 text-align: center;
             }
+
             // Social icons unordered list 
-            > ul {
+            >ul {
                 flex-flow: row nowrap;
                 list-style-type: none;
                 display: flex;
                 justify-content: center;
             }
+
             // Social icons unordered list items links
-            > ul > li > a {
+            >ul>li>a {
                 border-bottom: 1px solid $black_opacity_none;
                 padding: 10px;
                 transition: border 0.3s;
                 color: #000;
+
                 // Actions on hover, active and focus
-                &:hover, 
+                &:hover,
                 &:active,
                 &:focus {
                     border-bottom: 1px solid $gray;
                 }
             }
+
             // Mobile nav sidebar navigational menu unordered list items links 
-            > ul > li > a {
+            >ul>li>a {
                 opacity: $opacity_level_below_one;
                 transition: opacity 0.3s;
+
                 // Actions on hover, active and focus
                 &:hover,
                 &:active,

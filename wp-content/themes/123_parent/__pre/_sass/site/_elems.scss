@@ -28,7 +28,6 @@
             }
         }
     }
-    
 
     // generic button class; needs some work
     // could be more scalable
@@ -115,99 +114,10 @@
             }
         }
     }
-
-
-    .mod__featured_grid,
-    .mod__form_block {
-        text-align: center;
-        margin: 0 auto getVar($sizing, gutter, px, large) auto;
-        .container {
-            // title
-            >h2 {
-                text-align: center;
-                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-                font-weight: 900;
-                text-transform: uppercase;
-            }
-            // details wysiwyg
-            >div:first-of-type {
-                text-align: center;
-                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-                > p {
-                    font-weight: 500;
-                    @include fontS-20;
-                }
-            }
-        }
-    }
-
-    .mod__form_block,
-    .mod__featured_grid {
-        .container {
-            // grid
-            $w: getVar($sizing, content, full);
-            $c: 1;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w;  // a/r must have
-            margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            .site__grid {
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
-    }
-
-    main.page__template {
-        margin: 60px auto;
-    }
-    
 }// end media query
 @media only screen and (min-width: 640px){
-    .mod__form_block,
-    .mod__featured_grid {
-        .container {
-            // grid
-            $w: getVar($sizing, content, large);
-            $c: 2;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w; // a/r must have
-            .site__grid {
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
-    }
 }
 @media only screen and (min-width: 960px){
-    .mod__form_block,
-    .mod__featured_grid {
-        .container {
-            // grid
-            $w: getVar($sizing, content, large);
-            $c: 3;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w; // a/r must have
-
-            .site__grid {
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
-    }
 }
 @media only screen and (min-width: 1280px){
-    .mod__form_block,
-    .mod__featured_grid {
-        .container {
-            // grid
-            $w: getVar($sizing, content, medium);
-            $c: 3;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            width: $w; // a/r must have
-            .site__grid {
-                @include gridLayout($w, $c, $g, $s);
-            }
-        }
-    }
 }
