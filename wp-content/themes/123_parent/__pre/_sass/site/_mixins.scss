@@ -79,15 +79,19 @@
 
             .image,
             .block {
+                @if $s==true {
+                    height: $d;
+                    &.smaller_block {
+                        $d : ($d - (1.5 * $g));
+                        height: $d;
+                        width: $d;
+                    }
+                }
                 display: block;
                 overflow: hidden;
-                @if $s==true {
-                    height: $d
-                }
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
-
             }
 
             &:nth-child(n+1) {

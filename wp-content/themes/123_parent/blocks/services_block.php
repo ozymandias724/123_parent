@@ -10,9 +10,9 @@
     $guide['services'] = '
         <li>
             <a href="%s">
-                <div><div class="block" style="background-image:url(%s);"></div></div>
+                <div><div class="block smaller_block" style="background-image:url(%s);"></div></div>
                 <div>
-                    %s
+                    %s 
                     %s
                     <p class="service_price">%s</p>
                 </div>
@@ -28,7 +28,7 @@
                 $guide['services']
                 ,get_permalink($service['service']->ID)
                 ,(!empty($fields['image']['url']) ? $fields['image']['url'] : '')
-                ,( !empty($service['service']->post_title ) ? '<h3>'.$service['service']->post_title.'</h3' : '' )
+                ,( !empty($service['service']->post_title ) ? '<h3>'.$service['service']->post_title.'</h3>' : '' )
                 ,(!empty($fields['details']) ? $fields['details'] : '')
                 ,(!empty($fields['price']) ? '$'.$fields['price'] : '')
             );
@@ -56,8 +56,8 @@
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
         ,( !empty($return['services']) ? '<div class="site__grid">'.$return['services'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
