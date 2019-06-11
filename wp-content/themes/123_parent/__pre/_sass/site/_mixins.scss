@@ -81,10 +81,13 @@
             .block {
                 @if $s==true {
                     height: $d;
-                    &.smaller_block {
+                    &.services_block {
                         $d : ($d - (1.5 * $g));
                         height: $d;
                         width: $d;
+                    }
+                    &.post_block {
+                        height: (colWidth($w, $c, $g) / 1.6);
                     }
                 }
                 display: block;

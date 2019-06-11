@@ -1,9 +1,9 @@
 @media only screen {
-    #mod_blog {
-        .mod__featured_grid {
-            .container {
-                .site__grid {
-                    li {
+    section.site__block.block__blog_posts {
+        div.container { 
+            .site__grid {
+                ul {
+                    li { 
                         border-radius: 20px;
                         background-color: #efefef;
                         border: 3px solid #fff;
@@ -13,7 +13,6 @@
                         }
                         > a {
                             > .block {
-                                height: (colWidth($w, $c, $g) / 1.6);
                                 border-top-left-radius: 20px;
                                 border-top-right-radius: 20px;
                             }
@@ -23,7 +22,7 @@
                                 border-bottom-right-radius: 20px;
                                 >h5 {
                                     margin: 0 30px;
-                                    padding: 15px 0 0;
+                                    padding: 15px 0 5px;
                                     font-family: "Gotham", "Helvetica", sans-serif;
                                     display: block;
                                     text-decoration: none;
@@ -52,72 +51,6 @@
                                     font-weight: 600;
                                     text-transform: uppercase;
                                 }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 640px) {
-    #mod_blog {
-        .mod__featured_grid {
-            .container {
-                $w: getVar($sizing, content, large);
-                $c: 2;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
-                .site__grid {
-                    li {
-                        > a {
-                            > .image {
-                                height: (colWidth($w, $c, $g) / 1.6);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    #mod_blog {
-        .mod__featured_grid {
-            .container {
-                $w: getVar($sizing, content, large);
-                $c: 3;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
-                .site__grid {
-                    li {
-                        > a {
-                            > .image {
-                                height: (colWidth($w, $c, $g) / 1.6);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    #mod_blog {
-        .mod__featured_grid {
-            .container {
-                $w: getVar($sizing, content, medium);
-                $c: 3;
-                $g: getVar($sizing, gutter, vw, normal);
-                $s: true;
-                .site__grid {
-                    li {
-                        > a {
-                            > .image {
-                                height: (colWidth($w, $c, $g) / 1.6);
                             }
                         }
                     }

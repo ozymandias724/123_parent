@@ -12,11 +12,11 @@
     $guide['posts'] = '
         <li class="site__fade site__fade-up">
             <a href="%s">
-                <div class="image" style="background-image: url(%s)"></div>
-                <div class="blog_item_content">
+                <div class="block post_block" style="background-image: url(%s)"></div>
+                <div class="content">
                     <h5>%s</h5>
-                    <div class="blog_item_excerpt">%s</div>
-                    <p class="blog_item_read_more">Read More</p>
+                    <div class="excerpt">%s</div>
+                    <p class="read_more">Read More</p>
                 </div>
             </a>
         </li>
@@ -29,9 +29,9 @@
         if( $fields['status'] ){
             $return['posts'] .= sprintf(
                 $guide['posts']
-                ,get_post_permalink($post['post'])
+                ,get_post_permalink($post['blog_post'])
                 ,$fields['featured_image']['url']
-                ,$post['post']->post_title
+                ,$post['blog_post']->post_title
                 ,(!empty($fields['excerpt']) ? $fields['excerpt'] : '')
             );
         }
