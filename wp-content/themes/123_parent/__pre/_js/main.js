@@ -63,6 +63,7 @@ $(document).ready(function()
         _init: function () {
             Theme.Slick._hero_slider();
             Theme.Slick._testimonials_slider();
+            Theme.Slick._testimonials_block_triangle();
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({
@@ -87,11 +88,14 @@ $(document).ready(function()
                 ,pauseOnHover: true
                 ,pauseOnFocus: true
                 ,initialSlider: true
-                // ,nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>'
-                // ,prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
                 ,nextArrow: '<img class="testimonial_next" src="wp-content/themes/123_parent/library/img/left-arrow-3.png" />'
                 ,prevArrow: '<img class="testimonial_prev" src="wp-content/themes/123_parent/library/img/left-arrow-3.png" />'
             });
+        },
+        _testimonials_block_triangle: function(){
+            setTimeout(function(){
+                $('.block__testimonials .site__grid').addClass('gray_triangle_after');
+            }, 1000);
         }
     }
     Theme.Slick._init();
