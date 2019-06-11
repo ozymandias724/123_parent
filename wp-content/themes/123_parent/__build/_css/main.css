@@ -4439,59 +4439,56 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
 }
 @media only screen {
-  section.block__coupons .container > h2 {
+  section.site__block.block__coupons > div.container > h2 {
     text-align: center;
   }
-  section.block__coupons .container .site__grid > ul > li {
+  section.site__block.block__coupons > div.container .site__grid > ul > li {
     padding: 10px;
-    background-color: #DEDEDE;
+    background-color: #dedede;
     border-radius: 20px;
     border: 3px solid transparent;
   }
-  section.block__coupons .container .site__grid > ul > li:hover, section.block__coupons .container .site__grid > ul > li:active, section.block__coupons .container .site__grid > ul > li:focus {
-    border: 3px solid #c4c4c4;
+  section.site__block.block__coupons > div.container .site__grid > ul > li:hover, section.site__block.block__coupons > div.container .site__grid > ul > li:active, section.site__block.block__coupons > div.container .site__grid > ul > li:focus {
+    border: 3px solid #c2c2c2;
   }
-  section.block__coupons .container .site__grid > ul > li > a {
+  section.site__block.block__coupons > div.container .site__grid > ul > li > a {
     padding: 20px;
     border-radius: 20px;
-    border: 6px dashed #fff;
+    border: 6px dashed #ffffff;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    color: inherit;
   }
-  section.block__coupons .container .site__grid > ul > li h5 {
-    color: black;
+  section.site__block.block__coupons > div.container .site__grid > ul > li h5 {
     font-family: "Gotham", Helvetica, sans-serif;
     margin: 10px 0 10px;
     font-size: 3.4rem;
     line-height: 4.8rem;
     font-weight: 600;
   }
-  section.block__coupons .container .site__grid > ul > li .coupon_description {
+  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_description {
     font-size: 1.4rem;
     line-height: 2.8rem;
-    color: #a6a6a6;
     font-weight: 500;
     margin-bottom: 10px;
   }
-  section.block__coupons .container .site__grid > ul > li .coupon_expiration {
-    color: black;
+  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_expiration {
     font-size: 1.4rem;
     line-height: 2.8rem;
     margin: 10px 0;
     font-weight: 500;
   }
-  section.block__coupons .container .site__grid > ul > li .coupon_code {
-    background: #fff;
+  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_code {
+    background: #ffffff;
     padding: 0 25px;
     margin: 10px 0;
     border-radius: 20px;
     font-weight: 700;
     line-height: 40px;
-    color: black;
   }
-  section.block__coupons .container .site__grid > ul > li .coupon_code > span {
+  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_code > span {
     text-transform: uppercase;
     font-weight: 600;
   }

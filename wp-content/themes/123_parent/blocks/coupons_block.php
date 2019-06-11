@@ -7,12 +7,14 @@
     $return = [];
     $guide = [];
     $return['coupon'] ='<ul>';
+    
+    // HARD CODED COUPON DESCRIPTION
     $guide['coupon'] = '
         <li class="site__fade site__fade-up">
             <a href="%s">
                 <h5>%s</h5>
                 <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
-                <p class="coupon_code">Code: <span>%s</span></p>
+                %s</span></p>
             </a>
         </li>
     ';
@@ -20,13 +22,13 @@
     foreach($cB['coupons'] as $i => $coupon) {
         
         $fields = get_fields($coupon['coupon']->ID);
+
         if( $fields['status'] ){ 
             $return['coupon'] .= sprintf(
                 $guide['coupon']
                 ,get_permalink($coupon['coupon']->ID)
                 ,$coupon['coupon']->post_title
-                //,date('M j, Y',$coupon_fields['expiration'])
-                ,$coupon_fields['code']
+                ,(!empty($fields['code']) ? '<p class="coupon_code">Code: <span>'.$fields['code'].'</span></p>' : '')
             );
         }
     }
@@ -52,8 +54,8 @@
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="block__heading">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
         ,( !empty($return['coupon']) ? '<div class="site__grid">'.$return['coupon'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
