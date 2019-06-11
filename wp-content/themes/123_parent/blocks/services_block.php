@@ -10,7 +10,7 @@
     $guide['services'] = '
         <li>
             <a href="%s">
-                <div><div class="block services_block" style="background-image:url(%s);"></div></div>
+                <div><div class="block less_size_block" style="background-image:url(%s);"></div></div>
                 <div>
                     %s 
                     %s

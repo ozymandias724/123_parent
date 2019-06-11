@@ -81,12 +81,12 @@
             .block {
                 @if $s==true {
                     height: $d;
-                    &.services_block {
+                    &.less_size_block {
                         $d : ($d - (1.5 * $g));
                         height: $d;
                         width: $d;
                     }
-                    &.post_block {
+                    &.rectangular_block {
                         height: (colWidth($w, $c, $g) / 1.6);
                     }
                 }

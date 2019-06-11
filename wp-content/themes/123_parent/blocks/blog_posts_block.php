@@ -12,7 +12,7 @@
     $guide['posts'] = '
         <li class="site__fade site__fade-up">
             <a href="%s">
-                <div class="block post_block" style="background-image: url(%s)"></div>
+                <div class="block rectangular_block" style="background-image: url(%s)"></div>
                 <div class="content">
                     <h5>%s</h5>
                     <div class="excerpt">%s</div>
