@@ -195,3 +195,29 @@
         }
     }
 }
+
+@media only screen and (max-width: 1280px){
+    section.site__block.block__galleries {
+        > .container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, large);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    section.site__block.block__galleries {
+        > .container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, full);
+            }
+        }
+    }
+}

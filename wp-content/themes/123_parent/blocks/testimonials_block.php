@@ -21,7 +21,6 @@
                     <div>
                         %s
                         <div class="testimonial_content">
-                            %s
                             <div class="testimonial_name">
                                 %s
                                 %s
@@ -34,11 +33,8 @@
             $return['grid'] .= sprintf(
                 $guide['grid']
                 ,(!empty($fields['image']) ? '<div class="block" style="background-image:url('.$fields['image']['url'].');"></div>' : '')
-                ,'<i class="fas fa-quote-left"></i>'
-                // HARD CODED CONTENT
-                ,'<h3>Joe Doe</h3>'
-                // HARD CODED CONTENT
-                ,'<p> - Irvine, CA </p>'
+                ,(!empty($fields['name']) ? '<h3>'.$fields['name'].'</h3>' : '')
+                ,(!empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '')
                 ,(!empty($fields['details']) ? $fields['details'] : '')
             );    
         }
@@ -48,7 +44,6 @@
                     <div>
                         %s
                         <div class="testimonial_content">
-                            %s
                             <div class="testimonial_name">
                                 %s
                                 %s
@@ -61,40 +56,32 @@
             $return['grid'] .= sprintf(
                 $guide['grid']
                 ,(!empty($fields['image']) ? '<div class="block" style="background-image:url('.$fields['image']['url'].');"></div>' : '')
-                ,'<i class="fas fa-quote-left"></i>'
-                // HARD CODED CONTENT
-                ,'<h3>Jane Doe</h3>'
-                // HARD CODED CONTENT
-                ,'<p> - Irvine, CA </p>'
+                ,(!empty($fields['name']) ? '<h3>'.$fields['name'].'</h3>' : '')
+                ,(!empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '')
                 ,(!empty($fields['details']) ? $fields['details'] : '')
             );
         }
         else if( $fields['type'] == 'video' ){
-            $video_format = '
-                <video> 
-                    <source src="%s" type="video/mp4">
-                </video>
-            ';
-            $video_tag = sprintf(
-                $video_format
-                ,(!empty($fields['video_url']) ? $fields['video_url'] : '')
-            );
             $guide['grid'] = '
                 <li class="testimonial_video">
-                    %s
-                    <div class="testimonial_content">
-                        <div class="testimonial_address">
-                            %s
+                    <div>
+                        %s
+                        <div class="testimonial_content">
+                            <div class="testimonial_name">
+                                %s
+                                %s
+                            </div>
+                            <div class="testimonial_details">%s</div>
                         </div>
-                        <div class="testimonial_details">%s</div>
                     </div>
                 </li>
                 ';
             $return['grid'] .= sprintf(
                 $guide['grid']
-                ,$video_tag
+                ,(!empty($fields['video_file']['url']) ? '<video controls><source src="'.$fields['video_file']['url'].'" type="video/mp4"></video>' : '')
+                ,(!empty($fields['name']) ? '<h3>'.$fields['name'].'</h3>' : '')
+                ,(!empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '')
                 ,(!empty($fields['details']) ? $fields['details'] : '')
-                ,''
             );
         }
     }
