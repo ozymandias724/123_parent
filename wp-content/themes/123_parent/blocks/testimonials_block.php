@@ -78,7 +78,7 @@
                 ';
             $return['grid'] .= sprintf(
                 $guide['grid']
-                ,(!empty($fields['video_file']['url']) ? '<video controls><source src="'.$fields['video_file']['url'].'" type="video/mp4"></video>' : '')
+                ,(!empty($fields['video_url']) ? '<a class="video_anchor" href="'.$fields['video_url'].'"><div></div></a>' : '')
                 ,(!empty($fields['name']) ? '<h3>'.$fields['name'].'</h3>' : '')
                 ,(!empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '')
                 ,(!empty($fields['details']) ? $fields['details'] : '')

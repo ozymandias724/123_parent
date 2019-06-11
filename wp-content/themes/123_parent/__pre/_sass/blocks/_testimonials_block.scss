@@ -94,8 +94,10 @@
                     li.testimonial_video {
                         > div {
                             flex-flow: column nowrap;
-                            > video {
+                            > .video_anchor > div {
                                 width: 100%;
+                                background-color: getVar($colors, black, full);
+                                height: 300px;
                             }
                         }
                     }
