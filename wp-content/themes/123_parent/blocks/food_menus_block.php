@@ -197,8 +197,8 @@
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<p>'.$cB['text'].'</p>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<p class="block__details">'.$cB['text'].'</p>' : '' )
 
         // Return the food menus block content which is the buttons and menus
         ,( !empty($return['buttons_and_menus']) ? $return['buttons_and_menus'] : '' )
