@@ -6219,7 +6219,7 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     border: 3px solid #ffffff;
     box-shadow: 0px 0px 0px 3px #e2e2e2;
     background-color: #dedede;
-    width: 45vw;
+    width: 50vw;
     margin: 0 auto;
     position: relative;
   }
@@ -6235,7 +6235,6 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     background-size: cover;
     background-position: center center;
     flex: 1 0 35%;
-    height: 300px;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content {
     flex: 1 0 65%;
@@ -6268,8 +6267,15 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     line-height: 4.8rem;
     margin: 0 10px;
   }
-  section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_name:after {
-    display: inline-block;
+  section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_details > p {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content:before {
+    display: block;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
@@ -6280,14 +6286,7 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     font-size: 2.4rem;
     line-height: 3.2rem;
     position: absolute;
-    right: 30px;
-  }
-  section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_details > p {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    font-weight: 500;
-    margin-bottom: 10px;
-    margin: 0;
+    right: 15px;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li.testimonial_video > div {
     flex-flow: column nowrap;
@@ -6363,6 +6362,14 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   }
   section.site__block.block__testimonials > div.container .site__grid > ul {
     width: 65vw;
+  }
+  section.site__block.block__testimonials > div.container .site__grid > ul li > div .block {
+    height: 300px;
+  }
+  section.site__block.block__testimonials > div.container .site__grid > ul li > div .testimonial_content:before {
+    width: 100%;
+    text-align: right;
+    position: relative;
   }
 }
 @media only screen and (max-width: 960px) {

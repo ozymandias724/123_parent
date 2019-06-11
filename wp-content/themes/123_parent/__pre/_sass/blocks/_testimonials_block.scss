@@ -25,7 +25,7 @@
                     border: 3px solid getVar($colors, white, full);
                     box-shadow: 0px 0px 0px 3px #e2e2e2; 
                     background-color: getVar($gustavo, colors, gray7);
-                    width: 45vw;
+                    width: getVar($sizing, content, small);
                     margin: 0 auto;
                     position: relative;
                     li {
@@ -38,7 +38,6 @@
                                 background-size: cover;
                                 background-position: center center;
                                 flex: 1 0 35%;
-                                height: 300px;
                             }
                             .testimonial_content {
                                 flex: 1 0 65%;
@@ -67,19 +66,6 @@
                                         @include fontS-34; 
                                         margin: 0 10px;
                                     }
-                                    &:after {
-                                        display: inline-block;
-                                        font-style: normal;
-                                        font-variant: normal;
-                                        text-rendering: auto;
-                                        font-family: "Font Awesome 5 Free";
-                                        font-weight: 900;
-                                        content: "\f10d";
-                                        color: getVar($colors, white, full);
-                                        @include fontS-24;
-                                        position: absolute;
-                                        right: 30px;
-                                    }
                                 }
                                 > div.testimonial_details {
                                     > p {
@@ -88,6 +74,19 @@
                                         margin-bottom: 10px;
                                         margin: 0;
                                     }
+                                }
+                                &:before {
+                                    display: block;
+                                    font-style: normal;
+                                    font-variant: normal;
+                                    text-rendering: auto;
+                                    font-family: "Font Awesome 5 Free";
+                                    font-weight: 900;
+                                    content: "\f10d";
+                                    color: getVar($colors, white, full);
+                                    @include fontS-24;
+                                    position: absolute;
+                                    right: 15px;
                                 }
                             }   
                         }
@@ -177,6 +176,18 @@
             }
             .site__grid > ul {
                 width: getVar($sizing, content, medium);
+                li {
+                    > div {
+                        .block {
+                            height: 300px;
+                        }
+                        .testimonial_content:before {
+                            width: 100%;
+                            text-align: right;
+                            position: relative;
+                        }
+                    }
+                }
             }
         }
     }
