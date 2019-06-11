@@ -199,7 +199,7 @@
     section.site__block.block__testimonials {
         >div.container {
             .site__grid > ul {
-                width: 45vw;
+                width: 65vw;
                 li {
                     > div {
                         display: block;
@@ -231,7 +231,13 @@
                 width: getVar($sizing, content, full);
             }
             .site__grid > ul {
-                width: 55vw;
+                width: 70vw;
+                > .testimonial_prev {
+                    left: -67px;
+                }
+                > .testimonial_next {
+                    right: -67px;
+                }
             }
         }
     }
