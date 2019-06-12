@@ -8,37 +8,6 @@
 
         // 
         > .container {
-            &.narrow {
-                $w: getVar($sizing, content, small);
-                width: $w;
-                > .tabsandgrids_container {
-                    width: $w;
-                }
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
-            &.medium {
-                $w: getVar($sizing, content, medium);
-                width: $w;
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
-            &.wide {
-                $w: getVar($sizing, content, large);
-                width: $w;
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
-            &.full {
-                $w: getVar($sizing, content, full);
-                width: $w;
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
             // wrapper for tabs and grids, to control the layout for a sidebar etc
             .tabsandgrids_container {
                 // general styling for all tabs
@@ -88,7 +57,6 @@
 
                     >div.site__grid.current_gallery {
                         display: block;
-
                     }
                 }
 
@@ -97,13 +65,30 @@
                 &.divider {
                     .tabs {
                         > ul {
-                            border-bottom: 1px solid getVar($colors, black, full);
+                            border-bottom: 2px solid getVar($gustavo, colors, gray1);
                             > li {
+                                margin: 0 2px;
                                 > a {
+                                    color: getVar($gustavo, colors, gray2);
+                                    background-color: getVar($gustavo, colors, gray1);
+                                    border-top-left-radius: 5px;
+                                    border-top-right-radius: 5px;
+                                    border-top: 2px solid getVar($gustavo, colors, gray1);
+                                    border-left: 2px solid getVar($gustavo, colors, gray1);
+                                    border-right: 2px solid getVar($gustavo, colors, gray1);
+                                }
+                                &:focus {
+                                    >a {
+                                        color: getVar($colors, accent);
+                                        background: getVar($colors, white, full);
+                                        border-bottom: 1px solid transparent;
+                                    }
                                 }
                                 &:hover,
                                 &.tab_active {
                                     >a {
+                                        color: getVar($colors, white, full);
+                                        background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                                     }
                                 }
                             }
@@ -130,12 +115,12 @@
                                     border: 2px solid getVar($gustavo, colors, gray1);
                                     border-radius: 30px;
                                     padding: 5px 25px;
-                                    color: inherit;
+                                    color: getVar($colors, white, full);
                                     display: block;
                                     margin: 0 5px;
                                     &:hover {
                                         border: 2px solid getVar($gustavo, colors, gray1);
-                                        color: $white;
+                                        color: getVar($colors, white, full);
                                         background-color: getVar($gustavo, colors, gray1);
                                     } 
                                     &:active,
@@ -204,11 +189,23 @@
 @media only screen and (max-width: 640px){
     section.site__block.block__galleries {
         > .container {
+            $w: getVar($sizing, content, full);
+            $c : 2;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             &.narrow,
             &.medium,
             &.wide,
             &.full {
-                width: getVar($sizing, content, full);
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s); 
+                }
+                
             }
         }
     }

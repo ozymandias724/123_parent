@@ -115,16 +115,14 @@
                     border-left: 2px solid getVar($gustavo, colors, gray1);
                     border-right: 2px solid getVar($gustavo, colors, gray1);
                     transition: color 0.3s ease-in-out;
-                    &:focus,
-                    &.active_title,
-                    &.active_title:hover {
-                        color: $accent;
-                        background: $white;
+                    &:focus {
+                        color: getVar($colors, accent);
+                        background: getVar($colors, white, full);
                         border-bottom: 3px solid transparent;
                     }
                     &:hover,
                     &:active {
-                        color: $white;
+                        color: getVar($colors, white, full);
                         background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                     }
                 }
