@@ -31,23 +31,20 @@
                             // content
                             >div:last-of-type {
                                 border: 3px solid transparent;
-                                padding-top: 154px;
+                                padding: 154px 30px 0; 
                                 position: relative;
                                 margin-top: -137px;
                                 background-color: getVar($gustavo, colors, gray7);
                                 border-radius: 20px;
                                 min-height: 400px;
 
-                                >h3,
-                                >div.staff__details {
-                                    padding: 0 30px;
-                                }
-
                                 >h3 {
                                     margin: 0 0 10px 0;
                                     font-family: "Gotham", Helvetica, sans-serif;
                                     @include fontS-34;
                                     font-weight: 500;
+                                    padding-bottom: 5px;
+                                    border-bottom: 4px dotted getVar($colors, white, full); 
                                 }
 
                                 >div.staff__details {
