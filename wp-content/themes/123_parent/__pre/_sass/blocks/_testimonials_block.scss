@@ -184,9 +184,7 @@
                             height: 300px;
                         }
                         .testimonial_content:before {
-                            width: 100%;
-                            text-align: right;
-                            position: relative;
+                            margin-bottom: 0;
                         }
                     }
                 }
@@ -199,17 +197,12 @@
     section.site__block.block__testimonials {
         >div.container {
             .site__grid > ul {
-                width: 65vw;
+                width: getVar($sizing, content, medium);
                 li {
                     > div {
                         display: block;
                         .testimonial_content {
                             padding: 15px 10px;
-                            > i {
-                                position: relative;
-                                width: 100%;
-                                text-align: right;
-                            }
                             > div.testimonial_name {
                                 flex-flow: column nowrap;
                             }
