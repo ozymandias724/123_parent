@@ -9,17 +9,6 @@ $s_true: true;
     section.site__block {
         &.block__food_menus {
             > .container {
-                // Heading
-                > h2 {
-                    margin: 0 auto 30px auto;
-                    font-weight: 900;
-                    text-transform: uppercase;
-                }
-                // Description
-                > p {
-                    font-weight: 500;
-                    @include fontS-20;
-                }
                 // All Tabs Style
                 .tabs {
                     margin: 30px 0;
@@ -185,15 +174,11 @@ $s_true: true;
                 > ul.menu_items {
                     display: inline-block;
                 }
-                // Menu Block Heading
-                > h2,
                 &.menu_text_sub_group_half > div > h2 {
                     @include fontS-34;
                     font-weight: 800;
                     text-transform: capitalize;
                 }
-                // Menu Block Description
-                > p,
                 &.menu_text_sub_group_half > div > p {
                     margin: 15px 0 20px;
                     font-family: "Times New Roman";

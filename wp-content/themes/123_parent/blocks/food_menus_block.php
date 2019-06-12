@@ -6,8 +6,7 @@
     // Functions 
     function get_menu_items($menu_style, $item){
 
-        switch($menu_style)
-        {
+        switch($menu_style){
             case 'menu_photo_list': 
             $format = '
                 <li class="menu_item site__fade site__fade-up">
@@ -103,13 +102,10 @@
             // if this menu post has menu sections
             if( !empty($fields['menu_sections']) ){
 
-                if($fields['style'] !== 'menu_text_sub_group_half')
-                {
+                if($fields['style'] !== 'menu_text_sub_group_half'){
                     // open the wrapper for the menu sections
                     $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].'">';
-                }
-                else
-                {
+                }else{
                     // open the wrapper for the menu sections
                     $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].' menu_flex">';
                 }
@@ -118,15 +114,12 @@
                 foreach( $fields['menu_sections'] as $i => $section ){
 
                     // Menu Header Format
-                    if($fields['style'] !== 'menu_text_sub_group_half')
-                    {
+                    if($fields['style'] !== 'menu_text_sub_group_half'){
                         $header_format = '
                             <h2><span>%s</span></h2>
                             %s
                         ';
-                    }
-                    else
-                    {
+                    }else{
                         $header_format = '
                             <div><h2><span>%s</span></h2>
                             %s
@@ -148,12 +141,9 @@
                     }
 
                     // Close Menu Items Content
-                    if($fields['style'] !== 'menu_text_sub_group_half')
-                    {
+                    if($fields['style'] !== 'menu_text_sub_group_half'){
                         $return['menu_sections'] .= '</ul>';
-                    }
-                    else
-                    {
+                    }else{
                         $return['menu_sections'] .= '</ul></div>';
                     }
                 }
