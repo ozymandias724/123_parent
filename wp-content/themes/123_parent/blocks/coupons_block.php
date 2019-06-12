@@ -7,12 +7,14 @@
     $return = [];
     $guide = [];
     $return['coupon'] ='<ul>';
+    
+    // HARD CODED COUPON DESCRIPTION
     $guide['coupon'] = '
         <li class="site__fade site__fade-up">
             <a href="%s">
                 <h5>%s</h5>
                 <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
-                <p class="coupon_code">Code: <span>%s</span></p>
+                %s</span></p>
             </a>
         </li>
     ';
@@ -20,13 +22,13 @@
     foreach($cB['coupons'] as $i => $coupon) {
         
         $fields = get_fields($coupon['coupon']->ID);
+
         if( $fields['status'] ){ 
             $return['coupon'] .= sprintf(
                 $guide['coupon']
                 ,get_permalink($coupon['coupon']->ID)
                 ,$coupon['coupon']->post_title
-                //,date('M j, Y',$coupon_fields['expiration'])
-                ,$coupon_fields['code']
+                ,(!empty($fields['code']) ? '<p class="coupon_code">Code: <span>'.$fields['code'].'</span></p>' : '')
             );
         }
     }

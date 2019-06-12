@@ -17,15 +17,17 @@
                 width: getVar($sizing, content, full);
             }
             .slick-list {
-                border: 3px solid getVar($colors, white, full);
-                box-shadow: 0px 0px 0px 3px #e2e2e2; 
                 border-radius: 20px;    
-                background-color: getVar($gustavo, colors, gray7);
             }
             > .site__grid {
                 > ul {
-                    width: 48vw;
+                    border-radius: 20px;
+                    border: 3px solid getVar($colors, white, full);
+                    box-shadow: 0px 0px 0px 3px #e2e2e2; 
+                    background-color: getVar($gustavo, colors, gray7);
+                    width: getVar($sizing, content, small);
                     margin: 0 auto;
+                    position: relative;
                     li {
                         border-radius: 20px;
                         > div {
@@ -35,20 +37,13 @@
                                 background-repeat: no-repeat;
                                 background-size: cover;
                                 background-position: center center;
-                                flex: 1 0 25%;
-                                height: 250px;
+                                flex: 1 0 35%;
                             }
                             .testimonial_content {
-                                flex: 1 0 75%;
+                                flex: 1 0 65%;
                                 text-align: left;
                                 padding: 15px 30px;
                                 min-height: 250px;
-                                > i {
-                                    color: $white;
-                                    @include fontS-24;
-                                    position: absolute;
-                                    right: 30px;
-                                }
                                 > div:first-of-type {
                                     border-bottom: 4px dotted getVar($colors, white, full);
                                 }
@@ -61,51 +56,72 @@
                                     > h3 {
                                         display: inline-block;
                                         text-decoration: none;
-                                        color: getVar($colors, black, full);
                                         text-align: left;
                                         font-weight: 500;
                                         font-family: "Gotham", "Helvetica", sans-serif;
-                                        @include fontS-24;
+                                        @include fontS-34;
                                     }
                                     > p {
                                         text-align: justify;
-                                        @include fontS-24;
+                                        @include fontS-34; 
                                         margin: 0 10px;
                                     }
                                 }
                                 > div.testimonial_details {
                                     > p {
                                         @include fontS-14;
-                                        color: #858585;
                                         font-weight: 500;
                                         margin-bottom: 10px;
                                         margin: 0;
                                     }
                                 }
-                            }
+                                &:before {
+                                    display: block;
+                                    font-style: normal;
+                                    font-variant: normal;
+                                    text-rendering: auto;
+                                    font-family: "Font Awesome 5 Free";
+                                    font-weight: 900;
+                                    content: "\f10d";
+                                    color: getVar($colors, white, full);
+                                    @include fontS-24;
+                                    position: absolute;
+                                    right: 15px;
+                                }
+                            }   
                         }
                     }   
+                    li.testimonial_video {
+                        > div {
+                            flex-flow: column nowrap;
+                            > .video_anchor > div {
+                                width: 100%;
+                                background-color: getVar($colors, black, full);
+                                height: 300px;
+                            }
+                        }
+                    }
                     > .testimonial_prev, 
                     > .testimonial_next {
                         position: absolute;
-                        height: 20px;
-                        width: 20px;
+                        width: 50px;
                         @include fontS-72;
                         line-height: 0px;
-                        top: 50%;
                         cursor: pointer;
                         color: getVar($gustavo, colors, gray6);
-                        transform: translate(0,-50%);
                         padding: 0;
                         border: none;
                         outline: none;
                         background: transparent;
+                        top: 50%;
                     }
                     > .testimonial_prev {
                         left: -100px;
+                        transform: translate(0,-50%);
                     }
                     > .testimonial_next {
-                        right: -60px;
+                        right: -90px;
+                        transform: translate(0,-50%) rotate(180deg);
                     }
                     &:after {
                         content: "";
@@ -121,11 +137,31 @@
                         z-index: 500;
                         margin-bottom: -37px;
                     }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0px;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        border: 42px solid transparent;
+                        border-top-color: white;
+                        border-bottom: 0;
+                        margin-left: -42px;
+                        z-index: 500;
+                        margin-bottom: -42px;
+                    }
                 }
-            }
-            
-            a.site__button {
-                margin-top: 30px;
+                &.gray_triangle_after:after {
+                    content: "";
+                    position: relative;
+                    bottom: -40px;
+                    height: 0;
+                    border: 60px solid transparent;
+                    border-top-color: getVar($gustavo, colors, gray7);
+                    border-bottom: 0;
+                    z-index: -1;
+                }
             }
         }
     }
@@ -141,7 +177,19 @@
                 width: getVar($sizing, content, large);
             }
             .site__grid > ul {
-                width: 65vw;
+                width: getVar($sizing, content, medium);
+                li {
+                    > div {
+                        .block {
+                            height: 300px;
+                        }
+                        .testimonial_content:before {
+                            width: 100%;
+                            text-align: right;
+                            position: relative;
+                        }
+                    }
+                }
             }
         }
     }
@@ -151,6 +199,7 @@
     section.site__block.block__testimonials {
         >div.container {
             .site__grid > ul {
+                width: 65vw;
                 li {
                     > div {
                         display: block;
@@ -182,7 +231,13 @@
                 width: getVar($sizing, content, full);
             }
             .site__grid > ul {
-                width: 55vw;
+                width: 70vw;
+                > .testimonial_prev {
+                    left: -67px;
+                }
+                > .testimonial_next {
+                    right: -67px;
+                }
             }
         }
     }

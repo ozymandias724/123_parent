@@ -142,9 +142,9 @@
                                     &:focus,
                                     &.active_menu_link,
                                     &.active_menu_link:hover {
-                                        border: 2px solid $accent;
-                                        background-color: $accent;
-                                        color: $white;
+                                        border: 2px solid getVar($colors, accent);
+                                        background-color: getVar($colors, accent);
+                                        color: getVar($colors, white, full);
                                     }
                                 }
                             }
@@ -177,20 +177,38 @@
                         $s: true;
                         width: $w;
                         margin: 0 auto 0 auto;
-                        
-                        
-                        // --- not sure if this should be here
-                        // &.hasbg {
-                        //     width: ($w + (2 * $g));
-                        //     padding: $g;
-                        // }
-
                         .site__grid {
                             @include gridLayout($w, $c, $g, $s);
                         }
                     }
                 }
                 
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    section.site__block.block__galleries {
+        > .container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, large);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    section.site__block.block__galleries {
+        > .container {
+            &.narrow,
+            &.medium,
+            &.wide,
+            &.full {
+                width: getVar($sizing, content, full);
             }
         }
     }
