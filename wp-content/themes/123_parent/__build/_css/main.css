@@ -809,8 +809,8 @@ h6 {
   }
 
   h2 {
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 5rem;
+    line-height: 7.2rem;
   }
 
   h3 {
@@ -3943,18 +3943,23 @@ section.site__block .container > .block__details {
     width: 100%;
   }
   section.site__block .container.narrow .site__grid > ul > li .image,
-section.site__block .container.narrow .site__grid > ul > li .block {
-    height: 15.3333333333vw;
+section.site__block .container.narrow .site__grid > ul > li .block,
+section.site__block .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block .container.narrow .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block .container.narrow .site__grid > ul > li .image.less_size_block,
-section.site__block .container.narrow .site__grid > ul > li .block.less_size_block {
+  section.site__block .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block .container.narrow .site__grid > ul > li .less_size_block .block {
     height: 12.3333333333vw;
     width: 12.3333333333vw;
+  }
+  section.site__block .container.narrow .site__grid > ul > li .image,
+section.site__block .container.narrow .site__grid > ul > li .block {
+    height: 12.3333333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.narrow .site__grid > ul > li .block.rectangular_block {
@@ -3992,18 +3997,23 @@ section.site__block .container.narrow .site__grid > ul > li .block.rectangular_b
     width: 100%;
   }
   section.site__block .container.medium .site__grid > ul > li .image,
-section.site__block .container.medium .site__grid > ul > li .block {
-    height: 20.3333333333vw;
+section.site__block .container.medium .site__grid > ul > li .block,
+section.site__block .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block .container.medium .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block .container.medium .site__grid > ul > li .image.less_size_block,
-section.site__block .container.medium .site__grid > ul > li .block.less_size_block {
+  section.site__block .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block .container.medium .site__grid > ul > li .less_size_block .block {
     height: 17.3333333333vw;
     width: 17.3333333333vw;
+  }
+  section.site__block .container.medium .site__grid > ul > li .image,
+section.site__block .container.medium .site__grid > ul > li .block {
+    height: 17.3333333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.medium .site__grid > ul > li .block.rectangular_block {
@@ -4041,18 +4051,23 @@ section.site__block .container.medium .site__grid > ul > li .block.rectangular_b
     width: 100%;
   }
   section.site__block .container.wide .site__grid > ul > li .image,
-section.site__block .container.wide .site__grid > ul > li .block {
-    height: 18.5vw;
+section.site__block .container.wide .site__grid > ul > li .block,
+section.site__block .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block .container.wide .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block .container.wide .site__grid > ul > li .image.less_size_block,
-section.site__block .container.wide .site__grid > ul > li .block.less_size_block {
+  section.site__block .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block .container.wide .site__grid > ul > li .less_size_block .block {
     height: 15.5vw;
     width: 15.5vw;
+  }
+  section.site__block .container.wide .site__grid > ul > li .image,
+section.site__block .container.wide .site__grid > ul > li .block {
+    height: 15.5vw;
   }
   section.site__block .container.wide .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.wide .site__grid > ul > li .block.rectangular_block {
@@ -4090,18 +4105,23 @@ section.site__block .container.wide .site__grid > ul > li .block.rectangular_blo
     width: 100%;
   }
   section.site__block .container.full .site__grid > ul > li .image,
-section.site__block .container.full .site__grid > ul > li .block {
-    height: 13.6666666667vw;
+section.site__block .container.full .site__grid > ul > li .block,
+section.site__block .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block .container.full .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block .container.full .site__grid > ul > li .image.less_size_block,
-section.site__block .container.full .site__grid > ul > li .block.less_size_block {
+  section.site__block .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block .container.full .site__grid > ul > li .less_size_block .block {
     height: 10.6666666667vw;
     width: 10.6666666667vw;
+  }
+  section.site__block .container.full .site__grid > ul > li .image,
+section.site__block .container.full .site__grid > ul > li .block {
+    height: 10.6666666667vw;
   }
   section.site__block .container.full .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.full .site__grid > ul > li .block.rectangular_block {
@@ -4145,24 +4165,38 @@ section.site__block .container.full .site__grid > ul > li .block.rectangular_blo
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image,
-section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
-section.site__block > .container.full .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
-section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
-section.site__block > .container.medium .site__grid > ul > li .block {
-    height: 25.3333333333vw;
+section.site__block > .container.narrow .site__grid > ul > li .block,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid > ul > li .block.less_size_block, section.site__block > .container.full .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid > ul > li .block.less_size_block, section.site__block > .container.wide .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid > ul > li .block.less_size_block, section.site__block > .container.medium .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .block {
     height: 22.3333333333vw;
     width: 22.3333333333vw;
+  }
+  section.site__block > .container.narrow .site__grid > ul > li .image,
+section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block {
+    height: 22.3333333333vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid > ul > li .block.rectangular_block, section.site__block > .container.full .site__grid > ul > li .image.rectangular_block,
@@ -4205,24 +4239,38 @@ section.site__block > .container.medium .site__grid > ul > li .block.rectangular
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image,
-section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
-section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
-section.site__block > .container.full .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
-section.site__block > .container.medium .site__grid > ul > li .block {
-    height: 39vw;
+section.site__block > .container.narrow .site__grid > ul > li .block,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid > ul > li .block.less_size_block, section.site__block > .container.wide .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid > ul > li .block.less_size_block, section.site__block > .container.full .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid > ul > li .block.less_size_block, section.site__block > .container.medium .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .block {
     height: 36vw;
     width: 36vw;
+  }
+  section.site__block > .container.narrow .site__grid > ul > li .image,
+section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block {
+    height: 36vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid > ul > li .block.rectangular_block, section.site__block > .container.wide .site__grid > ul > li .image.rectangular_block,
@@ -4265,24 +4313,38 @@ section.site__block > .container.medium .site__grid > ul > li .block.rectangular
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image,
-section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
-section.site__block > .container.medium .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
-section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
-section.site__block > .container.full .site__grid > ul > li .block {
-    height: 92vw;
+section.site__block > .container.narrow .site__grid > ul > li .block,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid > ul > li .block.less_size_block, section.site__block > .container.medium .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid > ul > li .block.less_size_block, section.site__block > .container.wide .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid > ul > li .block.less_size_block, section.site__block > .container.full .site__grid > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid > ul > li .less_size_block .block {
     height: 89vw;
     width: 89vw;
+  }
+  section.site__block > .container.narrow .site__grid > ul > li .image,
+section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block {
+    height: 89vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid > ul > li .block.rectangular_block, section.site__block > .container.medium .site__grid > ul > li .image.rectangular_block,
@@ -4311,15 +4373,26 @@ section.site__block > .container.full .site__grid > ul > li .block.rectangular_b
     border: 3px solid #c2c2c2;
   }
   section.block__services > .container .site__grid > ul > li > a > div:first-of-type {
-    width: 100%;
+    width: fit-content;
     position: relative;
     z-index: 2;
-  }
-  section.block__services > .container .site__grid > ul > li > a > div:first-of-type div.block {
     border-radius: 50%;
     border: 5px solid #dedede;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+  section.block__services > .container .site__grid > ul > li > a > div:first-of-type .image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+  }
+  section.block__services > .container .site__grid > ul > li > a > div:first-of-type:hover .image, section.block__services > .container .site__grid > ul > li > a > div:first-of-type:active .image, section.block__services > .container .site__grid > ul > li > a > div:first-of-type:focus .image {
+    transform: scale(1.2);
   }
   section.block__services > .container .site__grid > ul > li > a > div:last-of-type {
     border: 3px solid transparent;
@@ -4535,18 +4608,23 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
     width: 100%;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
-    height: 15.3333333333vw;
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image.less_size_block,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block.less_size_block {
+  section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .block {
     height: 12.3333333333vw;
     width: 12.3333333333vw;
+  }
+  section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
+    height: 12.3333333333vw;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image.rectangular_block,
 section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block.rectangular_block {
@@ -4591,24 +4669,38 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     width: 100%;
   }
   section.site__block.block__galleries > .container.narrow .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.medium .site__grid > ul > li .block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.wide .site__grid > ul > li .block, section.site__block.block__galleries > .container.full .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.full .site__grid > ul > li .block {
-    height: 45vw;
+section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block,
+section.site__block.block__galleries > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.medium .site__grid > ul > li .block,
+section.site__block.block__galleries > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.medium .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.wide .site__grid > ul > li .block,
+section.site__block.block__galleries > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.full .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.full .site__grid > ul > li .block,
+section.site__block.block__galleries > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.full .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block.block__galleries > .container.narrow .site__grid > ul > li .image.less_size_block,
-section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block.less_size_block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image.less_size_block,
-section.site__block.block__galleries > .container.medium .site__grid > ul > li .block.less_size_block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .image.less_size_block,
-section.site__block.block__galleries > .container.wide .site__grid > ul > li .block.less_size_block, section.site__block.block__galleries > .container.full .site__grid > ul > li .image.less_size_block,
-section.site__block.block__galleries > .container.full .site__grid > ul > li .block.less_size_block {
+  section.site__block.block__galleries > .container.narrow .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.medium .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.full .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container.full .site__grid > ul > li .less_size_block .block {
     height: 42vw;
     width: 42vw;
+  }
+  section.site__block.block__galleries > .container.narrow .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.medium .site__grid > ul > li .block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.wide .site__grid > ul > li .block, section.site__block.block__galleries > .container.full .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.full .site__grid > ul > li .block {
+    height: 42vw;
   }
   section.site__block.block__galleries > .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block.rectangular_block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image.rectangular_block,
@@ -4646,18 +4738,23 @@ section.site__block.block__galleries > .container.full .site__grid > ul > li .bl
     width: 100%;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
-    height: 24vw;
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image.less_size_block,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block.less_size_block {
+  section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .image,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .block {
     height: 21vw;
     width: 21vw;
+  }
+  section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
+    height: 21vw;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image.rectangular_block,
 section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block.rectangular_block {
@@ -4726,26 +4823,24 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
 }
 @media only screen {
-  section.block__staff > .container > h2 {
-    margin: 0 auto 30px auto;
-  }
-  section.block__staff > .container > div:not(.site__grid) {
-    margin: 0 auto 30px auto;
-  }
   section.block__staff > .container .site__grid > ul > li > a {
-    color: #ffffff;
+    color: inherit;
   }
-  section.block__staff > .container .site__grid > ul > li > a > h5 {
-    background-color: #1d1d1d;
+  section.block__staff > .container .site__grid > ul > li > a:hover > div:last-of-type, section.block__staff > .container .site__grid > ul > li > a:active > div:last-of-type, section.block__staff > .container .site__grid > ul > li > a:focus > div:last-of-type {
+    border: 3px solid #c2c2c2;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div {
+  section.block__staff > .container .site__grid > ul > li > a > div.staff__image {
+    position: relative;
+    z-index: 2;
+    border: 5px solid #dedede;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    width: fit-content;
     border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #1d1d1d;
+    margin: 0 auto;
     overflow: hidden;
     position: relative;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div .image {
+  section.block__staff > .container .site__grid > ul > li > a > div.staff__image .image {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -4753,23 +4848,39 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     transform: scale(1);
     transition: transform 0.4s ease;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div:hover .image, section.block__staff > .container .site__grid > ul > li > a > div:active .image, section.block__staff > .container .site__grid > ul > li > a > div:focus .image {
+  section.block__staff > .container .site__grid > ul > li > a > div.staff__image:hover .image, section.block__staff > .container .site__grid > ul > li > a > div.staff__image:active .image, section.block__staff > .container .site__grid > ul > li > a > div.staff__image:focus .image {
     transform: scale(1.2);
   }
-  section.block__staff > .container .site__grid > ul > li > a > div:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    transition: opacity 0.4s ease;
-    opacity: 1;
+  section.block__staff > .container .site__grid > ul > li > a > div:last-of-type {
+    border: 3px solid transparent;
+    padding-top: 154px;
+    position: relative;
+    margin-top: -137px;
+    background-color: #dedede;
+    border-radius: 20px;
+    min-height: 400px;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div:hover:after, section.block__staff > .container .site__grid > ul > li > a > div:focus:after, section.block__staff > .container .site__grid > ul > li > a > div:active:after {
-    opacity: 0.2;
+  section.block__staff > .container .site__grid > ul > li > a > div:last-of-type > h3,
+section.block__staff > .container .site__grid > ul > li > a > div:last-of-type > div.staff__details {
+    padding: 0 30px;
+  }
+  section.block__staff > .container .site__grid > ul > li > a > div:last-of-type > h3 {
+    margin: 0 0 10px 0;
+    font-family: "Gotham", Helvetica, sans-serif;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    font-weight: 500;
+  }
+  section.block__staff > .container .site__grid > ul > li > a > div:last-of-type > div.staff__details {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  section.block__staff > .container .site__grid > ul > li > a > div.staff__image div.image {
+    max-width: 60vw;
+    max-height: 60vw;
   }
 }
 @media only screen {
@@ -4798,18 +4909,23 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
-    height: 39vw;
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 37.5vw;
     width: 37.5vw;
+  }
+  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
+    height: 37.5vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -4840,18 +4956,23 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_se
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
-    height: 19vw;
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     height: 17.5vw;
     width: 17.5vw;
+  }
+  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
+    height: 17.5vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.rectangular_block {
@@ -4882,18 +5003,23 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_te
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
-    height: 12.3333333333vw;
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 10.8333333333vw;
     width: 10.8333333333vw;
+  }
+  section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
+    height: 10.8333333333vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -4927,20 +5053,28 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_ph
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .block {
-    height: 50vw;
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block.less_size_block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     height: 48.5vw;
     width: 48.5vw;
+  }
+  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .block {
+    height: 48.5vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block.rectangular_block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image.rectangular_block,
@@ -4972,20 +5106,28 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_sect
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
-    height: 24.5vw;
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block.less_size_block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     height: 23vw;
     width: 23vw;
+  }
+  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
+    height: 23vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block.rectangular_block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image.rectangular_block,
@@ -5017,20 +5159,28 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
-    height: 11.75vw;
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.less_size_block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 10.25vw;
     width: 10.25vw;
+  }
+  section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
+    height: 10.25vw;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.rectangular_block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
@@ -5068,18 +5218,23 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_phot
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
-    height: 50vw;
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 48.5vw;
     width: 48.5vw;
+  }
+  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
+    height: 48.5vw;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -5110,18 +5265,23 @@ section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_se
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
-    height: 24.5vw;
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     height: 23vw;
     width: 23vw;
+  }
+  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
+    height: 23vw;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.rectangular_block {
@@ -5152,18 +5312,23 @@ section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_te
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
-    height: 16vw;
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 14.5vw;
     width: 14.5vw;
+  }
+  section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
+    height: 14.5vw;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -5197,20 +5362,28 @@ section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_ph
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .block {
-    height: 65vw;
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block.less_size_block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     height: 63.5vw;
     width: 63.5vw;
+  }
+  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .block {
+    height: 63.5vw;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block.rectangular_block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image.rectangular_block,
@@ -5242,20 +5415,28 @@ section.site__block > .container.medium .site__grid.tabs_style__pills .menu_sect
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
-    height: 32vw;
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block.less_size_block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     height: 30.5vw;
     width: 30.5vw;
+  }
+  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
+    height: 30.5vw;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block.rectangular_block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image.rectangular_block,
@@ -5287,20 +5468,28 @@ section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
-    height: 15.5vw;
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.less_size_block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 14vw;
     width: 14vw;
+  }
+  section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
+    height: 14vw;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.rectangular_block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
@@ -5335,18 +5524,23 @@ section.site__block > .container.medium .site__grid.tabs_style__pills .menu_phot
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
-    height: 65vw;
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 63.5vw;
     width: 63.5vw;
+  }
+  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
+    height: 63.5vw;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -5377,18 +5571,23 @@ section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_sect
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
-    height: 32vw;
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     height: 30.5vw;
     width: 30.5vw;
+  }
+  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
+    height: 30.5vw;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.rectangular_block {
@@ -5419,18 +5618,23 @@ section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
-    height: 21vw;
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 19.5vw;
     width: 19.5vw;
+  }
+  section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
+    height: 19.5vw;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -5464,20 +5668,28 @@ section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_phot
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .block {
-    height: 80vw;
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block.less_size_block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     height: 78.5vw;
     width: 78.5vw;
+  }
+  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .block {
+    height: 78.5vw;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block.rectangular_block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image.rectangular_block,
@@ -5509,20 +5721,28 @@ section.site__block > .container.wide .site__grid.tabs_style__pills .menu_sectio
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
-    height: 39.5vw;
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block.less_size_block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     height: 38vw;
     width: 38vw;
+  }
+  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
+    height: 38vw;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block.rectangular_block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image.rectangular_block,
@@ -5554,20 +5774,28 @@ section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_h
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
-    height: 19.25vw;
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.less_size_block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 17.75vw;
     width: 17.75vw;
+  }
+  section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
+    height: 17.75vw;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.rectangular_block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
@@ -5602,18 +5830,23 @@ section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
-    height: 75vw;
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 73.5vw;
     width: 73.5vw;
+  }
+  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
+    height: 73.5vw;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -5644,18 +5877,23 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_sect
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
-    height: 37vw;
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
     height: 35.5vw;
     width: 35.5vw;
+  }
+  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
+    height: 35.5vw;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block.rectangular_block {
@@ -5686,18 +5924,23 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
-    height: 24.3333333333vw;
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 22.8333333333vw;
     width: 22.8333333333vw;
+  }
+  section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
+    height: 22.8333333333vw;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -5731,20 +5974,28 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_phot
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .block {
-    height: 92vw;
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block.less_size_block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .block.less_size_block {
+  section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
     height: 90.5vw;
     width: 90.5vw;
+  }
+  section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .block {
+    height: 90.5vw;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .image.rectangular_block,
 section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block.rectangular_block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image.rectangular_block,
@@ -5776,20 +6027,28 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_sectio
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
-    height: 45.5vw;
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block.less_size_block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .block.less_size_block {
+  section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
     height: 44vw;
     width: 44vw;
+  }
+  section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
+    height: 44vw;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .image.rectangular_block,
 section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block.rectangular_block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image.rectangular_block,
@@ -5821,20 +6080,28 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_h
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
-    height: 22.25vw;
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.less_size_block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 20.75vw;
     width: 20.75vw;
+  }
+  section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
+    height: 20.75vw;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block.rectangular_block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image.rectangular_block,
@@ -6116,7 +6383,7 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     color: #fff;
     background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%);
   }
-  section.site__block > .container #tabs_style__divider > ul.button_group > li a:focus, section.site__block > .container #tabs_style__divider > ul.button_group > li a.active_menu_link, section.site__block > .container #tabs_style__divider > ul.button_group > li a.active_menu_link:hover {
+  section.site__block > .container #tabs_style__divider > ul.button_group > li a:focus {
     color: #386591;
     background: #fff;
     border-bottom: 2px solid transparent;
@@ -6151,10 +6418,20 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     color: #fff;
     background-color: #c2c2c2;
   }
-  section.site__block > .container #tabs_style__pills > ul.button_group li a:active, section.site__block > .container #tabs_style__pills > ul.button_group li a:focus, section.site__block > .container #tabs_style__pills > ul.button_group li a.active_menu_link, section.site__block > .container #tabs_style__pills > ul.button_group li a.active_menu_link:hover {
+  section.site__block > .container #tabs_style__pills > ul.button_group li a:active, section.site__block > .container #tabs_style__pills > ul.button_group li a:focus {
     border: 2px solid #386591;
     background-color: #386591;
     color: #fff;
+  }
+  section.site__block > .container #tabs_style__pills > ul.button_group li.tab_active a {
+    border: 2px solid #386591;
+    background-color: #386591;
+    color: #fff;
+  }
+  section.site__block > .container #tabs_style__pills > ul.button_group li.tab_active a:hover {
+    border: 2px solid #c2c2c2;
+    color: #fff;
+    background-color: #c2c2c2;
   }
   section.site__block > .container #tabs_style__sidebar {
     display: flex;
@@ -6173,7 +6450,7 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   section.site__block > .container #tabs_style__sidebar > ul.button_group li:first-of-type a {
     border-top: 1px solid #c2c2c2;
   }
-  section.site__block > .container #tabs_style__sidebar > ul.button_group a {
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li a {
     font-size: 1.6rem;
     line-height: 2.8rem;
     font-weight: 700;
@@ -6183,14 +6460,23 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     display: block;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
   }
-  section.site__block > .container #tabs_style__sidebar > ul.button_group a:hover {
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li a:hover {
     background-color: #c2c2c2;
     border-bottom: 1px solid transparent;
   }
-  section.site__block > .container #tabs_style__sidebar > ul.button_group a.active_menu_link, section.site__block > .container #tabs_style__sidebar > ul.button_group a:active, section.site__block > .container #tabs_style__sidebar > ul.button_group a:focus, section.site__block > .container #tabs_style__sidebar > ul.button_group a.active_menu_link:hover {
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li a:active, section.site__block > .container #tabs_style__sidebar > ul.button_group li a:focus {
+    background-color: #376494;
+    color: #ffffff;
+    border-bottom: 1px solid #376494;
+  }
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li.tab_active a {
     background-color: #386591;
     color: #fff;
-    border-bottom: 1px solid #386591;
+    border-bottom: 1px solid #376494;
+  }
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li.tab_active a:hover {
+    background-color: #c2c2c2;
+    border-bottom: 1px solid transparent;
   }
   section.site__block > .container .active_menu_section {
     display: block;
@@ -6226,18 +6512,23 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
-    height: 15.3333333333vw;
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 12.3333333333vw;
     width: 12.3333333333vw;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
+    height: 12.3333333333vw;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -6268,18 +6559,23 @@ section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul >
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
-    height: 15.3333333333vw;
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 12.3333333333vw;
     width: 12.3333333333vw;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
+    height: 12.3333333333vw;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -6319,21 +6615,30 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
-    height: 65vw;
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
     height: 62vw;
     width: 62vw;
+  }
+  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
+    height: 62vw;
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block.rectangular_block,
@@ -6373,21 +6678,30 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block {
-    height: 31.5vw;
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 28.5vw;
     width: 28.5vw;
+  }
+  section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block {
+    height: 28.5vw;
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block.rectangular_block,
@@ -6434,18 +6748,23 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
-    height: 24vw;
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 21vw;
     width: 21vw;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
+    height: 21vw;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -6476,18 +6795,23 @@ section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul >
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
-    height: 24vw;
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 21vw;
     width: 21vw;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
+    height: 21vw;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -6527,21 +6851,30 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
-    height: 80vw;
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
     height: 77vw;
     width: 77vw;
+  }
+  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
+    height: 77vw;
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block.rectangular_block,
@@ -6581,21 +6914,30 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block {
-    height: 39vw;
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 36vw;
     width: 36vw;
+  }
+  section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block {
+    height: 36vw;
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block.rectangular_block,
@@ -6652,18 +6994,23 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
-    height: 92vw;
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
     height: 89vw;
     width: 89vw;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
+    height: 89vw;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block.rectangular_block {
@@ -6694,18 +7041,23 @@ section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul >
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
-    height: 45vw;
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
     height: 42vw;
     width: 42vw;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
+    height: 42vw;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block.rectangular_block {
@@ -6745,21 +7097,30 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
-    height: 92vw;
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
     display: block;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image.less_size_block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block.less_size_block {
+  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
     height: 89vw;
     width: 89vw;
+  }
+  section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
+    height: 89vw;
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image.rectangular_block,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block.rectangular_block,
@@ -6793,15 +7154,12 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     border-radius: 20px;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul {
-    border-radius: 20px;
-    border: 3px solid #ffffff;
-    box-shadow: 0px 0px 0px 3px #e2e2e2;
-    background-color: #dedede;
     width: 50vw;
     margin: 0 auto;
     position: relative;
-  }
-  section.site__block.block__testimonials > div.container > .site__grid > ul li {
+    border: 3px solid #ffffff;
+    box-shadow: 0px 0px 0px 3px #e2e2e2;
+    background-color: #dedede;
     border-radius: 20px;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li > div {
@@ -6818,7 +7176,7 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     flex: 1 0 65%;
     text-align: left;
     padding: 15px 30px;
-    min-height: 250px;
+    min-height: 300px;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content > div:first-of-type {
     border-bottom: 4px dotted #ffffff;
@@ -6863,8 +7221,9 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     color: #ffffff;
     font-size: 2.4rem;
     line-height: 3.2rem;
-    position: absolute;
-    right: 15px;
+    width: 100%;
+    text-align: right;
+    margin-bottom: -35px;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li.testimonial_video > div {
     flex-flow: column nowrap;
@@ -6993,7 +7352,7 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
     box-shadow: 0px 0px 0px 3px #e2e2e2;
   }
   section.site__block.block__blog_posts div.container .site__grid ul li:hover, section.site__block.block__blog_posts div.container .site__grid ul li:active, section.site__block.block__blog_posts div.container .site__grid ul li:focus {
-    box-shadow: 0px 0px 0px 5px #e2e2e2;
+    box-shadow: 0px 0px 0px 3px #c2c2c2;
   }
   section.site__block.block__blog_posts div.container .site__grid ul li > a {
     color: inherit;
@@ -7037,6 +7396,7 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
     line-height: 3.2rem;
     font-weight: 600;
     text-transform: uppercase;
+    color: #ffffff;
   }
 }
 

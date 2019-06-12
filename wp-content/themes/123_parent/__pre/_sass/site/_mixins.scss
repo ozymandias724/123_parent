@@ -78,23 +78,35 @@
             }
 
             .image,
-            .block {
-                @if $s==true {
-                    height: $d;
-                    &.less_size_block {
-                        $d : ($d - (1.5 * $g));
-                        height: $d;
-                        width: $d;
-                    }
-                    &.rectangular_block {
-                        height: (colWidth($w, $c, $g) / 1.6);
-                    }
-                }
+            .block,
+            .less_size_block .image,
+            .less_size_block .block {
                 display: block;
                 overflow: hidden;
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
+            }
+
+            .less_size_block {
+                .image,
+                .block {
+                    @if $s==true {
+                        $d : ($d - (1.5 * $g));
+                        height: $d;
+                        width: $d;
+                    }
+                }
+            }
+            
+            .image,
+            .block {
+                @if $s==true {
+                    height: $d;
+                    &.rectangular_block {
+                        height: (colWidth($w, $c, $g) / 1.6);
+                    }
+                }
             }
 
             &:nth-child(n+1) {

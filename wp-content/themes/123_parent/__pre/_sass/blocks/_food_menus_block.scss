@@ -435,9 +435,7 @@ $s_true: true;
                                 color: $white;
                                 background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                             }
-                            &:focus,
-                            &.active_menu_link,
-                            &.active_menu_link:hover {
+                            &:focus {
                                 color: $accent;
                                 background: $white;
                                 border-bottom: 2px solid transparent;
@@ -475,13 +473,23 @@ $s_true: true;
                                 background-color: getVar($gustavo, colors, gray1);
                             } 
                             &:active,
-                            &:focus,
-                            &.active_menu_link,
-                            &.active_menu_link:hover {
+                            &:focus {
                                 border: 2px solid $accent;
                                 background-color: $accent;
                                 color: $white;
                             }
+                        }
+                    }
+                    li.tab_active {
+                        a {
+                            border: 2px solid $accent;
+                            background-color: $accent;
+                            color: $white;
+                            &:hover {
+                                border: 2px solid getVar($gustavo, colors, gray1);
+                                color: $white;
+                                background-color: getVar($gustavo, colors, gray1);
+                            } 
                         }
                     }
                 }
@@ -502,28 +510,39 @@ $s_true: true;
                     li:first-of-type a {
                         border-top: 1px solid #c2c2c2;
                     }
-                    a {
-                        @include fontS-16;
-                        font-weight: 700;
-                        padding: 10px 15px;
-                        color: inherit;
-                        border-bottom: 1px solid #c2c2c2;
-                        display: block;
-                        transition: 
-                            background-color 0.3s ease-in-out, 
-                            color 0.3s ease-in-out, 
-                            border 0.3s ease-in-out;
-                        &:hover {
-                            background-color: getVar($gustavo, colors, gray1);
-                            border-bottom: 1px solid transparent;
+                    li {
+                        a {
+                            @include fontS-16;
+                            font-weight: 700;
+                            padding: 10px 15px;
+                            color: inherit;
+                            border-bottom: 1px solid getVar($gustavo, colors, gray1);
+                            display: block;
+                            transition: 
+                                background-color 0.3s ease-in-out, 
+                                color 0.3s ease-in-out, 
+                                border 0.3s ease-in-out;
+                            &:hover {
+                                background-color: getVar($gustavo, colors, gray1);
+                                border-bottom: 1px solid transparent;
+                            }
+                            &:active,
+                            &:focus {
+                                background-color: getVar($colors, accent);
+                                color: getVar($colors, white, full);
+                                border-bottom: 1px solid getVar($colors, accent);
+                            }
                         }
-                        &.active_menu_link,
-                        &:active,
-                        &:focus,
-                        &.active_menu_link:hover {
+                    }
+                    li.tab_active {
+                        a {
                             background-color: $accent;
                             color: $white;
-                            border-bottom: 1px solid $accent;
+                            border-bottom: 1px solid getVar($colors, accent);
+                            &:hover {
+                                background-color: getVar($gustavo, colors, gray1);
+                                border-bottom: 1px solid transparent;
+                            }
                         }
                     }
                 }
