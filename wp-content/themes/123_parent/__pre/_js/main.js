@@ -227,6 +227,18 @@ $(document).ready(function()
         Blocks.Gallery._init();
     }
 
+    /*
+    *
+    * If we have a food menu block
+    * 
+    */
+    // if( $('section.block__food_menus').length && $('section.block__food_menus div.tabs').length ){
+    //     Blocks.FoodMenus = {
+    //         tabs : $(),
+    //         food_menus : $(),
+    //     }
+    // }
+
     /**
      * Handle the basics of the nav unspecific to a header style
      */
