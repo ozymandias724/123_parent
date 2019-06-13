@@ -5,55 +5,15 @@
 * 
 */
 
-    function get_staff_social_media($fields){
-        $content_social_icons = '';
-        // if we have social media icons
-        if( !empty($fields['social_media']) ){
-
-            $content = '<ul class="site__social-media">';
-            $format = '
-                <li>
-                    <a href="%s" title="%s" target="%s">
-                        %s
-                    </a>
-                </li>
-            '; 
-            foreach( $fields['social_media']['icons'] as $social_icon ){
-
-                $img = $social_icon['image'];
-                $fa = $social_icon['icon'];
-
-                $url = ( !empty($social_icon['link']['url']) ? $social_icon['link']['url'] : '' );
-                $title = ( !empty($social_icon['link']['title']) ? $social_icon['link']['title'] : '' );
-                $target = ( !empty($social_icon['link']['target']) ? $social_icon['link']['target'] : '' );
-
-                if( !empty($social_icon['image']) ){
-                    $content .= sprintf(
-                        $format
-                        ,$url
-                        ,$title
-                        ,$target
-                        ,( !empty($img['url']) ? '<img src="'.$img['url'].'">' : '')
-                    );
-                }else if( !empty($social_icon['icon']) ){
-                    $content .= sprintf(
-                        $format
-                        ,$url
-                        ,$title
-                        ,$target
-                        ,( !empty($fa) ? $fa : '')
-                    );
-                }else{
-                    $content = '';
-                }
-
-            }
-            $content .= '</ul>';
+        // loop thru each staff member
+        foreach($cB['staff_members'] as $i => $staff_member) {
+            
+            // get fields for this sttaff member
+            $fields = get_fields($staff_member['staff_member']->ID);
+            print_r($fields);
         }
-        return $content;
-    }
 
-     // set return and guide string arrays
+    // set return and guide string arrays
     $return = [];
     $guide = [];
     
@@ -84,7 +44,48 @@
             // get fields for this sttaff member
             $fields = get_fields($staff_member['staff_member']->ID);
 
-            $social_media = get_staff_social_media($fields);
+            $social_media = '';
+            if( !empty($fields['social_media']) ){
+                $social_media .= '<ul class="site__social-media">';
+                $social_format = '
+                    <li>
+                        <a href="%s" title="%s" target="%s">
+                            %s
+                        </a>
+                    </li>
+                ';
+                foreach( $fields['social_media']['icons'] as $i => $social_icon ){
+
+                    $img = $social_icon['image'];
+                    $fa = $social_icon['icon'];
+    
+                    $url = ( !empty($social_icon['link']['url']) ? $social_icon['link']['url'] : '' );
+                    $title = ( !empty($social_icon['link']['title']) ? $social_icon['link']['title'] : '' );
+                    $target = ( !empty($social_icon['link']['target']) ? $social_icon['link']['target'] : '' );
+    
+                    if( !empty($social_icon['image']) ){
+                        $social_media .= sprintf(
+                            $social_format
+                            ,$url
+                            ,$title
+                            ,$target
+                            ,( !empty($img['url']) ? '<img src="'.$img['url'].'" />' : '')
+                        );
+                    }else if( !empty($social_icon['icon']) ){
+                        $social_media .= sprintf(
+                            $social_format
+                            ,$url
+                            ,$title
+                            ,$target
+                            ,( !empty($fa) ? $fa : '')
+                        );
+                    }else{
+                        $social_media = '';
+                    }
+    
+                }
+                $social_media .= '</ul>';
+            }
             
             // write to return string
             $return['staff'] .= sprintf(
