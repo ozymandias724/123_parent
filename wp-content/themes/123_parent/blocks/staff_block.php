@@ -5,13 +5,6 @@
 * 
 */
 
-foreach($cB['staff_members'] as $i => $staff_member) {
-            
-    // get fields for this sttaff member
-    $fields = get_fields($staff_member['staff_member']->ID);
-    print_r($fields);
-}
-
     function get_staff_social_media($fields){
         $content_social_icons = '';
         // if we have social media icons
@@ -24,7 +17,7 @@ foreach($cB['staff_members'] as $i => $staff_member) {
                         %s
                     </a>
                 </li>
-            ';
+            '; 
             foreach( $fields['social_media']['icons'] as $social_icon ){
 
                 $img = $social_icon['image'];
