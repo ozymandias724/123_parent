@@ -17,8 +17,11 @@
         $guide['staff'] = '
             <li class="site__fade site__fade-up">
                 <a href="%s">
-                    <div><div class="image" style="background-image: url(%s)" class="site__bgimg_img"></div></div>
-                    <h5>%s</h5>
+                    <div class="staff__image less_size_block"><div class="image" style="background-image: url(%s)" class="site__bgimg_img"></div></div>
+                    <div>
+                        <h3>%s</h3>
+                        <div class="staff__details">%s</div>
+                    </div>
                 </a>
             </li>
         ';
@@ -35,6 +38,7 @@
                 ,get_permalink($staff_member['staff_member']->ID)
                 ,$fields['image']['url']
                 ,$staff_member['staff_member']->post_title
+                ,$fields['bio']
             );
         }
         $return['staff'] .= '</ul>';
@@ -60,8 +64,8 @@
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['text']) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
         ,( !empty($return['staff']) ? '<div class="site__grid">'.$return['staff'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );

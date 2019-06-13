@@ -16,7 +16,7 @@
                 <div class="content">
                     <h5>%s</h5>
                     <div class="excerpt">%s</div>
-                    <p class="read_more">Read More</p>
+                    <p class="read_more" style="color:'.$cB['foreground_color'].';">Read More</p>
                 </div>
             </a>
         </li>
@@ -53,15 +53,15 @@
 
     $return['section'] .= sprintf(
         $guide['section']
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
+        ,( !empty($cB['anchor_enabled'] ) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
         ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
-        ,( !empty($return['posts']) ? '<div class="site__grid">'.$return['posts'].'</div>' : '' )
-        ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
+        ,( !empty( $cB['heading'] ) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty( $cB['text'] ) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
+        ,( !empty( $return['posts'] ) ? '<div class="site__grid">'.$return['posts'].'</div>' : '' )
+        ,( !empty( $cB['view_all_button']['link'] ) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 
 

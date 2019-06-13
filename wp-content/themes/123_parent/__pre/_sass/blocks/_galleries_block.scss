@@ -8,37 +8,6 @@
 
         // 
         > .container {
-            &.narrow {
-                $w: getVar($sizing, content, small);
-                width: $w;
-                > .tabsandgrids_container {
-                    width: $w;
-                }
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
-            &.medium {
-                $w: getVar($sizing, content, medium);
-                width: $w;
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
-            &.wide {
-                $w: getVar($sizing, content, large);
-                width: $w;
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
-            &.full {
-                $w: getVar($sizing, content, full);
-                width: $w;
-                > .site__grid > ul {
-                    width: $w;
-                }
-            }
             // wrapper for tabs and grids, to control the layout for a sidebar etc
             .tabsandgrids_container {
                 // general styling for all tabs
@@ -57,16 +26,12 @@
                             a {
                                 display: block;
                                 padding: 0 getVar($sizing, gutter, px, small);
-                                text-transform: uppercase;
                                 letter-spacing: 0.33px;
                                 font-weight: 600;
                                 letter-spacing: 1px;
                                 white-space: nowrap;
                                 line-height: 44px;
                                 color: getVar($colors, black, full);
-                            }
-                            &.tab_active {
-                                
                             }
                         }
                     }
@@ -88,22 +53,40 @@
 
                     >div.site__grid.current_gallery {
                         display: block;
-
                     }
                 }
-
-                // adjustments for the different tab styles
-                &.none {}
                 &.divider {
                     .tabs {
                         > ul {
-                            border-bottom: 1px solid getVar($colors, black, full);
+                            margin-bottom: getVar($sizing, gutter, px, normal);
+                            border-bottom: 2px solid getVar($gustavo, colors, gray1);
                             > li {
+                                margin: 0 2px;
                                 > a {
+                                    color: getVar($gustavo, colors, gray2);
+                                    background-color: getVar($gustavo, colors, gray1);
+                                    border-top-left-radius: 5px;
+                                    border-top-right-radius: 5px;
+                                    border-top: 2px solid getVar($gustavo, colors, gray1);
+                                    border-left: 2px solid getVar($gustavo  , colors, gray1);
+                                    border-right: 2px solid getVar($gustavo, colors, gray1);
+                                    &:focus {
+                                        background: getVar($colors, white, full);
+                                    }
+                                    &:hover,
+                                    &:active {
+                                        color: getVar($colors, white, full);
+                                        background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                                    }
                                 }
-                                &:hover,
                                 &.tab_active {
-                                    >a {
+                                    > a {
+                                        color: getVar($gustavo, colors, gray2);
+                                        background: getVar($colors, white, full);
+                                        &:hover {
+                                            color: getVar($colors, white, full);
+                                            background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                                        }
                                     }
                                 }
                             }
@@ -126,26 +109,36 @@
                                     font-weight: 700;
                                     text-transform: uppercase;
                                     text-align: center;
-                                    background-color: getVar($colors, accent);
+                                    background-color: getVar($colors, white, full);
                                     border: 2px solid getVar($gustavo, colors, gray1);
                                     border-radius: 30px;
                                     padding: 5px 25px;
-                                    color: inherit;
+                                    color: getVar($gustavo, colors, gray1);
                                     display: block;
                                     margin: 0 5px;
                                     &:hover {
                                         border: 2px solid getVar($gustavo, colors, gray1);
-                                        color: $white;
+                                        color: getVar($colors, white, full);
                                         background-color: getVar($gustavo, colors, gray1);
                                     } 
                                     &:active,
-                                    &:focus,
-                                    &.active_menu_link,
-                                    &.active_menu_link:hover {
+                                    &:focus {
                                         border: 2px solid getVar($colors, accent);
                                         background-color: getVar($colors, accent);
                                         color: getVar($colors, white, full);
                                     }
+                                }
+                            }
+                            li.tab_active {
+                                a {
+                                    border: 2px solid getVar($colors, accent);
+                                    background-color: getVar($colors, accent);
+                                    color: getVar($colors, white, full);
+                                    &:hover {
+                                        border: 2px solid getVar($gustavo, colors, gray1);
+                                        color: getVar($colors, white, full);
+                                        background-color: getVar($gustavo, colors, gray1);
+                                    } 
                                 }
                             }
                         }
@@ -154,19 +147,46 @@
                 &.sidebar {
                     display: flex;
                     flex-flow: row nowrap;
+                    margin-top: getVar($sizing, gutter, px, large);
                     .tabs {
                         flex: 1;
-                        margin-right: getVar($sizing, gutter, px, large);
+                        margin-right: getVar($sizing, gutter, px, normal);
                         > ul {
-                            margin-top: 20%;
                             height: 80%;
                             flex-flow: column nowrap;
                             border: none;
-                            border-right: 1px solid getVar($colors, black, full);
                             > li {
                                 border: none;
-                                border-bottom: 1px solid getVar($colors, black, full);
-                                margin: getVar($sizing, gutter, px, small) 0;
+                                width: 100%;
+                                text-align: left;
+                                > a {
+                                    color: getVar($gustavo, colors, gray2);
+                                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+                                    border-bottom: 1px solid getVar($gustavo, colors, gray1);
+                                    &:active, 
+                                    &:focus {
+                                        color: $white;
+                                        background-color: $accent;
+                                        border-bottom: 1px solid $accent;
+                                    }
+                                    &:hover {
+                                        color: getVar($gustavo, colors, gray2);
+                                        background-color: getVar($gustavo, colors, gray1);
+                                        border-bottom: 1px solid transparent;
+                                    }
+                                }
+                            }
+                            > li.tab_active {
+                                > a {
+                                    color: $white;
+                                    background-color: $accent;
+                                    border-bottom: 1px solid $accent;
+                                    &:hover {
+                                        color: getVar($gustavo, colors, gray2);
+                                        background-color: getVar($gustavo, colors, gray1);
+                                        border-bottom: 1px solid transparent;
+                                    }
+                                }
                             }
                         }
                     }
@@ -181,8 +201,7 @@
                             @include gridLayout($w, $c, $g, $s);
                         }
                     }
-                }
-                
+                }       
             }
         }
     }
@@ -204,11 +223,37 @@
 @media only screen and (max-width: 640px){
     section.site__block.block__galleries {
         > .container {
+            $w: getVar($sizing, content, full);
+            $c : 2;
+            $g: getVar($sizing, gutter, vw, normal);
+            $s: true;
             &.narrow,
             &.medium,
             &.wide,
             &.full {
-                width: getVar($sizing, content, full);
+                width: $w;
+                &.hasbg {
+                    width: ($w + ( 2 * $g));
+                    padding: $g;
+                }
+                .site__grid {
+                    @include gridLayout($w, $c, $g, $s); 
+                }
+            }
+            .tabsandgrids_container {
+                &.sidebar {
+                    > .galleries {
+                        $w: getVar($sizing, content, small);
+                        $c : 2;
+                        $g: getVar($sizing, gutter, vw, normal);
+                        $s: true;
+                        width: $w;
+                        margin: 0 auto 0 auto;
+                        .site__grid {
+                            @include gridLayout($w, $c, $g, $s);
+                        }
+                    }
+                }
             }
         }
     }

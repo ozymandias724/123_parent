@@ -1,36 +1,82 @@
 @media only screen {
-
     section.block__staff {
+
         > .container {
 
-            > h2 {
-                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            }
-            > div:not(.site__grid){
-                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
-            }
-
             .site__grid {
-
-                > ul {
-                    > li {
-                        > a {
-                            color: getVar($colors, white, full);
-                            > h5 {
-                                background-color: rgba(getVar($colors, gray, mid), 1);
+                >ul {
+                    >li {
+                        >a { 
+                            color: inherit;
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                >div:last-of-type {
+                                    border: 3px solid getVar($gustavo, colors, gray1);
+                                }
                             }
-                            > div {
+
+                            // image
+                            >div.staff__image {
+                                position: relative;
+                                z-index: 2;
+                                border: 5px solid getVar($gustavo, colors, gray7);
+                                box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+                                width: fit-content;
                                 border-radius: 50%;
-                                overflow: hidden;
-                                border: 2px solid rgba(getVar($colors, gray, mid), 1.0);
-                                @include site__bgimage($g : true, $z : true);
+                                margin: 0 auto;
+                                @include site__bgimage($g : false, $z : true);
+                            }
+
+                            // content
+                            >div:last-of-type {
+                                border: 3px solid transparent;
+                                padding: 154px 30px 0; 
+                                position: relative;
+                                margin-top: -137px;
+                                background-color: getVar($gustavo, colors, gray7);
+                                border-radius: 20px;
+                                min-height: 400px;
+
+                                >h3 {
+                                    margin: 0 0 10px 0;
+                                    font-family: "Gotham", Helvetica, sans-serif;
+                                    @include fontS-34;
+                                    font-weight: 500;
+                                    padding-bottom: 5px;
+                                    border-bottom: 4px dotted getVar($colors, white, full); 
+                                }
+
+                                >div.staff__details {
+                                    font-weight: 600;
+                                    @include fontS-14;
+                                }
                             }
                         }
                     }
                 }
-                
             }
-            
+        }
+    }
+}
+
+@media only screen and (max-width: 640px){
+    section.block__staff {
+        > .container {
+            .site__grid {
+                >ul {
+                    >li {
+                        >a { 
+                            >div.staff__image {
+                                div.image {
+                                    max-width: 60vw;
+                                    max-height: 60vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -97,7 +97,7 @@ var Blocks = {}; // tbd
         autoplay: false,
         adaptiveHeight: true,
         arrows: true,
-        fade: true,
+        fade: false,
         autoplaySpeed: 5000,
         pauseOnHover: true,
         pauseOnFocus: true,

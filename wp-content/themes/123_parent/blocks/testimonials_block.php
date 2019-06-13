@@ -9,7 +9,7 @@
 
     $guide['grid'] = '';
     
-    $return['grid'] ='<ul class="site__fade site__fade-up">';
+    $return['grid'] ='<ul class="site__fade site__fade-up square_ul">';
 
     foreach($cB['testimonials'] as $i => $testimonial){
         

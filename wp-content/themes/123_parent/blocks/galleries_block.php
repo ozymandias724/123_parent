@@ -31,7 +31,11 @@
             }
 
             // open the galleries grid
-            $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2 class="site__fade site__fade-up">'.$gallery['title'].'</h2><ul>';
+            if ( $cB['tab_type'] == 'none' ){
+                $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2 class="site__fade site__fade-up">'.$gallery['title'].'</h2><ul>';
+            }else{
+                $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><ul>';
+            }
 
             // loop thru the gallery images to create line items
             foreach( $gallery['images'] as $image ){
