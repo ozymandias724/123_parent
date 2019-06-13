@@ -28,25 +28,21 @@ include_once('classes/class.NavHandler.php');   // handler for creating theme he
 
 
 
-function get_phone_number_1()
-{
+function get_phone_number_1(){
 	$company_info = get_field('company_info','options');
 	return (!empty($company_info['phone_number_1']) ? $company_info['phone_number_1'] : '');
 }
 
-function get_phone_number_2()
-{
+function get_phone_number_2(){
 	$company_info = get_field('company_info','options');
 	return (!empty($company_info['phone_number_2']) ? $company_info['phone_number_2'] : '');
 }
 
-function get_email()
-{
+function get_email(){
 	return (!empty($company_info['email']) ? $company_info['email'] : '');
 }
 
-function get_social_icons()
-{
+function get_social_icons(){
 	$company_info = get_field('company_info','options');
 	$content_social_icons = '';
         // if we have social media icons

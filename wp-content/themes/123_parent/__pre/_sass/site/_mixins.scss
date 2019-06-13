@@ -88,17 +88,6 @@
                 background-position: center center;
                 background-repeat: no-repeat;
             }
-
-            .less_size_block {
-                .image,
-                .block {
-                    @if $s==true {
-                        $d : ($d - (1.5 * $g));
-                        height: $d;
-                        width: $d;
-                    }
-                }
-            }
             
             .image,
             .block {
@@ -106,6 +95,11 @@
                     height: $d;
                     &.rectangular_block {
                         height: (colWidth($w, $c, $g) / 1.6);
+                    }
+                    &.less_size_block {
+                        $d : ($d - (2.4 * $g));
+                        height: $d;
+                        width: $d;
                     }
                 }
             }
