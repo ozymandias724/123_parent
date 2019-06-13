@@ -134,7 +134,9 @@
                                     border: 2px solid getVar($colors, accent);
                                     background-color: getVar($colors, accent);
                                     color: getVar($colors, white, full);
-                                    &:hover {
+                                    &:hover,
+                                    &:active,
+                                    &:focus {
                                         border: 2px solid getVar($gustavo, colors, gray1);
                                         color: getVar($colors, white, full);
                                         background-color: getVar($gustavo, colors, gray1);

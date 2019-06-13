@@ -15,7 +15,7 @@
                 <div class="block rectangular_block" style="background-image: url(%s)"></div>
                 <div class="content">
                     <h5>%s</h5>
-                    <div class="excerpt">%s</div>
+                    <div class="excerpt block__item-body">%s</div>
                     <p class="read_more" style="color:'.$cB['foreground_color'].';">Read More</p>
                 </div>
             </a>

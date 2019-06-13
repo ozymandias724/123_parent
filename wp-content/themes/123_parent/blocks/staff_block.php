@@ -23,7 +23,7 @@
                     </div>
                     <div class="staff__content"> 
                         <h3>%s</h3>
-                        <div class="staff__details">%s</div>
+                        <div class="staff__details block__item-body">%s</div>
                     </div>
                 </a>
                 <div class="staff__social">%s</div>

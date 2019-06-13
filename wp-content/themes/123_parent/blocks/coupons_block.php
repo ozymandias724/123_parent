@@ -13,8 +13,8 @@
         <li class="site__fade site__fade-up">
             <a href="%s">
                 <h5>%s</h5>
-                <p class="coupon_description">This is a note for what this coupon does and if it\'s not filled in it doesn\'t show.</p>
-                %s</span></p>
+                <div class="coupon_description block__item-body">%s</div>
+                %s
             </a>
         </li>
     ';
@@ -28,6 +28,7 @@
                 $guide['coupon']
                 ,get_permalink($coupon['coupon']->ID)
                 ,$coupon['coupon']->post_title
+                ,(!empty($fields['details']) ? $fields['details'] : '')
                 ,(!empty($fields['code']) ? '<p class="coupon_code">Code: <span>'.$fields['code'].'</span></p>' : '')
             );
         }

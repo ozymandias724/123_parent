@@ -59,11 +59,6 @@
                                     padding-bottom: 5px;
                                     border-bottom: 5px dotted getVar($colors, white, full); 
                                 }
-
-                                >div.staff__details {
-                                    font-weight: 600;
-                                    @include fontS-14;
-                                }
                             }
                         }
                         > div.staff__social {
@@ -80,7 +75,7 @@
                                 flex-flow: row nowrap;
                                 justify-content: center;
                                 > li {
-                                    padding: 10px;
+                                    padding: 5px;
                                     > a {
                                         > i {
                                             background-color: getVar($gustavo, colors, gray10);
@@ -93,7 +88,9 @@
                                             color: getVar($gustavo, colors, gray7);
                                         }
                                         &:hover, &:active, &:focus {
-                                            opacity: 0.8;
+                                            > i {
+                                                color: getVar($colors, accent);
+                                            }
                                         }
                                     }
                                 }

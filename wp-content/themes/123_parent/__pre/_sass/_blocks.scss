@@ -7,7 +7,11 @@
             text-align: center;
             padding: getVar($sizing, gutter, px, normal) 0;
             margin: 0 auto getVar($sizing, gutter, px, normal);
-    
+            .block__item-body {
+                font-weight: 400;
+                @include fontS-14;
+                text-align: center;
+            }
             // set most sections heading margin
             >h2 {
                 margin: 0 auto getVar($sizing, gutter, px, normal) auto;

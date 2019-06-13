@@ -13,7 +13,7 @@
                 <div><div class="image less_size_block" style="background-image:url(%s);"></div></div>
                 <div>
                     %s 
-                    %s
+                    <div class="service__details block__item-body">%s</div>
                     <p class="service_price">%s</p>
                 </div>
             </a>

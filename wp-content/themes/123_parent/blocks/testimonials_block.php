@@ -25,7 +25,7 @@
                                 %s
                                 %s
                             </div>
-                            <div class="testimonial_details">%s</div>
+                            <div class="testimonial_details block__item-body">%s</div>
                         </div>
                     </div>
                 </li>
@@ -71,7 +71,7 @@
                                 %s
                                 %s
                             </div>
-                            <div class="testimonial_details">%s</div>
+                            <div class="testimonial_details block__item-body">%s</div>
                         </div>
                     </div>
                 </li>

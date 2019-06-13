@@ -3885,6 +3885,12 @@ main#page_services section.mod__services-featuredservice div.container .site__gr
     padding: 30px 0;
     margin: 0 auto 30px;
   }
+  section.site__block .container .block__item-body {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-align: center;
+  }
   section.site__block .container > h2 {
     margin: 0 auto 30px auto;
   }
@@ -4382,7 +4388,7 @@ section.site__block > .container.full .site__grid > ul > li .block.less_size_blo
     min-height: 400px;
   }
   section.block__services > .container .site__grid > ul > li > a > div:last-of-type > h3,
-section.block__services > .container .site__grid > ul > li > a > div:last-of-type > p {
+section.block__services > .container .site__grid > ul > li > a > div:last-of-type > div.service__details {
     padding: 0 30px;
   }
   section.block__services > .container .site__grid > ul > li > a > div:last-of-type > h3 {
@@ -4391,11 +4397,6 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
     font-size: 3.4rem;
     line-height: 4.8rem;
     font-weight: 500;
-  }
-  section.block__services > .container .site__grid > ul > li > a > div:last-of-type > p {
-    font-weight: 600;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
   }
   section.block__services > .container .site__grid > ul > li > a > div:last-of-type > .service_price {
     font-family: "Gotham", Helvetica, sans-serif;
@@ -4514,7 +4515,7 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
     background-color: #376494;
     color: #ffffff;
   }
-  section.site__block.block__galleries > .container .tabsandgrids_container.pill .tabs > ul li.tab_active a:hover {
+  section.site__block.block__galleries > .container .tabsandgrids_container.pill .tabs > ul li.tab_active a:hover, section.site__block.block__galleries > .container .tabsandgrids_container.pill .tabs > ul li.tab_active a:active, section.site__block.block__galleries > .container .tabsandgrids_container.pill .tabs > ul li.tab_active a:focus {
     border: 2px solid #c2c2c2;
     color: #ffffff;
     background-color: #c2c2c2;
@@ -4776,9 +4777,6 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     font-weight: 600;
   }
   section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_description {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    font-weight: 500;
     margin-bottom: 10px;
   }
   section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_expiration {
@@ -4858,11 +4856,6 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     padding-bottom: 5px;
     border-bottom: 5px dotted #ffffff;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__content > div.staff__details {
-    font-weight: 600;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-  }
   section.block__staff > .container .site__grid > ul > li > div.staff__social {
     padding: 10px 30px 30px 30px;
     background-color: #dedede;
@@ -4879,7 +4872,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     justify-content: center;
   }
   section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li {
-    padding: 10px;
+    padding: 5px;
   }
   section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a > i {
     background-color: #979797;
@@ -4891,8 +4884,8 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     border-radius: 50%;
     color: #dedede;
   }
-  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:hover, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:active, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:focus {
-    opacity: 0.8;
+  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:hover > i, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:active > i, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:focus > i {
+    color: #376494;
   }
 }
 @media only screen and (max-width: 640px) {
@@ -7221,12 +7214,10 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
     line-height: 4.8rem;
     margin: 0 10px;
   }
-  section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_details > p {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    font-weight: 500;
+  section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_details {
     margin-bottom: 10px;
     margin: 0;
+    text-align: left;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content:before {
     display: block;
@@ -7379,24 +7370,21 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   }
   section.site__block.block__blog_posts div.container .site__grid ul li > a > div.content > h5 {
     margin: 0 30px;
-    padding: 15px 0 5px;
+    padding: 15px 0 10px;
     font-family: "Gotham", "Helvetica", sans-serif;
     display: block;
     text-decoration: none;
     text-align: left;
     font-weight: 500;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    line-height: 2.8rem;
     letter-spacing: -1px;
     border-bottom: 4px dotted #ffffff;
   }
   section.site__block.block__blog_posts div.container .site__grid ul li > a > div.content > div.excerpt > p {
     margin: 0 35px 30px;
     padding: 5px 0 0;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    text-align: justify;
   }
   section.site__block.block__blog_posts div.container .site__grid ul li > a > div.content > p.read_more {
     background-color: #376494;
