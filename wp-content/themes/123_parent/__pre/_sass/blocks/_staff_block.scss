@@ -6,15 +6,25 @@
             .site__grid {
                 >ul {
                     >li {
-                        >a { 
-                            color: inherit;
-                            &:hover,
-                            &:active,
-                            &:focus {
-                                >div.staff__content {  
-                                    border: 3px solid getVar($gustavo, colors, gray1);
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            > a {
+                                div.staff__content {  
+                                    border-top: 3px solid getVar($gustavo, colors, gray1);
+                                    border-right: 3px solid getVar($gustavo, colors, gray1);
+                                    border-left: 3px solid getVar($gustavo, colors, gray1);
                                 }
                             }
+                            > div.staff__social {
+                                border-right: 3px solid getVar($gustavo, colors, gray1);
+                                border-left: 3px solid getVar($gustavo, colors, gray1);
+                                border-bottom: 3px solid getVar($gustavo, colors, gray1);
+                            }
+                        }
+                        >a { 
+                            color: inherit;
+                            
 
                             // image
                             >div.staff__image {
@@ -30,13 +40,16 @@
 
                             // content
                             >div.staff__content {
-                                border: 3px solid transparent;
+                                border-top: 3px solid transparent;
+                                border-right: 3px solid transparent;
+                                border-left: 3px solid transparent;
                                 padding: 154px 30px 0; 
                                 position: relative;
                                 margin-top: -137px;
                                 background-color: getVar($gustavo, colors, gray7);
-                                border-radius: 20px;
-                                min-height: 400px;
+                                border-top-left-radius: 20px;
+                                border-top-right-radius: 20px;
+                                min-height: 315px;
 
                                 >h3 {
                                     margin: 0 0 10px 0;
@@ -50,6 +63,36 @@
                                 >div.staff__details {
                                     font-weight: 600;
                                     @include fontS-14;
+                                }
+                            }
+                        }
+                        > div.staff__social {
+                            padding: 10px 30px 30px 30px;
+                            background-color: getVar($gustavo, colors, gray7);
+                            border-bottom-left-radius: 20px;
+                            border-bottom-right-radius: 20px;
+                            border-right: 3px solid transparent;
+                            border-left: 3px solid transparent;
+                            border-bottom: 3px solid transparent;
+                            > ul {
+                                display: flex;
+                                align-items: center;
+                                flex-flow: row nowrap;
+                                justify-content: center;
+                                > li {
+                                    padding: 10px;
+                                    > a {
+                                        > i {
+                                            background-color: getVar($gustavo, colors, gray10);
+                                            width: 40px;
+                                            height: 40px;
+                                            line-height: 40px;
+                                            vertical-align: bottom;
+                                            text-align: center;
+                                            border-radius: 50%;
+                                            color: getVar($gustavo, colors, gray7);
+                                        }
+                                    }
                                 }
                             }
                         }

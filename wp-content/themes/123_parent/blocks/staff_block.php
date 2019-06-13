@@ -5,14 +5,6 @@
 * 
 */
 
-        // loop thru each staff member
-        foreach($cB['staff_members'] as $i => $staff_member) {
-            
-            // get fields for this sttaff member
-            $fields = get_fields($staff_member['staff_member']->ID);
-            print_r($fields);
-        }
-
     // set return and guide string arrays
     $return = [];
     $guide = [];
@@ -32,9 +24,9 @@
                     <div class="staff__content"> 
                         <h3>%s</h3>
                         <div class="staff__details">%s</div>
-                        <div class="staff__social">%s</div>
                     </div>
                 </a>
+                <div class="staff__social">%s</div>
             </li>
         ';
 
@@ -61,7 +53,7 @@
     
                     $url = ( !empty($social_icon['link']['url']) ? $social_icon['link']['url'] : '' );
                     $title = ( !empty($social_icon['link']['title']) ? $social_icon['link']['title'] : '' );
-                    $target = ( !empty($social_icon['link']['target']) ? $social_icon['link']['target'] : '' );
+                    $target = ( !empty($social_icon['link']['target']) ? $social_icon['link']['target'] : '');
     
                     if( !empty($social_icon['image']) ){
                         $social_media .= sprintf(
