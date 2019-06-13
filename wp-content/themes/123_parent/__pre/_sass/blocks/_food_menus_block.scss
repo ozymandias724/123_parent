@@ -174,20 +174,22 @@ $s_true: true;
                 > ul.menu_items {
                     display: inline-block;
                 }
-                &.menu_text_sub_group_half > div > h2 {
-                    @include fontS-34;
-                    font-weight: 800;
-                    text-transform: capitalize;
-                }
-                &.menu_text_sub_group_half > div > p {
-                    margin: 15px 0 20px;
-                    font-family: "Times New Roman";
-                    line-height: 1em;
-                    font-style: italic;
-                    @include fontS-24;
-                    font-weight: 500;
-                    border-bottom: 3px solid $accent;
-                    padding-bottom: 20px;
+                &.menu_text_sub_group_half > div {
+                    > h2 {
+                        @include fontS-34;
+                        font-weight: 800;
+                        text-transform: capitalize;
+                    }
+                    > p {
+                        margin: 15px 0 20px;
+                        font-family: "Times New Roman";
+                        line-height: 1em;
+                        font-style: italic;
+                        @include fontS-24;
+                        font-weight: 500;
+                        border-bottom: 3px solid $accent;
+                        padding-bottom: 20px;
+                    }
                 }
                 // Menu Type
                 &.menu_photo_list {
@@ -337,12 +339,6 @@ $s_true: true;
                 // Menu Type
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
-                    .image_provided {
-                        width: 65vw;
-                        height: 65vw;
-                        max-width: 18vw;
-                        max-height: 18vw;
-                    }
                     >div:nth-child(odd) {
                         margin-right: 12px;
                         flex: 0 0 48%;
@@ -454,13 +450,11 @@ $s_true: true;
                     align-items: stretch;
                     li {
                         margin: 5px 0;
-                        flex: 1 0 33%;
                         a {
                             @include fontS-16;
                             font-weight: 700;
                             text-transform: uppercase;
                             text-align: center;
-                            background-color: getVar($colors, accent);
                             border: 2px solid getVar($gustavo, colors, gray1);
                             border-radius: 30px;
                             padding: 5px 25px;
@@ -469,25 +463,25 @@ $s_true: true;
                             margin: 0 5px;
                             &:hover {
                                 border: 2px solid getVar($gustavo, colors, gray1);
-                                color: $white;
+                                color: getVar($colors, white, full);
                                 background-color: getVar($gustavo, colors, gray1);
                             } 
                             &:active,
                             &:focus {
-                                border: 2px solid $accent;
-                                background-color: $accent;
-                                color: $white;
+                                border: 2px solid getVar($colors, accent);
+                                background-color: getVar($colors, accent);
+                                color: getVar($colors, white, full);
                             }
                         }
                     }
                     li.tab_active {
                         a {
-                            border: 2px solid $accent;
-                            background-color: $accent;
-                            color: $white;
+                            border: 2px solid getVar($colors, accent);
+                            background-color: getVar($colors, accent);
+                            color: getVar($colors, white, full);
                             &:hover {
                                 border: 2px solid getVar($gustavo, colors, gray1);
-                                color: $white;
+                                color: getVar($colors, white, full);
                                 background-color: getVar($gustavo, colors, gray1);
                             } 
                         }
@@ -548,11 +542,11 @@ $s_true: true;
                 }
             } 
             // Menu Section that is active
-            .active_menu_section {
+            .current_food_menu {
                 display: block;
             }
             // Menu Section that is active and should use flexbox
-            .active_menu_section.menu_flex {
+            .current_food_menu.menu_flex {
                 display: flex;
             }  
         }

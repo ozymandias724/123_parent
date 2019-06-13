@@ -5,7 +5,6 @@
 
     // Functions 
     function get_menu_items($menu_style, $item){
-
         switch($menu_style){
             case 'menu_photo_list': 
             $format = '
@@ -49,7 +48,6 @@
             default: 
             $format = '
                 <li class="menu_item site__fade site__fade-up">
-                    %s
                     <h3>%s <span class="menu_price">%s</span></h3>
                     %s
                 </li>
@@ -57,26 +55,17 @@
             
             $return = sprintf(
                 $format
-                ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
                 ,(!empty($item['price']) ? $item['price'] : '')
                 ,(!empty($item['description']) ? $item['description'] : '')
             );
             break;
         }
-        
         return $return;
     }
 
     // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
-
-        // guide for a button (pill etc)
-        $guide['buttons'] = '
-            <li>
-                <a href="javascript:;">%s</a>
-            </li>
-        ';
 
         // open buttons and menus container
         $return['buttons_and_menus'] = '<div id="tabs_style__'.$cB['tabs_style'].'" class="tabs">'; 
@@ -92,6 +81,13 @@
 
             // get fields for this menu post object
             $fields = get_fields($menu['menu_post']->ID);
+
+            // guide for a button (pill etc)
+            $guide['buttons'] = '
+                <li class="'.( ($i===0) ? 'tab_active' : '' ).'">
+                    <a href="javascript:;">%s</a>
+                </li>
+            ';
             
             // write to the button group
             $return['buttons'] .= sprintf(
@@ -104,10 +100,10 @@
 
                 if($fields['style'] !== 'menu_text_sub_group_half'){
                     // open the wrapper for the menu sections
-                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].'">';
+                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].( ($i===0) ? ' current_food_menu' : ' hidden_food_menu' ).'">';
                 }else{
                     // open the wrapper for the menu sections
-                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].' menu_flex">';
+                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].' menu_flex '.( ($i===0) ? 'current_food_menu' : 'hidden_food_menu' ).'">';
                 }
 
                 // loop thru each menu section (rows in the repeater)
@@ -179,7 +175,6 @@
         </section>
     ';
     
-
     $return['section'] .= sprintf(
         $guide['section']
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll

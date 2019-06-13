@@ -5,6 +5,7 @@
 .slick-slider {
   position: relative;
   display: block;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -12,6 +13,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -33,6 +35,10 @@
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -115,6 +121,8 @@
   top: 50%;
   margin-top: -10px\9 ;
   /*lte IE 8*/
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
@@ -835,8 +843,7 @@ h6 {
   }
 
   img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     height: auto;
   }
 }
@@ -2320,8 +2327,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   .mobilefooter > div:nth-of-type(1) > a > img {
     height: auto;
     max-width: 200px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mobilefooter > div:nth-of-type(1) > div {
     display: flex;
@@ -2445,6 +2451,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
 
   footer.mobilefooter.invertlogo > div > a > img {
+    -webkit-filter: invert(100%);
     filter: invert(100%);
   }
 }
@@ -3109,8 +3116,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     cursor: pointer;
   }
   section.hero#hero_slider .slider_img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     position: relative;
     top: 0;
     left: 50%;
@@ -3921,9 +3927,7 @@ section.site__block .container > .block__details {
     width: 100%;
   }
   section.site__block .container.narrow .site__grid > ul > li .image,
-section.site__block .container.narrow .site__grid > ul > li .block,
-section.site__block .container.narrow .site__grid > ul > li .less_size_block .image,
-section.site__block .container.narrow .site__grid > ul > li .less_size_block .block {
+section.site__block .container.narrow .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -3975,9 +3979,7 @@ section.site__block .container.narrow .site__grid > ul > li .block.less_size_blo
     width: 100%;
   }
   section.site__block .container.medium .site__grid > ul > li .image,
-section.site__block .container.medium .site__grid > ul > li .block,
-section.site__block .container.medium .site__grid > ul > li .less_size_block .image,
-section.site__block .container.medium .site__grid > ul > li .less_size_block .block {
+section.site__block .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4029,9 +4031,7 @@ section.site__block .container.medium .site__grid > ul > li .block.less_size_blo
     width: 100%;
   }
   section.site__block .container.wide .site__grid > ul > li .image,
-section.site__block .container.wide .site__grid > ul > li .block,
-section.site__block .container.wide .site__grid > ul > li .less_size_block .image,
-section.site__block .container.wide .site__grid > ul > li .less_size_block .block {
+section.site__block .container.wide .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4083,9 +4083,7 @@ section.site__block .container.wide .site__grid > ul > li .block.less_size_block
     width: 100%;
   }
   section.site__block .container.full .site__grid > ul > li .image,
-section.site__block .container.full .site__grid > ul > li .block,
-section.site__block .container.full .site__grid > ul > li .less_size_block .image,
-section.site__block .container.full .site__grid > ul > li .less_size_block .block {
+section.site__block .container.full .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4143,18 +4141,10 @@ section.site__block .container.full .site__grid > ul > li .block.less_size_block
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image,
-section.site__block > .container.narrow .site__grid > ul > li .block,
-section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .image,
-section.site__block > .container.full .site__grid > ul > li .block,
-section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .image,
-section.site__block > .container.wide .site__grid > ul > li .block,
-section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .image,
-section.site__block > .container.medium .site__grid > ul > li .block,
-section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4217,18 +4207,10 @@ section.site__block > .container.medium .site__grid > ul > li .block.less_size_b
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image,
-section.site__block > .container.narrow .site__grid > ul > li .block,
-section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .image,
-section.site__block > .container.wide .site__grid > ul > li .block,
-section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .image,
-section.site__block > .container.full .site__grid > ul > li .block,
-section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .image,
-section.site__block > .container.medium .site__grid > ul > li .block,
-section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4291,18 +4273,10 @@ section.site__block > .container.medium .site__grid > ul > li .block.less_size_b
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image,
-section.site__block > .container.narrow .site__grid > ul > li .block,
-section.site__block > .container.narrow .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid > ul > li .image,
-section.site__block > .container.medium .site__grid > ul > li .block,
-section.site__block > .container.medium .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid > ul > li .image,
-section.site__block > .container.wide .site__grid > ul > li .block,
-section.site__block > .container.wide .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block > .container.full .site__grid > ul > li .image,
-section.site__block > .container.full .site__grid > ul > li .block,
-section.site__block > .container.full .site__grid > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid > ul > li .block, section.site__block > .container.medium .site__grid > ul > li .image,
+section.site__block > .container.medium .site__grid > ul > li .block, section.site__block > .container.wide .site__grid > ul > li .image,
+section.site__block > .container.wide .site__grid > ul > li .block, section.site__block > .container.full .site__grid > ul > li .image,
+section.site__block > .container.full .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4351,8 +4325,6 @@ section.site__block > .container.full .site__grid > ul > li .block.less_size_blo
     border: 3px solid #c2c2c2;
   }
   section.block__services > .container .site__grid > ul > li > a > div:first-of-type {
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     position: relative;
     z-index: 2;
@@ -4480,7 +4452,6 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.pill .tabs > ul li {
     margin: 5px 0;
-    flex: 0 0 17%;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.pill .tabs > ul li a {
     font-size: 1.6rem;
@@ -4583,9 +4554,7 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
     width: 100%;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .image,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .block {
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4644,18 +4613,10 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     width: 100%;
   }
   section.site__block.block__galleries > .container.narrow .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block,
-section.site__block.block__galleries > .container.narrow .site__grid > ul > li .less_size_block .image,
-section.site__block.block__galleries > .container.narrow .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.medium .site__grid > ul > li .block,
-section.site__block.block__galleries > .container.medium .site__grid > ul > li .less_size_block .image,
-section.site__block.block__galleries > .container.medium .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.wide .site__grid > ul > li .block,
-section.site__block.block__galleries > .container.wide .site__grid > ul > li .less_size_block .image,
-section.site__block.block__galleries > .container.wide .site__grid > ul > li .less_size_block .block, section.site__block.block__galleries > .container.full .site__grid > ul > li .image,
-section.site__block.block__galleries > .container.full .site__grid > ul > li .block,
-section.site__block.block__galleries > .container.full .site__grid > ul > li .less_size_block .image,
-section.site__block.block__galleries > .container.full .site__grid > ul > li .less_size_block .block {
+section.site__block.block__galleries > .container.narrow .site__grid > ul > li .block, section.site__block.block__galleries > .container.medium .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.medium .site__grid > ul > li .block, section.site__block.block__galleries > .container.wide .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.wide .site__grid > ul > li .block, section.site__block.block__galleries > .container.full .site__grid > ul > li .image,
+section.site__block.block__galleries > .container.full .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4713,9 +4674,7 @@ section.site__block.block__galleries > .container.full .site__grid > ul > li .bl
     width: 100%;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .image,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .image,
-section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .less_size_block .block {
+section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4813,8 +4772,6 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     z-index: 2;
     border: 5px solid #ffffff;
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.3);
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     border-radius: 50%;
     margin: 0 auto;
@@ -4918,9 +4875,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -4965,9 +4920,7 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_se
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5012,9 +4965,7 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_te
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5062,12 +5013,8 @@ section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_ph
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5115,12 +5062,8 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_sect
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5168,12 +5111,8 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_text
     width: 100%;
   }
   section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.narrow .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5227,9 +5166,7 @@ section.site__block > .container.narrow .site__grid.tabs_style__pills .menu_phot
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5274,9 +5211,7 @@ section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_se
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5321,9 +5256,7 @@ section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_te
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5371,12 +5304,8 @@ section.site__block > .container.medium .site__grid.tabs_style__sidebar .menu_ph
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5424,12 +5353,8 @@ section.site__block > .container.medium .site__grid.tabs_style__pills .menu_sect
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5477,12 +5402,8 @@ section.site__block > .container.medium .site__grid.tabs_style__pills .menu_text
     width: 100%;
   }
   section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.medium .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.medium .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5533,9 +5454,7 @@ section.site__block > .container.medium .site__grid.tabs_style__pills .menu_phot
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5580,9 +5499,7 @@ section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_sect
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5627,9 +5544,7 @@ section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_text
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5677,12 +5592,8 @@ section.site__block > .container.wide .site__grid.tabs_style__sidebar .menu_phot
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5730,12 +5641,8 @@ section.site__block > .container.wide .site__grid.tabs_style__pills .menu_sectio
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5783,12 +5690,8 @@ section.site__block > .container.wide .site__grid.tabs_style__pills .menu_text_h
     width: 100%;
   }
   section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.wide .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5839,9 +5742,7 @@ section.site__block > .container.wide .site__grid.tabs_style__pills .menu_photo_
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5886,9 +5787,7 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_sect
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5933,9 +5832,7 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_text
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5983,12 +5880,8 @@ section.site__block > .container.full .site__grid.tabs_style__sidebar .menu_phot
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .less_size_block .block {
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_section > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6036,12 +5929,8 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_sectio
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .less_size_block .block {
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_text_half > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_half > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6089,12 +5978,8 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_text_h
     width: 100%;
   }
   section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .less_size_block .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.site__block > .container.full .site__grid.tabs_style__divider .menu_photo_tiled_x3 > ul > li .block, section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .image,
+section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6292,12 +6177,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   section.site__block > .container .menu_section.menu_text_sub_group_half {
     flex-flow: row wrap;
   }
-  section.site__block > .container .menu_section.menu_text_sub_group_half .image_provided {
-    width: 65vw;
-    height: 65vw;
-    max-width: 18vw;
-    max-height: 18vw;
-  }
   section.site__block > .container .menu_section.menu_text_sub_group_half > div:nth-child(odd) {
     margin-right: 12px;
     flex: 0 0 48%;
@@ -6406,7 +6285,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   }
   section.site__block > .container #tabs_style__pills > ul.button_group li {
     margin: 5px 0;
-    flex: 1 0 33%;
   }
   section.site__block > .container #tabs_style__pills > ul.button_group li a {
     font-size: 1.6rem;
@@ -6414,7 +6292,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    background-color: #376494;
     border: 2px solid #c2c2c2;
     border-radius: 30px;
     padding: 5px 25px;
@@ -6424,22 +6301,22 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   }
   section.site__block > .container #tabs_style__pills > ul.button_group li a:hover {
     border: 2px solid #c2c2c2;
-    color: #fff;
+    color: #ffffff;
     background-color: #c2c2c2;
   }
   section.site__block > .container #tabs_style__pills > ul.button_group li a:active, section.site__block > .container #tabs_style__pills > ul.button_group li a:focus {
-    border: 2px solid #386591;
-    background-color: #386591;
-    color: #fff;
+    border: 2px solid #376494;
+    background-color: #376494;
+    color: #ffffff;
   }
   section.site__block > .container #tabs_style__pills > ul.button_group li.tab_active a {
-    border: 2px solid #386591;
-    background-color: #386591;
-    color: #fff;
+    border: 2px solid #376494;
+    background-color: #376494;
+    color: #ffffff;
   }
   section.site__block > .container #tabs_style__pills > ul.button_group li.tab_active a:hover {
     border: 2px solid #c2c2c2;
-    color: #fff;
+    color: #ffffff;
     background-color: #c2c2c2;
   }
   section.site__block > .container #tabs_style__sidebar {
@@ -6487,10 +6364,10 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     background-color: #c2c2c2;
     border-bottom: 1px solid transparent;
   }
-  section.site__block > .container .active_menu_section {
+  section.site__block > .container .current_food_menu {
     display: block;
   }
-  section.site__block > .container .active_menu_section.menu_flex {
+  section.site__block > .container .current_food_menu.menu_flex {
     display: flex;
   }
 }
@@ -6521,9 +6398,7 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6568,9 +6443,7 @@ section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul >
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6624,12 +6497,8 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6687,12 +6556,8 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6757,9 +6622,7 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6804,9 +6667,7 @@ section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul >
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6860,12 +6721,8 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6923,12 +6780,8 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__pills .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__divider .menu_section.menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -7003,9 +6856,7 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -7050,9 +6901,7 @@ section.block__food_menus > .container #tabs_style__sidebar .menu_section > ul >
     width: 100%;
   }
   section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__sidebar .menu_section.menu_photo_tiled_x3 > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -7106,12 +6955,8 @@ section.block__food_menus > .container #tabs_style__divider .menu_section > ul >
   }
   section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .image,
 section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__pills .menu_section > ul > li .less_size_block .block,
 section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .image,
-section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .less_size_block .block {
+section.block__food_menus > .container #tabs_style__divider .menu_section > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -7432,3 +7277,5 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
     margin: 0 0 0 0;
   }
 }
+
+/*# sourceMappingURL=main.css.map */

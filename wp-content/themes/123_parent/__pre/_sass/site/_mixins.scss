@@ -65,8 +65,8 @@
         // display: inline-block;
         width: $w;
         margin: 0 auto 0 auto;
-
         @include clearfix;
+        
         >li {
             $d: colWidth($w, $c, $g);
             width: $d;
@@ -79,9 +79,7 @@
             }
 
             .image,
-            .block,
-            .less_size_block .image,
-            .less_size_block .block {
+            .block {
                 display: block;
                 overflow: hidden;
                 background-size: cover;

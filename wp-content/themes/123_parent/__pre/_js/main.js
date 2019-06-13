@@ -232,12 +232,25 @@ $(document).ready(function()
     * If we have a food menu block
     * 
     */
-    // if( $('section.block__food_menus').length && $('section.block__food_menus div.tabs').length ){
-    //     Blocks.FoodMenus = {
-    //         tabs : $(),
-    //         food_menus : $(),
-    //     }
-    // }
+    if( $('section.block__food_menus').length && $('section.block__food_menus div.tabs').length ){
+        
+        Blocks.FoodMenus = {
+            tabs : $('.block__food_menus div.tabs > ul > li'),
+            food_menus : $('.block__food_menus div.tabs > .site__grid > ul.menu_section'),
+            _init : function(){
+                Blocks.FoodMenus.tabs.on('click', '>a', Blocks.FoodMenus._didClickTab);
+            },
+            _didClickTab : function(e){
+                Blocks.FoodMenus.food_menus.addClass('hidden_food_menu');
+                Blocks.FoodMenus.food_menus.removeClass('current_food_menu');
+                $(Blocks.FoodMenus.food_menus[$(this).parent('li').index()]).addClass('current_food_menu');
+                Blocks.FoodMenus.tabs.removeClass('tab_active');
+                $(this).parent('li').addClass('tab_active');
+            }
+        }
+
+        Blocks.FoodMenus._init();
+    }
 
     /**
      * Handle the basics of the nav unspecific to a header style
@@ -389,52 +402,6 @@ Headers.Sidebar = {
 
 }
 Headers.Sidebar._init();
-
-Theme.Menu = {
-    tab_link: $(" .food_menus .button_group a "),
-    menu_section: $(" .menu_section "),
-
-    _init: function () {
-        Theme.Menu.tab_link.on("click", Theme.Menu._tab_link_click);
-        Theme.Menu._show_menu_sections();
-        Theme.Menu._activate_menu_links();
-    },
-    _tab_link_click: function () {
-
-        var tab_link_index = $(this).parent().index();
-
-        Theme.Menu.menu_section.each(function () {
-
-            if ($(this).index() !== tab_link_index) {
-                $(this).removeClass("active_menu_section");
-            } else {
-                $(this).addClass("active_menu_section");
-            }
-
-        });
-        Theme.Menu.tab_link.each(function () {
-
-            $(this).removeClass("active_menu_link");
-
-        });
-        $(this).addClass("active_menu_link");
-    },
-    _show_menu_sections: function () {
-        Theme.Menu.menu_section.each(function (index) {
-            if (index == 0) {
-                $(this).addClass("active_menu_section");
-            }
-        });
-    },
-    _activate_menu_links: function () {
-        Theme.Menu.tab_link.each(function (index) {
-            if (index == 0) {
-                $(this).addClass("active_menu_link");
-            }
-        })
-    }
-}
-Theme.Menu._init();
 
 
 Headers.One = {
