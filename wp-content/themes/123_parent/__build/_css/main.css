@@ -4840,7 +4840,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     border-top: 3px solid transparent;
     border-right: 3px solid transparent;
     border-left: 3px solid transparent;
-    padding: 154px 30px 0;
+    padding: 154px 40px 0;
     position: relative;
     margin-top: -137px;
     background-color: #dedede;
@@ -4849,11 +4849,12 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     min-height: 315px;
   }
   section.block__staff > .container .site__grid > ul > li > a > div.staff__content > h3 {
-    margin: 0 0 10px 0;
+    margin: 0 auto 10px auto;
     font-family: "Gotham", Helvetica, sans-serif;
     font-size: 3.4rem;
     line-height: 4.8rem;
     font-weight: 500;
+    width: 90%;
     padding-bottom: 5px;
     border-bottom: 4px dotted #ffffff;
   }
@@ -4889,6 +4890,9 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     text-align: center;
     border-radius: 50%;
     color: #dedede;
+  }
+  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:hover, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:active, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:focus {
+    opacity: 0.8;
   }
 }
 @media only screen and (max-width: 640px) {

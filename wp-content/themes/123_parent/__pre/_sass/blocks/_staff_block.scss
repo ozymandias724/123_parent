@@ -24,8 +24,7 @@
                         }
                         >a { 
                             color: inherit;
-                            
-
+    
                             // image
                             >div.staff__image {
                                 position: relative;
@@ -43,7 +42,7 @@
                                 border-top: 3px solid transparent;
                                 border-right: 3px solid transparent;
                                 border-left: 3px solid transparent;
-                                padding: 154px 30px 0; 
+                                padding: 154px 40px 0; 
                                 position: relative;
                                 margin-top: -137px;
                                 background-color: getVar($gustavo, colors, gray7);
@@ -52,10 +51,11 @@
                                 min-height: 315px;
 
                                 >h3 {
-                                    margin: 0 0 10px 0;
+                                    margin: 0 auto 10px auto;
                                     font-family: "Gotham", Helvetica, sans-serif;
                                     @include fontS-34;
                                     font-weight: 500;
+                                    width: 90%;
                                     padding-bottom: 5px;
                                     border-bottom: 4px dotted getVar($colors, white, full); 
                                 }
@@ -91,6 +91,9 @@
                                             text-align: center;
                                             border-radius: 50%;
                                             color: getVar($gustavo, colors, gray7);
+                                        }
+                                        &:hover, &:active, &:focus {
+                                            opacity: 0.8;
                                         }
                                     }
                                 }
