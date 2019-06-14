@@ -5799,8 +5799,128 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   section.block__contact > .container > .columns .left, section.block__contact > .container > .columns .right {
     flex: 1 0 45%;
   }
+  section.block__contact > .container > .columns .left > ul, section.block__contact > .container > .columns .right > ul {
+    width: 96%;
+    margin: 0 auto 0 auto;
+  }
+  section.block__contact > .container > .columns .left > ul:after, section.block__contact > .container > .columns .right > ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  section.block__contact > .container > .columns .left > ul > li, section.block__contact > .container > .columns .right > ul > li {
+    width: 96%;
+    height: auto;
+    float: left;
+  }
+  section.block__contact > .container > .columns .left > ul > li > a, section.block__contact > .container > .columns .right > ul > li > a {
+    display: block;
+    width: 100%;
+  }
+  section.block__contact > .container > .columns .left > ul > li .image,
+section.block__contact > .container > .columns .left > ul > li .block, section.block__contact > .container > .columns .right > ul > li .image,
+section.block__contact > .container > .columns .right > ul > li .block {
+    display: block;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  section.block__contact > .container > .columns .left > ul > li .image,
+section.block__contact > .container > .columns .left > ul > li .block, section.block__contact > .container > .columns .right > ul > li .image,
+section.block__contact > .container > .columns .right > ul > li .block {
+    height: 96%;
+  }
+  section.block__contact > .container > .columns .left > ul > li .image.rectangular_block,
+section.block__contact > .container > .columns .left > ul > li .block.rectangular_block, section.block__contact > .container > .columns .right > ul > li .image.rectangular_block,
+section.block__contact > .container > .columns .right > ul > li .block.rectangular_block {
+    height: 60%;
+  }
+  section.block__contact > .container > .columns .left > ul > li .image.less_size_block,
+section.block__contact > .container > .columns .left > ul > li .block.less_size_block, section.block__contact > .container > .columns .right > ul > li .image.less_size_block,
+section.block__contact > .container > .columns .right > ul > li .block.less_size_block {
+    height: 86.4%;
+    width: 86.4%;
+  }
+  section.block__contact > .container > .columns .left > ul > li:nth-child(n+1), section.block__contact > .container > .columns .right > ul > li:nth-child(n+1) {
+    margin: 0 4% 4% 0;
+  }
+  section.block__contact > .container > .columns .left > ul > li:nth-child(1n), section.block__contact > .container > .columns .right > ul > li:nth-child(1n) {
+    margin: 0 0 4% 0;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li, section.block__contact > .container > .columns .right > ul.area__ul > li {
+    margin: 15px;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container {
+    background-color: #dedede;
+    border: 2px solid rgba(0, 0, 0, 0);
+    padding: 30px 80px;
+    margin: 0 0 30px 0;
+    border-radius: 14px;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container:last-child, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container:last-child {
+    margin: 0 0 0 0;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > h3.area__heading, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > h3.area__heading {
+    border-bottom: 4px dotted #ffffff;
+    font-family: "Gotham", Helvetica, sans-serif;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    font-weight: 500;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > div,
+section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > div,
+section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: #81807f;
+    line-height: 2.3rem;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a[class^=area__phone], section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a[class^=area__phone] {
+    display: block;
+    font-weight: 500;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a[class^=area__phone] > span, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a[class^=area__phone] > span {
+    font-weight: 600;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a.area__directions, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a.area__directions {
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #376494;
+    padding: 10px 60px 10px 60px;
+    margin: 20px 0 0 0;
+    display: inline-block;
+    border-radius: 30px;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a:hover, section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a:active, section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > a:focus, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a:hover, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a:active, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > a:focus {
+    opacity: 0.8;
+  }
+  section.block__contact > .container > .columns .left > ul.area__ul > li > div.container > div, section.block__contact > .container > .columns .right > ul.area__ul > li > div.container > div {
+    font-weight: 600;
+  }
+  section.block__contact > .container > .columns .left > div.contact__block-form, section.block__contact > .container > .columns .right > div.contact__block-form {
+    text-align: left;
+    margin-top: 20px;
+  }
+  section.block__contact > .container > .columns .left > div.contact__block-form > p, section.block__contact > .container > .columns .right > div.contact__block-form > p {
+    font-weight: 700;
+    border-bottom: 3px solid #dedede;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  section.block__contact > .container > .columns .left > div.contact__block-form button, section.block__contact > .container > .columns .right > div.contact__block-form button {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 30px;
+    font-weight: 600;
+  }
+  section.block__contact > .container > .columns .left > div.contact__block-form label span, section.block__contact > .container > .columns .right > div.contact__block-form label span {
+    color: #000000;
+  }
   section.block__contact > .container > .columns .left {
-    margin-right: 30px;
+    margin-right: 20px;
   }
   section.block__contact > .container > .columns .right {
     display: flex;

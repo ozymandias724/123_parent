@@ -27,21 +27,21 @@
         $return = '';
 
         $guide['locations'] = '
-            <li>
-                <div class="container %s">
+            <li class="site__fade site__fade-up">
+                <div class="container %s" style="%s %s">
                     <h3 class="area__heading">%s</h3>
-                    <div class="area__postal">%s</div>
                     <div class="area__address-1">%s</div>
                     <div class="area__address-2">%s</div>
                     <div class="area__city-state-post">%s</div>
-                    <a href="tel:%s" class="area__phone-1">%s</a>
-                    <a href="tel:%s" class="area__phone-2">%s</a>
+                    <a class="area__phone-1" href="tel:%s">%s</a>
+                    <a class="area__phone-2" href="tel:%s">%s</a>
                     <a class="area__directions" href="javascript:;">Directions</a>
                 </div>
             </li>
         ';
 
         foreach( $row['locations'] as $location ){
+
             $fields = get_fields($location['location']->ID);
 
             $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
@@ -56,16 +56,16 @@
             $return .= sprintf(
                 $guide['locations']
                 ,( !empty($fields['options']['width']) ? $fields['options']['width'] : '')
+                ,( !empty($fields['options']['background_color']) ? 'background-color:'.$fields['options']['background_color'].';' : '')
+                ,( !empty($fields['options']['foreground_color']) ? 'color:'.$fields['options']['foreground_color'].';' : '')
                 ,( !empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
-                ,$postal
                 ,$street_1
                 ,$street_2
                 ,$city . ', ' . $state . ' ' . $postcode
                 ,'(123) 456-7890'
-                ,'Phone: (123) 456-7890'
+                ,'<span>Phone: </span>(123) 456-7890'
                 ,'(123) 456-7890'
-                ,'Phone: (123) 456-7890'
-                
+                ,'<span>Phone: </span>(123) 456-7890'
             );
         }
         return $return;
@@ -87,7 +87,7 @@
         
         // Form Layout
         if( $row['acf_fc_layout'] == 'form' ){
-            $return['left'] .= '<div class="contact__block-form">'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+            $return['left'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
         }
 
         // Map Layout
@@ -103,14 +103,14 @@
 
         // Locations Layout
         if( $row['acf_fc_layout'] == 'locations' ){
-            $return['right'] .= '<ul>';
+            $return['right'] .= '<ul class="area__ul">';
             $return['right'] .= get_area_content($row);
             $return['right'] .= '</ul>';
         }
         
         // Form Layout
         if( $row['acf_fc_layout'] == 'form' ){
-            $return['right'] .= '<div>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+            $return['right'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
         }
 
         // Map Layout

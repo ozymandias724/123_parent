@@ -56,8 +56,8 @@
                                     @include fontS-34;
                                     font-weight: 500;
                                     width: 90%;
-                                    padding-bottom: 5px;
-                                    border-bottom: 5px dotted getVar($colors, white, full); 
+                                    padding-bottom: getVar($sizing, gutter, px, tiny);
+                                    border-bottom: getVar($sizing, gutter, px, tiny) dotted getVar($colors, white, full); 
                                 }
                             }
                         }
