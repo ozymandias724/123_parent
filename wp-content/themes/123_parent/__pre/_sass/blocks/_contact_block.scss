@@ -4,8 +4,6 @@
 
         > .container {
 
-
-
             > .columns {
                 display: flex;
                 flex-flow: row nowrap;
@@ -20,29 +18,19 @@
                     flex-flow: column nowrap;
                     align-items: center;
                     justify-content: center;
-                    > ul {
+                    > ul.area__ul {
                         > li {
-
-                            border: 2px solid rgba(getVar($colors, black, full), 1);
-                            padding: getVar($sizing, gutter, px, normal);
-                            margin: 0 0 getVar($sizing, gutter, px, normal) 0;
-                            border-radius: 14px;
-                            &:last-child{
-                                margin: 0 0 0 0;
-                            }
                             
                         }
                     }
-                }
-                
-            }
-            
-        }
-        
+                }   
+            }   
+        }   
     }
-    
 }
-@media only screen and (max-width: 1280px){}
+@media only screen and (max-width: 1280px){
+
+}
 @media only screen and (max-width: 960px){
     section.block__contact {
         > .container {

@@ -22,31 +22,72 @@
         </section>
     ';
 
-    $guide['locations'] = '<li>%s</li>';
+    function get_area_content($row){
+
+        $return = '';
+
+        $guide['locations'] = '
+            <li>
+                <div class="container %s">
+                    <h3 class="area__heading">%s</h3>
+                    <div class="area__postal">%s</div>
+                    <div class="area__address-1">%s</div>
+                    <div class="area__address-2">%s</div>
+                    <div class="area__city-state-post">%s</div>
+                    <a href="tel:%s" class="area__phone-1">%s</a>
+                    <a href="tel:%s" class="area__phone-2">%s</a>
+                    <a class="area__directions" href="javascript:;">Directions</a>
+                </div>
+            </li>
+        ';
+
+        foreach( $row['locations'] as $location ){
+            $fields = get_fields($location['location']->ID);
+
+            $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
+
+            $postal = ( !empty($address['address_is_postal']) ? 'This is a postal address' : '');
+            $street_1 = ( !empty($address['address_street']) ? $address['address_street'] : '');
+            $street_2 = ( !empty($address['address_street_2']) ? $address['address_street_2'] : '');
+            $city = ( !empty($address['address_city']) ? $address['address_city'] : '');
+            $state = ( !empty($address['address_state']) ? $address['address_state'] : '');
+            $postcode = ( !empty($address['address_postcode']) ? $address['address_postcode'] : '');
+            
+            $return .= sprintf(
+                $guide['locations']
+                ,( !empty($fields['options']['width']) ? $fields['options']['width'] : '')
+                ,( !empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
+                ,$postal
+                ,$street_1
+                ,$street_2
+                ,$city . ', ' . $state . ' ' . $postcode
+                ,'(123) 456-7890'
+                ,'Phone: (123) 456-7890'
+                ,'(123) 456-7890'
+                ,'Phone: (123) 456-7890'
+                
+            );
+        }
+        return $return;
+    }
 
 
-    
     // 
     // Do the left Side
     $return['left'] = '';
+
     foreach( $cB['left'] as $row ){
 
         // Locations Layout
         if( $row['acf_fc_layout'] == 'locations' ){
-            $return['left'] .= '<ul>';
-            foreach( $row['locations'] as $location ){
-                $fields = get_fields($location['location']->ID);
-                $return['left'] .= sprintf(
-                    $guide['locations']
-                    ,(!empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
-                );
-            }
+            $return['left'] .= '<ul class="area__ul">';
+            $return['left'] .= get_area_content($row);
             $return['left'] .= '</ul>';
         }
         
         // Form Layout
         if( $row['acf_fc_layout'] == 'form' ){
-            $return['left'] .= '<div>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+            $return['left'] .= '<div class="contact__block-form">'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
         }
 
         // Map Layout
@@ -57,18 +98,13 @@
     // 
     // Do the Right Side
     $return['right'] = '';
+
     foreach( $cB['right'] as $row ){
 
         // Locations Layout
         if( $row['acf_fc_layout'] == 'locations' ){
             $return['right'] .= '<ul>';
-            foreach( $row['locations'] as $location ){
-                $fields = get_fields($location['location']->ID);
-                $return['right'] .= sprintf(
-                    $guide['locations']
-                    ,(!empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
-                );
-            }
+            $return['right'] .= get_area_content($row);
             $return['right'] .= '</ul>';
         }
         
