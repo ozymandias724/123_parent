@@ -1,192 +1,71 @@
-$c1 : 1;
-$c2 : 2;
-$c3 : 3;
-$c4 : 4;
-$g_small : getVar($sizing, gutter, vw, small);
-$s_true: true;
-
 @media only screen {
-    section.site__block {
+    section.block__food_menus {
         > .container {
             // Width Sizes
-            &.narrow {  
-                // site__grid class or menu_area class
-                .site__grid {
-                    &.tabs_style__sidebar {
-                        $w: 39vw;
-                        // For all the menu styles
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c3, $g_small, $s_true);
-                        }
-                    }
-                    &.tabs_style__divider,
-                    &.tabs_style__pills {
-                        $w: getVar($sizing, content, small);
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c4, $g_small, $s_true);
-                        }
-                    }
-                    .menu_section {
-                        &.menu_photo_list {
-                            .image_provided {
-                                max-height: 19vw;
-                            }
-                        }
-                    }
-                }
+            &.narrow {
+
             }
             &.medium {
-                // site__grid class or menu_area class
-                .site__grid {
-                    &.tabs_style__sidebar {
-                        $w: getVar($sizing, content, small);
-                        // For all the menu styles
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c3, $g_small, $s_true);
-                        }
-                    }
-                    &.tabs_style__divider,
-                    &.tabs_style__pills {
-                        $w: getVar($sizing, content, medium);
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c4, $g_small, $s_true);
-                        }
-                    }
-                }
+
             }
             &.wide {
-                // site__grid class or menu_area class
-                .site__grid {
-                    &.tabs_style__sidebar {
-                        $w: getVar($sizing, content, medium);
-                        // For all the menu styles
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c3, $g_small, $s_true);
-                        }
-                    }
-                    &.tabs_style__divider,
-                    &.tabs_style__pills {
-                        $w: getVar($sizing, content, large);
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c4, $g_small, $s_true);
-                        }
-                    }
-                }
+
             }
             &.full {
-                // site__grid class or menu_area class
-                .site__grid {
-                    &.tabs_style__sidebar {
-                        $w: 75vw;
-                        // For all the menu styles
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c3, $g_small, $s_true);
-                        } 
-                    }
-                    &.tabs_style__divider,
-                    &.tabs_style__pills {
-                        $w: getVar($sizing, content, full);
-                        .menu_section {
-                            width: $w;
-                            @include gridLayout($w, $c1, $g_small, $s_true);
-                        }
-                        .menu_text_half {
-                            @include gridLayout($w, $c2, $g_small, $s_true);
-                        }
-                        .menu_photo_tiled_x3 {
-                            @include gridLayout($w, $c4, $g_small, $s_true);
-                        }
-                    }
-                }
+
             }
             // For all menu styles
             .menu_section {
                 display: none;
                 // For all menus styles with an image provided
                 .image_provided {
-                    width: 100%;
                     margin: 0 auto;
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: center center;
                     margin-bottom: 15px;
-                    max-width: 24vw;
-                    max-height: 24vw;
                 }
                 // All unordered list menu items
                 > ul.menu_items {
                     display: inline-block;
                 }
+                > h2 {
+                    @include fontS-34;
+                    font-weight: 800;
+                    text-transform: capitalize;
+                }
+                > p {
+                    margin: 15px 0 20px;
+                    font-family: "Times New Roman";
+                    font-style: italic;
+                    @include fontS-24;
+                    font-weight: 500;
+                    color: getVar($gustavo, colors, gray11);
+                    border-bottom: 3px solid getVar($colors, accent);
+                    padding-bottom: 20px;
+                }
                 // Menu Type 
                 &.menu_photo_tiled_x3  {
-                    > h2 {
-                        font-weight: bold;
-                    }
-                    > p {
-                        font-style: italic;
-                        color: getVar($gustavo, colors, gray3);
-                    }
-                    .menu_item {
-                        > h3 {
+                    ul.menu_items {
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: center;
+                        li.menu_item {
                             display: flex;
-                            font-weight: 700;
-                            justify-content: space-between;
-                            margin-bottom: 5px;
-                            @include fontS-20;
-                            text-align: left;
-                        }
-                        > p {
-                            text-align: justify;
-                            @include fontS-14;
+                            flex-flow: column nowrap;
+                            > h3.menu__item-price {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-flow: row nowrap;
+                                @include fontS-20;
+                                font-weight: 700;
+                                text-align: left;
+                                margin-bottom: 5px;
+                            }
+                            > div.menu__item-description {
+                                text-align: justify;
+                                @include fontS-14;
+                            }
                         }
                     }
                 }
@@ -492,20 +371,29 @@ $s_true: true;
             #tabs_style__sidebar {
                 display: flex;
                 flex-flow: row nowrap;
+                > .menu_area {
+                    flex: 1 1 80%;
+                    .menu_photo_tiled_x3 {
+                        @include gridLayout(100%, 3, 2%, false);
+                        .image_provided {
+                            width: 100%;
+                            height: 15vw;
+                        }
+                    }
+                }
                 > ul.button_group {
-                    flex: 1;
+                    flex: 1 1 20%;
                     margin-right: getVar($sizing, gutter, px, normal);
-                    flex-flow: column wrap;
+                    flex-flow: column nowrap;
                     li {
                         border: none;
-                        width: 100%;
                         text-align: left;
                         a {
+                            white-space: nowrap;
                             display: block;
                             padding: 0 getVar($sizing, gutter, px, small);
                             letter-spacing: 1px;
                             font-weight: 600;
-                            white-space: nowrap;
                             color: getVar($gustavo, colors, gray2);
                             @include fontS-16;
                             line-height: 44px;
@@ -553,99 +441,38 @@ $s_true: true;
 }
 
 @media only screen and (max-width: 1280px){
-    $w: getVar($sizing, content, large);
-    $c : 3;
-    $g: getVar($sizing, gutter, vw, normal);
-    $s: true;
     section.block__food_menus {
         > .container {
-            .tabs {
-                .menu_section {
-                    .image_provided {
-                        max-width: 24vw;
-                        max-height: 24vw;
-                    }
-                }
-            }
             #tabs_style__sidebar {
-                $w: getVar($sizing, content, small);
-
-                .menu_section {
-                    width: $w;
-                    @include gridLayout($w, $c, $g, $s);
-
-                    &.menu_photo_tiled_x3 {
-                        $c: 3;
-                        @include gridLayout($w, $c, $g, $s);
+                > .menu_area {
+                    > .menu_section {
+                        &.menu_photo_tiled_x3 {
+                            @include gridLayout(100%, 2, 2%, false);
+                            .image_provided {
+                                height: 25vw;
+                                width: 25vw;
+                            }
+                        }
                     }
                 }
             }
-
-            #tabs_style__pills,
-            #tabs_style__divider {
-                $w: getVar($sizing, content, medium);
-
-                .menu_section {
-                    $c: 1;
-                    width: $w;
-                    @include gridLayout($w, $c, $g, $s);
-
-                    &.menu_photo_tiled_x3 {
-                        $c: 2;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                }
-            }
-        } 
+        }
     }
 }
 
 @media only screen and (max-width: 960px){
     section.block__food_menus {
         > .container {
-            $w: getVar($sizing, content, large);
-            $c : 2;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            .tabs {
-                .menu_section {
-                    .image_provided {
-                        max-width: 35vw;
-                        max-height: 35vw;
-                    }
-                    &.menu_text_sub_group_half {
-                        > div {
-                            flex: 0 0 100%;
-                        }
-                    }
-                }
-            }
             #tabs_style__sidebar {
-                $w: getVar($sizing, content, small);
-
-                .menu_section {
-                    width: $w;
-                    @include gridLayout($w, $c, $g, $s);
-
-                    &.menu_photo_tiled_x3 {
-                        $c: 2;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                }
-            }
-
-            #tabs_style__pills,
-            #tabs_style__divider {
-                $w: getVar($sizing, content, large);
-
-                .menu_section {
-                    $c: 1;
-                    width: $w;
-                    @include gridLayout($w, $c, $g, $s);
-
-                    &.menu_photo_tiled_x3 {
-                        $c: 2;
-                        @include gridLayout($w, $c, $g, $s);
+                > .menu_area {
+                    > .menu_section {
+                        &.menu_photo_tiled_x3 {
+                            @include gridLayout(100%, 1, 2%, false);
+                            .image_provided {
+                                height: 25vw;
+                                width: 25vw;
+                            }
+                        }
                     }
                 }
             }
@@ -656,56 +483,18 @@ $s_true: true;
 @media only screen and (max-width: 640px){
     section.block__food_menus {
         > .container {
-            $w: getVar($sizing, content, full);
-            $c : 1;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
-            // All tabs style
-            .tabs {
-                // All menu types
-                .menu_section {
-                    .image_provided {
-                        max-width: 60vw;
-                        max-height: 60vw;
-                    }
-                    &.menu_photo_list {
-                        .image_provided {
-                            max-height: 40vw;
+            #tabs_style__sidebar {
+                flex-flow: column nowrap;
+                > .menu_area {
+                    > .menu_section {
+                        &.menu_photo_tiled_x3 {
+                            @include gridLayout(100%, 2, 2%, false);
+                            .image_provided {
+                                height: 40vw;
+                                width: 40vw;
+                            }
                         }
                     }
-                }
-            }
-            // Tab style
-            #tabs_style__sidebar {
-                > ul.button_group {
-                    margin-bottom: 30px;
-                }
-            }
-            #tabs_style__divider {
-                > ul.button_group li {
-                    display: block;
-                    margin: 5px 0;
-                }
-            }
-
-            #tabs_style__sidebar {
-                .menu_section {
-                    width: $w;
-                    @include gridLayout($w, $c, $g, $s);
-
-                    &.menu_photo_tiled_x3 {
-                        $c: 2;
-                        @include gridLayout($w, $c, $g, $s);
-                    }
-                }
-            }
-
-            #tabs_style__pills,
-            #tabs_style__divider {
-                .menu_section {
-                    $c: 1;
-                    width: $w;
-                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }

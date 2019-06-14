@@ -236,7 +236,7 @@ $(document).ready(function()
         
         Blocks.FoodMenus = {
             tabs : $('.block__food_menus div.tabs > ul > li'),
-            food_menus : $('.block__food_menus div.tabs > .site__grid > ul.menu_section'),
+            food_menus : $('.block__food_menus div.tabs > .menu_area > ul.menu_section'),
             _init : function(){
                 Blocks.FoodMenus.tabs.on('click', '>a', Blocks.FoodMenus._didClickTab);
             },

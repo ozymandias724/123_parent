@@ -12,7 +12,7 @@
                     %s
                     <div>
                         <h3>%s</h3>
-                        %s
+                        <div class="menu__item-description">%s</div>
                         <p class="menu_price">%s</p>
                     </div>
                 </li>
@@ -31,8 +31,8 @@
             $format = '
                 <li class="menu_item site__fade site__fade-up">
                     %s
-                    <h3>%s <span class="menu_price">%s</span></h3>
-                    %s
+                    <h3 class="menu__item-price">%s <span>%s</span></h3>
+                    <div class="menu__item-description">%s</div>
                 </li>
             ';
 
@@ -48,8 +48,8 @@
             default: 
             $format = '
                 <li class="menu_item site__fade site__fade-up">
-                    <h3>%s <span class="menu_price">%s</span></h3>
-                    %s
+                    <div>%s <span class="menu_price">%s</span></div>
+                    <div class="menu__item-description">%s</div>
                 </li>
             ';
             
@@ -74,7 +74,7 @@
         $return['buttons'] = '<ul class="button_group">';
         
         // open wrapper for the menus area (sibling of buttons)
-        $return['menus'] = '<div class="menu_area site__grid tabs_style__'.$cB['tabs_style'].'">';
+        $return['menus'] = '<div class="menu_area tabs_style__'.$cB['tabs_style'].'">';
 
         // for each menu
         foreach( $cB['menus'] as $i => $menu ){
