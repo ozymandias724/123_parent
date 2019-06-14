@@ -237,15 +237,28 @@ $(document).ready(function()
         Blocks.FoodMenus = {
             tabs : $('.block__food_menus div.tabs > ul > li'),
             food_menus : $('.block__food_menus div.tabs > .menu_area > ul.menu_section'),
+            image : $('.block__food_menus .block'),
+
             _init : function(){
                 Blocks.FoodMenus.tabs.on('click', '>a', Blocks.FoodMenus._didClickTab);
-            },
-            _didClickTab : function(e){
+                window.addEventListener('resize', function () {
+                    Blocks.FoodMenus._resize_images();
+                });
+                Blocks.FoodMenus._resize_images();
+            }
+            ,_didClickTab : function(e){
                 Blocks.FoodMenus.food_menus.addClass('hidden_food_menu');
                 Blocks.FoodMenus.food_menus.removeClass('current_food_menu');
                 $(Blocks.FoodMenus.food_menus[$(this).parent('li').index()]).addClass('current_food_menu');
                 Blocks.FoodMenus.tabs.removeClass('tab_active');
                 $(this).parent('li').addClass('tab_active');
+                Blocks.FoodMenus._resize_images();
+            }
+            ,_resize_images : function(){
+                Blocks.FoodMenus.image.each(function(){
+                    var image_width = $(this).width();
+                    $(this).css('height',$(this).width());
+                });
             }
         }
 

@@ -1,24 +1,12 @@
 @media only screen {
     section.block__food_menus {
         > .container {
-            // Width Sizes
-            &.narrow {
-
-            }
-            &.medium {
-
-            }
-            &.wide {
-
-            }
-            &.full {
-
-            }
             // For all menu styles
             .menu_section {
                 display: none;
                 // For all menus styles with an image provided
                 .image_provided {
+                    width: 100%;
                     margin: 0 auto;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -69,6 +57,45 @@
                         }
                     }
                 }
+                // Menu Type
+                &.menu_photo_list {
+                    // Menu Section Title
+                    > h2 {
+                        text-align: center;
+                    }
+                    .menu_items {
+                        width: 100%;
+                        .menu_item {
+                            display: flex;
+                            margin: 0 0 20px;
+                            .image_provided {
+                                margin: 0 10px 0 0;
+                                width: 30%;
+                            }
+                            >div:last-of-type {
+                                text-align: left;
+                                width: 70%;
+                                vertical-align: top;
+                                > h3 {
+                                    font-weight: 900;
+                                    @include fontS-20;
+                                }
+                                > p:last-of-type {
+                                    @include fontS-24;
+                                    font-weight: 500;
+                                }
+                                > p:first-of-type {
+                                    @include fontS-14;
+                                    font-style: italic;
+                                    line-height: 1.8rem;
+                                    padding-bottom: 10px;
+                                    border-bottom: 4px dotted getVar($gustavo, colors, gray1);
+                                    margin-bottom: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
                 &.menu_text_sub_group_half > div {
                     > h2 {
                         @include fontS-34;
@@ -84,40 +111,6 @@
                         font-weight: 500;
                         border-bottom: 3px solid $accent;
                         padding-bottom: 20px;
-                    }
-                }
-                // Menu Type
-                &.menu_photo_list {
-                    // Menu Section Title
-                    > h2 {
-                        text-align: center;
-                    }
-                    .menu_item {
-                        display: flex;
-                        .image_provided {
-                            margin: 0 10px 0 0;
-                        }
-                        >div:last-of-type {
-                            text-align: left;
-                            width: 100%;
-                            vertical-align: top;
-                            > h3 {
-                                font-weight: 900;
-                                @include fontS-20;
-                            }
-                            > p:last-of-type {
-                                @include fontS-24;
-                                font-weight: 500;
-                            }
-                            > p:first-of-type {
-                                @include fontS-14;
-                                font-style: italic;
-                                line-height: 1.8rem;
-                                padding-bottom: 10px;
-                                border-bottom: 4px dotted getVar($gustavo, colors, gray1);
-                                margin-bottom: 20px;
-                            }
-                        }
                     }
                 }
                 // Menu Type
@@ -218,8 +211,7 @@
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
                     >div:nth-child(odd) {
-                        margin-right: 12px;
-                        flex: 0 0 48%;
+                        padding-right: 20px;
                     }
                     > div {
                         flex: 0 0 50%; 
@@ -375,10 +367,6 @@
                     flex: 1 1 80%;
                     .menu_photo_tiled_x3 {
                         @include gridLayout(100%, 3, 2%, false);
-                        .image_provided {
-                            width: 100%;
-                            height: 15vw;
-                        }
                     }
                 }
                 > ul.button_group {
@@ -448,10 +436,6 @@
                     > .menu_section {
                         &.menu_photo_tiled_x3 {
                             @include gridLayout(100%, 2, 2%, false);
-                            .image_provided {
-                                height: 25vw;
-                                width: 25vw;
-                            }
                         }
                     }
                 }
@@ -468,10 +452,6 @@
                     > .menu_section {
                         &.menu_photo_tiled_x3 {
                             @include gridLayout(100%, 1, 2%, false);
-                            .image_provided {
-                                height: 25vw;
-                                width: 25vw;
-                            }
                         }
                     }
                 }
@@ -489,10 +469,6 @@
                     > .menu_section {
                         &.menu_photo_tiled_x3 {
                             @include gridLayout(100%, 2, 2%, false);
-                            .image_provided {
-                                height: 40vw;
-                                width: 40vw;
-                            }
                         }
                     }
                 }
