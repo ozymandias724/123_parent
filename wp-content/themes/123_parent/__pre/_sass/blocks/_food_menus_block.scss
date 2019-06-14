@@ -17,12 +17,14 @@
                 > ul.menu_items {
                     display: inline-block;
                 }
-                > h2 {
+                > h2,
+                &.menu_text_sub_group_half > div > h2 {
                     @include fontS-34;
                     font-weight: 800;
                     text-transform: capitalize;
                 }
-                > p {
+                > p,
+                &.menu_text_sub_group_half > div > p {
                     margin: 15px 0 20px;
                     font-family: "Times New Roman";
                     font-style: italic;
@@ -77,14 +79,14 @@
                                 width: 70%;
                                 vertical-align: top;
                                 > h3 {
-                                    font-weight: 900;
                                     @include fontS-20;
+                                    font-weight: 900;
                                 }
-                                > p:last-of-type {
+                                > div.menu__item-price {
                                     @include fontS-24;
                                     font-weight: 500;
                                 }
-                                > p:first-of-type {
+                                > div.menu__item-description {
                                     @include fontS-14;
                                     font-style: italic;
                                     line-height: 1.8rem;
@@ -136,24 +138,32 @@
                             top: 50%;
                         }
                     }
-                    .menu_item {
-                        margin-bottom: 30px;
-                        // menu items description
-                        > p {
-                            @include fontS-14;
-                            text-align: left;
+                    .menu_items {
+                        display: flex;
+                        flex-flow: row wrap;
+                        .menu_item:nth-child(odd) {
+                            padding-right: 20px;
                         }
-                        // menu items title
-                        > h3 {
-                            display: flex;
-                            font-weight: 700; 
-                            justify-content: space-between;
-                            border-bottom: 3px solid $accent;
-                            padding-bottom: 15px;
-                            margin-bottom: 15px;
-                            text-align: left;
-                            > span {
-                                font-weight: 600;
+                        .menu_item {
+                            flex: 0 0 50%;
+                            margin-bottom: 30px;
+                            // menu items description
+                            > div.menu__item-description {
+                                @include fontS-14;
+                                text-align: left;
+                            }
+                            // menu items title
+                            > h3.menu__item-price {
+                                display: flex;
+                                font-weight: 700; 
+                                justify-content: space-between;
+                                border-bottom: 3px solid $accent;
+                                padding-bottom: 15px;
+                                margin-bottom: 15px;
+                                text-align: left;
+                                > span {
+                                    font-weight: 600;
+                                }
                             }
                         }
                     }
@@ -161,12 +171,13 @@
                 // Menu Type
                 &.menu_text_list_center {
                     .menu_item {
-                        > p {
+                        margin: 10px 0;
+                        > div.menu__item-description {
                             @include fontS-14;
                             font-family: "Times New Roman";
                             font-style: italic;
                         }
-                        > h3 {
+                        > h3.menu__item-price {
                             @include fontS-20;
                             text-align: center;
                             font-weight: 800;
@@ -189,28 +200,32 @@
                     > p {
                         border-bottom: 5px dotted $accent;
                     }
-                    .menu_item {
-                        > h3 {
-                            text-transform: uppercase;
-                            display: flex;
-                            @include fontS-20;
-                            font-weight: 700;
-                            justify-content: space-between;  
-                        }
-                        > p {
-                            @include fontS-14;
-                            font-family: "Times New Roman";
-                            font-style: italic;
-                        }
-                        .block {
-                            margin: 0 0 20px 0;
+                    .menu_items {
+                        width: 100%;
+                        .menu_item {
+                            margin: 10px 0;
+                            > h3.menu__item-price {
+                                text-transform: uppercase;
+                                display: flex;
+                                @include fontS-20;
+                                font-weight: 700;
+                                justify-content: space-between;  
+                            }
+                            > div.menu__item-description {
+                                @include fontS-14;
+                                font-family: "Times New Roman";
+                                font-style: italic;
+                            }
+                            .block {
+                                margin: 0 0 20px 0;
+                            }
                         }
                     }
                 }
                 // Menu Type
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
-                    >div:nth-child(odd) {
+                    >div:nth-child(odd) {   
                         padding-right: 20px;
                     }
                     > div {
@@ -241,28 +256,31 @@
                                 top: 50%;
                             }
                         }
-                        .menu_item {
-                            margin: 20px 0;
-                            > p {
-                                @include fontS-14;
-                            }
-                            > ul {
-                                width: 31vw;
-                                > li {
-                                    max-width: 31vw;   
+                        .menu_items {
+                            .menu_item {
+                                margin: 10px 0;
+                                > div.menu__item-description {
+                                    @include fontS-14;
                                 }
-                            }
-                            > h3 {
-                                display: flex;
-                                @include fontS-20;
-                                font-weight: 700;
-                                justify-content: space-between;
-                                border-bottom: 3px solid #386591;
-                                padding-bottom: 15px;
-                                margin-bottom: 15px;
+                                > h3.menu__item-price {
+                                    display: flex;
+                                    @include fontS-20;
+                                    font-weight: 700;
+                                    justify-content: space-between;
+                                    border-bottom: 3px solid #386591;
+                                    padding-bottom: 15px;
+                                    margin-bottom: 15px;
+                                }
                             }
                         }
                     }     
+                }
+            }
+            // Pills and Divider Menu Styles
+            #tabs_style__divider,
+            #tabs_style__pills {
+                .menu_photo_tiled_x3 {
+                    @include gridLayout(100%, 4, 2%, false);
                 }
             }
             // Menu style
@@ -274,7 +292,7 @@
                         content: "";
                         display: block;
                         border-bottom: 2px solid getVar($gustavo, colors, gray1);
-                        margin-top: -3px
+                        margin-top: 0;
                     }
                     > li:last-of-type {
                         margin-bottom: 0;
@@ -295,16 +313,24 @@
                             color: getVar($gustavo, colors, gray2);
                             background-color: getVar($gustavo, colors, gray1);
                             display: block;   
-                            padding: 10px 15px;
+                            padding: 5px 10px;
+                            &:focus {
+                                background: getVar($colors, white, full);
+                            }
                             &:hover,
                             &:active {
-                                color: $white;
+                                color: getVar($colors, white, full);
                                 background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
                             }
-                            &:focus {
-                                color: $accent;
-                                background: $white;
-                                border-bottom: 2px solid transparent;
+                        }
+                        &.tab_active {
+                            a {
+                                color: getVar($gustavo, colors, gray2);
+                                background: getVar($colors, white, full);
+                                &:hover {
+                                    color: getVar($colors, white, full);
+                                    background: linear-gradient(to bottom, lightgray 0%, #8f9091 100%); 
+                                }
                             }
                         }
                     }
@@ -329,7 +355,7 @@
                             border: 2px solid getVar($gustavo, colors, gray1);
                             border-radius: 30px;
                             padding: 5px 25px;
-                            color: inherit;
+                            color: getVar($gustavo, colors, gray1);
                             display: block;
                             margin: 0 5px;
                             &:hover {
@@ -431,6 +457,12 @@
 @media only screen and (max-width: 1280px){
     section.block__food_menus {
         > .container {
+            #tabs_style__divider,
+            #tabs_style__pills {
+                .menu_photo_tiled_x3 {
+                    @include gridLayout(100%, 3, 2%, false);
+                }
+            }
             #tabs_style__sidebar {
                 > .menu_area {
                     > .menu_section {
@@ -447,6 +479,12 @@
 @media only screen and (max-width: 960px){
     section.block__food_menus {
         > .container {
+            #tabs_style__divider,
+            #tabs_style__pills {
+                .menu_photo_tiled_x3 {
+                    @include gridLayout(100%, 2, 2%, false);
+                }
+            }
             #tabs_style__sidebar {
                 > .menu_area {
                     > .menu_section {
@@ -463,6 +501,8 @@
 @media only screen and (max-width: 640px){
     section.block__food_menus {
         > .container {
+            #tabs_style__divider,
+            #tabs_style__pills,
             #tabs_style__sidebar {
                 flex-flow: column nowrap;
                 > .menu_area {

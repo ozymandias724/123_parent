@@ -13,7 +13,7 @@
                     <div>
                         <h3>%s</h3>
                         <div class="menu__item-description">%s</div>
-                        <p class="menu_price">%s</p>
+                        <div class="menu__item-price">%s</div>
                     </div>
                 </li>
             ';
@@ -48,7 +48,7 @@
             default: 
             $format = '
                 <li class="menu_item site__fade site__fade-up">
-                    <div>%s <span class="menu_price">%s</span></div>
+                    <h3 class="menu__item-price">%s <span class="menu_price">%s</span></h3>
                     <div class="menu__item-description">%s</div>
                 </li>
             ';

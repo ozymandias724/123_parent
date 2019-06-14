@@ -244,7 +244,7 @@ $(document).ready(function()
                 window.addEventListener('resize', function () {
                     Blocks.FoodMenus._resize_images();
                 });
-                Blocks.FoodMenus._resize_images();
+                Blocks.FoodMenus._resize_images(); 
             }
             ,_didClickTab : function(e){
                 Blocks.FoodMenus.food_menus.addClass('hidden_food_menu');
@@ -256,8 +256,7 @@ $(document).ready(function()
             }
             ,_resize_images : function(){
                 Blocks.FoodMenus.image.each(function(){
-                    var image_width = $(this).width();
-                    $(this).css('height',$(this).width());
+                    $(this).height($(this).width());
                 });
             }
         }
