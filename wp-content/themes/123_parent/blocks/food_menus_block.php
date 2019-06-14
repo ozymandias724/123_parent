@@ -100,10 +100,10 @@
 
                 if($fields['style'] !== 'menu_text_sub_group_half'){
                     // open the wrapper for the menu sections
-                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].( ($i===0) ? ' current_food_menu' : ' hidden_food_menu' ).'">';
+                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].( ($i===0) ? ' current_food_menu ' : ' hidden_food_menu ' ).( !empty( $cB['width'] ) ? $cB['width'] : '' ).'">';
                 }else{
                     // open the wrapper for the menu sections
-                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].' menu_flex '.( ($i===0) ? 'current_food_menu' : 'hidden_food_menu' ).'">';
+                    $return['menu_sections'] = '<ul class="menu_section '.$fields['style'].' menu_flex '.( ($i===0) ? ' current_food_menu ' : ' hidden_food_menu ' ).( !empty( $cB['width'] ) ? $cB['width'] : '' ).'">';
                 }
 
                 // loop thru each menu section (rows in the repeater)
