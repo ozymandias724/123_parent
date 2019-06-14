@@ -4396,7 +4396,6 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
   section.site__block.block__galleries > .container .tabsandgrids_container .tabs ul li a {
     display: block;
     padding: 0 15px;
-    letter-spacing: 0.33px;
     font-weight: 600;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -4489,7 +4488,7 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     margin-top: 60px;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar .tabs {
@@ -4512,9 +4511,9 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
     border-bottom: 1px solid #c2c2c2;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul > li > a:active, section.site__block.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul > li > a:focus {
-    color: #fff;
-    background-color: #386591;
-    border-bottom: 1px solid #386591;
+    color: #ffffff;
+    background-color: #376494;
+    border-bottom: 1px solid #376494;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul > li > a:hover {
     color: #484848;
@@ -4522,9 +4521,9 @@ section.block__services > .container .site__grid > ul > li > a > div:last-of-typ
     border-bottom: 1px solid transparent;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul > li.tab_active > a {
-    color: #fff;
-    background-color: #386591;
-    border-bottom: 1px solid #386591;
+    color: #ffffff;
+    background-color: #376494;
+    border-bottom: 1px solid #376494;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar .tabs > ul > li.tab_active > a:hover {
     color: #484848;
@@ -6021,6 +6020,27 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   section.site__block > .container .menu_section > ul.menu_items {
     display: inline-block;
   }
+  section.site__block > .container .menu_section.menu_photo_tiled_x3 > h2 {
+    font-weight: bold;
+  }
+  section.site__block > .container .menu_section.menu_photo_tiled_x3 > p {
+    font-style: italic;
+    color: #aaabad;
+  }
+  section.site__block > .container .menu_section.menu_photo_tiled_x3 .menu_item > h3 {
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    text-align: left;
+  }
+  section.site__block > .container .menu_section.menu_photo_tiled_x3 .menu_item > p {
+    text-align: justify;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
   section.site__block > .container .menu_section.menu_text_sub_group_half > div > h2 {
     font-size: 3.4rem;
     line-height: 4.8rem;
@@ -6156,20 +6176,6 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
   }
   section.site__block > .container .menu_section.menu_text_list_left .menu_item .block {
     margin: 0 0 20px 0;
-  }
-  section.site__block > .container .menu_section.menu_photo_tiled_x3 .menu_item > h3 {
-    display: flex;
-    font-weight: 700;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    text-align: left;
-  }
-  section.site__block > .container .menu_section.menu_photo_tiled_x3 .menu_item > p {
-    text-align: justify;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
   }
   section.site__block > .container .menu_section.menu_text_sub_group_half {
     flex-flow: row wrap;

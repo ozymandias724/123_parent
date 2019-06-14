@@ -166,6 +166,30 @@ $s_true: true;
                 > ul.menu_items {
                     display: inline-block;
                 }
+                // Menu Type 
+                &.menu_photo_tiled_x3  {
+                    > h2 {
+                        font-weight: bold;
+                    }
+                    > p {
+                        font-style: italic;
+                        color: getVar($gustavo, colors, gray3);
+                    }
+                    .menu_item {
+                        > h3 {
+                            display: flex;
+                            font-weight: 700;
+                            justify-content: space-between;
+                            margin-bottom: 5px;
+                            @include fontS-20;
+                            text-align: left;
+                        }
+                        > p {
+                            text-align: justify;
+                            @include fontS-14;
+                        }
+                    }
+                }
                 &.menu_text_sub_group_half > div {
                     > h2 {
                         @include fontS-34;
@@ -308,23 +332,6 @@ $s_true: true;
                         }
                         .block {
                             margin: 0 0 20px 0;
-                        }
-                    }
-                }
-                // Menu Type 
-                &.menu_photo_tiled_x3  {
-                    .menu_item {
-                        > h3 {
-                            display: flex;
-                            font-weight: 700;
-                            justify-content: space-between;
-                            margin-bottom: 5px;
-                            @include fontS-20;
-                            text-align: left;
-                        }
-                        > p {
-                            text-align: justify;
-                            @include fontS-14;
                         }
                     }
                 }
