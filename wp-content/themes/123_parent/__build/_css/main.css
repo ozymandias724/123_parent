@@ -4850,9 +4850,6 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
 }
 @media only screen {
-  section.site__block.block__food_menus > .container .tabs {
-    margin: 30px 0;
-  }
   section.site__block > .container.narrow .site__grid.tabs_style__sidebar .menu_section {
     width: 39vw;
   }
@@ -6292,6 +6289,7 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
+    background-color: #ffffff;
     border: 2px solid #c2c2c2;
     border-radius: 30px;
     padding: 5px 25px;
@@ -6323,44 +6321,46 @@ section.site__block > .container.full .site__grid.tabs_style__pills .menu_photo_
     display: flex;
     flex-flow: row nowrap;
   }
-  section.site__block > .container #tabs_style__sidebar .site__grid {
-    flex: 1 0 78%;
-  }
   section.site__block > .container #tabs_style__sidebar > ul.button_group {
-    flex: 1 0 20%;
-    margin-right: 2%;
+    flex: 1;
+    margin-right: 30px;
     flex-flow: column wrap;
-    justify-content: end;
+  }
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li {
+    border: none;
+    width: 100%;
     text-align: left;
   }
-  section.site__block > .container #tabs_style__sidebar > ul.button_group li:first-of-type a {
-    border-top: 1px solid #c2c2c2;
-  }
   section.site__block > .container #tabs_style__sidebar > ul.button_group li a {
+    display: block;
+    padding: 0 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #484848;
     font-size: 1.6rem;
     line-height: 2.8rem;
-    font-weight: 700;
-    padding: 10px 15px;
-    color: inherit;
+    line-height: 44px;
     border-bottom: 1px solid #c2c2c2;
-    display: block;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
-  }
-  section.site__block > .container #tabs_style__sidebar > ul.button_group li a:hover {
-    background-color: #c2c2c2;
-    border-bottom: 1px solid transparent;
   }
   section.site__block > .container #tabs_style__sidebar > ul.button_group li a:active, section.site__block > .container #tabs_style__sidebar > ul.button_group li a:focus {
     background-color: #376494;
     color: #ffffff;
     border-bottom: 1px solid #376494;
   }
+  section.site__block > .container #tabs_style__sidebar > ul.button_group li a:hover {
+    color: #484848;
+    background-color: #c2c2c2;
+    border-bottom: 1px solid transparent;
+  }
   section.site__block > .container #tabs_style__sidebar > ul.button_group li.tab_active a {
-    background-color: #386591;
-    color: #fff;
+    color: #ffffff;
+    background-color: #376494;
     border-bottom: 1px solid #376494;
   }
   section.site__block > .container #tabs_style__sidebar > ul.button_group li.tab_active a:hover {
+    color: #484848;
     background-color: #c2c2c2;
     border-bottom: 1px solid transparent;
   }
@@ -6823,9 +6823,6 @@ section.block__food_menus > .container #tabs_style__divider .menu_section.menu_p
   }
   section.block__food_menus > .container .tabs .menu_section.menu_photo_list .image_provided {
     max-height: 40vw;
-  }
-  section.block__food_menus > .container #tabs_style__sidebar {
-    flex-flow: column wrap;
   }
   section.block__food_menus > .container #tabs_style__sidebar > ul.button_group {
     margin-bottom: 30px;

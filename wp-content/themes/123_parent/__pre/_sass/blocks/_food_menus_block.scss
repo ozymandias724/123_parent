@@ -7,14 +7,6 @@ $s_true: true;
 
 @media only screen {
     section.site__block {
-        &.block__food_menus {
-            > .container {
-                // All Tabs Style
-                .tabs {
-                    margin: 30px 0;
-                }  
-            }
-        }
         > .container {
             // Width Sizes
             &.narrow {  
@@ -455,6 +447,7 @@ $s_true: true;
                             font-weight: 700;
                             text-transform: uppercase;
                             text-align: center;
+                            background-color: getVar($colors, white, full);
                             border: 2px solid getVar($gustavo, colors, gray1);
                             border-radius: 30px;
                             padding: 5px 25px;
@@ -492,48 +485,47 @@ $s_true: true;
             #tabs_style__sidebar {
                 display: flex;
                 flex-flow: row nowrap;
-                .site__grid {
-                    flex: 1 0 78%;
-                }
                 > ul.button_group {
-                    flex: 1 0 20%;
-                    margin-right: 2%;
+                    flex: 1;
+                    margin-right: getVar($sizing, gutter, px, normal);
                     flex-flow: column wrap;
-                    justify-content: end;
-                    text-align: left;
-                    li:first-of-type a {
-                        border-top: 1px solid #c2c2c2;
-                    }
                     li {
+                        border: none;
+                        width: 100%;
+                        text-align: left;
                         a {
-                            @include fontS-16;
-                            font-weight: 700;
-                            padding: 10px 15px;
-                            color: inherit;
-                            border-bottom: 1px solid getVar($gustavo, colors, gray1);
                             display: block;
-                            transition: 
-                                background-color 0.3s ease-in-out, 
+                            padding: 0 getVar($sizing, gutter, px, small);
+                            letter-spacing: 1px;
+                            font-weight: 600;
+                            white-space: nowrap;
+                            color: getVar($gustavo, colors, gray2);
+                            @include fontS-16;
+                            line-height: 44px;
+                            border-bottom: 1px solid getVar($gustavo, colors, gray1);
+                            transition: background-color 0.3s ease-in-out, 
                                 color 0.3s ease-in-out, 
                                 border 0.3s ease-in-out;
-                            &:hover {
-                                background-color: getVar($gustavo, colors, gray1);
-                                border-bottom: 1px solid transparent;
-                            }
                             &:active,
                             &:focus {
                                 background-color: getVar($colors, accent);
                                 color: getVar($colors, white, full);
                                 border-bottom: 1px solid getVar($colors, accent);
                             }
+                            &:hover {
+                                color: getVar($gustavo, colors, gray2);
+                                background-color: getVar($gustavo, colors, gray1);
+                                border-bottom: 1px solid transparent;
+                            }
                         }
                     }
                     li.tab_active {
                         a {
-                            background-color: $accent;
-                            color: $white;
+                            color: getVar($colors, white, full);
+                            background-color: getVar($colors, accent);
                             border-bottom: 1px solid getVar($colors, accent);
                             &:hover {
+                                color: getVar($gustavo, colors, gray2);
                                 background-color: getVar($gustavo, colors, gray1);
                                 border-bottom: 1px solid transparent;
                             }
@@ -678,7 +670,6 @@ $s_true: true;
             }
             // Tab style
             #tabs_style__sidebar {
-                flex-flow: column wrap;
                 > ul.button_group {
                     margin-bottom: 30px;
                 }
