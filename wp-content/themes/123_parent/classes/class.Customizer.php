@@ -1,4 +1,5 @@
 <?php
+include_once('ext.Customizer.php');
 /**
  * Contains methods for customizing the theme customization screen.
  * 
@@ -396,7 +397,7 @@ class Site__Customizer
         );
         foreach ($fonts_controls as $fonts_control) {
             $wp_customize->add_control($fonts_control['id'], $fonts_control['args']);
-        }   
+        }
         
         //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
         $wp_customize->get_setting('blogname')->transport = 'postMessage';
