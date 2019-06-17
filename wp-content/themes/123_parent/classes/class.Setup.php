@@ -181,4 +181,4 @@ class SetupTheme
 	}
 }
 SetupTheme::_init();
- ?>
+?>

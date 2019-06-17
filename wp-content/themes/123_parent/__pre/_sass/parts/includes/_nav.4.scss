@@ -4,18 +4,18 @@ $nav4_width : 1025px;
     header#opt_header_four {
         padding: 0px;
         .outer_div {
-            background-color: $black;
-            height: 68px;  
+            background-color: getVar($colors, black, full);
         }
         //Top part of header
         .inner_div {
             max-width: $nav4_width;
             margin: 0 auto;
-            background-color: $black;
+            background-color: getVar($colors, black, full);
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
             align-items: center;
+            height: 110px;
             > .custom-logo-link {
                 padding: 10px;
                 > .custom-logo {
@@ -33,7 +33,7 @@ $nav4_width : 1025px;
                         display: inline-block;
                         padding: 0 10px;
                         text-align: center;
-                        color: $white;
+                        color: getVar($colors, white, full);
                         transition: color 0.3s;
                         line-height: 68px;
                         //Social icons list items links actions on hover, active and focus 
@@ -97,7 +97,7 @@ $nav4_width : 1025px;
                     //Navigational menu list items links 
                     .navlinks-item-link {
                         text-decoration: none;
-                        color: $nav_4_menu_text;
+                        color: getVar($colors, white, full);
                         text-transform: uppercase;
                         padding: 0px; 
                         font-size: 14px;

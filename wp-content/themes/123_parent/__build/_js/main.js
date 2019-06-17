@@ -40,8 +40,14 @@ var Blocks = {}; // tbd
    *  If Header Six Exists
    */
   if ((0, _jquery["default"])('header').length) {
-    var offset = (0, _jquery["default"])('header').height() + (0, _jquery["default"])('#popups__banner').height();
-    (0, _jquery["default"])('main#page_home').css('margin-top', offset);
+    if ((0, _jquery["default"])('header.header').css('position') !== 'fixed') {
+      var offset = (0, _jquery["default"])('header').height() + (0, _jquery["default"])('#popups__banner').height();
+      (0, _jquery["default"])('main#page_home').css('margin-top', offset - 1);
+      (0, _jquery["default"])(window).on('resize', function () {
+        var offset = (0, _jquery["default"])('header').height() + (0, _jquery["default"])('#popups__banner').height();
+        (0, _jquery["default"])('main#page_home').css('margin-top', offset - 1);
+      });
+    }
   }
   /**
    * FadeEffects
@@ -123,12 +129,12 @@ var Blocks = {}; // tbd
   // if banner popup bar is present 
 
 
-  if ((0, _jquery["default"])('#popups__banner').length) {
-    var PopUps = {};
+  var PopUps = {};
+
+  if ((0, _jquery["default"])('#popups__banner').length && (0, _jquery["default"])('#popups__banner_overlay').length) {
     /**
      * This baby is semantic. No description needed.
      */
-
     PopUps.Banner = {
       overlay: (0, _jquery["default"])('#popups__banner_overlay'),
       _init: function _init() {
@@ -213,9 +219,10 @@ var Blocks = {}; // tbd
       _clickedOverlayBG: function _clickedOverlayBG() {
         (0, _jquery["default"])('body').removeClass('js__noscroll');
         PopUps.Timed.overlay.removeClass('popups__timed_active');
-      } // PopUps.Timed._init();
-
+      }
     };
+
+    PopUps.Timed._init();
   }
   /**
    * 
@@ -295,7 +302,11 @@ Headers.Eight = {
   header: (0, _jquery["default"])("header.header#opt_header_eight"),
   _init: function _init() {
     if ((0, _jquery["default"])(Headers.Eight.header).length) {
-      Headers.Eight.offset_top = Headers.Eight.header.offset().top;
+      if ((0, _jquery["default"])("#popups__banner").length) {
+        Headers.Eight.offset_top = Headers.Eight.header.offset().top - (0, _jquery["default"])("#popups__banner").height();
+      } else {
+        Headers.Eight.offset_top = Headers.Eight.header.offset().top;
+      }
 
       window.onscroll = function () {
         Headers.Eight._sticky_header();

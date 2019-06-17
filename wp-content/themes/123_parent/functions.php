@@ -103,27 +103,31 @@ function get_social_icons(){
 
 function get_full_address_br(){
 	$company_info = get_field('company_info','options');
-        
+	
 	$location = ($company_info['location'] ? $company_info['location'] : '');
+	
+	$full_address_br = '';
+	if( !empty($location['address_street']) ){
+		$street_1 = $location['address_street'];
+		$street_2 = $location['address_street_2'];
+		$city = $location['address_city'];
+		$state = $location['address_state'];
+		$postcode = $location['address_postcode'];
+		$country = $location['address_country'];
+	
+		$format_full_address_br = '%s %s <br/>%s, %s %s'; 
+	
+		$full_address_br = sprintf(
+			$format_full_address_br
+			,$street_1
+			,$street_2
+			,$city
+			,$state
+			,$postcode
+			// ,$country
+		);
+	}
 
-	$street_1 = $location['address_street'];
-	$street_2 = $location['address_street_2'];
-	$city = $location['address_city'];
-	$state = $location['address_state'];
-	$postcode = $location['address_postcode'];
-	$country = $location['address_country'];
-
-	$format_full_address_br = '%s %s <br/>%s, %s %s'; 
-
-	$full_address_br = sprintf(
-		$format_full_address_br
-		,$street_1
-		,$street_2
-		,$city
-		,$state
-		,$postcode
-		// ,$country
-	);
 	return $full_address_br; 
 }
 
@@ -132,24 +136,28 @@ function get_full_address(){
         
 	$location = ($company_info['location'] ? $company_info['location'] : '');
 
-	$street_1 = $location['address_street'];
-	$street_2 = $location['address_street_2'];
-	$city = $location['address_city'];
-	$state = $location['address_state'];
-	$postcode = $location['address_postcode'];
-	$country = $location['address_country'];
+	$full_address = '';
 
-	$format_full_address = '%s %s, %s, %s %s'; 
-
-	$full_address = sprintf(
-		$format_full_address
-		,$street_1
-		,$street_2
-		,$city
-		,$state
-		,$postcode
-		// ,$country
-	);
+	if( !empty($location['address_street']) ){
+		$street_1 = $location['address_street'];
+		$street_2 = $location['address_street_2'];
+		$city = $location['address_city'];
+		$state = $location['address_state'];
+		$postcode = $location['address_postcode'];
+		$country = $location['address_country'];
+	
+		$format_full_address = '%s %s, %s, %s %s'; 
+	
+		$full_address = sprintf(
+			$format_full_address
+			,$street_1
+			,$street_2
+			,$city
+			,$state
+			,$postcode
+			// ,$country
+		);
+	}
 	return $full_address; 
 }
 
@@ -186,22 +194,25 @@ function get_site_nav($pre = 'navlinks'){
 
         // get them fields
         $fields = get_fields( get_option('page_on_front') );
-        
-        $guide['blocks_links'] = '<li class="navlinks-item"><a class="navlinks-item-link scroll" href="#%s">%s</a></li>';
-        $return['blocks_links'] = '<ul class="navlinks nav__spyscroll">';
-        
-        foreach( $fields['content_blocks'] as $i => $cB ){
+		
+		$return['blocks_links'] = '';
+		
+		if( !empty($fields['content_blocks']) ){
 
-            if( $cB['anchor_enabled'] ){
-                $return['blocks_links'] .= sprintf(
-                    $guide['blocks_links']
-                    ,strtolower(str_replace(' ', '_', $cB['anchor_link_text']))
-                    ,$cB['anchor_link_text']
-                );
-            }
-
-        }
-        $return['blocks_links'] .= '</ul>';
+			$guide['blocks_links'] = '<li class="navlinks-item"><a class="navlinks-item-link scroll" href="#%s">%s</a></li>';
+			$return['blocks_links'] = '<ul class="navlinks nav__spyscroll">';
+			
+			foreach( $fields['content_blocks'] as $i => $cB ){
+				if( $cB['anchor_enabled'] ){
+					$return['blocks_links'] .= sprintf(
+						$guide['blocks_links']
+						,strtolower(str_replace(' ', '_', $cB['anchor_link_text']))
+						,$cB['anchor_link_text']
+					);
+				}
+			}
+			$return['blocks_links'] .= '</ul>';
+		}
         
         return $return['blocks_links'];
         

@@ -18,8 +18,6 @@ var Headers = {};   // tbd
 var Blocks = {};    // tbd
 
 
-
-
 // certain things should wait until the document is ready
 $(document).ready(function()
 {
@@ -31,8 +29,14 @@ $(document).ready(function()
      *  If Header Six Exists
      */
     if ($('header').length) {
-        var offset = $('header').height() + $('#popups__banner').height() ;
-        $('main#page_home').css('margin-top', offset);
+        if( $('header.header').css('position') !== 'fixed'){
+            var offset = $('header').height() + $('#popups__banner').height() ;
+            $('main#page_home').css('margin-top', offset - 1);
+            $(window).on('resize', function(){
+                var offset = $('header').height() + $('#popups__banner').height() ;
+                $('main#page_home').css('margin-top', offset - 1);
+            });
+        }
     }
     
 
@@ -106,10 +110,10 @@ $(document).ready(function()
      * 
      */
     // if banner popup bar is present 
-    if ($('#popups__banner').length) {
-        
-        var PopUps = {};
     
+    var PopUps = {};
+    
+    if ($('#popups__banner').length && $('#popups__banner_overlay').length) {
         /**
          * This baby is semantic. No description needed.
          */
@@ -194,7 +198,7 @@ $(document).ready(function()
                 PopUps.Timed.overlay.removeClass('popups__timed_active');
             }
         }
-        // PopUps.Timed._init();
+        PopUps.Timed._init();
     }
     /**
      * 
@@ -272,8 +276,6 @@ $(document).ready(function()
 });
 
 
-
-
 Headers.Eight = {
 
     header: $("header.header#opt_header_eight"),
@@ -281,7 +283,11 @@ Headers.Eight = {
     _init: function () {
 
         if ($(Headers.Eight.header).length) {
-            Headers.Eight.offset_top = Headers.Eight.header.offset().top;
+            if($("#popups__banner").length){
+                Headers.Eight.offset_top = Headers.Eight.header.offset().top - $("#popups__banner").height();
+            }else{
+                Headers.Eight.offset_top = Headers.Eight.header.offset().top;
+            }
             window.onscroll = function () {
                 Headers.Eight._sticky_header();
             }

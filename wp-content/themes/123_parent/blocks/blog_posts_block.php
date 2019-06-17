@@ -4,7 +4,7 @@
  * 
  */
     // empty return string
-    $return = [];
+    $return['section'] = '';
     $guide = [];
 
     $return['posts'] ='<ul>';
@@ -24,7 +24,7 @@
     
     foreach($cB['blog_posts'] as $i => $post) {
         
-        $fields = get_fields($post['post']->ID);
+        $fields = get_fields($post['blog_post']->ID);
             
         if( $fields['status'] ){
             $return['posts'] .= sprintf(

@@ -31,6 +31,7 @@
         $background_color = ( !empty($foreground['background_color'] ) ? 'background-color: rgba('.hex2RGB($foreground['background_color'], true).','.$foreground['background_opacity'].');' : '');
         $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'color:'.$foreground['foreground_color'].';' : '');
         $title = ( !empty($foreground['hero_title'] ) ? '<h2>'.$foreground['hero_title'].'</h2>' : '');
+        $logo = '';
         if( !empty($foreground['hero_logo']) ){
             
             if( !empty($foreground['logo_url']) ){

@@ -10,24 +10,27 @@
  */
 
     function get_copyright_banner(){
+
         $return = '';
         $field = get_field('footer', 'options');
+        
+        if( !empty($field['copyright_banner']['text']) ){
+            $company_name = ( !empty($field['copyright_banner']['text']) ? $field['copyright_banner']['text'] : '');
+            $format = '
+                <div class="site__copyright_banner">
+                    <span>Copyright &copy; '.date('Y', time()).' '.$company_name.'</span>
+                    %s
+                </div>
+            ';
+            $return .= sprintf(
+                $format
+                ,( !empty($field['copyright_banner']['text']) 
+                    ? '<a href="'.$field['copyright_banner']['url'].'" target="_blank">Website Created By '.$field['copyright_banner']['text'].'</a>' 
+                    : '<a href="https://123websites.com" target="_blank">Website Created By 123Websites.com</a>'
+                )
+            );
+        }
 
-        $company_name = get_field('company_info', 'options')['company_name'];
-
-        $format = '
-            <div class="site__copyright_banner">
-                <span>Copyright &copy; '.date('Y', time()).' '.$company_name.'</span>
-                %s
-            </div>
-        ';
-        $return .= sprintf(
-            $format
-            ,( !empty($field['copyright_banner']['text']) 
-            ? '<a href="'.$field['copyright_banner']['url'].'" target="_blank">Website Created By '.$field['copyright_banner']['text'].'</a>' 
-            : '<a href="https://123websites.com" target="_blank">Website Created By 123Websites.com</a>'
-            )
-        );
         return $return;
     }
 
@@ -73,6 +76,7 @@
     }
 
     function get_company_info(){
+
         $footer_style = get_field('footer', 'options')['style'];
         $logo = get_footer_logo();
         $address = (!empty(get_full_address_br()) ? '<a class="footer_address" href="javascript:;">'.get_full_address_br().'</a>': '');
@@ -105,7 +109,7 @@
                 ,$phone_number_2
             );
         }else if($footer_style == 'two'){
-            $address = (!empty(get_full_address()) ? '<a class="footer_address" href="javascript:;">'.get_full_address().'</a>': '');
+            $address = ( !empty(get_full_address()) ? '<a class="footer_address" href="javascript:;">'.get_full_address().'</a>' : '');
             $format = '
                 <div id="footer_company_info">
                     %s
@@ -156,9 +160,13 @@
         $fields = get_fields( get_option('page_on_front') );
         $anchor_link_count = 0;
 
-        foreach($fields['content_blocks'] as $i => $block){
-            if( !empty($block['anchor_link_text']) ){
-                $anchor_link_count++;
+        $nav = '';
+
+        if( !empty($fields['content_blocks']) ){
+            foreach($fields['content_blocks'] as $i => $block){
+                if( !empty($block['anchor_link_text']) ){
+                    $anchor_link_count++;
+                }
             }
         }
         

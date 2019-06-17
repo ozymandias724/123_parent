@@ -28,10 +28,12 @@
             break;
 
             case 'menu_photo_tiled_x3':
+            $price = (!empty($item['price']) ? $item['price'] : '');
+            $priceArr = explode('.',$price);
             $format = '
                 <li class="menu_item site__fade site__fade-up">
                     %s
-                    <h3 class="menu__item-price">%s <span>%s</span></h3>
+                    <h3 class="menu__item-price">%s <div>$%s.<span>%s</span></div></h3>
                     <div class="menu__item-description">%s</div>
                 </li>
             ';
@@ -40,7 +42,8 @@
                 $format
                 ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
-                ,(!empty($item['price']) ? $item['price'] : '')
+                ,$priceArr[0]
+                ,$priceArr[1]
                 ,(!empty($item['description']) ? $item['description'] : '')
             );
             break;

@@ -2,6 +2,7 @@
 /**
  *      NavHandler Class
  */
+
 class NavHandler
 {
     // Public Vars
@@ -38,21 +39,18 @@ class NavHandler
         // look for a 'custom logo'
         $content_logo = '';
         // if we have a custom logo
-        // if( !empty($header['logo']) ){
         if( !empty( get_theme_mod( 'custom_logo' ) ) ){
-            // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
-            // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
             $logo_src = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
             $logo_srcset = wp_get_attachment_image_srcset(get_theme_mod( 'custom_logo' ));
             $format_logo = '
                 <a class="header-logo" href="%s" title="Logo button">
-                    <img src="%s" srcset="%s" alt="%s">
+                    <img src="%s" srcset="%s" alt="%s" />
                 </a>
             ';
             $content_logo .= sprintf(
                 $format_logo
                 ,site_url()
-                ,$logo_src
+                ,$logo_src[0]
                 ,$logo_srcset
                 ,get_bloginfo('sitename')
             );
@@ -103,7 +101,7 @@ class NavHandler
         }
 
         // needsfix
-        $quotebtn_txt = $popups['banner']['bar_text'];
+        $quotebtn_txt = $popups['banner']['button']['text'];
         if( !empty($quotebtn_txt) ){
             $format_quotebtn = '
                 <a href="#" class="topbanner-quickquote" title="Get a quote button">
@@ -140,18 +138,16 @@ class NavHandler
                     </a>
                     <a href="tel:%s" title="Phone number button">
                         <i class="fas fa-phone"></i>
-                        <span>%s</span>
                     </a>
                 </span>
                 %s
             </div>
         ';
         $content_socialtopbar = sprintf(
-            $format_socialtopbar,
-            $company_address,
-            $phone_number_1,
-            $phone_number_1,
-            $content_quotebtn
+            $format_socialtopbar
+            ,$company_address
+            ,$phone_number_1
+            ,$phone_number_1
         );
 
         // phone iconLink
@@ -279,7 +275,7 @@ class NavHandler
          * Start Header Style 4
          */
         $format_header = '
-            <header class="%s %s header" id="opt_header_four">
+            <header class="%s header" id="opt_header_four">
                 <div class="outer_div">
                     <div class="inner_div">
                         %s
@@ -294,7 +290,6 @@ class NavHandler
         ';
         $this->header_four = sprintf(
             $format_header
-            ,$invertlogo
             ,$fadenav
             ,get_social_icons()
             ,get_custom_logo()

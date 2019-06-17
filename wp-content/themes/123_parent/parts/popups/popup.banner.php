@@ -8,6 +8,9 @@
     // empty button return
     $return['button'] = '';
 
+    $guide['button'] = '';
+    $guide['overlay'] = '';
+
     // get fields
     $fields = get_field('popups', 'options')['banner'];
 
@@ -20,27 +23,32 @@
                 <div>
                     %s
                     %s
-                    <div class="popup_form">'.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]').'</div>
+                    <div class="popup_form">'.( !empty($fields['overlay']['form']) ? do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]') : "").'</div>
                 </div>
             </div>
         </div>
     ';
     
-    // button guide
-    $guide['button'] = '<div id="popups__banner"><a href="javascript:;"><span>%s</span></a></div>';
     
-    // write the button (so semantic!)
-    $return['button'] .= sprintf(
-        $guide['button']
-        ,$fields['button']['text']
-    );
-    // write the overlay
-    $return['overlay'] .= sprintf(
-        $guide['overlay']
-        ,(!empty($fields['overlay']['image']['url']) ? $fields['overlay']['image']['url'] : '')
-        ,(!empty($fields['overlay']['heading']) ? '<div class="popup_heading">'.$fields['overlay']['heading'].'</div>' : '')
-        ,(!empty($fields['overlay']['details']) ? '<div class="popup_details">'.$fields['overlay']['details'].'</div>': '')
-    );
+    if( !empty($fields['button']['text'])){
+        // button guide
+        $guide['button'] = '<div id="popups__banner"><a href="javascript:;"><span>%s</span></a></div>';
+        // write the button (so semantic!)
+        $return['button'] .= sprintf(
+            $guide['button']
+            ,$fields['button']['text']
+        );
+    }
+    
+    if( !empty($fields['overlay']['heading'])){
+        // write the overlay
+        $return['overlay'] .= sprintf(
+            $guide['overlay']
+            ,(!empty($fields['overlay']['image']['url']) ? $fields['overlay']['image']['url'] : '')
+            ,(!empty($fields['overlay']['heading']) ? '<div class="popup_heading">'.$fields['overlay']['heading'].'</div>' : '')
+            ,(!empty($fields['overlay']['details']) ? '<div class="popup_details">'.$fields['overlay']['details'].'</div>': '')
+        );
+    }
     
     // echo the overlay and the button
     // the overlay is initially hidden

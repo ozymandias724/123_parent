@@ -21,16 +21,16 @@
                 }
                 > h2,
                 &.menu_text_sub_group_half > div > h2 {
-                    @include fontS-34;
+                    @include fontS-50;
                     font-weight: 800;
                     text-transform: capitalize;
                 }
                 > p,
                 &.menu_text_sub_group_half > div > p {
-                    margin: 15px 0 20px;
+                    @include fontS-34; 
+                    margin: 5px 0 35px;
                     font-family: "Times New Roman";
                     font-style: italic;
-                    @include fontS-24;
                     font-weight: 500;
                     color: getVar($gustavo, colors, gray11);
                     border-bottom: 3px solid getVar($colors, accent);
@@ -52,10 +52,18 @@
                                 font-weight: 700;
                                 text-align: left;
                                 margin-bottom: 5px;
+                                > div {
+                                    > span {
+                                        @include fontS-18;
+                                        position: relative;
+                                        top: -5px;
+                                    }
+                                }
                             }
                             > div.menu__item-description {
                                 text-align: justify;
                                 @include fontS-14;
+                                color: getVar($gustavo, colors, gray10);
                             }
                         }
                     }
