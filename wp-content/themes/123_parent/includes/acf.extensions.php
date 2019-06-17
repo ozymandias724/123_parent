@@ -14,8 +14,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
-add_filter('acf/load_field/name=anchor_enabled', 'do_hide_acf_fields');
-add_filter('acf/load_field/name=anchor_link_text', 'do_hide_acf_fields');
+add_filter('acf/prepare_field/name=anchor_enabled', 'do_hide_acf_fields');
+add_filter('acf/prepare_field/name=anchor_link_text', 'do_hide_acf_fields');
 function do_hide_acf_fields( $field ) {
     
     if( !get_field('header', 'options')['long_scroll'] ){
