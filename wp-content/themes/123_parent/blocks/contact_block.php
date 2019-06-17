@@ -32,40 +32,44 @@
                 </li>
             ';
             
-            // each row in this column (acf flex content layouts)
-            foreach( $column as $row ){
-                // check which layout this row is
-                switch ($row['acf_fc_layout']) {
-                    // this row is a locations block
-                    case 'locations':
-                        // open the locations wrapper
-                        $return['column'] .='<ul class="locations">';
-                        // loop thru location items
-                        foreach( $row['locations'] as $location ){
-                            // get this location posts fields
-                            $fields = get_fields($location['location']->ID);
-                            // shorten using the address field (bad practice tho)
-                            $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
-                            // write this location to the return string for the column
-                            $return['column'] .= sprintf(
-                                $guide['locations']
-                                ,( !empty($fields['content']['heading']) ? '<h3>'.$fields['content']['heading'].'</h3>' : '')
-                                ,( !empty($address['address_street']) ? '<p>'.$address['address_street'].'</p>' : '')
-                                ,( !empty($address['address_street_2']) ? '<p>'.$address['address_street_2'].'</p>' : '')
-                                ,'<span>'.$address['address_city'] . ', ' . $address['address_state'] . ' ' . $address['address_postcode'].'</span>'
-                                ,( !empty($fields['content']['phone_number_1']) ? '<br><a href="tel:'.$fields['content']['phone_number_1'].'">'.$fields['content']['phone_number_1'].'</a>' : '' )
-                                ,( !empty($fields['content']['phone_number_2']) ? '<br><a href="tel:'.$fields['content']['phone_number_2'].'">'.$fields['content']['phone_number_2'].'</a>' : '' )
-                            );
-                        }
-                        // close the locations wrapper
-                        $return['column'] .= '</ul>';
-                        break;
-                        case 'form':
-                            $return['column'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+            if( !empty($column) ){
+                // each row in this column (acf flex content layouts)
+                foreach( $column as $row ){
+                    // check which layout this row is
+                    switch ($row['acf_fc_layout']) {
+                        // this row is a locations block
+                        case 'locations':
+                            // open the locations wrapper
+                            $return['column'] .='<ul class="locations">';
+                            // loop thru location items
+                            if( !empty($row['locations']) ){
+                                foreach( $row['locations'] as $location ){
+                                    // get this location posts fields
+                                    $fields = get_fields($location['location']->ID);
+                                    // shorten using the address field (bad practice tho)
+                                    $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
+                                    // write this location to the return string for the column
+                                    $return['column'] .= sprintf(
+                                        $guide['locations']
+                                        ,( !empty($fields['content']['heading']) ? '<h3>'.$fields['content']['heading'].'</h3>' : '')
+                                        ,( !empty($address['address_street']) ? '<p>'.$address['address_street'].'</p>' : '')
+                                        ,( !empty($address['address_street_2']) ? '<p>'.$address['address_street_2'].'</p>' : '')
+                                        ,'<span>'.$address['address_city'] . ', ' . $address['address_state'] . ' ' . $address['address_postcode'].'</span>'
+                                        ,( !empty($fields['content']['phone_number_1']) ? '<br><a href="tel:'.$fields['content']['phone_number_1'].'">'.$fields['content']['phone_number_1'].'</a>' : '' )
+                                        ,( !empty($fields['content']['phone_number_2']) ? '<br><a href="tel:'.$fields['content']['phone_number_2'].'">'.$fields['content']['phone_number_2'].'</a>' : '' )
+                                    );
+                                }
+                            }
+                            // close the locations wrapper
+                            $return['column'] .= '</ul>';
                             break;
-                    default:
-                        # code...
-                        break;
+                            case 'form':
+                                $return['column'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[gravityform id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+                                break;
+                        default:
+                            # code...
+                            break;
+                    }
                 }
             }
             return $return['column'];
@@ -97,10 +101,12 @@
     $return['left'] = '';
     $return['right'] = '';
 
+    var_dump($cB['left']);
 
     $return['left'] .= return_column_content($cB['left']);
     $return['right'] .= return_column_content($cB['right']);
 
+    $return['section'] = '';
 
     // write all the content we can into the opening until the left/right part
     $return['section'] .= sprintf(

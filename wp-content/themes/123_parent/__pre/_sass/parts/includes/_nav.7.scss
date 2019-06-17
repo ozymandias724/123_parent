@@ -9,7 +9,6 @@ $nav7_width : 1050px;
         // Top part of header
         > div {
             display: flex;
-            justify-content: space-between;
             font-size: 18px;
             color: getVar($colors, black, full);
             height: 100px;
@@ -19,7 +18,10 @@ $nav7_width : 1050px;
             .site__social-media {
                 display: flex;
                 list-style: none;
-                margin-left: -10px;
+                width: 350px;
+            }
+            > a {
+                width: 350px;
             }
             //Social icons unordered list items
             .site__social-media > li > a {
@@ -39,14 +41,15 @@ $nav7_width : 1050px;
             } 
             // Logo link
             > .custom-logo-link {
-                padding: 10px 10px 18px 10px;
-                margin-top: 7px;
+                padding: 17px 10px 18px 10px;
                 > .custom-logo {
+                    margin: 0 auto;
                     max-height: 75px;
                     max-width: 250px;
                 }
             }
             > .site__iconlink-phone {
+                text-align: right;
                 padding: 0 7px;
                 color: getVar($colors, accent);
                 margin-right: -7px;

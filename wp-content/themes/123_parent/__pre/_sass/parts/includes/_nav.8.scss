@@ -13,7 +13,7 @@ $nav8_width : 1110px;
         > div:first-of-type {
             display: flex;
             justify-content: space-between;
-            background-color: white;
+            background-color: getVar($colors, white, full);
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
             transition: width 0.3s;
             align-items: center;
@@ -23,7 +23,7 @@ $nav8_width : 1110px;
             > .custom-logo-link {
                 padding: 10px;
                 > .custom-logo {
-                    max-height: 90px; 
+                    max-height: 73px; 
                 }
             }
             > nav {
@@ -60,7 +60,7 @@ $nav8_width : 1110px;
                 left: 0px;
                 bottom: 0px;
                 content: '';
-                background: $accent;
+                background: getVar($colors, accent);
                 transition: height 0.3s;
                 z-index: -1;
             }
@@ -69,7 +69,7 @@ $nav8_width : 1110px;
             .navlinks-item-link:active,  
             .navlinks-item-link:focus,
             .active_menu_link {
-                color: white;
+                color: getVar($colors, white, full);
                 //Navigational menu list items links grow to top
                 &:before {
                     height: 100%;
