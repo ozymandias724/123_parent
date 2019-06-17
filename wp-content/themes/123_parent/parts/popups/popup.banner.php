@@ -15,21 +15,20 @@
     $fields = get_field('popups', 'options')['banner'];
 
     // overlay guide
-    if( !empty($fields['overlay']['heading'])){
-        $guide['overlay'] = '
-            <div id="popups__banner_overlay">
-                <i class="fas fa-times overlay__closebutton"></i>
-                <div class="container">
-                    <figure><img src="%s"></figure>
-                    <div>
-                        %s
-                        %s
-                        <div class="popup_form">'.( !empty($fields['overlay']['form']) ? do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]') : "").'</div>
-                    </div>
+    $guide['overlay'] = '
+        <div id="popups__banner_overlay">
+            <i class="fas fa-times overlay__closebutton"></i>
+            <div class="container">
+                <figure><img src="%s"></figure>
+                <div>
+                    %s
+                    %s
+                    <div class="popup_form">'.( !empty($fields['overlay']['form']) ? do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]') : "").'</div>
                 </div>
             </div>
-        ';
-    }
+        </div>
+    ';
+    
     
     if( !empty($fields['button']['text'])){
         // button guide

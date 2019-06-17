@@ -29,9 +29,13 @@ $(document).ready(function()
      *  If Header Six Exists
      */
     if ($('header').length) {
-        if( $('header.header').css('position') == 'fixed' ){
+        if( $('header.header').css('position') !== 'fixed'){
             var offset = $('header').height() + $('#popups__banner').height() ;
-            $('main#page_home').css('margin-top', offset);
+            $('main#page_home').css('margin-top', offset - 1);
+            $(window).on('resize', function(){
+                var offset = $('header').height() + $('#popups__banner').height() ;
+                $('main#page_home').css('margin-top', offset - 1);
+            });
         }
     }
     
@@ -106,10 +110,10 @@ $(document).ready(function()
      * 
      */
     // if banner popup bar is present 
-    if ($('#popups__banner').length && $('#popups__banner_overlay').length) {
-        
-        var PopUps = {};
     
+    var PopUps = {};
+    
+    if ($('#popups__banner').length && $('#popups__banner_overlay').length) {
         /**
          * This baby is semantic. No description needed.
          */

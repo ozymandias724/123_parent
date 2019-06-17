@@ -3,7 +3,7 @@ $nav7_width : 1050px;
 @media only screen {
     //Header 7
     header#opt_header_seven {
-        background-color: $white;
+        background-color: getVar($colors, white, full);
         box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
         padding: 0;
         // Top part of header
@@ -11,7 +11,7 @@ $nav7_width : 1050px;
             display: flex;
             justify-content: space-between;
             font-size: 18px;
-            color: $black;
+            color: getVar($colors, black, full);
             height: 100px;
             max-width: $nav7_width;
             margin: 0 auto;
@@ -42,19 +42,19 @@ $nav7_width : 1050px;
                 padding: 10px 10px 18px 10px;
                 margin-top: 7px;
                 > .custom-logo {
-                    max-height: 90px;
+                    max-height: 80px;
                     max-width: 270px;
                 }
             }
             > .site__iconlink-phone {
                 padding: 0 7px;
-                color: $accent;
+                color: getVar($colors, accent);
                 margin-right: -7px;
                 font-weight: 500;
                 &:before {
                     transform: rotate(90deg);
                     margin-right: 10px;
-                    color: $accent;
+                    color: getVar($colors, accent);
                 }
                 &:focus,
                 &:active,
@@ -83,7 +83,7 @@ $nav7_width : 1050px;
                 bottom: 0;
                 height: 2px;
                 width: 100%;
-                border-bottom: 2px solid $accent;
+                border-bottom: 2px solid getVar($colors, accent);
             }
             //Navigational menu unordered list
             .navlinks {
@@ -99,7 +99,7 @@ $nav7_width : 1050px;
                 padding: 0 10px;
                 line-height: 50px;
                 display: inline-block;
-                color: $black;
+                color: getVar($colors, black, full);
                 font-weight: 700;
                 //Actions on hover, active and focus
                 &:hover,
@@ -116,7 +116,7 @@ $nav7_width : 1050px;
             &:hover,
             &:active,
             &:focus {
-                color: $black;
+                color: getVar($colors, black, full);
             }
         }
     }
