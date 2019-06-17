@@ -38,7 +38,7 @@ class NavHandler
         
         // look for a 'custom logo'
         $content_logo = '';
-        $site_name = '';
+        $site_name = get_bloginfo('sitename');
         // if we have a custom logo
         if( !empty( get_theme_mod( 'custom_logo' ) ) ){
             $logo_src = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
