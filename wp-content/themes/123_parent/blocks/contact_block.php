@@ -101,8 +101,6 @@
     $return['left'] = '';
     $return['right'] = '';
 
-    var_dump($cB['left']);
-
     $return['left'] .= return_column_content($cB['left']);
     $return['right'] .= return_column_content($cB['right']);
 
