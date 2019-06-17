@@ -3,110 +3,57 @@
     section.block__contact {
 
         > .container {
+            $c : 2;
+            $g : getVar($sizing, gutter, vw, normal);
 
-            > .columns {
+            &.narrow {
+                $w : getVar($sizing, content, small);
+                @include flexGrid($w, $c, $g);
+            }
+            &.medium {
+                $w : getVar($sizing, content, medium);
+                @include flexGrid($w, $c, $g);
+            }
+            &.wide {
+                $w : getVar($sizing, content, wide);
+                @include flexGrid($w, $c, $g);
+            }
+            &.full {
+                $w : getVar($sizing, content, full);
+                @include flexGrid($w, $c, $g);
+            }
+
+            ul.locations {
                 display: flex;
-                flex-flow: row nowrap;
-                .left, .right {
-                    flex: 1 0 45%;
-                    @include gridLayout(96%, 1, 4%, true);
-                    > ul.area__ul {
-                        > li {
-                            margin: getVar($sizing, gutter, px, small);
-                            >div.container {
-                                background-color: getVar($gustavo, colors, gray7);
-                                border: 2px solid rgba(getVar($colors, black, full), 0);
-                                padding: getVar($sizing, gutter, px, normal) 80px;
-                                margin: 0 0 getVar($sizing, gutter, px, normal) 0;
-                                border-radius: 14px;
-                                &:last-child{
-                                    margin: 0 0 0 0;
-                                }
-                                > h3.area__heading {
-                                    border-bottom: 4px dotted getVar($colors, white, full);
-                                    font-family: "Gotham", Helvetica, sans-serif;
-                                    @include fontS-34;
-                                    font-weight: 500;
-                                    padding-bottom: 10px;
-                                    margin-bottom: 15px;
-                                }
-                                >div,
-                                > a {
-                                    @include fontS-14;
-                                    color: getVar($gustavo, colors, gray11);
-                                    line-height: 2.3rem;
-                                }
-                                > a[class^="area__phone"] {
-                                    display: block;
-                                    font-weight: 500;
-                                    > span {
-                                        font-weight: 600;
-                                    }
-                                }
-                                > a.area__directions {
-                                    color: getVar($colors, white, full);
-                                    font-weight: 700;
-                                    background-color: getVar($colors, accent);
-                                    padding: 10px 60px 10px 60px;
-                                    margin: 20px 0 0 0;
-                                    display: inline-block;
-                                    border-radius: 30px;
-                                }
-                                > a {
-                                    &:hover, &:active, &:focus {
-                                        opacity: 0.8;
-                                    }
-                                }
-                                > div {
-                                    font-weight: 600;
-                                }
-                            }
-                        }
-                    }
-                    > div.contact__block-form { 
-                        text-align: left;
-                        margin-top: 20px;
-                        > p {
-                            font-weight: 700;
-                            border-bottom: 3px solid getVar($gustavo, colors, gray7);
-                            padding-bottom: getVar($sizing, gutter, px, tiny);
-                            margin-bottom: 20px;
-                        }
-                        button {
-                            color: getVar($colors, white, full);
-                            background-color: getVar($colors, black, full);
-                            padding: 10px 30px;
-                            font-weight: 600;
-                        }
-                        label span {
-                            color: getVar($colors, black, full);
-                        }
-                    }
-                }
-                .left {
-                    margin-right: 20px;
-                }
-                .right {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    align-items: center;
-                    justify-content: center;
-                }   
-            }   
-        }   
-    }
-}
+                flex-flow: column wrap;
+                > li {
+                    background-color: rgba(getVar($colors, black, full), 0.2);
+                    border-radius: 15px;
+                    margin: 0 0 getVar($sizing, gutter, vw, normal) 0;
+                    padding: getVar($sizing, gutter, px, normal) getVar($sizing, gutter, px, large);
+                    border: 2px solid getVar($colors, black, full);
 
-@media only screen and (max-width: 960px){
-    section.block__contact {
-        > .container {
-            > .columns {
-                flex-flow: column nowrap;
-                > .left, > .right { 
-                    flex: 1 0 100%;
-                    margin: 0 0 0 0;
+                    h3 {
+                        @include fontS-34;
+                        border-bottom: 4px dotted getVar($colors, white, full);
+                        margin: 0 0 getVar($sizing, gutter, px, normal);
+                    }
+                    > div {
+                        color: getVar($colors, gray, mid);
+                        > a {
+                            color: getVar($colors, gray, mid);
+                        }
+                    }
+                    .site__button {
+                        border-radius: getVar($sizing, gutter, px, large);
+
+                    }
                 }
             }
-        }
+        }  
     }
 }
+
+@media only screen and (max-width: 1280px){}
+@media only screen and (max-width: 960px){}
+@media only screen and (max-width: 640px){}

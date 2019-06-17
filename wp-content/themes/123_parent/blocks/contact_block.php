@@ -4,6 +4,75 @@
 * 
 * 
 */
+    if( !function_exists('return_column_content') ){
+
+        /**
+         * return the content for a column
+         *
+         * @param array $column
+         * @return void
+         */
+        function return_column_content( $column ){
+
+            // reset the column return string
+            $return['column'] = '';
+            
+            // guide string for a location
+            $guide['locations'] = '
+                <li class="site__fade site__fade-up">
+                    %s
+                    <div>
+                        %s
+                        %s
+                        %s
+                        %s
+                        %s
+                    </div>
+                    <a class="site__button" href="javascript:;">Directions</a>
+                </li>
+            ';
+            
+            // each row in this column (acf flex content layouts)
+            foreach( $column as $row ){
+                // check which layout this row is
+                switch ($row['acf_fc_layout']) {
+                    // this row is a locations block
+                    case 'locations':
+                        // open the locations wrapper
+                        $return['column'] .='<ul class="locations">';
+                        // loop thru location items
+                        foreach( $row['locations'] as $location ){
+                            // get this location posts fields
+                            $fields = get_fields($location['location']->ID);
+                            // shorten using the address field (bad practice tho)
+                            $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
+                            // write this location to the return string for the column
+                            $return['column'] .= sprintf(
+                                $guide['locations']
+                                ,( !empty($fields['content']['heading']) ? '<h3>'.$fields['content']['heading'].'</h3>' : '')
+                                ,( !empty($address['address_street']) ? '<p>'.$address['address_street'].'</p>' : '')
+                                ,( !empty($address['address_street_2']) ? '<p>'.$address['address_street_2'].'</p>' : '')
+                                ,'<span>'.$address['address_city'] . ', ' . $address['address_state'] . ' ' . $address['address_postcode'].'</span>'
+                                ,( !empty($fields['content']['phone_number_1']) ? '<br><a href="tel:'.$fields['content']['phone_number_1'].'">'.$fields['content']['phone_number_1'].'</a>' : '' )
+                                ,( !empty($fields['content']['phone_number_2']) ? '<br><a href="tel:'.$fields['content']['phone_number_2'].'">'.$fields['content']['phone_number_2'].'</a>' : '' )
+                            );
+                        }
+                        // close the locations wrapper
+                        $return['column'] .= '</ul>';
+                        break;
+                        case 'form':
+                            $return['column'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+                            break;
+                    default:
+                        # code...
+                        break;
+                }
+            }
+            return $return['column'];
+        }
+    }
+
+
     // set return and guide string arrays
     $return = [];
     $guide = [];
@@ -14,110 +83,24 @@
             <div class="container %s %s" style="%s %s">
                 %s
                 %s
-                <div class="columns">
-                    <div class="left">%s</div>
-                    <div class="right">%s</div>
-                </div>
+                <ul class="columns">
+                    <li class="left">%s</li>
+                    <li class="right">%s</li>
+                </ul>
             </div>
         </section>
     ';
 
-    function get_area_content($row){
+    
 
-        $return = '';
-
-        $guide['locations'] = '
-            <li class="site__fade site__fade-up">
-                <div class="container %s" style="%s %s">
-                    <h3 class="area__heading">%s</h3>
-                    <div class="area__address-1">%s</div>
-                    <div class="area__address-2">%s</div>
-                    <div class="area__city-state-post">%s</div>
-                    <a class="area__phone-1" href="tel:%s">%s</a>
-                    <a class="area__phone-2" href="tel:%s">%s</a>
-                    <a class="area__directions" href="javascript:;">Directions</a>
-                </div>
-            </li>
-        ';
-
-        foreach( $row['locations'] as $location ){
-
-            $fields = get_fields($location['location']->ID);
-
-            $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
-
-            $postal = ( !empty($address['address_is_postal']) ? 'This is a postal address' : '');
-            $street_1 = ( !empty($address['address_street']) ? $address['address_street'] : '');
-            $street_2 = ( !empty($address['address_street_2']) ? $address['address_street_2'] : '');
-            $city = ( !empty($address['address_city']) ? $address['address_city'] : '');
-            $state = ( !empty($address['address_state']) ? $address['address_state'] : '');
-            $postcode = ( !empty($address['address_postcode']) ? $address['address_postcode'] : '');
-            
-            $return .= sprintf(
-                $guide['locations']
-                ,( !empty($fields['options']['width']) ? $fields['options']['width'] : '')
-                ,( !empty($fields['options']['background_color']) ? 'background-color:'.$fields['options']['background_color'].';' : '')
-                ,( !empty($fields['options']['foreground_color']) ? 'color:'.$fields['options']['foreground_color'].';' : '')
-                ,( !empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
-                ,$street_1
-                ,$street_2
-                ,$city . ', ' . $state . ' ' . $postcode
-                ,'(123) 456-7890'
-                ,'<span>Phone: </span>(123) 456-7890'
-                ,'(123) 456-7890'
-                ,'<span>Phone: </span>(123) 456-7890'
-            );
-        }
-        return $return;
-    }
-
-
-    // 
-    // Do the left Side
+    // if left has rows
     $return['left'] = '';
-
-    foreach( $cB['left'] as $row ){
-
-        // Locations Layout
-        if( $row['acf_fc_layout'] == 'locations' ){
-            $return['left'] .= '<ul class="area__ul">';
-            $return['left'] .= get_area_content($row);
-            $return['left'] .= '</ul>';
-        }
-        
-        // Form Layout
-        if( $row['acf_fc_layout'] == 'form' ){
-            $return['left'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
-        }
-
-        // Map Layout
-
-    }
-    // 
-
-    // 
-    // Do the Right Side
     $return['right'] = '';
 
-    foreach( $cB['right'] as $row ){
 
-        // Locations Layout
-        if( $row['acf_fc_layout'] == 'locations' ){
-            $return['right'] .= '<ul class="area__ul">';
-            $return['right'] .= get_area_content($row);
-            $return['right'] .= '</ul>';
-        }
-        
-        // Form Layout
-        if( $row['acf_fc_layout'] == 'form' ){
-            $return['right'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[wpforms id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
-        }
+    $return['left'] .= return_column_content($cB['left']);
+    $return['right'] .= return_column_content($cB['right']);
 
-        // Map Layout
-
-    }
-    // 
-    
 
     // write all the content we can into the opening until the left/right part
     $return['section'] .= sprintf(
@@ -141,4 +124,4 @@
 
     // clear the $cB, $return and $guide vars
     unset($cB, $return, $guide);
- ?>
+ ?>                                                                                                                                                                                                                                                      

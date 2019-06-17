@@ -20,7 +20,7 @@
                 <div>
                     %s
                     %s
-                    <div class="popup_form">'.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]', $ignore_html).'</div>
+                    <div class="popup_form">'.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]').'</div>
                 </div>
             </div>
         </div>

@@ -195,7 +195,7 @@ function get_site_nav($pre = 'navlinks'){
             if( $cB['anchor_enabled'] ){
                 $return['blocks_links'] .= sprintf(
                     $guide['blocks_links']
-                    ,strtolower($cB['anchor_link_text'])
+                    ,strtolower(str_replace(' ', '_', $cB['anchor_link_text']))
                     ,$cB['anchor_link_text']
                 );
             }
