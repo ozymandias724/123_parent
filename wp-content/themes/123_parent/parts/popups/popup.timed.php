@@ -6,23 +6,27 @@
     // empty overlay return
     $return['overlay'] = '';
 
+    $guide['overlay'] = '';
+
     // get fields
     $fields = get_field('popups', 'options')['timed_overlay'];
 
     // overlay guide
-    $guide['overlay'] = '
-        <div id="popups__timed_overlay">
-            <i class="fas fa-times overlay__closebutton"></i>
-            <div class="container">
-                <figure><img src="%s"></figure>
-                <div>
-                    %s
-                    %s
-                    <div class="popup_form">'.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]').'</div>
+    if( !empty($fields['overlay']['heading']) ){
+        $guide['overlay'] = '
+            <div id="popups__timed_overlay">
+                <i class="fas fa-times overlay__closebutton"></i>
+                <div class="container">
+                    <figure><img src="%s"></figure>
+                    <div>
+                        %s
+                        %s
+                        <div class="popup_form">'.do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]').'</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    ';
+        ';
+    }
     
     // write the overlay
     $return['overlay'] .= sprintf(

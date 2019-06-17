@@ -18,6 +18,7 @@
     $hamburger_icon = '<a href="javascript:;" title="3 Line menu icon button"><span></span><span></span><span></span></a>';
     
     $field_social_icons = $company_info['social_media'];
+    $content_social_icons = '';
     if( !empty($field_social_icons) ){
         $content_social_icons = '<ul>';
         $format_social_icons = '
@@ -72,7 +73,7 @@
     }
 
     $format_nav_mobile = '
-        <header class="%s %s mobileheader" id="theme_name_maybe">
+        <header class="mobileheader" id="theme_name_maybe">
             <div>
                 %s
             </div>
@@ -88,8 +89,6 @@
     
     $content_nav_mobile = sprintf(
         $format_nav_mobile
-        ,$fadenav
-        ,$invertlogo
         ,$hamburger_icon
         ,get_site_nav()
         ,$site__iconlink_phone
