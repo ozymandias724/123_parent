@@ -85,7 +85,7 @@
                 ,get_permalink($staff_member['staff_member']->ID)
                 ,( !empty($fields['image']['url'] )? $fields['image']['url'] : '' )
                 ,$staff_member['staff_member']->post_title
-                ,( !empty($fields['bio']) ? $fields['bio'] : '' )
+                ,( !empty($fields['short_bio']) ? $fields['short_bio'] : '' )
                 ,$social_media
             );
         }

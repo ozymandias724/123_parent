@@ -5,6 +5,9 @@
 class SetupTheme
 {
 	public static function _init(){
+
+        add_action('switch_theme', 'SetupTheme::switch_theme');
+        add_action('after_switch_theme', 'SetupTheme::after_switch_theme');
         // 
         SetupTheme::clean_head();
         // 
@@ -18,7 +21,22 @@ class SetupTheme
         // 
 		add_action( 'wp_enqueue_scripts', 'SetupTheme::wp_enqueue_scripts');
         // 
-	}
+    }
+    /**
+     * After Switch Theme Hook
+     * (theme has been activated)
+     * @return void
+     */
+    public static function after_switch_theme(){
+    }
+    /**
+     * Switch Theme Hook
+     * (theme has been deactivated)
+     *
+     * @return void
+     */
+    public static function switch_theme(){
+    }
 	// 
 	public static function after_setup_theme(){
 		add_theme_support( 'html5' );
@@ -116,48 +134,50 @@ class SetupTheme
 	// Localize Extra JavaScript Variables
 	public static function localize_javascript(){
         
-        // 
-		$val = var_export(get_field('nav-fadein-toggle', 'option'), true);
-        wp_localize_script( 'main', 'DisableNavTintFadein', $val);
+        if( !is_admin() ){
         
-		// 
-		wp_localize_script( 'main', 'Home_URL', get_site_url());
-        
-        // 
-		wp_localize_script('main', 'PopupTimes', array(
-			'short' => !empty( get_field('popuptime-short', 'option') ) ? get_field('popuptime-short', 'option') : 30,
-			'long' => !empty( get_field('popuptime-long', 'option') ) ? get_field('popuptime-long', 'option') : 3600,
-        ));
-
-        // 
-		wp_localize_script( 'main', 'DisableTimedPopup', json_encode(get_field('ad-disable', 'option')) );
-
-		// Pass ACF fields from Timed Overlay
-		wp_localize_script('main', 'timed_overlay' , array(
-			'first_view' => get_field('popups', 'options')['timed_overlay']['first_view_timer']
-		));
-
-		$fields = get_fields($post->ID);
-		$background = ( !empty($fields['background'] ) ? $fields['background'] : '');
-		$slider_autoplay = ( !empty($background['slider']['autoplay']) ? $background['slider']['autoplay'] : '');
-		$slider_interval = ( !empty($background['slider']['interval'] ) ? $background['slider']['interval'] : '');
-		$slider_transition = ( !empty($background['slider']['transition'] ) ? $background['slider']['transition'] : '');
-		$slider_left_icon = ( !empty($background['slider']['buttons']['left_icon'] ) ? $background['slider']['buttons']['left_icon'] : '');
-		$slider_right_icon = ( !empty($background['slider']['buttons']['right_icon'] ) ? $background['slider']['buttons']['right_icon'] : '');
-		$slider_icons_visibility = ( !empty($background['slider']['buttons']['visibility'] ) ? $background['slider']['buttons']['visibility'] : '');
-		$fade = ( $slider_transition == 'fade' ) ? true : false;
-
-		//Pass acf fields from Hero section to main.js
-		wp_localize_script('main', 'hero_fields', array(
-			'speed' => $slider_interval
-			,'fade' => $fade
-			,'autoplay' => $slider_autoplay 
-			,'left_icon' => $slider_left_icon
-			,'right_icon' => $slider_right_icon
-			,'icons_visible' => $slider_icons_visibility
-			
-		)); 
-		// end localize scripts
+            // 
+            $val = var_export(get_field('nav-fadein-toggle', 'option'), true);
+            wp_localize_script( 'main', 'DisableNavTintFadein', $val);
+            
+            // 
+            wp_localize_script( 'main', 'Home_URL', get_site_url());
+            
+            // 
+            wp_localize_script('main', 'PopupTimes', array(
+                'short' => !empty( get_field('popuptime-short', 'option') ) ? get_field('popuptime-short', 'option') : 30,
+                'long' => !empty( get_field('popuptime-long', 'option') ) ? get_field('popuptime-long', 'option') : 3600,
+            ));
+    
+            // 
+            wp_localize_script( 'main', 'DisableTimedPopup', json_encode(get_field('ad-disable', 'option')) );
+    
+            // Pass ACF fields from Timed Overlay
+            wp_localize_script('main', 'timed_overlay' , array(
+                'first_view' => get_field('popups', 'options')['timed_overlay']['first_view_timer']
+            ));
+            $fields = get_fields(get_the_ID());
+            $background = ( !empty($fields['background'] ) ? $fields['background'] : '');
+            $slider_autoplay = ( !empty($background['slider']['autoplay']) ? $background['slider']['autoplay'] : '');
+            $slider_interval = ( !empty($background['slider']['interval'] ) ? $background['slider']['interval'] : '');
+            $slider_transition = ( !empty($background['slider']['transition'] ) ? $background['slider']['transition'] : '');
+            $slider_left_icon = ( !empty($background['slider']['buttons']['left_icon'] ) ? $background['slider']['buttons']['left_icon'] : '');
+            $slider_right_icon = ( !empty($background['slider']['buttons']['right_icon'] ) ? $background['slider']['buttons']['right_icon'] : '');
+            $slider_icons_visibility = ( !empty($background['slider']['buttons']['visibility'] ) ? $background['slider']['buttons']['visibility'] : '');
+            $fade = ( $slider_transition == 'fade' ) ? true : false;
+    
+            //Pass acf fields from Hero section to main.js
+            wp_localize_script('main', 'hero_fields', array(
+                'speed' => $slider_interval
+                ,'fade' => $fade
+                ,'autoplay' => $slider_autoplay 
+                ,'left_icon' => $slider_left_icon
+                ,'right_icon' => $slider_right_icon
+                ,'icons_visible' => $slider_icons_visibility
+                
+            )); 
+            // end localize scripts
+        }
 	}
 }
 SetupTheme::_init();

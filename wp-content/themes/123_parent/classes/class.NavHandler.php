@@ -42,7 +42,7 @@ class NavHandler
         if( !empty( get_theme_mod( 'custom_logo' ) ) ){
             // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
             // $logo_src = wp_get_attachment_image_src($header['logo']['id'])[0];
-            $logo_srcset = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
+            $logo_src = wp_get_attachment_image_src(get_theme_mod( 'custom_logo' ));
             $logo_srcset = wp_get_attachment_image_srcset(get_theme_mod( 'custom_logo' ));
             $format_logo = '
                 <a class="header-logo" href="%s" title="Logo button">

@@ -47,40 +47,9 @@ function _get_address($ID)
     // empty return string
     $return = [];
     $guide = [];
-    $return['locations'] ='';
-    $guide['locations'] = '
-        <li class="site__fade site__fade-up">
-            <a href="%s">
-                %s
-                <div class="location_content">
-                    <p class="location_heading">%s</p>
-                    %s
-                </div>
-            </a>
-        </li>
-    ';
 
-    if( !empty($cB['locations']) ){
-        
-
-        $return['locations'] = '<div class="site__grid"><ul>';
-        foreach( $cB['locations'] as $i => $location ){
-
-            $fields = get_fields($location['location']->ID);
-            
-            $return['locations'] .= sprintf(
-                $guide['locations']
-                ,get_permalink($location['location']->ID)
-                ,(!empty($fields['content']['image']['url']) ? '<div class="site__bgimg image"><div class="site__bgimg_img" style="background-image: url('.$fields['content']['image']['url'].')"></div></div>': '')
-                ,(!empty($fields['content']['heading']) ? $fields['content']['heading'] : '')
-                ,_get_address($location['location']->ID)
-            );
-
-        }
-
-        $return['locations'] .= '</ul></div>';
-
-    }
+    $return['locations'] = '';
+    
     
     // empty guide string 
     $guide['section'] = '

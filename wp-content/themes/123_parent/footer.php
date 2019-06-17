@@ -293,7 +293,7 @@
     
 ?>
 </main>
-<footer class="site__fade site__fade-up" id="footer_<?php echo get_field('footer', 'options')['style'] ?>">
+<footer class="site__fade site__fade-up colors__main_footer_bg" id="footer_<?php echo get_field('footer', 'options')['style'] ?>">
 <?php 
 
     echo get_footer_content();

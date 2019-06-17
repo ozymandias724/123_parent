@@ -1,3 +1,39 @@
+@mixin flexGrid($w, $c, $g) {
+
+    // grid wrapper
+    >ul {
+        margin: 0 0 0 0; // stretch box to fill its container
+        display: flex; // flexbox
+        flex-flow: row wrap; // row wrap
+        width: $w; // set width to value passed
+        // grid items
+        >li {
+            $i: colWidth($w, $c, $g); // define width
+            width: $i; // set width
+            margin: 0 getVar($sizing, gutter, vw, normal) getVar($sizing, gutter, vw, normal) 0; // default margins for all items
+
+            &:nth-child(n+1) {
+                margin: 0 getVar($sizing, gutter, vw, normal) getVar($sizing, gutter, vw, normal) 0; // default margins re-set for the 'next' item
+            }
+
+            &:nth-child(#{$c}n) {
+                margin: 0 0 $g 0; // remove margin right from the last column of any column count
+            }
+
+            >a {
+                color: getVar($colors, black, full);
+            }
+
+            @if $c==1 {
+
+                &:nth-child(1n),
+                &:nth-child(n+1) {
+                    margin-bottom: getVar($sizing, gutter, px, normal);
+                }
+            }
+        }
+    }
+}
 @mixin centerer {
     position: absolute;
     top: 50%;
