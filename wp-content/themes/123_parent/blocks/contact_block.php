@@ -95,12 +95,9 @@
         </section>
     ';
 
-    
-
     // if left has rows
     $return['left'] = '';
     $return['right'] = '';
-
 
     $return['left'] .= return_column_content($cB['left']);
     $return['right'] .= return_column_content($cB['right']);
@@ -122,7 +119,6 @@
         ,$return['left']
         ,$return['right']
     );
-
 
     // echo return string
     echo $return['section'];
