@@ -1,8 +1,15 @@
 <?php
+
+// require a suite of custom controls (extension)
 require_once('includes/custom-controls.php');
+// hook into the customize register
 add_action( 'customize_register', 'my_customize_register' );
 function my_customize_register($wp_customize) {
 
+/**
+ *   SECTION Fonts 
+ * 
+*/
     $wp_customize->add_section('section_fonts', array(
         'title'		=> esc_html__('Fonts', 'mytheme'),
         'priority'	=> 0,

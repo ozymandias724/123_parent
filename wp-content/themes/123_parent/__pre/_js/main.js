@@ -29,13 +29,18 @@ $(document).ready(function()
      *  If Header Six Exists
      */
     if ($('header').length) {
-        if( $('header.header').css('position') !== 'fixed'){
-            var offset = $('header').height() + $('#popups__banner').height() ;
+        var headerID = $('header.header').attr('id');
+        headerID = headerID.substr(headerID.indexOf("header") + 7);
+        var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
+        var headersDiv = ['four', 'nine'];
+        if( $('header.header').css('position') == 'fixed' && headers.includes(headerID)){
+            var offset = 0;
+            if(headersDiv.includes(headerID)){
+                offset = $('header > div').height() + $('#popups__banner').height() ;
+            }else{
+                offset = $('header').height() + $('#popups__banner').height() ;
+            }
             $('main#page_home').css('margin-top', offset - 1);
-            $(window).on('resize', function(){
-                var offset = $('header').height() + $('#popups__banner').height() ;
-                $('main#page_home').css('margin-top', offset - 1);
-            });
         }
     }
     
