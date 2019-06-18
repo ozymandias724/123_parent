@@ -4388,21 +4388,33 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     margin-top: 20px;
     padding-bottom: 40px;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li {
+  section.block__services > .container.services__two > div:last-of-type > ul > li, section.block__services > .container.services__three > div:last-of-type > ul > li {
     margin: 30px auto;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li > a {
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a, section.block__services > .container.services__three > div:last-of-type > ul > li > a {
     color: inherit;
     display: flex;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li > a .image {
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a .image, section.block__services > .container.services__three > div:last-of-type > ul > li > a .image {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    position: relative;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li > a h3 {
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a .image .image, section.block__services > .container.services__three > div:last-of-type > ul > li > a .image .image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a .image:hover .image, section.block__services > .container.services__two > div:last-of-type > ul > li > a .image:active .image, section.block__services > .container.services__two > div:last-of-type > ul > li > a .image:focus .image, section.block__services > .container.services__three > div:last-of-type > ul > li > a .image:hover .image, section.block__services > .container.services__three > div:last-of-type > ul > li > a .image:active .image, section.block__services > .container.services__three > div:last-of-type > ul > li > a .image:focus .image {
+    transform: scale(1.2);
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a h3, section.block__services > .container.services__three > div:last-of-type > ul > li > a h3 {
     display: flex;
     justify-content: space-between;
     font-size: 3.4rem;
@@ -4413,15 +4425,80 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     border-bottom: 4px dotted #376494;
     margin: 0 0 15px 0;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li > a div.service__details {
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a div.service__details, section.block__services > .container.services__three > div:last-of-type > ul > li > a div.service__details {
     text-align: justify;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
     flex: 1 0 30%;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
+    flex: 1 0 30%;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a {
+    align-items: center;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a h3 {
+    border-bottom: 4px dotted #ffffff;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a p {
+    font-weight: 600;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li > a .image {
+    border-radius: 50%;
+    height: 0;
+    padding-bottom: 90%;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
+    padding-right: 60px;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
+    padding: 30px 50px 30px 50px;
+    background-color: #dedede;
+    min-height: 250px;
+    border-radius: 20px;
+    position: relative;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid #dedede;
+    top: 50%;
+    left: -33px;
+    transform: translateY(-50%);
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
+    padding: 30px 50px 30px 50px;
+    background-color: #dedede;
+    min-height: 250px;
+    border-radius: 20px;
+    position: relative;
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid #dedede;
+    top: 50%;
+    right: -33px;
+    transform: translateY(-50%);
+  }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
+    padding-left: 60px;
   }
   section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 80px 60px 40px 60px;
-    flex: 1 0 70%;
     border-top: 4px solid lightgray;
     border-right: 4px solid lightgray;
     border-bottom: 4px solid lightgray;
@@ -4429,12 +4506,8 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     flex-flow: column nowrap;
     min-height: 400px;
   }
-  section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
-    flex: 1 0 30%;
-  }
   section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
     padding: 80px 60px 40px 60px;
-    flex: 1 0 70%;
     border-top: 4px solid lightgray;
     border-left: 4px solid lightgray;
     border-bottom: 4px solid lightgray;
@@ -4447,6 +4520,31 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   section.site__block.block__services > .container.services__one .site__grid > ul > li > a > div:first-of-type div.image {
     max-width: 60vw;
     max-height: 60vw;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li > a {
+    flex-flow: column nowrap;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li .image {
+    width: 80%;
+    padding-bottom: 70%;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
+    width: 100%;
+    padding-right: 0;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type:before {
+    display: none;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
+    order: 2;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type:after {
+    display: none;
+  }
+  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
+    width: 100%;
+    padding-left: 0;
+    order: 1;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li > a {
     flex-flow: column nowrap;

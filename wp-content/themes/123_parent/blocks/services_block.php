@@ -37,8 +37,7 @@
                     ,(!empty($fields['price']) ? '$'.$fields['price'] : '')
                 );
             }
-
-        }else if( $cB['style'] == 'three'){
+        }else if( $cB['style'] == 'three' || $cB['style'] == 'two'){
 
             if($i % 2 == 0){
                 $guide['services'] = '

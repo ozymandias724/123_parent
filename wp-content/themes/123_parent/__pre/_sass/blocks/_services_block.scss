@@ -63,9 +63,7 @@
                     }
                 }
             }
-            &.services__two {
-                
-            }
+            &.services__two,
             &.services__three {
                 > div:last-of-type {
                     > ul {
@@ -80,6 +78,7 @@
                                     background-size: cover;
                                     width: 100%;
                                     height: 100%;
+                                    @include site__bgimage($g : false, $z : true);
                                 }
                                 h3 {
                                     display: flex;
@@ -101,9 +100,104 @@
                                 > div:first-of-type {
                                     flex: 1 0 30%;
                                 }
+                            }
+                        }
+                        > li:nth-child(even) {
+                            > a {
+                                > div:last-of-type {
+                                    flex: 1 0 30%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li {
+                            > a {
+                                align-items: center;
+                                h3 {
+                                    border-bottom: 4px dotted getVar($colors, white, full);
+                                }
+                                p {
+                                    font-weight: 600;
+                                }
+                                .image {
+                                    border-radius: 50%;
+                                    height: 0;
+                                    padding-bottom: 90%;
+                                    border: 5px solid getVar($colors, white, full);
+                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                        > li:nth-child(odd){
+                            > a {
+                                > div:first-of-type {
+                                    padding-right: getVar($sizing, gutter, px, large);
+                                }
+                                > div:last-of-type {
+                                    padding: 30px 50px 30px 50px;
+                                    background-color: getVar($gustavo, colors, gray7);
+                                    min-height: 250px;
+                                    border-radius: 20px;
+                                    position: relative;
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        border-top: 40px solid transparent;
+                                        border-bottom: 40px solid transparent;
+                                        border-right: 40px solid getVar($gustavo, colors, gray7);
+                                        top: 50%;
+                                        left: -33px;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    padding: 30px 50px 30px 50px;
+                                    background-color: getVar($gustavo, colors, gray7);
+                                    min-height: 250px;
+                                    border-radius: 20px;
+                                    position: relative;
+                                    &:after {
+                                        content: "";
+                                        position: absolute;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        border-top: 40px solid transparent;
+                                        border-bottom: 40px solid transparent;
+                                        border-left: 40px solid getVar($gustavo, colors, gray7);
+                                        top: 50%;
+                                        right: -33px;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                                > div:last-of-type {
+                                    padding-left: getVar($sizing, gutter, px, large);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__three {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
                                 > div:last-of-type {
                                     padding: 80px getVar($sizing, gutter, px, large) 40px getVar($sizing, gutter, px, large);
-                                    flex: 1 0 70%;
                                     border-top: 4px solid getVar($colors, gray, light);
                                     border-right: 4px solid getVar($colors, gray, light);
                                     border-bottom: 4px solid getVar($colors, gray, light);
@@ -115,12 +209,8 @@
                         }
                         > li:nth-child(even) {
                             > a {
-                                > div:last-of-type {
-                                    flex: 1 0 30%;
-                                }
                                 > div:first-of-type {
                                     padding: 80px getVar($sizing, gutter, px, large) 40px getVar($sizing, gutter, px, large);
-                                    flex: 1 0 70%;
                                     border-top: 4px solid getVar($colors, gray, light);
                                     border-left: 4px solid getVar($colors, gray, light);
                                     border-bottom: 4px solid getVar($colors, gray, light);
@@ -156,6 +246,49 @@
                                         max-width: 60vw;
                                         max-height: 60vw;
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li {
+                            > a {
+                                flex-flow: column nowrap;
+                            }
+                            .image {
+                                width: 80%;
+                                padding-bottom: 70%;
+                            }
+                        }
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    width: 100%;
+                                    padding-right: 0;
+                                }
+                                > div:last-of-type {
+                                    &:before {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    order: 2;
+                                    &:after {
+                                        display: none;
+                                    }
+                                }
+                                > div:last-of-type {
+                                    width: 100%;
+                                    padding-left: 0;
+                                    order: 1;
                                 }
                             }
                         }
