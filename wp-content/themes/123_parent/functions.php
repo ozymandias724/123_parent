@@ -47,7 +47,7 @@ if ( ! function_exists( 'yourtheme_fonts_url' ) ){
 	    return esc_url_raw( $fonts_url );
 	}
 }
-wp_enqueue_style('yourtheme-google-fonts', yourtheme_fonts_url(), array(), null);
+// wp_enqueue_style('yourtheme-google-fonts', yourtheme_fonts_url(), array(), null);
 include_once('classes/class.Customizer.php');
 
 

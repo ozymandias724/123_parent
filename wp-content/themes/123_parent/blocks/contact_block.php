@@ -64,7 +64,7 @@
                             $return['column'] .= '</ul>';
                             break;
                             case 'form':
-                                $return['column'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[gravityform id="'.$row['form']->ID.'" title="false" description="false"]').'</div>';
+                                $return['column'] .= '<div class="contact__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[gravityform id="'.$row['form']['id'].'" title="false" description="false"]').'</div>';
                                 break;
                         default:
                             # code...
