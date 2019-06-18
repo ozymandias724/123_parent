@@ -6,6 +6,7 @@
     // empty return string
 
     $return = [];
+    $return['section'] = '';
     $guide = [];
     $return['services'] ='<ul>';
     
