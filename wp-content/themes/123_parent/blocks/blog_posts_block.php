@@ -38,7 +38,6 @@
     }
     $return['posts'] .= '</ul>';
 
-    
     // empty guide string 
     $guide['section'] = '
         <section %s class="site__block block__blog_posts">
@@ -63,7 +62,6 @@
         ,( !empty( $return['posts'] ) ? '<div class="site__grid">'.$return['posts'].'</div>' : '' )
         ,( !empty( $cB['view_all_button']['link'] ) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
-
 
     // echo return string
     echo $return['section'];

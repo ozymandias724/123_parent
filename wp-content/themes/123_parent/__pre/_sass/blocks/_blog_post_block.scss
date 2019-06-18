@@ -1,5 +1,5 @@
 @media only screen {
-    section.site__block.block__blog_posts {
+    section.block__blog_posts {
         div.container { 
             .site__grid {
                 ul {
@@ -51,6 +51,21 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 640px){
+    section.site__block.block__blog_posts {
+        > div.container { 
+            &.narrow, &.medium, &.wide, &.full {
+                > .site__grid {
+                    $c : 1;
+                    $g : getVar($sizing, gutter, vw, normal);
+                    $w : getVar($sizing, content, medium);
+                    $s : true;
+                    @include gridLayout($w, $c, $g, $s);
                 }
             }
         }
