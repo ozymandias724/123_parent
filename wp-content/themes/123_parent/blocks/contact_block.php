@@ -51,12 +51,12 @@
                                     // write this location to the return string for the column
                                     $return['column'] .= sprintf(
                                         $guide['locations']
-                                        ,( !empty($fields['content']['heading']) ? '<h3>'.$fields['content']['heading'].'</h3>' : '')
-                                        ,( !empty($address['address_street']) ? '<p>'.$address['address_street'].'</p>' : '')
-                                        ,( !empty($address['address_street_2']) ? '<p>'.$address['address_street_2'].'</p>' : '')
-                                        ,'<span>'.$address['address_city'] . ', ' . $address['address_state'] . ' ' . $address['address_postcode'].'</span>'
-                                        ,( !empty($fields['content']['phone_number_1']) ? '<br><a href="tel:'.$fields['content']['phone_number_1'].'">'.$fields['content']['phone_number_1'].'</a>' : '' )
-                                        ,( !empty($fields['content']['phone_number_2']) ? '<br><a href="tel:'.$fields['content']['phone_number_2'].'">'.$fields['content']['phone_number_2'].'</a>' : '' )
+                                        ,( !empty($fields['content']['heading']) ? '<h3 class="area__heading">'.$fields['content']['heading'].'</h3>' : '')
+                                        ,( !empty($address['address_street']) ? '<p class="area__address-1">'.$address['address_street'].'</p>' : '')
+                                        ,( !empty($address['address_street_2']) ? '<p class="area__address-2">'.$address['address_street_2'].'</p>' : '')
+                                        ,'<span class="area__city-state-post">'.$address['address_city'] . ', ' . $address['address_state'] . ' ' . $address['address_postcode'].'</span>'
+                                        ,( !empty($fields['content']['phone_number_1']) ? '<a class="area__phone-1" href="tel:'.$fields['content']['phone_number_1'].'"><span>Phone: </span>'.$fields['content']['phone_number_1'].'</a>' : '' )
+                                        ,( !empty($fields['content']['phone_number_2']) ? '<a class="area__phone-2" href="tel:'.$fields['content']['phone_number_2'].'"><span>Phone: </span>'.$fields['content']['phone_number_2'].'</a>' : '' )
                                     );
                                 }
                             }

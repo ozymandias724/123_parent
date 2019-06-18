@@ -22,7 +22,21 @@
                 $w : getVar($sizing, content, full);
                 @include flexGrid($w, $c, $g);
             }
-
+            div.contact__block-form {
+                text-align: left;
+                margin-top: 20px;
+                > p {
+                    font-weight: 700;
+                    border-bottom: 3px solid getVar($gustavo, colors, gray7);
+                    padding-bottom: getVar($sizing, gutter, px, tiny);
+                    margin-bottom: 20px;
+                }
+            }
+            ul.columns {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
             ul.locations {
                 display: flex;
                 flex-flow: column wrap;
@@ -30,21 +44,43 @@
                     background-color: rgba(getVar($colors, black, full), 0.2);
                     border-radius: 15px;
                     margin: 0 0 getVar($sizing, gutter, vw, normal) 0;
-                    padding: getVar($sizing, gutter, px, normal) getVar($sizing, gutter, px, large);
-                    h3 {
-                        @include fontS-34;
+                    padding: getVar($sizing, gutter, px, normal) getVar($sizing, gutter, px, large); 
+                    > h3.area__heading {
                         border-bottom: 4px dotted getVar($colors, white, full);
-                        margin: 0 0 getVar($sizing, gutter, px, normal);
+                        font-family: "Gotham", Helvetica, sans-serif;
+                        @include fontS-34;
+                        font-weight: 500;
+                        padding-bottom: 10px;
+                        margin: 0 0 getVar($sizing, gutter, px, small);
                     }
                     > div {
                         color: getVar($colors, gray, mid);
-                        > a {
+                        @include fontS-14;
+                        color: getVar($colors, gray, mid);
+                        line-height: 2.3rem;
+                        display: block;
+                        font-weight: 500;
+                        > a[class^='area__phone'] {
+                            display: block;
                             color: getVar($colors, gray, mid);
+                            font-weight: 500;
+                            > span {
+                                font-weight: 600;
+                            }
+                        }
+                        > a:hover, > a:focus, > a:active {
+                            opacity: 0.8;
                         }
                     }
                     .site__button {
                         border-radius: getVar($sizing, gutter, px, large);
-
+                        color: getVar($colors, white, full);
+                        font-weight: 700;
+                        background-color: getVar($colors, accent);
+                        padding: 8px 60px 8px 60px;
+                        margin: 20px 0 0 0;
+                        display: inline-block;
+                        text-transform: none;
                     }
                 }
             }
@@ -52,6 +88,45 @@
     }
 }
 
-@media only screen and (max-width: 1280px){}
-@media only screen and (max-width: 960px){}
-@media only screen and (max-width: 640px){}
+@media only screen and (max-width: 1280px){
+    section.block__contact {
+        > .container {
+            $c : 2;
+            $g : getVar($sizing, gutter, vw, normal);
+            &.narrow, &.medium, &.wide, &.full {
+                $w : getVar($sizing, content, medium);
+                @include flexGrid($w, $c, $g);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 960px){
+    section.block__contact {
+        > .container {
+            $c : 2;
+            $g : getVar($sizing, gutter, vw, normal);
+            &.narrow, &.medium, &.wide, &.full {
+                $w : getVar($sizing, content, wide);
+                @include flexGrid($w, $c, $g);
+            }
+            > .columns {
+                > .left, > .right { 
+                    flex: 1 0 100%;
+                    margin: 0 0 0 0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 640px){
+    section.block__contact {
+        > .container {
+            $c : 2;
+            $g : getVar($sizing, gutter, vw, normal);
+            &.narrow, &.medium, &.wide, &.full {
+                $w : getVar($sizing, content, full);
+                @include flexGrid($w, $c, $g);
+            }
+        }
+    }
+}
