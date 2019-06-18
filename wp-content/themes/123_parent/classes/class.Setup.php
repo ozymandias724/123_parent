@@ -105,6 +105,7 @@ class SetupTheme
 	    wp_enqueue_script( 'main' );
 	}
 	public static function enqueue_styles(){
+        wp_enqueue_style('yourtheme-google-fonts', yourtheme_fonts_url(), array(), null);
         wp_enqueue_style( 'main' );
 	}
 

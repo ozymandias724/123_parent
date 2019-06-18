@@ -20,7 +20,36 @@ include_once( 'classes/class.customposts.php' );
 include_once('includes/acf.extensions.php');
 
 
+/********* Google Fonts URL function  ***********/
+// this enqueues the font family we have selected
+if ( ! function_exists( 'yourtheme_fonts_url' ) ){
+	function yourtheme_fonts_url() {
+	    $fonts_url = '';
+	    $content_font = get_theme_mod('main_google_font_list', '');
+	    // Translators: If there are characters in your language that are not supported by Google font, translate it to 'off'. Do not translate into your own language.
+	    // $content_font = _x( 'on', ''.$content_font.' font: on or off', 'yourtheme' );
+
+
+	    if ( 'off' !== $content_font ) {
+	        $font_families = array();
+
+	        if ( 'off' !== $content_font ) {
+	            $font_families[] = $content_font;
+	        }
+
+	        $query_args = array(
+	            'family' => urlencode( implode( '|', array_unique($font_families) ) ),
+	        );
+
+	        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	    }
+
+	    return esc_url_raw( $fonts_url );
+	}
+}
+// wp_enqueue_style('yourtheme-google-fonts', yourtheme_fonts_url(), array(), null);
 include_once('classes/class.Customizer.php');
+
 
 include_once('classes/class.NavWalker.php');    // wordpress built in nav
 include_once('classes/class.NavHandler.php');   // handler for creating theme headers

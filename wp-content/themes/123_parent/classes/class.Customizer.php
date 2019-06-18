@@ -1,4 +1,36 @@
 <?php
+
+// require a suite of custom controls (extension)
+require_once('includes/custom-controls.php');
+// hook into the customize register
+add_action( 'customize_register', 'my_customize_register' );
+function my_customize_register($wp_customize) {
+
+/**
+ *   SECTION Fonts 
+ * 
+*/
+    $wp_customize->add_section('section_fonts', array(
+        'title'		=> esc_html__('Fonts', 'mytheme'),
+        'priority'	=> 0,
+    ));
+
+    /**
+	*Main Google Font Setting
+	**/
+    $wp_customize->add_setting( 'main_google_font_list', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'main_google_font_list', array(
+        'label'      => 'Main Google Font',
+        'section'    => 'section_fonts',
+        'settings'   => 'main_google_font_list',
+    )));
+}
+
+
+
 /**
  * Contains methods for customizing the theme customization screen.
  * 
@@ -396,7 +428,7 @@ class Site__Customizer
         );
         foreach ($fonts_controls as $fonts_control) {
             $wp_customize->add_control($fonts_control['id'], $fonts_control['args']);
-        }   
+        }
         
         //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
         $wp_customize->get_setting('blogname')->transport = 'postMessage';
@@ -603,3 +635,5 @@ add_action('wp_head', array('Site__Customizer', 'header_output'));
 
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action('customize_preview_init', array('Site__Customizer', 'live_preview'));
+
+// 
