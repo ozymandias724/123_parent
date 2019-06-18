@@ -1,5 +1,29 @@
 <?php
-include_once('ext.Customizer.php');
+require_once('includes/custom-controls.php');
+add_action( 'customize_register', 'my_customize_register' );
+function my_customize_register($wp_customize) {
+
+    $wp_customize->add_section('section_fonts', array(
+        'title'		=> esc_html__('Fonts', 'mytheme'),
+        'priority'	=> 0,
+    ));
+
+    /**
+	*Main Google Font Setting
+	**/
+    $wp_customize->add_setting( 'main_google_font_list', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'main_google_font_list', array(
+        'label'      => 'Main Google Font',
+        'section'    => 'section_fonts',
+        'settings'   => 'main_google_font_list',
+    )));
+}
+
+
+
 /**
  * Contains methods for customizing the theme customization screen.
  * 
@@ -604,3 +628,5 @@ add_action('wp_head', array('Site__Customizer', 'header_output'));
 
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action('customize_preview_init', array('Site__Customizer', 'live_preview'));
+
+// 
