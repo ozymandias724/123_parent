@@ -31,6 +31,17 @@
                     padding-bottom: getVar($sizing, gutter, px, tiny);
                     margin-bottom: 20px;
                 }
+                input[type^="submit"] {
+                    color: getVar($colors, white, full);
+                    background-color: getVar($colors, black, full);
+                    padding: 10px 30px;
+                    font-weight: 600;
+                    border: none;
+                    cursor: pointer;
+                }
+                label span {
+                    color: getVar($colors, black, full);
+                }
             }
             ul.columns {
                 position: relative;
