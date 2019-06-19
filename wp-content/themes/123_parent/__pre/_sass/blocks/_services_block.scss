@@ -233,33 +233,6 @@
     }
 }
 
-@media only screen and (max-width: 1280px){
-    section.site__block.block__services {
-        > .container {
-            &.services__two {
-                > div:last-of-type {
-                    > ul {
-                        > li:nth-child(odd) {
-                            > a {
-                                > div:first-of-type {
-                                    flex: 1 0 50%;
-                                }
-                            }
-                        }
-                        > li:nth-child(even){
-                            > a {
-                                > div:last-of-type {
-                                    flex: 1 0 50%;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 @media only screen and (max-width: 960px){
     section.site__block.block__services {
         > .container {
@@ -270,9 +243,11 @@
                             > a {
                                 > div:first-of-type {
                                     padding-right: 35px;
+                                    flex: 1 0 50%;
                                 }
                                 > div:last-of-type {
                                     padding: 30px;
+                                    flex: 1 0 50%;
                                 }
                             }
                         }
@@ -280,9 +255,11 @@
                             > a {
                                 > div:first-of-type {
                                     padding: 30px;
+                                    flex: 1 0 50%;
                                 }
                                 > div:last-of-type {
                                     padding-left: 35px;
+                                    flex: 1 0 50%;
                                 }
                             }
                         }
@@ -320,8 +297,8 @@
                                 flex-flow: column nowrap;
                             }
                             .image {
-                                width: 80%;
-                                padding-bottom: 80%;
+                                width: 60%;
+                                padding-bottom: 60%;
                             }
                         }
                         > li:nth-child(odd) {

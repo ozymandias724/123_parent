@@ -4511,26 +4511,22 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     min-height: 400px;
   }
 }
-@media only screen and (max-width: 1280px) {
-  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
-    flex: 1 0 50%;
-  }
-  section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
-    flex: 1 0 50%;
-  }
-}
 @media only screen and (max-width: 960px) {
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
     padding-right: 35px;
+    flex: 1 0 50%;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 30px;
+    flex: 1 0 50%;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
     padding: 30px;
+    flex: 1 0 50%;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
     padding-left: 35px;
+    flex: 1 0 50%;
   }
 }
 @media only screen and (max-width: 640px) {
@@ -4542,8 +4538,8 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     flex-flow: column nowrap;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li .image {
-    width: 80%;
-    padding-bottom: 80%;
+    width: 60%;
+    padding-bottom: 60%;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
     width: 100%;
