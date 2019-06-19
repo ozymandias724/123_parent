@@ -5005,21 +5005,21 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
 }
 @media only screen {
-  section.block__staff > .container .site__grid > ul > li:hover > a div.staff__content, section.block__staff > .container .site__grid > ul > li:active > a div.staff__content, section.block__staff > .container .site__grid > ul > li:focus > a div.staff__content {
+  section.block__staff > .container div.staff__one.site__grid > ul > li:hover > a div.staff__content, section.block__staff > .container div.staff__one.site__grid > ul > li:active > a div.staff__content, section.block__staff > .container div.staff__one.site__grid > ul > li:focus > a div.staff__content {
     border-top: 3px solid #c2c2c2;
     border-right: 3px solid #c2c2c2;
     border-left: 3px solid #c2c2c2;
   }
-  section.block__staff > .container .site__grid > ul > li:hover > div.staff__social, section.block__staff > .container .site__grid > ul > li:active > div.staff__social, section.block__staff > .container .site__grid > ul > li:focus > div.staff__social {
+  section.block__staff > .container div.staff__one.site__grid > ul > li:hover > div.staff__social, section.block__staff > .container div.staff__one.site__grid > ul > li:active > div.staff__social, section.block__staff > .container div.staff__one.site__grid > ul > li:focus > div.staff__social {
     border-right: 3px solid #c2c2c2;
     border-left: 3px solid #c2c2c2;
     border-bottom: 3px solid #c2c2c2;
   }
-  section.block__staff > .container .site__grid > ul > li > a {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a {
     color: inherit;
     margin-bottom: -10px;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__image {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image {
     position: relative;
     z-index: 2;
     border: 5px solid #ffffff;
@@ -5030,17 +5030,17 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     overflow: hidden;
     position: relative;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__image .image {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image .image {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     transform: scale(1);
     transition: transform 0.4s ease;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__image:hover .image, section.block__staff > .container .site__grid > ul > li > a > div.staff__image:active .image, section.block__staff > .container .site__grid > ul > li > a > div.staff__image:focus .image {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image:hover .image, section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image:active .image, section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image:focus .image {
     transform: scale(1.2);
   }
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__content {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__content {
     border-top: 3px solid transparent;
     border-right: 3px solid transparent;
     border-left: 3px solid transparent;
@@ -5052,7 +5052,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     border-top-right-radius: 20px;
     min-height: 315px;
   }
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__content > h3 {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__content > h3 {
     margin: 0 auto 10px auto;
     font-family: "Gotham", Helvetica, sans-serif;
     font-size: 3.4rem;
@@ -5062,7 +5062,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     padding-bottom: 5px;
     border-bottom: 5px dotted #ffffff;
   }
-  section.block__staff > .container .site__grid > ul > li > div.staff__social {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social {
     padding: 20px 30px 30px 30px;
     background-color: #dedede;
     border-bottom-left-radius: 20px;
@@ -5071,16 +5071,16 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     border-left: 3px solid transparent;
     border-bottom: 3px solid transparent;
   }
-  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social > ul {
     display: flex;
     align-items: center;
     flex-flow: row nowrap;
     justify-content: center;
   }
-  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social > ul > li {
     padding: 5px;
   }
-  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a > i {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social > ul > li > a > i {
     background-color: #979797;
     width: 40px;
     height: 40px;
@@ -5090,12 +5090,68 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     border-radius: 50%;
     color: #dedede;
   }
-  section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:hover > i, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:active > i, section.block__staff > .container .site__grid > ul > li > div.staff__social > ul > li > a:focus > i {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social > ul > li > a:hover > i, section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social > ul > li > a:active > i, section.block__staff > .container div.staff__one.site__grid > ul > li > div.staff__social > ul > li > a:focus > i {
     color: #376494;
+  }
+  section.block__staff > .container div.staff__two > ul > li {
+    margin-bottom: 60px;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a {
+    color: inherit;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div {
+    flex: 1 0 45%;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div .image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 0;
+    margin: 0 auto;
+    padding-bottom: 100%;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div:first-of-type {
+    border: 5px solid #ffffff;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+    margin-right: 40px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div:first-of-type .image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div:first-of-type:hover .image, section.block__staff > .container div.staff__two > ul > li > a > div > div:first-of-type:active .image, section.block__staff > .container div.staff__two > ul > li > a > div > div:first-of-type:focus .image {
+    transform: scale(1.2);
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div:last-of-type {
+    margin-left: 40px;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a > div > div.staff__details {
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a:last-of-type {
+    margin-bottom: 0;
+  }
+  section.block__staff > .container div.staff__two > ul > li > a:only-of-type {
+    margin-bottom: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  section.block__staff > .container .site__grid > ul > li > a > div.staff__image div.image {
+  section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image div.image {
     max-width: 60vw;
     max-height: 60vw;
   }

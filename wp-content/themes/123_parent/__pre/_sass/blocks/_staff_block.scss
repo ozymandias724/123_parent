@@ -3,7 +3,7 @@
 
         > .container {
 
-            .site__grid {
+            div.staff__one.site__grid {
                 >ul {
                     >li {
                         &:hover,
@@ -99,6 +99,55 @@
                     }
                 }
             }
+            div.staff__two {
+                > ul {
+                    > li {
+                        margin-bottom: getVar($sizing, gutter, px, large);
+                        > a {
+                            color: inherit;
+                            > div {
+                                display: flex;
+                                flex-flow: row wrap;
+                                align-items: flex-start;
+                                > div {
+                                    flex: 1 0 45%;
+                                    .image {
+                                        background-repeat: no-repeat;
+                                        background-position: center center;
+                                        background-size: cover;
+                                        width: 100%;
+                                        height: 0;
+                                        margin: 0 auto;
+                                        padding-bottom: 100%;
+                                    }
+                                    &:first-of-type {
+                                        border: 5px solid getVar($colors, white, full);
+                                        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                        margin-right: 40px;
+                                        position: relative;
+                                        margin: 0 auto;
+                                        @include site__bgimage($g : false, $z : true);
+                                    }
+                                    &:last-of-type {
+                                        margin-left: 40px;
+                                    }
+                                    &.staff__details {
+                                        text-align: justify;
+                                        @include fontS-16;
+                                    }
+                                }
+                                
+                            }
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                            &:only-of-type {
+                                margin-bottom: getVar($sizing, gutter, px, large);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -106,7 +155,7 @@
 @media only screen and (max-width: 640px){
     section.block__staff {
         > .container {
-            .site__grid {
+            div.staff__one.site__grid {
                 >ul {
                     >li {
                         >a { 

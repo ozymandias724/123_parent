@@ -15,21 +15,6 @@
 
         // set grid return string
         $return['staff'] = '<ul>';
-        // set grid guide string
-        $guide['staff'] = '
-            <li class="site__fade site__fade-up">
-                <a href="%s">
-                    <div class="staff__image">
-                        <div class="image less_size_block site__bgimg_img" style="background-image:url(%s);"></div>
-                    </div>
-                    <div class="staff__content"> 
-                        <h3>%s</h3>
-                        <div class="staff__details block__item-body">%s</div>
-                    </div>
-                </a>
-                <div class="staff__social">%s</div>
-            </li>
-        ';
 
         // loop thru each staff member
         foreach($cB['staff_members'] as $i => $staff_member) {
@@ -79,17 +64,63 @@
                 }
                 $social_media .= '</ul>';
             }
+
+            if( $cB['style'] == 'one' ){
+
+                // style one grid guide string
+                $guide['staff'] = '
+                    <li class="site__fade site__fade-up">
+                        <a href="%s">
+                            <div class="staff__image">
+                                <div class="image less_size_block site__bgimg_img" style="background-image:url(%s);"></div>
+                            </div>
+                            <div class="staff__content"> 
+                                <h3>%s</h3>
+                                <div class="staff__details block__item-body">%s</div>
+                            </div>
+                        </a>
+                        <div class="staff__social">%s</div>
+                    </li>
+                ';
+
+                // write to return string
+                $return['staff'] .= sprintf(
+                    $guide['staff']
+                    ,get_permalink($staff_member['staff_member']->ID)
+                    ,( !empty($fields['image']['url'] )? $fields['image']['url'] : '' )
+                    ,$staff_member['staff_member']->post_title
+                    ,( !empty($fields['short_bio']) ? $fields['short_bio'] : '' )
+                    ,$social_media
+                );
+
+            }else if( $cB['style'] == 'two' ){
+                
+                // style two grid guide string
+                $guide['staff'] = '
+                    <li class="site__fade site__fade-up">
+                        <a href="%s">
+                            <div>
+                                <div class="staff__image">
+                                    <div class="image site__bgimg_img" style="background-image:url(%s);"></div>
+                                </div>
+                                <div class="staff__details block__item-body">%s</div>
+                            </div>
+                        </a>
+                    </li>
+                ';
+
+                // write to return string
+                $return['staff'] .= sprintf(
+                    $guide['staff']
+                    ,get_permalink($staff_member['staff_member']->ID)
+                    ,( !empty($fields['image']['url'] )? $fields['image']['url'] : '' )
+                    ,( !empty($fields['full_bio']) ? $fields['full_bio'] : '' )
+                );
+ 
+            }
             
-            // write to return string
-            $return['staff'] .= sprintf(
-                $guide['staff']
-                ,get_permalink($staff_member['staff_member']->ID)
-                ,( !empty($fields['image']['url'] )? $fields['image']['url'] : '' )
-                ,$staff_member['staff_member']->post_title
-                ,( !empty($fields['short_bio']) ? $fields['short_bio'] : '' )
-                ,$social_media
-            );
         }
+        // close grid return string
         $return['staff'] .= '</ul>';
     }
 
@@ -115,7 +146,7 @@
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
-        ,( !empty($return['staff']) ? '<div class="site__grid">'.$return['staff'].'</div>' : '' )
+        ,( !empty($return['staff']) ? '<div class="'.( ($cB['style'] == 'one')? 'staff__'.$cB['style'] .' site__grid' : 'staff__'.$cB['style']) .'">'.$return['staff'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 
