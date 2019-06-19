@@ -98,6 +98,11 @@
                         > li:nth-child(odd) {
                             > a {
                                 > div:first-of-type {
+                                    position: relative;
+                                    z-index: 2;
+                                    width: min-content; 
+                                    margin: 0 auto;
+                                    @include site__bgimage($g : false, $z : true);
                                     flex: 1 0 30%;
                                 }
                                 > div:last-of-type {
@@ -111,6 +116,11 @@
                                     flex: 1 0 70%;
                                 }
                                 > div:last-of-type {
+                                    position: relative;
+                                    z-index: 2;
+                                    width: min-content; 
+                                    margin: 0 auto;
+                                    @include site__bgimage($g : false, $z : true);
                                     flex: 1 0 30%;
                                 }
                             }
@@ -134,9 +144,7 @@
                                 .image {
                                     border-radius: 50%;
                                     height: 0;
-                                    padding-bottom: 100%; 
-                                    border: 5px solid getVar($colors, white, full);
-                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    padding-bottom: 95%; 
                                     margin: 0 auto;
                                 }
                             }
@@ -144,9 +152,12 @@
                         > li:nth-child(odd){
                             > a {
                                 > div:first-of-type {
-                                    padding-right: getVar($sizing, gutter, px, large);
+                                    border: 5px solid getVar($colors, white, full);
+                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    border-radius: 50%; 
                                 }
                                 > div:last-of-type {
+                                    margin-left: getVar($sizing, gutter, px, large);
                                     padding: 30px 50px 30px 50px;
                                     background-color: getVar($gustavo, colors, gray7);
                                     border: 3px solid transparent;
@@ -178,6 +189,7 @@
                         > li:nth-child(even){
                             > a {
                                 > div:first-of-type {
+                                    margin-right: getVar($sizing, gutter, px, large);
                                     padding: 30px 50px 30px 50px;
                                     background-color: getVar($gustavo, colors, gray7);
                                     min-height: 250px;
@@ -199,7 +211,9 @@
                                     }
                                 }
                                 > div:last-of-type {
-                                    padding-left: getVar($sizing, gutter, px, large);
+                                    border: 5px solid getVar($colors, white, full);
+                                    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                    border-radius: 50%; 
                                 }
                                 &:hover, &:active, &:focus {
                                     > div:first-of-type {
@@ -225,6 +239,9 @@
                                     flex-flow: column nowrap;
                                     min-height: 400px;
                                 }
+                                > div:first-of-type {
+                                    width: 100%;
+                                }
                                 &:hover, &:active, &:focus {
                                     > div:last-of-type {
                                         border-top: 4px solid getVar($gustavo, colors, gray1);
@@ -236,6 +253,9 @@
                         }
                         > li:nth-child(even) {
                             > a {
+                                > div:last-of-type {
+                                    width: 100%;
+                                }
                                 > div:first-of-type {
                                     padding: 80px getVar($sizing, gutter, px, large) 40px getVar($sizing, gutter, px, large);
                                     border-top: 4px solid getVar($colors, gray, light);
@@ -270,10 +290,10 @@
                         > li:nth-child(odd) {
                             > a {
                                 > div:first-of-type {
-                                    padding-right: 35px;
                                     flex: 1 0 50%;
                                 }
                                 > div:last-of-type {
+                                    margin-left: 30px;
                                     padding: 30px;
                                     flex: 1 0 50%;
                                 }
@@ -282,11 +302,11 @@
                         > li:nth-child(even){
                             > a {
                                 > div:first-of-type {
+                                    margin-right: 30px;
                                     padding: 30px;
                                     flex: 1 0 50%;
                                 }
                                 > div:last-of-type {
-                                    padding-left: 35px;
                                     flex: 1 0 50%;
                                 }
                             }
@@ -352,18 +372,15 @@
                             > a {
                                 flex-flow: column nowrap;
                             }
-                            .image {
-                                width: 60%;
-                                padding-bottom: 60%;
-                            }
                         }
                         > li:nth-child(odd) {
                             > a {
                                 > div:first-of-type {
-                                    width: 100%;
-                                    padding-right: 0;
+                                    width: 60%;
+                                    
                                 }
                                 > div:last-of-type {
+                                    margin-left: 0;
                                     &:before {
                                         display: none;
                                     }
@@ -374,13 +391,13 @@
                             > a {
                                 > div:first-of-type {
                                     order: 2;
+                                    margin-right: 0;
                                     &:after {
                                         display: none;
                                     }
                                 }
                                 > div:last-of-type {
-                                    width: 100%;
-                                    padding-left: 0;
+                                    width: 60%;
                                     order: 1;
                                 }
                             }
