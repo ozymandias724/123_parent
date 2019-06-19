@@ -7,6 +7,7 @@
 
     // set return and guide string arrays
     $return = [];
+    $return['section'] = '';
     $guide = [];
     
     // build a grid of post objects
