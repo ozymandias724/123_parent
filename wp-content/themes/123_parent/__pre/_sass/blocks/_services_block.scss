@@ -78,7 +78,6 @@
                                     background-size: cover;
                                     width: 100%;
                                     height: 100%;
-                                    @include site__bgimage($g : false, $z : true);
                                 }
                                 h3 {
                                     display: flex;
@@ -120,6 +119,7 @@
                                 align-items: center;
                                 h3 {
                                     border-bottom: 4px dotted getVar($colors, white, full);
+                                    flex-flow: row wrap;
                                 }
                                 p {
                                     font-weight: 600;
@@ -226,11 +226,65 @@
         }
     }
 }
+
 @media only screen and (max-width: 1280px){
-
+    section.site__block.block__services {
+        > .container {
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:last-of-type {
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-@media only screen and (max-width: 960px){
 
+@media only screen and (max-width: 960px){
+    section.site__block.block__services {
+        > .container {
+            &.services__two {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    padding-right: 35px;
+                                }
+                                > div:last-of-type {
+                                    padding: 30px;
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    padding: 30px;
+                                }
+                                > div:last-of-type {
+                                    padding-left: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 640px){
