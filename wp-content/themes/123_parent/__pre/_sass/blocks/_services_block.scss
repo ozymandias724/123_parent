@@ -81,6 +81,7 @@
                                 }
                                 h3 {
                                     display: flex;
+                                    flex-flow: row wrap;
                                     justify-content: space-between;
                                     @include fontS-34;
                                     font-weight: 800;
@@ -148,8 +149,10 @@
                                 > div:last-of-type {
                                     padding: 30px 50px 30px 50px;
                                     background-color: getVar($gustavo, colors, gray7);
+                                    border: 3px solid transparent;
                                     min-height: 250px;
                                     border-radius: 20px;
+                                    border: 3px solid transparent;
                                     position: relative;
                                     &:before {
                                         content: "";
@@ -165,6 +168,11 @@
                                         transform: translateY(-50%);
                                     }
                                 }
+                                &:hover, &:active, &:focus {
+                                    > div:last-of-type {
+                                        border: 3px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
                             }
                         }
                         > li:nth-child(even){
@@ -175,6 +183,7 @@
                                     min-height: 250px;
                                     border-radius: 20px;
                                     position: relative;
+                                    border: 3px solid transparent;
                                     &:after {
                                         content: "";
                                         position: absolute;
@@ -191,6 +200,11 @@
                                 }
                                 > div:last-of-type {
                                     padding-left: getVar($sizing, gutter, px, large);
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:first-of-type {
+                                        border: 3px solid getVar($gustavo, colors, gray1);
+                                    }
                                 }
                             }
                         }
@@ -211,6 +225,13 @@
                                     flex-flow: column nowrap;
                                     min-height: 400px;
                                 }
+                                &:hover, &:active, &:focus {
+                                    > div:last-of-type {
+                                        border-top: 4px solid getVar($gustavo, colors, gray1);
+                                        border-right: 4px solid getVar($gustavo, colors, gray1);
+                                        border-bottom: 4px solid getVar($gustavo, colors, gray1);
+                                    }
+                                }
                             }
                         }
                         > li:nth-child(even) {
@@ -223,6 +244,13 @@
                                     display: flex;
                                     flex-flow: column nowrap;
                                     min-height: 400px;
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:first-of-type {
+                                        border-top: 4px solid getVar($gustavo, colors, gray1);
+                                        border-left: 4px solid getVar($gustavo, colors, gray1);
+                                        border-bottom: 4px solid getVar($gustavo, colors, gray1);
+                                    }
                                 }
                             }
                         }
@@ -259,6 +287,34 @@
                                 }
                                 > div:last-of-type {
                                     padding-left: 35px;
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.services__three {
+                > div:last-of-type {
+                    > ul {
+                        > li:nth-child(odd) {
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 50%;
+                                }
+                                > div:last-of-type {
+                                    padding: 80px 10px 40px 10px;
+                                    flex: 1 0 50%;
+                                }
+                            }
+                        }
+                        > li:nth-child(even){
+                            > a {
+                                > div:first-of-type {
+                                    flex: 1 0 50%;
+                                    padding: 80px 10px 40px 10px;
+                                }
+                                > div:last-of-type {
                                     flex: 1 0 50%;
                                 }
                             }
@@ -338,9 +394,13 @@
                         > li {
                             > a {
                                 flex-flow: column nowrap;
+                                margin: 0 auto;
+                                max-width: getVar($sizing, content, medium);
                             }
                             .image {
                                 height: 0;
+                                width: 100%;
+                                margin: 0 auto;
                                 padding-bottom: 100%;
                             }
                         }
@@ -350,21 +410,35 @@
                                     flex: 1 0 100%;
                                 }
                                 > div:last-of-type {
+                                    padding: 20px 10px 20px 10px;
+                                    min-height: min-content;
                                     border-top: none;
                                     border-left: 4px solid getVar($colors, gray, light);
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:last-of-type {
+                                        border-left: 4px solid getVar($gustavo, colors, gray1);
+                                    }
                                 }
                             }
                         }
                         > li:nth-child(even){
                             > a {
                                 > div:first-of-type {
+                                    padding: 20px 10px 20px 10px;
                                     border-top: none;
                                     border-right: 4px solid getVar($colors, gray, light);
                                     order: 2;
+                                    min-height: min-content;
                                 }
                                 > div:last-of-type {
                                     flex: 1 0 100%;
                                     order: 1;
+                                }
+                                &:hover, &:active, &:focus {
+                                    > div:first-of-type {
+                                        border-right: 4px solid getVar($gustavo, colors, gray1);
+                                    }
                                 }
                             }
                         }

@@ -330,7 +330,6 @@
                     display: flex;
                     flex-flow: column nowrap;
                     text-align: left;
-                    margin-right: 20px;
                     >span {
                         color: getVar($colors, white, full);
                         &:first-of-type {
@@ -344,6 +343,10 @@
                         font-weight: 500;
                         color: getVar($gustavo, colors, blue1);
                     }
+                }
+
+                .site__copyright_banner + .footer_payment_types {
+                    margin-left: 20px;
                 }
 
                 .footer_payment_types {

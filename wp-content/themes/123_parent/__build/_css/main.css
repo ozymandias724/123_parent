@@ -2723,7 +2723,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     display: flex;
     flex-flow: column nowrap;
     text-align: left;
-    margin-right: 20px;
   }
   footer#footer_one > div.footer_copyright > div .site__copyright_banner > span {
     color: #ffffff;
@@ -2736,6 +2735,9 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     margin-top: 5px;
     font-weight: 500;
     color: #3b6c9e;
+  }
+  footer#footer_one > div.footer_copyright > div .site__copyright_banner + .footer_payment_types {
+    margin-left: 20px;
   }
   footer#footer_one > div.footer_copyright > div .footer_payment_types {
     display: flex;
@@ -4404,6 +4406,7 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li > a h3, section.block__services > .container.services__three > div:last-of-type > ul > li > a h3 {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     font-size: 3.4rem;
     line-height: 4.8rem;
@@ -4452,8 +4455,10 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 30px 50px 30px 50px;
     background-color: #dedede;
+    border: 3px solid transparent;
     min-height: 250px;
     border-radius: 20px;
+    border: 3px solid transparent;
     position: relative;
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type:before {
@@ -4469,12 +4474,16 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     left: -33px;
     transform: translateY(-50%);
   }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a:hover > div:last-of-type, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a:active > div:last-of-type, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a:focus > div:last-of-type {
+    border: 3px solid #c2c2c2;
+  }
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
     padding: 30px 50px 30px 50px;
     background-color: #dedede;
     min-height: 250px;
     border-radius: 20px;
     position: relative;
+    border: 3px solid transparent;
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type:after {
     content: "";
@@ -4492,6 +4501,9 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
     padding-left: 60px;
   }
+  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a:hover > div:first-of-type, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a:active > div:first-of-type, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a:focus > div:first-of-type {
+    border: 3px solid #c2c2c2;
+  }
   section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 80px 60px 40px 60px;
     border-top: 4px solid lightgray;
@@ -4501,6 +4513,11 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     flex-flow: column nowrap;
     min-height: 400px;
   }
+  section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a:hover > div:last-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a:active > div:last-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a:focus > div:last-of-type {
+    border-top: 4px solid #c2c2c2;
+    border-right: 4px solid #c2c2c2;
+    border-bottom: 4px solid #c2c2c2;
+  }
   section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
     padding: 80px 60px 40px 60px;
     border-top: 4px solid lightgray;
@@ -4509,6 +4526,11 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     display: flex;
     flex-flow: column nowrap;
     min-height: 400px;
+  }
+  section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a:hover > div:first-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a:active > div:first-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a:focus > div:first-of-type {
+    border-top: 4px solid #c2c2c2;
+    border-left: 4px solid #c2c2c2;
+    border-bottom: 4px solid #c2c2c2;
   }
 }
 @media only screen and (max-width: 960px) {
@@ -4526,6 +4548,20 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
     padding-left: 35px;
+    flex: 1 0 50%;
+  }
+  section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
+    flex: 1 0 50%;
+  }
+  section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
+    padding: 80px 10px 40px 10px;
+    flex: 1 0 50%;
+  }
+  section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
+    flex: 1 0 50%;
+    padding: 80px 10px 40px 10px;
+  }
+  section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
     flex: 1 0 50%;
   }
 }
@@ -4561,26 +4597,40 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li > a {
     flex-flow: column nowrap;
+    margin: 0 auto;
+    max-width: 65vw;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li .image {
     height: 0;
+    width: 100%;
+    margin: 0 auto;
     padding-bottom: 100%;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
     flex: 1 0 100%;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
+    padding: 20px 10px 20px 10px;
+    min-height: min-content;
     border-top: none;
     border-left: 4px solid lightgray;
   }
+  section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a:hover > div:last-of-type, section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a:active > div:last-of-type, section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a:focus > div:last-of-type {
+    border-left: 4px solid #c2c2c2;
+  }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
+    padding: 20px 10px 20px 10px;
     border-top: none;
     border-right: 4px solid lightgray;
     order: 2;
+    min-height: min-content;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
     flex: 1 0 100%;
     order: 1;
+  }
+  section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a:hover > div:first-of-type, section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a:active > div:first-of-type, section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a:focus > div:first-of-type {
+    border-right: 4px solid #c2c2c2;
   }
 }
 @media only screen {
