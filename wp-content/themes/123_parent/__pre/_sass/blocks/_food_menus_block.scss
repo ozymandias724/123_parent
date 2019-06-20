@@ -47,7 +47,7 @@
                             > h3.menu__item-price {
                                 display: flex;
                                 justify-content: space-between;
-                                flex-flow: row nowrap;
+                                flex-flow: row wrap;
                                 @include fontS-20;
                                 font-weight: 700;
                                 text-align: left;
@@ -157,6 +157,7 @@
                             // menu items title
                             > h3.menu__item-price {
                                 display: flex;
+                                flex-flow: row wrap;
                                 font-weight: 700; 
                                 justify-content: space-between;
                                 border-bottom: 3px solid getVar($colors, accent);
@@ -278,6 +279,7 @@
                                     color: getVar($gustavo, colors, gray11);
                                 }
                                 > h3.menu__item-price {
+                                    flex-flow: row wrap;
                                     display: flex;
                                     @include fontS-20;
                                     font-weight: 700;
@@ -363,6 +365,10 @@
                     justify-content: center;
                     margin-bottom: 30px;
                     align-items: stretch;
+                    &:after {
+                        content: "";
+                        flex: auto;
+                    }
                     li {
                         margin: 5px 0;
                         a {
@@ -520,9 +526,7 @@
 @media only screen and (max-width: 640px){
     section.block__food_menus {
         > .container {
-            #tabs_style__divider,
-            #tabs_style__pills,
-            #tabs_style__sidebar {
+            .tabs {
                 flex-flow: column nowrap;
                 > .menu_area {
                     > .menu_section {

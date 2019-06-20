@@ -15,19 +15,16 @@ $nav4_width : 1025px;
             flex-flow: row nowrap;
             align-items: center;
             height: 110px;
+            position: relative;
             > .custom-logo-link {
                 padding: 10px;
+                margin: 0 auto;
                 > .custom-logo {
                     max-height: 90px;
-                    margin: 0 auto;
                 }
-            }
-            > a {
-                width: 341px;
             }
             .site__social-media {
                 height: 68px;
-                width: 341px;
                 //Social icons list items
                 li {
                     display: inline-block;
@@ -68,6 +65,8 @@ $nav4_width : 1025px;
                 line-height: 68px;
                 display: inline-block;
                 text-align: right;
+                position: absolute;
+                right: 0;
                 font-weight: 500;
                 &:before {
                     margin-right: 10px;

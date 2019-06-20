@@ -192,9 +192,20 @@
             }
 
             #footer_company_info {
-                margin-top: 20px;
+                height: 255px;
+                margin-top: 0;
+                position: relative;
+                margin-bottom: 20px;
                 flex: 1 0 10%;
                 font-family: "Montserrat", serif;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-end;
+
+                .site__footer_logo {
+                    position: absolute;
+                    top: 20px;
+                }                
 
                 .footer_phone_1,
                 .footer_phone_2,
@@ -450,6 +461,7 @@
                     align-items: center;
                     display: flex;
                     justify-content: space-between;
+                    margin-left: auto;
 
                     >h3 {
                         margin-right: 20px;

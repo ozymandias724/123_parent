@@ -131,7 +131,7 @@
                                 .image {
                                     border-radius: 50%;
                                     height: 0;
-                                    padding-bottom: 95%; 
+                                    padding-bottom: 100%; 
                                     margin: 0 auto;
                                 }
                             }
@@ -218,7 +218,7 @@
                         > li:nth-child(odd) {
                             > a {
                                 > div:last-of-type {
-                                    padding: 80px getVar($sizing, gutter, px, large) 40px getVar($sizing, gutter, px, large);
+                                    padding: 80px getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large);
                                     border-top: 4px solid getVar($colors, gray, light);
                                     border-right: 4px solid getVar($colors, gray, light);
                                     border-bottom: 4px solid getVar($colors, gray, light);
@@ -244,7 +244,7 @@
                                     width: 100%;
                                 }
                                 > div:first-of-type {
-                                    padding: 80px getVar($sizing, gutter, px, large) 40px getVar($sizing, gutter, px, large);
+                                    padding: 80px getVar($sizing, gutter, px, large) 0 getVar($sizing, gutter, px, large);
                                     border-top: 4px solid getVar($colors, gray, light);
                                     border-left: 4px solid getVar($colors, gray, light);
                                     border-bottom: 4px solid getVar($colors, gray, light);

@@ -4,13 +4,13 @@ $nav6_width: 1200px;
     //Header 6
     header#opt_header_six {
         padding: 0px;
-        background-color: $accent;
+        background-color: getVar($colors, accent);
         //First div element, parent of address and phone number section and social icons section
         > div:first-of-type {
             display: flex;
-            background-color: $accent;
+            background-color: getVar($colors, accent);
             width: 100%;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             height: 50px;
             max-width: $nav6_width;
@@ -39,12 +39,9 @@ $nav6_width: 1200px;
                     transform: rotate(90deg);
                 }
             }
-            // Address
-            .site__iconlink-address {
-                margin-right: auto;
-            }
             //Social icons unordered list
             .site__social-media {
+                margin-left: auto;
                 list-style: none;
                 > li {
                     font-size: 16px;
@@ -65,6 +62,7 @@ $nav6_width: 1200px;
         }
         //Bottom part including logo and navigational menu and quote button
         >div:last-of-type {
+            height: 110px;
             background-color: white;
             box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
             display: flex;
@@ -87,8 +85,10 @@ $nav6_width: 1200px;
                 width: 100%;
                 max-width: $nav6_width;
                 line-height: 110px;
+                justify-content: flex-end;
                 //Navigational menu unordered list
                 .navlinks {
+                    margin-left: auto;
                     list-style: none;
                     //Navigational menu unordered list items
                     .navlinks-item {
@@ -124,7 +124,7 @@ $nav6_width: 1200px;
                 margin-left: 0;
                 line-height: initial;
                 border: none;
-            }            
+            }           
         }
         //Phone number and address links
         .site__iconlink-phone,

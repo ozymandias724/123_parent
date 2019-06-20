@@ -455,8 +455,8 @@ class NavHandler
                     %s
                     <nav>
                         %s
+                        %s
                     </nav>
-                    %s
                 </div>
             </div>
         </header>
