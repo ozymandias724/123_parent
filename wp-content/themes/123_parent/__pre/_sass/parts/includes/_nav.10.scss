@@ -11,17 +11,13 @@ $nav10_width : 1050px;
             margin: 0 auto;
             max-width: $nav10_width;
             display: flex;
-            justify-content: space-between;
             align-items: center;
             font-size: 18px;
             height: 81px;
             // Logo 
             .custom-logo-link {
                 padding: 10px;
-                flex: 0 1 60%;
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
+                margin: 0 auto;
                 > .custom-logo {
                     max-height: 60px;
                 }
@@ -31,18 +27,13 @@ $nav10_width : 1050px;
                 list-style: none;
                 display: flex;
                 justify-content: flex-end;
-                flex: 0 1 20%;
             }
             // Social icons unordered list items links
             .site__social-media li a {
                 padding: 0 15px;
                 line-height: 81px;
                 display: inline-block;
-                color: $black;
-            }
-            // Site bars
-            .site__bars {
-                flex: 0 1 20%;
+                color: getVar($colors, black, full);
             }
             //Hamburger icon link and social icons unordered list
             .site__bars,

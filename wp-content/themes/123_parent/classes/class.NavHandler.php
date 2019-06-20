@@ -75,21 +75,21 @@ class NavHandler
         $site__iconlink_location_br = '';
         if( !empty($company_address_br) ){
             $site__iconlink_location_br .= '
-                <a href="javascript:;" title="" class="site__iconlink site__iconlink-address">'.$company_address_br.'</a>
+                <a href="javascript:;" class="site__iconlink site__iconlink-address">'.$company_address_br.'</a>
             ';
         }
 
         $site__iconlink_location = '';
         if( !empty($company_address) ){
             $site__iconlink_location .= '
-                <a href="javascript:;" title="" class="site__iconlink site__iconlink-address">'.$company_address.'</a>
+                <a href="javascript:;" class="site__iconlink site__iconlink-address">'.$company_address.'</a>
             ';
         }
 
         $site__iconlink_phone = ''; 
         if( !empty($phone_number_1) ){
             $site__iconlink_phone .= '
-                <a href="tel:'.$phone_number_1.'" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
+                <a href="tel:'.$phone_number_1.'" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
             ';
         }
 

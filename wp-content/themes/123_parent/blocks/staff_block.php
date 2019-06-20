@@ -27,7 +27,7 @@
                 $social_media .= '<ul class="site__social-media">';
                 $social_format = '
                     <li>
-                        <a href="%s" title="%s" target="%s">
+                        <a href="%s" title="%s" target="_blank">
                             %s
                         </a>
                     </li>
@@ -39,14 +39,12 @@
     
                     $url = ( !empty($social_icon['link']['url']) ? $social_icon['link']['url'] : '' );
                     $title = ( !empty($social_icon['link']['title']) ? $social_icon['link']['title'] : '' );
-                    $target = ( !empty($social_icon['link']['target']) ? $social_icon['link']['target'] : '');
     
                     if( !empty($social_icon['image']) ){
                         $social_media .= sprintf(
                             $social_format
                             ,$url
                             ,$title
-                            ,$target
                             ,( !empty($img['url']) ? '<img src="'.$img['url'].'" />' : '')
                         );
                     }else if( !empty($social_icon['icon']) ){
@@ -54,7 +52,6 @@
                             $social_format
                             ,$url
                             ,$title
-                            ,$target
                             ,( !empty($fa) ? $fa : '')
                         );
                     }else{

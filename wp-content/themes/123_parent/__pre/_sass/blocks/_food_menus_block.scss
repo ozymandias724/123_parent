@@ -114,10 +114,11 @@
                 &.menu_text_half {
                     > h2 {
                         text-transform: uppercase;
-                        font-weight: 500;
+                        font-weight: 600;
                         position: relative;
                         letter-spacing: normal;
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
+                        @include fontS-34;
                         span {
                             background: getVar($colors, white, full);
                             padding: 0 15px;
@@ -246,7 +247,7 @@
                         }
                         > h2 {
                             text-transform: uppercase;
-                            font-weight: 700;
+                            font-weight: 600;
                             position: relative;
                             letter-spacing: normal;
                             margin-bottom: 20px;
