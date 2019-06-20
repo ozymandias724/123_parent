@@ -112,13 +112,14 @@
                 }
                 // Menu Type
                 &.menu_text_half {
-                    > h2 {
+                    > h2 { 
                         text-transform: uppercase;
                         font-weight: 600;
                         position: relative;
+                        font-family: 'Slabo', serif; 
                         letter-spacing: normal;
                         margin-bottom: 20px;
-                        @include fontS-34;
+                        @include fontS-40;
                         span {
                             background: getVar($colors, white, full);
                             padding: 0 15px;
@@ -249,9 +250,10 @@
                             text-transform: uppercase;
                             font-weight: 600;
                             position: relative;
+                            font-family: 'Slabo', serif; 
                             letter-spacing: normal;
                             margin-bottom: 20px;
-                            @include fontS-34;
+                            @include fontS-40;
                             span {
                                 background: getVar($colors, white, full);
                                 padding: 0 15px 0 0;

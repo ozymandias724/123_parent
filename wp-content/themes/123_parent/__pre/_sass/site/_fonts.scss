@@ -34,6 +34,11 @@
     line-height: 4.8rem;
 }
 
+@mixin fontS-40 {
+    font-size: 4rem;
+    line-height: 5.4rem;
+}
+
 @mixin fontS-50 {
     font-size: 5rem;
     line-height: 7.2rem;
@@ -45,6 +50,14 @@
 }
 
 // load font files
+
+@font-face {
+    font-family: 'Slabo';
+    src: url('../../library/fonts/Slabo13px-Regular.woff2') format('woff2'),
+        url('../../library/fonts/Slabo13px-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Gotham';

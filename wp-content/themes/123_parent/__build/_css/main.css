@@ -5,7 +5,6 @@
 .slick-slider {
   position: relative;
   display: block;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -13,7 +12,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -35,10 +33,6 @@
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -121,8 +115,6 @@
   top: 50%;
   margin-top: -10px\9 ;
   /*lte IE 8*/
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
@@ -246,6 +238,12 @@
   opacity: 0.75;
 }
 
+@font-face {
+  font-family: "Slabo";
+  src: url("../../library/fonts/Slabo13px-Regular.woff2") format("woff2"), url("../../library/fonts/Slabo13px-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "Gotham";
   src: url("../../library/fonts/Gotham-Thin.woff2") format("woff2"), url("../../library/fonts/Gotham-Thin.woff") format("woff");
@@ -843,7 +841,8 @@ h6 {
   }
 
   img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     height: auto;
   }
 }
@@ -2327,7 +2326,8 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   .mobilefooter > div:nth-of-type(1) > a > img {
     height: auto;
     max-width: 200px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .mobilefooter > div:nth-of-type(1) > div {
     display: flex;
@@ -2451,7 +2451,6 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
 
   footer.mobilefooter.invertlogo > div > a > img {
-    -webkit-filter: invert(100%);
     filter: invert(100%);
   }
 }
@@ -3125,7 +3124,8 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     cursor: pointer;
   }
   section.hero#hero_slider .slider_img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     position: relative;
     top: 0;
     left: 50%;
@@ -4336,6 +4336,8 @@ section.site__block > .container.full .site__grid > ul > li .block.less_size_blo
     border: 3px solid #c2c2c2;
   }
   section.block__services > .container.services__one .site__grid > ul > li > a > div:first-of-type {
+    width: -webkit-min-content;
+    width: -moz-min-content;
     width: min-content;
     position: relative;
     z-index: 2;
@@ -4612,6 +4614,8 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 20px 10px 20px 10px;
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
     min-height: min-content;
     border-top: none;
     border-left: 4px solid lightgray;
@@ -4624,6 +4628,8 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     border-top: none;
     border-right: 4px solid lightgray;
     order: 2;
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
     min-height: min-content;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
@@ -5025,6 +5031,8 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     z-index: 2;
     border: 5px solid #ffffff;
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.3);
+    width: -webkit-min-content;
+    width: -moz-min-content;
     width: min-content;
     margin: 0 auto;
     overflow: hidden;
@@ -5266,10 +5274,11 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
+    font-family: "Slabo", serif;
     letter-spacing: normal;
     margin-bottom: 20px;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 4rem;
+    line-height: 5.4rem;
   }
   section.block__food_menus > .container .menu_section.menu_text_half > h2 span {
     background: #ffffff;
@@ -5400,10 +5409,11 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
+    font-family: "Slabo", serif;
     letter-spacing: normal;
     margin-bottom: 20px;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 4rem;
+    line-height: 5.4rem;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > h2 span {
     background: #ffffff;
@@ -6406,5 +6416,3 @@ section.site__block.block__blog_posts > div.container.full > .site__grid > ul > 
     color: #000000;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
