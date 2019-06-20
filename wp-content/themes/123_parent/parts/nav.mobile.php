@@ -1,7 +1,7 @@
 <?php 
 
-    $num_display = get_the_phone();
-    $num_href = get_the_phone('tel');
+    // $num_display = get_the_phone();
+    // $num_href = get_the_phone('tel');
 
     // $field_social_icons = get_field('field_akan8a8sskshb', 'options');
     $company_info = get_field('company_info','options');
