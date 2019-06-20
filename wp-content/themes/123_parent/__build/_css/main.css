@@ -2618,18 +2618,15 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
     line-height: 3.2rem;
   }
   footer#footer_one > div.container #footer_company_info {
-    height: 255px;
-    margin-top: 0;
+    min-height: 255px;
+    margin-top: 20px;
     position: relative;
     margin-bottom: 20px;
     flex: 1 0 10%;
     font-family: "Montserrat", serif;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-end;
-  }
-  footer#footer_one > div.container #footer_company_info .site__footer_logo {
-    margin: auto 0;
+    justify-content: flex-start;
   }
   footer#footer_one > div.container #footer_company_info .footer_phone_1,
 footer#footer_one > div.container #footer_company_info .footer_phone_2,
@@ -2647,7 +2644,6 @@ footer#footer_one > div.container #footer_company_info .footer_address {
     font-weight: 700;
   }
   footer#footer_one > div.container #footer_company_info .footer_address {
-    margin-bottom: 10px;
     line-height: 25px;
   }
   footer#footer_one > div.container #footer_nav .navlinks {
