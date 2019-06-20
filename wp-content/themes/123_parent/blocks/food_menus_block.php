@@ -2,6 +2,7 @@
 
     $guide = []; 
     $return = [];
+    $return['section'] = '';
 
     // Functions 
     function get_menu_items($menu_style, $item){
@@ -13,7 +14,7 @@
                     <div>
                         <h3>%s</h3>
                         <div class="menu__item-description">%s</div>
-                        <div class="menu__item-price">%s</div>
+                        %s
                     </div>
                 </li>
             ';
@@ -23,7 +24,7 @@
                 ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
                 ,(!empty($item['title']) ? $item['title'] : '')
                 ,(!empty($item['description']) ? $item['description'] : '')
-                ,(!empty($item['price']) ? $item['price'] : '')
+                ,(!empty($item['price']) ? '<div class="menu__item-price">$'.$item['price'].'</div>' : '')
             );
             break;
 

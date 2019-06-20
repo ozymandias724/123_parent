@@ -98,11 +98,6 @@
                         > li:nth-child(odd) {
                             > a {
                                 > div:first-of-type {
-                                    position: relative;
-                                    z-index: 2;
-                                    width: min-content; 
-                                    margin: 0 auto;
-                                    @include site__bgimage($g : false, $z : true);
                                     flex: 1 0 30%;
                                 }
                                 > div:last-of-type {
@@ -116,11 +111,6 @@
                                     flex: 1 0 70%;
                                 }
                                 > div:last-of-type {
-                                    position: relative;
-                                    z-index: 2;
-                                    width: min-content; 
-                                    margin: 0 auto;
-                                    @include site__bgimage($g : false, $z : true);
                                     flex: 1 0 30%;
                                 }
                             }
@@ -137,9 +127,6 @@
                                 h3 {
                                     border-bottom: 4px dotted getVar($colors, white, full);
                                     flex-flow: row wrap;
-                                }
-                                p {
-                                    font-weight: 600;
                                 }
                                 .image {
                                     border-radius: 50%;
@@ -377,10 +364,10 @@
                             > a {
                                 > div:first-of-type {
                                     width: 60%;
-                                    
                                 }
                                 > div:last-of-type {
                                     margin-left: 0;
+                                    width: 100%;
                                     &:before {
                                         display: none;
                                     }
@@ -391,6 +378,7 @@
                             > a {
                                 > div:first-of-type {
                                     order: 2;
+                                    width: 100%;
                                     margin-right: 0;
                                     &:after {
                                         display: none;

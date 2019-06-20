@@ -13,9 +13,13 @@
                         }
                         > a {
                             color: inherit;
-                            > .block {
+                            > div.image__container {
+                                position: relative;
+                                z-index: 2;
+                                margin: 0 auto;
                                 border-top-left-radius: 20px;
                                 border-top-right-radius: 20px;
+                                @include site__bgimage($g : false, $z : true);
                             }
                             >div.content{
                                 background-color: getVar($gustavo, colors, gray7);

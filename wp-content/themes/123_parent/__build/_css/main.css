@@ -3911,8 +3911,10 @@ main#page_services section.mod__services-featuredservice div.container .site__gr
   section.site__block .container > h2 {
     margin: 0 auto 30px auto;
   }
-  section.site__block .container > .block__heading,
-section.site__block .container > .block__details {
+  section.site__block .container > .block__heading {
+    margin: 0 auto;
+  }
+  section.site__block .container > .block__details {
     margin: 0 auto 30px auto;
   }
   section.site__block .container.hasbg {
@@ -4420,23 +4422,7 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     text-align: justify;
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type {
-    position: relative;
-    z-index: 2;
-    width: min-content;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
     flex: 1 0 30%;
-  }
-  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type .image {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transform: scale(1);
-    transition: transform 0.4s ease;
-  }
-  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type:hover .image, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type:active .image, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type:focus .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type:hover .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type:active .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:first-of-type:focus .image {
-    transform: scale(1.2);
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     flex: 1 0 70%;
@@ -4445,23 +4431,7 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     flex: 1 0 70%;
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
-    position: relative;
-    z-index: 2;
-    width: min-content;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
     flex: 1 0 30%;
-  }
-  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type .image {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transform: scale(1);
-    transition: transform 0.4s ease;
-  }
-  section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type:hover .image, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type:active .image, section.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type:focus .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type:hover .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type:active .image, section.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type:focus .image {
-    transform: scale(1.2);
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li > a {
     align-items: center;
@@ -4469,9 +4439,6 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   section.block__services > .container.services__two > div:last-of-type > ul > li > a h3 {
     border-bottom: 4px dotted #ffffff;
     flex-flow: row wrap;
-  }
-  section.block__services > .container.services__two > div:last-of-type > ul > li > a p {
-    font-weight: 600;
   }
   section.block__services > .container.services__two > div:last-of-type > ul > li > a .image {
     border-radius: 50%;
@@ -4620,12 +4587,14 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     margin-left: 0;
+    width: 100%;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type:before {
     display: none;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type {
     order: 2;
+    width: 100%;
     margin-right: 0;
   }
   section.site__block.block__services > .container.services__two > div:last-of-type > ul > li:nth-child(even) > a > div:first-of-type:after {
@@ -5065,10 +5034,10 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     border: 5px solid #ffffff;
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.3);
     width: min-content;
-    border-radius: 50%;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    border-radius: 50%;
   }
   section.block__staff > .container div.staff__one.site__grid > ul > li > a > div.staff__image .image {
     background-size: cover;
@@ -5220,10 +5189,10 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     text-transform: capitalize;
   }
   section.block__food_menus > .container .menu_section > p, section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > p {
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
     margin: 5px 0 35px;
-    font-family: "Times New Roman";
+    font-family: "Times New Roman", Times, serif;
     font-style: italic;
     font-weight: 500;
     color: #81807f;
@@ -5255,7 +5224,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     top: -5px;
   }
   section.block__food_menus > .container .menu_section.menu_photo_tiled_x3 ul.menu_items li.menu_item > div.menu__item-description {
-    text-align: justify;
+    text-align: left;
     font-size: 1.4rem;
     line-height: 2.8rem;
     color: #979797;
@@ -5281,49 +5250,35 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     vertical-align: top;
   }
   section.block__food_menus > .container .menu_section.menu_photo_list .menu_items .menu_item > div:last-of-type > h3 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 900;
+  }
+  section.block__food_menus > .container .menu_section.menu_photo_list .menu_items .menu_item > div:last-of-type > div.menu__item-description {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    padding-bottom: 10px;
+    border-bottom: 4px dotted #c2c2c2;
+    margin-bottom: 20px;
+    color: #81807f;
   }
   section.block__food_menus > .container .menu_section.menu_photo_list .menu_items .menu_item > div:last-of-type > div.menu__item-price {
     font-size: 2.4rem;
     line-height: 3.2rem;
+    color: #484848;
     font-weight: 500;
-  }
-  section.block__food_menus > .container .menu_section.menu_photo_list .menu_items .menu_item > div:last-of-type > div.menu__item-description {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    font-style: italic;
-    line-height: 1.8rem;
-    padding-bottom: 10px;
-    border-bottom: 4px dotted #c2c2c2;
-    margin-bottom: 20px;
-  }
-  section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > h2 {
-    font-size: 3.4rem;
-    line-height: 4.8rem;
-    font-weight: 800;
-    text-transform: capitalize;
-  }
-  section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > p {
-    margin: 15px 0 20px;
-    font-family: "Times New Roman";
-    line-height: 1em;
-    font-style: italic;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    font-weight: 500;
-    border-bottom: 3px solid #386591;
-    padding-bottom: 20px;
   }
   section.block__food_menus > .container .menu_section.menu_text_half > h2 {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     position: relative;
     letter-spacing: normal;
+    margin-bottom: 40px;
   }
   section.block__food_menus > .container .menu_section.menu_text_half > h2 span {
-    background: #fff;
+    background: #ffffff;
     padding: 0 15px;
     position: relative;
   }
@@ -5337,45 +5292,56 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     right: 0;
     top: 50%;
   }
+  section.block__food_menus > .container .menu_section.menu_text_half > p {
+    display: none;
+  }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items {
     display: flex;
     flex-flow: row wrap;
   }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items .menu_item:nth-child(odd) {
-    padding-right: 20px;
+    padding-right: 40px;
   }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items .menu_item {
     flex: 0 0 50%;
     margin-bottom: 30px;
   }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items .menu_item > div.menu__item-description {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 2.8rem;
     text-align: left;
+    color: #81807f;
   }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items .menu_item > h3.menu__item-price {
     display: flex;
     font-weight: 700;
     justify-content: space-between;
-    border-bottom: 3px solid #386591;
+    border-bottom: 3px solid #376494;
     padding-bottom: 15px;
     margin-bottom: 15px;
     text-align: left;
+    font-size: 2rem;
+    line-height: 3.2rem;
   }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items .menu_item > h3.menu__item-price > span {
     font-weight: 600;
+    color: #aaabad;
+  }
+  section.block__food_menus > .container .menu_section.menu_text_list_center > p {
+    margin-bottom: 20px;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_center .menu_item {
-    margin: 10px 0;
+    margin: 20px 0;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_center .menu_item > div.menu__item-description {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    font-family: "Times New Roman";
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-family: "Times New Roman", Times, serif;
     font-style: italic;
+    color: #81807f;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_center .menu_item > h3.menu__item-price {
-    font-size: 2rem;
+    font-size: 2.4rem;
     line-height: 3.2rem;
     text-align: center;
     font-weight: 800;
@@ -5394,10 +5360,13 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     text-align: left;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_left > p {
-    border-bottom: 5px dotted #386591;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 5px dotted #376494;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_left .menu_items {
     width: 100%;
+    margin-bottom: 20px;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_left .menu_items .menu_item {
     margin: 10px 0;
@@ -5405,16 +5374,17 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   section.block__food_menus > .container .menu_section.menu_text_list_left .menu_items .menu_item > h3.menu__item-price {
     text-transform: uppercase;
     display: flex;
-    font-size: 2rem;
+    font-size: 2.4rem;
     line-height: 3.2rem;
-    font-weight: 700;
+    font-weight: 800;
     justify-content: space-between;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_left .menu_items .menu_item > div.menu__item-description {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    font-family: "Times New Roman";
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-family: "Times New Roman", Times, serif;
     font-style: italic;
+    color: #81807f;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_left .menu_items .menu_item .block {
     margin: 0 0 20px 0;
@@ -5423,25 +5393,26 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     flex-flow: row wrap;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div:nth-child(odd) {
-    padding-right: 20px;
+    padding-right: 40px;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div {
     flex: 0 0 50%;
     text-align: left;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > p {
-    border-bottom: none;
+    display: none;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > h2 {
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
     letter-spacing: normal;
+    margin-bottom: 20px;
     font-size: 3.4rem;
     line-height: 4.8rem;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div > h2 span {
-    background: #fff;
+    background: #ffffff;
     padding: 0 15px 0 0;
     position: relative;
   }
@@ -5459,8 +5430,9 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     margin: 10px 0;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div .menu_items .menu_item > div.menu__item-description {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 2.8rem;
+    color: #81807f;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div .menu_items .menu_item > h3.menu__item-price {
     display: flex;
@@ -5468,9 +5440,13 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     line-height: 3.2rem;
     font-weight: 700;
     justify-content: space-between;
-    border-bottom: 3px solid #386591;
+    border-bottom: 3px solid #376494;
     padding-bottom: 15px;
     margin-bottom: 15px;
+  }
+  section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div .menu_items .menu_item > h3.menu__item-price > span {
+    font-weight: 600;
+    color: #aaabad;
   }
   section.block__food_menus > .container #tabs_style__divider .menu_photo_tiled_x3 > ul,
 section.block__food_menus > .container #tabs_style__pills .menu_photo_tiled_x3 > ul {
@@ -6106,9 +6082,24 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   section.block__blog_posts div.container .site__grid ul li > a {
     color: inherit;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > .block {
+  section.block__blog_posts div.container .site__grid ul li > a > div.image__container {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  section.block__blog_posts div.container .site__grid ul li > a > div.image__container .image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: transform 0.4s ease;
+  }
+  section.block__blog_posts div.container .site__grid ul li > a > div.image__container:hover .image, section.block__blog_posts div.container .site__grid ul li > a > div.image__container:active .image, section.block__blog_posts div.container .site__grid ul li > a > div.image__container:focus .image {
+    transform: scale(1.2);
   }
   section.block__blog_posts div.container .site__grid ul li > a > div.content {
     background-color: #dedede;
