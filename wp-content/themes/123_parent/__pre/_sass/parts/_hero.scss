@@ -174,7 +174,7 @@
                 position: absolute;
                 top: 50%;
                 font-size: 50px;
-                z-index: 1;
+                z-index: 3;
                 padding: 10px;
                 > i {
                     color: white;
@@ -215,7 +215,16 @@
 }
 
 @media only screen and (max-width: 960px){
+    section.hero {
+        &#hero_image,
+        &#hero_slider {
+            > .hero_foreground {
+                padding: 0;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 640px){
+    
 }

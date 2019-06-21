@@ -3087,7 +3087,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     position: absolute;
     top: 50%;
     font-size: 50px;
-    z-index: 1;
+    z-index: 3;
     padding: 10px;
   }
   section.hero#hero_slider #slick_slider_hero .slick-arrow > i {
@@ -3120,6 +3120,11 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+@media only screen and (max-width: 960px) {
+  section.hero#hero_image > .hero_foreground, section.hero#hero_slider > .hero_foreground {
+    padding: 0;
   }
 }
 @media only screen {
