@@ -1,53 +1,84 @@
 @media only screen {
     section.block__blog_posts {
-        div.container { 
-            .site__grid {
-                ul {
-                    li { 
-                        border-radius: 20px;
-                        background-color: getVar($gustavo, colors, gray9);
-                        border: 3px solid getVar($colors, white, full);
-                        box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray8); 
-                        &:hover, &:active, &:focus {
-                            box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray1); 
-                        }
-                        > a {
-                            color: inherit;
-                            > .block {
-                                border-top-left-radius: 20px;
-                                border-top-right-radius: 20px;
+        > div.container { 
+            &.narrow {
+                $w: getVar($sizing, content, small);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
+            }
+            &.medium {
+                $w: getVar($sizing, content, medium);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
+            }
+            &.wide {
+                $w: getVar($sizing, content, large);
+                $c : 4;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
+            }
+            &.full {
+                $w: getVar($sizing, content, full);
+                $c : 6;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
+            }
+            ul {
+                li { 
+                    border-radius: 20px;
+                    background-color: getVar($gustavo, colors, gray9);
+                    border: 3px solid getVar($colors, white, full);
+                    box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray8); 
+                    &:hover, &:active, &:focus {
+                        box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray1); 
+                    }
+                    > a {
+                        color: inherit;
+                        > div.image__container {
+                            position: relative;
+                            z-index: 2;
+                            margin: 0 auto;
+                            border-top-left-radius: 20px;
+                            border-top-right-radius: 20px;
+                            @include site__bgimage($g : false, $z : true);
+                            > .image {
+                                width: 100%;
+                                height: 0;
+                                padding-bottom: 100%;
                             }
-                            >div.content{
-                                background-color: getVar($gustavo, colors, gray7);
+                        }
+                        >div.content{
+                            background-color: getVar($gustavo, colors, gray7);
+                            border-bottom-left-radius: 20px;
+                            border-bottom-right-radius: 20px;
+                            >h5 {
+                                margin: 0 30px;
+                                padding: 15px 0 10px;
+                                font-family: "Gotham", "Helvetica", sans-serif;
+                                display: block;
+                                text-decoration: none;
+                                text-align: left;
+                                font-weight: 500;
+                                @include fontS-24;
+                                line-height: 2.8rem;
+                                letter-spacing: -1px;
+                                border-bottom: 4px dotted getVar($colors, white, full);
+                            }
+                            > div.excerpt > p {
+                                margin: 0 35px 30px;
+                                padding: 5px 0 0;
+                            }
+                            > p.read_more {
+                                background-color: getVar($colors, accent);
                                 border-bottom-left-radius: 20px;
                                 border-bottom-right-radius: 20px;
-                                >h5 {
-                                    margin: 0 30px;
-                                    padding: 15px 0 10px;
-                                    font-family: "Gotham", "Helvetica", sans-serif;
-                                    display: block;
-                                    text-decoration: none;
-                                    text-align: left;
-                                    font-weight: 500;
-                                    @include fontS-24;
-                                    line-height: 2.8rem;
-                                    letter-spacing: -1px;
-                                    border-bottom: 4px dotted getVar($colors, white, full);
-                                }
-                                > div.excerpt > p {
-                                    margin: 0 35px 30px;
-                                    padding: 5px 0 0;
-                                }
-                                > p.read_more {
-                                    background-color: getVar($colors, accent);
-                                    border-bottom-left-radius: 20px;
-                                    border-bottom-right-radius: 20px;
-                                    padding: 10px;
-                                    @include fontS-20;
-                                    font-weight: 600;
-                                    text-transform: uppercase;
-                                    color: getVar($colors, white, full);
-                                }
+                                padding: 10px;
+                                @include fontS-20;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                color: getVar($colors, white, full);
                             }
                         }
                     }
@@ -56,17 +87,38 @@
         }
     }
 }
-@media only screen and (max-width: 640px){
-    section.site__block.block__blog_posts {
+@media only screen and (max-width: 1280px){
+    section.block__blog_posts {
         > div.container { 
             &.narrow, &.medium, &.wide, &.full {
-                > .site__grid {
-                    $c : 1;
-                    $g : getVar($sizing, gutter, vw, normal);
-                    $w : getVar($sizing, content, medium);
-                    $s : true;
-                    @include gridLayout($w, $c, $g, $s);
-                }
+                $w: getVar($sizing, content, large);
+                $c : 3;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 960px){
+    section.block__blog_posts {
+        > div.container { 
+            &.narrow, &.medium, &.wide, &.full {
+                $w: getVar($sizing, content, large);
+                $c : 2;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 640px){
+    section.block__blog_posts {
+        > div.container { 
+            &.narrow, &.medium, &.wide, &.full {
+                $w: getVar($sizing, content, full);
+                $c : 1;
+                $g: getVar($sizing, gutter, vw, normal);
+                @include flexGrid($w, $c, $g);
             }
         }
     }

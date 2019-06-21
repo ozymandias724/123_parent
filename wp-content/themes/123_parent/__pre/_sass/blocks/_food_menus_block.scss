@@ -27,12 +27,12 @@
                 }
                 > p,
                 &.menu_text_sub_group_half > div > p {
-                    @include fontS-34; 
+                    @include fontS-24; 
                     margin: 5px 0 35px;
-                    font-family: "Times New Roman";
+                    font-family: "Times New Roman", Times, serif;
                     font-style: italic;
                     font-weight: 500;
-                    color: getVar($gustavo, colors, gray11);
+                    color: getVar($gustavo, colors, gray10);
                     border-bottom: 3px solid getVar($colors, accent);
                     padding-bottom: 20px;
                 }
@@ -47,7 +47,7 @@
                             > h3.menu__item-price {
                                 display: flex;
                                 justify-content: space-between;
-                                flex-flow: row nowrap;
+                                flex-flow: row wrap;
                                 @include fontS-20;
                                 font-weight: 700;
                                 text-align: left;
@@ -61,7 +61,7 @@
                                 }
                             }
                             > div.menu__item-description {
-                                text-align: justify;
+                                text-align: left;
                                 @include fontS-14;
                                 color: getVar($gustavo, colors, gray10);
                             }
@@ -89,56 +89,44 @@
                                 width: 70%;
                                 vertical-align: top;
                                 > h3 {
-                                    @include fontS-20;
+                                    @include fontS-24;
                                     font-weight: 900;
                                 }
-                                > div.menu__item-price {
-                                    @include fontS-24;
-                                    font-weight: 500;
-                                }
                                 > div.menu__item-description {
-                                    @include fontS-14;
-                                    font-style: italic;
-                                    line-height: 1.8rem;
+                                    @include fontS-24;
+                                    font-family:"Times New Roman", Times, serif;
+                                    font-style: italic; 
                                     padding-bottom: 10px;
                                     border-bottom: 4px dotted getVar($gustavo, colors, gray1);
                                     margin-bottom: 20px;
+                                    color: getVar($gustavo, colors, gray10);
+                                }
+                                > div.menu__item-price {
+                                    @include fontS-24;
+                                    color: getVar($gustavo, colors, gray2);
+                                    font-weight: 500;
                                 }
                             }
                         }
                     }
                 }
-                &.menu_text_sub_group_half > div {
-                    > h2 {
-                        @include fontS-34;
-                        font-weight: 800;
-                        text-transform: capitalize;
-                    }
-                    > p {
-                        margin: 15px 0 20px;
-                        font-family: "Times New Roman";
-                        line-height: 1em;
-                        font-style: italic;
-                        @include fontS-24;
-                        font-weight: 500;
-                        border-bottom: 3px solid $accent;
-                        padding-bottom: 20px;
-                    }
-                }
                 // Menu Type
                 &.menu_text_half {
-                    > h2 {
+                    > h2 { 
                         text-transform: uppercase;
-                        font-weight: 700;
+                        font-weight: 600;
                         position: relative;
+                        font-family: 'Slabo', serif; 
                         letter-spacing: normal;
+                        margin-bottom: 20px;
+                        @include fontS-40;
                         span {
-                            background: #fff;
+                            background: getVar($colors, white, full);
                             padding: 0 15px;
                             position: relative;
                         }
                         &:before {
-                            border-top: 1px solid #c2c2c2;
+                            border-top: 1px solid getVar($gustavo, colors, gray1);
                             bottom: 0;
                             content: "";
                             left: 0;
@@ -148,31 +136,38 @@
                             top: 50%;
                         }
                     }
+                    > p {
+                        display: none;
+                    }
                     .menu_items {
                         display: flex;
                         flex-flow: row wrap;
-                        .menu_item:nth-child(odd) {
-                            padding-right: 20px;
+                        .menu_item:nth-child(odd){
+                            padding-right: 40px;
                         }
                         .menu_item {
                             flex: 0 0 50%;
                             margin-bottom: 30px;
                             // menu items description
                             > div.menu__item-description {
-                                @include fontS-14;
+                                @include fontS-16;
                                 text-align: left;
+                                color: getVar($gustavo, colors, gray10);
                             }
                             // menu items title
                             > h3.menu__item-price {
                                 display: flex;
+                                flex-flow: row wrap;
                                 font-weight: 700; 
                                 justify-content: space-between;
-                                border-bottom: 3px solid $accent;
+                                border-bottom: 3px solid getVar($colors, accent);
                                 padding-bottom: 15px;
                                 margin-bottom: 15px;
                                 text-align: left;
+                                @include fontS-20;
                                 > span {
                                     font-weight: 600;
+                                    color: getVar($gustavo, colors, gray3);
                                 }
                             }
                         }
@@ -180,15 +175,19 @@
                 }
                 // Menu Type
                 &.menu_text_list_center {
+                    > p {
+                        margin-bottom: 20px;
+                    }
                     .menu_item {
-                        margin: 10px 0;
+                        margin: 20px 0;
                         > div.menu__item-description {
-                            @include fontS-14;
-                            font-family: "Times New Roman";
+                            @include fontS-24;
+                            font-family: "Times New Roman", Times, serif;
                             font-style: italic;
+                            color: getVar($gustavo, colors, gray10);
                         }
                         > h3.menu__item-price {
-                            @include fontS-20;
+                            @include fontS-24;
                             text-align: center;
                             font-weight: 800;
                             text-transform: uppercase;
@@ -208,23 +207,27 @@
                 &.menu_text_list_left {
                     text-align: left;
                     > p {
-                        border-bottom: 5px dotted $accent;
+                        padding-bottom: 10px;
+                        margin-bottom: 20px;
+                        border-bottom: 5px dotted getVar($colors, accent);
                     }
                     .menu_items {
                         width: 100%;
+                        margin-bottom: 20px;
                         .menu_item {
                             margin: 10px 0;
                             > h3.menu__item-price {
                                 text-transform: uppercase;
                                 display: flex;
-                                @include fontS-20;
-                                font-weight: 700;
-                                justify-content: space-between;  
+                                @include fontS-24;
+                                font-weight: 800;
+                                justify-content: space-between;
                             }
                             > div.menu__item-description {
-                                @include fontS-14;
-                                font-family: "Times New Roman";
+                                @include fontS-24;
+                                font-family: "Times New Roman", Times, serif;
                                 font-style: italic;
+                                color: getVar($gustavo, colors, gray10);
                             }
                             .block {
                                 margin: 0 0 20px 0;
@@ -236,27 +239,29 @@
                 &.menu_text_sub_group_half {
                     flex-flow: row wrap;
                     >div:nth-child(odd) {   
-                        padding-right: 20px;
+                        padding-right: 40px;
                     }
                     > div {
                         flex: 0 0 50%; 
                         text-align: left;
                         > p {
-                            border-bottom: none;
+                            display: none;
                         }
                         > h2 {
                             text-transform: uppercase;
-                            font-weight: 700;
+                            font-weight: 600;
                             position: relative;
+                            font-family: 'Slabo', serif; 
                             letter-spacing: normal;
-                            @include fontS-34;
+                            margin-bottom: 20px;
+                            @include fontS-40;
                             span {
-                                background: #fff;
+                                background: getVar($colors, white, full);
                                 padding: 0 15px 0 0;
                                 position: relative;
                             }
                             &:before {
-                                border-top: 1px solid #c2c2c2;
+                                border-top: 1px solid getVar($gustavo, colors, gray1);
                                 bottom: 0;
                                 content: "";
                                 left: 0;
@@ -270,16 +275,22 @@
                             .menu_item {
                                 margin: 10px 0;
                                 > div.menu__item-description {
-                                    @include fontS-14;
+                                    @include fontS-16;
+                                    color: getVar($gustavo, colors, gray10);
                                 }
                                 > h3.menu__item-price {
+                                    flex-flow: row wrap;
                                     display: flex;
                                     @include fontS-20;
                                     font-weight: 700;
                                     justify-content: space-between;
-                                    border-bottom: 3px solid #386591;
+                                    border-bottom: 3px solid getVar($colors, accent);
                                     padding-bottom: 15px;
                                     margin-bottom: 15px;
+                                    > span {
+                                        font-weight: 600;
+                                        color: getVar($gustavo, colors, gray3);
+                                    }
                                 }
                             }
                         }
@@ -354,6 +365,10 @@
                     justify-content: center;
                     margin-bottom: 30px;
                     align-items: stretch;
+                    &:after {
+                        content: "";
+                        flex: auto;
+                    }
                     li {
                         margin: 5px 0;
                         a {
@@ -511,9 +526,7 @@
 @media only screen and (max-width: 640px){
     section.block__food_menus {
         > .container {
-            #tabs_style__divider,
-            #tabs_style__pills,
-            #tabs_style__sidebar {
+            .tabs {
                 flex-flow: column nowrap;
                 > .menu_area {
                     > .menu_section {
