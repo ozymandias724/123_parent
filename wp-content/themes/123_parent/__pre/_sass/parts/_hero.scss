@@ -46,7 +46,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 0 180px 0;
+                    padding: 8px 180px 0;
                 }
             }
         }
@@ -54,7 +54,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 0 152px 0;
+                    padding: 8px 152px 0;
                 }
             }
         }
@@ -62,7 +62,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 113px 148px 0;
+                    padding: 121px 148px 0;
                 }
             }
         }
@@ -70,7 +70,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 0 141px 0;
+                    padding: 8px 141px 0;
                 }
             }
         }
@@ -79,7 +79,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 0 146px 0;
+                    padding: 8px 146px 0;
                 }
             }
         }
@@ -87,7 +87,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 0 137px 0;
+                    padding: 8px 137px 0;
                 }
             }
         }
@@ -95,7 +95,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 84px 142px 0;
+                    padding: 92px 142px 0;
                 }
             }
         }
@@ -103,7 +103,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 41px 158px 0;
+                    padding: 49px 158px 0;
                 }
             }
         }
@@ -111,7 +111,7 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 0 156px 0;
+                    padding: 8px 156px 0;
                 }
             }
         }
@@ -219,9 +219,10 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 line-height: 1em; 
-                color: $white;
+                color: getVar($colors, accent);
+                border: none;
                 display: inline-block;
-                background-color: $accent;
+                background-color: getVar($colors, accent);
                 transition: background-color 0.25s;
                 //Button actions on hover, focus and active
                 &:hover, 
@@ -286,22 +287,9 @@
             &#hero_image,
             &#hero_slider {
                 .hero_foreground {
-                    padding: 80px 0 0;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 640px){
-    section.hero {
-        &.header__one, &.header__two, &.header__three, &.header__four, &.header__five, &.header__six, &.header__seven, &.header__eight, &.header__nine, &.header__ten {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
                     display: flex;
                     justify-content: center;
-                    grid-template-columns: none;
+                    grid-template-columns: none; 
                     grid-template-rows: none;
                     grid-template-areas: none;
                 }
@@ -309,3 +297,5 @@
         }
     }
 }
+
+

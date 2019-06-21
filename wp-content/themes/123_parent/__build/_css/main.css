@@ -2978,31 +2978,31 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     background-repeat: no-repeat;
   }
   section.hero.header__one#hero_image .hero_foreground, section.hero.header__one#hero_slider .hero_foreground {
-    padding: 0 180px 0;
+    padding: 8px 180px 0;
   }
   section.hero.header__two#hero_image .hero_foreground, section.hero.header__two#hero_slider .hero_foreground {
-    padding: 0 152px 0;
+    padding: 8px 152px 0;
   }
   section.hero.header__three#hero_image .hero_foreground, section.hero.header__three#hero_slider .hero_foreground {
-    padding: 113px 148px 0;
+    padding: 121px 148px 0;
   }
   section.hero.header__four#hero_image .hero_foreground, section.hero.header__four#hero_slider .hero_foreground {
-    padding: 0 141px 0;
+    padding: 8px 141px 0;
   }
   section.hero.header__five#hero_image .hero_foreground, section.hero.header__five#hero_slider .hero_foreground, section.hero.header__six#hero_image .hero_foreground, section.hero.header__six#hero_slider .hero_foreground {
-    padding: 0 146px 0;
+    padding: 8px 146px 0;
   }
   section.hero.header__seven#hero_image .hero_foreground, section.hero.header__seven#hero_slider .hero_foreground {
-    padding: 0 137px 0;
+    padding: 8px 137px 0;
   }
   section.hero.header__eight#hero_image .hero_foreground, section.hero.header__eight#hero_slider .hero_foreground {
-    padding: 84px 142px 0;
+    padding: 92px 142px 0;
   }
   section.hero.header__nine#hero_image .hero_foreground, section.hero.header__nine#hero_slider .hero_foreground {
-    padding: 41px 158px 0;
+    padding: 49px 158px 0;
   }
   section.hero.header__ten#hero_image .hero_foreground, section.hero.header__ten#hero_slider .hero_foreground {
-    padding: 0 156px 0;
+    padding: 8px 156px 0;
   }
   section.hero#hero_image .hero_foreground, section.hero#hero_slider .hero_foreground {
     position: relative;
@@ -3097,9 +3097,10 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1em;
-    color: #fff;
+    color: #376494;
+    border: none;
     display: inline-block;
-    background-color: #386591;
+    background-color: #376494;
     transition: background-color 0.25s;
   }
   section.hero .hero_foreground a.site__button:hover, section.hero .hero_foreground a.site__button:focus, section.hero .hero_foreground a.site__button:active {
@@ -3149,11 +3150,6 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   }
 }
 @media only screen and (max-width: 960px) {
-  section.hero.header__one#hero_image .hero_foreground, section.hero.header__one#hero_slider .hero_foreground, section.hero.header__two#hero_image .hero_foreground, section.hero.header__two#hero_slider .hero_foreground, section.hero.header__three#hero_image .hero_foreground, section.hero.header__three#hero_slider .hero_foreground, section.hero.header__four#hero_image .hero_foreground, section.hero.header__four#hero_slider .hero_foreground, section.hero.header__five#hero_image .hero_foreground, section.hero.header__five#hero_slider .hero_foreground, section.hero.header__six#hero_image .hero_foreground, section.hero.header__six#hero_slider .hero_foreground, section.hero.header__seven#hero_image .hero_foreground, section.hero.header__seven#hero_slider .hero_foreground, section.hero.header__eight#hero_image .hero_foreground, section.hero.header__eight#hero_slider .hero_foreground, section.hero.header__nine#hero_image .hero_foreground, section.hero.header__nine#hero_slider .hero_foreground, section.hero.header__ten#hero_image .hero_foreground, section.hero.header__ten#hero_slider .hero_foreground {
-    padding: 80px 0 0;
-  }
-}
-@media only screen and (max-width: 640px) {
   section.hero.header__one#hero_image .hero_foreground, section.hero.header__one#hero_slider .hero_foreground, section.hero.header__two#hero_image .hero_foreground, section.hero.header__two#hero_slider .hero_foreground, section.hero.header__three#hero_image .hero_foreground, section.hero.header__three#hero_slider .hero_foreground, section.hero.header__four#hero_image .hero_foreground, section.hero.header__four#hero_slider .hero_foreground, section.hero.header__five#hero_image .hero_foreground, section.hero.header__five#hero_slider .hero_foreground, section.hero.header__six#hero_image .hero_foreground, section.hero.header__six#hero_slider .hero_foreground, section.hero.header__seven#hero_image .hero_foreground, section.hero.header__seven#hero_slider .hero_foreground, section.hero.header__eight#hero_image .hero_foreground, section.hero.header__eight#hero_slider .hero_foreground, section.hero.header__nine#hero_image .hero_foreground, section.hero.header__nine#hero_slider .hero_foreground, section.hero.header__ten#hero_image .hero_foreground, section.hero.header__ten#hero_slider .hero_foreground {
     display: flex;
     justify-content: center;
@@ -5910,8 +5906,11 @@ section.block__food_menus > .container #tabs_style__sidebar > .menu_area > .menu
   }
 }
 @media only screen and (max-width: 640px) {
-  section.block__food_menus > .container #tabs_style_sidebar {
+  section.block__food_menus > .container #tabs_style__sidebar {
     flex-flow: column nowrap;
+  }
+  section.block__food_menus > .container #tabs_style__sidebar > ul.button_group {
+    margin: 0 0 20px;
   }
   section.block__food_menus > .container .tabs {
     flex-flow: column nowrap;

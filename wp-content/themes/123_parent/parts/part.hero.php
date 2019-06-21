@@ -96,7 +96,7 @@
             ,$title
             ,$logo
             ,$tagline
-            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
+            ,( !empty($button['link']) ? '<a class="site__button" style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
         );
         
     } 
@@ -132,7 +132,7 @@
             ,$title
             ,$logo
             ,$tagline
-            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
+            ,( !empty($button['link']) ? '<a class="site__button" style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
         );
     }
     //   video
