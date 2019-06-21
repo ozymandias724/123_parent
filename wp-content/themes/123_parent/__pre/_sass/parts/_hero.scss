@@ -13,8 +13,6 @@
             > #hero_staticimage {
                 height: 100%;
                 @include bgimage;
-
-
             }
             
         }
@@ -44,11 +42,84 @@
 
         }
 
+        &.header__one {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 0 180px 0;
+                }
+            }
+        }
+        &.header__two {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 0 152px 0;
+                }
+            }
+        }
+        &.header__three {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 113px 148px 0;
+                }
+            }
+        }
+        &.header__four {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 0 141px 0;
+                }
+            }
+        }
+        &.header__five,
+        &.header__six {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 0 146px 0;
+                }
+            }
+        }
+        &.header__seven {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 0 137px 0;
+                }
+            }
+        }
+        &.header__eight {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 84px 142px 0;
+                }
+            }
+        }
+        &.header__nine {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 41px 158px 0;
+                }
+            }
+        }
+        &.header__ten {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 0 156px 0;
+                }
+            }
+        }
+
         &#hero_image,
         &#hero_slider {
             .hero_foreground {
                 position: relative;
-                padding: 20px 180px 0;
                 display: grid;
                 grid-template-columns: repeat(3, auto);
                 grid-template-rows: repeat(3, auto);
@@ -130,7 +201,7 @@
             img {
                 margin: 0 auto;
                 max-width: 500px;
-                max-height: 500px;
+                max-height: 250px;
             }
             //Subtitle
             p {
@@ -211,10 +282,12 @@
 
 @media only screen and (max-width: 960px){
     section.hero {
-        &#hero_image,
-        &#hero_slider {
-            .hero_foreground {
-                padding: 25px 0 0;
+        &.header__one, &.header__two, &.header__three, &.header__four, &.header__five, &.header__six, &.header__seven, &.header__eight, &.header__nine, &.header__ten {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    padding: 80px 0 0;
+                }
             }
         }
     }
@@ -222,12 +295,15 @@
 
 @media only screen and (max-width: 640px){
     section.hero {
-        &#hero_image,
-        &#hero_slider {
-            .hero_foreground {
-                img {
-                    max-width: 300px;
-                    max-height: 300px;
+        &.header__one, &.header__two, &.header__three, &.header__four, &.header__five, &.header__six, &.header__seven, &.header__eight, &.header__nine, &.header__ten {
+            &#hero_image,
+            &#hero_slider {
+                .hero_foreground {
+                    display: flex;
+                    justify-content: center;
+                    grid-template-columns: none;
+                    grid-template-rows: none;
+                    grid-template-areas: none;
                 }
             }
         }

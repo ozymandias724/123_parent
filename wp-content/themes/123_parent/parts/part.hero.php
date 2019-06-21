@@ -19,7 +19,7 @@
 
         // Background and foreground fields
         $background = ( !empty($fields['background'] ) ? $fields['background'] : '');
-        $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
+        $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : ''); 
 
         // Background fields
         $background_image = ( !empty($background['image'] ) ? $background['image']['image'] : '');
@@ -27,6 +27,7 @@
 
         // Foreground fields
         $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
+        $header = 'header__'.get_field('header', 'options')['style'];
         $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
         $background_color = ( !empty($foreground['background_color'] ) ? 'background-color: rgba('.hex2RGB($foreground['background_color'], true).','.$foreground['background_opacity'].');' : '');
         $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'color:'.$foreground['foreground_color'].';' : '');
@@ -66,7 +67,7 @@
         $video_show_volume = ( !empty($background['video']['show_volume']) && $background['video']['show_volume'] == 1 ? '' : '');
 
         // open hero container
-        $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
+        $content_hero = '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$style.'">'; 
 
     // static image
     if( $style == 'image' && !empty($background_image) )
