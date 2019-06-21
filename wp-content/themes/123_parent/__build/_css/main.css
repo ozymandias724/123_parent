@@ -4971,19 +4971,16 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
 }
 @media only screen {
-  section.site__block.block__coupons > div.container > h2 {
-    text-align: center;
-  }
-  section.site__block.block__coupons > div.container .site__grid > ul > li {
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li {
     padding: 10px;
     background-color: #dedede;
     border-radius: 20px;
     border: 3px solid transparent;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li:hover, section.site__block.block__coupons > div.container .site__grid > ul > li:active, section.site__block.block__coupons > div.container .site__grid > ul > li:focus {
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li:hover, section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li:active, section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li:focus, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li:hover, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li:active, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li:focus, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li:hover, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li:active, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li:focus, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li:hover, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li:active, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li:focus {
     border: 3px solid #c2c2c2;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li > a {
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li > a, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li > a, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li > a, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li > a {
     padding: 20px;
     border-radius: 20px;
     border: 6px dashed #ffffff;
@@ -4993,33 +4990,90 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     justify-content: center;
     color: inherit;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li h5 {
-    font-family: "Gotham", Helvetica, sans-serif;
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li h5, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li h5, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li h5, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li h5 {
     margin: 10px 0 10px;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
-    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5.4rem;
+    font-weight: 900;
+    line-height: 4.3rem;
+    letter-spacing: -1px;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_description {
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li .coupon_description, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_description, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_description, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_description {
     margin-bottom: 10px;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_expiration {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    margin: 10px 0;
-    font-weight: 500;
-  }
-  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_code {
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li .coupon_code, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_code, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_code, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_code {
     background: #ffffff;
     padding: 0 25px;
-    margin: 10px 0;
     border-radius: 20px;
     font-weight: 700;
     line-height: 40px;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li .coupon_code > span {
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li .coupon_code > span, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_code > span, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_code > span, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_code > span {
     text-transform: uppercase;
     font-weight: 600;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
+    display: none;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li .coupon_code,
+section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_code,
+section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_code,
+section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_code,
+section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
+    margin: 5px 0;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
+    display: block;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li {
+    background-color: transparent;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li > a {
+    border: 6px dashed #376494;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_description,
+section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_expiration {
+    color: #939393;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li .coupon_code {
+    background: #dedede;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li {
+    border-radius: 0;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li > a, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li > a {
+    border-radius: 0;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_description,
+section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_description,
+section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
+    color: #939393;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_code, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_code {
+    border-radius: 0;
+    padding: 2px 30px;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
+    font-weight: 600;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li .coupon_expiration > span, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_expiration > span {
+    font-weight: 400;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li {
+    background-color: #ffffff;
+    border: 4px solid #dfdfdf;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li:hover, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li:active, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li:focus {
+    border: 4px solid #aaabad;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li > a {
+    border: 6px dashed #376494;
+  }
+  section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li .coupon_code {
+    background-color: #dedede;
   }
 }
 @media only screen {
@@ -5204,7 +5258,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     font-family: "Times New Roman", Times, serif;
     font-style: italic;
     font-weight: 500;
-    color: #81807f;
+    color: #979797;
     border-bottom: 3px solid #376494;
     padding-bottom: 20px;
   }
@@ -5271,7 +5325,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     padding-bottom: 10px;
     border-bottom: 4px dotted #c2c2c2;
     margin-bottom: 20px;
-    color: #81807f;
+    color: #979797;
   }
   section.block__food_menus > .container .menu_section.menu_photo_list .menu_items .menu_item > div:last-of-type > div.menu__item-price {
     font-size: 2.4rem;
@@ -5322,7 +5376,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     font-size: 1.6rem;
     line-height: 2.8rem;
     text-align: left;
-    color: #81807f;
+    color: #979797;
   }
   section.block__food_menus > .container .menu_section.menu_text_half .menu_items .menu_item > h3.menu__item-price {
     display: flex;
@@ -5351,7 +5405,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     line-height: 3.2rem;
     font-family: "Times New Roman", Times, serif;
     font-style: italic;
-    color: #81807f;
+    color: #979797;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_center .menu_item > h3.menu__item-price {
     font-size: 2.4rem;
@@ -5397,7 +5451,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     line-height: 3.2rem;
     font-family: "Times New Roman", Times, serif;
     font-style: italic;
-    color: #81807f;
+    color: #979797;
   }
   section.block__food_menus > .container .menu_section.menu_text_list_left .menu_items .menu_item .block {
     margin: 0 0 20px 0;
@@ -5446,7 +5500,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div .menu_items .menu_item > div.menu__item-description {
     font-size: 1.6rem;
     line-height: 2.8rem;
-    color: #81807f;
+    color: #979797;
   }
   section.block__food_menus > .container .menu_section.menu_text_sub_group_half > div .menu_items .menu_item > h3.menu__item-price {
     flex-flow: row wrap;
@@ -6071,19 +6125,95 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   }
 }
 @media only screen {
-  section.block__blog_posts div.container .site__grid ul li {
+  section.block__blog_posts > div.container.narrow > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 50vw;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li {
+    width: 15.3333333333vw;
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(3n) {
+    margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li > a {
+    color: #000000;
+  }
+  section.block__blog_posts > div.container.medium > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 65vw;
+  }
+  section.block__blog_posts > div.container.medium > ul > li {
+    width: 20.3333333333vw;
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.medium > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.medium > ul > li:nth-child(3n) {
+    margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.medium > ul > li > a {
+    color: #000000;
+  }
+  section.block__blog_posts > div.container.wide > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
+  }
+  section.block__blog_posts > div.container.wide > ul > li {
+    width: 18.5vw;
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.wide > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.wide > ul > li:nth-child(4n) {
+    margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.wide > ul > li > a {
+    color: #000000;
+  }
+  section.block__blog_posts > div.container.full > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 92vw;
+  }
+  section.block__blog_posts > div.container.full > ul > li {
+    width: 13.6666666667vw;
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.full > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.full > ul > li:nth-child(6n) {
+    margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.full > ul > li > a {
+    color: #000000;
+  }
+  section.block__blog_posts > div.container ul li {
     border-radius: 20px;
     background-color: #efefef;
     border: 3px solid #ffffff;
     box-shadow: 0px 0px 0px 3px #e2e2e2;
   }
-  section.block__blog_posts div.container .site__grid ul li:hover, section.block__blog_posts div.container .site__grid ul li:active, section.block__blog_posts div.container .site__grid ul li:focus {
+  section.block__blog_posts > div.container ul li:hover, section.block__blog_posts > div.container ul li:active, section.block__blog_posts > div.container ul li:focus {
     box-shadow: 0px 0px 0px 3px #c2c2c2;
   }
-  section.block__blog_posts div.container .site__grid ul li > a {
+  section.block__blog_posts > div.container ul li > a {
     color: inherit;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.image__container {
+  section.block__blog_posts > div.container ul li > a > div.image__container {
     position: relative;
     z-index: 2;
     margin: 0 auto;
@@ -6092,22 +6222,27 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
     overflow: hidden;
     position: relative;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.image__container .image {
+  section.block__blog_posts > div.container ul li > a > div.image__container .image {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     transform: scale(1);
     transition: transform 0.4s ease;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.image__container:hover .image, section.block__blog_posts div.container .site__grid ul li > a > div.image__container:active .image, section.block__blog_posts div.container .site__grid ul li > a > div.image__container:focus .image {
+  section.block__blog_posts > div.container ul li > a > div.image__container:hover .image, section.block__blog_posts > div.container ul li > a > div.image__container:active .image, section.block__blog_posts > div.container ul li > a > div.image__container:focus .image {
     transform: scale(1.2);
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.content {
+  section.block__blog_posts > div.container ul li > a > div.image__container > .image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+  }
+  section.block__blog_posts > div.container ul li > a > div.content {
     background-color: #dedede;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.content > h5 {
+  section.block__blog_posts > div.container ul li > a > div.content > h5 {
     margin: 0 30px;
     padding: 15px 0 10px;
     font-family: "Gotham", "Helvetica", sans-serif;
@@ -6121,11 +6256,11 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
     letter-spacing: -1px;
     border-bottom: 4px dotted #ffffff;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.content > div.excerpt > p {
+  section.block__blog_posts > div.container ul li > a > div.content > div.excerpt > p {
     margin: 0 35px 30px;
     padding: 5px 0 0;
   }
-  section.block__blog_posts div.container .site__grid ul li > a > div.content > p.read_more {
+  section.block__blog_posts > div.container ul li > a > div.content > p.read_more {
     background-color: #376494;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -6137,63 +6272,70 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
     color: #ffffff;
   }
 }
-@media only screen and (max-width: 640px) {
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul, section.site__block.block__blog_posts > div.container.full > .site__grid > ul {
-    width: 65vw;
-    margin: 0 auto 0 auto;
+@media only screen and (max-width: 1280px) {
+  section.block__blog_posts > div.container.narrow > ul, section.block__blog_posts > div.container.medium > ul, section.block__blog_posts > div.container.wide > ul, section.block__blog_posts > div.container.full > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
   }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul:after, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul:after, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul:after, section.site__block.block__blog_posts > div.container.full > .site__grid > ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li, section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li {
-    width: 65vw;
-    height: auto;
-    float: left;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li > a, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li > a, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li > a, section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li > a {
-    display: block;
-    width: 100%;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .block, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .block, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .block, section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .block {
-    display: block;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .block, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .block, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .block, section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .image,
-section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .block {
-    height: 65vw;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .image.rectangular_block,
-section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .block.rectangular_block, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .image.rectangular_block,
-section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .block.rectangular_block, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .image.rectangular_block,
-section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .block.rectangular_block, section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .image.rectangular_block,
-section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .block.rectangular_block {
-    height: 40.625vw;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .image.less_size_block,
-section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li .block.less_size_block, section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .image.less_size_block,
-section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li .block.less_size_block, section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .image.less_size_block,
-section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li .block.less_size_block, section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .image.less_size_block,
-section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li .block.less_size_block {
-    height: 60.2vw;
-    width: 60.2vw;
-  }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li:nth-child(n+1), section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li:nth-child(n+1), section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li:nth-child(n+1), section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li:nth-child(n+1) {
+  section.block__blog_posts > div.container.narrow > ul > li, section.block__blog_posts > div.container.medium > ul > li, section.block__blog_posts > div.container.wide > ul > li, section.block__blog_posts > div.container.full > ul > li {
+    width: 25.3333333333vw;
     margin: 0 2vw 2vw 0;
   }
-  section.site__block.block__blog_posts > div.container.narrow > .site__grid > ul > li:nth-child(1n), section.site__block.block__blog_posts > div.container.medium > .site__grid > ul > li:nth-child(1n), section.site__block.block__blog_posts > div.container.wide > .site__grid > ul > li:nth-child(1n), section.site__block.block__blog_posts > div.container.full > .site__grid > ul > li:nth-child(1n) {
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(n+1), section.block__blog_posts > div.container.medium > ul > li:nth-child(n+1), section.block__blog_posts > div.container.wide > ul > li:nth-child(n+1), section.block__blog_posts > div.container.full > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(3n), section.block__blog_posts > div.container.medium > ul > li:nth-child(3n), section.block__blog_posts > div.container.wide > ul > li:nth-child(3n), section.block__blog_posts > div.container.full > ul > li:nth-child(3n) {
     margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li > a, section.block__blog_posts > div.container.medium > ul > li > a, section.block__blog_posts > div.container.wide > ul > li > a, section.block__blog_posts > div.container.full > ul > li > a {
+    color: #000000;
+  }
+}
+@media only screen and (max-width: 960px) {
+  section.block__blog_posts > div.container.narrow > ul, section.block__blog_posts > div.container.medium > ul, section.block__blog_posts > div.container.wide > ul, section.block__blog_posts > div.container.full > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 80vw;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li, section.block__blog_posts > div.container.medium > ul > li, section.block__blog_posts > div.container.wide > ul > li, section.block__blog_posts > div.container.full > ul > li {
+    width: 39vw;
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(n+1), section.block__blog_posts > div.container.medium > ul > li:nth-child(n+1), section.block__blog_posts > div.container.wide > ul > li:nth-child(n+1), section.block__blog_posts > div.container.full > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(2n), section.block__blog_posts > div.container.medium > ul > li:nth-child(2n), section.block__blog_posts > div.container.wide > ul > li:nth-child(2n), section.block__blog_posts > div.container.full > ul > li:nth-child(2n) {
+    margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li > a, section.block__blog_posts > div.container.medium > ul > li > a, section.block__blog_posts > div.container.wide > ul > li > a, section.block__blog_posts > div.container.full > ul > li > a {
+    color: #000000;
+  }
+}
+@media only screen and (max-width: 640px) {
+  section.block__blog_posts > div.container.narrow > ul, section.block__blog_posts > div.container.medium > ul, section.block__blog_posts > div.container.wide > ul, section.block__blog_posts > div.container.full > ul {
+    margin: 0 0 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 92vw;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li, section.block__blog_posts > div.container.medium > ul > li, section.block__blog_posts > div.container.wide > ul > li, section.block__blog_posts > div.container.full > ul > li {
+    width: 92vw;
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(n+1), section.block__blog_posts > div.container.medium > ul > li:nth-child(n+1), section.block__blog_posts > div.container.wide > ul > li:nth-child(n+1), section.block__blog_posts > div.container.full > ul > li:nth-child(n+1) {
+    margin: 0 2vw 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(1n), section.block__blog_posts > div.container.medium > ul > li:nth-child(1n), section.block__blog_posts > div.container.wide > ul > li:nth-child(1n), section.block__blog_posts > div.container.full > ul > li:nth-child(1n) {
+    margin: 0 0 2vw 0;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li > a, section.block__blog_posts > div.container.medium > ul > li > a, section.block__blog_posts > div.container.wide > ul > li > a, section.block__blog_posts > div.container.full > ul > li > a {
+    color: #000000;
+  }
+  section.block__blog_posts > div.container.narrow > ul > li:nth-child(1n), section.block__blog_posts > div.container.narrow > ul > li:nth-child(n+1), section.block__blog_posts > div.container.medium > ul > li:nth-child(1n), section.block__blog_posts > div.container.medium > ul > li:nth-child(n+1), section.block__blog_posts > div.container.wide > ul > li:nth-child(1n), section.block__blog_posts > div.container.wide > ul > li:nth-child(n+1), section.block__blog_posts > div.container.full > ul > li:nth-child(1n), section.block__blog_posts > div.container.full > ul > li:nth-child(n+1) {
+    margin-bottom: 30px;
   }
 }
 @media only screen {

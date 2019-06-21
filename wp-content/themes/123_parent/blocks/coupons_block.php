@@ -5,15 +5,17 @@
  */
     // empty return string
     $return = [];
+    $return['section'] = '';
     $guide = [];
     $return['coupon'] ='<ul>';
-    
+
     // HARD CODED COUPON DESCRIPTION
     $guide['coupon'] = '
         <li class="site__fade site__fade-up">
             <a href="%s">
                 <h5>%s</h5>
                 <div class="coupon_description block__item-body">%s</div>
+                %s
                 %s
             </a>
         </li>
@@ -30,11 +32,11 @@
                 ,$coupon['coupon']->post_title
                 ,(!empty($fields['details']) ? $fields['details'] : '')
                 ,(!empty($fields['code']) ? '<p class="coupon_code">Code: <span>'.$fields['code'].'</span></p>' : '')
+                ,(!empty($fields['expiration']) ? '<p class="coupon_expiration">Expires: <span>'.$fields['expiration'].'</span></p>' : '')
             );
         }
     }
     $return['coupon'] .= '</ul>';
-
     
     // empty guide string 
     $guide['section'] = '
@@ -57,10 +59,10 @@
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         // 
-        ,( !empty($cB['heading']) ? '<h2 class="site__fade site__fade-up block__heading">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="site__fade site__fade-up block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
         ,( !empty($cB['text']) ? '<div class="site__fade site__fade-up block__details">'.$cB['text'].'</div>' : '' )
         // 
-        ,( !empty($return['coupon']) ? '<div class="site__grid">'.$return['coupon'].'</div>' : '' )
+        ,( !empty($return['coupon']) ? '<div class="site__grid coupons__'.$cB['style'].'">'.$return['coupon'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 

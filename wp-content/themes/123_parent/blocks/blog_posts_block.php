@@ -59,7 +59,7 @@
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['heading'] ) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
         ,( !empty( $cB['text'] ) ? '<div class="block__details">'.$cB['text'].'</div>' : '' )
-        ,( !empty( $return['posts'] ) ? '<div class="site__grid">'.$return['posts'].'</div>' : '' )
+        ,( !empty( $return['posts'] ) ? $return['posts'] : '' )
         ,( !empty( $cB['view_all_button']['link'] ) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 
