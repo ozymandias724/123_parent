@@ -27,15 +27,16 @@
             }
             ul {
                 li { 
-                    border-radius: 20px;
-                    background-color: getVar($gustavo, colors, gray9);
-                    border: 3px solid getVar($colors, white, full);
-                    box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray8); 
-                    &:hover, &:active, &:focus {
-                        box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray1); 
-                    }
                     > a {
+                        border-radius: 20px;
+                        background-color: getVar($gustavo, colors, gray9);
+                        border: 3px solid getVar($colors, white, full);
+                        box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray8); 
+                        display: block;
                         color: inherit;
+                        &:hover, &:active, &:focus {
+                            box-shadow: 0px 0px 0px 3px getVar($gustavo, colors, gray1); 
+                        }
                         > div.image__container {
                             position: relative;
                             z-index: 2;

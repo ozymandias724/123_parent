@@ -6201,17 +6201,16 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   section.block__blog_posts > div.container.full > ul > li > a {
     color: #000000;
   }
-  section.block__blog_posts > div.container ul li {
+  section.block__blog_posts > div.container ul li > a {
     border-radius: 20px;
     background-color: #efefef;
     border: 3px solid #ffffff;
     box-shadow: 0px 0px 0px 3px #e2e2e2;
-  }
-  section.block__blog_posts > div.container ul li:hover, section.block__blog_posts > div.container ul li:active, section.block__blog_posts > div.container ul li:focus {
-    box-shadow: 0px 0px 0px 3px #c2c2c2;
-  }
-  section.block__blog_posts > div.container ul li > a {
+    display: block;
     color: inherit;
+  }
+  section.block__blog_posts > div.container ul li > a:hover, section.block__blog_posts > div.container ul li > a:active, section.block__blog_posts > div.container ul li > a:focus {
+    box-shadow: 0px 0px 0px 3px #c2c2c2;
   }
   section.block__blog_posts > div.container ul li > a > div.image__container {
     position: relative;
