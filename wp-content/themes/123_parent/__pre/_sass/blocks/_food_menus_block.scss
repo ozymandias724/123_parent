@@ -413,7 +413,7 @@
             // Menu style
             #tabs_style__sidebar {
                 display: flex;
-                flex-flow: row wrap;
+                flex-flow: row nowrap;
                 > .menu_area {
                     flex: 1 1 80%;
                     .menu_photo_tiled_x3 {
@@ -526,6 +526,9 @@
 @media only screen and (max-width: 640px){
     section.block__food_menus {
         > .container {
+            #tabs_style_sidebar {
+                flex-flow: column nowrap;
+            }
             .tabs {
                 flex-flow: column nowrap;
                 > .menu_area {
