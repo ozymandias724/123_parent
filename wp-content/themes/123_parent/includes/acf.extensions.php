@@ -31,17 +31,6 @@ function do_hide_acf_fields( $field ) {
     }
 }
 
-function my_post_object_query( $args, $field, $post_id ) {
-    
-    
-    // return
-    return $args;
-    
-}
-add_filter('acf/fields/post_object/query/name=service', 'my_post_object_query', 10, 3);
-
-
-
 
 /**
  * Display the ACF address
