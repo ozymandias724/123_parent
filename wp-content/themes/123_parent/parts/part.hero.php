@@ -66,7 +66,7 @@
         $video_show_volume = ( !empty($background['video']['show_volume']) && $background['video']['show_volume'] == 1 ? '' : '');
 
         // open hero container
-        $content_hero = '<section class="hero site__fade site__fade-up '.( !empty($placement) ? $placement : '' ).'" id="hero_'.$style.'">'; 
+        $content_hero = '<section class="hero site__fade site__fade-up" id="hero_'.$style.'">'; 
 
     // static image
     if( $style == 'image' && !empty($background_image) )
