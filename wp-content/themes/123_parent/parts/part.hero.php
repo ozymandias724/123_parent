@@ -73,23 +73,25 @@
     {
 
         $format_hero = '
-            <div class="%s" style="background-image: url(%s)" title="%s" id="hero_staticimage">
+            <div style="background-image: url(%s)" title="%s" id="hero_staticimage">
                 <div style="%s %s" class="%s hero_foreground container '.$width.'">
-                    %s
-                    %s
-                    %s
-                    %s
+                   <div class="hero_foreground_grid %s">
+                        %s
+                        %s
+                        %s
+                        %s
+                   </div>
                 </div>
             </div>
         ';
         $content_hero .= sprintf(
             $format_hero
-            ,( !empty($placement) ? $placement : '' ) // placement
             ,$background_image['url']
             ,$background_image['alt']
             ,$background_color
             ,$foreground_color
             ,( !empty($background_color) ? 'hasbg' : '' )
+            ,( !empty($placement) ? $placement : '' ) // placement
             ,$title
             ,$logo
             ,$tagline
@@ -112,10 +114,12 @@
         $format_hero = '
             %s
             <div style="%s %s" class="hero_foreground '.$width.'">
-                %s
-                %s    
-                %s
-                %s
+                <div class="hero_foreground_grid %s">
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
             </div>
         ';
         $content_hero .= sprintf(
@@ -123,6 +127,7 @@
             ,$slider
             ,$background_color
             ,$foreground_color
+            ,( !empty($placement) ? $placement : '' ) // placement
             ,$title
             ,$logo
             ,$tagline

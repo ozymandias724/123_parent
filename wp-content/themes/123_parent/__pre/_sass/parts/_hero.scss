@@ -16,112 +16,15 @@
         &#hero_image {
             > #hero_staticimage {
                 height: 100%;
-                display: flex;
-                flex-flow: row wrap;
-                align-items: center;
-                justify-content: center;
-                padding: getVar($sizing, gutter, px, large);
                 @include bgimage;
-                // handle placement
-                &.topleft {
-                    align-items: flex-start;
-                    justify-content: flex-start;
-                }
-                &.topcenter {
-                    align-items: flex-start;
-                    justify-content: center;
-                }
-                &.topright {
-                    align-items: flex-start;
-                    justify-content: flex-end;
-                }
-                &.middleleft {
-                    align-items: center;
-                    justify-content: flex-start;
-                }
-                &.middlecenter {
-                    align-items: center;
-                    justify-content: center;
-                }
-                &.middleright {
-                    align-items: center;
-                    justify-content: flex-end;
-                }
-                &.bottomleft {
-                    align-items: flex-end;
-                    justify-content: flex-start;
-                }
-                &.bottomcenter {
-                    align-items: flex-end;
-                    justify-content: center;
-                }
-                &.bottomright {
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                }
 
 
-                
-                > .hero_foreground {
-                    &.hasbg {
-                        padding: getVar($sizing, gutter, px, normal);
-                    }
-                }
             }
             
         }
 
         &#hero_slider {
 
-            display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-            justify-content: center;
-            // handle placement
-            &.topleft {
-                align-items: flex-start;
-                justify-content: flex-start;
-            }
-
-            &.topcenter {
-                align-items: flex-start;
-                justify-content: center;
-            }
-
-            &.topright {
-                align-items: flex-start;
-                justify-content: flex-end;
-            }
-
-            &.middleleft {
-                align-items: center;
-                justify-content: flex-start;
-            }
-
-            &.middlecenter {
-                align-items: center;
-                justify-content: center;
-            }
-
-            &.middleright {
-                align-items: center;
-                justify-content: flex-end;
-            }
-
-            &.bottomleft {
-                align-items: flex-end;
-                justify-content: flex-start;
-            }
-
-            &.bottomcenter {
-                align-items: flex-end;
-                justify-content: center;
-            }
-
-            &.bottomright {
-                align-items: flex-end;
-                justify-content: flex-end;
-            }
             
             > div#slick_slider_hero {
                 position: absolute;
@@ -144,24 +47,62 @@
                 }
             }
 
+        }
+
+        &#hero_image,
+        &#hero_slider {
             > .hero_foreground {
                 position: relative;
+                padding: 20px 180px 0;
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                grid-template-rows: repeat(3, auto);
+                width: 100%;
+                height: 100%;
+                grid-template-areas:
+                "a b c"
+                "d e f"
+                "g h i";
+                > .hero_foreground_grid {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-flow: column nowrap;
+                    // handle placement
+                    &.topleft {
+                        grid-area: a;
+                    }
+                    &.topcenter {
+                        grid-area: b;
+                    }
+                    &.topright {
+                        grid-area: c;
+                    }
+                    &.middleleft {
+                        grid-area: d;
+                    }
+                    &.middlecenter {
+                        grid-area: e;
+                    }
+                    &.middleright {
+                        grid-area: f;
+                    }
+                    &.bottomleft {
+                        grid-area: g;
+                        justify-content: flex-end;
+                    }
+                    &.bottomcenter {
+                        grid-area: h;
+                        justify-content: flex-end
+                    }
+                    &.bottomright {
+                        grid-area: i;
+                        justify-content: flex-end
+                    }
+                }
             }
-        }
-        
-        
+        } 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     //Hero section
@@ -182,6 +123,7 @@
         }
         //Hero Foreground
         .hero_foreground {
+            position: relative;
             text-align: center;
             z-index: 2;
             //Title
@@ -192,7 +134,7 @@
             }
             img {
                 margin: 0 auto;
-                max-width: 700px;
+                max-width: 500px;
                 max-height: 500px;
             }
             //Subtitle
