@@ -3127,6 +3127,12 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     padding: 0;
   }
 }
+@media only screen and (max-width: 640px) {
+  section.hero .hero_foreground img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
 @media only screen {
   .site__banner {
     display: block;
