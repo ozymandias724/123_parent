@@ -2977,7 +2977,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     background-position: center center;
     background-repeat: no-repeat;
   }
-  section.hero#hero_image > .hero_foreground, section.hero#hero_slider > .hero_foreground {
+  section.hero#hero_image .hero_foreground, section.hero#hero_slider .hero_foreground {
     position: relative;
     padding: 20px 180px 0;
     display: grid;
@@ -2987,39 +2987,39 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     height: 100%;
     grid-template-areas: "a b c" "d e f" "g h i";
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid, section.hero#hero_slider .hero_foreground > .hero_foreground_grid {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column nowrap;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.topleft, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.topleft {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.topleft, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.topleft {
     grid-area: a;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.topcenter, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.topcenter {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.topcenter, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.topcenter {
     grid-area: b;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.topright, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.topright {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.topright, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.topright {
     grid-area: c;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.middleleft, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.middleleft {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.middleleft, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.middleleft {
     grid-area: d;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.middlecenter, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.middlecenter {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.middlecenter, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.middlecenter {
     grid-area: e;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.middleright, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.middleright {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.middleright, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.middleright {
     grid-area: f;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.bottomleft, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.bottomleft {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.bottomleft, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.bottomleft {
     grid-area: g;
     justify-content: flex-end;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.bottomcenter, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.bottomcenter {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.bottomcenter, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.bottomcenter {
     grid-area: h;
     justify-content: flex-end;
   }
-  section.hero#hero_image > .hero_foreground > .hero_foreground_grid.bottomright, section.hero#hero_slider > .hero_foreground > .hero_foreground_grid.bottomright {
+  section.hero#hero_image .hero_foreground > .hero_foreground_grid.bottomright, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.bottomright {
     grid-area: i;
     justify-content: flex-end;
   }
@@ -3123,12 +3123,15 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   }
 }
 @media only screen and (max-width: 960px) {
-  section.hero#hero_image > .hero_foreground, section.hero#hero_slider > .hero_foreground {
+  section.hero#hero_image .hero_foreground, section.hero#hero_slider .hero_foreground {
     padding: 0;
   }
 }
 @media only screen and (max-width: 640px) {
-  section.hero .hero_foreground img {
+  section.hero#hero_image .hero_foreground, section.hero#hero_slider .hero_foreground {
+    padding: 0;
+  }
+  section.hero#hero_image .hero_foreground img, section.hero#hero_slider .hero_foreground img {
     max-width: 300px;
     max-height: 300px;
   }

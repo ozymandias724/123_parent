@@ -9,10 +9,6 @@
         margin: 0 0 getVar($sizing, gutter, px, large) 0;
         height: 80vh;
         
-        
-
-        
-        
         &#hero_image {
             > #hero_staticimage {
                 height: 100%;
@@ -25,7 +21,6 @@
 
         &#hero_slider {
 
-            
             > div#slick_slider_hero {
                 position: absolute;
                 top: 0;
@@ -51,7 +46,7 @@
 
         &#hero_image,
         &#hero_slider {
-            > .hero_foreground {
+            .hero_foreground {
                 position: relative;
                 padding: 20px 180px 0;
                 display: grid;
@@ -218,7 +213,7 @@
     section.hero {
         &#hero_image,
         &#hero_slider {
-            > .hero_foreground {
+            .hero_foreground {
                 padding: 0;
             }
         }
@@ -227,11 +222,14 @@
 
 @media only screen and (max-width: 640px){
     section.hero {
-        //Hero Foreground
-        .hero_foreground {
-            img {
-                max-width: 300px;
-                max-height: 300px;
+        &#hero_image,
+        &#hero_slider {
+            .hero_foreground {
+                padding: 0;
+                img {
+                    max-width: 300px;
+                    max-height: 300px;
+                }
             }
         }
     }
