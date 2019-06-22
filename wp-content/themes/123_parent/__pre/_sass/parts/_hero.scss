@@ -39,131 +39,55 @@
                     @include bgimage;
                 }
             }
-
-        }
-
-        &.header__one {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 8px 180px 0;
-                }
-            }
-        }
-        &.header__two {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 8px 152px 0;
-                }
-            }
-        }
-        &.header__three {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 121px 148px 0;
-                }
-            }
-        }
-        &.header__four {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 8px 141px 0;
-                }
-            }
-        }
-        &.header__five,
-        &.header__six {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 8px 146px 0;
-                }
-            }
-        }
-        &.header__seven {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 8px 137px 0;
-                }
-            }
-        }
-        &.header__eight {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 92px 142px 0;
-                }
-            }
-        }
-        &.header__nine {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 49px 158px 0;
-                }
-            }
-        }
-        &.header__ten {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    padding: 8px 156px 0;
-                }
-            }
         }
 
         &#hero_image,
         &#hero_slider {
             .hero_foreground {
                 position: relative;
-                display: grid;
-                grid-template-columns: repeat(3, auto);
-                grid-template-rows: repeat(3, auto);
                 width: 100%;
                 height: 100%;
-                grid-template-areas:
-                "a b c"
-                "d e f"
-                "g h i";
                 > .hero_foreground_grid {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-flow: column nowrap;
+                    position: absolute;
                     // handle placement
                     &.topleft {
-                        grid-area: a;
+                        top: 17%;
+                        left: 6%;
                     }
                     &.topcenter {
-                        grid-area: b;
+                        top: 17%;
+                        left: 50%;
+                        transform: translateX(-50%);
                     }
                     &.topright {
-                        grid-area: c;
+                        top: 17%;
+                        right: 6%;
                     }
                     &.middleleft {
-                        grid-area: d;
+                        top:25%;
+                        left: 6%
                     }
                     &.middlecenter {
-                        grid-area: e;
+                        top:25%;
+                        left: 50%;
+                        transform: translateX(-50%);
                     }
                     &.middleright {
-                        grid-area: f;
+                        top:25%;
+                        right: 6%;
                     }
                     &.bottomleft {
-                        grid-area: g;
-                        justify-content: flex-end;
+                        bottom: 2%;
+                        left: 6%
                     }
                     &.bottomcenter {
-                        grid-area: h;
-                        justify-content: flex-end
+                        bottom: 2%;
+                        left: 50%;
+                        transform: translateX(-50%);
                     }
                     &.bottomright {
-                        grid-area: i;
-                        justify-content: flex-end
+                        bottom: 2%;
+                        right: 6%;
                     }
                 }
             }
@@ -190,7 +114,7 @@
         //Hero Foreground
         .hero_foreground {
             position: relative;
-            text-align: center;
+            text-align: center; 
             z-index: 2;
             //Title
             h2 {
@@ -200,15 +124,14 @@
             }
             img {
                 margin: 0 auto;
-                max-width: 500px;
-                max-height: 250px;
+                max-width: 60%;
             }
             //Subtitle
             p {
                 color: $white;
                 z-index: 2;
                 @include fontS-34;
-                margin: 20px 0 30px;
+                margin: 10px 0;
             }
             //Button
             a.site__button {
@@ -278,20 +201,23 @@
     }
 }
 
-@media only screen and (max-width: 1280px){
-}
-
 @media only screen and (max-width: 960px){
     section.hero {
-        &.header__one, &.header__two, &.header__three, &.header__four, &.header__five, &.header__six, &.header__seven, &.header__eight, &.header__nine, &.header__ten {
-            &#hero_image,
-            &#hero_slider {
-                .hero_foreground {
-                    display: flex;
-                    justify-content: center;
-                    grid-template-columns: none; 
-                    grid-template-rows: none;
-                    grid-template-areas: none;
+        &#hero_image,
+        &#hero_slider {
+            .hero_foreground {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > .hero_foreground_grid {
+                    position: relative;
+                    &.topleft, &.topcenter, &.topright, &.middleleft, &.middlecenter, &.middleright, &.bottomleft, &.bottomcenter, &.bottomright {
+                        top:unset;
+                        right:unset;
+                        left:unset;
+                        bottom:unset;
+                        transform:none;
+                    }
                 }
             }
         }
