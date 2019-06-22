@@ -12,7 +12,7 @@
     $guide['posts'] = '
         <li class="site__fade site__fade-up">
             <a href="%s">
-                <div class="image__container"><div class="image rectangular_block" style="background-image: url(%s)"></div></div>
+                %s
                 <div class="content">
                     <h5>%s</h5>
                     <div class="excerpt block__item-body">%s</div>
@@ -30,7 +30,7 @@
             $return['posts'] .= sprintf(
                 $guide['posts']
                 ,get_post_permalink($post['blog_post'])
-                ,$fields['featured_image']['url']
+                ,( !empty($fields['featured_image']['url']) ? '<div class="image__container"><div class="image rectangular_block" style="background-image:url('.$fields['featured_image']['url'].')"></div></div>' : '')
                 ,$post['blog_post']->post_title
                 ,(!empty($fields['excerpt']) ? $fields['excerpt'] : '')
             );

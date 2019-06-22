@@ -5,9 +5,16 @@
     div.acf-button-group {
         display: flex;
         flex-flow: row wrap;
-        width: 300px;
+        width: 150px;
+        height: 150px; 
         label {
             flex: 1 0 25%;
+            padding: 0;
+            color: white;
+            font-size: 0;
+            &.selected {
+                color: #309cf3;
+            }
         } 
     }
 }

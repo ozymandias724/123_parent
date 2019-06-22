@@ -9,120 +9,16 @@
         margin: 0 0 getVar($sizing, gutter, px, large) 0;
         height: 80vh;
         
-        
-
-        
-        
         &#hero_image {
             > #hero_staticimage {
                 height: 100%;
-                display: flex;
-                flex-flow: row wrap;
-                align-items: center;
-                justify-content: center;
-                padding: getVar($sizing, gutter, px, large);
                 @include bgimage;
-                // handle placement
-                &.topleft {
-                    align-items: flex-start;
-                    justify-content: flex-start;
-                }
-                &.topcenter {
-                    align-items: flex-start;
-                    justify-content: center;
-                }
-                &.topright {
-                    align-items: flex-start;
-                    justify-content: flex-end;
-                }
-                &.middleleft {
-                    align-items: center;
-                    justify-content: flex-start;
-                }
-                &.middlecenter {
-                    align-items: center;
-                    justify-content: center;
-                }
-                &.middleright {
-                    align-items: center;
-                    justify-content: flex-end;
-                }
-                &.bottomleft {
-                    align-items: flex-end;
-                    justify-content: flex-start;
-                }
-                &.bottomcenter {
-                    align-items: flex-end;
-                    justify-content: center;
-                }
-                &.bottomright {
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                }
-
-
-                
-                > .hero_foreground {
-                    &.hasbg {
-                        padding: getVar($sizing, gutter, px, normal);
-                    }
-                }
             }
             
         }
 
         &#hero_slider {
 
-            display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-            justify-content: center;
-            // handle placement
-            &.topleft {
-                align-items: flex-start;
-                justify-content: flex-start;
-            }
-
-            &.topcenter {
-                align-items: flex-start;
-                justify-content: center;
-            }
-
-            &.topright {
-                align-items: flex-start;
-                justify-content: flex-end;
-            }
-
-            &.middleleft {
-                align-items: center;
-                justify-content: flex-start;
-            }
-
-            &.middlecenter {
-                align-items: center;
-                justify-content: center;
-            }
-
-            &.middleright {
-                align-items: center;
-                justify-content: flex-end;
-            }
-
-            &.bottomleft {
-                align-items: flex-end;
-                justify-content: flex-start;
-            }
-
-            &.bottomcenter {
-                align-items: flex-end;
-                justify-content: center;
-            }
-
-            &.bottomright {
-                align-items: flex-end;
-                justify-content: flex-end;
-            }
-            
             > div#slick_slider_hero {
                 position: absolute;
                 top: 0;
@@ -143,25 +39,60 @@
                     @include bgimage;
                 }
             }
-
-            > .hero_foreground {
-                position: relative;
-            }
         }
-        
-        
+
+        &#hero_image,
+        &#hero_slider {
+            .hero_foreground {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                > .hero_foreground_grid {
+                    position: absolute;
+                    // handle placement
+                    &.topleft {
+                        top: 17%;
+                        left: 6%;
+                    }
+                    &.topcenter {
+                        top: 17%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    &.topright {
+                        top: 17%;
+                        right: 6%;
+                    }
+                    &.middleleft {
+                        top:25%;
+                        left: 6%
+                    }
+                    &.middlecenter {
+                        top:25%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    &.middleright {
+                        top:25%;
+                        right: 6%;
+                    }
+                    &.bottomleft {
+                        bottom: 2%;
+                        left: 6%
+                    }
+                    &.bottomcenter {
+                        bottom: 2%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    &.bottomright {
+                        bottom: 2%;
+                        right: 6%;
+                    }
+                }
+            }
+        } 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     //Hero section
@@ -182,7 +113,8 @@
         }
         //Hero Foreground
         .hero_foreground {
-            text-align: center;
+            position: relative;
+            text-align: center; 
             z-index: 2;
             //Title
             h2 {
@@ -192,15 +124,14 @@
             }
             img {
                 margin: 0 auto;
-                max-width: 700px;
-                max-height: 500px;
+                max-width: 60%;
             }
             //Subtitle
             p {
                 color: $white;
                 z-index: 2;
                 @include fontS-34;
-                margin: 20px 0 30px;
+                margin: 10px 0;
             }
             //Button
             a.site__button {
@@ -211,9 +142,10 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 line-height: 1em; 
-                color: $white;
+                color: getVar($colors, accent);
+                border: none;
                 display: inline-block;
-                background-color: $accent;
+                background-color: getVar($colors, accent);
                 transition: background-color 0.25s;
                 //Button actions on hover, focus and active
                 &:hover, 
@@ -232,7 +164,7 @@
                 position: absolute;
                 top: 50%;
                 font-size: 50px;
-                z-index: 1;
+                z-index: 3;
                 padding: 10px;
                 > i {
                     color: white;
@@ -269,11 +201,27 @@
     }
 }
 
-@media only screen and (max-width: 1280px){
-}
-
 @media only screen and (max-width: 960px){
+    section.hero {
+        &#hero_image,
+        &#hero_slider {
+            .hero_foreground {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > .hero_foreground_grid {
+                    position: relative;
+                    &.topleft, &.topcenter, &.topright, &.middleleft, &.middlecenter, &.middleright, &.bottomleft, &.bottomcenter, &.bottomright {
+                        top:unset;
+                        right:unset;
+                        left:unset;
+                        bottom:unset;
+                        transform:none;
+                    }
+                }
+            }
+        }
+    }
 }
 
-@media only screen and (max-width: 640px){
-}
+

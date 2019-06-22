@@ -19,7 +19,7 @@
 
         // Background and foreground fields
         $background = ( !empty($fields['background'] ) ? $fields['background'] : '');
-        $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
+        $foreground = ( !empty($fields['foreground'] ) ? $fields['foreground'] : ''); 
 
         // Background fields
         $background_image = ( !empty($background['image'] ) ? $background['image']['image'] : '');
@@ -27,6 +27,7 @@
 
         // Foreground fields
         $width = ( !empty($foreground['width'] ) ? $foreground['width'] : '');
+        $header = 'header__'.get_field('header', 'options')['style'];
         $placement = ( !empty($foreground['placement'] ) ? $foreground['placement'] : '');
         $background_color = ( !empty($foreground['background_color'] ) ? 'background-color: rgba('.hex2RGB($foreground['background_color'], true).','.$foreground['background_opacity'].');' : '');
         $foreground_color = ( !empty($foreground['foreground_color'] ) ? 'color:'.$foreground['foreground_color'].';' : '');
@@ -66,34 +67,36 @@
         $video_show_volume = ( !empty($background['video']['show_volume']) && $background['video']['show_volume'] == 1 ? '' : '');
 
         // open hero container
-        $content_hero = '<section class="hero site__fade site__fade-up '.( !empty($placement) ? $placement : '' ).'" id="hero_'.$style.'">'; 
+        $content_hero = '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$style.'">'; 
 
     // static image
     if( $style == 'image' && !empty($background_image) )
     {
 
         $format_hero = '
-            <div class="%s" style="background-image: url(%s)" title="%s" id="hero_staticimage">
+            <div style="background-image: url(%s)" title="%s" id="hero_staticimage">
                 <div style="%s %s" class="%s hero_foreground container '.$width.'">
-                    %s
-                    %s
-                    %s
-                    %s
+                   <div class="hero_foreground_grid %s">
+                        %s
+                        %s
+                        %s
+                        %s
+                   </div>
                 </div>
             </div>
         ';
         $content_hero .= sprintf(
             $format_hero
-            ,( !empty($placement) ? $placement : '' ) // placement
             ,$background_image['url']
             ,$background_image['alt']
             ,$background_color
             ,$foreground_color
             ,( !empty($background_color) ? 'hasbg' : '' )
+            ,( !empty($placement) ? $placement : '' ) // placement
             ,$title
             ,$logo
             ,$tagline
-            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
+            ,( !empty($button['link']) ? '<a class="site__button" style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
         );
         
     } 
@@ -112,10 +115,12 @@
         $format_hero = '
             %s
             <div style="%s %s" class="hero_foreground '.$width.'">
-                %s
-                %s    
-                %s
-                %s
+                <div class="hero_foreground_grid %s">
+                    %s
+                    %s
+                    %s
+                    %s
+                </div>
             </div>
         ';
         $content_hero .= sprintf(
@@ -123,10 +128,11 @@
             ,$slider
             ,$background_color
             ,$foreground_color
+            ,( !empty($placement) ? $placement : '' ) // placement
             ,$title
             ,$logo
             ,$tagline
-            ,( !empty($button['link']) ? '<a style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
+            ,( !empty($button['link']) ? '<a class="site__button" style="'. $button_text_color . $button_bg_color .'" href="'.$button_url.'" title="'.$button_title.'" target="'.$button_target.'">'.$button_title.'</a>' : '')
         );
     }
     //   video
