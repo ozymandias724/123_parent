@@ -1,6 +1,9 @@
 <?php 
-
-// built-in acf
+/**
+ * 
+ *  Add Options Pages
+ * 
+*/
 if( function_exists('acf_add_options_page') ) {
 	// Main Theme Settings
 	acf_add_options_page(array(
@@ -14,18 +17,19 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+
+/**
+ *  MISC
+*/
 add_filter('acf/prepare_field/name=anchor_enabled', 'do_hide_acf_fields');
 add_filter('acf/prepare_field/name=anchor_link_text', 'do_hide_acf_fields');
 function do_hide_acf_fields( $field ) {
-    
     if( !get_field('header', 'options')['long_scroll'] ){
         return;
     }else {
         return $field;
     }
 }
-
-
 
 
 /**

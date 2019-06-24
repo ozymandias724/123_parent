@@ -2952,6 +2952,79 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero {
     margin: 0 0 60px 0;
     height: 80vh;
+    width: 100%;
+  }
+  section.hero > .hero_foreground {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-flow: column nowrap;
+    padding: 30px;
+  }
+  section.hero > .hero_foreground.topleft {
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+  }
+  section.hero > .hero_foreground.topcenter {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.hero > .hero_foreground.topright {
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: right;
+  }
+  section.hero > .hero_foreground.middleleft {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+  section.hero > .hero_foreground.middlecenter {
+    justify-content: center;
+    align-items: center;
+  }
+  section.hero > .hero_foreground.middleright {
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+  }
+  section.hero > .hero_foreground.bottomleft {
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+  }
+  section.hero > .hero_foreground.bottomcenter {
+    justify-content: flex-end;
+    align-items: center;
+  }
+  section.hero > .hero_foreground.bottomright {
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+  }
+  section.hero > .hero_foreground.narrow {
+    width: 50vw;
+  }
+  section.hero > .hero_foreground.medium {
+    width: 65vw;
+  }
+  section.hero > .hero_foreground.wide {
+    width: 80vw;
+  }
+  section.hero > .hero_foreground.full {
+    width: 92vw;
+  }
+  section.hero .hero_bgtint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
   section.hero#hero_image > #hero_staticimage {
     height: 100%;
@@ -2976,53 +3049,6 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-  }
-  section.hero#hero_image .hero_foreground, section.hero#hero_slider .hero_foreground {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid, section.hero#hero_slider .hero_foreground > .hero_foreground_grid {
-    position: absolute;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.topleft, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.topleft {
-    top: 17%;
-    left: 6%;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.topcenter, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.topcenter {
-    top: 17%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.topright, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.topright {
-    top: 17%;
-    right: 6%;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.middleleft, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.middleleft {
-    top: 25%;
-    left: 6%;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.middlecenter, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.middlecenter {
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.middleright, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.middleright {
-    top: 25%;
-    right: 6%;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.bottomleft, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.bottomleft {
-    bottom: 2%;
-    left: 6%;
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.bottomcenter, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.bottomcenter {
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  section.hero#hero_image .hero_foreground > .hero_foreground_grid.bottomright, section.hero#hero_slider .hero_foreground > .hero_foreground_grid.bottomright {
-    bottom: 2%;
-    right: 6%;
   }
 
   section.hero {
@@ -3052,14 +3078,20 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     color: #fff;
   }
   section.hero .hero_foreground img {
-    margin: 0 auto;
-    max-width: 60%;
+    display: inline-block;
+    margin: 0;
+    max-height: 80%;
+  }
+  section.hero .hero_foreground img:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   section.hero .hero_foreground p {
     color: #fff;
     z-index: 2;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
+    font-size: 2rem;
+    line-height: 3.2rem;
     margin: 10px 0;
   }
   section.hero .hero_foreground a.site__button {
@@ -3071,7 +3103,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1em;
-    color: #376494;
+    color: #ffffff;
     border: none;
     display: inline-block;
     background-color: #376494;
@@ -3113,14 +3145,16 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     width: 100%;
   }
   section.hero#hero_video video {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    max-width: 100vw;
+    z-index: -1;
   }
 }
 @media only screen and (max-width: 960px) {

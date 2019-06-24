@@ -1,22 +1,38 @@
-.acf-field[data-name="placement"]{
-
-
-    
-    div.acf-button-group {
-        display: flex;
-        flex-flow: row wrap;
-        width: 150px;
-        height: 150px; 
-        label {
-            flex: 1 0 25%;
-            padding: 0;
-            color: white;
-            font-size: 0;
-            &.selected {
-                color: #309cf3;
-            }
-        } 
-    }
-}
-
+// Import Libs
+// 
+// 
 @import '../../../node_modules/paymentfont/css/paymentfont.min.css';
+// 
+// 
+// Style Admin Area
+@media only screen {
+    // 
+    // 
+    // General
+    // 
+    // 
+    // Hero
+    // 
+    // 
+    // Placement
+    .acf-field[data-name="placement"] {
+        div.acf-button-group {
+            display: flex;
+            flex-flow: row wrap;
+            width: 150px;
+            height: 150px;
+
+            label {
+                flex: 1 0 25%;
+                padding: 0;
+                color: white;
+                font-size: 0;
+
+                &.selected {
+                    color: #309cf3;
+                }
+            }
+        }
+    }
+
+}
