@@ -1,6 +1,6 @@
 <?php 
 /**
- * coupons Block
+ * Blog Posts Block
  * 
  */
     // empty return string

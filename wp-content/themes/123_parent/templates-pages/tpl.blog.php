@@ -1,77 +1,85 @@
 <?php 
 /**
- * Template Name: Blog
- */
+* Template Name: Blog
+*/
+$args = array(
+    'post_type' => 'post'
+    ,'posts_per_page' => -1
+);
 
-   $args_posts = array(
-      'posts_per_page' => -1
-      ,'post_type' => 'post'
-   );
 
-   $res1 = get_posts($args_posts);
+$res = get_posts($args);
+$fields = get_fields(get_the_ID());
 
-   $args_page = array(
-      'posts_per_page' => 1
-      ,'post_type' => 'page'
-      ,'pagename' => 'blog'
-   );
 
-   $res2 = get_posts($args_page);
+$return['section'] = '';
 
-   $fields = get_fields($res2[0]);
 
-   if( !empty($fields['featured_posts']['posts']) ){
+$return['posts'] = '<ul>';
 
-      $heading = ( !empty( $fields['featured_posts']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['featured_posts']['heading'].'</h2>' : '');
-      $details = ( !empty( $fields['featured_posts']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['featured_posts']['details'].'</div>' : '');
-      
-      $return_posts = '
-         <section class="mod__featured_grid">
-            <div class="container">
-               '.$heading.'
-               '.$details.'
-               <div class="site__grid"><ul>
-      ';
-      
-      $format_post = '
-          <li class="site__fade site__fade-up">
-              <a href="%s">
-                  <div class="image" style="background-image: url(%s)"></div>
-                  <div class="blog_item_content">
-                      <h5>%s</h5>
-                      <div class="blog_item_excerpt">%s</div>
-                      <p class="blog_item_read_more">Read More</p>
-                  </div>
-              </a>
-          </li>
-      ';
+$guide['posts'] = '
+   <li class="site__fade site__fade-up">
+      <a href="%s">
+         %s
+         <div class="content">
+            <h5>%s</h5>
+            <div class="excerpt block__item-body">%s</div>
+            <p class="read_more">Read More</p>
+         </div>
+      </a>
+   </li>
+';
 
-      foreach( $res1 as $i => $item ){
+foreach($res as $i => $post) {
+        
+   $post_fields = get_fields($post->ID);
 
-         $post_fields = get_fields($item->ID);
-          
-         if( $post_fields['status'] ){
-            $return_posts .= sprintf(
-               $format_post
-               ,get_post_permalink($item->ID)
-               ,$post_fields['featured_image']['url']
-               ,$item->post_title
-               ,(!empty($post_fields['excerpt']) ? $post_fields['excerpt'] : '')
-            );
-         }
-      }
-      $return_posts .= '</ul></div>';
-
-      $return_posts .= '
-            </div>
-         </section>
-      ';
+   print_r($post_fields);
+       
+   if( $post_fields['status'] ){
+       $return['posts'] .= sprintf(
+           $guide['posts']
+           ,get_post_permalink($post->ID)
+           ,( !empty($post_fields['featured_image']['url']) ? '<div class="image__container"><div class="image rectangular_block" style="background-image:url('.$post_fields['featured_image']['url'].')"></div></div>' : '')
+           ,$post->post_title
+           ,(!empty($post_fields['excerpt']) ? $post_fields['excerpt'] : '')
+       );
    }
+}
+$return['posts'] .= '</ul>';
 
-   get_header();
- ?>
-<main id="page_blog">
-<?php include( get_template_directory() . '/parts/part.hero.php');
-   echo $return_posts;
-   get_footer();
+// empty guide string 
+$guide['section'] = '
+   <section class="site__block block__blog_posts">
+       <div class="container %s">
+           %s
+           %s
+           %s
+       </div>
+   </section>
+';
+
+$return['section'] .= sprintf(
+   $guide['section']
+   
+   ,( !empty( $fields['width'] ) ? $fields['width'] : '' )  // container width
+
+   ,( !empty( $fields['heading'] ) ? '<h2 class="block__heading" style="text-align:'.$fields['heading_alignment'].';">'.$fields['heading'].'</h2>' : '' )
+
+   ,( !empty( $fields['text'] ) ? '<div class="block__details">'.$fields['text'].'</div>' : '' )
+
+   ,( !empty( $return['posts'] ) ? $return['posts'] : '' )
+);
+
 ?>
+<?php
+    get_header();
+?>
+<main>
+<?php 
+    include( get_template_directory() . '/parts/part.hero.php');
+    echo $return['section'];
+?>
+<?php 
+    get_footer();
+ ?>
