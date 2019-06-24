@@ -8,15 +8,52 @@
     section.hero {
         margin: 0 0 getVar($sizing, gutter, px, large) 0;
         height: 80vh;
-        
+        width: 100%;
+        > .hero_foreground{
+            background-color: transparent;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            margin: 0 auto;
+            flex-flow: column nowrap;
+            @include heroAlignment();
+            // 
+            padding: getVar($sizing, gutter, px, normal);
+            &.narrow{
+                $w: getVar($sizing, content, small);
+                width: $w;
+            }
+            &.medium{
+                $w: getVar($sizing, content, medium);
+                width: $w;
+            }
+            &.wide{
+                $w: getVar($sizing, content, large);
+                width: $w;
+            }
+            &.full{
+                $w: getVar($sizing, content, full);
+                width: $w;
+            }
+        }
+        // 
+        // 
+        // 
+        .hero_bgtint {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
         &#hero_image {
             > #hero_staticimage {
                 height: 100%;
                 @include bgimage;
             }
-            
         }
-
         &#hero_slider {
 
             > div#slick_slider_hero {
@@ -40,58 +77,6 @@
                 }
             }
         }
-
-        &#hero_image,
-        &#hero_slider {
-            .hero_foreground {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                > .hero_foreground_grid {
-                    position: absolute;
-                    // handle placement
-                    &.topleft {
-                        top: 17%;
-                        left: 6%;
-                    }
-                    &.topcenter {
-                        top: 17%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-                    &.topright {
-                        top: 17%;
-                        right: 6%;
-                    }
-                    &.middleleft {
-                        top:25%;
-                        left: 6%
-                    }
-                    &.middlecenter {
-                        top:25%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-                    &.middleright {
-                        top:25%;
-                        right: 6%;
-                    }
-                    &.bottomleft {
-                        bottom: 2%;
-                        left: 6%
-                    }
-                    &.bottomcenter {
-                        bottom: 2%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-                    &.bottomright {
-                        bottom: 2%;
-                        right: 6%;
-                    }
-                }
-            }
-        } 
     }
     
     
@@ -123,14 +108,17 @@
                 color: $white;
             }
             img {
-                margin: 0 auto;
-                max-width: 60%;
+                display: inline-block;
+                margin: 0;
+                max-height: 80%;
+                @include clearfix;
+                // max-width: 60%;
             }
             //Subtitle
             p {
                 color: $white;
                 z-index: 2;
-                @include fontS-34;
+                @include fontS-20;
                 margin: 10px 0;
             }
             //Button
@@ -142,7 +130,7 @@
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 line-height: 1em; 
-                color: getVar($colors, accent);
+                color: getVar($colors, white, full);
                 border: none;
                 display: inline-block;
                 background-color: getVar($colors, accent);
@@ -192,11 +180,13 @@
         width: 100%;
         // Video 
         video {
-            min-width: 100%;
-            min-height: 100%;
+            @include centerer;
             width: auto;
             height: auto;
-            @include centerer;
+            min-height: 100%;
+            min-width: 100%;
+            max-width: 100vw;
+            z-index: -1;
         }
     }
 }

@@ -87,14 +87,70 @@ wp.customize('links_anylink_hover', function (value) {
     });
 });
 
-// Fonts
+/**
+ * 
+ *      FONTS
+ * 
+*/
+// family
 wp.customize('fonts__body', function (value) {
     value.bind(function (newval) {
         $('.fonts__body, body').css('font-family', newval);
     });
 });
+// weight
+wp.customize('fonts__body_weight', function (value) {
+    value.bind(function (newval) {
+        $('.fonts__body, body').css('font-weight', newval);
+    });
+});
+// italics
+wp.customize('fonts__body_italics', function (value) {
+    value.bind(function (newval) {
+        $('.fonts__body, body').css('font-style', newval);
+    });
+});
+// family
 wp.customize('fonts__headings', function (value) {
     value.bind(function (newval) {
         $('.fonts__headings, h1, h2, h3, h4, h5, h6').css('font-family', newval);
+    });
+});
+// weight
+wp.customize('fonts__headings_weight', function (value) {
+    value.bind(function (newval) {
+        $('.fonts__headings, h1, h2, h3, h4, h5, h6').css('font-weight', newval);
+    });
+});
+// italics
+wp.customize('fonts__headings_italics', function (value) {
+    value.bind(function (newval) {
+        if( newval ){
+            $('.fonts__headings, h1, h2, h3, h4, h5, h6').css('font-style', 'italic');
+        } else {
+            $('.fonts__headings, h1, h2, h3, h4, h5, h6').css('font-style', 'normal');
+        }
+    });
+});
+
+/**
+ * 
+ *      HERO
+ * 
+ */
+wp.customize('hero__height', function (value) {
+    value.bind(function (newval) {
+        $('section.hero').css('height', newval+'vh');
+    });
+});
+wp.customize('hero__image_height', function (value) {
+    value.bind(function (newval) {
+        $('section.hero .hero_foreground img').css('height', newval+'%');
+    });
+});
+wp.customize('hero__fg_placement', function (value) {
+    value.bind(function (newval) {
+        $('section.hero .hero_foreground ').removeClass('topleft topcenter topright middleleft middlecenter middleright bottomleft bottomcenter bottomright');
+        $('section.hero .hero_foreground ').addClass(newval);
     });
 });

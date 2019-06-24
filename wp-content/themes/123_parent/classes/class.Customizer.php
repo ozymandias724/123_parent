@@ -1,34 +1,6 @@
 <?php
-
 // require a suite of custom controls (extension)
 require_once('includes/custom-controls.php');
-// hook into the customize register
-add_action( 'customize_register', 'my_customize_register' );
-function my_customize_register($wp_customize) {
-
-/**
- *   SECTION Fonts 
- * 
-*/
-    $wp_customize->add_section('section_fonts', array(
-        'title'		=> esc_html__('Fonts', 'mytheme'),
-        'priority'	=> 0,
-    ));
-
-    /**
-	*Main Google Font Setting
-	**/
-    $wp_customize->add_setting( 'main_google_font_list', array(
-        'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'main_google_font_list', array(
-        'label'      => 'Main Google Font',
-        'section'    => 'section_fonts',
-        'settings'   => 'main_google_font_list',
-    )));
-}
-
 
 
 /**
@@ -53,6 +25,14 @@ class Site__Customizer
      */
     public static function register($wp_customize)
     {
+        // change some default options
+        $wp_customize->remove_section('static_front_page');
+        $wp_customize->remove_section('custom_css');
+        $wp_customize->get_setting('blogname')->transport = 'postMessage';
+        $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
+        $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+        $wp_customize->get_setting('background_color')->transport = 'postMessage';
+        
         
         /**
          * Settings
@@ -86,7 +66,6 @@ class Site__Customizer
             ,'fonts_alttext'
             ,'fonts_alttext_weight'
             ,'fonts_alttext_italics'
-            ,'fonts__headings'
             ,'fonts__headings_weight'
             ,'fonts__headings_italics'
             ,'links_anylink'
@@ -94,10 +73,17 @@ class Site__Customizer
             ,'links_button_text'
             ,'links_button_bg'
             ,'links_button_bg_hover'
+            ,'hero__height'
+            ,'hero__image_height'
+            ,'hero__fg_placement'
         );
         foreach ($settings as $setting) {
             $wp_customize->add_setting($setting, array('transport' => 'postMessage'));
         }
+        $wp_customize->add_setting('fonts__headings', array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
         /**
          * Panels
         */
@@ -105,13 +91,19 @@ class Site__Customizer
             [
                 'id' => 'site__colors'
                 ,'args' => [
-                    'title' => __( 'The Site Colors Panel' ),
+                    'title' => __( 'Site Colors' ),
                 ]
             ]
             ,[
                 'id' => 'site__fonts'
                 ,'args' => [
-                    'title' => __( 'The Site Fonts Panel' ),
+                    'title' => __( 'Site Fonts' ),
+                ]
+            ]
+            ,[
+                'id' => 'site__hero'
+                ,'args' => [
+                    'title' => __( 'Hero Section' ),
                 ]
             ]
         );
@@ -155,6 +147,13 @@ class Site__Customizer
                 'args' => array(
                     'title' => __('Headings', '123_parent'), //Visible title of section
                     'panel' => 'site__fonts'
+                )
+            ]
+            ,[
+                'id' =>'hero__options',
+                'args' => array(
+                    'title' => __('Hero Options', '123_parent'), //Visible title of section
+                    'panel' => 'site__hero'
                 )
             ]
             
@@ -324,7 +323,7 @@ class Site__Customizer
             ,[
                 'id' => 'fonts__body_weight'
                 ,'args' => [
-                    'label' => __('Choose Body Font', '123_parent') //Admin-visible name of the control
+                    'label' => __('Weight', '123_parent') //Admin-visible name of the control
                     ,'section' => 'fonts__body' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
                     ,'settings' => 'fonts__body_weight' //Which setting to load and manipulate (serialized is okay)
                     ,'type' => 'select'
@@ -384,193 +383,141 @@ class Site__Customizer
                 ]
             ]
             ,[
-                'id' => 'fonts__headings'
+                'id' => 'hero__fg_placement'
                 ,'args' => [
-                    'label' => __('Choose Header Font', '123_parent') //Admin-visible name of the control
-                    ,'section' => 'fonts__headings' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-                    ,'settings' => 'fonts__headings' //Which setting to load and manipulate (serialized is okay)
+                    'label' => __('Choose Hero FG Placement', '123_parent') //Admin-visible name of the control
+                    ,'section' => 'hero__options' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                    ,'settings' => 'hero__fg_placement' //Which setting to load and manipulate (serialized is okay)
                     ,'type' => 'select'
                     ,'choices' => array(
-                        'lato' => 'Lato'
-                        ,'gotham' => 'Gotham'
+                        'topleft' => 'topleft'
+                        ,'topcenter' => 'topcenter'
+                        ,'topright' => 'topright'
+                        ,'middleleft' => 'middleleft' 
+                        ,'middlecenter' => 'middlecenter'
+                        ,'middleright' => 'middleright'
+                        ,'bottomleft' => 'bottomleft' 
+                        ,'bottomcenter' => 'bottomcenter'
+                        ,'bottomright' => 'bottomright'
                     )
                 ]
             ]
             ,[
-                'id' => 'fonts__headings_italics'
+                'id' => 'hero__height'
                 ,'args' => [
-                    'label' => __('Italics?', '123_parent') //Admin-visible name of the control
-                    ,'section' => 'fonts__headings' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-                    ,'settings' => 'fonts__headings_italics' //Which setting to load and manipulate (serialized is okay)
-                    ,'type' => 'checkbox'
+                    'label' => __('Section Height', '123_parent') //Admin-visible name of the control
+                    , 'section' => 'hero__options' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                    , 'settings' => 'hero__height' //Which setting to load and manipulate (serialized is okay)
+                    , 'type' => 'number'
                 ]
             ]
             ,[
-                'id' => 'fonts__headings_weight'
+                'id' => 'hero__image_height'
                 ,'args' => [
-                    'label' => __('Choose headings Font', '123_parent') //Admin-visible name of the control
-                    ,'section' => 'fonts__headings' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
-                    ,'settings' => 'fonts__headings_weight' //Which setting to load and manipulate (serialized is okay)
-                    ,'type' => 'select'
-                    ,'choices' => array(
-                        '100'
-                        ,'200'
-                        ,'300'
-                        ,'400'
-                        ,'500'
-                        ,'600'
-                        ,'700'
-                        ,'800'
-                        ,'900'
-                    )
+                    'label' => __('Image Height', '123_parent') //Admin-visible name of the control
+                    , 'section' => 'hero__options' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                    , 'settings' => 'hero__image_height' //Which setting to load and manipulate (serialized is okay)
+                    , 'type' => 'number'
                 ]
             ]
         );
         foreach ($fonts_controls as $fonts_control) {
             $wp_customize->add_control($fonts_control['id'], $fonts_control['args']);
         }
+
         
-        //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
-        $wp_customize->get_setting('blogname')->transport = 'postMessage';
-        $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
-        $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
-        $wp_customize->get_setting('background_color')->transport = 'postMessage';
+        $wp_customize->add_control( new Google_Font_Dropdown_Custom_Control( $wp_customize, 'fonts__headings', array(
+            'label'      => 'Font',
+            'section'    => 'fonts__headings',
+            'settings'   => 'fonts__headings',
+            'transport'  => 'postMessage'
+        )));
+
+
+        $wp_customize->add_control(
+            'fonts__headings_weight',
+            array(
+                'label' => __('Font Weight', '123_parent') //Admin-visible name of the control
+                , 'transport' => 'postMessage'
+                , 'section' => 'fonts__headings' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+                , 'settings' => 'fonts__headings_weight' //Which setting to load and manipulate (serialized is okay)
+                , 'type' => 'select', 'choices' => array(
+                    '100' => '100',
+                    '200' => '200',
+                    '300' => '300',
+                    '400' => '400',
+                    '500' => '500',
+                    '600' => '600',
+                    '700' => '700',
+                    '800' => '800',
+                    '900' => '900'
+
+                )
+            )
+        );
+        $wp_customize->add_control('fonts__headings_italics', array(
+            'label' => __('Use Italics', '123_parent') //Admin-visible name of the control
+            , 'transport' => 'postMessage'
+            , 'section' => 'fonts__headings' //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+            , 'settings' => 'fonts__headings_italics' //Which setting to load and manipulate (serialized is okay)
+            , 'type' => 'checkbox'
+        ));
+        
     }
 
+    /**
+     * This will output the custom WordPress settings to the live theme's WP head.
+     * 
+     * Used by hook: 'wp_head'
+     * 
+     * @see add_action('wp_head',$func)
+     * @since MyTheme 1.0
+     */
     public static function header_output()
     {
-        $els = array(
-            [
-                '.colors__body_bg, body'                      // selector
-                ,'background-color'                // property
-                ,'colors__main_body_bg'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__header_bg, header'    // selector
-                ,'background-color'                // property
-                ,'colors__main_header_bg'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__footer_bg, footer'    // selector
-                ,'background-color'                // property
-                ,'colors__main_footer_bg'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__accent_bg'    // selector
-                ,'background-color'                // property
-                ,'colors__main_accent_bg'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__type_headings, h1, h2, h3, h4, h5, h6'    // selector
-                ,'color'                // property
-                ,'colors__type_headings'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__type_body, body'    // selector
-                ,'color'                // property
-                ,'colors__type_body'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__type_navlinks, .navlinks-item-link'    // selector
-                ,'color'                // property
-                ,'colors__type_navlinks'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__type_herotext, section.hero'    // selector
-                ,'color'                // property
-                ,'colors__type_herotext'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__type_dividers'    // selector
-                ,'color'                // property
-                ,'colors__type_dividers'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.colors__type_footertext, .footer'    // selector
-                ,'color'                // property
-                ,'colors__type_footertext'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.fonts__body, body'    // selector
-                ,'font-family'                // property
-                ,'fonts__body'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.fonts__headings, h1, h2, h3, h4, h5, h6'    // selector
-                ,'font-family'                // property
-                ,'fonts__headings'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.links_anylink, a'    // selector
-                ,'color'                // property
-                ,'links_anylink'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.links_anylink:hover, a:hover'    // selector
-                ,'color'                // property
-                ,'links_anylink_hover'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.links_button_text'    // selector
-                ,'color'                // property
-                ,'links_button_text'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.links_button_bg'    // selector
-                ,'background-color'                // property
-                ,'links_button_bg'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
-            ,[
-                '.links_button_bg:hover'    // selector
-                ,'background-color'                // property
-                ,'links_button_bg_hover'       // theme_mod (setting)
-                ,'#'                    // prefix
-                ,' !important'          // postfix
-            ]
+        // selector, style, modname, prepend, append
+        $settings = array(
+            ['.colors__body_bg, body', 'background-color' ,'colors__main_body_bg' ,'#' ,' !important']
+            ,['.colors__header_bg, header', 'background-color', 'colors__main_header_bg', '#', ' !important']
+            ,['.colors__footer_bg, footer','background-color', 'colors__main_footer_bg', '#', ' !important']
+            ,['.colors__accent_bg', 'background-color', 'colors__main_accent_bg', '#', ' !important']
+            ,['.colors__type_headings, h1, h2, h3, h4, h5, h6', 'color', 'colors__type_headings', '#', ' !important']
+            ,['.colors__type_body, body', 'color', 'colors__type_body', '#', ' !important']
+            ,['.colors__type_navlinks, .navlinks-item-link', 'color', 'colors__type_navlinks', '#', ' !important']
+            ,['.colors__type_herotext, section.hero', 'color', 'colors__type_herotext', '#', ' !important']
+            ,['.colors__type_dividers', 'color', 'colors__type_dividers', '#', ' !important']
+            ,['.colors__type_footertext, .footer', 'color', 'colors__type_footertext', '#', ' !important']
+            // 
+            ,['.fonts__body, body', 'font-family', 'fonts__body', '#', ' !important']
+            ,['.fonts__body, body', 'font-weight', 'fonts__body_weight', '', ' !important']
+            // ,['.fonts__body, body', 'font-style', 'fonts__body_italics', '', ' !important']
+            // 
+            ,['.fonts__headings, h1, h2, h3, h4, h5, h6', 'font-family', 'fonts__headings', '', ' !important']
+            ,['.fonts__headings, h1, h2, h3, h4, h5, h6', 'font-weight', 'fonts__headings_weight', '', ' !important']
+            // ,['.fonts__headings, h1, h2, h3, h4, h5, h6', 'font-style', 'fonts__headings_italics', '', ' !important']
+            // 
+            ,['.links_anylink, a', 'color', 'links_anylink', '#', ' !important']
+            ,['.links_anylink:hover, a:hover', 'color', 'links_anylink_hover', '#', ' !important']
+            ,['.links_button_text', 'color', 'links_button_text', '#', ' !important']
+            ,['.links_button_bg', 'background-color', 'links_button_bg', '#', ' !important']
+            ,['.links_button_bg:hover', 'background-color', 'links_button_bg_hover', '#', ' !important']
+            ,['section.hero', 'height', 'hero__height', '', 'vh !important']
+            ,['section.hero .hero_foreground img', 'height', 'hero__image_height', '', 'vh !important']
         );
-        $return_customizer_css = '<style type="text/css"';
-        foreach ($els as $el) {
-            $return_customizer_css .= self::generate_css($el[0],$el[1],$el[2],$el[3],$el[4]);
+        $return_customizer_css = '<style type="text/css"">';
+        foreach ($settings as $setting) {
+            $return_customizer_css .= self::generate_css($setting[0],$setting[1],$setting[2],$setting[3],$setting[4]);
         }
-        $return_customizer_css .= '</style';
+        if( get_theme_mod('fonts__headings_italics') ){
 
-        return $return_customizer_css;
+            $return_customizer_css .= '.fonts__headings, h1, h2, h3, h4, h5, h6 { font-style="italic" !important };';
+        }
+        $return_customizer_css .= '</style>';
+
+
+        echo $return_customizer_css;
     }
     
-
-
     // Helper Functions Below
     /**
      * This outputs the javascript needed to automate the live settings preview.
