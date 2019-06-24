@@ -1,15 +1,20 @@
 <?php
 /**
- * 
- */
+* 
+*/
+// 
+// libs
+require('includes/util.general.php');       // helpers
+require('includes/acf.extensions.php');     // php extensions for acf (options pages, manually defined fields, other stuff?)
+require('classes/class.NavWalker.php');     // wordpress built in nav
+require('classes/class.NavHandler.php');    // handler for creating theme headers
+require('classes/customizer/class.Customizer.php');    // wordpress customizer stuff
+
+// 
+// setup the theme
 require('classes/class.Setup.php');         // Theme Setup / Init
 require('classes/class.UserRoles.php');     // Custom Users and Roles
 require('classes/class.customposts.php'); // custom posts
-require('includes/acf.extensions.php');     // php extensions for acf (options pages, manually defined fields, other stuff?)
-require('classes/class.Customizer.php');    // wordpress customizer stuff
-require('classes/class.NavWalker.php');     // wordpress built in nav
-require('classes/class.NavHandler.php');    // handler for creating theme headers
-require('includes/util.general.php');
 
 
 
