@@ -1,7 +1,8 @@
 @media only screen {
 
     // grids here will only apply over 1280px
-    section.site__block {
+    section.site__block,
+    section.page__template {
         width: 100%;
         .container {
             text-align: center;
@@ -90,7 +91,8 @@
     
     }
     // reset the heading blocks h2 margin
-    section.site__block.block__heading {
+    section.site__block.block__heading, 
+    section.page__template {
         > .container {
             > h2 {
                 margin: 0 0 0 0;
@@ -100,7 +102,8 @@
 }
 //Do the rest of the media queries with max-width, not min-width
 @media only screen and (max-width:1280px){
-    section.site__block {
+    section.site__block, 
+    section.page__template {
         > .container {
             // narrow and medium bumped up to large
             $w: getVar($sizing, content, large);
@@ -125,7 +128,8 @@
     }
 }
 @media only screen and (max-width:960px){
-    section.site__block {
+    section.site__block,
+    section.page__template {
         > .container {
             // drop to 2 cols
             $w: getVar($sizing, content, large);
@@ -150,7 +154,8 @@
     }
 }
 @media only screen and (max-width:640px){
-    section.site__block {
+    section.site__block,
+    section.page__template {
         > .container {
 
             // set all to 1 col
