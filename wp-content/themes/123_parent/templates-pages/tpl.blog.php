@@ -33,8 +33,6 @@ $guide['posts'] = '
 foreach($res as $i => $post) {
         
    $post_fields = get_fields($post->ID);
-
-   print_r($post_fields);
        
    if( $post_fields['status'] ){
        $return['posts'] .= sprintf(
