@@ -10,7 +10,6 @@ $args = array(
 $res = get_posts($args);
 $fields = get_fields(get_the_ID());
 
-print_r($res);
 
 $return['section'] = '';
 

@@ -1,83 +1,78 @@
 <?php 
 /**
- * Template Name: About Page
- */
+* Template Name: About Page
+*/
+$args = array(
+    'post_type' => 'coupon',
+    'posts_per_page' => -1,
 
-   $args_posts = array(
-      'posts_per_page' => -1
-      ,'post_type' => 'staff'
-   );
+);
+$res = get_posts($args);
+$fields = get_fields(get_the_ID());
 
-   $res1 = get_posts($args_posts);
+print_r($res);
 
-   $args_page = array(
-      'posts_per_page' => 1
-      ,'post_type' => 'page'
-      ,'pagename' => 'about'
-   );
+$return['section'] = '';
 
-   $res2 = get_posts($args_page);
+$guide['coupon'] = '
+    <li class="site__fade site__fade-up">
+        <a href="%s">
+            <h5>%s</h5>
+            <div class="coupon_description block__item-body">%s</div>
+            %s
+            %s
+        </a>
+    </li>
+';
 
-   $fields = get_fields($res2[0]);
 
-   // if we have staff members
-   if( !empty($res1) ){
-      $return_staff = '';
-      $format_staff = '
-          <li class="site__fade site__fade-up">
-              <a href="%s">
-                  <div class="image site__bgimg site__bgimg--zoom site__bgimg--gradient"><div style="background-image: url(%s)" class="site__bgimg_img"></div></div>
-                  <h5>%s</h5>
-              </a>
-          </li>
-      ';
-      // loop thru the staff members (post objects)
-      foreach ($res1 as $i => $rec) {
-          // get the fields of each staff member post object
-          $rec_fields = get_fields($rec->ID);
-          // if the staff member status is active
-          if( $rec_fields['status'] ){
-              $return_staff .= sprintf(
-                  $format_staff
-                  ,get_permalink($rec->ID)
-                  ,$rec_fields['image']['url']
-                  ,$rec->post_title
-              );
-          }
-      }
-  } else {
-      $return_staff = '';
-  }
-  
-  // company bio
-  if( !empty($fields['company_bio']) ){
+$return['coupon'] = '<ul>';
 
-      $heading = ( !empty( $fields['company_bio']['heading'] ) ? '<h2 class="site__fade site__fade-up">'.$fields['company_bio']['heading'].'</h2>' : '');
-      $details = ( !empty( $fields['company_bio']['details'] ) ? '<div class="site__fade site__fade-up">'.$fields['company_bio']['details'].'</div>' : '');
-      $return_company = '';
-      $return_company = '
-          <section class="mod__featured_grid">
-              <div class="container">
-                  '.$heading.'
-                  '.$details.'
-                  <div class="site__grid"><ul>
-                      '.$return_staff.'
-                  </ul></div>
-              </div>
-          </section>
-      ';
-  }
+foreach($res as $i => $coupon) {
+    
+    $coupon_fields = get_fields($coupon->ID);
 
-    get_header();
- ?>
-<main id="page_about">
-<?php include( get_template_directory() . '/parts/part.hero.php');   ?>
-   <div class="container">
-<?php
-   echo $return_company;
+    if( $coupon_fields['status'] ){ 
+        $return['coupon'] .= sprintf(
+            $guide['coupon']
+            ,get_permalink($coupon->ID)
+            ,$coupon->post_title
+            ,(!empty($coupon_fields['details']) ? $coupon_fields['details'] : '')
+            ,(!empty($coupon_fields['code']) ? '<p class="coupon_code">Code: <span>'.$coupon_fields['code'].'</span></p>' : '')
+            ,(!empty($coupon_fields['expiration']) ? '<p class="coupon_expiration">Expires: <span>'.$coupon_fields['expiration'].'</span></p>' : '')
+        );
+    }
+}
+$return['coupon'] .= '</ul>';
+
+$guide['section'] = '
+    <section class="page__template tpl_page_coupon">
+        <div class="container %s">
+            %s
+            %s
+            %s
+        </div>
+    </section>
+';
+
+$return['section'] .= sprintf(
+    $guide['section']
+    ,( !empty( $fields['width'] ) ? $fields['width'] : '' ) 
+    ,( !empty($fields['heading']) ? '<h2 class="site__fade site__fade-up block__heading" style="text-align:'.$fields['heading_alignment'].';">'.$fields['heading'].'</h2>' : '' )
+    ,( !empty($fields['text']) ? '<div class="site__fade site__fade-up block__details">'.$fields['text'].'</div>' : '' )
+    // 
+    ,( !empty($return['coupon']) ? '<div class="site__grid coupons__'.$fields['style'].'">'.$return['coupon'].'</div>' : '' )
+);
+
 ?>
-   </div>
-</main>
+<?php
+    get_header();
+?>
+<main>
+<?php 
+    include( get_template_directory() . '/parts/part.hero.php');
+    echo $return['section'];
+?>
 <?php 
     get_footer();
  ?>
