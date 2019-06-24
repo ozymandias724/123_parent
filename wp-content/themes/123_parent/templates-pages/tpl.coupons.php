@@ -3,8 +3,8 @@
 * Template Name: Coupons
 */
 $args = array(
-    'post_type' => 'coupon',
-    'posts_per_page' => -1,
+    'post_type' => 'coupon'
+    ,'posts_per_page' => -1
 
 );
 $res = get_posts($args);
