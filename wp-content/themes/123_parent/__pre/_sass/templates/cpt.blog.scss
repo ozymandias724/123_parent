@@ -1,11 +1,14 @@
 @media only screen {
-    main#single_blog {
+    main#cpt_page_blog {
+        padding: 250px 0 100px;
         section.mod__featured_grid {
             div.container {
-                padding-top: 150px;
+                $w: getVar($sizing, content, medium);
+                width: $w;
+                margin: 0 auto;
                 div.site__fade {
                     div.image {
-                        $w: getVar($sizing, content, full);
+                        $w: getVar($sizing, content, small);
                         $c: 1;
                         $g: getVar($sizing, gutter, vw, normal);
                         $s: true;
@@ -39,29 +42,12 @@
     }
 }
 
-@media only screen and (min-width: 640px) {
-    main#single_blog {
+@media only screen and (max-width: 1280px) {
+    main#cpt_page_blog {
         section.mod__featured_grid {
             div.container {
-                div.site__fade {
-                    div.image {
-                        $w: 70vw;
-                        $c: 1;
-                        $g: getVar($sizing, gutter, vw, normal);
-                        $s: true;
-                        width: $w;
-                        height: (colWidth($w, $c, $g) / 1.6);            
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    main#single_blog {
-        section.mod__featured_grid {
-            div.container {
+                $w: getVar($sizing, content, large);
+                width: $w;
                 div.site__fade {
                     div.image {
                         $w: getVar($sizing, content, small);
@@ -77,13 +63,20 @@
     }
 }
 
-@media only screen and (min-width: 1280px) {
-    main#single_blog {
+@media only screen and (max-width: 960px){
+    main#cpt_page_blog {
+        padding: 150px 0 100px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    main#cpt_page_blog {
         section.mod__featured_grid {
             div.container {
+                $w: getVar($sizing, content, full);
+                width: $w;
                 div.site__fade {
                     div.image {
-                        $w: 40vw;
                         $c: 1;
                         $g: getVar($sizing, gutter, vw, normal);
                         $s: true;

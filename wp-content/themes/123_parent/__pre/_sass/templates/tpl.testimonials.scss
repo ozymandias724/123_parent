@@ -16,18 +16,12 @@
             &.full {
                 width: getVar($sizing, content, full);
             }
-            .slick-list {
-                border-radius: 20px;    
-            }
-            > .site__grid {
+            > div:last-of-type {
                 > ul {
                     width: getVar($sizing, content, small);
                     margin: 0 auto;
                     position: relative;
-                    border: 3px solid getVar($colors, white, full);
-                    box-shadow: 0px 0px 0px 3px #e2e2e2; 
                     background-color: getVar($gustavo, colors, gray7);
-                    border-radius: 20px;
                     li {
                         > div {
                             display: flex;
@@ -71,20 +65,6 @@
                                     margin: 0;
                                     text-align: left;
                                 }
-                                &:before {
-                                    display: block;
-                                    font-style: normal;
-                                    font-variant: normal;
-                                    text-rendering: auto;
-                                    font-family: "Font Awesome 5 Free";
-                                    font-weight: 900;
-                                    content: "\f10d";
-                                    color: getVar($colors, white, full);
-                                    @include fontS-24;
-                                    width: 100%;
-                                    text-align: right;
-                                    margin-bottom: -35px;
-                                }
                             }   
                         }
                     }   
@@ -98,66 +78,6 @@
                             }
                         }
                     }
-                    > .testimonial_prev, 
-                    > .testimonial_next {
-                        position: absolute;
-                        width: 50px;
-                        @include fontS-72;
-                        line-height: 0px;
-                        cursor: pointer; 
-                        color: getVar($gustavo, colors, gray6);
-                        padding: 0;
-                        border: none;
-                        outline: none;
-                        background: transparent;
-                        top: 50%;
-                    }
-                    > .testimonial_prev {
-                        left: -100px;
-                        transform: translate(0,-50%);
-                    }
-                    > .testimonial_next {
-                        right: -90px;
-                        transform: translate(0,-50%);
-                    }
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        bottom: 0;
-                        left: 50%;
-                        width: 0;
-                        height: 0;
-                        border: 37px solid transparent;
-                        border-top-color: getVar($gustavo, colors, gray7);
-                        border-bottom: 0;
-                        margin-left: -37px;
-                        z-index: 500;
-                        margin-bottom: -37px;
-                    }
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        bottom: 0px;
-                        left: 50%;
-                        width: 0;
-                        height: 0;
-                        border: 42px solid transparent;
-                        border-top-color: white;
-                        border-bottom: 0;
-                        margin-left: -42px;
-                        z-index: 500;
-                        margin-bottom: -42px;
-                    }
-                }
-                &.gray_triangle_after:after {
-                    content: "";
-                    position: relative;
-                    bottom: -40px;
-                    height: 0;
-                    border: 60px solid transparent;
-                    border-top-color: getVar($gustavo, colors, gray7);
-                    border-bottom: 0;
-                    z-index: -1;
                 }
             }
         }
@@ -173,15 +93,12 @@
             &.full {
                 width: getVar($sizing, content, large);
             }
-            .site__grid > ul {
+            > div:last-of-type > ul {
                 width: getVar($sizing, content, medium);
                 li {
                     > div {
                         .block {
                             height: 300px;
-                        }
-                        .testimonial_content:before {
-                            margin-bottom: 0;
                         }
                     }
                 }
@@ -193,7 +110,7 @@
 @media only screen and (max-width: 960px){
     section.tpl_page_testimonials {
         >div.container {
-            .site__grid > ul {
+            > div:last-of-type > ul {
                 width: getVar($sizing, content, medium);
                 li {
                     > div {
@@ -220,14 +137,8 @@
             &.full {
                 width: getVar($sizing, content, full);
             }
-            .site__grid > ul {
+            > div:last-of-type > ul {
                 width: 70vw;
-                > .testimonial_prev {
-                    left: -67px;
-                }
-                > .testimonial_next {
-                    right: -67px;
-                }
             }
         }
     }

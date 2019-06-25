@@ -3,7 +3,7 @@
  * Template Name: Blog
  * Template Post Type: post
  */
-    $fields = get_fields($post->ID);
+    $fields = get_fields(get_the_ID());
 
     $format = '
         <section class="mod__featured_grid">
@@ -31,7 +31,7 @@
 
     get_header();
 ?>
-<main id="single_blog">
+<main id="cpt_page_blog">
 <?php 
     echo $return;
     get_footer();

@@ -6,6 +6,8 @@
     // empty return string
     $return = [];
     $guide = [];
+    $return['section'] = '';
+    $return['tabs'] = '';
     
     // if we have galleries
     if( !empty($cB['galleries']) ){

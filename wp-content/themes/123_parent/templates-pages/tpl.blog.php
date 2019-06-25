@@ -48,7 +48,7 @@ $return['posts'] .= '</ul>';
 
 // empty guide string 
 $guide['section'] = '
-   <section class="site__block block__blog_posts">
+   <section class="page__template tpl_page_blog">
        <div class="container %s">
            %s
            %s
