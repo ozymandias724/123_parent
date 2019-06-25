@@ -3616,66 +3616,201 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   }
 }
 @media only screen {
-  main#page_reviews div.container {
-    margin: 60px auto;
+  section.tpl_page_testimonials > div.container.narrow {
+    width: 50vw;
   }
-  main#page_reviews div.container div.site__grid ul li {
-    border: 3px solid #fff;
-    box-shadow: 0px 0px 0px 3px #e2e2e2;
-    background-color: #DEDEDE;
+  section.tpl_page_testimonials > div.container.medium {
+    width: 65vw;
+  }
+  section.tpl_page_testimonials > div.container.wide {
+    width: 80vw;
+  }
+  section.tpl_page_testimonials > div.container.full {
+    width: 92vw;
+  }
+  section.tpl_page_testimonials > div.container .slick-list {
     border-radius: 20px;
   }
-  main#page_reviews div.container div.site__grid ul li.testimonial_image {
+  section.tpl_page_testimonials > div.container > .site__grid > ul {
+    width: 50vw;
+    margin: 0 auto;
+    position: relative;
+    border: 3px solid #ffffff;
+    box-shadow: 0px 0px 0px 3px #e2e2e2;
+    background-color: #dedede;
+    border-radius: 20px;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
   }
-  main#page_reviews div.container div.site__grid ul li.testimonial_image .block {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .block {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    flex: 1 0 35%;
   }
-  main#page_reviews div.container div.site__grid ul li .testimonial_content {
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content {
+    flex: 1 0 65%;
     text-align: left;
     padding: 15px 30px;
-    min-height: 250px;
+    min-height: 300px;
   }
-  main#page_reviews div.container div.site__grid ul li .testimonial_content > div {
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content > div:first-of-type {
+    border-bottom: 4px dotted #ffffff;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_name {
     display: flex;
     align-items: center;
-    border-bottom: 4px dotted #fff;
     padding-bottom: 10px;
     margin-bottom: 10px;
+    flex-flow: row nowrap;
   }
-  main#page_reviews div.container div.site__grid ul li .testimonial_content > div > h3 {
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_name > h3 {
     display: inline-block;
     text-decoration: none;
-    color: black;
     text-align: left;
     font-weight: 500;
     font-family: "Gotham", "Helvetica", sans-serif;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
   }
-  main#page_reviews div.container div.site__grid ul li .testimonial_content > div > p {
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_name > p {
     text-align: justify;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
     margin: 0 10px;
-    line-height: 35px;
-    color: #000;
   }
-  main#page_reviews div.container div.site__grid ul li .testimonial_content > div > i {
-    margin-left: auto;
-    color: #fff;
-    margin-bottom: 15px;
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content > div.testimonial_details {
+    margin-bottom: 10px;
+    margin: 0;
+    text-align: left;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul li > div .testimonial_content:before {
+    display: block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "";
+    color: #ffffff;
     font-size: 2.4rem;
     line-height: 3.2rem;
+    width: 100%;
+    text-align: right;
+    margin-bottom: -35px;
   }
-  main#page_reviews div.container div.site__grid ul li .testimonial_content > p {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    color: #858585;
-    font-weight: 500;
-    margin-bottom: 10px;
+  section.tpl_page_testimonials > div.container > .site__grid > ul li.testimonial_video > div {
+    flex-flow: column nowrap;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul li.testimonial_video > div > .video_anchor > div {
+    width: 100%;
+    background-color: #000000;
+    height: 300px;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul > .testimonial_prev,
+section.tpl_page_testimonials > div.container > .site__grid > ul > .testimonial_next {
+    position: absolute;
+    width: 50px;
+    font-size: 7.2rem;
+    line-height: 9.6rem;
+    line-height: 0px;
+    cursor: pointer;
+    color: #d6d6d6;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    top: 50%;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul > .testimonial_prev {
+    left: -100px;
+    transform: translate(0, -50%);
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul > .testimonial_next {
+    right: -90px;
+    transform: translate(0, -50%);
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 37px solid transparent;
+    border-top-color: #dedede;
+    border-bottom: 0;
+    margin-left: -37px;
+    z-index: 500;
+    margin-bottom: -37px;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid > ul:before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 42px solid transparent;
+    border-top-color: white;
+    border-bottom: 0;
+    margin-left: -42px;
+    z-index: 500;
+    margin-bottom: -42px;
+  }
+  section.tpl_page_testimonials > div.container > .site__grid.gray_triangle_after:after {
+    content: "";
+    position: relative;
+    bottom: -40px;
+    height: 0;
+    border: 60px solid transparent;
+    border-top-color: #dedede;
+    border-bottom: 0;
+    z-index: -1;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  section.tpl_page_testimonials > div.container.narrow, section.tpl_page_testimonials > div.container.medium, section.tpl_page_testimonials > div.container.wide, section.tpl_page_testimonials > div.container.full {
+    width: 80vw;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul {
+    width: 65vw;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul li > div .block {
+    height: 300px;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul li > div .testimonial_content:before {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 960px) {
+  section.tpl_page_testimonials > div.container .site__grid > ul {
+    width: 65vw;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul li > div {
+    display: block;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul li > div .testimonial_content {
+    padding: 15px 10px;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul li > div .testimonial_content > div.testimonial_name {
+    flex-flow: column nowrap;
+  }
+}
+@media only screen and (max-width: 640px) {
+  section.tpl_page_testimonials > div.container.narrow, section.tpl_page_testimonials > div.container.medium, section.tpl_page_testimonials > div.container.wide, section.tpl_page_testimonials > div.container.full {
+    width: 92vw;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul {
+    width: 70vw;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul > .testimonial_prev {
+    left: -67px;
+  }
+  section.tpl_page_testimonials > div.container .site__grid > ul > .testimonial_next {
+    right: -67px;
   }
 }
 @media only screen {
@@ -8212,7 +8347,7 @@ section.site__block.block__testimonials > div.container > .site__grid > ul > .te
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul > .testimonial_next {
     right: -90px;
-    transform: translate(0, -50%) rotate(180deg);
+    transform: translate(0, -50%);
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul:after {
     content: "";

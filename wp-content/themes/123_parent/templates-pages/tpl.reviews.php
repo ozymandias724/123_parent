@@ -1,146 +1,135 @@
 <?php 
 /**
- * Template Name: Testimonials
- */
-    $args_posts = array(
-        'posts_per_page' => -1
-        ,'post_type' => 'testimonials'
-    );
+* Template Name: Testimonials Page
+*/
+$args = array(
+    'post_type' => 'testimonials'
+    ,'posts_per_page' => -1
+);
 
-    $res1 = get_posts($args_posts);
 
-    $args_page = array(
-        'posts_per_page' => 1
-        ,'post_type' => 'page'
-        ,'pagename' => 'testimonials'
-    );
+$res = get_posts($args);
+$fields = get_fields(get_the_ID());
 
-    $res2 = get_posts($args_page);
 
-    $fields = get_fields($res2[0]);
+$return = [];
+$guide = [];
+$guide['grid'] = '';
+$return['section'] = '';
 
-    function _get_testimonials($fields, $res)
-    {
-        $format = '
-            <section class="mod__testimonials-featuredtestimonial mod__featured_grid">
-                <div class="container">
-                    %s
-                    %s
-                </div>
-            </section>
-        ';
-        $return = sprintf(
-            $format
-            ,_get_header($fields)
-            ,_get_body($fields, $res)
-        );
-        return $return;
-    }
 
-    function _get_header($fields)
-    {
-        $heading = (!empty($fields['featured_testimonials']['heading']) ? $fields['featured_testimonials']['heading'] : '');
-        $details = (!empty($fields['featured_testimonials']['details']) ? $fields['featured_testimonials']['details'] : '');
-        $format = '<h2 class="site__fade site__fade-up">%s</h2><div class="site__fade site__fade-up">%s</div>';
-        $return = sprintf(
-            $format
-            ,$heading
-            ,$details
-        );
-        return $return;
-    }
+$return['grid'] ='<ul class="site__fade site__fade-up square_ul">';
 
-    function _get_body($fields, $res)
-    {
-        $return = '<div class="site__grid"><ul class="site__fade site__fade-up">';
-        $format_text = '
+
+foreach($res as $i => $testimonial){
+    
+    $testimonial_fields = get_fields($testimonial->ID);
+
+    if( $testimonial_fields['type'] == 'text' ){
+        $guide['grid'] = '
             <li class="testimonial_text">
-                <div class="testimonial_content">
-                    <div>
-                        %s
-                        %s
-                    </div>
+                <div>
                     %s
+                    <div class="testimonial_content">
+                        <div class="testimonial_name">
+                            %s
+                            %s
+                        </div>
+                        <div class="testimonial_details block__item-body">%s</div>
+                    </div>
                 </div>
             </li>
         ';
-        $format_image = '
-            <li class="testimonial_image">
-                %s
-                <div class="testimonial_content">
-                    <div>
-                        %s
-                        %s
-                    </div>
-                    %s
-                </div>
-            </li>
-        ';
-        $format_video = '
-            <li class="testimonial_video">
-                %s
-                <div class="testimonial_content">
-                    <div class="testimonial_address">
-                        %s
-                    </div>
-                    %s
-                </div>
-            </li>
-        ';
-        
-        foreach($res as $i => $item)
-        {
-            $testimonial = get_fields($item->ID);
-            
-            if($testimonial['status'] && $testimonial['type'] == 'text')
-            {
-                $return .= sprintf(
-                    $format_text
-                    ,'<h3>Jane Doe</h3>'
-                    ,'<p> - Irvine, CA </p><i class="fas fa-quote-left"></i>'
-                    ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
-                );
-            }
-            else if($testimonial['status'] && $testimonial['type'] == 'image')
-            {
-                $return .= sprintf(
-                    $format_image
-                    ,(!empty($testimonial['image']) ? '<div class="block" style="background-image:url('.$testimonial['image']['url'].');"></div>' : '')
-                    ,'<h3>Jane Doe</h3>'
-                    ,'<p> - Irvine, CA </p><i class="fas fa-quote-left"></i>'
-                    ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
-                );
-            }
-            else if($testimonial['status'] && $testimonial['type'] == 'video')
-            {
-                $video_format = '
-                    <video> 
-                        <source src="%s" type="video/mp4">
-                    </video>
-                ';
-                $video_tag = sprintf(
-                    $video_format
-                    ,(!empty($testimonial['video_url']) ? $testimonial['video_url'] : '')
-                );
-                $return .= sprintf(
-                    $format_video
-                    ,$video_tag
-                    ,(!empty($testimonial['details']) ? $testimonial['details'] : '')
-                );
-            }
-        }
-        $return .= '</ul></div>';
-        return $return;
+        $return['grid'] .= sprintf(
+            $guide['grid']
+            ,(!empty($testimonial_fields['image']) ? '<div class="block" style="background-image:url('.$testimonial_fields['image']['url'].');"></div>' : '')
+            ,(!empty($testimonial_fields['name']) ? '<h3>'.$testimonial_fields['name'].'</h3>' : '')
+            ,(!empty($testimonial_fields['location']) ? '<p>'.$testimonial_fields['location'].'</p>' : '')
+            ,(!empty($testimonial_fields['details']) ? $testimonial_fields['details'] : '')
+        );    
     }
+    else if( $testimonial_fields['type'] == 'image' ){
+        $guide['grid'] = '
+            <li class="testimonial_image">
+                <div>
+                    %s
+                    <div class="testimonial_content">
+                        <div class="testimonial_name">
+                            %s
+                            %s
+                        </div>
+                        <div class="testimonial_details block__item-body">%s</div>
+                    </div>
+                </div>
+            </li>
+        ';
+        $return['grid'] .= sprintf(
+            $guide['grid']
+            ,(!empty($testimonial_fields['image']) ? '<div class="block" style="background-image:url('.$testimonial_fields['image']['url'].');"></div>' : '')
+            ,(!empty($testimonial_fields['name']) ? '<h3>'.$testimonial_fields['name'].'</h3>' : '')
+            ,(!empty($testimonial_fields['location']) ? '<p>'.$testimonial_fields['location'].'</p>' : '')
+            ,(!empty($testimonial_fields['details']) ? $testimonial_fields['details'] : '')
+        );
+    }
+    else if( $testimonial_fields['type'] == 'video' ){
+        $guide['grid'] = '
+            <li class="testimonial_video">
+                <div>
+                    %s
+                    <div class="testimonial_content">
+                        <div class="testimonial_name">
+                            %s
+                            %s
+                        </div>
+                        <div class="testimonial_details block__item-body">%s</div>
+                    </div>
+                </div>
+            </li>
+            ';
+        $return['grid'] .= sprintf(
+            $guide['grid']
+            ,(!empty($testimonial_fields['video_url']) ? '<a class="video_anchor" href="'.$testimonial_fields['video_url'].'"><div></div></a>' : '')
+            ,(!empty($testimonial_fields['name']) ? '<h3>'.$testimonial_fields['name'].'</h3>' : '')
+            ,(!empty($testimonial_fields['location']) ? '<p>'.$testimonial_fields['location'].'</p>' : '')
+            ,(!empty($testimonial_fields['details']) ? $testimonial_fields['details'] : '')
+        );
+    }
+}
+
+$return['grid'] .= '</ul>';
+
+// empty guide string 
+$guide['section'] = '
+    <section class="site__block block__testimonials">
+        <div class="container %s">
+            %s
+            %s
+            %s
+        </div>
+    </section>
+';
+
+$return['section'] .= sprintf(
+    $guide['section']
+
+    ,( !empty( $fields['width'] ) ? $fields['width'] : '' ) // container width
+
+    ,( !empty($fields['heading']) ? '<h2 class="site__fade site__fade-up block__heading" style="text-align:'.$fields['heading_alignment'].';">'.$fields['heading'].'</h2>' : '' )
+
+    ,( !empty($fields['text']) ? '<div class="site__fade site__fade-up block__details">'.$fields['text'].'</div>' : '' )
+
+    ,( !empty($return['grid']) ? '<div class="site__grid">'.$return['grid'].'</div>' : '' )
+);
 
 ?>
 <?php
     get_header();
 ?>
-<main id="page_reviews">
-<?php include( get_template_directory() . '/parts/part.hero.php');   ?>
-<?php
-    echo _get_testimonials($fields, $res1);
+<main>
+<?php 
+    include( get_template_directory() . '/parts/part.hero.php');
+    echo $return['section'];
+    unset($return, $guide);
 ?>
 <?php 
     get_footer();

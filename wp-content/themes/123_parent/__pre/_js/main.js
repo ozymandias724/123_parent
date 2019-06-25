@@ -97,8 +97,8 @@ $(document).ready(function()
                 ,pauseOnHover: true
                 ,pauseOnFocus: true
                 ,initialSlider: true
-                ,nextArrow: '<img class="testimonial_next" src="wp-content/themes/123_parent/library/img/left-arrow-3.png" />'
-                ,prevArrow: '<img class="testimonial_prev" src="wp-content/themes/123_parent/library/img/left-arrow-3.png" />'
+                ,nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>'
+                ,prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
             });
         },
         _testimonials_block_triangle: function(){
