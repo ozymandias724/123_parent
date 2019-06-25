@@ -241,11 +241,11 @@ $(document).ready(function()
     * If we have a food menu block
     * 
     */
-    if( $('section.block__food_menus').length && $('section.block__food_menus div.tabs').length ){
+    if( $('section.block__food_menus').length && $('section.block__food_menus div.tabs').length || $('section.tpl_page_menu').length && $('section.tpl_page_menu div.tabs').length){
         
         Blocks.FoodMenus = {
-            tabs : $('.block__food_menus div.tabs > ul > li'),
-            food_menus : $('.block__food_menus div.tabs > .menu_area > ul.menu_section'),
+            tabs : $('.block__food_menus div.tabs > ul > li, .tpl_page_menu div.tabs > ul > li'),
+            food_menus : $('.block__food_menus div.tabs > .menu_area > ul.menu_section, .tpl_page_menu div.tabs > .menu_area > ul.menu_section'),
 
             _init : function(){
                 Blocks.FoodMenus.tabs.on('click', '>a', Blocks.FoodMenus._didClickTab);

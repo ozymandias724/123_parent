@@ -139,6 +139,7 @@ if( !empty($res) ){
 <?php 
     include( get_template_directory() . '/parts/part.hero.php');
     echo $return['section'];
+    unset($return, $guide);
 ?>
 <?php 
     get_footer();
