@@ -210,15 +210,15 @@ $(document).ready(function()
      *  If we have a gallery block
      * 
      */
-    if($('section.block__galleries').length && $('section.block__galleries div.tabs').length) {
+    if($('section.block__galleries').length && $('section.block__galleries div.tabs').length || $('section.tpl_page_gallery').length && $('section.tpl_page_gallery div.tabs').length) {
 
         $('.galleries ul li .image').magnificPopup({
             'type' : 'image'
         });
         
         Blocks.Gallery = {
-            tabs: $('.block__galleries div.tabs > ul > li'),
-            galleries: $('.block__galleries div.galleries > .site__grid'),
+            tabs: $('.block__galleries div.tabs > ul > li, .tpl_page_gallery div.tabs > ul > li'),
+            galleries: $('.block__galleries div.galleries > .site__grid, .tpl_page_gallery div.galleries > .site__grid'),
             _init: function () {
                 // when clicking tabs
                 Blocks.Gallery.tabs.on('click', '>a', Blocks.Gallery._didClickTab);

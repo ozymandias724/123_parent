@@ -1,6 +1,6 @@
 <?php 
 /**
- * coupons Block
+ * Galleries Block
  * 
  */
     // empty return string
