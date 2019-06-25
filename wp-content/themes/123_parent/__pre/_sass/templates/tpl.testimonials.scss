@@ -16,70 +16,75 @@
             &.full {
                 width: getVar($sizing, content, full);
             }
-            > div:last-of-type {
-                > ul {
-                    width: getVar($sizing, content, small);
-                    margin: 0 auto;
-                    position: relative;
+            > ul {
+                width: getVar($sizing, content, small);
+                margin: 0 auto;
+                position: relative;
+                li {
                     background-color: getVar($gustavo, colors, gray7);
-                    li {
-                        > div {
-                            display: flex;
-                            flex-flow: row nowrap;
-                            .block {
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                                background-position: center center;
-                                flex: 1 0 35%;
-                            }
-                            .testimonial_content {
-                                flex: 1 0 65%;
-                                text-align: left;
-                                padding: 15px 30px;
-                                min-height: 300px;
-                                > div:first-of-type {
-                                    border-bottom: 4px dotted getVar($colors, white, full);
-                                }
-                                > div.testimonial_name {
-                                    display: flex;
-                                    align-items: center;
-                                    padding-bottom: 10px;
-                                    margin-bottom: 10px;
-                                    flex-flow: row nowrap;
-                                    > h3 {
-                                        display: inline-block;
-                                        text-decoration: none;
-                                        text-align: left;
-                                        font-weight: 500;
-                                        font-family: "Gotham", "Helvetica", sans-serif;
-                                        @include fontS-34;
-                                    }
-                                    > p {
-                                        text-align: justify;
-                                        @include fontS-34; 
-                                        margin: 0 10px;
-                                    }
-                                }
-                                > div.testimonial_details {
-                                    margin-bottom: 10px;
-                                    margin: 0;
-                                    text-align: left;
-                                }
-                            }   
+                    margin-bottom: 20px;
+                    > div {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        .block {
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center center;
+                            flex: 1 0 35%;
                         }
-                    }   
-                    li.testimonial_video {
-                        > div {
-                            flex-flow: column nowrap;
-                            > .video_anchor > div {
-                                width: 100%;
-                                background-color: getVar($colors, black, full);
-                                height: 300px;
+                        .testimonial_content {
+                            flex: 1 0 65%;
+                            text-align: left;
+                            padding: 15px 30px;
+                            min-height: 300px;
+                            > div:first-of-type {
+                                border-bottom: 4px dotted getVar($colors, white, full);
                             }
+                            > div.testimonial_name {
+                                display: flex;
+                                align-items: center;
+                                padding-bottom: 10px;
+                                margin-bottom: 10px;
+                                flex-flow: row nowrap;
+                                > h3 {
+                                    display: inline-block;
+                                    text-decoration: none;
+                                    text-align: left;
+                                    font-weight: 500;
+                                    font-family: "Gotham", "Helvetica", sans-serif;
+                                    @include fontS-34;
+                                }
+                                > p {
+                                    text-align: justify;
+                                    @include fontS-34; 
+                                    margin: 0 10px;
+                                }
+                            }
+                            > div.testimonial_details {
+                                margin-bottom: 10px;
+                                margin: 0;
+                                text-align: left;
+                            }
+                        }   
+                    }
+                }   
+                li.testimonial_video {
+                    > div {
+                        flex-flow: column nowrap;
+                        > .video_anchor > div {
+                            width: 100%;
+                            background-color: getVar($colors, black, full);
+                            height: 300px;
                         }
                     }
                 }
-            }
+                li:last-of-type {
+                    margin-bottom: 0;
+                }
+                li:first-of-type {
+                    margin-top: 0;
+                }
+            } 
         }
     }
 }
@@ -93,7 +98,7 @@
             &.full {
                 width: getVar($sizing, content, large);
             }
-            > div:last-of-type > ul {
+            > ul {
                 width: getVar($sizing, content, medium);
                 li {
                     > div {
@@ -110,7 +115,7 @@
 @media only screen and (max-width: 960px){
     section.tpl_page_testimonials {
         >div.container {
-            > div:last-of-type > ul {
+            > ul {
                 width: getVar($sizing, content, medium);
                 li {
                     > div {
@@ -137,7 +142,7 @@
             &.full {
                 width: getVar($sizing, content, full);
             }
-            > div:last-of-type > ul {
+            > ul {
                 width: 70vw;
             }
         }

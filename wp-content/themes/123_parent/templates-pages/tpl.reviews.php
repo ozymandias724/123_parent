@@ -118,7 +118,7 @@ $return['section'] .= sprintf(
 
     ,( !empty($fields['text']) ? '<div class="site__fade site__fade-up block__details">'.$fields['text'].'</div>' : '' )
 
-    ,( !empty($return['grid']) ? '<div>'.$return['grid'].'</div>' : '' )
+    ,( !empty($return['grid']) ? $return['grid'] : '' )
 );
 
 ?>
