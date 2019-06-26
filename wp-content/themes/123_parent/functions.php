@@ -145,6 +145,7 @@ function get_email()
 function get_social_icons()
 {
     $company_info = get_field('company_info', 'options');
+
     $content_social_icons = '';
     // if we have social media icons
     if (!empty($company_info['social_media'])) {
@@ -161,6 +162,7 @@ function get_social_icons()
             $img = $social_icon['image'];
             $fa = $social_icon['icon'];
             $custom_png_url = '';
+            $icon_url = '';
             // we have a preconfigured URL
             if (strpos($url, 'booksy')) {
                 $custom_png_url = get_template_directory_uri() . '/library/img/social_icons/booksy.png';

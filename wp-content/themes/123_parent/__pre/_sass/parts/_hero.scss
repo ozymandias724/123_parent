@@ -2,11 +2,11 @@
 // 
 // 
 @media only screen {
-    // 
-    // 
-    // 
+    //
+    //
+    //
     section.hero {
-        margin: 0 0 getVar($sizing, gutter, px, large) 0;
+        //margin: 0 0 getVar($sizing, gutter, px, large) 0;
         height: 80vh;
         overflow: hidden;
         position: relative;
@@ -14,7 +14,8 @@
         // less height for color section by default (customizable)
         &#hero_color {
             height: auto;
-            min-height: 20vh;
+            height: 90vh;
+            padding-top: 150px;
         }
         // 
         .hero_foreground{
@@ -27,9 +28,10 @@
             display: flex;
             margin: 0 auto;
             flex-flow: column nowrap;
-            @include heroAlignment();
-            // 
             padding: getVar($sizing, gutter, px, normal);
+            //
+            @include heroAlignment();
+            //
             &.narrow{
                 $w: getVar($sizing, content, small);
                 width: $w;
@@ -57,9 +59,8 @@
             img {
                 display: inline-block;
                 margin: 0;
-                max-height: 80%;
+                max-height: 60%;
                 @include clearfix;
-                // max-width: 60%;
             }
 
             //Subtitle

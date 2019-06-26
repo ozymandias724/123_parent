@@ -4,6 +4,7 @@
 *   Hero Section
 */
 $fields = get_fields($post->ID);
+
 $header = 'header__' . get_field('header', 'options')['style'];
 
 // 
@@ -16,12 +17,12 @@ $return['fgbgtint'] = '';
 if (!empty($fg['options']['background_tint'])) {
     $return['fgbgtint'] = ' background-color: rgba(' . hex2rgb($fg['options']['background_tint']) . ',' . $fg['options']['tint_opacity'] . ')';
 }
+
+// 
 // 
 // FG CONTENT
-// 
-
-
 $return['fg_content'] = '';
+
 if( !empty($fg['content']) ){
     foreach ($fg['content'] as $row) {
         // 
@@ -37,22 +38,25 @@ if( !empty($fg['content']) ){
         // 
         else if ($row['acf_fc_layout'] == 'image') {
             // wrap the image with anchor if link url exists
-            if (!empty($row['url'])) {
-                $return['fg_content'] .= '<a href="' . $row['url'] . '">';
+            if( !empty($row['url']) ) {
+                $return['fg_content'] .= '<a title="'.$row['url']['title'].'" target="'.$row['url']['target'].'" href="' . $row['url']['url'] . '">';
             } 
-
-            $return['fg_content'] .= '<img alt="' . $row['image']['alt'] . '" src="' . $row['image']['url'] . '" />';
             
-            if (!empty($row['url'])) {
+            $max_height = ( !empty($row['max_height']) ? 'max-height:'.$row['max_height'].'px;' : '');
+            $max_width = ( !empty($row['max_width']) ? 'max-width:'.$row['max_width'].'px;' : '');
+
+            $return['fg_content'] .= '<img style="'.$max_height . $max_width.'" alt="' . $row['image']['alt'] . '" src="' . $row['image']['url'] . '" />';
+            
+            if ( !empty($row['url']) ) {
                 $return['fg_content'] .= '</a>';
             } 
         }
     }
-
 }
 
 // fg button
 $return['button'] = '';
+
 if (!empty($fg['button']['link']['url'])) {
     $guide['button'] = '
         <a class="site__button" href="%s" style="%s %s" title="%s" target="%s">%s</a>
@@ -67,8 +71,8 @@ if (!empty($fg['button']['link']['url'])) {
         (!empty($fg['button']['link']['title']) ? $fg['button']['link']['title'] : '')
     );
 }
-// 
-// 
+
+
 // fg return guide
 $guide['fg'] = '
     <div style="%s %s" class="%s %s hero_foreground" >
@@ -76,15 +80,16 @@ $guide['fg'] = '
         %s
     </div>
 ';
+
 // fg return string
 $return['fg'] = sprintf(
-    $guide['fg'],
-    $return['fgbgtint'],
-    ($fg['options']['foreground_color'] ? 'color:'.$fg['options']['foreground_color'].';' : ''),
-    ($fg['options']['placement'] ? $fg['options']['placement'] : ''),
-    ($fg['options']['width'] ? $fg['options']['width'] : ''),
-    $return['fg_content'],
-    $return['button']
+    $guide['fg']
+    ,$return['fgbgtint']
+    ,( !empty($fg['options']['foreground_color']) ? 'color:'.$fg['options']['foreground_color'].';' : '')
+    ,( !empty($fg['options']['placement']) ? $fg['options']['placement'] : '')
+    ,( !empty($fg['options']['width']) ? $fg['options']['width'] : '')
+    ,$return['fg_content']
+    ,$return['button']
 );
 // 
 // 
@@ -105,10 +110,11 @@ $type = $fields['hero_type'];
 
 // open hero container
 echo '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$type.'">'; 
+
 // static image
 if( $type == 'image' ){
     echo '<div class="image" style="background-image: url('.$bg['image']['image']['url'].')"></div>';
-} else if( $type == 'slider' ){
+}else if( $type == 'slider' ){
     // 
     if ($bg['slider']['randomize']) {
         shuffle($slider_images);
@@ -125,10 +131,10 @@ if( $type == 'image' ){
     echo $return['fg'];
     echo $slider;
     
-} else if( $type == 'video'){
+}else if( $type == 'video'){
     // 
     include(get_template_directory().'/parts/hero/part.hero.video.php');
-} else if ( $type == 'color' ){
+}else if( $type == 'color' ){
     // 
     echo $return['fg'];
     echo '<div class="hero_bgtint" style="'.$return['bgtint'].'"></div>';
