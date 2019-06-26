@@ -8,11 +8,21 @@
     section.hero {
         margin: 0 0 getVar($sizing, gutter, px, large) 0;
         height: 80vh;
+        overflow: hidden;
+        position: relative;
         width: 100%;
-        > .hero_foreground{
+        // less height for color section by default (customizable)
+        &#hero_color {
+            height: auto;
+            min-height: 20vh;
+        }
+        // 
+        .hero_foreground{
+            position: relative;
+            text-align: center;
             background-color: transparent;
             position: relative;
-            z-index: 1;
+            z-index: 2;
             height: 100%;
             display: flex;
             margin: 0 auto;
@@ -36,6 +46,52 @@
                 $w: getVar($sizing, content, full);
                 width: $w;
             }
+
+            //Title
+            h2 {
+                @include fontS-72;
+                z-index: 2;
+                color: $white;
+            }
+
+            img {
+                display: inline-block;
+                margin: 0;
+                max-height: 80%;
+                @include clearfix;
+                // max-width: 60%;
+            }
+
+            //Subtitle
+            p {
+                color: $white;
+                z-index: 2;
+                @include fontS-20;
+                margin: 10px 0;
+            }
+
+            //Button
+            a.site__button {
+                padding: 10px;
+                @include fontS-20;
+                padding: 13px 30px 15px;
+                border-radius: 30px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                line-height: 1em;
+                color: getVar($colors, white, full);
+                border: none;
+                display: inline-block;
+                background-color: getVar($colors, accent);
+                transition: background-color 0.25s;
+
+                //Button actions on hover, focus and active
+                &:hover,
+                &:focus,
+                &:active {
+                    opacity: 0.8;
+                }
+            }
         }
         // 
         // 
@@ -49,7 +105,8 @@
             z-index: 1;
         }
         &#hero_image {
-            > #hero_staticimage {
+            > .image {
+                width: 100%;
                 height: 100%;
                 @include bgimage;
             }
@@ -75,106 +132,43 @@
                 img {
                     @include bgimage;
                 }
+                margin-bottom: 0;
+
+                .slick-arrow {
+                    position: absolute;
+                    top: 50%;
+                    font-size: 50px;
+                    z-index: 3;
+                    padding: 10px;
+
+                    >i {
+                        color: white;
+                    }
+
+                    &.slick_next_arrow {
+                        right: 0;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            // Slider images
+            .slider_img {
+                object-fit: cover;
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
             }
         }
     }
-    
-    
-    //Hero section
-    section.hero {
-        overflow: hidden;
-        position: relative;
-        // Black overlay
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            padding: 100px 0;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;    
-            background-color: rgba(0,0,0,0.4);
-        }
-        //Hero Foreground
-        .hero_foreground {
-            position: relative;
-            text-align: center; 
-            z-index: 2;
-            //Title
-            h2 {
-                @include fontS-72;
-                z-index: 2;
-                color: $white;
-            }
-            img {
-                display: inline-block;
-                margin: 0;
-                max-height: 80%;
-                @include clearfix;
-                // max-width: 60%;
-            }
-            //Subtitle
-            p {
-                color: $white;
-                z-index: 2;
-                @include fontS-20;
-                margin: 10px 0;
-            }
-            //Button
-            a.site__button {
-                padding: 10px;
-                @include fontS-20;
-                padding: 13px 30px 15px;
-                border-radius: 30px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                line-height: 1em; 
-                color: getVar($colors, white, full);
-                border: none;
-                display: inline-block;
-                background-color: getVar($colors, accent);
-                transition: background-color 0.25s;
-                //Button actions on hover, focus and active
-                &:hover, 
-                &:focus, 
-                &:active {
-                    opacity: 0.8;
-                }
-            }
-        }
-    }
-    // Hero Slider
-    section.hero#hero_slider {
-        #slick_slider_hero {
-            margin-bottom: 0;
-            .slick-arrow {
-                position: absolute;
-                top: 50%;
-                font-size: 50px;
-                z-index: 3;
-                padding: 10px;
-                > i {
-                    color: white;
-                }
-                &.slick_next_arrow {
-                    right: 0;
-                }
-                &:hover, &:active, &:focus {
-                    cursor: pointer;
-                }
-            }
-        }
-        // Slider images
-        .slider_img {
-            object-fit: cover; 
-            position: relative;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-        }
-    }
+ 
     // Hero Video
     section.hero#hero_video { 
         width: 100%;

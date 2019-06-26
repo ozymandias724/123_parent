@@ -2952,124 +2952,79 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero {
     margin: 0 0 60px 0;
     height: 80vh;
+    overflow: hidden;
+    position: relative;
     width: 100%;
   }
-  section.hero > .hero_foreground {
+  section.hero#hero_color {
+    height: auto;
+    min-height: 20vh;
+  }
+  section.hero .hero_foreground {
+    position: relative;
+    text-align: center;
     background-color: transparent;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: 100%;
     display: flex;
     margin: 0 auto;
     flex-flow: column nowrap;
     padding: 30px;
   }
-  section.hero > .hero_foreground.topleft {
+  section.hero .hero_foreground.topleft {
     justify-content: flex-start;
     align-items: flex-start;
     text-align: left;
   }
-  section.hero > .hero_foreground.topcenter {
+  section.hero .hero_foreground.topcenter {
     justify-content: flex-start;
     align-items: center;
   }
-  section.hero > .hero_foreground.topright {
+  section.hero .hero_foreground.topright {
     justify-content: flex-start;
     align-items: flex-end;
     text-align: right;
   }
-  section.hero > .hero_foreground.middleleft {
+  section.hero .hero_foreground.middleleft {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
   }
-  section.hero > .hero_foreground.middlecenter {
+  section.hero .hero_foreground.middlecenter {
     justify-content: center;
     align-items: center;
   }
-  section.hero > .hero_foreground.middleright {
+  section.hero .hero_foreground.middleright {
     justify-content: center;
     align-items: flex-end;
     text-align: right;
   }
-  section.hero > .hero_foreground.bottomleft {
+  section.hero .hero_foreground.bottomleft {
     justify-content: flex-end;
     align-items: flex-start;
     text-align: left;
   }
-  section.hero > .hero_foreground.bottomcenter {
+  section.hero .hero_foreground.bottomcenter {
     justify-content: flex-end;
     align-items: center;
   }
-  section.hero > .hero_foreground.bottomright {
+  section.hero .hero_foreground.bottomright {
     justify-content: flex-end;
     align-items: flex-end;
     text-align: right;
   }
-  section.hero > .hero_foreground.narrow {
+  section.hero .hero_foreground.narrow {
     width: 50vw;
   }
-  section.hero > .hero_foreground.medium {
+  section.hero .hero_foreground.medium {
     width: 65vw;
   }
-  section.hero > .hero_foreground.wide {
+  section.hero .hero_foreground.wide {
     width: 80vw;
   }
-  section.hero > .hero_foreground.full {
+  section.hero .hero_foreground.full {
     width: 92vw;
-  }
-  section.hero .hero_bgtint {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-  section.hero#hero_image > #hero_staticimage {
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-  section.hero#hero_slider > div#slick_slider_hero {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0 0 0 0;
-  }
-  section.hero#hero_slider > div#slick_slider_hero.slick-slider,
-section.hero#hero_slider > div#slick_slider_hero .slick-list,
-section.hero#hero_slider > div#slick_slider_hero .slider_img,
-section.hero#hero_slider > div#slick_slider_hero .slick-track {
-    height: 100%;
-  }
-  section.hero#hero_slider > div#slick_slider_hero img {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  section.hero {
-    overflow: hidden;
-    position: relative;
-  }
-  section.hero:after {
-    content: "";
-    display: block;
-    position: absolute;
-    padding: 100px 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  section.hero .hero_foreground {
-    position: relative;
-    text-align: center;
-    z-index: 2;
   }
   section.hero .hero_foreground h2 {
     font-size: 7.2rem;
@@ -3112,24 +3067,54 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   section.hero .hero_foreground a.site__button:hover, section.hero .hero_foreground a.site__button:focus, section.hero .hero_foreground a.site__button:active {
     opacity: 0.8;
   }
-
-  section.hero#hero_slider #slick_slider_hero {
+  section.hero .hero_bgtint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  section.hero#hero_image > .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  section.hero#hero_slider > div#slick_slider_hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 0 0 0;
     margin-bottom: 0;
   }
-  section.hero#hero_slider #slick_slider_hero .slick-arrow {
+  section.hero#hero_slider > div#slick_slider_hero.slick-slider,
+section.hero#hero_slider > div#slick_slider_hero .slick-list,
+section.hero#hero_slider > div#slick_slider_hero .slider_img,
+section.hero#hero_slider > div#slick_slider_hero .slick-track {
+    height: 100%;
+  }
+  section.hero#hero_slider > div#slick_slider_hero img {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  section.hero#hero_slider > div#slick_slider_hero .slick-arrow {
     position: absolute;
     top: 50%;
     font-size: 50px;
     z-index: 3;
     padding: 10px;
   }
-  section.hero#hero_slider #slick_slider_hero .slick-arrow > i {
+  section.hero#hero_slider > div#slick_slider_hero .slick-arrow > i {
     color: white;
   }
-  section.hero#hero_slider #slick_slider_hero .slick-arrow.slick_next_arrow {
+  section.hero#hero_slider > div#slick_slider_hero .slick-arrow.slick_next_arrow {
     right: 0;
   }
-  section.hero#hero_slider #slick_slider_hero .slick-arrow:hover, section.hero#hero_slider #slick_slider_hero .slick-arrow:active, section.hero#hero_slider #slick_slider_hero .slick-arrow:focus {
+  section.hero#hero_slider > div#slick_slider_hero .slick-arrow:hover, section.hero#hero_slider > div#slick_slider_hero .slick-arrow:active, section.hero#hero_slider > div#slick_slider_hero .slick-arrow:focus {
     cursor: pointer;
   }
   section.hero#hero_slider .slider_img {
