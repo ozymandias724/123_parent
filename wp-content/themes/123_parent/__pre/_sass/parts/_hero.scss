@@ -7,7 +7,6 @@
     //
     section.hero {
         //margin: 0 0 getVar($sizing, gutter, px, large) 0;
-        height: 80vh;
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -103,11 +102,11 @@
         // there is no custom field for the height of the hero type of color
         &#hero_color {
             height: auto;
-            height: 90vh;
+            min-height: 20vh;
             padding-top: 150px;
         }
         &#hero_image {
-            
+
             > .image {
                 padding-top: 150px;
                 width: 100%;
