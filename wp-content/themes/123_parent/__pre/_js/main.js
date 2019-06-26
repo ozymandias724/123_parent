@@ -22,13 +22,17 @@ var Blocks = {};    // tbd
 $(document).ready(function()
 {
 
+
+    
+
+
     /**
      * 
      *      This is NOT DRY
      * 
      *  If Header Six Exists
      */
-    if ($('header').length) {
+    if ($('header.header').length) {
         var headerID = $('header.header').attr('id');
         headerID = headerID.substr(headerID.indexOf("header") + 7);
         var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
@@ -40,7 +44,7 @@ $(document).ready(function()
             }else{
                 offset = $('header').height() + $('#popups__banner').height() ;
             }
-            $('main#page_home').css('margin-top', offset - 1);
+            $('main').css('margin-top', offset - 1);
         }
     }
     
