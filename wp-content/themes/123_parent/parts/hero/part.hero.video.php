@@ -14,9 +14,9 @@ $guide['video'] = '
 // write the <video> element
 $return['video'] = sprintf(
     $guide['video'],
-    (!empty($bg['video']['options']['loop']) ? 'loop' : ''),
-    (!empty($bg['video']['options']['muted']) ? 'muted' : ''),
-    ($bg['video']['source'] == 'file' ? $bg['video']['file']['url'] : $bg['video']['url'])
+    ( !empty($bg['video']['options']['loop']) ? 'loop' : ''),
+    ( !empty($bg['video']['options']['muted']) ? 'muted' : ''),
+    ( !empty($bg['video']['file']['url']) ? $bg['video']['file']['url'] : '')
 );
 
 // write teh final return string

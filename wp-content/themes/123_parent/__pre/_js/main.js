@@ -28,22 +28,30 @@ $(document).ready(function()
 
     /**
      * 
-     *      This is NOT DRY
+     *  This is NOT DRY
      * 
      *  If Header Six Exists
      */
-    if ($('header.header').length) {
+    if( $('header.header').length ) {
+        
         var headerID = $('header.header').attr('id');
-        headerID = headerID.substr(headerID.indexOf("header") + 7);
+        
+        headerID = headerID.substr(headerID.indexOf('header') + 7);
+        
+
         var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
         var headersDiv = ['four', 'nine'];
+
         if( $('header.header').css('position') == 'fixed' && headers.includes(headerID) ){
+
             var offset = 0;
+
             if(headersDiv.includes(headerID)){
-                offset = $('header > div').height() + $('#popups__banner').height() ;
+                offset = ( $('#popups__banner').length > 0 ? $('header > div').height() + $('#popups__banner').height() : $('header > div').height() );
             }else{
-                offset = $('header').height() + $('#popups__banner').height() ;
+                offset = ( $('#popups__banner').length > 0 ? $('header').height() + $('#popups__banner').height() : $('header').height() );
             }
+
             $('main').css('margin-top', offset - 1);
         }
     }
