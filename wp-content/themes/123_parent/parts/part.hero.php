@@ -113,7 +113,9 @@ echo '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$typ
 
 // static image
 if( $type == 'image' ){
-    echo '<div class="image" style="background-image: url('.$bg['image']['image']['url'].')"></div>';
+    
+    echo '<div class="image" style="background-image: url('.$bg['image']['image']['url'].')">'.$return['fg'].'</div>';
+
 }else if( $type == 'slider' ){
     // 
     if ($bg['slider']['randomize']) {

@@ -11,14 +11,8 @@
         overflow: hidden;
         position: relative;
         width: 100%;
-        // less height for color section by default (customizable)
-        &#hero_color {
-            height: auto;
-            height: 90vh;
-            padding-top: 150px;
-        }
         // 
-        .hero_foreground{
+        .hero_foreground {
             position: relative;
             text-align: center;
             background-color: transparent;
@@ -105,14 +99,24 @@
             height: 100%;
             z-index: 1;
         }
+        // less height for color section by default (customizable)
+        // there is no custom field for the height of the hero type of color
+        &#hero_color {
+            height: auto;
+            height: 90vh;
+            padding-top: 150px;
+        }
         &#hero_image {
+            
             > .image {
+                padding-top: 150px;
                 width: 100%;
                 height: 100%;
                 @include bgimage;
             }
         }
         &#hero_slider {
+            padding-top: 150px;
 
             > div#slick_slider_hero {
                 position: absolute;
@@ -120,6 +124,7 @@
                 left: 0;
                 width: 100%;
                 margin: 0 0 0 0;
+
                 &.slick-slider,
                 .slick-list,
                 .slider_img,
@@ -133,6 +138,7 @@
                 img {
                     @include bgimage;
                 }
+
                 margin-bottom: 0;
 
                 .slick-arrow {
@@ -157,7 +163,6 @@
                     }
                 }
             }
-
             // Slider images
             .slider_img {
                 object-fit: cover;
