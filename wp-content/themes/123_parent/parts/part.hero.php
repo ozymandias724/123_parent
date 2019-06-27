@@ -3,7 +3,6 @@
 *   Partial
 *   Hero Section
 */
-$fields = get_fields($post->ID);
 
 $header = 'header__' . get_field('header', 'options')['style'];
 
@@ -107,7 +106,7 @@ $type = $fields['hero_type'];
 
 if( $type !== 'none' ){
     // open hero container
-    echo '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$type.'">'; 
+    echo '<section class="hero site__fade site__fade-up" id="hero_'.$type.'">'; 
     // static image
     if( $type == 'image' ){
         
