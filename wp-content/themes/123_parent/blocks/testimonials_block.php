@@ -6,6 +6,8 @@
     // empty return string
     $return = [];
     $guide = [];
+    $return['section'] = '';
+    $guide['section'] = '';
 
     $guide['grid'] = '';
     
@@ -62,11 +64,11 @@
             );
         }
         else if( $fields['type'] == 'video' ){
-            // $guide['video'] = '
-            //     <video>
-            //         <source src="%s" type="video/mp4">
-            //     </video>
-            // ';
+            $guide['video'] = '
+                <video controls>
+                    <source src="%s" type="video/mp4">
+                </video>
+            ';
             $guide['grid'] = '
                 <li class="testimonial_video">
                     <div>
@@ -81,9 +83,13 @@
                     </div>
                 </li>
             ';
+            $video = sprintf(
+                $guide['video']
+                ,(!empty($fields['video_file']['url']) ? $fields['video_file']['url'] : '')
+            );
             $return['grid'] .= sprintf(
                 $guide['grid']
-                ,(!empty($fields['video_url']) ? '<a class="video_anchor" href="'.$fields['video_url'].'"><div></div></a>' : '')
+                ,$video
                 ,(!empty($fields['name']) ? '<h3>'.$fields['name'].'</h3>' : '')
                 ,(!empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '')
                 ,(!empty($fields['details']) ? $fields['details'] : '')

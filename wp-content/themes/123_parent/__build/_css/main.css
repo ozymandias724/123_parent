@@ -5265,6 +5265,7 @@ section.tpl_page_menu > .container #tabs_style__sidebar > .menu_area > .menu_sec
 @media only screen and (max-width: 640px) {
   section.tpl_page_menu > .container #tabs_style__divider > ul.button_group {
     flex-flow: column nowrap;
+    align-items: end;
   }
   section.tpl_page_menu > .container #tabs_style__divider > ul.button_group > li {
     margin-bottom: 5px;
@@ -5351,8 +5352,11 @@ section.tpl_page_menu > .container .tabs > .menu_area > .menu_section.menu_photo
   section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs > ul {
     margin-bottom: 30px;
     border-bottom: 2px solid #c2c2c2;
+    display: flex;
+    flex-flow: row nowrap;
   }
   section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs > ul > li {
+    display: inline-block;
     margin: 0 2px;
   }
   section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs > ul > li > a {
@@ -5586,6 +5590,16 @@ section.tpl_page_gallery > .container.full .site__grid > ul > li .block.less_siz
   }
   section.tpl_page_gallery > .container.narrow .site__grid > ul > li:nth-child(2n), section.tpl_page_gallery > .container.medium .site__grid > ul > li:nth-child(2n), section.tpl_page_gallery > .container.wide .site__grid > ul > li:nth-child(2n), section.tpl_page_gallery > .container.full .site__grid > ul > li:nth-child(2n) {
     margin: 0 0 2vw 0;
+  }
+  section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs ul {
+    flex-flow: column nowrap;
+    align-items: end;
+  }
+  section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs ul > li {
+    margin-bottom: 5px;
+  }
+  section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs ul > li:last-of-type {
+    margin-bottom: 0;
   }
   section.tpl_page_gallery > .container .tabsandgrids_container.sidebar > .galleries {
     width: 50vw;
@@ -6922,6 +6936,8 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   section.site__block.block__galleries > .container .tabsandgrids_container.divider .tabs > ul {
     margin-bottom: 30px;
     border-bottom: 2px solid #c2c2c2;
+    display: flex;
+    flex-flow: row nowrap;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.divider .tabs > ul > li {
     margin: 0 2px;
@@ -7157,6 +7173,16 @@ section.site__block.block__galleries > .container.full .site__grid > ul > li .bl
   }
   section.site__block.block__galleries > .container.narrow .site__grid > ul > li:nth-child(2n), section.site__block.block__galleries > .container.medium .site__grid > ul > li:nth-child(2n), section.site__block.block__galleries > .container.wide .site__grid > ul > li:nth-child(2n), section.site__block.block__galleries > .container.full .site__grid > ul > li:nth-child(2n) {
     margin: 0 0 2vw 0;
+  }
+  section.site__block.block__galleries > .container .tabsandgrids_container.divider .tabs ul {
+    flex-flow: column nowrap;
+    align-items: end;
+  }
+  section.site__block.block__galleries > .container .tabsandgrids_container.divider .tabs ul > li {
+    margin-bottom: 5px;
+  }
+  section.site__block.block__galleries > .container .tabsandgrids_container.divider .tabs ul > li:last-of-type {
+    margin-bottom: 0;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries {
     width: 50vw;
@@ -8128,6 +8154,7 @@ section.block__food_menus > .container #tabs_style__sidebar > .menu_area > .menu
 @media only screen and (max-width: 640px) {
   section.block__food_menus > .container #tabs_style__divider > ul.button_group {
     flex-flow: column nowrap;
+    align-items: end;
   }
   section.block__food_menus > .container #tabs_style__divider > ul.button_group > li {
     margin-bottom: 5px;
@@ -8215,6 +8242,9 @@ section.block__food_menus > .container .tabs > .menu_area > .menu_section.menu_p
     background-size: cover;
     background-position: center center;
     flex: 1 0 35%;
+  }
+  section.site__block.block__testimonials > div.container > .site__grid > ul li > div video {
+    width: 100%;
   }
   section.site__block.block__testimonials > div.container > .site__grid > ul li > div .testimonial_content {
     flex: 1 0 65%;

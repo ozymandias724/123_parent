@@ -57,7 +57,10 @@
                         > ul {
                             margin-bottom: getVar($sizing, gutter, px, normal);
                             border-bottom: 2px solid getVar($gustavo, colors, gray1);
+                            display: flex;
+                            flex-flow: row nowrap;
                             > li {
+                                display: inline-block;
                                 margin: 0 2px;
                                 > a {
                                     color: getVar($gustavo, colors, gray2);
@@ -241,6 +244,18 @@
                 }
             }
             .tabsandgrids_container {
+                &.divider {
+                    .tabs ul {
+                        flex-flow: column nowrap;
+                        align-items: end;
+                        > li {
+                            margin-bottom: getVar($sizing, gutter, px, tiny);
+                        }
+                        > li:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
                 &.sidebar {
                     > .galleries {
                         $w: getVar($sizing, content, small);
