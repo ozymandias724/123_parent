@@ -59,7 +59,7 @@ foreach($res as $i => $testimonial){
                             %s
                         </div>
                         <div class="testimonial_details block__item-body">%s</div>
-                    </div>
+                    </div> 
                 </div>
             </li>
         ';
@@ -85,10 +85,10 @@ foreach($res as $i => $testimonial){
                     </div>
                 </div>
             </li>
-            ';
+        ';
         $return['grid'] .= sprintf(
             $guide['grid']
-            ,(!empty($testimonial_fields['video_url']) ? '<a class="video_anchor" href="'.$testimonial_fields['video_url'].'"><div></div></a>' : '')
+            ,(!empty($testimonial_fields['video_file']['url']) ? '<video controls><source src="'.$testimonial_fields['video_file']['url'].'"type="video/mp4"></video>' : '')
             ,(!empty($testimonial_fields['name']) ? '<h3>'.$testimonial_fields['name'].'</h3>' : '')
             ,(!empty($testimonial_fields['location']) ? '<p>'.$testimonial_fields['location'].'</p>' : '')
             ,(!empty($testimonial_fields['details']) ? $testimonial_fields['details'] : '')
