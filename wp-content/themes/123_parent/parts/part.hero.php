@@ -105,41 +105,41 @@ if (!empty($bg['background_tint'])) {
 // check bg type
 $type = $fields['hero_type'];
 
-// open hero container
-echo '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$type.'">'; 
+if( $type !== 'none' ){
+    // open hero container
+    echo '<section class="hero site__fade site__fade-up '.$header.'" id="hero_'.$type.'">'; 
+    // static image
+    if( $type == 'image' ){
+        
+        echo '<div class="image" style="background-image: url('.$bg['image']['image']['url'].')">'.$return['fg'].'</div>';
 
-// static image
-if( $type == 'image' ){
-    
-    echo '<div class="image" style="background-image: url('.$bg['image']['image']['url'].')">'.$return['fg'].'</div>';
-
-}else if( $type == 'slider' ){
-    // 
-    if ($bg['slider']['randomize']) {
-        shuffle($slider_images);
-    }
-
-    if (!empty($bg['slider']['images'])) {
-        $slider = '<div id="slick_slider_hero">';
-        foreach ($bg['slider']['images'] as $i => $image) {
-            $slider .= '<div><img class="slider_img" alt="' . $image['alt'] . '" src="' . $image['url'] . '"></div>';
+    }else if( $type == 'slider' ){
+        // 
+        if ($bg['slider']['randomize']) {
+            shuffle($slider_images);
         }
-        $slider .= '</div>';
-    }
 
-    echo $return['fg'];
-    echo $slider;
-    
-}else if( $type == 'video'){
-    // 
-    include(get_template_directory().'/parts/hero/part.hero.video.php');
-}else if( $type == 'color' ){
-    // 
-    echo $return['fg'];
-    echo '<div class="hero_bgtint" style="'.$return['bgtint'].'"></div>';
+        if (!empty($bg['slider']['images'])) {
+            $slider = '<div id="slick_slider_hero">';
+            foreach ($bg['slider']['images'] as $i => $image) {
+                $slider .= '<div><img class="slider_img" alt="' . $image['alt'] . '" src="' . $image['url'] . '"></div>';
+            }
+            $slider .= '</div>';
+        }
+
+        echo $return['fg'];
+        echo $slider;
+        
+    }else if( $type == 'video'){
+        // 
+        include(get_template_directory().'/parts/hero/part.hero.video.php');
+    }else if( $type == 'color' ){
+        // 
+        echo $return['fg'];
+        echo '<div class="hero_bgtint" style="'.$return['bgtint'].'"></div>';
+    }
+    // close hero container
+    echo '</section>'; 
 }
 
-// close hero container
-echo '</section>'; 
-
- ?>
+?>

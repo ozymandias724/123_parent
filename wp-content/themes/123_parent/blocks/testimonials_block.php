@@ -62,6 +62,11 @@
             );
         }
         else if( $fields['type'] == 'video' ){
+            // $guide['video'] = '
+            //     <video>
+            //         <source src="%s" type="video/mp4">
+            //     </video>
+            // ';
             $guide['grid'] = '
                 <li class="testimonial_video">
                     <div>
@@ -75,7 +80,7 @@
                         </div>
                     </div>
                 </li>
-                ';
+            ';
             $return['grid'] .= sprintf(
                 $guide['grid']
                 ,(!empty($fields['video_url']) ? '<a class="video_anchor" href="'.$fields['video_url'].'"><div></div></a>' : '')

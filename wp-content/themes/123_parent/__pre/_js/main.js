@@ -37,16 +37,15 @@ $(document).ready(function()
         var headerID = $('header.header').attr('id');
         
         headerID = headerID.substr(headerID.indexOf('header') + 7);
-        
 
         var headers = ['two', 'four', 'five', 'six','seven', 'nine', 'ten'];
-        var headersDiv = ['four', 'nine'];
+        var headersWithDiv = ['four', 'nine'];
 
         if( $('header.header').css('position') == 'fixed' && headers.includes(headerID) ){
 
             var offset = 0;
 
-            if(headersDiv.includes(headerID)){
+            if( headersWithDiv.includes(headerID) ){
                 offset = ( $('#popups__banner').length > 0 ? $('header > div').height() + $('#popups__banner').height() : $('header > div').height() );
             }else{
                 offset = ( $('#popups__banner').length > 0 ? $('header').height() + $('#popups__banner').height() : $('header').height() );
