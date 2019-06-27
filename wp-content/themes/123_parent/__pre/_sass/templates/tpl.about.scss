@@ -103,48 +103,39 @@
                 > ul {
                     > li {
                         margin-bottom: getVar($sizing, gutter, px, large);
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: flex-start;
                         > a {
                             color: inherit;
+                            flex: 1 0 45%;
                             > div {
-                                display: flex;
-                                flex-flow: row wrap;
-                                align-items: flex-start;
-                                > div {
-                                    flex: 1 0 45%;
-                                    .image {
-                                        background-repeat: no-repeat;
-                                        background-position: center center;
-                                        background-size: cover;
-                                        width: 100%;
-                                        height: 0;
-                                        margin: 0 auto;
-                                        padding-bottom: 100%;
-                                    }
-                                    &:first-of-type {
-                                        border: 5px solid getVar($colors, white, full);
-                                        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
-                                        margin-right: 40px;
-                                        position: relative;
-                                        margin: 0 auto;
-                                        @include site__bgimage($g : false, $z : true);
-                                    }
-                                    &:last-of-type {
-                                        margin-left: 40px;
-                                    }
-                                    &.staff__details {
-                                        text-align: justify;
-                                        @include fontS-16;
-                                    }
+                                border: 5px solid getVar($colors, white, full);
+                                box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+                                margin-right: 40px;
+                                position: relative;
+                                margin: 0 auto;
+                                @include site__bgimage($g : false, $z : true);
+                                .image {
+                                    background-repeat: no-repeat;
+                                    background-position: center center;
+                                    background-size: cover;
+                                    width: 100%;
+                                    height: 0;
+                                    margin: 0 auto;
+                                    padding-bottom: 100%;
                                 }
-                                
-                            }
-                            &:last-of-type {
-                                margin-bottom: 0;
-                            }
-                            &:only-of-type {
-                                margin-bottom: getVar($sizing, gutter, px, large);
-                            }
+                            } 
                         }
+                        > div.staff__details {
+                            flex: 1 0 45%;
+                            margin-left: 40px;
+                            text-align: justify;
+                            @include fontS-16;
+                        }
+                    }
+                    > li:last-of-type {
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -165,6 +156,21 @@
                                     max-height: 60vw;
                                 }
                             }
+                        }
+                    }
+                }
+            }
+            div.staff__two {
+                > ul {
+                    > li {
+                        flex-flow: column nowrap;
+                        > a {
+                            flex: 1 0 100%;
+                            width: 100%;
+                            margin-bottom: getVar($sizing, gutter, px, normal);
+                        }
+                        > div.staff__details {
+                            margin-left: 0;
                         }
                     }
                 }

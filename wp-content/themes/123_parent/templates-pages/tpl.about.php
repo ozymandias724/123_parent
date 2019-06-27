@@ -86,13 +86,11 @@ if( !empty($res) ){
             $guide['staff'] = '
                 <li class="site__fade site__fade-up">
                     <a href="%s">
-                        <div>
-                            <div class="staff__image">
-                                <div class="image site__bgimg_img" style="background-image:url(%s);"></div>
-                            </div>
-                            <div class="staff__details block__item-body">%s</div>
+                        <div class="staff__image">
+                            <div class="image site__bgimg_img" style="background-image:url(%s);"></div>
                         </div>
                     </a>
+                    <div class="staff__details block__item-body">%s</div>
                 </li>
             ';
 

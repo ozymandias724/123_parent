@@ -309,12 +309,9 @@
                 > ul.button_group {
                     margin-bottom: 30px;
                     text-align: left;
-                    &:after {
-                        content: "";
-                        display: block;
-                        border-bottom: 2px solid getVar($gustavo, colors, gray1);
-                        margin-top: 0;
-                    }
+                    border-bottom: 2px solid getVar($gustavo, colors, gray1);
+                    display: flex;
+                    flex-flow: row nowrap;
                     > li:last-of-type {
                         margin-bottom: 0;
                     }
@@ -330,9 +327,10 @@
                         border-left: 2px solid getVar($gustavo, colors, gray1);
                         border-right: 2px solid getVar($gustavo, colors, gray1);
                         transition: color 0.3s ease-in-out;
+                        background-color: getVar($gustavo, colors, gray1);
                         a {
                             color: getVar($gustavo, colors, gray2);
-                            background-color: getVar($gustavo, colors, gray1);
+                            height: 100%;
                             display: block;   
                             padding: 5px 10px;
                             &:focus {
@@ -526,6 +524,17 @@
 @media only screen and (max-width: 640px){
     section.block__food_menus {
         > .container {
+            #tabs_style__divider {
+                > ul.button_group {
+                    flex-flow: column nowrap;
+                    > li {
+                        margin-bottom: getVar($sizing, gutter, px, tiny);
+                    }
+                    > li:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
             #tabs_style__sidebar {
                 flex-flow: column nowrap;
                 > ul.button_group {
