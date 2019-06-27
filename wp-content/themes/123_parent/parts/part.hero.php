@@ -41,11 +41,8 @@ if( !empty($fg['content']) ){
             if( !empty($row['url']) ) {
                 $return['fg_content'] .= '<a title="'.$row['url']['title'].'" target="'.$row['url']['target'].'" href="' . $row['url']['url'] . '">';
             } 
-            
-            $max_height = ( !empty($row['max_height']) ? 'max-height:'.$row['max_height'].'px;' : '');
-            $max_width = ( !empty($row['max_width']) ? 'max-width:'.$row['max_width'].'px;' : '');
 
-            $return['fg_content'] .= '<img style="'.$max_height . $max_width.'" alt="' . $row['image']['alt'] . '" src="' . $row['image']['url'] . '" />';
+            $return['fg_content'] .= '<img alt="' . $row['image']['alt'] . '" src="' . $row['image']['url'] . '" />';
             
             if ( !empty($row['url']) ) {
                 $return['fg_content'] .= '</a>';

@@ -1,9 +1,4 @@
 <?php 
-
-    // $num_display = get_the_phone();
-    // $num_href = get_the_phone('tel');
-
-    // $field_social_icons = get_field('field_akan8a8sskshb', 'options');
     $company_info = get_field('company_info','options');
 
     $phone_number_1 = ($company_info['phone_number_1'] ? $company_info['phone_number_1'] : '');
@@ -11,7 +6,7 @@
     $site__iconlink_phone = ''; 
     if( !empty($phone_number_1) ){
         $site__iconlink_phone .= '
-            <a href="javascript:;" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
+            <a href="tel:'.$phone_number_1.'" title="" class="site__iconlink site__iconlink-phone">'.$phone_number_1.'</a>
         ';
     }
 
