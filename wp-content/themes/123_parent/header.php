@@ -26,8 +26,15 @@
     ?>
 </head>
 <?php
+    $header = get_field('header', 'options');
+    $use_custom_header = $header['select_style'];
+    $selected_header = 'header__' . $header['style'];
+    $banner_popup_status = ( get_field('popups', 'options')['banner']['status'] == 1 ? 'banner_popup_true' : '' );
+
     $body_classes = array(
         (!empty(get_field('header', 'options')['long_scroll']) ? 'js__smoothscroll' : '')
+        ,$selected_header
+        ,$banner_popup_status
     );
 ?>
 

@@ -3072,18 +3072,13 @@ footer#footer_one > div.container #footer_company_info .footer_address {
   section.hero#hero_color {
     height: auto;
     min-height: 20vh;
-    padding-top: 150px;
   }
   section.hero#hero_image > .image {
-    padding-top: 150px;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-  }
-  section.hero#hero_slider {
-    padding-top: 150px;
   }
   section.hero#hero_slider > div#slick_slider_hero {
     position: absolute;
@@ -3143,6 +3138,22 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     min-width: 100%;
     max-width: 100vw;
     z-index: 2;
+  }
+
+  body.header__three .hero_foreground {
+    padding-top: 140px;
+  }
+  body.header__three.banner_popup_true .hero_foreground {
+    padding-top: 180px;
+  }
+  body.header__four .hero_foreground {
+    padding-top: 60px;
+  }
+  body.header__eight .hero_foreground {
+    padding-top: 125px;
+  }
+  body.header__nine .hero_foreground {
+    padding-top: 120px;
   }
 }
 @media only screen and (max-width: 960px) {
