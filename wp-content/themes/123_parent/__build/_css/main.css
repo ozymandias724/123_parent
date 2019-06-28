@@ -3311,7 +3311,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   #popups__banner_overlay > .container > div,
 #popups__header_overlay > .container > div,
 #popups__timed_overlay > .container > div {
-    padding: 0 40px 10px;
+    padding: 0 40px 20px;
   }
   #popups__banner_overlay > .container > div > div.popup_heading,
 #popups__header_overlay > .container > div > div.popup_heading,
@@ -3338,6 +3338,37 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
 #popups__timed_overlay > .container > div > div.popup_form {
     text-align: left;
   }
+  #popups__banner_overlay > .container > div > div.popup_form .gform_wrapper,
+#popups__header_overlay > .container > div > div.popup_form .gform_wrapper,
+#popups__timed_overlay > .container > div > div.popup_form .gform_wrapper {
+    margin: 0;
+  }
+  #popups__banner_overlay > .container > div > div.popup_form .gform_wrapper .top_label .gfield_label,
+#popups__header_overlay > .container > div > div.popup_form .gform_wrapper .top_label .gfield_label,
+#popups__timed_overlay > .container > div > div.popup_form .gform_wrapper .top_label .gfield_label {
+    display: none;
+  }
+  #popups__banner_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield,
+#popups__header_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield,
+#popups__timed_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield {
+    margin: 0 0 15px;
+    padding: 0;
+  }
+  #popups__banner_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield input,
+#popups__header_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield input,
+#popups__timed_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield input {
+    padding: 10px;
+  }
+  #popups__banner_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield:last-of-type,
+#popups__header_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield:last-of-type,
+#popups__timed_overlay > .container > div > div.popup_form .gform_wrapper ul li.gfield:last-of-type {
+    margin: 0;
+  }
+  #popups__banner_overlay > .container > div > div.popup_form .gform_wrapper .gform_footer,
+#popups__header_overlay > .container > div > div.popup_form .gform_wrapper .gform_footer,
+#popups__timed_overlay > .container > div > div.popup_form .gform_wrapper .gform_footer {
+    padding: 0;
+  }
   #popups__banner_overlay > .container > div > div.popup_form > p,
 #popups__header_overlay > .container > div > div.popup_form > p,
 #popups__timed_overlay > .container > div > div.popup_form > p {
@@ -3351,15 +3382,18 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
 #popups__timed_overlay > .container > div > div.popup_form input[type^=submit] {
     color: #ffffff;
     background-color: #000000;
-    padding: 10px 30px;
+    padding: 15px 30px;
     font-weight: 600;
     border: none;
+    width: 100%;
+    text-transform: uppercase;
     cursor: pointer;
+    letter-spacing: 1px;
   }
-  #popups__banner_overlay > .container > div > div.popup_form label span,
-#popups__header_overlay > .container > div > div.popup_form label span,
-#popups__timed_overlay > .container > div > div.popup_form label span {
-    color: #000000;
+  #popups__banner_overlay > .container > div > div.popup_form .gfield_required,
+#popups__header_overlay > .container > div > div.popup_form .gfield_required,
+#popups__timed_overlay > .container > div > div.popup_form .gfield_required {
+    display: none;
   }
 }
 @media only screen {

@@ -1,4 +1,4 @@
-// Banner PopUp
+// PopUps
 @media only screen {
     // the 'banner' part of the banner popup
     #popups__banner {
@@ -81,7 +81,7 @@
             max-width: 470px;
             margin: 10vh auto;
             border-radius: 20px;
-            // Banner Image
+            // Image
             > figure img {
                 width: 100%;
                 $w: 470px;
@@ -93,9 +93,9 @@
                 border-top-left-radius: 19px;
                 border-top-right-radius: 19px; 
             }
-            // Banner Content
+            // Popup Content
             > div {
-                padding: 0 40px 10px;
+                padding: 0 40px 20px;
                 > div.popup_heading {
                     @include fontS-34;
                     text-align: center;
@@ -112,6 +112,25 @@
                 }
                 > div.popup_form {
                     text-align: left;
+                    .gform_wrapper {
+                        margin: 0;
+                        .top_label .gfield_label {
+                            display: none;
+                        }
+                        ul li.gfield {
+                            margin: 0 0 15px;
+                            padding: 0;
+                            input {
+                                padding: 10px;
+                            }
+                        }
+                        ul li.gfield:last-of-type {
+                            margin: 0;
+                        }
+                        .gform_footer {
+                            padding: 0;
+                        }
+                    }
                     > p {
                         font-weight: 700;
                         border-bottom: 3px solid getVar($gustavo, colors, gray7);
@@ -121,13 +140,16 @@
                     input[type^="submit"] {
                         color: getVar($colors, white, full);
                         background-color: getVar($colors, black, full);
-                        padding: 10px 30px;
+                        padding: 15px 30px;
                         font-weight: 600;
                         border: none;
+                        width: 100%;
+                        text-transform: uppercase;
                         cursor: pointer;
+                        letter-spacing: 1px;
                     }
-                    label span {
-                        color: getVar($colors, black, full);
+                    .gfield_required {
+                        display: none;
                     }
                 }
             }
