@@ -16,16 +16,38 @@ var Theme = {};     // tbd
 var Hero = {};      // tbd
 var Headers = {};   // tbd
 var Blocks = {};    // tbd
+var Coupons = {}
 
 
 // certain things should wait until the document is ready
 $(document).ready(function()
 {
 
+    /* 
+    * IPrint coupon 
+    */
+    Coupons = {
+        _init : function(){
+            $('a.coupon_print').on('click', Coupons.printCoupon);
+        },
+        printCoupon : function(){
 
+            var printWindow = window.open('', 'PRINT');
+            printWindow.document.write('<html><head><title>' + document.title  + '</title>');
+            printWindow.document.write('</head><body>');
+            printWindow.document.write($(this).parent('li')[0].outerHTML);
+            
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+            return true;
+            
+        }
+    }
+    Coupons._init();
     
-
-
     /**
      * 
      *  This is NOT DRY
@@ -158,7 +180,7 @@ $(document).ready(function()
         
         PopUps.Banner._init();
     }
-    // can we combined some of this so that its listening for multiple things i.e., $('overlay1bg, overlay2bg).on(click)???
+    // can we combine some of this so that its listening for multiple things i.e., $('overlay1bg, overlay2bg).on(click)???
     // this code isnt DRY
     /**
      * 

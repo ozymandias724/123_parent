@@ -1,7 +1,26 @@
-@media only screen {
 
 
-    
+@media print {
+ 
+    .coupon_description, 
+    .coupon_expiration {
+        color: getVar($gustavo, colors, gray11);
+    }
+    .coupon_code {
+        border-radius: 0;
+        padding: 2px 30px;
+    }
+    .coupon_expiration {
+        font-weight: 600;
+        > span {
+            font-weight: 400;
+        }
+    }
+      
+}
+
+@media screen {
+
     section.site__block.block__coupons {
 
         >div.container {

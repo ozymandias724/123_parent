@@ -7237,7 +7237,25 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     margin: 0 0 2vw 0;
   }
 }
-@media only screen {
+@media print {
+  .coupon_description,
+.coupon_expiration {
+    color: #939393;
+  }
+
+  .coupon_code {
+    border-radius: 0;
+    padding: 2px 30px;
+  }
+
+  .coupon_expiration {
+    font-weight: 600;
+  }
+  .coupon_expiration > span {
+    font-weight: 400;
+  }
+}
+@media screen {
   section.site__block.block__coupons > div.container .site__grid.coupons__one > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__two > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__three > ul > li, section.site__block.block__coupons > div.container .site__grid.coupons__four > ul > li {
     padding: 10px;
     background-color: #dedede;
