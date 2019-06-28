@@ -111,26 +111,23 @@
                     text-align: justify;
                 }
                 > div.popup_form {
-                    margin: 0;
-                    padding: 10px 0 0;
-                    input {
-                        @include fontS-16;
-                        padding: 25px 20px;
+                    text-align: left;
+                    > p {
+                        font-weight: 700;
+                        border-bottom: 3px solid getVar($gustavo, colors, gray7);
+                        padding-bottom: getVar($sizing, gutter, px, tiny);
+                        margin-bottom: 20px;
                     }
-                    .wpforms-form { 
-                        .wpforms-field {
-                            padding: 5px 0;
-                        }
-                        button[type=submit] {
-                            width: 100%;
-                            @include fontS-20;
-                            font-weight: 500;
-                            padding: 10px 10px;
-                            color: white; 
-                            background-color: $accent;
-                            border: none;
-                            border-radius: 30px;
-                        }
+                    input[type^="submit"] {
+                        color: getVar($colors, white, full);
+                        background-color: getVar($colors, black, full);
+                        padding: 10px 30px;
+                        font-weight: 600;
+                        border: none;
+                        cursor: pointer;
+                    }
+                    label span {
+                        color: getVar($colors, black, full);
                     }
                 }
             }
