@@ -20,12 +20,11 @@
                 <div>
                     %s
                     %s
-                    <div class="popup_form">'.( !empty($fields['overlay']['form']) ? do_shortcode('[wpforms id="'.$fields['overlay']['form']->ID.'" title="false" description="false"]') : "").'</div>
+                    <div class="popup_form">'.( !empty($fields['overlay']['form']) ? do_shortcode('[gravityform id="'.$fields['overlay']['form']['id'].'" title="false" description="false"]') : '' ).'</div>
                 </div>
             </div>
         </div>
     ';
-    
     
     // write the overlay
     $return['overlay'] .= sprintf(

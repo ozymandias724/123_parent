@@ -15,7 +15,7 @@
             <div class="container %s %s" style="%s %s">
                 %s
                 %s
-                '. ( !empty($cB['form']) ? do_shortcode('[wpforms id="'.$cB['form']->ID.'" title="false" description="false"]' ) : '' ) . '
+                '.( !empty($cB['form']) ? do_shortcode('[gravityform id="'.$cB['form']->ID.'" title="false" description="false"]') : '') .'
             </div>
         </section>
     ';
