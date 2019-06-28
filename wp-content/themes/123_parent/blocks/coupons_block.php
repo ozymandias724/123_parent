@@ -12,7 +12,7 @@
     // HARD CODED COUPON DESCRIPTION
     $guide['coupon'] = '
         <li class="site__fade site__fade-up coupons__'.$cB['style'].'">
-            <a class="coupon_print" href="javascript:;">
+            <a class="coupon_print" href="%s" target="_blank">
                 <h5>%s</h5>
                 <div class="coupon_description block__item-body">%s</div>
                 %s
@@ -28,7 +28,7 @@
         if( $fields['status'] ){ 
             $return['coupon'] .= sprintf(
                 $guide['coupon']
-                //,get_permalink($coupon['coupon']->ID)
+                ,get_permalink($coupon['coupon']->ID)
                 ,$coupon['coupon']->post_title
                 ,(!empty($fields['details']) ? $fields['details'] : '')
                 ,(!empty($fields['code']) ? '<p class="coupon_code">Code: <span>'.$fields['code'].'</span></p>' : '')

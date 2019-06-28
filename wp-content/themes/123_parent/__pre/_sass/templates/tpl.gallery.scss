@@ -63,6 +63,10 @@
                                 display: inline-block;
                                 margin: 0 2px;
                                 > a {
+                                    line-height: inherit;
+                                    padding: 5px 10px;
+                                    @include fontS-14;
+                                    text-transform: uppercase;
                                     color: getVar($gustavo, colors, gray2);
                                     background-color: getVar($gustavo, colors, gray1);
                                     border-top-left-radius: 5px;

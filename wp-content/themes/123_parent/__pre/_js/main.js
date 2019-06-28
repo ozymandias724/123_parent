@@ -26,14 +26,21 @@ $(document).ready(function()
     /* 
     * Print coupon 
     */
+
     Coupons = {
+
         _init : function(){
-            $('a.coupon_print').on('click', Coupons.printCoupon);
+            Coupons.printCoupon();
         },
+
         printCoupon : function(){
             
-            
-            
+            if( $('section.single_coupon').length ){
+                window.print();
+                window.close();
+                return true;
+           }
+
         }
     }
     Coupons._init();

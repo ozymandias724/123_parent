@@ -64,6 +64,10 @@
                             > li {
                                 margin: 0 2px;
                                 > a {
+                                    @include fontS-14;
+                                    text-transform: uppercase;
+                                    line-height: inherit;
+                                    padding: 5px 10px;
                                     color: getVar($gustavo, colors, gray2);
                                     background-color: getVar($gustavo, colors, gray1);
                                     border-top-left-radius: 5px;

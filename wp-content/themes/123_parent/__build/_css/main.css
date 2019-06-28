@@ -3402,67 +3402,57 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     display: none;
   }
 }
-@media only screen {
-  main#single_coupon {
-    padding-top: 150px;
-    padding-bottom: 166px;
-  }
-  main#single_coupon > div {
-    width: 65vw;
+@media print, screen {
+  section.single_coupon > div.container {
     padding: 10px;
-    margin: 0 auto;
-    background-color: #DEDEDE;
+    background-color: #dedede;
     border-radius: 20px;
     border: 3px solid transparent;
   }
-  main#single_coupon > div > div {
+  section.single_coupon > div.container > div.coupon_inner_div {
+    text-decoration: none;
     padding: 20px;
     border-radius: 20px;
-    border: 6px dashed #fff;
+    border: 6px dashed #ffffff;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    color: inherit;
   }
-  main#single_coupon > div > div h5 {
-    color: #000;
-    font-family: "Gotham", Helvetica, sans-serif;
+  section.single_coupon > div.container h5 {
+    font-family: "Montserrat", serif;
+    text-align: center;
     margin: 10px 0 10px;
-    font-size: 3.4rem;
-    line-height: 4.8rem;
-    font-weight: 600;
+    font-size: 4rem;
+    line-height: 5.4rem;
+    font-weight: 900;
+    line-height: 4.3rem;
+    letter-spacing: -1px;
   }
-  main#single_coupon > div > div .coupon_description {
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    color: #a6a6a6;
-    font-weight: 500;
+  section.single_coupon > div.container .coupon_description {
     margin-bottom: 10px;
   }
-  main#single_coupon > div > div .coupon_expiration {
-    color: #000;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-    margin: 10px 0;
-    font-weight: 500;
-  }
-  main#single_coupon > div > div .coupon_code {
-    background: #fff;
+  section.single_coupon > div.container .coupon_code {
+    background: #ffffff;
     padding: 0 25px;
-    margin: 10px 0;
     border-radius: 20px;
     font-weight: 700;
     line-height: 40px;
-    color: black;
   }
-  main#single_coupon > div > div .coupon_code > span {
+  section.single_coupon > div.container .coupon_code > span {
     text-transform: uppercase;
     font-weight: 600;
   }
-}
-@media only screen and (min-width: 1280px) {
-  main.single__template.coupon__single__template > div {
-    width: 40vw;
+  section.single_coupon > div.container .coupon_expiration {
+    display: block;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
+  section.single_coupon > div.container .coupon_code,
+section.single_coupon > div.container .coupon_expiration {
+    margin: 5px 0;
   }
 }
 @media only screen {
@@ -4987,7 +4977,7 @@ section.tpl_page_menu > .container #tabs_style__pills .menu_photo_tiled_x3 > ul 
     text-transform: uppercase;
     font-size: 1.4rem;
     line-height: 2.8rem;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 2px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -5400,6 +5390,11 @@ section.tpl_page_menu > .container .tabs > .menu_area > .menu_section.menu_photo
     margin: 0 2px;
   }
   section.tpl_page_gallery > .container .tabsandgrids_container.divider .tabs > ul > li > a {
+    line-height: inherit;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-transform: uppercase;
     color: #484848;
     background-color: #c2c2c2;
     border-top-left-radius: 5px;
@@ -5910,73 +5905,88 @@ section.tpl_page_gallery > .container .tabsandgrids_container.sidebar > .galleri
 }
 @media only screen {
   section.site__block,
-section.page__template {
+section.page__template,
+section.single__page {
     width: 100%;
   }
   section.site__block .container,
-section.page__template .container {
+section.page__template .container,
+section.single__page .container {
     text-align: center;
     padding: 30px 0;
     margin: 0 auto 30px;
   }
   section.site__block .container .block__item-body,
-section.page__template .container .block__item-body {
+section.page__template .container .block__item-body,
+section.single__page .container .block__item-body {
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.8rem;
     text-align: center;
   }
   section.site__block .container > h2,
-section.page__template .container > h2 {
+section.page__template .container > h2,
+section.single__page .container > h2 {
     margin: 0 auto 30px auto;
   }
   section.site__block .container > .block__heading,
-section.page__template .container > .block__heading {
+section.page__template .container > .block__heading,
+section.single__page .container > .block__heading {
     margin: 0 auto;
   }
   section.site__block .container > .block__details,
-section.page__template .container > .block__details {
+section.page__template .container > .block__details,
+section.single__page .container > .block__details {
     margin: 0 auto 30px auto;
   }
   section.site__block .container.hasbg,
-section.page__template .container.hasbg {
+section.page__template .container.hasbg,
+section.single__page .container.hasbg {
     margin: 0 auto 0 auto;
   }
   section.site__block .container.narrow,
-section.page__template .container.narrow {
+section.page__template .container.narrow,
+section.single__page .container.narrow {
     width: 50vw;
   }
   section.site__block .container.narrow.hasbg,
-section.page__template .container.narrow.hasbg {
+section.page__template .container.narrow.hasbg,
+section.single__page .container.narrow.hasbg {
     width: 54vw;
     padding: 2vw;
   }
   section.site__block .container.narrow .site__grid > ul,
-section.page__template .container.narrow .site__grid > ul {
+section.page__template .container.narrow .site__grid > ul,
+section.single__page .container.narrow .site__grid > ul {
     width: 50vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.narrow .site__grid > ul:after,
-section.page__template .container.narrow .site__grid > ul:after {
+section.page__template .container.narrow .site__grid > ul:after,
+section.single__page .container.narrow .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.narrow .site__grid > ul > li,
-section.page__template .container.narrow .site__grid > ul > li {
+section.page__template .container.narrow .site__grid > ul > li,
+section.single__page .container.narrow .site__grid > ul > li {
     width: 15.3333333333vw;
     height: auto;
     float: left;
   }
   section.site__block .container.narrow .site__grid > ul > li > a,
-section.page__template .container.narrow .site__grid > ul > li > a {
+section.page__template .container.narrow .site__grid > ul > li > a,
+section.single__page .container.narrow .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
   section.site__block .container.narrow .site__grid > ul > li .image,
 section.site__block .container.narrow .site__grid > ul > li .block,
 section.page__template .container.narrow .site__grid > ul > li .image,
-section.page__template .container.narrow .site__grid > ul > li .block {
+section.page__template .container.narrow .site__grid > ul > li .block,
+section.single__page .container.narrow .site__grid > ul > li .image,
+section.single__page .container.narrow .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -5986,65 +5996,81 @@ section.page__template .container.narrow .site__grid > ul > li .block {
   section.site__block .container.narrow .site__grid > ul > li .image,
 section.site__block .container.narrow .site__grid > ul > li .block,
 section.page__template .container.narrow .site__grid > ul > li .image,
-section.page__template .container.narrow .site__grid > ul > li .block {
+section.page__template .container.narrow .site__grid > ul > li .block,
+section.single__page .container.narrow .site__grid > ul > li .image,
+section.single__page .container.narrow .site__grid > ul > li .block {
     height: 15.3333333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.narrow .site__grid > ul > li .block.rectangular_block,
 section.page__template .container.narrow .site__grid > ul > li .image.rectangular_block,
-section.page__template .container.narrow .site__grid > ul > li .block.rectangular_block {
+section.page__template .container.narrow .site__grid > ul > li .block.rectangular_block,
+section.single__page .container.narrow .site__grid > ul > li .image.rectangular_block,
+section.single__page .container.narrow .site__grid > ul > li .block.rectangular_block {
     height: 9.5833333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li .image.less_size_block,
 section.site__block .container.narrow .site__grid > ul > li .block.less_size_block,
 section.page__template .container.narrow .site__grid > ul > li .image.less_size_block,
-section.page__template .container.narrow .site__grid > ul > li .block.less_size_block {
+section.page__template .container.narrow .site__grid > ul > li .block.less_size_block,
+section.single__page .container.narrow .site__grid > ul > li .image.less_size_block,
+section.single__page .container.narrow .site__grid > ul > li .block.less_size_block {
     height: 10.5333333333vw;
     width: 10.5333333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li:nth-child(n+1),
-section.page__template .container.narrow .site__grid > ul > li:nth-child(n+1) {
+section.page__template .container.narrow .site__grid > ul > li:nth-child(n+1),
+section.single__page .container.narrow .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.narrow .site__grid > ul > li:nth-child(3n),
-section.page__template .container.narrow .site__grid > ul > li:nth-child(3n) {
+section.page__template .container.narrow .site__grid > ul > li:nth-child(3n),
+section.single__page .container.narrow .site__grid > ul > li:nth-child(3n) {
     margin: 0 0 2vw 0;
   }
   section.site__block .container.medium,
-section.page__template .container.medium {
+section.page__template .container.medium,
+section.single__page .container.medium {
     width: 65vw;
   }
   section.site__block .container.medium.hasbg,
-section.page__template .container.medium.hasbg {
+section.page__template .container.medium.hasbg,
+section.single__page .container.medium.hasbg {
     width: 69vw;
     padding: 2vw;
   }
   section.site__block .container.medium .site__grid > ul,
-section.page__template .container.medium .site__grid > ul {
+section.page__template .container.medium .site__grid > ul,
+section.single__page .container.medium .site__grid > ul {
     width: 65vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.medium .site__grid > ul:after,
-section.page__template .container.medium .site__grid > ul:after {
+section.page__template .container.medium .site__grid > ul:after,
+section.single__page .container.medium .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.medium .site__grid > ul > li,
-section.page__template .container.medium .site__grid > ul > li {
+section.page__template .container.medium .site__grid > ul > li,
+section.single__page .container.medium .site__grid > ul > li {
     width: 20.3333333333vw;
     height: auto;
     float: left;
   }
   section.site__block .container.medium .site__grid > ul > li > a,
-section.page__template .container.medium .site__grid > ul > li > a {
+section.page__template .container.medium .site__grid > ul > li > a,
+section.single__page .container.medium .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
   section.site__block .container.medium .site__grid > ul > li .image,
 section.site__block .container.medium .site__grid > ul > li .block,
 section.page__template .container.medium .site__grid > ul > li .image,
-section.page__template .container.medium .site__grid > ul > li .block {
+section.page__template .container.medium .site__grid > ul > li .block,
+section.single__page .container.medium .site__grid > ul > li .image,
+section.single__page .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6054,65 +6080,81 @@ section.page__template .container.medium .site__grid > ul > li .block {
   section.site__block .container.medium .site__grid > ul > li .image,
 section.site__block .container.medium .site__grid > ul > li .block,
 section.page__template .container.medium .site__grid > ul > li .image,
-section.page__template .container.medium .site__grid > ul > li .block {
+section.page__template .container.medium .site__grid > ul > li .block,
+section.single__page .container.medium .site__grid > ul > li .image,
+section.single__page .container.medium .site__grid > ul > li .block {
     height: 20.3333333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.medium .site__grid > ul > li .block.rectangular_block,
 section.page__template .container.medium .site__grid > ul > li .image.rectangular_block,
-section.page__template .container.medium .site__grid > ul > li .block.rectangular_block {
+section.page__template .container.medium .site__grid > ul > li .block.rectangular_block,
+section.single__page .container.medium .site__grid > ul > li .image.rectangular_block,
+section.single__page .container.medium .site__grid > ul > li .block.rectangular_block {
     height: 12.7083333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li .image.less_size_block,
 section.site__block .container.medium .site__grid > ul > li .block.less_size_block,
 section.page__template .container.medium .site__grid > ul > li .image.less_size_block,
-section.page__template .container.medium .site__grid > ul > li .block.less_size_block {
+section.page__template .container.medium .site__grid > ul > li .block.less_size_block,
+section.single__page .container.medium .site__grid > ul > li .image.less_size_block,
+section.single__page .container.medium .site__grid > ul > li .block.less_size_block {
     height: 15.5333333333vw;
     width: 15.5333333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li:nth-child(n+1),
-section.page__template .container.medium .site__grid > ul > li:nth-child(n+1) {
+section.page__template .container.medium .site__grid > ul > li:nth-child(n+1),
+section.single__page .container.medium .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.medium .site__grid > ul > li:nth-child(3n),
-section.page__template .container.medium .site__grid > ul > li:nth-child(3n) {
+section.page__template .container.medium .site__grid > ul > li:nth-child(3n),
+section.single__page .container.medium .site__grid > ul > li:nth-child(3n) {
     margin: 0 0 2vw 0;
   }
   section.site__block .container.wide,
-section.page__template .container.wide {
+section.page__template .container.wide,
+section.single__page .container.wide {
     width: 80vw;
   }
   section.site__block .container.wide.hasbg,
-section.page__template .container.wide.hasbg {
+section.page__template .container.wide.hasbg,
+section.single__page .container.wide.hasbg {
     width: 84vw;
     padding: 2vw;
   }
   section.site__block .container.wide .site__grid > ul,
-section.page__template .container.wide .site__grid > ul {
+section.page__template .container.wide .site__grid > ul,
+section.single__page .container.wide .site__grid > ul {
     width: 80vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.wide .site__grid > ul:after,
-section.page__template .container.wide .site__grid > ul:after {
+section.page__template .container.wide .site__grid > ul:after,
+section.single__page .container.wide .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.wide .site__grid > ul > li,
-section.page__template .container.wide .site__grid > ul > li {
+section.page__template .container.wide .site__grid > ul > li,
+section.single__page .container.wide .site__grid > ul > li {
     width: 18.5vw;
     height: auto;
     float: left;
   }
   section.site__block .container.wide .site__grid > ul > li > a,
-section.page__template .container.wide .site__grid > ul > li > a {
+section.page__template .container.wide .site__grid > ul > li > a,
+section.single__page .container.wide .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
   section.site__block .container.wide .site__grid > ul > li .image,
 section.site__block .container.wide .site__grid > ul > li .block,
 section.page__template .container.wide .site__grid > ul > li .image,
-section.page__template .container.wide .site__grid > ul > li .block {
+section.page__template .container.wide .site__grid > ul > li .block,
+section.single__page .container.wide .site__grid > ul > li .image,
+section.single__page .container.wide .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6122,65 +6164,81 @@ section.page__template .container.wide .site__grid > ul > li .block {
   section.site__block .container.wide .site__grid > ul > li .image,
 section.site__block .container.wide .site__grid > ul > li .block,
 section.page__template .container.wide .site__grid > ul > li .image,
-section.page__template .container.wide .site__grid > ul > li .block {
+section.page__template .container.wide .site__grid > ul > li .block,
+section.single__page .container.wide .site__grid > ul > li .image,
+section.single__page .container.wide .site__grid > ul > li .block {
     height: 18.5vw;
   }
   section.site__block .container.wide .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.wide .site__grid > ul > li .block.rectangular_block,
 section.page__template .container.wide .site__grid > ul > li .image.rectangular_block,
-section.page__template .container.wide .site__grid > ul > li .block.rectangular_block {
+section.page__template .container.wide .site__grid > ul > li .block.rectangular_block,
+section.single__page .container.wide .site__grid > ul > li .image.rectangular_block,
+section.single__page .container.wide .site__grid > ul > li .block.rectangular_block {
     height: 11.5625vw;
   }
   section.site__block .container.wide .site__grid > ul > li .image.less_size_block,
 section.site__block .container.wide .site__grid > ul > li .block.less_size_block,
 section.page__template .container.wide .site__grid > ul > li .image.less_size_block,
-section.page__template .container.wide .site__grid > ul > li .block.less_size_block {
+section.page__template .container.wide .site__grid > ul > li .block.less_size_block,
+section.single__page .container.wide .site__grid > ul > li .image.less_size_block,
+section.single__page .container.wide .site__grid > ul > li .block.less_size_block {
     height: 13.7vw;
     width: 13.7vw;
   }
   section.site__block .container.wide .site__grid > ul > li:nth-child(n+1),
-section.page__template .container.wide .site__grid > ul > li:nth-child(n+1) {
+section.page__template .container.wide .site__grid > ul > li:nth-child(n+1),
+section.single__page .container.wide .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.wide .site__grid > ul > li:nth-child(4n),
-section.page__template .container.wide .site__grid > ul > li:nth-child(4n) {
+section.page__template .container.wide .site__grid > ul > li:nth-child(4n),
+section.single__page .container.wide .site__grid > ul > li:nth-child(4n) {
     margin: 0 0 2vw 0;
   }
   section.site__block .container.full,
-section.page__template .container.full {
+section.page__template .container.full,
+section.single__page .container.full {
     width: 92vw;
   }
   section.site__block .container.full.hasbg,
-section.page__template .container.full.hasbg {
+section.page__template .container.full.hasbg,
+section.single__page .container.full.hasbg {
     width: 96vw;
     padding: 2vw;
   }
   section.site__block .container.full .site__grid > ul,
-section.page__template .container.full .site__grid > ul {
+section.page__template .container.full .site__grid > ul,
+section.single__page .container.full .site__grid > ul {
     width: 92vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.full .site__grid > ul:after,
-section.page__template .container.full .site__grid > ul:after {
+section.page__template .container.full .site__grid > ul:after,
+section.single__page .container.full .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.full .site__grid > ul > li,
-section.page__template .container.full .site__grid > ul > li {
+section.page__template .container.full .site__grid > ul > li,
+section.single__page .container.full .site__grid > ul > li {
     width: 13.6666666667vw;
     height: auto;
     float: left;
   }
   section.site__block .container.full .site__grid > ul > li > a,
-section.page__template .container.full .site__grid > ul > li > a {
+section.page__template .container.full .site__grid > ul > li > a,
+section.single__page .container.full .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
   section.site__block .container.full .site__grid > ul > li .image,
 section.site__block .container.full .site__grid > ul > li .block,
 section.page__template .container.full .site__grid > ul > li .image,
-section.page__template .container.full .site__grid > ul > li .block {
+section.page__template .container.full .site__grid > ul > li .block,
+section.single__page .container.full .site__grid > ul > li .image,
+section.single__page .container.full .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6190,28 +6248,36 @@ section.page__template .container.full .site__grid > ul > li .block {
   section.site__block .container.full .site__grid > ul > li .image,
 section.site__block .container.full .site__grid > ul > li .block,
 section.page__template .container.full .site__grid > ul > li .image,
-section.page__template .container.full .site__grid > ul > li .block {
+section.page__template .container.full .site__grid > ul > li .block,
+section.single__page .container.full .site__grid > ul > li .image,
+section.single__page .container.full .site__grid > ul > li .block {
     height: 13.6666666667vw;
   }
   section.site__block .container.full .site__grid > ul > li .image.rectangular_block,
 section.site__block .container.full .site__grid > ul > li .block.rectangular_block,
 section.page__template .container.full .site__grid > ul > li .image.rectangular_block,
-section.page__template .container.full .site__grid > ul > li .block.rectangular_block {
+section.page__template .container.full .site__grid > ul > li .block.rectangular_block,
+section.single__page .container.full .site__grid > ul > li .image.rectangular_block,
+section.single__page .container.full .site__grid > ul > li .block.rectangular_block {
     height: 8.5416666667vw;
   }
   section.site__block .container.full .site__grid > ul > li .image.less_size_block,
 section.site__block .container.full .site__grid > ul > li .block.less_size_block,
 section.page__template .container.full .site__grid > ul > li .image.less_size_block,
-section.page__template .container.full .site__grid > ul > li .block.less_size_block {
+section.page__template .container.full .site__grid > ul > li .block.less_size_block,
+section.single__page .container.full .site__grid > ul > li .image.less_size_block,
+section.single__page .container.full .site__grid > ul > li .block.less_size_block {
     height: 8.8666666667vw;
     width: 8.8666666667vw;
   }
   section.site__block .container.full .site__grid > ul > li:nth-child(n+1),
-section.page__template .container.full .site__grid > ul > li:nth-child(n+1) {
+section.page__template .container.full .site__grid > ul > li:nth-child(n+1),
+section.single__page .container.full .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.full .site__grid > ul > li:nth-child(6n),
-section.page__template .container.full .site__grid > ul > li:nth-child(6n) {
+section.page__template .container.full .site__grid > ul > li:nth-child(6n),
+section.single__page .container.full .site__grid > ul > li:nth-child(6n) {
     margin: 0 0 2vw 0;
   }
 
@@ -6225,14 +6291,22 @@ section.page__template > .container > h2 {
 section.page__template > .container.narrow,
 section.page__template > .container.full,
 section.page__template > .container.wide,
-section.page__template > .container.medium {
+section.page__template > .container.medium,
+section.single__page > .container.narrow,
+section.single__page > .container.full,
+section.single__page > .container.wide,
+section.single__page > .container.medium {
     width: 80vw;
   }
   section.site__block > .container.narrow.hasbg, section.site__block > .container.full.hasbg, section.site__block > .container.wide.hasbg, section.site__block > .container.medium.hasbg,
 section.page__template > .container.narrow.hasbg,
 section.page__template > .container.full.hasbg,
 section.page__template > .container.wide.hasbg,
-section.page__template > .container.medium.hasbg {
+section.page__template > .container.medium.hasbg,
+section.single__page > .container.narrow.hasbg,
+section.single__page > .container.full.hasbg,
+section.single__page > .container.wide.hasbg,
+section.single__page > .container.medium.hasbg {
     width: 84vw;
     padding: 2vw;
   }
@@ -6240,7 +6314,11 @@ section.page__template > .container.medium.hasbg {
 section.page__template > .container.narrow .site__grid > ul,
 section.page__template > .container.full .site__grid > ul,
 section.page__template > .container.wide .site__grid > ul,
-section.page__template > .container.medium .site__grid > ul {
+section.page__template > .container.medium .site__grid > ul,
+section.single__page > .container.narrow .site__grid > ul,
+section.single__page > .container.full .site__grid > ul,
+section.single__page > .container.wide .site__grid > ul,
+section.single__page > .container.medium .site__grid > ul {
     width: 80vw;
     margin: 0 auto 0 auto;
   }
@@ -6248,7 +6326,11 @@ section.page__template > .container.medium .site__grid > ul {
 section.page__template > .container.narrow .site__grid > ul:after,
 section.page__template > .container.full .site__grid > ul:after,
 section.page__template > .container.wide .site__grid > ul:after,
-section.page__template > .container.medium .site__grid > ul:after {
+section.page__template > .container.medium .site__grid > ul:after,
+section.single__page > .container.narrow .site__grid > ul:after,
+section.single__page > .container.full .site__grid > ul:after,
+section.single__page > .container.wide .site__grid > ul:after,
+section.single__page > .container.medium .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
@@ -6257,7 +6339,11 @@ section.page__template > .container.medium .site__grid > ul:after {
 section.page__template > .container.narrow .site__grid > ul > li,
 section.page__template > .container.full .site__grid > ul > li,
 section.page__template > .container.wide .site__grid > ul > li,
-section.page__template > .container.medium .site__grid > ul > li {
+section.page__template > .container.medium .site__grid > ul > li,
+section.single__page > .container.narrow .site__grid > ul > li,
+section.single__page > .container.full .site__grid > ul > li,
+section.single__page > .container.wide .site__grid > ul > li,
+section.single__page > .container.medium .site__grid > ul > li {
     width: 25.3333333333vw;
     height: auto;
     float: left;
@@ -6266,7 +6352,11 @@ section.page__template > .container.medium .site__grid > ul > li {
 section.page__template > .container.narrow .site__grid > ul > li > a,
 section.page__template > .container.full .site__grid > ul > li > a,
 section.page__template > .container.wide .site__grid > ul > li > a,
-section.page__template > .container.medium .site__grid > ul > li > a {
+section.page__template > .container.medium .site__grid > ul > li > a,
+section.single__page > .container.narrow .site__grid > ul > li > a,
+section.single__page > .container.full .site__grid > ul > li > a,
+section.single__page > .container.wide .site__grid > ul > li > a,
+section.single__page > .container.medium .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6282,7 +6372,15 @@ section.page__template > .container.full .site__grid > ul > li .block,
 section.page__template > .container.wide .site__grid > ul > li .image,
 section.page__template > .container.wide .site__grid > ul > li .block,
 section.page__template > .container.medium .site__grid > ul > li .image,
-section.page__template > .container.medium .site__grid > ul > li .block {
+section.page__template > .container.medium .site__grid > ul > li .block,
+section.single__page > .container.narrow .site__grid > ul > li .image,
+section.single__page > .container.narrow .site__grid > ul > li .block,
+section.single__page > .container.full .site__grid > ul > li .image,
+section.single__page > .container.full .site__grid > ul > li .block,
+section.single__page > .container.wide .site__grid > ul > li .image,
+section.single__page > .container.wide .site__grid > ul > li .block,
+section.single__page > .container.medium .site__grid > ul > li .image,
+section.single__page > .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6301,7 +6399,15 @@ section.page__template > .container.full .site__grid > ul > li .block,
 section.page__template > .container.wide .site__grid > ul > li .image,
 section.page__template > .container.wide .site__grid > ul > li .block,
 section.page__template > .container.medium .site__grid > ul > li .image,
-section.page__template > .container.medium .site__grid > ul > li .block {
+section.page__template > .container.medium .site__grid > ul > li .block,
+section.single__page > .container.narrow .site__grid > ul > li .image,
+section.single__page > .container.narrow .site__grid > ul > li .block,
+section.single__page > .container.full .site__grid > ul > li .image,
+section.single__page > .container.full .site__grid > ul > li .block,
+section.single__page > .container.wide .site__grid > ul > li .image,
+section.single__page > .container.wide .site__grid > ul > li .block,
+section.single__page > .container.medium .site__grid > ul > li .image,
+section.single__page > .container.medium .site__grid > ul > li .block {
     height: 25.3333333333vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.rectangular_block,
@@ -6316,7 +6422,15 @@ section.page__template > .container.full .site__grid > ul > li .block.rectangula
 section.page__template > .container.wide .site__grid > ul > li .image.rectangular_block,
 section.page__template > .container.wide .site__grid > ul > li .block.rectangular_block,
 section.page__template > .container.medium .site__grid > ul > li .image.rectangular_block,
-section.page__template > .container.medium .site__grid > ul > li .block.rectangular_block {
+section.page__template > .container.medium .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.narrow .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.narrow .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.full .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.full .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.wide .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.wide .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.medium .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.medium .site__grid > ul > li .block.rectangular_block {
     height: 15.8333333333vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.less_size_block,
@@ -6331,7 +6445,15 @@ section.page__template > .container.full .site__grid > ul > li .block.less_size_
 section.page__template > .container.wide .site__grid > ul > li .image.less_size_block,
 section.page__template > .container.wide .site__grid > ul > li .block.less_size_block,
 section.page__template > .container.medium .site__grid > ul > li .image.less_size_block,
-section.page__template > .container.medium .site__grid > ul > li .block.less_size_block {
+section.page__template > .container.medium .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.narrow .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.narrow .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.full .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.full .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.wide .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.wide .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.medium .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.medium .site__grid > ul > li .block.less_size_block {
     height: 20.5333333333vw;
     width: 20.5333333333vw;
   }
@@ -6339,14 +6461,22 @@ section.page__template > .container.medium .site__grid > ul > li .block.less_siz
 section.page__template > .container.narrow .site__grid > ul > li:nth-child(n+1),
 section.page__template > .container.full .site__grid > ul > li:nth-child(n+1),
 section.page__template > .container.wide .site__grid > ul > li:nth-child(n+1),
-section.page__template > .container.medium .site__grid > ul > li:nth-child(n+1) {
+section.page__template > .container.medium .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.narrow .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.full .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.wide .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.medium .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block > .container.narrow .site__grid > ul > li:nth-child(3n), section.site__block > .container.full .site__grid > ul > li:nth-child(3n), section.site__block > .container.wide .site__grid > ul > li:nth-child(3n), section.site__block > .container.medium .site__grid > ul > li:nth-child(3n),
 section.page__template > .container.narrow .site__grid > ul > li:nth-child(3n),
 section.page__template > .container.full .site__grid > ul > li:nth-child(3n),
 section.page__template > .container.wide .site__grid > ul > li:nth-child(3n),
-section.page__template > .container.medium .site__grid > ul > li:nth-child(3n) {
+section.page__template > .container.medium .site__grid > ul > li:nth-child(3n),
+section.single__page > .container.narrow .site__grid > ul > li:nth-child(3n),
+section.single__page > .container.full .site__grid > ul > li:nth-child(3n),
+section.single__page > .container.wide .site__grid > ul > li:nth-child(3n),
+section.single__page > .container.medium .site__grid > ul > li:nth-child(3n) {
     margin: 0 0 2vw 0;
   }
 }
@@ -6355,14 +6485,22 @@ section.page__template > .container.medium .site__grid > ul > li:nth-child(3n) {
 section.page__template > .container.narrow,
 section.page__template > .container.wide,
 section.page__template > .container.full,
-section.page__template > .container.medium {
+section.page__template > .container.medium,
+section.single__page > .container.narrow,
+section.single__page > .container.wide,
+section.single__page > .container.full,
+section.single__page > .container.medium {
     width: 80vw;
   }
   section.site__block > .container.narrow.hasbg, section.site__block > .container.wide.hasbg, section.site__block > .container.full.hasbg, section.site__block > .container.medium.hasbg,
 section.page__template > .container.narrow.hasbg,
 section.page__template > .container.wide.hasbg,
 section.page__template > .container.full.hasbg,
-section.page__template > .container.medium.hasbg {
+section.page__template > .container.medium.hasbg,
+section.single__page > .container.narrow.hasbg,
+section.single__page > .container.wide.hasbg,
+section.single__page > .container.full.hasbg,
+section.single__page > .container.medium.hasbg {
     width: 84vw;
     padding: 2vw;
   }
@@ -6370,7 +6508,11 @@ section.page__template > .container.medium.hasbg {
 section.page__template > .container.narrow .site__grid > ul,
 section.page__template > .container.wide .site__grid > ul,
 section.page__template > .container.full .site__grid > ul,
-section.page__template > .container.medium .site__grid > ul {
+section.page__template > .container.medium .site__grid > ul,
+section.single__page > .container.narrow .site__grid > ul,
+section.single__page > .container.wide .site__grid > ul,
+section.single__page > .container.full .site__grid > ul,
+section.single__page > .container.medium .site__grid > ul {
     width: 80vw;
     margin: 0 auto 0 auto;
   }
@@ -6378,7 +6520,11 @@ section.page__template > .container.medium .site__grid > ul {
 section.page__template > .container.narrow .site__grid > ul:after,
 section.page__template > .container.wide .site__grid > ul:after,
 section.page__template > .container.full .site__grid > ul:after,
-section.page__template > .container.medium .site__grid > ul:after {
+section.page__template > .container.medium .site__grid > ul:after,
+section.single__page > .container.narrow .site__grid > ul:after,
+section.single__page > .container.wide .site__grid > ul:after,
+section.single__page > .container.full .site__grid > ul:after,
+section.single__page > .container.medium .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
@@ -6387,7 +6533,11 @@ section.page__template > .container.medium .site__grid > ul:after {
 section.page__template > .container.narrow .site__grid > ul > li,
 section.page__template > .container.wide .site__grid > ul > li,
 section.page__template > .container.full .site__grid > ul > li,
-section.page__template > .container.medium .site__grid > ul > li {
+section.page__template > .container.medium .site__grid > ul > li,
+section.single__page > .container.narrow .site__grid > ul > li,
+section.single__page > .container.wide .site__grid > ul > li,
+section.single__page > .container.full .site__grid > ul > li,
+section.single__page > .container.medium .site__grid > ul > li {
     width: 39vw;
     height: auto;
     float: left;
@@ -6396,7 +6546,11 @@ section.page__template > .container.medium .site__grid > ul > li {
 section.page__template > .container.narrow .site__grid > ul > li > a,
 section.page__template > .container.wide .site__grid > ul > li > a,
 section.page__template > .container.full .site__grid > ul > li > a,
-section.page__template > .container.medium .site__grid > ul > li > a {
+section.page__template > .container.medium .site__grid > ul > li > a,
+section.single__page > .container.narrow .site__grid > ul > li > a,
+section.single__page > .container.wide .site__grid > ul > li > a,
+section.single__page > .container.full .site__grid > ul > li > a,
+section.single__page > .container.medium .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6412,7 +6566,15 @@ section.page__template > .container.wide .site__grid > ul > li .block,
 section.page__template > .container.full .site__grid > ul > li .image,
 section.page__template > .container.full .site__grid > ul > li .block,
 section.page__template > .container.medium .site__grid > ul > li .image,
-section.page__template > .container.medium .site__grid > ul > li .block {
+section.page__template > .container.medium .site__grid > ul > li .block,
+section.single__page > .container.narrow .site__grid > ul > li .image,
+section.single__page > .container.narrow .site__grid > ul > li .block,
+section.single__page > .container.wide .site__grid > ul > li .image,
+section.single__page > .container.wide .site__grid > ul > li .block,
+section.single__page > .container.full .site__grid > ul > li .image,
+section.single__page > .container.full .site__grid > ul > li .block,
+section.single__page > .container.medium .site__grid > ul > li .image,
+section.single__page > .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6431,7 +6593,15 @@ section.page__template > .container.wide .site__grid > ul > li .block,
 section.page__template > .container.full .site__grid > ul > li .image,
 section.page__template > .container.full .site__grid > ul > li .block,
 section.page__template > .container.medium .site__grid > ul > li .image,
-section.page__template > .container.medium .site__grid > ul > li .block {
+section.page__template > .container.medium .site__grid > ul > li .block,
+section.single__page > .container.narrow .site__grid > ul > li .image,
+section.single__page > .container.narrow .site__grid > ul > li .block,
+section.single__page > .container.wide .site__grid > ul > li .image,
+section.single__page > .container.wide .site__grid > ul > li .block,
+section.single__page > .container.full .site__grid > ul > li .image,
+section.single__page > .container.full .site__grid > ul > li .block,
+section.single__page > .container.medium .site__grid > ul > li .image,
+section.single__page > .container.medium .site__grid > ul > li .block {
     height: 39vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.rectangular_block,
@@ -6446,7 +6616,15 @@ section.page__template > .container.wide .site__grid > ul > li .block.rectangula
 section.page__template > .container.full .site__grid > ul > li .image.rectangular_block,
 section.page__template > .container.full .site__grid > ul > li .block.rectangular_block,
 section.page__template > .container.medium .site__grid > ul > li .image.rectangular_block,
-section.page__template > .container.medium .site__grid > ul > li .block.rectangular_block {
+section.page__template > .container.medium .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.narrow .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.narrow .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.wide .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.wide .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.full .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.full .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.medium .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.medium .site__grid > ul > li .block.rectangular_block {
     height: 24.375vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.less_size_block,
@@ -6461,7 +6639,15 @@ section.page__template > .container.wide .site__grid > ul > li .block.less_size_
 section.page__template > .container.full .site__grid > ul > li .image.less_size_block,
 section.page__template > .container.full .site__grid > ul > li .block.less_size_block,
 section.page__template > .container.medium .site__grid > ul > li .image.less_size_block,
-section.page__template > .container.medium .site__grid > ul > li .block.less_size_block {
+section.page__template > .container.medium .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.narrow .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.narrow .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.wide .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.wide .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.full .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.full .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.medium .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.medium .site__grid > ul > li .block.less_size_block {
     height: 34.2vw;
     width: 34.2vw;
   }
@@ -6469,14 +6655,22 @@ section.page__template > .container.medium .site__grid > ul > li .block.less_siz
 section.page__template > .container.narrow .site__grid > ul > li:nth-child(n+1),
 section.page__template > .container.wide .site__grid > ul > li:nth-child(n+1),
 section.page__template > .container.full .site__grid > ul > li:nth-child(n+1),
-section.page__template > .container.medium .site__grid > ul > li:nth-child(n+1) {
+section.page__template > .container.medium .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.narrow .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.wide .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.full .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.medium .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block > .container.narrow .site__grid > ul > li:nth-child(2n), section.site__block > .container.wide .site__grid > ul > li:nth-child(2n), section.site__block > .container.full .site__grid > ul > li:nth-child(2n), section.site__block > .container.medium .site__grid > ul > li:nth-child(2n),
 section.page__template > .container.narrow .site__grid > ul > li:nth-child(2n),
 section.page__template > .container.wide .site__grid > ul > li:nth-child(2n),
 section.page__template > .container.full .site__grid > ul > li:nth-child(2n),
-section.page__template > .container.medium .site__grid > ul > li:nth-child(2n) {
+section.page__template > .container.medium .site__grid > ul > li:nth-child(2n),
+section.single__page > .container.narrow .site__grid > ul > li:nth-child(2n),
+section.single__page > .container.wide .site__grid > ul > li:nth-child(2n),
+section.single__page > .container.full .site__grid > ul > li:nth-child(2n),
+section.single__page > .container.medium .site__grid > ul > li:nth-child(2n) {
     margin: 0 0 2vw 0;
   }
 }
@@ -6485,14 +6679,22 @@ section.page__template > .container.medium .site__grid > ul > li:nth-child(2n) {
 section.page__template > .container.narrow,
 section.page__template > .container.medium,
 section.page__template > .container.wide,
-section.page__template > .container.full {
+section.page__template > .container.full,
+section.single__page > .container.narrow,
+section.single__page > .container.medium,
+section.single__page > .container.wide,
+section.single__page > .container.full {
     width: 92vw;
   }
   section.site__block > .container.narrow.hasbg, section.site__block > .container.medium.hasbg, section.site__block > .container.wide.hasbg, section.site__block > .container.full.hasbg,
 section.page__template > .container.narrow.hasbg,
 section.page__template > .container.medium.hasbg,
 section.page__template > .container.wide.hasbg,
-section.page__template > .container.full.hasbg {
+section.page__template > .container.full.hasbg,
+section.single__page > .container.narrow.hasbg,
+section.single__page > .container.medium.hasbg,
+section.single__page > .container.wide.hasbg,
+section.single__page > .container.full.hasbg {
     width: 96vw;
     padding: 2vw;
   }
@@ -6500,7 +6702,11 @@ section.page__template > .container.full.hasbg {
 section.page__template > .container.narrow .site__grid > ul,
 section.page__template > .container.medium .site__grid > ul,
 section.page__template > .container.wide .site__grid > ul,
-section.page__template > .container.full .site__grid > ul {
+section.page__template > .container.full .site__grid > ul,
+section.single__page > .container.narrow .site__grid > ul,
+section.single__page > .container.medium .site__grid > ul,
+section.single__page > .container.wide .site__grid > ul,
+section.single__page > .container.full .site__grid > ul {
     width: 92vw;
     margin: 0 auto 0 auto;
   }
@@ -6508,7 +6714,11 @@ section.page__template > .container.full .site__grid > ul {
 section.page__template > .container.narrow .site__grid > ul:after,
 section.page__template > .container.medium .site__grid > ul:after,
 section.page__template > .container.wide .site__grid > ul:after,
-section.page__template > .container.full .site__grid > ul:after {
+section.page__template > .container.full .site__grid > ul:after,
+section.single__page > .container.narrow .site__grid > ul:after,
+section.single__page > .container.medium .site__grid > ul:after,
+section.single__page > .container.wide .site__grid > ul:after,
+section.single__page > .container.full .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
@@ -6517,7 +6727,11 @@ section.page__template > .container.full .site__grid > ul:after {
 section.page__template > .container.narrow .site__grid > ul > li,
 section.page__template > .container.medium .site__grid > ul > li,
 section.page__template > .container.wide .site__grid > ul > li,
-section.page__template > .container.full .site__grid > ul > li {
+section.page__template > .container.full .site__grid > ul > li,
+section.single__page > .container.narrow .site__grid > ul > li,
+section.single__page > .container.medium .site__grid > ul > li,
+section.single__page > .container.wide .site__grid > ul > li,
+section.single__page > .container.full .site__grid > ul > li {
     width: 92vw;
     height: auto;
     float: left;
@@ -6526,7 +6740,11 @@ section.page__template > .container.full .site__grid > ul > li {
 section.page__template > .container.narrow .site__grid > ul > li > a,
 section.page__template > .container.medium .site__grid > ul > li > a,
 section.page__template > .container.wide .site__grid > ul > li > a,
-section.page__template > .container.full .site__grid > ul > li > a {
+section.page__template > .container.full .site__grid > ul > li > a,
+section.single__page > .container.narrow .site__grid > ul > li > a,
+section.single__page > .container.medium .site__grid > ul > li > a,
+section.single__page > .container.wide .site__grid > ul > li > a,
+section.single__page > .container.full .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6542,7 +6760,15 @@ section.page__template > .container.medium .site__grid > ul > li .block,
 section.page__template > .container.wide .site__grid > ul > li .image,
 section.page__template > .container.wide .site__grid > ul > li .block,
 section.page__template > .container.full .site__grid > ul > li .image,
-section.page__template > .container.full .site__grid > ul > li .block {
+section.page__template > .container.full .site__grid > ul > li .block,
+section.single__page > .container.narrow .site__grid > ul > li .image,
+section.single__page > .container.narrow .site__grid > ul > li .block,
+section.single__page > .container.medium .site__grid > ul > li .image,
+section.single__page > .container.medium .site__grid > ul > li .block,
+section.single__page > .container.wide .site__grid > ul > li .image,
+section.single__page > .container.wide .site__grid > ul > li .block,
+section.single__page > .container.full .site__grid > ul > li .image,
+section.single__page > .container.full .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6561,7 +6787,15 @@ section.page__template > .container.medium .site__grid > ul > li .block,
 section.page__template > .container.wide .site__grid > ul > li .image,
 section.page__template > .container.wide .site__grid > ul > li .block,
 section.page__template > .container.full .site__grid > ul > li .image,
-section.page__template > .container.full .site__grid > ul > li .block {
+section.page__template > .container.full .site__grid > ul > li .block,
+section.single__page > .container.narrow .site__grid > ul > li .image,
+section.single__page > .container.narrow .site__grid > ul > li .block,
+section.single__page > .container.medium .site__grid > ul > li .image,
+section.single__page > .container.medium .site__grid > ul > li .block,
+section.single__page > .container.wide .site__grid > ul > li .image,
+section.single__page > .container.wide .site__grid > ul > li .block,
+section.single__page > .container.full .site__grid > ul > li .image,
+section.single__page > .container.full .site__grid > ul > li .block {
     height: 92vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.rectangular_block,
@@ -6576,7 +6810,15 @@ section.page__template > .container.medium .site__grid > ul > li .block.rectangu
 section.page__template > .container.wide .site__grid > ul > li .image.rectangular_block,
 section.page__template > .container.wide .site__grid > ul > li .block.rectangular_block,
 section.page__template > .container.full .site__grid > ul > li .image.rectangular_block,
-section.page__template > .container.full .site__grid > ul > li .block.rectangular_block {
+section.page__template > .container.full .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.narrow .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.narrow .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.medium .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.medium .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.wide .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.wide .site__grid > ul > li .block.rectangular_block,
+section.single__page > .container.full .site__grid > ul > li .image.rectangular_block,
+section.single__page > .container.full .site__grid > ul > li .block.rectangular_block {
     height: 57.5vw;
   }
   section.site__block > .container.narrow .site__grid > ul > li .image.less_size_block,
@@ -6591,7 +6833,15 @@ section.page__template > .container.medium .site__grid > ul > li .block.less_siz
 section.page__template > .container.wide .site__grid > ul > li .image.less_size_block,
 section.page__template > .container.wide .site__grid > ul > li .block.less_size_block,
 section.page__template > .container.full .site__grid > ul > li .image.less_size_block,
-section.page__template > .container.full .site__grid > ul > li .block.less_size_block {
+section.page__template > .container.full .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.narrow .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.narrow .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.medium .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.medium .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.wide .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.wide .site__grid > ul > li .block.less_size_block,
+section.single__page > .container.full .site__grid > ul > li .image.less_size_block,
+section.single__page > .container.full .site__grid > ul > li .block.less_size_block {
     height: 87.2vw;
     width: 87.2vw;
   }
@@ -6599,14 +6849,22 @@ section.page__template > .container.full .site__grid > ul > li .block.less_size_
 section.page__template > .container.narrow .site__grid > ul > li:nth-child(n+1),
 section.page__template > .container.medium .site__grid > ul > li:nth-child(n+1),
 section.page__template > .container.wide .site__grid > ul > li:nth-child(n+1),
-section.page__template > .container.full .site__grid > ul > li:nth-child(n+1) {
+section.page__template > .container.full .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.narrow .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.medium .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.wide .site__grid > ul > li:nth-child(n+1),
+section.single__page > .container.full .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block > .container.narrow .site__grid > ul > li:nth-child(1n), section.site__block > .container.medium .site__grid > ul > li:nth-child(1n), section.site__block > .container.wide .site__grid > ul > li:nth-child(1n), section.site__block > .container.full .site__grid > ul > li:nth-child(1n),
 section.page__template > .container.narrow .site__grid > ul > li:nth-child(1n),
 section.page__template > .container.medium .site__grid > ul > li:nth-child(1n),
 section.page__template > .container.wide .site__grid > ul > li:nth-child(1n),
-section.page__template > .container.full .site__grid > ul > li:nth-child(1n) {
+section.page__template > .container.full .site__grid > ul > li:nth-child(1n),
+section.single__page > .container.narrow .site__grid > ul > li:nth-child(1n),
+section.single__page > .container.medium .site__grid > ul > li:nth-child(1n),
+section.single__page > .container.wide .site__grid > ul > li:nth-child(1n),
+section.single__page > .container.full .site__grid > ul > li:nth-child(1n) {
     margin: 0 0 2vw 0;
   }
 }
@@ -6983,6 +7241,11 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     margin: 0 2px;
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.divider .tabs > ul > li > a {
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-transform: uppercase;
+    line-height: inherit;
+    padding: 5px 10px;
     color: #484848;
     background-color: #c2c2c2;
     border-top-left-radius: 5px;
@@ -7272,120 +7535,6 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
   section.site__block.block__galleries > .container .tabsandgrids_container.sidebar > .galleries .site__grid > ul > li:nth-child(2n) {
     margin: 0 0 2vw 0;
-  }
-}
-@media print {
-  li {
-    list-style: none;
-  }
-  li.coupons__one, li.coupons__two, li.coupons__three, li.coupons__four {
-    padding: 10px;
-    background-color: #dedede;
-    border-radius: 20px;
-    border: 3px solid transparent;
-  }
-  li.coupons__one:hover, li.coupons__one:active, li.coupons__one:focus, li.coupons__two:hover, li.coupons__two:active, li.coupons__two:focus, li.coupons__three:hover, li.coupons__three:active, li.coupons__three:focus, li.coupons__four:hover, li.coupons__four:active, li.coupons__four:focus {
-    border: 3px solid #c2c2c2;
-  }
-  li.coupons__one > a, li.coupons__two > a, li.coupons__three > a, li.coupons__four > a {
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 20px;
-    border: 6px dashed #ffffff;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    color: inherit;
-  }
-  li.coupons__one h5, li.coupons__two h5, li.coupons__three h5, li.coupons__four h5 {
-    margin: 10px 0 10px;
-    font-size: 4rem;
-    line-height: 5.4rem;
-    font-weight: 900;
-    line-height: 4.3rem;
-    letter-spacing: -1px;
-  }
-  li.coupons__one .coupon_description, li.coupons__two .coupon_description, li.coupons__three .coupon_description, li.coupons__four .coupon_description {
-    margin-bottom: 10px;
-  }
-  li.coupons__one .coupon_code, li.coupons__two .coupon_code, li.coupons__three .coupon_code, li.coupons__four .coupon_code {
-    background: #ffffff;
-    padding: 0 25px;
-    border-radius: 20px;
-    font-weight: 700;
-    line-height: 40px;
-  }
-  li.coupons__one .coupon_code > span, li.coupons__two .coupon_code > span, li.coupons__three .coupon_code > span, li.coupons__four .coupon_code > span {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  li.coupons__one .coupon_expiration, li.coupons__two .coupon_expiration, li.coupons__three .coupon_expiration, li.coupons__four .coupon_expiration {
-    display: none;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-  }
-  li.coupons__one .coupon_code,
-li.coupons__one .coupon_expiration, li.coupons__two .coupon_code,
-li.coupons__two .coupon_expiration, li.coupons__three .coupon_code,
-li.coupons__three .coupon_expiration, li.coupons__four .coupon_code,
-li.coupons__four .coupon_expiration {
-    margin: 5px 0;
-  }
-
-  li.coupons__two .coupon_expiration, li.coupons__three .coupon_expiration, li.coupons__four .coupon_expiration {
-    display: block;
-  }
-
-  li.coupons__two {
-    background-color: transparent;
-  }
-  li.coupons__two > a {
-    border: 6px dashed #376494;
-  }
-  li.coupons__two .coupon_description,
-li.coupons__two .coupon_expiration {
-    color: #939393;
-  }
-  li.coupons__two .coupon_code {
-    background: #dedede;
-  }
-
-  li.coupons__three, li.coupons__four {
-    border-radius: 0;
-  }
-  li.coupons__three > a, li.coupons__four > a {
-    border-radius: 0;
-  }
-  li.coupons__three .coupon_description,
-li.coupons__three .coupon_expiration, li.coupons__four .coupon_description,
-li.coupons__four .coupon_expiration {
-    color: #939393;
-  }
-  li.coupons__three .coupon_code, li.coupons__four .coupon_code {
-    border-radius: 0;
-    padding: 2px 30px;
-  }
-  li.coupons__three .coupon_expiration, li.coupons__four .coupon_expiration {
-    font-weight: 600;
-  }
-  li.coupons__three .coupon_expiration > span, li.coupons__four .coupon_expiration > span {
-    font-weight: 400;
-  }
-
-  li.coupons__four {
-    background-color: #ffffff;
-    border: 4px solid #dfdfdf;
-  }
-  li.coupons__four:hover, li.coupons__four:active, li.coupons__four:focus {
-    border: 4px solid #c2c2c2;
-  }
-  li.coupons__four > a {
-    border: 6px dashed #376494;
-  }
-  li.coupons__four .coupon_code {
-    background-color: #dedede;
   }
 }
 @media screen {
@@ -7990,7 +8139,7 @@ section.block__food_menus > .container #tabs_style__pills .menu_photo_tiled_x3 >
     text-transform: uppercase;
     font-size: 1.4rem;
     line-height: 2.8rem;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 2px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

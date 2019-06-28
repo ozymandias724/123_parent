@@ -15,7 +15,7 @@ $return['section'] = '';
 
 $guide['coupon'] = '
     <li class="site__fade site__fade-up">
-        <a class="coupon_print" href="javascript:;">
+        <a class="coupon_print" href="%s" target="_blank">
             <h5>%s</h5>
             <div class="coupon_description block__item-body">%s</div>
             %s
@@ -34,7 +34,7 @@ foreach($res as $i => $coupon) {
     if( $coupon_fields['status'] ){ 
         $return['coupon'] .= sprintf(
             $guide['coupon']
-            //,get_permalink($coupon->ID)
+            ,get_permalink($coupon->ID)
             ,$coupon->post_title
             ,(!empty($coupon_fields['details']) ? $coupon_fields['details'] : '')
             ,(!empty($coupon_fields['code']) ? '<p class="coupon_code">Code: <span>'.$coupon_fields['code'].'</span></p>' : '')
