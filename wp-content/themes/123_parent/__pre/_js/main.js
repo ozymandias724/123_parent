@@ -24,25 +24,16 @@ $(document).ready(function()
 {
 
     /* 
-    * IPrint coupon 
+    * Print coupon 
     */
     Coupons = {
         _init : function(){
             $('a.coupon_print').on('click', Coupons.printCoupon);
         },
         printCoupon : function(){
-
-            //var printWindow = window.open('', 'PRINT');
-
-            var listItemContent = $(this).parent('li')[0].outerHTML;
-            var printContent = '<html><head><title>'+document.title+'</title></head><body>'+listItemContent+'</body></html>';
-            var beforePrintContent = $('body')[0].innerHTML;
-
-            $('body')[0].innerHTML = listItemContent;
-
-            window.print();
-
-            $('body')[0].innerHTML = beforePrintContent;
+            
+            
+            
         }
     }
     Coupons._init();

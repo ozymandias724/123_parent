@@ -11,7 +11,7 @@
 
     // HARD CODED COUPON DESCRIPTION
     $guide['coupon'] = '
-        <li class="site__fade site__fade-up">
+        <li class="site__fade site__fade-up coupons__'.$cB['style'].'">
             <a class="coupon_print" href="javascript:;">
                 <h5>%s</h5>
                 <div class="coupon_description block__item-body">%s</div>
