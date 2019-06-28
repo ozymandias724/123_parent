@@ -182,8 +182,10 @@ class NavHandler
             <header class="%s header" id="opt_header_one">
                 <div>
                     %s
-                    %s
-                    %s
+                    <div>
+                        %s
+                        %s
+                    </div>
                 </div>
                 <div>
                     <nav>

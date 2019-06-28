@@ -1115,6 +1115,7 @@ header.header .opt__topbanner {
     align-items: center;
     height: 80px;
     margin: 0 auto;
+    justify-content: space-between;
   }
   header#opt_header_one > div:first-of-type .header-logo {
     padding: 10px;
@@ -1122,12 +1123,16 @@ header.header .opt__topbanner {
   header#opt_header_one > div:first-of-type .header-logo > img {
     max-height: 60px;
   }
-  header#opt_header_one > div:first-of-type .site__iconlink-address {
+  header#opt_header_one > div:first-of-type > div {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  header#opt_header_one > div:first-of-type > div .site__iconlink-address {
     margin-left: auto;
     font-size: 14px;
     margin-right: 20px;
   }
-  header#opt_header_one > div:first-of-type .site__iconlink-phone > div {
+  header#opt_header_one > div:first-of-type > div .site__iconlink-phone > div {
     display: flex;
     flex-flow: column nowrap;
     font-size: 13px;
@@ -1136,7 +1141,7 @@ header.header .opt__topbanner {
     font-weight: 500;
     letter-spacing: 1px;
   }
-  header#opt_header_one > div:first-of-type .site__iconlink-phone > div > span {
+  header#opt_header_one > div:first-of-type > div .site__iconlink-phone > div > span {
     font-size: 16px;
     color: #fff;
     letter-spacing: 0.5px;
@@ -3163,6 +3168,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
   }
 
   section.hero#hero_image .hero_foreground, section.hero#hero_slider .hero_foreground {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
