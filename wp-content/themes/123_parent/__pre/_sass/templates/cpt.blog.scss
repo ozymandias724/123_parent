@@ -8,7 +8,10 @@
                 margin: 0 auto;
                 display: flex;
                 flex-flow: row nowrap;
+                align-items: flex-start;
                 div.site__fade {
+                    flex: 0 0 75%;
+                    margin-right: 20px;
                     div.image {
                         $w: getVar($sizing, content, small);
                         $c: 1;
@@ -23,20 +26,190 @@
                     div.post__content {
                         text-align: left;
                         >h2 {
-                            color: $black;
+                            letter-spacing: -3px;
+                            text-transform: uppercase;
+                            color: getVar($colors, black, full);
                             font-family: "Gotham", "Helvetica", sans-serif;
+                            border-bottom: 4px dotted getVar($colors, accent);
+                            margin-bottom: 10px;
                         }
-                        >.post__date{
-                            margin-bottom: 20px;
-                            font-weight: 500;
-                            @include fontS-16;
-                            text-align: justify;
+                        >.post__meta {
+                            flex-flow: row nowrap;
+                            font-weight: 700;
+                            @include fontS-14;
+                            text-transform: uppercase;
+                            >p {
+                                display: inline-block;
+                                &:last-of-type {
+                                    margin-right: 0;
+                                    &:after {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            > ul {
+                                display: inline-block;
+                                > li {
+                                    display: inline-block;
+                                    margin-right: 5px;
+                                    &:after {
+                                        content:", ";
+                                        display: inline-block;
+                                    }
+                                    &:last-of-type {
+                                        margin-right: 0;
+                                        &:after {
+                                            display: none;
+                                        }
+                                    }
+                                    > a {
+                                        color: getVar($colors, black, full);
+                                        &:hover, &:active, &:focus {
+                                            opacity: 0.8;
+                                        }
+                                    }
+                                }
+                            }
+                            > .border__right {
+                                margin-right: 10px;
+                                &:after {
+                                    border-right: 2px solid getVar($colors, black, full);
+                                    display: inline-block;
+                                    content: "";
+                                    padding: 0 4px;
+                                    height: 12px;
+                                }
+                            }
                         }
-                        >.post__details > p {
-                            font-weight: 500;
-                            @include fontS-16;
-                            text-align: justify;
+                        >.post__details {
+                            margin: 20px 0 40px;
                         }
+                    }
+                    div#respond {
+                        > h3 {
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            @include fontS-34;
+                        }
+                        > form { 
+                            > p.logged-in-as > a {
+                                color: getVar($colors, accent);
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                @include fontS-16;
+                            }
+                            > p.comment-form-comment {
+                                margin: 20px 0;
+                                > textarea {
+                                    padding: 10px;
+                                    font-size: 18px;
+                                    width: 100%;
+                                    color: getVar($colors, black, full);
+                                    background: getVar($gustavo, colors, gray13);
+                                    border: none;
+                                }
+                            }
+                            > p.comment-form-author, 
+                            > p.comment-form-email, 
+                            > p.comment-form-url {
+                                font-weight: 600;
+                                width: 50%;
+                                margin-bottom: 10px;
+                                > label {
+                                    flex: 0 0 20%;
+                                    display: flex;
+                                }
+                                > input {
+                                    flex: 0 0 50%;
+                                    padding: 7px;
+                                }
+                            }
+                            > p.comment-form-cookies-consent {
+                                font-weight: 600;
+                                margin-bottom: 20px;
+                                input {
+                                    margin: 0 10px 10px 0;
+                                }
+                            }
+                            > p.form-submit {
+                                > input[type^='submit'] {
+                                    font-family: inherit;
+                                    background-color: getVar($colors, accent);
+                                    color: getVar($colors, white, full);
+                                    padding: 15px 50px;
+                                    @include fontS-16;
+                                    font-weight: 600;
+                                    border: none;
+                                    text-transform: uppercase;
+                                    &:hover, &:active, &:focus {
+                                        cursor: pointer;
+                                        opacity: 0.8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                div.post_sidebar {
+                    flex: 0 0 20%;
+                    padding: 20px;
+                    border-radius: 10px;
+                    background-color: getVar($gustavo, colors, gray13);
+                    > div {
+                        margin-bottom: getVar($sizing, gutter, px, small);
+                        > p {
+                            color: getVar($colors, black, full);
+                            font-weight: 800;
+                            @include fontS-18;
+                            border-bottom: 2px solid getVar($colors, accent);
+                            padding-bottom: 3px;
+                        }
+                        > ul {
+                            margin-top: 5px;
+                            > li {
+                                border-bottom: 1px solid getVar($colors, white, full);
+                                padding: 3px;
+                                > a {
+                                    color: getVar($colors, black, full);
+                                    font-weight: 400;
+                                    @include fontS-14;
+                                }
+                            }
+                            > li:last-of-type {
+                                border-bottom: 0;
+                                padding: 3px 0 0;
+                            }
+                        }
+                    }
+                    > div:first-of-type {
+                        > p {
+                            border-bottom: none;
+                            padding: 0;
+                        }
+                        div.search-wrap {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            input[type^='search'] {
+                                padding: 7px;
+                                flex: 0 0 85%;
+                                border: none;
+                            }
+                            button {
+                                flex: 0 0 15%;
+                                padding: 5px 5px;
+                                background-color: getVar($colors, accent);
+                                border: none;
+                                i {
+                                    color: getVar($colors, white, full);
+                                }
+                                &:hover, &:active, &:focus {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    > div:last-of-type {
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -68,6 +241,21 @@
 @media only screen and (max-width: 960px){
     main#cpt_page_blog {
         padding: 150px 0 100px;
+        section.mod__featured_grid {
+            div.container {
+                flex-flow: column nowrap;
+                div.post_sidebar {
+                    margin-top: getVar($sizing, gutter, px, normal);
+                    width: 100%;
+                    > div:first-of-type div.search-wrap {
+                        button, 
+                        input[type^=search] {
+                            flex: initial;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -3611,6 +3611,11 @@ section.single_coupon > div.container .coupon_expiration {
     margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade {
+    flex: 0 0 75%;
+    margin-right: 20px;
   }
   main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.image {
     width: 50vw;
@@ -3623,21 +3628,191 @@ section.single_coupon > div.container .coupon_expiration {
     text-align: left;
   }
   main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > h2 {
-    color: #000;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: #000000;
     font-family: "Gotham", "Helvetica", sans-serif;
+    border-bottom: 4px dotted #376494;
+    margin-bottom: 10px;
   }
-  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__date {
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta {
+    flex-flow: row nowrap;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-transform: uppercase;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > p {
+    display: inline-block;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > p:last-of-type {
+    margin-right: 0;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > p:last-of-type:after {
+    display: none;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul {
+    display: inline-block;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li:after {
+    content: ", ";
+    display: inline-block;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li:last-of-type {
+    margin-right: 0;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li:last-of-type:after {
+    display: none;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li > a {
+    color: #000000;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li > a:hover, main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li > a:active, main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > ul > li > a:focus {
+    opacity: 0.8;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > .border__right {
+    margin-right: 10px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > .border__right:after {
+    border-right: 2px solid #000000;
+    display: inline-block;
+    content: "";
+    padding: 0 4px;
+    height: 12px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__details {
+    margin: 20px 0 40px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > h3 {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.logged-in-as > a {
+    color: #376494;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-comment {
+    margin: 20px 0;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-comment > textarea {
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    color: #000000;
+    background: #e5e5e5;
+    border: none;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-author,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-email,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-url {
+    font-weight: 600;
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-author > label,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-email > label,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-url > label {
+    flex: 0 0 20%;
+    display: flex;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-author > input,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-email > input,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-url > input {
+    flex: 0 0 50%;
+    padding: 7px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-cookies-consent {
+    font-weight: 600;
     margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    text-align: justify;
   }
-  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__details > p {
-    font-weight: 500;
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.comment-form-cookies-consent input {
+    margin: 0 10px 10px 0;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.form-submit > input[type^=submit] {
+    font-family: inherit;
+    background-color: #376494;
+    color: #ffffff;
+    padding: 15px 50px;
     font-size: 1.6rem;
     line-height: 2.8rem;
-    text-align: justify;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.form-submit > input[type^=submit]:hover, main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.form-submit > input[type^=submit]:active, main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.form-submit > input[type^=submit]:focus {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar {
+    flex: 0 0 20%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div {
+    margin-bottom: 15px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > p {
+    color: #000000;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    border-bottom: 2px solid #376494;
+    padding-bottom: 3px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul {
+    margin-top: 5px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li {
+    border-bottom: 1px solid #ffffff;
+    padding: 3px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li > a {
+    color: #000000;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li:last-of-type {
+    border-bottom: 0;
+    padding: 3px 0 0;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type > p {
+    border-bottom: none;
+    padding: 0;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap input[type^=search] {
+    padding: 7px;
+    flex: 0 0 85%;
+    border: none;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button {
+    flex: 0 0 15%;
+    padding: 5px 5px;
+    background-color: #376494;
+    border: none;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button i {
+    color: #ffffff;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button:hover, main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button:active, main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button:focus {
+    cursor: pointer;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:last-of-type {
+    margin-bottom: 0;
   }
 }
 @media only screen and (max-width: 1280px) {
@@ -3652,6 +3827,17 @@ section.single_coupon > div.container .coupon_expiration {
 @media only screen and (max-width: 960px) {
   main#cpt_page_blog {
     padding: 150px 0 100px;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container {
+    flex-flow: column nowrap;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar {
+    margin-top: 30px;
+    width: 100%;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button,
+main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap input[type^=search] {
+    flex: initial;
   }
 }
 @media only screen and (max-width: 640px) {
