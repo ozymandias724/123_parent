@@ -31,16 +31,15 @@ $(document).ready(function()
 
         _init : function(){
             Coupons.printCoupon();
-        },
+        }
 
-        printCoupon : function(){
+        ,printCoupon : function(){
             
             if( $('section.single_coupon').length ){
                 window.print();
                 window.close();
                 return true;
            }
-
         }
     }
     Coupons._init();
@@ -69,8 +68,9 @@ $(document).ready(function()
             }else{
                 offset = ( $('#popups__banner').length > 0 ? $('header').height() + $('#popups__banner').height() : $('header').height() );
             }
-
-            $('main').css('margin-top', offset - 1);
+            if( $('main').attr('id') !== 'cpt_page_blog' ){
+                $('main').css('margin-top', offset - 1);
+            }
         }
     }
     

@@ -6,6 +6,8 @@
                 $w: getVar($sizing, content, medium);
                 width: $w;
                 margin: 0 auto;
+                display: flex;
+                flex-flow: row nowrap;
                 div.site__fade {
                     div.image {
                         $w: getVar($sizing, content, small);
