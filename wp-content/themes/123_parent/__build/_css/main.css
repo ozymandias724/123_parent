@@ -3675,7 +3675,7 @@ section.single_coupon > div.container .coupon_expiration {
     opacity: 0.8;
   }
   main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > .border__right {
-    margin-right: 10px;
+    margin-right: 5px;
   }
   main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div.post__content > .post__meta > .border__right:after {
     border-right: 2px solid #000000;
@@ -3693,7 +3693,8 @@ section.single_coupon > div.container .coupon_expiration {
     font-size: 3.4rem;
     line-height: 4.8rem;
   }
-  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.logged-in-as > a {
+  main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form .comment-notes,
+main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#respond > form > p.logged-in-as > a {
     color: #376494;
     font-weight: 700;
     text-transform: uppercase;
@@ -3769,9 +3770,6 @@ main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#r
     border-bottom: 2px solid #376494;
     padding-bottom: 3px;
   }
-  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul {
-    margin-top: 5px;
-  }
   main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li {
     border-bottom: 1px solid #ffffff;
     padding: 3px;
@@ -3781,6 +3779,9 @@ main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#r
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.8rem;
+  }
+  main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li > a:hover, main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li > a:active, main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li > a:focus {
+    opacity: 0.8;
   }
   main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div > ul > li:last-of-type {
     border-bottom: 0;
@@ -3801,7 +3802,7 @@ main#cpt_page_blog section.mod__featured_grid div.container div.site__fade div#r
   }
   main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > div:first-of-type div.search-wrap button {
     flex: 0 0 15%;
-    padding: 5px 5px;
+    padding: 5px 10px;
     background-color: #376494;
     border: none;
   }

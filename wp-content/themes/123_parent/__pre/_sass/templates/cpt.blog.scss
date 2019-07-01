@@ -71,7 +71,7 @@
                                 }
                             }
                             > .border__right {
-                                margin-right: 10px;
+                                margin-right: 5px;
                                 &:after {
                                     border-right: 2px solid getVar($colors, black, full);
                                     display: inline-block;
@@ -92,6 +92,7 @@
                             @include fontS-34;
                         }
                         > form { 
+                            .comment-notes,
                             > p.logged-in-as > a {
                                 color: getVar($colors, accent);
                                 font-weight: 700;
@@ -165,7 +166,6 @@
                             padding-bottom: 3px;
                         }
                         > ul {
-                            margin-top: 5px;
                             > li {
                                 border-bottom: 1px solid getVar($colors, white, full);
                                 padding: 3px;
@@ -173,6 +173,9 @@
                                     color: getVar($colors, black, full);
                                     font-weight: 400;
                                     @include fontS-14;
+                                    &:hover, &:active, &:focus {
+                                        opacity: 0.8;
+                                    }
                                 }
                             }
                             > li:last-of-type {
@@ -196,7 +199,7 @@
                             }
                             button {
                                 flex: 0 0 15%;
-                                padding: 5px 5px;
+                                padding: 5px 10px;
                                 background-color: getVar($colors, accent);
                                 border: none;
                                 i {
