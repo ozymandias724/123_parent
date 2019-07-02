@@ -12,7 +12,7 @@
             <section class="single__page single_coupon">
                 <div class="container medium">
                     <ul>
-                        <li class="site__fade site__fade-up coupons__'.$_GET['style'].'">
+                        <li class="coupons__'.$_GET['style'].'">
                             <a href="javascript:;">
                                 <h5>%s</h5>
                                 <div class="coupon_description block__item-body">%s</div>
