@@ -3402,65 +3402,6 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     display: none;
   }
 }
-@media print, screen {
-  section.single_coupon > div.container {
-    padding: 10px;
-    background-color: #dedede;
-    border-radius: 20px;
-    border: 3px solid transparent;
-    font-family: "Montserrat", serif;
-  }
-  section.single_coupon > div.container > div.coupon_inner_div {
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 20px;
-    border: 6px dashed #ffffff;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    color: inherit;
-  }
-  section.single_coupon > div.container h5 {
-    text-align: center;
-    margin: 10px 0 10px;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    font-weight: 900;
-    line-height: 4.3rem;
-    letter-spacing: -1px;
-  }
-  section.single_coupon > div.container .coupon_description {
-    margin-bottom: 10px;
-    color: #000000;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-  }
-  section.single_coupon > div.container .coupon_code {
-    background: #ffffff;
-    padding: 0 25px;
-    border-radius: 20px;
-    font-weight: 700;
-    line-height: 40px;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-  }
-  section.single_coupon > div.container .coupon_code > span {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  section.single_coupon > div.container .coupon_expiration {
-    display: block;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-  }
-  section.single_coupon > div.container .coupon_code,
-section.single_coupon > div.container .coupon_expiration {
-    margin: 5px 0;
-  }
-}
 @media only screen {
   main#single_about {
     padding-top: 150px;
@@ -3967,112 +3908,6 @@ main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > d
   }
   section.tpl_page_testimonials > div.container > ul {
     width: 70vw;
-  }
-}
-@media only screen {
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li {
-    padding: 10px;
-    background-color: #dedede;
-    border-radius: 20px;
-    border: 3px solid transparent;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li:hover, section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li:active, section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li:focus, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li:hover, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li:active, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li:focus, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li:hover, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li:active, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li:focus, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li:hover, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li:active, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li:focus {
-    border: 3px solid #c2c2c2;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li > a, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li > a, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li > a, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li > a {
-    padding: 20px;
-    border-radius: 20px;
-    border: 6px dashed #ffffff;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    color: inherit;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li h5, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li h5, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li h5, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li h5 {
-    margin: 10px 0 10px;
-    font-size: 4rem;
-    line-height: 5.4rem;
-    font-weight: 900;
-    line-height: 4.3rem;
-    letter-spacing: -1px;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li .coupon_description, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_description, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_description, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_description {
-    margin-bottom: 10px;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li .coupon_code, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_code, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_code, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_code {
-    background: #ffffff;
-    padding: 0 25px;
-    border-radius: 20px;
-    font-weight: 700;
-    line-height: 40px;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li .coupon_code > span, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_code > span, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_code > span, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_code > span {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
-    display: none;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.8rem;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li .coupon_code,
-section.tpl_page_coupon > div.container .site__grid.coupons__one > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_code,
-section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_code,
-section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_code,
-section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
-    margin: 5px 0;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
-    display: block;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li {
-    background-color: transparent;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li > a {
-    border: 6px dashed #376494;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_description,
-section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_expiration {
-    color: #939393;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__two > ul > li .coupon_code {
-    background: #dedede;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li {
-    border-radius: 0;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li > a, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li > a {
-    border-radius: 0;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_description,
-section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_description,
-section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
-    color: #939393;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_code, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_code {
-    border-radius: 0;
-    padding: 2px 30px;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_expiration, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_expiration {
-    font-weight: 600;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__three > ul > li .coupon_expiration > span, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_expiration > span {
-    font-weight: 400;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li {
-    background-color: #ffffff;
-    border: 4px solid #dfdfdf;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li:hover, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li:active, section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li:focus {
-    border: 4px solid #c2c2c2;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li > a {
-    border: 6px dashed #376494;
-  }
-  section.tpl_page_coupon > div.container .site__grid.coupons__four > ul > li .coupon_code {
-    background-color: #dedede;
   }
 }
 @media only screen {
@@ -7732,17 +7567,17 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     margin: 0 0 2vw 0;
   }
 }
-@media screen {
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four {
+@media print, screen {
+  ul > li.coupons__one, ul > li.coupons__two, ul > li.coupons__three, ul > li.coupons__four {
     padding: 10px;
     background-color: #dedede;
     border-radius: 20px;
     border: 3px solid transparent;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one:hover, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one:active, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one:focus, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two:hover, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two:active, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two:focus, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three:hover, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three:active, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three:focus, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four:hover, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four:active, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four:focus {
+  ul > li.coupons__one:hover, ul > li.coupons__one:active, ul > li.coupons__one:focus, ul > li.coupons__two:hover, ul > li.coupons__two:active, ul > li.coupons__two:focus, ul > li.coupons__three:hover, ul > li.coupons__three:active, ul > li.coupons__three:focus, ul > li.coupons__four:hover, ul > li.coupons__four:active, ul > li.coupons__four:focus {
     border: 3px solid #c2c2c2;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one > a, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two > a, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three > a, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four > a {
+  ul > li.coupons__one > a, ul > li.coupons__two > a, ul > li.coupons__three > a, ul > li.coupons__four > a {
     padding: 20px;
     border-radius: 20px;
     border: 6px dashed #ffffff;
@@ -7752,7 +7587,7 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     justify-content: center;
     color: inherit;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one h5, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two h5, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three h5, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four h5 {
+  ul > li.coupons__one h5, ul > li.coupons__two h5, ul > li.coupons__three h5, ul > li.coupons__four h5 {
     margin: 10px 0 10px;
     font-size: 4rem;
     line-height: 5.4rem;
@@ -7760,81 +7595,86 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     line-height: 4.3rem;
     letter-spacing: -1px;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one .coupon_description, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_description, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_description, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_description {
+  ul > li.coupons__one .coupon_description, ul > li.coupons__two .coupon_description, ul > li.coupons__three .coupon_description, ul > li.coupons__four .coupon_description {
     margin-bottom: 10px;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one .coupon_code, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_code, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_code, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_code {
+  ul > li.coupons__one .coupon_code, ul > li.coupons__two .coupon_code, ul > li.coupons__three .coupon_code, ul > li.coupons__four .coupon_code {
     background: #ffffff;
     padding: 0 25px;
     border-radius: 20px;
     font-weight: 700;
     line-height: 40px;
+    display: inline-block;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one .coupon_code > span, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_code > span, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_code > span, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_code > span {
+  ul > li.coupons__one .coupon_code > span, ul > li.coupons__two .coupon_code > span, ul > li.coupons__three .coupon_code > span, ul > li.coupons__four .coupon_code > span {
     text-transform: uppercase;
     font-weight: 600;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_expiration {
+  ul > li.coupons__one .coupon_expiration, ul > li.coupons__two .coupon_expiration, ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_expiration {
     display: none;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.8rem;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one .coupon_code,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__one .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_code,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_code,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_code,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_expiration {
+  ul > li.coupons__one .coupon_code,
+ul > li.coupons__one .coupon_expiration, ul > li.coupons__two .coupon_code,
+ul > li.coupons__two .coupon_expiration, ul > li.coupons__three .coupon_code,
+ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_code,
+ul > li.coupons__four .coupon_expiration {
     margin: 5px 0;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_expiration {
+
+  ul > li.coupons__two .coupon_expiration, ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_expiration {
     display: block;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two {
+
+  ul > li.coupons__two {
     background-color: transparent;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two > a {
+  ul > li.coupons__two > a {
     border: 6px dashed #376494;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_description,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_expiration {
+  ul > li.coupons__two .coupon_description,
+ul > li.coupons__two .coupon_expiration {
     color: #939393;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__two .coupon_code {
+  ul > li.coupons__two .coupon_code {
     background: #dedede;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four {
+
+  ul > li.coupons__three, ul > li.coupons__four {
     border-radius: 0;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three > a, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four > a {
+  ul > li.coupons__three > a, ul > li.coupons__four > a {
     border-radius: 0;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_description,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_description,
-section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_expiration {
+  ul > li.coupons__three .coupon_description,
+ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_description,
+ul > li.coupons__four .coupon_expiration {
     color: #939393;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_code, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_code {
+  ul > li.coupons__three .coupon_code, ul > li.coupons__four .coupon_code {
     border-radius: 0;
     padding: 2px 30px;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_expiration, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_expiration {
+  ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_expiration {
     font-weight: 600;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__three .coupon_expiration > span, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_expiration > span {
+  ul > li.coupons__three .coupon_expiration > span, ul > li.coupons__four .coupon_expiration > span {
     font-weight: 400;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four {
+
+  ul > li.coupons__four {
     background-color: #ffffff;
     border: 4px solid #dfdfdf;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four:hover, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four:active, section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four:focus {
+  ul > li.coupons__four:hover, ul > li.coupons__four:active, ul > li.coupons__four:focus {
     border: 4px solid #c2c2c2;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four > a {
+  ul > li.coupons__four > a {
     border: 6px dashed #376494;
   }
-  section.site__block.block__coupons > div.container .site__grid > ul > li.coupons__four .coupon_code {
+  ul > li.coupons__four .coupon_code {
     background-color: #dedede;
   }
 }

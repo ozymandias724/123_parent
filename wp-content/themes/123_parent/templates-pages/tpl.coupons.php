@@ -14,8 +14,8 @@ $fields = get_fields(get_the_ID());
 $return['section'] = '';
 
 $guide['coupon'] = '
-    <li class="site__fade site__fade-up">
-        <a class="coupon_print" href="%s" target="_blank">
+    <li class="site__fade site__fade-up coupons__'.$fields['style'].'">
+        <a class="coupon_print" href="%s?style='.$fields['style'].'" target="_blank">
             <h5>%s</h5>
             <div class="coupon_description block__item-body">%s</div>
             %s
@@ -60,7 +60,7 @@ $return['section'] .= sprintf(
     ,( !empty($fields['heading']) ? '<h2 class="site__fade site__fade-up block__heading" style="text-align:'.$fields['heading_alignment'].';">'.$fields['heading'].'</h2>' : '' )
     ,( !empty($fields['text']) ? '<div class="site__fade site__fade-up block__details">'.$fields['text'].'</div>' : '' )
     // 
-    ,( !empty($return['coupon']) ? '<div class="site__grid coupons__'.$fields['style'].'">'.$return['coupon'].'</div>' : '' )
+    ,( !empty($return['coupon']) ? '<div class="site__grid">'.$return['coupon'].'</div>' : '' )
 );
 
 ?>

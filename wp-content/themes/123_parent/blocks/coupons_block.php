@@ -9,10 +9,9 @@
     $guide = [];
     $return['coupon'] ='<ul>';
 
-    // HARD CODED COUPON DESCRIPTION
     $guide['coupon'] = '
         <li class="site__fade site__fade-up coupons__'.$cB['style'].'">
-            <a class="coupon_print" href="%s" target="_blank">
+            <a class="coupon_print" href="%s?style='.$cB['style'].'" target="_blank">
                 <h5>%s</h5>
                 <div class="coupon_description block__item-body">%s</div>
                 %s
