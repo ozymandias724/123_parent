@@ -7,6 +7,7 @@
     // set return and guide string arrays
     $return = [];
     $guide = [];
+    $return['section'] = '';
     
     // guide string for the section
     $guide['section'] = '
