@@ -871,6 +871,34 @@ h6 {
     transform: translateY(100px);
   }
 }
+@media screen {
+  section.page_404 div.container {
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  section.page_404 div.container > h1 {
+    font-size: 25rem;
+    line-height: 23rem;
+  }
+  section.page_404 div.container > h2 {
+    font-size: 5rem;
+    line-height: 7.2rem;
+  }
+  section.page_404 div.container > a.page404_home {
+    background-color: #376494;
+    color: #ffffff;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  section.page_404 div.container > h1 {
+    font-size: 16rem;
+  }
+}
 @media only screen {
   /** 
   *
@@ -5936,19 +5964,22 @@ section.tpl_page_gallery > .container .tabsandgrids_container.sidebar > .galleri
 @media only screen {
   section.site__block,
 section.page__template,
-section.single__page {
+section.single__page,
+section.page_404 {
     width: 100%;
   }
   section.site__block .container,
 section.page__template .container,
-section.single__page .container {
+section.single__page .container,
+section.page_404 .container {
     text-align: center;
     padding: 30px 0;
     margin: 0 auto 30px;
   }
   section.site__block .container .block__item-body,
 section.page__template .container .block__item-body,
-section.single__page .container .block__item-body {
+section.single__page .container .block__item-body,
+section.page_404 .container .block__item-body {
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.8rem;
@@ -5956,58 +5987,68 @@ section.single__page .container .block__item-body {
   }
   section.site__block .container > h2,
 section.page__template .container > h2,
-section.single__page .container > h2 {
+section.single__page .container > h2,
+section.page_404 .container > h2 {
     margin: 0 auto 30px auto;
   }
   section.site__block .container > .block__heading,
 section.page__template .container > .block__heading,
-section.single__page .container > .block__heading {
+section.single__page .container > .block__heading,
+section.page_404 .container > .block__heading {
     margin: 0 auto;
   }
   section.site__block .container > .block__details,
 section.page__template .container > .block__details,
-section.single__page .container > .block__details {
+section.single__page .container > .block__details,
+section.page_404 .container > .block__details {
     margin: 0 auto 30px auto;
   }
   section.site__block .container.hasbg,
 section.page__template .container.hasbg,
-section.single__page .container.hasbg {
+section.single__page .container.hasbg,
+section.page_404 .container.hasbg {
     margin: 0 auto 0 auto;
   }
   section.site__block .container.narrow,
 section.page__template .container.narrow,
-section.single__page .container.narrow {
+section.single__page .container.narrow,
+section.page_404 .container.narrow {
     width: 50vw;
   }
   section.site__block .container.narrow.hasbg,
 section.page__template .container.narrow.hasbg,
-section.single__page .container.narrow.hasbg {
+section.single__page .container.narrow.hasbg,
+section.page_404 .container.narrow.hasbg {
     width: 54vw;
     padding: 2vw;
   }
   section.site__block .container.narrow .site__grid > ul,
 section.page__template .container.narrow .site__grid > ul,
-section.single__page .container.narrow .site__grid > ul {
+section.single__page .container.narrow .site__grid > ul,
+section.page_404 .container.narrow .site__grid > ul {
     width: 50vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.narrow .site__grid > ul:after,
 section.page__template .container.narrow .site__grid > ul:after,
-section.single__page .container.narrow .site__grid > ul:after {
+section.single__page .container.narrow .site__grid > ul:after,
+section.page_404 .container.narrow .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.narrow .site__grid > ul > li,
 section.page__template .container.narrow .site__grid > ul > li,
-section.single__page .container.narrow .site__grid > ul > li {
+section.single__page .container.narrow .site__grid > ul > li,
+section.page_404 .container.narrow .site__grid > ul > li {
     width: 15.3333333333vw;
     height: auto;
     float: left;
   }
   section.site__block .container.narrow .site__grid > ul > li > a,
 section.page__template .container.narrow .site__grid > ul > li > a,
-section.single__page .container.narrow .site__grid > ul > li > a {
+section.single__page .container.narrow .site__grid > ul > li > a,
+section.page_404 .container.narrow .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6016,7 +6057,9 @@ section.site__block .container.narrow .site__grid > ul > li .block,
 section.page__template .container.narrow .site__grid > ul > li .image,
 section.page__template .container.narrow .site__grid > ul > li .block,
 section.single__page .container.narrow .site__grid > ul > li .image,
-section.single__page .container.narrow .site__grid > ul > li .block {
+section.single__page .container.narrow .site__grid > ul > li .block,
+section.page_404 .container.narrow .site__grid > ul > li .image,
+section.page_404 .container.narrow .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6028,7 +6071,9 @@ section.site__block .container.narrow .site__grid > ul > li .block,
 section.page__template .container.narrow .site__grid > ul > li .image,
 section.page__template .container.narrow .site__grid > ul > li .block,
 section.single__page .container.narrow .site__grid > ul > li .image,
-section.single__page .container.narrow .site__grid > ul > li .block {
+section.single__page .container.narrow .site__grid > ul > li .block,
+section.page_404 .container.narrow .site__grid > ul > li .image,
+section.page_404 .container.narrow .site__grid > ul > li .block {
     height: 15.3333333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li .image.rectangular_block,
@@ -6036,7 +6081,9 @@ section.site__block .container.narrow .site__grid > ul > li .block.rectangular_b
 section.page__template .container.narrow .site__grid > ul > li .image.rectangular_block,
 section.page__template .container.narrow .site__grid > ul > li .block.rectangular_block,
 section.single__page .container.narrow .site__grid > ul > li .image.rectangular_block,
-section.single__page .container.narrow .site__grid > ul > li .block.rectangular_block {
+section.single__page .container.narrow .site__grid > ul > li .block.rectangular_block,
+section.page_404 .container.narrow .site__grid > ul > li .image.rectangular_block,
+section.page_404 .container.narrow .site__grid > ul > li .block.rectangular_block {
     height: 9.5833333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li .image.less_size_block,
@@ -6044,54 +6091,64 @@ section.site__block .container.narrow .site__grid > ul > li .block.less_size_blo
 section.page__template .container.narrow .site__grid > ul > li .image.less_size_block,
 section.page__template .container.narrow .site__grid > ul > li .block.less_size_block,
 section.single__page .container.narrow .site__grid > ul > li .image.less_size_block,
-section.single__page .container.narrow .site__grid > ul > li .block.less_size_block {
+section.single__page .container.narrow .site__grid > ul > li .block.less_size_block,
+section.page_404 .container.narrow .site__grid > ul > li .image.less_size_block,
+section.page_404 .container.narrow .site__grid > ul > li .block.less_size_block {
     height: 10.5333333333vw;
     width: 10.5333333333vw;
   }
   section.site__block .container.narrow .site__grid > ul > li:nth-child(n+1),
 section.page__template .container.narrow .site__grid > ul > li:nth-child(n+1),
-section.single__page .container.narrow .site__grid > ul > li:nth-child(n+1) {
+section.single__page .container.narrow .site__grid > ul > li:nth-child(n+1),
+section.page_404 .container.narrow .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.narrow .site__grid > ul > li:nth-child(3n),
 section.page__template .container.narrow .site__grid > ul > li:nth-child(3n),
-section.single__page .container.narrow .site__grid > ul > li:nth-child(3n) {
+section.single__page .container.narrow .site__grid > ul > li:nth-child(3n),
+section.page_404 .container.narrow .site__grid > ul > li:nth-child(3n) {
     margin: 0 0 2vw 0;
   }
   section.site__block .container.medium,
 section.page__template .container.medium,
-section.single__page .container.medium {
+section.single__page .container.medium,
+section.page_404 .container.medium {
     width: 65vw;
   }
   section.site__block .container.medium.hasbg,
 section.page__template .container.medium.hasbg,
-section.single__page .container.medium.hasbg {
+section.single__page .container.medium.hasbg,
+section.page_404 .container.medium.hasbg {
     width: 69vw;
     padding: 2vw;
   }
   section.site__block .container.medium .site__grid > ul,
 section.page__template .container.medium .site__grid > ul,
-section.single__page .container.medium .site__grid > ul {
+section.single__page .container.medium .site__grid > ul,
+section.page_404 .container.medium .site__grid > ul {
     width: 65vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.medium .site__grid > ul:after,
 section.page__template .container.medium .site__grid > ul:after,
-section.single__page .container.medium .site__grid > ul:after {
+section.single__page .container.medium .site__grid > ul:after,
+section.page_404 .container.medium .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.medium .site__grid > ul > li,
 section.page__template .container.medium .site__grid > ul > li,
-section.single__page .container.medium .site__grid > ul > li {
+section.single__page .container.medium .site__grid > ul > li,
+section.page_404 .container.medium .site__grid > ul > li {
     width: 20.3333333333vw;
     height: auto;
     float: left;
   }
   section.site__block .container.medium .site__grid > ul > li > a,
 section.page__template .container.medium .site__grid > ul > li > a,
-section.single__page .container.medium .site__grid > ul > li > a {
+section.single__page .container.medium .site__grid > ul > li > a,
+section.page_404 .container.medium .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6100,7 +6157,9 @@ section.site__block .container.medium .site__grid > ul > li .block,
 section.page__template .container.medium .site__grid > ul > li .image,
 section.page__template .container.medium .site__grid > ul > li .block,
 section.single__page .container.medium .site__grid > ul > li .image,
-section.single__page .container.medium .site__grid > ul > li .block {
+section.single__page .container.medium .site__grid > ul > li .block,
+section.page_404 .container.medium .site__grid > ul > li .image,
+section.page_404 .container.medium .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6112,7 +6171,9 @@ section.site__block .container.medium .site__grid > ul > li .block,
 section.page__template .container.medium .site__grid > ul > li .image,
 section.page__template .container.medium .site__grid > ul > li .block,
 section.single__page .container.medium .site__grid > ul > li .image,
-section.single__page .container.medium .site__grid > ul > li .block {
+section.single__page .container.medium .site__grid > ul > li .block,
+section.page_404 .container.medium .site__grid > ul > li .image,
+section.page_404 .container.medium .site__grid > ul > li .block {
     height: 20.3333333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li .image.rectangular_block,
@@ -6120,7 +6181,9 @@ section.site__block .container.medium .site__grid > ul > li .block.rectangular_b
 section.page__template .container.medium .site__grid > ul > li .image.rectangular_block,
 section.page__template .container.medium .site__grid > ul > li .block.rectangular_block,
 section.single__page .container.medium .site__grid > ul > li .image.rectangular_block,
-section.single__page .container.medium .site__grid > ul > li .block.rectangular_block {
+section.single__page .container.medium .site__grid > ul > li .block.rectangular_block,
+section.page_404 .container.medium .site__grid > ul > li .image.rectangular_block,
+section.page_404 .container.medium .site__grid > ul > li .block.rectangular_block {
     height: 12.7083333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li .image.less_size_block,
@@ -6128,54 +6191,64 @@ section.site__block .container.medium .site__grid > ul > li .block.less_size_blo
 section.page__template .container.medium .site__grid > ul > li .image.less_size_block,
 section.page__template .container.medium .site__grid > ul > li .block.less_size_block,
 section.single__page .container.medium .site__grid > ul > li .image.less_size_block,
-section.single__page .container.medium .site__grid > ul > li .block.less_size_block {
+section.single__page .container.medium .site__grid > ul > li .block.less_size_block,
+section.page_404 .container.medium .site__grid > ul > li .image.less_size_block,
+section.page_404 .container.medium .site__grid > ul > li .block.less_size_block {
     height: 15.5333333333vw;
     width: 15.5333333333vw;
   }
   section.site__block .container.medium .site__grid > ul > li:nth-child(n+1),
 section.page__template .container.medium .site__grid > ul > li:nth-child(n+1),
-section.single__page .container.medium .site__grid > ul > li:nth-child(n+1) {
+section.single__page .container.medium .site__grid > ul > li:nth-child(n+1),
+section.page_404 .container.medium .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.medium .site__grid > ul > li:nth-child(3n),
 section.page__template .container.medium .site__grid > ul > li:nth-child(3n),
-section.single__page .container.medium .site__grid > ul > li:nth-child(3n) {
+section.single__page .container.medium .site__grid > ul > li:nth-child(3n),
+section.page_404 .container.medium .site__grid > ul > li:nth-child(3n) {
     margin: 0 0 2vw 0;
   }
   section.site__block .container.wide,
 section.page__template .container.wide,
-section.single__page .container.wide {
+section.single__page .container.wide,
+section.page_404 .container.wide {
     width: 80vw;
   }
   section.site__block .container.wide.hasbg,
 section.page__template .container.wide.hasbg,
-section.single__page .container.wide.hasbg {
+section.single__page .container.wide.hasbg,
+section.page_404 .container.wide.hasbg {
     width: 84vw;
     padding: 2vw;
   }
   section.site__block .container.wide .site__grid > ul,
 section.page__template .container.wide .site__grid > ul,
-section.single__page .container.wide .site__grid > ul {
+section.single__page .container.wide .site__grid > ul,
+section.page_404 .container.wide .site__grid > ul {
     width: 80vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.wide .site__grid > ul:after,
 section.page__template .container.wide .site__grid > ul:after,
-section.single__page .container.wide .site__grid > ul:after {
+section.single__page .container.wide .site__grid > ul:after,
+section.page_404 .container.wide .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.wide .site__grid > ul > li,
 section.page__template .container.wide .site__grid > ul > li,
-section.single__page .container.wide .site__grid > ul > li {
+section.single__page .container.wide .site__grid > ul > li,
+section.page_404 .container.wide .site__grid > ul > li {
     width: 18.5vw;
     height: auto;
     float: left;
   }
   section.site__block .container.wide .site__grid > ul > li > a,
 section.page__template .container.wide .site__grid > ul > li > a,
-section.single__page .container.wide .site__grid > ul > li > a {
+section.single__page .container.wide .site__grid > ul > li > a,
+section.page_404 .container.wide .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6184,7 +6257,9 @@ section.site__block .container.wide .site__grid > ul > li .block,
 section.page__template .container.wide .site__grid > ul > li .image,
 section.page__template .container.wide .site__grid > ul > li .block,
 section.single__page .container.wide .site__grid > ul > li .image,
-section.single__page .container.wide .site__grid > ul > li .block {
+section.single__page .container.wide .site__grid > ul > li .block,
+section.page_404 .container.wide .site__grid > ul > li .image,
+section.page_404 .container.wide .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6196,7 +6271,9 @@ section.site__block .container.wide .site__grid > ul > li .block,
 section.page__template .container.wide .site__grid > ul > li .image,
 section.page__template .container.wide .site__grid > ul > li .block,
 section.single__page .container.wide .site__grid > ul > li .image,
-section.single__page .container.wide .site__grid > ul > li .block {
+section.single__page .container.wide .site__grid > ul > li .block,
+section.page_404 .container.wide .site__grid > ul > li .image,
+section.page_404 .container.wide .site__grid > ul > li .block {
     height: 18.5vw;
   }
   section.site__block .container.wide .site__grid > ul > li .image.rectangular_block,
@@ -6204,7 +6281,9 @@ section.site__block .container.wide .site__grid > ul > li .block.rectangular_blo
 section.page__template .container.wide .site__grid > ul > li .image.rectangular_block,
 section.page__template .container.wide .site__grid > ul > li .block.rectangular_block,
 section.single__page .container.wide .site__grid > ul > li .image.rectangular_block,
-section.single__page .container.wide .site__grid > ul > li .block.rectangular_block {
+section.single__page .container.wide .site__grid > ul > li .block.rectangular_block,
+section.page_404 .container.wide .site__grid > ul > li .image.rectangular_block,
+section.page_404 .container.wide .site__grid > ul > li .block.rectangular_block {
     height: 11.5625vw;
   }
   section.site__block .container.wide .site__grid > ul > li .image.less_size_block,
@@ -6212,54 +6291,64 @@ section.site__block .container.wide .site__grid > ul > li .block.less_size_block
 section.page__template .container.wide .site__grid > ul > li .image.less_size_block,
 section.page__template .container.wide .site__grid > ul > li .block.less_size_block,
 section.single__page .container.wide .site__grid > ul > li .image.less_size_block,
-section.single__page .container.wide .site__grid > ul > li .block.less_size_block {
+section.single__page .container.wide .site__grid > ul > li .block.less_size_block,
+section.page_404 .container.wide .site__grid > ul > li .image.less_size_block,
+section.page_404 .container.wide .site__grid > ul > li .block.less_size_block {
     height: 13.7vw;
     width: 13.7vw;
   }
   section.site__block .container.wide .site__grid > ul > li:nth-child(n+1),
 section.page__template .container.wide .site__grid > ul > li:nth-child(n+1),
-section.single__page .container.wide .site__grid > ul > li:nth-child(n+1) {
+section.single__page .container.wide .site__grid > ul > li:nth-child(n+1),
+section.page_404 .container.wide .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.wide .site__grid > ul > li:nth-child(4n),
 section.page__template .container.wide .site__grid > ul > li:nth-child(4n),
-section.single__page .container.wide .site__grid > ul > li:nth-child(4n) {
+section.single__page .container.wide .site__grid > ul > li:nth-child(4n),
+section.page_404 .container.wide .site__grid > ul > li:nth-child(4n) {
     margin: 0 0 2vw 0;
   }
   section.site__block .container.full,
 section.page__template .container.full,
-section.single__page .container.full {
+section.single__page .container.full,
+section.page_404 .container.full {
     width: 92vw;
   }
   section.site__block .container.full.hasbg,
 section.page__template .container.full.hasbg,
-section.single__page .container.full.hasbg {
+section.single__page .container.full.hasbg,
+section.page_404 .container.full.hasbg {
     width: 96vw;
     padding: 2vw;
   }
   section.site__block .container.full .site__grid > ul,
 section.page__template .container.full .site__grid > ul,
-section.single__page .container.full .site__grid > ul {
+section.single__page .container.full .site__grid > ul,
+section.page_404 .container.full .site__grid > ul {
     width: 92vw;
     margin: 0 auto 0 auto;
   }
   section.site__block .container.full .site__grid > ul:after,
 section.page__template .container.full .site__grid > ul:after,
-section.single__page .container.full .site__grid > ul:after {
+section.single__page .container.full .site__grid > ul:after,
+section.page_404 .container.full .site__grid > ul:after {
     content: "";
     display: table;
     clear: both;
   }
   section.site__block .container.full .site__grid > ul > li,
 section.page__template .container.full .site__grid > ul > li,
-section.single__page .container.full .site__grid > ul > li {
+section.single__page .container.full .site__grid > ul > li,
+section.page_404 .container.full .site__grid > ul > li {
     width: 13.6666666667vw;
     height: auto;
     float: left;
   }
   section.site__block .container.full .site__grid > ul > li > a,
 section.page__template .container.full .site__grid > ul > li > a,
-section.single__page .container.full .site__grid > ul > li > a {
+section.single__page .container.full .site__grid > ul > li > a,
+section.page_404 .container.full .site__grid > ul > li > a {
     display: block;
     width: 100%;
   }
@@ -6268,7 +6357,9 @@ section.site__block .container.full .site__grid > ul > li .block,
 section.page__template .container.full .site__grid > ul > li .image,
 section.page__template .container.full .site__grid > ul > li .block,
 section.single__page .container.full .site__grid > ul > li .image,
-section.single__page .container.full .site__grid > ul > li .block {
+section.single__page .container.full .site__grid > ul > li .block,
+section.page_404 .container.full .site__grid > ul > li .image,
+section.page_404 .container.full .site__grid > ul > li .block {
     display: block;
     overflow: hidden;
     background-size: cover;
@@ -6280,7 +6371,9 @@ section.site__block .container.full .site__grid > ul > li .block,
 section.page__template .container.full .site__grid > ul > li .image,
 section.page__template .container.full .site__grid > ul > li .block,
 section.single__page .container.full .site__grid > ul > li .image,
-section.single__page .container.full .site__grid > ul > li .block {
+section.single__page .container.full .site__grid > ul > li .block,
+section.page_404 .container.full .site__grid > ul > li .image,
+section.page_404 .container.full .site__grid > ul > li .block {
     height: 13.6666666667vw;
   }
   section.site__block .container.full .site__grid > ul > li .image.rectangular_block,
@@ -6288,7 +6381,9 @@ section.site__block .container.full .site__grid > ul > li .block.rectangular_blo
 section.page__template .container.full .site__grid > ul > li .image.rectangular_block,
 section.page__template .container.full .site__grid > ul > li .block.rectangular_block,
 section.single__page .container.full .site__grid > ul > li .image.rectangular_block,
-section.single__page .container.full .site__grid > ul > li .block.rectangular_block {
+section.single__page .container.full .site__grid > ul > li .block.rectangular_block,
+section.page_404 .container.full .site__grid > ul > li .image.rectangular_block,
+section.page_404 .container.full .site__grid > ul > li .block.rectangular_block {
     height: 8.5416666667vw;
   }
   section.site__block .container.full .site__grid > ul > li .image.less_size_block,
@@ -6296,18 +6391,22 @@ section.site__block .container.full .site__grid > ul > li .block.less_size_block
 section.page__template .container.full .site__grid > ul > li .image.less_size_block,
 section.page__template .container.full .site__grid > ul > li .block.less_size_block,
 section.single__page .container.full .site__grid > ul > li .image.less_size_block,
-section.single__page .container.full .site__grid > ul > li .block.less_size_block {
+section.single__page .container.full .site__grid > ul > li .block.less_size_block,
+section.page_404 .container.full .site__grid > ul > li .image.less_size_block,
+section.page_404 .container.full .site__grid > ul > li .block.less_size_block {
     height: 8.8666666667vw;
     width: 8.8666666667vw;
   }
   section.site__block .container.full .site__grid > ul > li:nth-child(n+1),
 section.page__template .container.full .site__grid > ul > li:nth-child(n+1),
-section.single__page .container.full .site__grid > ul > li:nth-child(n+1) {
+section.single__page .container.full .site__grid > ul > li:nth-child(n+1),
+section.page_404 .container.full .site__grid > ul > li:nth-child(n+1) {
     margin: 0 2vw 2vw 0;
   }
   section.site__block .container.full .site__grid > ul > li:nth-child(6n),
 section.page__template .container.full .site__grid > ul > li:nth-child(6n),
-section.single__page .container.full .site__grid > ul > li:nth-child(6n) {
+section.single__page .container.full .site__grid > ul > li:nth-child(6n),
+section.page_404 .container.full .site__grid > ul > li:nth-child(6n) {
     margin: 0 0 2vw 0;
   }
 
