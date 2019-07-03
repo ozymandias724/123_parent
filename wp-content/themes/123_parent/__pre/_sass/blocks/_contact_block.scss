@@ -119,7 +119,7 @@
     section.block__contact {
         > .container {
             &.narrow, &.medium, &.wide, &.full {
-                $width : getVar($sizing, content, wide);
+                width : getVar($sizing, content, wide);
             }
             > ul.columns {
                 flex-flow: column nowrap;

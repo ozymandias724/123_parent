@@ -3,8 +3,10 @@
 // 
 @media only screen {
 
+    // 
     section.tpl_page_gallery {
 
+        // 
         > .container {
             // wrapper for tabs and grids, to control the layout for a sidebar etc
             .tabsandgrids_container {
@@ -60,13 +62,12 @@
                             display: flex;
                             flex-flow: row nowrap;
                             > li {
-                                display: inline-block;
                                 margin: 0 2px;
                                 > a {
-                                    line-height: inherit;
-                                    padding: 5px 10px;
                                     @include fontS-14;
                                     text-transform: uppercase;
+                                    line-height: inherit;
+                                    padding: 5px 10px;
                                     color: getVar($gustavo, colors, gray2);
                                     background-color: getVar($gustavo, colors, gray1);
                                     border-top-left-radius: 5px;
