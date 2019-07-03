@@ -42,6 +42,7 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
+                    // @include flexGrid($w, $c, $g);
                 }
             }
             &.medium {
@@ -56,9 +57,11 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
+                    // @include flexGrid($w, $c, $g);
                 }
             }
             &.wide {
+                max-width: 1200px;
                 $w: getVar($sizing, content, large);
                 $c : 4;
                 $g: getVar($sizing, gutter, vw, normal);
@@ -70,10 +73,12 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
+                    // @include flexGrid($w, $c, $g);
                 }
     
             }
             &.full {
+                max-width: 1200px;
                 $w: getVar($sizing, content, full);
                 $c : 6;
                 $g: getVar($sizing, gutter, vw, normal);
@@ -85,6 +90,7 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
+                    // @include flexGrid($w, $c, $g);
                 }
             }
             // end grid layouts by block width
@@ -124,6 +130,7 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
+                    // @include flexGrid($w, $c, $g);
                 }
                 
             }
@@ -151,6 +158,7 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s);
+                    // @include flexGrid($w, $c, $g);
                 }
 
             }
@@ -179,6 +187,7 @@
                 }
                 .site__grid {
                     @include gridLayout($w, $c, $g, $s); 
+                    // @include flexGrid($w, $c, $g); 
                 }
                 
             }

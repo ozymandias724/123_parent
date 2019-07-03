@@ -10,7 +10,7 @@
         $c: 2;
         $g: getVar($sizing, gutter, vw, small);
         $s: true;
-        @include gridLayout($w, $c, $g, $s);
+        @include flexGrid($w, $c, $g);
         .gallery_item {
             justify-content: center;
             .gallery_image {
