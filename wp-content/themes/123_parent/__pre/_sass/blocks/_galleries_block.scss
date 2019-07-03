@@ -206,8 +206,7 @@
                         width: $w;
                         margin: 0 auto 0 auto;
                         .site__grid {
-                            //@include gridLayout($w, $c, $g, $s);
-                            @include flexGrid($w, $c, $g);
+                            @include gridLayout($w, $c, $g, $s);
                         }
                     }
                 }       
