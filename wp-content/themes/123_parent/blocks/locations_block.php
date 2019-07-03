@@ -20,7 +20,7 @@
             // guide for google map
             $guide['locations'] = '
                 <li>
-                    <iframe id="gmap_canvas" height="400" width="400" src="https://www.google.com/maps/embed/v1/MODE?key=AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA&q=%s" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe id="gmap_canvas" height="400" width="400" src="https://maps.google.com/maps?key=AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA&q=%s&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </li>
             ';
             
