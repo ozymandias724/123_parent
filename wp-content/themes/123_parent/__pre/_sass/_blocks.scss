@@ -1,7 +1,7 @@
 @media only screen {
-
-
-
+//
+//
+//    
     .site__flex_grid {
 
         margin: 0 auto;
@@ -9,11 +9,144 @@
         $g : getVar($sizing, gutter, vw, normal);
         width : $w;
 
+        &.narrow {
+            $w : getVar($sizing, content, small);
+            width: $w;
+            &.cols-1 {
+                $c : 1;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-2 {
+                $c : 2;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-3 {
+                $c : 3;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-4 {
+                $c : 4;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-5 {
+                $c : 5;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-6 {
+                $c : 6;
+                @include flexGrid($w, $c, $g);
+            }
+        }
         &.normal {
             $w : getVar($sizing, content, medium);
             width: $w;
+            &.cols-1 {
+                $c : 1;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-2 {
+                $c : 2;
+                @include flexGrid($w, $c, $g);
+            }
             &.cols-3 {
                 $c : 3;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-4 {
+                $c : 4;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-5 {
+                $c : 5;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-6 {
+                $c : 6;
+                @include flexGrid($w, $c, $g);
+            }
+        }
+        &.wide {
+            $w : getVar($sizing, content, large);
+            width: $w;
+            &.cols-1 {
+                $c : 1;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-2 {
+                $c : 2;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-3 {
+                $c : 3;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-4 {
+                $c : 4;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-5 {
+                $c : 5;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-6 {
+                $c : 6;
+                @include flexGrid($w, $c, $g);
+            }
+        }
+        &.full {
+            $w : getVar($sizing, content, full);
+            width: $w;
+            &.cols-1 {
+                $c : 1;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-2 {
+                $c : 2;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-3 {
+                $c : 3;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-4 {
+                $c : 4;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-5 {
+                $c : 5;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-6 {
+                $c : 6;
+                @include flexGrid($w, $c, $g);
+            }
+        }
+        &.auto {
+            $w : getVar($sizing, content, container);
+            $g : 1%;
+            width: $w;
+            &.cols-1 {
+                $c : 1;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-2 {
+                $c : 2;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-3 {
+                $c : 3;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-4 {
+                $c : 4;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-5 {
+                $c : 5;
+                @include flexGrid($w, $c, $g);
+            }
+            &.cols-6 {
+                $c : 6;
                 @include flexGrid($w, $c, $g);
             }
         }
@@ -169,7 +302,12 @@
         &.full,
         &.auto {
             width: $w;
-            &.cols-3 {
+            &.cols-1, 
+            &.cols-2,
+            &.cols-3,
+            &.cols-4,
+            &.cols-5,
+            &.cols-6 {
                 $c : 3;
                 @include flexGrid($w, $c, $g);
             }
@@ -204,13 +342,33 @@
             }
         }
     }
+    .site__flex_grid {
+        $w : getVar($sizing, content, large);
+        $g : getVar($sizing, gutter, vw, normal);
+        width : $w;
+        &.narrow,
+        &.normal,
+        &.wide,
+        &.full,
+        &.auto {
+            width: $w;
+            &.cols-1, 
+            &.cols-2,
+            &.cols-3,
+            &.cols-4,
+            &.cols-5,
+            &.cols-6 {
+                $c : 2;
+                @include flexGrid($w, $c, $g);
+            }
+        }
+    }
 }
 @media only screen and (max-width:640px){
     section.site__block,
     section.page__template,
     section.single__page {
         > .container {
-
             // set all to 1 col
             $w: getVar($sizing, content, full);
             $c : 1;
@@ -230,6 +388,27 @@
                     // @include flexGrid($w, $c, $g); 
                 }
                 
+            }
+        }
+    }
+    .site__flex_grid {
+        $w : getVar($sizing, content, full);
+        $g : getVar($sizing, gutter, vw, normal);
+        width : $w;
+        &.narrow,
+        &.normal,
+        &.wide,
+        &.full,
+        &.auto {
+            width: $w;
+            &.cols-1, 
+            &.cols-2,
+            &.cols-3,
+            &.cols-4,
+            &.cols-5,
+            &.cols-6 {
+                $c : 1;
+                @include flexGrid($w, $c, $g);
             }
         }
     }
