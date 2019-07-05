@@ -6,8 +6,10 @@
     // empty return string
     $return = [];
     $guide = [];
+    $return['section'] = '';
     $return['form'] ='';
     $guide['form'] = '';
+    $guide['section'] = '';
     
     // empty guide string 
     $guide['section'] = '
@@ -15,7 +17,7 @@
             <div class="container %s %s" style="%s %s">
                 %s
                 %s
-                '.( !empty($cB['form']) ? do_shortcode('[gravityform id="'.$cB['form']->ID.'" title="false" description="false"]') : '') .'
+                '.( !empty($cB['form']) ? do_shortcode('[gravityform id="'.$cB['form']['id'].'" title="false" description="false"]') : '') .'
             </div>
         </section>
     ';

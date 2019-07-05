@@ -3,7 +3,7 @@
 @function getVar($v, $ks...) {
     @each $k in $ks {
         $v: map-get($v, $k);
-    }
+    } 
 
     @return $v;
 }
@@ -14,7 +14,7 @@ $sizing : (
         container : 100%
         ,full : 92vw
         ,large : 80vw
-        ,medium : 65vw
+        ,medium : 62.5vw
         ,small : 50vw
     )
     ,gutter : (

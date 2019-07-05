@@ -11,12 +11,16 @@
         $format_coupon = '
             <section class="single__page single_coupon">
                 <div class="container medium">
-                    <div class="coupon_inner_div">
-                        <h5>%s</h5>
-                        <div class="coupon__description block__item-body">%s</div>
-                        %s
-                        %s
-                    </div>
+                    <ul>
+                        <li class="coupons__'.$_GET['style'].'">
+                            <a href="javascript:;">
+                                <h5>%s</h5>
+                                <div class="coupon_description block__item-body">%s</div>
+                                %s
+                                %s
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
         ';

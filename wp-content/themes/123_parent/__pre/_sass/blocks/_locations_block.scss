@@ -1,88 +1,104 @@
 @media only screen {
 
+    section.block__locations { 
+        > .container {
 
-    section.block__locations {
-
-
-        .container {
-
+            &.narrow {
+                width : getVar($sizing, content, small);
+            }
             &.medium {
-
-
-               div.site__grid {
-                   >ul {
-                       >li {
-                           border: 3px solid transparent;
-
-                           &:hover,
-                           &:active,
-                           &:focus {
-                               border: 3px solid #c4c4c4;
-                           }
-
-                           >a {
-                               >div {
-                                   padding: 0 20px;
-                                   background-color: #dedddd;
-
-                                   >.location_heading {
-                                       text-transform: uppercase;
-                                       font-weight: 500;
-                                       color: $black;
-                                       @include fontS-24;
-                                       padding: 20px 0 10px;
-                                   }
-
-                                   >.location_address {
-                                       font-weight: 500;
-                                       @include fontS-20;
-                                       color: $black;
-                                       padding: 0 0 20px;
-                                   }
-
-                                   >ul.site__social-media {
-                                       padding: 10px 0;
-                                       display: flex;
-                                       justify-content: center;
-
-                                       >li {
-                                           >a {
-                                               @include fontS-20;
-                                               display: inline-block;
-                                               line-height: 0;
-                                               padding: 0 10px;
-                                               text-align: center;
-                                               color: $black;
-                                               transition: color 0.3s;
-
-                                               >div.location_social_image {
-                                                   background-repeat: no-repeat;
-                                                   background-size: cover;
-                                                   background-position: center center;
-                                                   width: 25px;
-                                                   height: 25px;
-                                               }
-
-                                               &:hover,
-                                               &:active,
-                                               &:focus {
-                                                   color: $accent;
-                                               }
-                                           }
-                                       }
-                                   }
-                               }
-                           }
-                       }
-                   }
-               }
+                width : getVar($sizing, content, medium);
+            }
+            &.wide {
+                width : getVar($sizing, content, wide);
+            }
+            &.full {
+                width : getVar($sizing, content, full);
             }
             
-        }
-        
-        
+            div.locations__block-form {
+                text-align: left;
+                margin-top: 20px;
+
+                > p {
+                    font-weight: 700;
+                    border-bottom: 3px solid getVar($gustavo, colors, gray7);
+                    padding-bottom: getVar($sizing, gutter, px, tiny);
+                    margin-bottom: 20px;
+                }
+
+                input[type^="submit"] {
+                    color: getVar($colors, white, full);
+                    background-color: getVar($colors, black, full);
+                    padding: 10px 30px;
+                    font-weight: 600;
+                    border: none;
+                    cursor: pointer;
+                }
+                
+                label span {
+                    color: getVar($colors, black, full);
+                }
+            }
+            ul.columns {
+                position: relative;
+                display: flex;
+                flex-flow: row nowrap;
+                > li.left {
+                    flex: 0 0 47%;
+                    margin-right: 20px;
+                }
+                > li.right {
+                    flex: 0 0 50%;
+                }
+            }
+            ul.locations {
+                display: flex;
+                flex-flow: column wrap;
+                > li {
+                    margin: 0 0 getVar($sizing, gutter, vw, normal) 0;
+
+                    > iframe {
+                        width: 100%;
+                    }
+                }
+            }
+        }  
     }
-    
-    
 }
 
+@media only screen and (max-width: 1280px){
+    section.block__locations {
+        > .container {
+            &.narrow, &.medium, &.wide, &.full {
+                width : getVar($sizing, content, medium);
+            }
+        }
+    }
+}
+@media only screen and (max-width: 960px){
+    section.block__locations {
+        > .container {
+            &.narrow, &.medium, &.wide, &.full {
+                width : getVar($sizing, content, wide);
+            }
+            > ul.columns {
+                flex-flow: column nowrap;
+                > li.left, 
+                > li.right {
+                    flex: 0 0 100%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 640px){
+    section.block__locations {
+        > .container {
+            &.narrow, &.medium, &.wide, &.full {
+                width : getVar($sizing, content, full);
+            }
+        }
+    }
+}

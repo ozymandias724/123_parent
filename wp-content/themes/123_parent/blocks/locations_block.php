@@ -1,86 +1,138 @@
 <?php 
 /**
- * form Block
+ * Locations Block
  * 
  */
-function _get_address($ID)
-{
-    $return = '';
-    $location_content = get_fields($ID);
-    $address = (!empty($location_content['content']['address']) ? $location_content['content']['address'] : '');
-    if(!empty($address))
-    {
-        $postal = '';
-        if(!empty($address['address_is_postal']))
-        {
-            $is_postal = $address['address_is_postal'];
-            if($is_postal)
-            {
-                $postal = '<p>Postal Address:</p>';
+
+    if( !function_exists('return_column_content') ){
+
+        /**
+         * return the content for a column
+         * 
+         * @param array $column
+         * @return void
+         */
+        function return_column_content_location_block( $column ){
+
+            // reset the column return string
+            $return['column'] = '';
+
+            // guide for google map
+            $guide['locations'] = '
+                <li>
+                    <iframe id="gmap_canvas" height="400" width="400" src="https://maps.google.com/maps?key=AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA&q=%s&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </li>
+            ';
+            
+            if( !empty($column) ){
+
+                // each row in this column (acf flex content layouts)
+                foreach( $column as $row ){
+
+                    // check which layout this row is
+                    switch ($row['acf_fc_layout']) {
+
+                        // this row is a locations block
+                        case 'locations':
+
+                            // open the locations wrapper
+                            $return['column'] .='<ul class="locations">';
+
+                            // loop thru location items
+                            if( !empty($row['locations']) ){
+
+                                foreach( $row['locations'] as $location ){
+
+                                    // get this location posts fields
+                                    $fields = get_fields($location['location']->ID);
+                                    
+                                    // shorten using the address field (bad practice tho)
+                                    $address = ( !empty($fields['content']['address']) ? $fields['content']['address'] : '');
+
+                                    $complete_address = array(
+                                        ( !empty( $address['address_street'] ) ? $address['address_street'] : '')
+                                        ,( !empty( $address['address_street'] ) ? $address['address_street'] : '')
+                                        ,( !empty( $address['address_city']  ) ? $address['address_city']  : '')
+                                        ,( !empty( $address['address_state'] ) ? $address['address_state'] : '' )
+                                        ,( !empty( $address['address_postcode'] ) ? $address['address_postcode'] : '' )
+                                    );
+
+                                    $return['column'] .= sprintf(
+                                        $guide['locations']
+                                        ,implode(' ', $complete_address)
+                                    );
+                                }
+                            }
+
+                            // close the locations wrapper
+                            $return['column'] .= '</ul>';
+
+                            break;
+                            case 'form':
+                                $return['column'] .= '<div class="locations__block-form site__fade site__fade-up"><p>Send Us An Email</p>'.do_shortcode('[gravityform id="'.$row['form']['id'].'" title="false" description="false"]').'</div>';
+                                break;
+                        default:
+                            # code...
+                            break;
+                    }
+                }
             }
-        }  
-        $street_1 = (!empty($address['address_street']) ? $address['address_street'] : '');
-        $street_2 = (!empty($address['address_street_2']) ? $address['address_street_2'] : '');
-        $city = (!empty($address['address_city']) ? $address['address_city'] : '');
-        $state = (!empty($address['address_state']) ? $address['address_state'] : '');
-        $postcode = (!empty($address['address_postcode']) ? $address['address_postcode'] : '');
-
-        $format = '
-            <div class="location_address">
-                %s
-                <p>%s %s</p> 
-                <p>%s, %s %s</p>
-            </div>'; 
-        $return = sprintf(
-            $format
-            ,$postal
-            ,$street_1
-            ,$street_2
-            ,$city
-            ,$state
-            ,$postcode
-        );
+            return $return['column'];
+        }
     }
-    
-    return $return; 
-}
-    // empty return string
-    $return = [];
-    $guide = [];
 
-    $return['locations'] = '';
+
+    // set return and guide string arrays
+    $return = [];
     
+    $return['left'] = '';
+    $return['right'] = '';
+    $return['section'] = '';
+
+    $guide = [];
     
-    // empty guide string 
+    // guide string for the section
     $guide['section'] = '
         <section %s class="site__block block__locations">
             <div class="container %s %s" style="%s %s">
                 %s
                 %s
-                %s
-                %s
+                <ul class="columns">
+                    <li class="left">%s</li>
+                    <li class="right">%s</li>
+                </ul>
             </div>
         </section>
     ';
 
+    $return['left'] .= return_column_content_location_block($cB['left']);
+    $return['right'] .= return_column_content_location_block($cB['right']);
+
+    // write all the content we can into the opening until the left/right part
     $return['section'] .= sprintf(
-         $guide['section']
+        $guide['section']
+
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
+
         ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2>'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div>'.$cB['text'].'</div>' : '' )
-        ,( !empty($return['locations']) ? $return['locations'] : '' )
-        ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
 
+        ,( !empty($cB['heading']) ? '<h2 class="block__heading site__fade site__fade-up">'.$cB['heading'].'</h2>' : '' )
+
+        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up">'.$cB['text'].'</div>' : '' )
+
+        ,$return['left']
+        ,$return['right']
     );
-
 
     // echo return string
     echo $return['section'];
 
-    // clear the $cB, $return, $index and $guide vars for the next block
+    // clear the $cB, $return and $guide vars
     unset($cB, $return, $guide);
  ?>

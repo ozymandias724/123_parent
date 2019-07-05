@@ -23,8 +23,18 @@ require('classes/class.customposts.php'); // custom posts
  *
  * @return void
  */
-function get_site_logo()
-{
+
+ 
+
+
+function my_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyCfDxwoigWRerVQMojFfT6nk0MMOYsz8XA');
+}
+
+add_action('acf/init', 'my_acf_init');
+
+function get_site_logo() {
     // look for a 'custom logo'
     $content_logo = '';
     // if we have a custom logo

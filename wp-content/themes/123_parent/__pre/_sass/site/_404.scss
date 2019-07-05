@@ -1,0 +1,33 @@
+@media screen {
+    section.page_404 {
+        div.container {
+            height: 68vh;
+            display: flex;
+            align-items: center;
+            flex-flow: column nowrap;
+            justify-content: center;
+            > h1 {
+                font-size: 25rem;
+                line-height: 23rem;
+            }
+            > h2 {
+                @include fontS-50;
+            }
+            > a.page404_home {
+                background-color: getVar($colors, accent);
+                color: getVar($colors, white, full);
+                @include fontS-24;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px){
+    section.page_404 {
+        div.container {
+            > h1 {
+                font-size: 16rem;
+            }
+        }
+    }
+}

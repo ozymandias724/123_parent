@@ -53,10 +53,12 @@
 
     // grid wrapper
     >ul {
+        
         margin: 0 0 0 0; // stretch box to fill its container
         display: flex; // flexbox
         flex-flow: row wrap; // row wrap
         width: $w; // set width to value passed
+
         // grid items
         >li {
             $i: colWidth($w, $c, $g); // define width
