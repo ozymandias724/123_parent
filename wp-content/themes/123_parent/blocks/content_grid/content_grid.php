@@ -19,7 +19,7 @@
 
             // open up a section,
             // open up container inside section
-            $return['content_grid'] .= '<section><div class="container '.$block['options']['width'].'">';
+            $return['content_grid'] .= '<section class="site__block"><div class="container '.$block['options']['width'].'">';
 
             // check for the heading,
             if( !empty( $block['heading'] ) ){
