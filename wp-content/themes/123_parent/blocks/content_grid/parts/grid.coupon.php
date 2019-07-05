@@ -7,10 +7,12 @@
 
     $guide['content'] = '
         <a class="coupon_print" href="%s?style=" target="_blank">
-            <h5>%s</h5>
-            <div class="coupon_description block__item-body">%s</div>
-            %s
-            %s
+            <div>
+                <h5>%s</h5>
+                <div class="coupon_description block__item-body">%s</div>
+                %s
+                %s
+            </div>
         </a>
     ';
 

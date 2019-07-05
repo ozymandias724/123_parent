@@ -10,12 +10,14 @@
         $return = '';
         $format_coupon = '
             <section class="single__page single_coupon">
-                <div class="grid_coupon container medium">
+                <div class="grid_coupon">
                     <a href="javascript:;">
-                        <h5>%s</h5>
-                        <div class="coupon_description block__item-body">%s</div>
-                        %s
-                        %s
+                        <div>
+                            <h5>%s</h5>
+                            <div class="coupon_details block__item-body">%s</div>
+                            %s
+                            %s
+                        </div>
                     </a>
                 </div>
             </section>
