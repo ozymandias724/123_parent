@@ -4,6 +4,7 @@
  * 
  *   Content Grid 
  */
+
     if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
 
         $return = [];
@@ -21,7 +22,14 @@
             $return['content_grid'] .= '<section><div class="container '.$block['options']['width'].'">';
 
             // check for the heading,
+            if( !empty( $block['heading'] ) ){
+                $return['content_grid'] .= '<h2 class="site__fade site__fade-up block__heading">'.$block['heading'].'</h2>';
+            }
+            
             // check for the sub heading
+            if( !empty( $block['sub_heading'] ) ){
+                $return['content_grid'] .= '<div class="site__fade site__fade-up block__details">'.$block['sub_heading'].'</div>';
+            }
             
             // we are going to loop. check the options.
 
@@ -30,7 +38,10 @@
 
             // loop thru the post results (items are post objects)
             foreach ($block['content'] as $i => $post) {
+
+                // $return['content_grid'] .= '<li class="'.$block['style'].'">';
                 $return['content_grid'] .= '<li>';
+
                 // check which post type this item is
                 switch ($post->post_type) {
                     case 'coupon':
@@ -47,11 +58,21 @@
                         # code...
                         break;
                 }
+
                 $return['content_grid'] .= '</li>';
                 
             }
 
-            $return['content_grid'] .= '</ul></div></div></section>';
+            $return['content_grid'] .= '</ul>';
+
+            // check for the view all button
+            if( !empty( $block['button'] ) ){
+                $return['content_grid'] .= '<a class="site__button" href="'.$block['button']['url'].'">'.$block['button']['title'].'</a>';
+            }
+            
+            // close the content grid 
+            $return['content_grid'] .= '</div></div></section>';
+
             echo $return['content_grid'];
         }
 
