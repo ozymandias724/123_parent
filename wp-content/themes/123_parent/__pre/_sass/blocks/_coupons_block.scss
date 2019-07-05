@@ -1,78 +1,71 @@
 //
-//
-//
+// 
+// 
 @media print, screen {
     //
-    ul {
-        >li {
-            &.coupons__one,
-            &.coupons__two,
-            &.coupons__three,
-            &.coupons__four {
-                padding: 10px;
-                background-color: getVar($gustavo, colors, gray7);
-                border-radius: 20px;
-                border: 3px solid transparent;
-                list-style: none;
-                font-family: "Montserrat", serif;
-                text-align: center;
+    //
+    div.grid_coupon {
+        font-family: "Montserrat", serif;
+        text-align: center;
+        padding: 10px;
+        background-color: getVar($gustavo, colors, gray7);
+        border-radius: 20px;
+        border: 3px solid transparent;
 
-                &:hover,
-                &:active,
-                &:focus {
-                    border: 3px solid getVar($gustavo, colors, gray1);
-                }
+        &:hover,
+        &:active,
+        &:focus {
+            border: 3px solid getVar($gustavo, colors, gray1);
+        }
 
-                >a {
-                    text-decoration: none;
-                    padding: 20px;
-                    border-radius: 20px;
-                    border: 6px dashed getVar($colors, white, full);
-                    display: flex;
-                    flex-flow: column nowrap;
-                    align-items: center;
-                    justify-content: center;
-                    color: inherit;
-                }
+        >a {
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 20px;
+            border: 6px dashed getVar($colors, white, full);
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+        }
 
-                h5 {
-                    margin: 10px 0 10px;
-                    @include fontS-40;
-                    font-weight: 900;
-                    line-height: 4.3rem;
-                    letter-spacing: -1px;
-                }
+        h5 {
+            margin: 10px;
+            @include fontS-40;
+            font-weight: 900;
+            line-height: 4.3rem;
+        }
 
-                .coupon_description {
-                    margin-bottom: 10px;
-                }
+        .coupon_description {
+            margin-bottom: 10px;
+        }
 
-                .coupon_code {
-                    background: getVar($colors, white, full);
-                    padding: 0 25px;
-                    border-radius: 20px;
-                    font-weight: 700;
-                    line-height: 40px;
-                    display: inline-block;
-                    >span {
-                        text-transform: uppercase;
-                        font-weight: 600;
-                    }
-                }
-
-                .coupon_expiration {
-                    display: none;
-                    font-weight: 400;
-                    @include fontS-14;
-                }
-
-                .coupon_code, 
-                .coupon_expiration {
-                    margin: 5px 0;
-                }
+        .coupon_code {
+            background: getVar($colors, white, full);
+            padding: 0 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            line-height: 40px;
+            display: inline-block;
+            >span {
+                text-transform: uppercase;
+                font-weight: 600;
             }
         }
+
+        .coupon_expiration {
+            display: none;
+            font-weight: 400;
+            @include fontS-14;
+        }
+
+        .coupon_code, 
+        .coupon_expiration {
+            margin: 5px 0;
+        }
     }
+
     
     ul {
         > li {

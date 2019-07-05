@@ -5,6 +5,7 @@
 .slick-slider {
   position: relative;
   display: block;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -12,6 +13,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -33,6 +35,10 @@
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -115,6 +121,8 @@
   top: 50%;
   margin-top: -10px\9 ;
   /*lte IE 8*/
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
@@ -846,8 +854,7 @@ h6 {
   }
 
   img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     height: auto;
   }
 }
@@ -2369,8 +2376,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   .mobilefooter > div:nth-of-type(1) > a > img {
     height: auto;
     max-width: 200px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .mobilefooter > div:nth-of-type(1) > div {
     display: flex;
@@ -2494,6 +2500,7 @@ header#opt_header_ten > div:first-of-type .site__social-media li a:focus {
   }
 
   footer.mobilefooter.invertlogo > div > a > img {
+    -webkit-filter: invert(100%);
     filter: invert(100%);
   }
 }
@@ -3148,8 +3155,7 @@ section.hero#hero_slider > div#slick_slider_hero .slick-track {
     cursor: pointer;
   }
   section.hero#hero_slider .slider_img {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     position: relative;
     top: 0;
     left: 50%;
@@ -3960,8 +3966,6 @@ main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > d
     z-index: 2;
     border: 5px solid #ffffff;
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.3);
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     margin: 0 auto;
     overflow: hidden;
@@ -4163,8 +4167,6 @@ main#cpt_page_blog section.mod__featured_grid div.container div.post_sidebar > d
     border: 3px solid #c2c2c2;
   }
   section.tpl_page_service > .container.services__one .site__grid > ul > li > a > div:first-of-type {
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     position: relative;
     z-index: 2;
@@ -4463,8 +4465,6 @@ section.tpl_page_service > .container.services__one .site__grid > ul > li > a > 
   }
   section.tpl_page_service > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 20px 10px 20px 10px;
-    min-height: -webkit-min-content;
-    min-height: -moz-min-content;
     min-height: min-content;
     border-top: none;
     border-left: 4px solid lightgray;
@@ -4477,8 +4477,6 @@ section.tpl_page_service > .container.services__one .site__grid > ul > li > a > 
     border-top: none;
     border-right: 4px solid lightgray;
     order: 2;
-    min-height: -webkit-min-content;
-    min-height: -moz-min-content;
     min-height: min-content;
   }
   section.tpl_page_service > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
@@ -7528,8 +7526,6 @@ section.single__page > .container.full .site__grid > ul > li:nth-child(1n) {
     border: 3px solid #c2c2c2;
   }
   section.block__services > .container.services__one .site__grid > ul > li > a > div:first-of-type {
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     position: relative;
     z-index: 2;
@@ -7828,8 +7824,6 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(odd) > a > div:last-of-type {
     padding: 20px 10px 20px 10px;
-    min-height: -webkit-min-content;
-    min-height: -moz-min-content;
     min-height: min-content;
     border-top: none;
     border-left: 4px solid lightgray;
@@ -7842,8 +7836,6 @@ section.block__services > .container.services__one .site__grid > ul > li > a > d
     border-top: none;
     border-right: 4px solid lightgray;
     order: 2;
-    min-height: -webkit-min-content;
-    min-height: -moz-min-content;
     min-height: min-content;
   }
   section.site__block.block__services > .container.services__three > div:last-of-type > ul > li:nth-child(even) > a > div:last-of-type {
@@ -8191,19 +8183,18 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
   }
 }
 @media print, screen {
-  ul > li.coupons__one, ul > li.coupons__two, ul > li.coupons__three, ul > li.coupons__four {
+  div.grid_coupon {
+    font-family: "Montserrat", serif;
+    text-align: center;
     padding: 10px;
     background-color: #dedede;
     border-radius: 20px;
     border: 3px solid transparent;
-    list-style: none;
-    font-family: "Montserrat", serif;
-    text-align: center;
   }
-  ul > li.coupons__one:hover, ul > li.coupons__one:active, ul > li.coupons__one:focus, ul > li.coupons__two:hover, ul > li.coupons__two:active, ul > li.coupons__two:focus, ul > li.coupons__three:hover, ul > li.coupons__three:active, ul > li.coupons__three:focus, ul > li.coupons__four:hover, ul > li.coupons__four:active, ul > li.coupons__four:focus {
+  div.grid_coupon:hover, div.grid_coupon:active, div.grid_coupon:focus {
     border: 3px solid #c2c2c2;
   }
-  ul > li.coupons__one > a, ul > li.coupons__two > a, ul > li.coupons__three > a, ul > li.coupons__four > a {
+  div.grid_coupon > a {
     text-decoration: none;
     padding: 20px;
     border-radius: 20px;
@@ -8214,18 +8205,17 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     justify-content: center;
     color: inherit;
   }
-  ul > li.coupons__one h5, ul > li.coupons__two h5, ul > li.coupons__three h5, ul > li.coupons__four h5 {
-    margin: 10px 0 10px;
+  div.grid_coupon h5 {
+    margin: 10px;
     font-size: 4rem;
     line-height: 5.4rem;
     font-weight: 900;
     line-height: 4.3rem;
-    letter-spacing: -1px;
   }
-  ul > li.coupons__one .coupon_description, ul > li.coupons__two .coupon_description, ul > li.coupons__three .coupon_description, ul > li.coupons__four .coupon_description {
+  div.grid_coupon .coupon_description {
     margin-bottom: 10px;
   }
-  ul > li.coupons__one .coupon_code, ul > li.coupons__two .coupon_code, ul > li.coupons__three .coupon_code, ul > li.coupons__four .coupon_code {
+  div.grid_coupon .coupon_code {
     background: #ffffff;
     padding: 0 25px;
     border-radius: 20px;
@@ -8233,21 +8223,18 @@ section.site__block.block__galleries > .container .tabsandgrids_container.sideba
     line-height: 40px;
     display: inline-block;
   }
-  ul > li.coupons__one .coupon_code > span, ul > li.coupons__two .coupon_code > span, ul > li.coupons__three .coupon_code > span, ul > li.coupons__four .coupon_code > span {
+  div.grid_coupon .coupon_code > span {
     text-transform: uppercase;
     font-weight: 600;
   }
-  ul > li.coupons__one .coupon_expiration, ul > li.coupons__two .coupon_expiration, ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_expiration {
+  div.grid_coupon .coupon_expiration {
     display: none;
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.8rem;
   }
-  ul > li.coupons__one .coupon_code,
-ul > li.coupons__one .coupon_expiration, ul > li.coupons__two .coupon_code,
-ul > li.coupons__two .coupon_expiration, ul > li.coupons__three .coupon_code,
-ul > li.coupons__three .coupon_expiration, ul > li.coupons__four .coupon_code,
-ul > li.coupons__four .coupon_expiration {
+  div.grid_coupon .coupon_code,
+div.grid_coupon .coupon_expiration {
     margin: 5px 0;
   }
 
@@ -8328,8 +8315,6 @@ ul > li.coupons__four .coupon_expiration {
     z-index: 2;
     border: 5px solid #ffffff;
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.3);
-    width: -webkit-min-content;
-    width: -moz-min-content;
     width: min-content;
     margin: 0 auto;
     overflow: hidden;
@@ -9769,3 +9754,5 @@ section.block__locations > .container > ul.columns > li.right {
     width: 92vw;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
