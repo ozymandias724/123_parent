@@ -4,23 +4,19 @@
  * Template Post Type: coupon
  */
 
-    $fields = get_fields($post->ID);
+    $fields = get_fields( $post->ID );
 
-    function get_coupon($fields){
+    function get_coupon( $fields ){
         $return = '';
         $format_coupon = '
             <section class="single__page single_coupon">
-                <div class="container medium">
-                    <ul>
-                        <li class="coupons__'.$_GET['style'].'">
-                            <a href="javascript:;">
-                                <h5>%s</h5>
-                                <div class="coupon_description block__item-body">%s</div>
-                                %s
-                                %s
-                            </a>
-                        </li>
-                    </ul>
+                <div class="grid_coupon container medium">
+                    <a href="javascript:;">
+                        <h5>%s</h5>
+                        <div class="coupon_description block__item-body">%s</div>
+                        %s
+                        %s
+                    </a>
                 </div>
             </section>
         ';
