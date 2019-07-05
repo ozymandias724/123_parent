@@ -3,11 +3,11 @@
     "title": "Coupon Page",
     "fields": [
         {
-            "key": "field_5d1120e4f32ac",
-            "label": "Width",
-            "name": "width",
-            "type": "select",
-            "instructions": "",
+            "key": "field_5d18049c384de",
+            "label": "Content Above",
+            "name": "content_above",
+            "type": "flexible_content",
+            "instructions": "(optional)<br>\r\nAdd content above the archive of coupons",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,28 +15,80 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "narrow": "Narrow",
-                "medium": "Medium",
-                "wide": "Wide",
-                "full": "Full"
+            "layouts": {
+                "5d1804a4e2b5d": {
+                    "key": "5d1804a4e2b5d",
+                    "name": "heading_block",
+                    "label": "Heading Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d18f20d384df",
+                            "label": "Heading Block",
+                            "name": "heading_block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5cacf15da8346"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d18f22a384e0": {
+                    "key": "layout_5d18f22a384e0",
+                    "name": "copy_block",
+                    "label": "Copy Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d18f22f384e1",
+                            "label": "Copy Block",
+                            "name": "copy_block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5cacee8aca477"
+                            ],
+                            "display": "seamless",
+                            "layout": "",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
             },
-            "default_value": [
-                "medium"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
         },
         {
-            "key": "field_5d111b3ecb47a",
-            "label": "Heading",
-            "name": "heading",
-            "type": "text",
-            "instructions": "",
+            "key": "field_5d1802de8b703",
+            "label": "Coupon Archive",
+            "name": "coupon_archive",
+            "type": "group",
+            "instructions": "This page will automatically display an archive of all active coupons that have not expired.\r\nThe first item will be the soonest to expire, in ascending order by date.\r\nIf you wish to display any additional content above or below the grid use the content fields above and below this group.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -44,18 +96,74 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d111e4521724",
+                    "label": "Style",
+                    "name": "style",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "one": "One",
+                        "two": "Two",
+                        "three": "Three",
+                        "four": "Four"
+                    },
+                    "default_value": [
+                        "one"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5d18fbd5b75b0",
+                    "label": "Width",
+                    "name": "width",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "narrow": "Narrow",
+                        "normal": "Normal",
+                        "wide": "Wide",
+                        "full": "Full"
+                    },
+                    "default_value": [
+                        "normal"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
         },
         {
-            "key": "field_5d111b99cb47b",
-            "label": "Heading Alignment",
-            "name": "heading_alignment",
-            "type": "select",
-            "instructions": "",
+            "key": "field_5d18f244384e2",
+            "label": "Content Below",
+            "name": "content_below",
+            "type": "flexible_content",
+            "instructions": "Add content below the coupon grid",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -63,68 +171,73 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "left": "Left",
-                "center": "Center",
-                "right": "Right"
+            "layouts": {
+                "5d1804a4e2b5d": {
+                    "key": "5d1804a4e2b5d",
+                    "name": "heading_block",
+                    "label": "Heading Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d18f2689bb82",
+                            "label": "Heading Block",
+                            "name": "heading_block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5cacf15da8346"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d18f22a384e0": {
+                    "key": "layout_5d18f22a384e0",
+                    "name": "copy_block",
+                    "label": "Copy Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d18f27c9bb83",
+                            "label": "Copy Block",
+                            "name": "copy_block",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5cacee8aca477"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
             },
-            "default_value": [
-                "center"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5d111bcecb47c",
-            "label": "Text",
-            "name": "text",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_5d111e4521724",
-            "label": "Style",
-            "name": "style",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "one": "One",
-                "two": "Two",
-                "three": "Three",
-                "four": "Four"
-            },
-            "default_value": [
-                "one"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
@@ -146,5 +259,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1561404260
+    "modified": 1562021999
 }

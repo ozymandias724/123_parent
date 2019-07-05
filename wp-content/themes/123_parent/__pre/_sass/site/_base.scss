@@ -12,6 +12,11 @@
         font-weight: 300;
         @include fontS-16;
         letter-spacing: 0.33px;
+        display: flex;
+        flex-flow: column nowrap;
+        > main {
+            flex: 1;
+        }
 
         &.js__noscroll {
             overflow: hidden;

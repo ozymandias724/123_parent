@@ -792,6 +792,11 @@ img {
     font-size: 1.6rem;
     line-height: 2.8rem;
     letter-spacing: 0.33px;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  body > main {
+    flex: 1;
   }
   body.js__noscroll {
     overflow: hidden;
