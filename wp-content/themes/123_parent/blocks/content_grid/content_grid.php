@@ -34,7 +34,7 @@
             // we are going to loop. check the options.
 
             // write the container for a site grid w/ the width and colcount on it
-            $return['content_grid'] .= '<div class="site__grid cols-'.$block['options']['column_count'].'"><ul>';
+            $return['content_grid'] .= '<div class="site__flex_grid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul>';
 
             // loop thru the post results (items are post objects)
             foreach ($block['content'] as $i => $post) {

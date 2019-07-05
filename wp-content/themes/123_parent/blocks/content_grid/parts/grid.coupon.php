@@ -1,26 +1,36 @@
 <?php 
 /**
  * Coupon Grid
-*/
+*/  
 
-    $content = '';
+    $return['content'] = '';
+
+    $guide['content'] = '
+        <a class="coupon_print" href="%s?style=" target="_blank">
+            <h5>%s</h5>
+            <div class="coupon_description block__item-body">%s</div>
+            %s
+            %s
+        </a>
+    ';
 
     $the_fields = get_fields( $post->ID );
 
-    $content .= '<a href="'.get_permalink( $post->ID ).'">';
+    $return['content'] .= sprintf(
 
-    $content .= '<p>'.$post->post_title.'</p>';
+        $guide['content']
+        ,get_permalink($post->ID)
+        ,$post->post_title
+        ,(!empty($the_fields['details']) ? $the_fields['details'] : '')
+        ,(!empty($the_fields['code']) ? '<p class="coupon_code">Code: <span>'.$the_fields['code'].'</span></p>' : '')
+        ,(!empty($the_fields['expiration']) ? '<p class="coupon_expiration">Expires: <span>'.$the_fields['expiration'].'</span></p>' : '')
 
-    $content .= ( !empty( $the_fields['details'] ) ? '<div class="coupon_details block__item-body">'.$the_fields['details'].'</div>' : '' );
-
-    $content .= ( !empty( $the_fields['code'] ) ? '<p class="coupon_code">Code: <span>'.$the_fields['code'].'</span></p>' : '' );
-
-    $content .= ( !empty( $the_fields['expiration'] ) ? '<p class="coupon_expiration">Expires: <span>'.$the_fields['expiration'].'</span></p>' : '' );
+    );
 
 
 ?>
 <div class="grid_coupon">
 <?php
-    echo $content;
+    echo $return['content'];
 ?>
 </div>
