@@ -1,0 +1,75 @@
+// 
+// 
+// 
+@mixin flexboxGrid($cols: 3, $gutter: 30px, $align: stretch, $aspect: false, $grow : 0, $shrink: 1) {
+
+    // calculate flex basis (width) of a column
+    // supports all kinds of mixed unit types ( % column w/ px gutter )
+    // in the future, perhaps check if mixed units are present before using calc
+    $basis: calc((100% - (#{$cols} - 1) * #{$gutter}) / #{$cols});
+
+    >ul.flexboxGrid {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: $align;
+
+        >li {
+            // width: #{$basis};            // enable this to prevent a bug where the columns dont end up the correct width (child element has margin or something)
+            flex: $grow $shrink #{$basis};
+            margin: 0 $gutter $gutter 0;
+            overflow: hidden;
+
+            &:nth-child(n+1) {
+                margin: 0 $gutter $gutter 0;
+            }
+
+            &:nth-child(#{$cols}n) {
+                margin-right: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            // if 1 col is passed (for mobile)
+            @if #{$cols}=='1' {
+                flex: 1 0 100%;
+                margin: 0 0 $gutter 0;
+
+                &:last-child {
+                    margin: 0 0 0 0;
+                }
+            }
+
+            @if $align==true {
+                @include aspectRatio(1, 1);
+            }
+        }
+    }
+}
+
+//
+// 
+// 
+@mixin aspectRatio($x : 1, $y : 1) {
+    $ratio: ($y / $x) * 100%;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: $ratio;
+    }
+
+    >*:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    >*:not(:first-child) {
+        display: none;
+    }
+}

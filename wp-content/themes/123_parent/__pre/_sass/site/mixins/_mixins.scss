@@ -1,163 +1,10 @@
-// 
-// 
-// 
-@mixin flexboxGrid($cols: 3, $gutter: 30px, $align: stretch, $aspect: false, $grow : 0, $shrink: 1){
-
-    // calculate flex basis (width) of a column
-    // supports all kinds of mixed unit types ( % column w/ px gutter )
-    // in the future, perhaps check if mixed units are present before using calc
-    $basis: calc((100% - (#{$cols} - 1) * #{$gutter}) / #{$cols});
-
-    > ul.flexboxGrid {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: $align;
-
-        > li {
-            // width: #{$basis};            // enable this to prevent a bug where the columns dont end up the correct width (child element has margin or something)
-            flex: $grow $shrink #{$basis};
-            margin: 0 $gutter $gutter 0;
-            overflow: hidden;
-
-            &:nth-child(n+1) {
-                margin: 0 $gutter $gutter 0;
-            }
-
-            &:nth-child(#{$cols}n) {
-                margin-right: 0;
-            }
-
-            &:last-child {
-                margin-right: 0;
-            }
-
-            // if 1 col is passed (for mobile)
-            @if #{$cols}=='1' {
-                flex: 1 0 100%;
-                margin: 0 0 $gutter 0;
-
-                &:last-child {
-                    margin: 0 0 0 0;
-                }
-            }
-
-            @if $align==true {
-                @include aspectRatio(1, 1);
-            }
-        }
-    }
-}
-
-//
-// 
-// 
-@mixin aspectRatio($x : 1, $y : 1) {
-    $ratio: ($y / $x) * 100%;
-    position: relative;
-
-    &:before {
-        content: '';
-        display: block;
-        padding-top: $ratio;
-    }
-
-    >*:first-child {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
-
-    >*:not(:first-child) {
-        display: none;
-    }
-}
+@import 'includes/mixins.utility';
+@import 'includes/_mixins.grid';
+@import 'includes/mixins.hero-alignment';
 
 
 
-
-
-
-
-
-@mixin heroAlignment() {
-    &.topleft {
-        justify-content: flex-start;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    &.topcenter {
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    &.topright {
-        justify-content: flex-start;
-        align-items: flex-end;
-        text-align: right;
-    }
-
-    &.middleleft {
-        justify-content: center;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    &.middlecenter {
-        justify-content: center;
-        align-items: center;
-    }
-
-    &.middleright {
-        justify-content: center;
-        align-items: flex-end;
-        text-align: right;
-    }
-
-    &.bottomleft {
-        justify-content: flex-end;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    &.bottomcenter {
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    &.bottomright {
-        justify-content: flex-end;
-        align-items: flex-end;
-        text-align: right;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// CUT THIS AND REPLACE WITH FLEXBOXGRID
 @mixin flexGrid($w, $c, $g, $s : false) {
 
     // grid wrapper
@@ -202,31 +49,8 @@
     }
 }
 
-
-
-
-@mixin centerer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin bgimage {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-@mixin clearfix {
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
+// 
+// TURN THIS INTO A CLASS
 @mixin site__bgimage($z : false, $g : false) {
     overflow: hidden;
     position: relative;
@@ -272,7 +96,7 @@
     }
 }
 
-// updated, production worthy gridLayout mixin
+// CUT THIS AND REPLACE WITH FLEXBOXGRID
 @mixin gridLayout($w, $c, $g, $s) {
     >ul {
         // display: inline-block;
@@ -330,8 +154,3 @@
 }
 
 
-
-// this will set column widths for grid items
-@function colWidth($w, $c, $g) {
-    @return (($w - (($c - 1) * $g)) / $c);
-}

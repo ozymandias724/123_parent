@@ -20,7 +20,13 @@
         &.normal {
             > main {
                 margin: 0 auto;
-                max-width: 1600px !important;
+                max-width: 1600px;
+            }
+        }
+        &.full {
+            >main {
+                margin: 0 auto;
+                max-width: none;
             }
         }
 

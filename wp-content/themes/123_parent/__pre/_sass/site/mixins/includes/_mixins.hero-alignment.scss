@@ -1,0 +1,52 @@
+@mixin heroAlignment() {
+    &.topleft {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &.topcenter {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &.topright {
+        justify-content: flex-start;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    &.middleleft {
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &.middlecenter {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.middleright {
+        justify-content: center;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    &.bottomleft {
+        justify-content: flex-end;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &.bottomcenter {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &.bottomright {
+        justify-content: flex-end;
+        align-items: flex-end;
+        text-align: right;
+    }
+}

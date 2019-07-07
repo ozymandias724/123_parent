@@ -1,0 +1,23 @@
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin bgimage {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+// this will set column widths for grid items
+@function colWidth($w, $c, $g) {
+    @return (($w - (($c - 1) * $g)) / $c);
+}
