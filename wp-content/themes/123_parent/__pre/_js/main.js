@@ -30,14 +30,14 @@ $(document).ready(function()
     Coupons = {
 
         _init : function(){
-            Coupons.printCoupon();
+            Coupons.printCoupon(); 
         }
 
         ,printCoupon : function(){
             
             if( $('section.single_coupon').length ){
                 window.print();
-                window.close();
+                //window.close();
                 return true;
            }
         }
