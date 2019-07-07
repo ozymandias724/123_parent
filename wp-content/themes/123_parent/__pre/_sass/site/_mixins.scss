@@ -1,5 +1,76 @@
+//
+//
+//
+@mixin flexboxGrid($c, $g, $ai : stretch, $sq : false, $grow : 0, $shrink : 1) {
 
-@mixin heroAlignment(){
+    // calc col width
+    $basis: calc((100% - (#{$c} - 1) * #{$g}) / #{$c});
+
+    // flexbox grid
+    >ul {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: $ai;
+
+        // flex-basis col width
+        >li {
+            flex: $grow $shrink #{$basis};
+            // gutter
+            margin: 0 $g $g 0;
+
+            &:nth-child(n+1){ margin: 0 $g $g 0;}
+            &:nth-child(#{$c}n) { margin-right: 0; }
+            &:last-child{ margin-right: 0; }
+
+            // if 1 col is passed (for mobile)
+            @if #{$c} == '1' {
+                flex: 1 0 100%;
+                margin: 0 0 $g 0;
+
+                &:last-child {
+                    margin: 0 0 0 0;
+                }
+            }
+
+            @if $sq == true {
+                @include aspectRatio(1, 1);
+            }
+        }
+    }
+}
+
+//
+@mixin aspectRatio($x : 1, $y : 1) {
+    $r: ($y / $x) * 100%;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: $r;
+    }
+
+    >*:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    >*:not(:first-child) {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+@mixin heroAlignment() {
     &.topleft {
         justify-content: flex-start;
         align-items: flex-start;
@@ -16,20 +87,24 @@
         align-items: flex-end;
         text-align: right;
     }
-    &.middleleft{
+
+    &.middleleft {
         justify-content: center;
         align-items: flex-start;
         text-align: left;
     }
+
     &.middlecenter {
         justify-content: center;
         align-items: center;
     }
+
     &.middleright {
         justify-content: center;
         align-items: flex-end;
         text-align: right;
     }
+
     &.bottomleft {
         justify-content: flex-end;
         align-items: flex-start;
@@ -50,6 +125,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @mixin flexGrid($w, $c, $g, $s : false) {
 
     // grid wrapper
@@ -64,7 +161,8 @@
             position: relative;
             $i: colWidth($w, $c, $g); // define width
             width: $i; // set width
-            margin: 0 getVar($sizing, gutter, vw, normal) getVar($sizing, gutter, vw, normal) 0; // default margins for all items
+            margin: 0 $g $g 0; // default margins for all items
+
             // overflow: hidden;
             @if $s==true {
                 height: $i;
@@ -75,7 +173,7 @@
             }
 
             &:nth-child(n+1) {
-                margin: 0 getVar($sizing, gutter, vw, normal) getVar($sizing, gutter, vw, normal) 0; // default margins re-set for the 'next' item
+                margin: 0 $g $g 0; // default margins re-set for the 'next' item
             }
 
             &:nth-child(#{$c}n) {
@@ -102,37 +200,44 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 @mixin bgimage {
-   background-size: cover;
-   background-position: center center;
-   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 @mixin clearfix {
     &:after {
         content: "";
-        display: table; 
+        display: table;
         clear: both;
     }
 }
 
 
-@mixin site__bgimage( $z : false, $g : false){
+@mixin site__bgimage($z : false, $g : false) {
     overflow: hidden;
     position: relative;
+
     .image {
         @include bgimage;
         transform: scale(1);
         transition: transform 0.4s ease;
     }
-    @if ($z == true) {
-        &:hover, &:active, &:focus {
+
+    @if ($z==true) {
+
+        &:hover,
+        &:active,
+        &:focus {
             .image {
                 transform: scale(1.2);
             }
         }
     }
-    @if($g == true){
+
+    @if($g==true) {
         &:after {
             position: absolute;
             top: 0;
@@ -158,19 +263,19 @@
 
 // updated, production worthy gridLayout mixin
 @mixin gridLayout($w, $c, $g, $s) {
-    > ul {
+    >ul {
         // display: inline-block;
         width: $w;
         margin: 0 auto 0 auto;
         @include clearfix;
-        
+
         >li {
             $d: colWidth($w, $c, $g);
             width: $d;
             height: auto;
             float: left;
-            
-            > a {
+
+            >a {
                 display: block;
                 width: 100%;
             }
@@ -183,16 +288,18 @@
                 background-position: center center;
                 background-repeat: no-repeat;
             }
-            
+
             .image,
             .block {
                 @if $s==true {
                     height: $d;
+
                     &.rectangular_block {
                         height: (colWidth($w, $c, $g) / 1.6);
                     }
+
                     &.less_size_block {
-                        $d : ($d - (2.4 * $g));
+                        $d: ($d - (2.4 * $g));
                         height: $d;
                         width: $d;
                     }

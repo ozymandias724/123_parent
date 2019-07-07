@@ -34,6 +34,7 @@
         (!empty(get_field('header', 'options')['long_scroll']) ? 'js__smoothscroll' : '')
         ,$selected_header
         ,$banner_popup_status
+        ,'normal'
     );
 ?>
 

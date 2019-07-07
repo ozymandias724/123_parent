@@ -17,6 +17,12 @@
         > main {
             flex: 1;
         }
+        &.normal {
+            > main {
+                margin: 0 auto;
+                max-width: 1600px !important;
+            }
+        }
 
         &.js__noscroll {
             overflow: hidden;
