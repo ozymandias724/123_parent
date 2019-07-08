@@ -1,6 +1,6 @@
 <?php 
 /**
- * Coupon Grid
+* Coupon item
 */  
 
     $return['content'] = '';
