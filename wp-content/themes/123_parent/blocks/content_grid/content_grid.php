@@ -43,9 +43,9 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
 
             // check which post type this item is
             switch ($post->post_type) {
-                case 'coupon':
+                case 'post':
                     ob_start();
-                    include('parts/grid.blog-posts.php');
+                    include('parts/grid.blog-post.php');
                     $return['content_grid'] .= ob_get_clean();
                     break;
                 case 'coupon':

@@ -37,7 +37,7 @@ $(document).ready(function()
             
             if( $('section.single_coupon').length ){
                 window.print();
-                //window.close();
+                window.close();
                 return true;
            }
         }
