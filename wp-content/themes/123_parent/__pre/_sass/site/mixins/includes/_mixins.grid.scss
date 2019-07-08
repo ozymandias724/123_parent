@@ -61,6 +61,7 @@
         padding-top: $ratio;
     }
 
+    // whatever the first child is is considered the 'content'
     >*:first-child {
         position: absolute;
         top: 0;
@@ -68,7 +69,8 @@
         height: 100%;
         width: 100%;
     }
-
+    // anything other than the first child is going to break this; and we hide it here
+    // ideally, this is a failsafe and there will only be a 'content' wrapper at this level
     >*:not(:first-child) {
         display: none;
     }
