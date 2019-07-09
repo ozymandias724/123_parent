@@ -38,7 +38,6 @@
 
     if( !empty( $the_fields['menu_sections'] ) ){
 
-        // open the wrapper for the menu sections
         $return['menu_sections'] = '<ul class="menu_section">';
             
         foreach( $the_fields['menu_sections'] as $i => $section ){
@@ -78,7 +77,7 @@
         $return['content'] .= $return['menu_sections'];
     }
 
-?>
+?> 
 <div class="grid_food_menu grid_item">
 <?php 
     echo $return['content'];
