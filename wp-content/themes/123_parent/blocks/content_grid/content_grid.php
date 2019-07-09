@@ -55,7 +55,7 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
                     break;
                 case 'food_menus':
                     ob_start();
-                    include('parts/grid.food-menus.php');
+                    include('parts/grid.food-menu.php');
                     $return['content_grid'] .= ob_get_clean();
                     break;
                 case 'locations':
@@ -75,7 +75,7 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
                     break;
                 case 'testimonials':
                     ob_start();
-                    include('parts/grid.testimonials.php');
+                    include('parts/grid.testimonial.php');
                     $return['content_grid'] .= ob_get_clean();
                     break;
                 default:
