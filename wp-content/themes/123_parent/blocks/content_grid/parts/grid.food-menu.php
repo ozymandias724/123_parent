@@ -34,13 +34,7 @@
             
         foreach( $the_fields['menu_sections'] as $i => $section ){
 
-            if( $the_fields['style'] !== 'menu_text_sub_group_half' ){
-
-                $return['header_format'] = '<h2><span>%s</span></h2>%s';
-            }else{
-
-                $return['header_format'] = '<div><h2><span>%s</span></h2>%s';
-            }
+            $return['header_format'] = '<div><h2><span>%s</span></h2>%s';
 
             $return['menu_sections'] .= sprintf(
                 $return['header_format'] 
@@ -54,14 +48,8 @@
 
                 $return['menu_sections'] .= get_menu_items( $the_fields['style'], $item );
             }
-
-            if( $the_fields['style'] !== 'menu_text_sub_group_half' ){
-                
-                $return['menu_sections'] .= '</ul>';
-            }else{
-                
-                $return['menu_sections'] .= '</ul></div>';
-            }
+    
+            $return['menu_sections'] .= '</ul></div>';
         }
 
         $return['menu_sections'] .= '</ul>';
