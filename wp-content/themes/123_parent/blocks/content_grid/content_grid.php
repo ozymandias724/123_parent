@@ -33,6 +33,7 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
         // we are going to loop. check the options.
 
         // write the container for a site grid w/ the width and colcount on it
+        //$return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid '.$block['style'].'">';
         $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid">';
 
         // loop thru the post results (items are post objects)
