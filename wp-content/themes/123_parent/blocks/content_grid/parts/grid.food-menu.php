@@ -22,21 +22,13 @@
     $guide['menu_text_sub_group_half'] = '';
 
 
-    // if( $the_fields['style'] == 'menu_photo_tiled_x3'){
-
-    // }else if( $the_fields['style'] == 'menu_text_half' ){
-        
-    // }else if( $the_fields['style'] == 'menu_photo_list' ){
-
-    // }else if( $the_fields['style'] == 'menu_text_list_left' ){
-
-    // }else if( $the_fields['style'] == 'menu_text_list_center' ){
-
-    // }else if( $the_fields['style'] == 'menu_text_sub_group_half' ){
-
-    // }
-
     if( !empty( $the_fields['menu_sections'] ) ){
+
+        // $return['content'] = '<div id="tabs_style_" class="tabs">';
+
+        // $return['content'] .= '<ul class="button_group">';
+
+        // $return['content'] .= '<div class="menu_area tabs_style_">';
 
         $return['menu_sections'] = '<ul class="menu_section">';
             
@@ -56,7 +48,7 @@
                 ,( !empty( $section['description'] )? $section['description'] : '')
             );
 
-            $return['menu_sections'] .= '<ul class="menu_items>';
+            $return['menu_sections'] .= '<ul class="menu_items">';
 
             foreach( $section['item'] as $i => $item ){
 
