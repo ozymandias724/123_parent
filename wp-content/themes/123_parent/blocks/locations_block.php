@@ -4,7 +4,7 @@
  * 
  */
 
-    if( !function_exists('return_column_content') ){
+    if( !function_exists('return_column_content_location_block') ){
 
         /**
          * return the content for a column
@@ -15,7 +15,7 @@
         function return_column_content_location_block( $column ){
 
             // reset the column return string
-            $return['column'] = '';
+            $return['column'] = '';  
 
             // guide for google map
             $guide['locations'] = '
@@ -114,17 +114,17 @@
 
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
 
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
 
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
 
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
 
-        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['foreground_color'] ) ? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
 
-        ,( !empty($cB['heading']) ? '<h2 class="block__heading site__fade site__fade-up">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['heading_options']['heading']) ? '<h2 class="block__heading site__fade site__fade-up" style="'.( !empty( $cB['heading_options']['heading_alignment'] )? 'text-align:'.$cB['heading_options']['heading_alignment'].';' : '' ).'">'.$cB['heading_options']['heading'].'</h2>' : '' )
 
-        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up">'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading_options']['sub_heading']) ? '<div class="block__details site__fade site__fade-up">'.$cB['heading_options']['sub_heading'].'</div>' : '' )
 
         ,$return['left']
         ,$return['right']
