@@ -123,8 +123,8 @@
         ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' : '' )                                                    // container has bg color class
         ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['options']['foreground_color'] ) ? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 class="block__heading">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['sub_heading']) ? '<p class="block__details">'.$cB['sub_heading'].'</p>' : '' )
+        ,( !empty($cB['heading_options']['heading']) ? '<h2 class="block__heading" style="'.( !empty( $cB['heading_options']['heading_alignment'] )? 'text-align:'.$cB['heading_options']['heading_alignment'].';' : '' ).'">'.$cB['heading_options']['heading'].'</h2>' : '' )
+        ,( !empty($cB['heading_options']['sub_heading']) ? '<p class="block__details">'.$cB['heading_options']['sub_heading'].'</p>' : '' )
 
         // Return the food menus block content which is the buttons and menus
         ,( !empty($return['buttons_and_menus']) ? $return['buttons_and_menus'] : '' )

@@ -1,9 +1,9 @@
 {
-    "key": "group_5d264867817d3",
-    "title": "Contact Block (copy)",
+    "key": "group_5d26629111a99",
+    "title": "New Contact Block",
     "fields": [
         {
-            "key": "field_5d2648678d7aa",
+            "key": "field_5d2662911c7e1",
             "label": "Anchor Enabled",
             "name": "anchor_enabled",
             "type": "true_false",
@@ -22,7 +22,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5d2648678dbdc",
+            "key": "field_5d2662911cbc4",
             "label": "Anchor Link Text",
             "name": "anchor_link_text",
             "type": "text",
@@ -41,69 +41,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d2648678df72",
-            "label": "Width",
-            "name": "width",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "narrow": "Narrow",
-                "medium": "Medium",
-                "wide": "Wide",
-                "full": "Full"
-            },
-            "default_value": [
-                "medium"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5d2648678e357",
-            "label": "Background Color",
-            "name": "background_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
-        },
-        {
-            "key": "field_5d2648678e769",
-            "label": "Foreground Color",
-            "name": "foreground_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
-        },
-        {
-            "key": "field_5d2648678eb49",
-            "label": "Heading",
-            "name": "heading",
-            "type": "text",
+            "key": "field_5d2662c72de71",
+            "label": "Heading Options",
+            "name": "heading_options",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -112,17 +53,81 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d2662ef2de72",
+                    "label": "Heading",
+                    "name": "heading",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d2662fe2de73",
+                    "label": "Heading Alignment",
+                    "name": "heading_alignment",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "left": "Left",
+                        "center": "Center",
+                        "right": "Right"
+                    },
+                    "default_value": [
+                        "center"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5d2663202de74",
+                    "label": "Sub Heading",
+                    "name": "sub_heading",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": ""
+                }
+            ]
         },
         {
-            "key": "field_5d2648678ef0f",
-            "label": "Heading Alignment",
-            "name": "heading_alignment",
-            "type": "select",
+            "key": "field_5d2663992de75",
+            "label": "Options",
+            "name": "options",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -131,42 +136,72 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "left": "Left",
-                "center": "Center",
-                "right": "Right"
-            },
-            "default_value": [
-                "center"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d2663ad2de76",
+                    "label": "Width",
+                    "name": "width",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "narrow": "Narrow",
+                        "normal": "Normal",
+                        "wide": "Wide",
+                        "full": "Full (100%)",
+                        "auto": "auto"
+                    },
+                    "default_value": [
+                        "normal"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5d2663db2de77",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                },
+                {
+                    "key": "field_5d2664522de78",
+                    "label": "Foreground Color",
+                    "name": "foreground_color",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": ""
+                }
+            ]
         },
         {
-            "key": "field_5d2648678f31e",
-            "label": "Text",
-            "name": "text",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_5d2648678f6ff",
+            "key": "field_5d2662911e72d",
             "label": "Left",
             "name": "left",
             "type": "flexible_content",
@@ -186,7 +221,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5d264867a144d",
+                            "key": "field_5d26629129e8e",
                             "label": "Form",
                             "name": "form",
                             "type": "forms",
@@ -213,7 +248,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5d264867a17b2",
+                            "key": "field_5d2662912a272",
                             "label": "Locations",
                             "name": "locations",
                             "type": "repeater",
@@ -232,7 +267,7 @@
                             "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_5d264867a69fe",
+                                    "key": "field_5d2662912c57d",
                                     "label": "Location",
                                     "name": "location",
                                     "type": "post_object",
@@ -265,7 +300,7 @@
             "max": ""
         },
         {
-            "key": "field_5d264867aea74",
+            "key": "field_5d2662913157f",
             "label": "Right",
             "name": "right",
             "type": "flexible_content",
@@ -285,7 +320,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5d264867b1a38",
+                            "key": "field_5d26629133b2b",
                             "label": "Form",
                             "name": "form",
                             "type": "forms",
@@ -312,7 +347,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5d264867b1dd8",
+                            "key": "field_5d26629133e74",
                             "label": "Locations",
                             "name": "locations",
                             "type": "repeater",
@@ -331,7 +366,7 @@
                             "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_5d264867b77d5",
+                                    "key": "field_5d2662913790a",
                                     "label": "Location",
                                     "name": "location",
                                     "type": "post_object",
@@ -394,7 +429,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": false,
+    "active": 0,
     "description": "",
-    "modified": 1562789991
+    "modified": 1562797361
 }

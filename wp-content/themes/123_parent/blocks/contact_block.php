@@ -109,13 +109,13 @@
         $guide['section']
         //  options for every block
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
-        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
+        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['foreground_color'] ) ? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
         // post object grid options
-        ,( !empty($cB['heading']) ? '<h2 class="block__heading site__fade site__fade-up">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up">'.$cB['text'].'</div>' : '' )
+        ,( !empty($cB['heading_options']['heading']) ? '<h2 class="block__heading site__fade site__fade-up">'.$cB['heading_options']['heading'].'</h2>' : '' )
+        ,( !empty($cB['heading_options']['text']) ? '<div class="block__details site__fade site__fade-up">'.$cB['heading_options']['sub_heading'].'</div>' : '' )
         ,$return['left']
         ,$return['right']
     );

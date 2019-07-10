@@ -59,7 +59,7 @@
     // empty guide string 
     $guide['section'] = '
         <section %s class="site__block block__galleries">
-            <div class="container %s">
+            <div class="container %s %s" style="%s %s">
                 %s
                 %s
                 <div class="tabsandgrids_container '.$cB['tabs_style'].'">
@@ -74,25 +74,25 @@
     $return['section'] .= sprintf(
         $guide['section']
         //  options for every block
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
+        ,( !empty( $cB['anchor_enabled'] )? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
 
-        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )  // container width
+        ,( !empty( $cB['options']['width'] )? $cB['options']['width'] : '' )  // container width
 
-        // ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        // ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
-        // ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['background_color'] )? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['options']['background_color'] )? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['foreground_color'] )? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
 
         // post object grid options
-        ,( !empty($cB['heading']) ? '<h2 class=" block__heading site__fade site__fade-up">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty( $cB['heading_options']['heading'] )? '<h2 class=" block__heading site__fade site__fade-up" style="'.( !empty( $cB['heading_options']['heading_alignment'] )? 'text-align:'.$cB['heading_options']['heading_alignment'].';' : '' ).'">'.$cB['heading_options']['heading'].'</h2>' : '' )
 
-        ,( !empty($cB['sub_heading']) ? '<div class="block__details site__fade site__fade-up">'.$cB['sub_heading'].'</div>' : '' )
+        ,( !empty( $cB['heading_options']['sub_heading'] )? '<div class="block__details site__fade site__fade-up">'.$cB['heading_options']['sub_heading'].'</div>' : '' )
 
         // gallery options
-        ,( !empty($return['tabs']) ? $return['tabs'] : '' )
+        ,( !empty( $return['tabs'] )? $return['tabs'] : '' )
 
-        ,( !empty($return['galleries']) ? $return['galleries'] : '' )
+        ,( !empty( $return['galleries'] )? $return['galleries'] : '' )
         // view all
-        ,( !empty($cB['button']['url']) ? '<a class="site__button" href="'.$cB['button']['url'].'">'.$cB['button']['title'].'</a>' : '' )
+        ,( !empty( $cB['button']['url'] )? '<a class="site__button" href="'.$cB['button']['url'].'">'.$cB['button']['title'].'</a>' : '' )
     );
 
     // echo return string
