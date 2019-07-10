@@ -39,18 +39,18 @@
                 .galleries {
 
                     // a gallery wrapper
-                    > div.site__grid {
+                    > div.site__flexgrid {
                         // gallery title
                         > h2 {
                             margin: getVar($sizing, gutter, px, normal) 0;
                         }
                     }
                     
-                    >div.site__grid.hidden_gallery {
+                    >div.site__flexgrid.hidden_gallery {
                         display: none;
                     }
 
-                    >div.site__grid.current_gallery {
+                    >div.site__flexgrid.current_gallery {
                         display: block;
                     }
                 }
@@ -205,8 +205,8 @@
                         $s: true;
                         width: $w;
                         margin: 0 auto 0 auto;
-                        .site__grid {
-                            @include gridLayout($w, $c, $g, $s);
+                        .site__flexgrid {
+                            @include flexboxGrid($cols : $c , $gutter: 30px);
                         }
                     }
                 }       
@@ -244,8 +244,8 @@
                     width: ($w + ( 2 * $g));
                     padding: $g;
                 }
-                .site__grid {
-                    @include gridLayout($w, $c, $g, $s); 
+                .site__flexgrid {
+                    @include flexboxGrid($cols : $c , $gutter: 30px);
                 }
             }
             .tabsandgrids_container {
@@ -269,8 +269,8 @@
                         $s: true;
                         width: $w;
                         margin: 0 auto 0 auto;
-                        .site__grid {
-                            @include gridLayout($w, $c, $g, $s);
+                        .site__flexgrid {
+                            @include flexboxGrid($cols : $c , $gutter: 30px);
                         }
                     }
                 }

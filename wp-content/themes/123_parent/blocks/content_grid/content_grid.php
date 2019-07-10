@@ -54,16 +54,6 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
                     include( 'parts/grid.coupon.php' );
                     $return['content_grid'] .= ob_get_clean();
                     break;
-                // case 'food_menus':
-                //     ob_start();
-                //     include('parts/grid.food-menu.php');
-                //     $return['content_grid'] .= ob_get_clean();
-                //     break;
-                // case 'locations':
-                //     ob_start();
-                //     include('parts/grid.location.php');
-                //     $return['content_grid'] .= ob_get_clean();
-                //     break;
                 case 'services':
                     ob_start();
                     include('parts/grid.service.php');
