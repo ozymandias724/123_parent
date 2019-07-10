@@ -1,9 +1,9 @@
 {
-    "key": "group_5d1af449d52eb",
-    "title": "Content Grid Block",
+    "key": "group_5d262b0d522cc",
+    "title": "New Food Menu Block",
     "fields": [
         {
-            "key": "field_5d1af4ba0b014",
+            "key": "field_5d262b222d534",
             "label": "Heading",
             "name": "heading",
             "type": "text",
@@ -22,7 +22,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d1af4c80b015",
+            "key": "field_5d262b392d535",
             "label": "Sub Heading",
             "name": "sub_heading",
             "type": "textarea",
@@ -41,7 +41,7 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d1f5bb378917",
+            "key": "field_5d262b846db98",
             "label": "Options",
             "name": "options",
             "type": "group",
@@ -56,7 +56,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5d1f5bb978918",
+                    "key": "field_5d262b946db99",
                     "label": "Width",
                     "name": "width",
                     "type": "select",
@@ -64,7 +64,7 @@
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "25",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -84,34 +84,14 @@
                     "return_format": "value",
                     "ajax": 0,
                     "placeholder": ""
-                },
-                {
-                    "key": "field_5d1f5be078919",
-                    "label": "Column Count",
-                    "name": "column_count",
-                    "type": "range",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "25",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 3,
-                    "min": 1,
-                    "max": 6,
-                    "step": "",
-                    "prepend": "",
-                    "append": "Columns"
                 }
             ]
         },
         {
-            "key": "field_5d1af4590b013",
-            "label": "Content",
-            "name": "content",
-            "type": "relationship",
+            "key": "field_5d262c200f7bc",
+            "label": "Tabs Style",
+            "name": "tabs_style",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -120,28 +100,66 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post",
-                "coupon",
-                "staff",
-                "services",
-                "areas-served",
-                "food_menus",
-                "testimonials",
-                "page"
+            "choices": {
+                "pills": "Pills",
+                "divider": "Divider",
+                "sidebar": "Sidebar"
+            },
+            "default_value": [
+                "pills"
             ],
-            "taxonomy": [],
-            "filters": [
-                "search",
-                "post_type"
-            ],
-            "elements": "",
-            "min": "",
-            "max": "",
-            "return_format": "object"
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
-            "key": "field_5d1f5d078bc46",
+            "key": "field_5d262c4e0f7bd",
+            "label": "Food Menus",
+            "name": "menus",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5d262c6e0f7be",
+                    "label": "Food Menu",
+                    "name": "menu_post",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "food_menus"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_5d262bdd6db9b",
             "label": "Button",
             "name": "button",
             "type": "link",
@@ -149,7 +167,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -187,6 +205,6 @@
         "send-trackbacks"
     ],
     "active": 0,
-    "description": "Grid of Post Objects",
-    "modified": 1562336594
+    "description": "Food Menu Block",
+    "modified": 1562783190
 }

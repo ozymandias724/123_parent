@@ -116,14 +116,15 @@
     ';
     
     $return['section'] .= sprintf(
+
         $guide['section']
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
         ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
         ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
         ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<p class="block__details">'.$cB['text'].'</p>' : '' )
+        ,( !empty($cB['heading']) ? '<h2 class="block__heading">'.$cB['heading'].'</h2>' : '' )
+        ,( !empty($cB['sub_heading']) ? '<p class="block__details">'.$cB['sub_heading'].'</p>' : '' )
 
         // Return the food menus block content which is the buttons and menus
         ,( !empty($return['buttons_and_menus']) ? $return['buttons_and_menus'] : '' )
