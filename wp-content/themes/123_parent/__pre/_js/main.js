@@ -102,7 +102,6 @@ $(document).ready(function()
         _init: function () {
             Theme.Slick._hero_slider();
             Theme.Slick._testimonials_slider();
-            Theme.Slick._testimonials_block_triangle();
         },
         _hero_slider: function () {
             $('#slick_slider_hero').slick({
@@ -118,7 +117,7 @@ $(document).ready(function()
             });
         },
         _testimonials_slider: function () {
-            $('section.block__testimonials ul').slick({
+            $('section.block__testimonials ul, ul.post_type_testimonials').slick({
                 autoplay: false
                 ,adaptiveHeight: true
                 ,arrows: true
@@ -130,11 +129,6 @@ $(document).ready(function()
                 ,nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>'
                 ,prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
             });
-        },
-        _testimonials_block_triangle: function(){
-            setTimeout(function(){
-                $('.block__testimonials .site__grid').addClass('gray_triangle_after');
-            }, 1000);
         }
     }
     Theme.Slick._init();
@@ -240,7 +234,12 @@ $(document).ready(function()
      *  If we have a gallery block
      * 
      */
-    if($('section.block__galleries').length && $('section.block__galleries div.tabs').length || $('section.tpl_page_gallery').length && $('section.tpl_page_gallery div.tabs').length) {
+    if( 
+        $('section.block__galleries').length && 
+        $('section.block__galleries div.tabs').length || 
+        $('section.tpl_page_gallery').length && 
+        $('section.tpl_page_gallery div.tabs').length
+    ) {
 
         $('.galleries ul li .image').magnificPopup({
             'type' : 'image'
@@ -248,15 +247,17 @@ $(document).ready(function()
         
         Blocks.Gallery = {
             tabs: $('.block__galleries div.tabs > ul > li, .tpl_page_gallery div.tabs > ul > li'),
-            galleries: $('.block__galleries div.galleries > .site__grid, .tpl_page_gallery div.galleries > .site__grid'),
+            galleries: $('.block__galleries div.galleries > .site__flexgrid, .tpl_page_gallery div.galleries > .site__flexgrid'),
             _init: function () {
                 // when clicking tabs
                 Blocks.Gallery.tabs.on('click', '>a', Blocks.Gallery._didClickTab);
             },
             _didClickTab: function (e) {
+                console.log('clicked tab');
                 // toggle visible gallery
                 Blocks.Gallery.galleries.addClass('hidden_gallery');
                 Blocks.Gallery.galleries.removeClass('current_gallery');
+                console.log($(this).parent('li').index());
                 $(Blocks.Gallery.galleries[$(this).parent('li').index()]).addClass('current_gallery');
                 // toggle tab
                 Blocks.Gallery.tabs.removeClass('tab_active');

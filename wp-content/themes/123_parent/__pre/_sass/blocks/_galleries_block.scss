@@ -40,9 +40,20 @@
 
                     // a gallery wrapper
                     > div.site__flexgrid {
+                        @include flexboxGrid($cols : 4 , $gutter: 30px);
                         // gallery title
                         > h2 {
                             margin: getVar($sizing, gutter, px, normal) 0;
+                        }
+                        >ul.flexboxGrid {
+                            > li {
+                                > div.image {
+                                    background-size: cover;
+                                    background-position: center center;
+                                    background-repeat: no-repeat;
+                                    padding-bottom: 100%;
+                                }
+                            }
                         }
                     }
                     
@@ -98,7 +109,7 @@
                         }
                     }
                 }
-                &.pill {
+                &.pills {
                     .tabs {
                         >ul {
                             display: flex; 
@@ -199,14 +210,11 @@
                         }
                     }
                     > .galleries {
-                        $w: getVar($sizing, content, small);
-                        $c : 3;
-                        $g: getVar($sizing, gutter, vw, normal);
-                        $s: true;
+                        $w : 80%;
                         width: $w;
                         margin: 0 auto 0 auto;
-                        .site__flexgrid {
-                            @include flexboxGrid($cols : $c , $gutter: 30px);
+                        div.site__flexgrid {
+                            @include flexboxGrid($cols : 3 , $gutter: 30px);
                         }
                     }
                 }       

@@ -52,12 +52,12 @@
                     // Menu Header Format
                     if($fields['style'] !== 'menu_text_sub_group_half'){
                         $header_format = '
-                            <h2><span>%s</span></h2>
+                            <h2><span style="background-color:'.$cB['options']['background_color'].';">%s</span></h2>
                             %s
                         ';
                     }else{
                         $header_format = '
-                            <div><h2><span>%s</span></h2>
+                            <div><h2><span style="background-color:'.$cB['options']['background_color'].';">%s</span></h2>
                             %s
                         ';
                     }

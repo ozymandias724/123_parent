@@ -15,7 +15,7 @@
         $return['galleries'] = '';
 
         // set the galleries guide string
-        $guide['galleries'] = '<li class="site__fade site__fade-up"><div><div class="image" style="background-image: url(%s)"></div></div></li>';
+        $guide['galleries'] = '<li class="site__fade site__fade-up"><div class="image" style="background-image: url(%s)"></div></li>';
         // set the galleries return string
         $return['galleries'] .= '<div class="galleries">';
 
