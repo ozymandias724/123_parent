@@ -1,6 +1,22 @@
 @media only screen {
-    .block__heading {
-        
+    section.site__block {
+        div.container {
+            .block__item-body {
+                font-weight: 400;
+                @include fontS-14;
+                text-align: center;
+            }
+            // set most sections heading margin
+            >h2 {
+                margin: 0 auto;
+            }
+            > .block__heading {
+                margin: 0 auto getVar($sizing, gutter, px, tiny) auto;
+            }
+            > .block__details {
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+        }
     }
     
 }
