@@ -1,0 +1,103 @@
+//
+//
+@media only screen {
+    // 
+    ul.flexboxGrid.post_type_staff {
+        >li {
+            > div.grid_staff {
+                margin-top: 10px;
+                &:hover,
+                &:active,
+                &:focus {
+                    > a {
+                        div.staff_content {  
+                            border-top: 3px solid getVar($gustavo, colors, gray1);
+                            border-right: 3px solid getVar($gustavo, colors, gray1);
+                            border-left: 3px solid getVar($gustavo, colors, gray1);
+                        }
+                    }
+                    > div.staff_social {
+                        border-right: 3px solid getVar($gustavo, colors, gray1);
+                        border-left: 3px solid getVar($gustavo, colors, gray1);
+                        border-bottom: 3px solid getVar($gustavo, colors, gray1);
+                    }
+                }
+                >a { 
+                    color: inherit;
+                    margin-bottom: -10px;
+                    // image
+                    >div.staff_image {
+                        position: relative;
+                        z-index: 2;
+                        border: 5px solid getVar($colors, white, full);
+                        box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.3);
+                        width: 80%; 
+                        margin: 0 auto;
+                        @include site__bgimage($g : false, $z : true);
+                        border-radius: 50%; 
+                        > div.image {
+                            padding-bottom: 100%;
+                        }
+                    }
+                    // content
+                    >div.staff_content {
+                        border-top: 3px solid transparent;
+                        border-right: 3px solid transparent;
+                        border-left: 3px solid transparent;
+                        padding: 154px 40px 0; 
+                        position: relative;
+                        margin-top: -137px;
+                        background-color: getVar($gustavo, colors, gray7);
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                        min-height: 315px;
+                        >h3 {
+                            margin: 0 auto 10px auto;
+                            font-family: "Gotham", Helvetica, sans-serif;
+                            @include fontS-34;
+                            font-weight: 500;
+                            width: 90%;
+                            padding-bottom: getVar($sizing, gutter, px, tiny);
+                            border-bottom: getVar($sizing, gutter, px, tiny) dotted getVar($colors, white, full); 
+                        }
+                    }
+                }
+                > div.staff_social {
+                    padding: 20px 30px 30px 30px;
+                    background-color: getVar($gustavo, colors, gray7);
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    border-right: 3px solid transparent;
+                    border-left: 3px solid transparent;
+                    border-bottom: 3px solid transparent;
+                    > ul {
+                        display: flex;
+                        align-items: center;
+                        flex-flow: row nowrap;
+                        justify-content: center;
+                        > li {
+                            padding: 5px;
+                            > a {
+                                > i {
+                                    background-color: getVar($gustavo, colors, gray10);
+                                    width: 40px;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    vertical-align: bottom;
+                                    text-align: center;
+                                    border-radius: 50%;
+                                    color: getVar($gustavo, colors, gray7);
+                                }
+                                &:hover, &:active, &:focus {
+                                    > i {
+                                        color: getVar($colors, accent);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

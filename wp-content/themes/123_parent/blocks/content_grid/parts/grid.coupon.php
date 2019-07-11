@@ -4,6 +4,8 @@
 * 
 */  
 
+    $the_fields = get_fields( $post->ID );
+
     $return['content'] = '';
 
     $guide['content'] = '
@@ -16,8 +18,6 @@
             </div>
         </a>
     ';
-
-    $the_fields = get_fields( $post->ID );
 
     if( $the_fields['status'] ){
 

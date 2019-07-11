@@ -6,7 +6,7 @@
     $return['content'] = '';
 
     $guide['content'] = '
-        <a class="site__fade site__fade-up" href="javascript:;">
+        <a href="javascript:;">
             %s
             <div class="content">
                 <h5>%s</h5>
@@ -23,7 +23,7 @@
         $return['content'] = sprintf(
             $guide['content']
             //,get_permalink( $post->ID )
-            ,( !empty( $the_fields['featured_image']['url'] )? '<div class="image_container"><div style="background-image:url('.$the_fields['featured_image']['url'].');"></div></div>' : '')
+            ,( !empty( $the_fields['featured_image']['url'] )? '<div class="image_container"><div class="image" style="background-image:url('.$the_fields['featured_image']['url'].');"></div></div>' : '')
             ,$post->post_title
             ,( !empty( $the_fields['excerpt'] )? $the_fields['excerpt'] : '')
         );
@@ -31,7 +31,7 @@
     }
 
 ?>
-<div class="grid_blog_post grid_item">
+<div class="grid_blog_post grid_item site__fade site__fade-up">
 <?php
     echo $return['content'];
 ?>

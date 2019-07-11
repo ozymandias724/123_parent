@@ -10,8 +10,7 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
 	$guide = [];
 
 	$return['content_grid'] = '';
-	$guide['content_grid'] = '';
-		
+    $guide['content_grid'] = '';
 
 	// verify there are records in the relationship field
 	if( !empty($block['content']) ){
@@ -29,17 +28,17 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
         if( !empty( $block['sub_heading'] ) ){
             $return['content_grid'] .= '<div class="site__fade site__fade-up block__details">'.$block['sub_heading'].'</div>';
         }
-        
+         
         // we are going to loop. check the options.
 
         // write the container for a site grid w/ the width and colcount on it
         //$return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid '.$block['style'].'">';
-        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid">';
+
+        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid post_type_'.$block['content'][0]->post_type.'">';
 
         // loop thru the post results (items are post objects)
         foreach ($block['content'] as $i => $post) {
 
-            // $return['content_grid'] .= '<li class="'.$block['style'].'">';
             $return['content_grid'] .= '<li>';
 
             // check which post type this item is
