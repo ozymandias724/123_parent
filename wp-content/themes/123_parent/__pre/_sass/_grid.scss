@@ -2,29 +2,31 @@
 // 
 @media only screen {
     // 
-    .site__block>.container,
+    .site__block >.container,
     .site__flexgrid {
         text-align: center;
-        &.narrow {
-            width: 65%;
-            margin: 0 auto;
-        }
-        &.normal {
-            width: 80%;
-            margin: 0 auto;
-        }
-        &.wide {
-            width: 90%;
-            margin: 0 auto;
-        }
-        &.full {
-            width: 100%;
-            margin: 0 auto; 
-        }
-        &.auto {
-            width: 100%;
-            margin: 0 auto;
-        }
+        width: 100%;
+        margin: 0 auto;
+        // &.narrow {
+        //     width: 65%;
+        //     margin: 0 auto;
+        // }
+        // &.normal {
+        //     width: 80%;
+        //     margin: 0 auto;
+        // }
+        // &.wide {
+        //     width: 90%;
+        //     margin: 0 auto;
+        // }
+        // &.full {
+        //     width: 100%;
+        //     margin: 0 auto; 
+        // }
+        // &.auto {
+        //     width: 100%;
+        //     margin: 0 auto;
+        // }
     }
 
     // 
@@ -46,6 +48,7 @@
 }
 //Do the rest of the media queries with max-width, not min-width
 @media only screen and (max-width:1280px) {
+    //
     .site__flexgrid {
 
         // start a 4-index loop 
@@ -61,6 +64,7 @@
 }
 
 @media only screen and (max-width:960px) {
+    //
     .site__flexgrid {
 
         // start a 3-index loop 
@@ -76,6 +80,7 @@
 }
 
 @media only screen and (max-width:640px) {
+    //
     .site__flexgrid {
 
         // start a 2-index loop 
@@ -91,6 +96,7 @@
 }
 
 @media only screen and (max-width:480px) {
+    //
     .site__flexgrid {
 
         // start a 0-index loop 

@@ -29,12 +29,8 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
             $return['content_grid'] .= '<div class="site__fade site__fade-up block__details">'.$block['sub_heading'].'</div>';
         }
          
-        // we are going to loop. check the options.
-
-        // write the container for a site grid w/ the width and colcount on it
-        //$return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid '.$block['style'].'">';
-
-        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].' flexgrid_'. $block['content'][0]->post_type .'"><ul class="flexboxGrid post_type_'.$block['content'][0]->post_type.'">';
+        // we are going to loop. check the options
+        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' flexgrid_'. $block['content'][0]->post_type .'"><ul class="flexboxGrid post_type_'.$block['content'][0]->post_type.'">';
 
         // loop thru the post results (items are post objects)
         foreach ($block['content'] as $i => $post) {
