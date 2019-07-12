@@ -1,7 +1,9 @@
 <?php 
 /* 
-* Blog Post item
+*   Blog Post item
 */
+
+    $the_fields = get_fields( $post->ID );
 
     $return['content'] = '';
 
@@ -16,8 +18,6 @@
         </a>
     ';
 
-    $the_fields = get_fields( $post->ID );
-
     if( $the_fields['status'] ){
 
         $return['content'] = sprintf(
@@ -27,7 +27,6 @@
             ,$post->post_title
             ,( !empty( $the_fields['excerpt'] )? $the_fields['excerpt'] : '')
         );
-
     }
 
 ?>

@@ -22,6 +22,10 @@ var Coupons = {}
 // certain things should wait until the document is ready
 $(document).ready(function()
 {
+    //TESTING
+    $('header').hide();
+    $('.hero').hide();
+    //TESTING
 
     /* 
     * Print coupon 
