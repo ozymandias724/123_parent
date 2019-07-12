@@ -24,19 +24,19 @@
             //
             @include heroAlignment();
             //
-            &.narrow{
+            &.narrow {
                 $w: getVar($sizing, content, small);
                 width: $w;
             }
-            &.medium{
+            &.normal {
                 $w: getVar($sizing, content, medium);
                 width: $w;
             }
-            &.wide{
+            &.wide {
                 $w: getVar($sizing, content, large);
                 width: $w;
             }
-            &.full{
+            &.full {
                 $w: getVar($sizing, content, full);
                 width: $w;
             }

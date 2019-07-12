@@ -10,19 +10,19 @@
             flex-flow: row wrap;
 
             &.narrow {
-                width: getVar($sizing, content, small);
+                width: getVar($sizing, content, percent, narrow);
             }
 
-            &.medium {
-                width: getVar($sizing, content, medium);
+            &.normal {
+                width: getVar($sizing, content, percent, normal);
             }
 
             &.wide {
-                width: getVar($sizing, content, large);
+                width: getVar($sizing, content, percent, wide);
             }
 
             &.full {
-                width: getVar($sizing, content, full);
+                width: getVar($sizing, content, percent, full);
             }
 
             #footer_company_info {
@@ -563,10 +563,10 @@
             padding: 0;
 
             &.narrow,
-            &.medium,
+            &.normal,
             &.wide,
             &.full {
-                width: getVar($sizing, content, large);
+                width: getVar($sizing, content, percent, wide);
             }
         }
 
@@ -636,10 +636,10 @@
         div.container {
 
             &.narrow,
-            &.medium,
+            &.normal,
             &.wide,
             &.full {
-                width: getVar($sizing, content, full);
+                width: getVar($sizing, content, percent, full);
             }
         }
     }

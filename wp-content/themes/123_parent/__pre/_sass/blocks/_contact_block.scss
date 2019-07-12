@@ -4,16 +4,16 @@
         > .container {
 
             &.narrow {
-                width : getVar($sizing, content, small);
+                width : getVar($sizing, content, percent, narrow);
             }
-            &.medium {
-                width : getVar($sizing, content, medium);
+            &.normal {
+                width : getVar($sizing, content, percent, normal);
             }
             &.wide {
-                width : getVar($sizing, content, wide);
+                width : getVar($sizing, content, percent, wide);
             }
             &.full {
-                width : getVar($sizing, content, full);
+                width : getVar($sizing, content, percent, full);
             }
             
             div.contact__block-form {
@@ -55,7 +55,6 @@
             ul.locations {
                 display: flex;
                 flex-flow: column wrap;
-
                 > li {
                     background-color: rgba(getVar($colors, black, full), 0.2);
                     border-radius: 15px;
@@ -109,8 +108,8 @@
 @media only screen and (max-width: 1280px){
     section.block__contact {
         > .container {
-            &.narrow, &.medium, &.wide, &.full {
-                width : getVar($sizing, content, medium);
+            &.narrow, &.normal, &.wide, &.full {
+                width : getVar($sizing, content, percent, normal);
             }
         }
     }
@@ -118,8 +117,8 @@
 @media only screen and (max-width: 960px){
     section.block__contact {
         > .container {
-            &.narrow, &.medium, &.wide, &.full {
-                width : getVar($sizing, content, wide);
+            &.narrow, &.normal, &.wide, &.full {
+                width : getVar($sizing, content, percent, wide);
             }
             > ul.columns {
                 flex-flow: column nowrap;
@@ -135,8 +134,8 @@
 @media only screen and (max-width: 640px){
     section.block__contact {
         > .container {
-            &.narrow, &.medium, &.wide, &.full {
-                width : getVar($sizing, content, full);
+            &.narrow, &.normal, &.wide, &.full {
+                width : getVar($sizing, content, percent, full);
             }
         }
     }

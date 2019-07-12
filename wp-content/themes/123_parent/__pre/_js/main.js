@@ -22,24 +22,18 @@ var Coupons = {}
 // certain things should wait until the document is ready
 $(document).ready(function()
 {
-    //TESTING
-    $('header').hide();
-    $('.hero').hide();
-    //TESTING
 
     /* 
-    * Print coupon 
+    *  Print coupon 
     */
 
     Coupons = {
-
         _init : function(){
             Coupons.printCoupon(); 
         }
-
         ,printCoupon : function(){
             
-            if( $('section.single_coupon').length ){
+            if( $('ul.single_coupon').length ){
                 window.print();
                 window.close();
                 return true;

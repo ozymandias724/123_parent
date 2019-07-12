@@ -2,7 +2,7 @@
 //
 @media only screen {
     ul.flexboxGrid.post_type_testimonials {
-        width: 100%;
+        width: 80%;
         margin: 0 auto;
         position: relative;
         border: 3px solid getVar($colors, white, full);
@@ -145,7 +145,7 @@
     ul.flexboxGrid.post_type_testimonials { 
         width: 80%;
         li {
-            > div {
+            > div.grid_testimonial {
                 .block {
                     height: 300px;
                 }
@@ -161,13 +161,25 @@
     ul.flexboxGrid.post_type_testimonials {
         width: 70%;
         li {
-            > div {
+            > div.grid_testimonial {
                 display: block;
+                >div.testimonial_image {
+                    flex-flow: column nowrap;
+                }
+                .image {
+                    width: 100%;
+                    padding-bottom: 100%;
+                    border-top-right-radius: 20px;
+                    border-bottom-left-radius: 0;
+                }
                 .testimonial_content {
                     padding: 15px 10px;
                     > div.testimonial_name {
                         flex-flow: column nowrap;
-                    }
+                        &:before {
+                            display: inline;
+                        }
+                    }  
                 }
             }
         }
@@ -176,7 +188,7 @@
 
 @media only screen and (max-width: 640px){
     ul.flexboxGrid.post_type_testimonials {
-        width: 50%;
+        width: 70%;
         > .testimonial_prev {
             left: -67px;
         }
