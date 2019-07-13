@@ -21,10 +21,10 @@
     $return['section'] .= sprintf(
         $guide['section']
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
-        ,'<'.$cB['level'].' style="color: '.$cB['foreground_color'].'">'.$cB['content'] . '</'.$cB['level'].'>' // heading content w/ level and alignment
+        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
+        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
+        ,'<'.$cB['heading_options']['level'].' style="color: '.$cB['options']['foreground_color'].';text-align:'.$cB['heading_options']['heading_alignment'].';">'.$cB['heading_options']['content'] . '</'.$cB['heading_options']['level'].'>' // heading content w/ level and alignment
     );
 
     // echo return string

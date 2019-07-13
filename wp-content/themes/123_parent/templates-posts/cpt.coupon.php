@@ -7,20 +7,26 @@
     $fields = get_fields( $post->ID );
 
     function get_coupon( $fields ){
+
         $return = '';
+
         $format_coupon = '
-            <section class="single__page single_coupon">
-                <div class="grid_coupon">
-                    <a href="javascript:;">
-                        <div>
-                            <h5>%s</h5>
-                            <div class="coupon_details block__item-body">%s</div>
-                            %s
-                            %s
+            <div class="flexgrid_coupon">
+                <ul class="flexboxGrid post_type_coupon single_coupon">
+                    <li>
+                        <div class="grid_coupon">
+                            <a href="javascript:;">
+                                <div>
+                                    <h5>%s</h5>
+                                    <div class="coupon_details block__item-body">%s</div>
+                                    %s
+                                    %s
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </section>
+                    </li>
+                </ul>
+            </div>
         ';
     
         if( $fields['status'] ){ 

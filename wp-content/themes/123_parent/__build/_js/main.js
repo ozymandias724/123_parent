@@ -35,14 +35,14 @@ var Coupons = {}; // certain things should wait until the document is ready
 
 (0, _jquery["default"])(document).ready(function () {
   /* 
-  * Print coupon 
+  *  Print coupon 
   */
   Coupons = {
     _init: function _init() {
       Coupons.printCoupon();
     },
     printCoupon: function printCoupon() {
-      if ((0, _jquery["default"])('section.single_coupon').length) {
+      if ((0, _jquery["default"])('ul.single_coupon').length) {
         window.print();
         window.close();
         return true;
@@ -112,8 +112,6 @@ var Coupons = {}; // certain things should wait until the document is ready
       Theme.Slick._hero_slider();
 
       Theme.Slick._testimonials_slider();
-
-      Theme.Slick._testimonials_block_triangle();
     },
     _hero_slider: function _hero_slider() {
       (0, _jquery["default"])('#slick_slider_hero').slick({
@@ -129,7 +127,7 @@ var Coupons = {}; // certain things should wait until the document is ready
       });
     },
     _testimonials_slider: function _testimonials_slider() {
-      (0, _jquery["default"])('section.block__testimonials ul').slick({
+      (0, _jquery["default"])('section.block__testimonials ul, ul.post_type_testimonials').slick({
         autoplay: false,
         adaptiveHeight: true,
         arrows: true,
@@ -141,11 +139,6 @@ var Coupons = {}; // certain things should wait until the document is ready
         nextArrow: '<i class="testimonial_next fas fa-chevron-right"></i>',
         prevArrow: '<i class="testimonial_prev fas fa-chevron-left"></i>'
       });
-    },
-    _testimonials_block_triangle: function _testimonials_block_triangle() {
-      (0, _timers.setTimeout)(function () {
-        (0, _jquery["default"])('.block__testimonials .site__grid').addClass('gray_triangle_after');
-      }, 1000);
     }
   };
 
@@ -267,15 +260,17 @@ var Coupons = {}; // certain things should wait until the document is ready
     });
     Blocks.Gallery = {
       tabs: (0, _jquery["default"])('.block__galleries div.tabs > ul > li, .tpl_page_gallery div.tabs > ul > li'),
-      galleries: (0, _jquery["default"])('.block__galleries div.galleries > .site__grid, .tpl_page_gallery div.galleries > .site__grid'),
+      galleries: (0, _jquery["default"])('.block__galleries div.galleries > .site__flexgrid, .tpl_page_gallery div.galleries > .site__flexgrid'),
       _init: function _init() {
         // when clicking tabs
         Blocks.Gallery.tabs.on('click', '>a', Blocks.Gallery._didClickTab);
       },
       _didClickTab: function _didClickTab(e) {
-        // toggle visible gallery
+        console.log('clicked tab'); // toggle visible gallery
+
         Blocks.Gallery.galleries.addClass('hidden_gallery');
         Blocks.Gallery.galleries.removeClass('current_gallery');
+        console.log((0, _jquery["default"])(this).parent('li').index());
         (0, _jquery["default"])(Blocks.Gallery.galleries[(0, _jquery["default"])(this).parent('li').index()]).addClass('current_gallery'); // toggle tab
 
         Blocks.Gallery.tabs.removeClass('tab_active');

@@ -39,18 +39,29 @@
                 .galleries {
 
                     // a gallery wrapper
-                    > div.site__grid {
+                    > div.site__flexgrid {
+                        @include flexboxGrid($cols : 4 , $gutter: 30px);
                         // gallery title
                         > h2 {
                             margin: getVar($sizing, gutter, px, normal) 0;
                         }
+                        >ul.flexboxGrid {
+                            > li {
+                                > div.image {
+                                    background-size: cover;
+                                    background-position: center center;
+                                    background-repeat: no-repeat;
+                                    padding-bottom: 100%;
+                                }
+                            }
+                        }
                     }
                     
-                    >div.site__grid.hidden_gallery {
+                    >div.site__flexgrid.hidden_gallery {
                         display: none;
                     }
 
-                    >div.site__grid.current_gallery {
+                    >div.site__flexgrid.current_gallery {
                         display: block;
                     }
                 }
@@ -98,7 +109,7 @@
                         }
                     }
                 }
-                &.pill {
+                &.pills {
                     .tabs {
                         >ul {
                             display: flex; 
@@ -152,10 +163,10 @@
                 }
                 &.sidebar {
                     display: flex;
-                    flex-flow: row wrap;
+                    flex-flow: row nowrap;
                     margin-top: getVar($sizing, gutter, px, large);
                     .tabs {
-                        flex: 1;
+                        flex: 1 1 20%;
                         margin-right: getVar($sizing, gutter, px, normal);
                         > ul {
                             height: 80%;
@@ -199,14 +210,10 @@
                         }
                     }
                     > .galleries {
-                        $w: getVar($sizing, content, small);
-                        $c : 3;
-                        $g: getVar($sizing, gutter, vw, normal);
-                        $s: true;
-                        width: $w;
+                        flex: 1 1 80%;
                         margin: 0 auto 0 auto;
-                        .site__grid {
-                            @include gridLayout($w, $c, $g, $s);
+                        div.site__flexgrid {
+                            @include flexboxGrid($cols : 3 , $gutter: 30px);
                         }
                     }
                 }       
@@ -219,10 +226,10 @@
     section.site__block.block__galleries {
         > .container {
             &.narrow,
-            &.medium,
+            &.normal,
             &.wide,
             &.full {
-                width: getVar($sizing, content, large);
+                width: getVar($sizing, content, percent, wide);
             }
         }
     }
@@ -231,21 +238,15 @@
 @media only screen and (max-width: 640px){
     section.site__block.block__galleries {
         > .container {
-            $w: getVar($sizing, content, full);
+            $w: getVar($sizing, content, percent, full);
             $c : 2;
-            $g: getVar($sizing, gutter, vw, normal);
-            $s: true;
             &.narrow,
-            &.medium,
+            &.normal,
             &.wide,
             &.full {
                 width: $w;
-                &.hasbg {
-                    width: ($w + ( 2 * $g));
-                    padding: $g;
-                }
-                .site__grid {
-                    @include gridLayout($w, $c, $g, $s); 
+                .site__flexgrid {
+                    @include flexboxGrid($cols : $c , $gutter: 30px);
                 }
             }
             .tabsandgrids_container {
@@ -263,14 +264,12 @@
                 }
                 &.sidebar {
                     > .galleries {
-                        $w: getVar($sizing, content, small);
+                        $w: getVar($sizing, content, percent, narrow);
                         $c : 2;
-                        $g: getVar($sizing, gutter, vw, normal);
-                        $s: true;
                         width: $w;
                         margin: 0 auto 0 auto;
-                        .site__grid {
-                            @include gridLayout($w, $c, $g, $s);
+                        .site__flexgrid {
+                            @include flexboxGrid($cols : $c , $gutter: 30px);
                         }
                     }
                 }

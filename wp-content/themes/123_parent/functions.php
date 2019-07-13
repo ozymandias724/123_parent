@@ -25,7 +25,69 @@ require('classes/class.customposts.php'); // custom posts
  */
 
  
+function get_menu_items($menu_style, $item){
 
+    switch($menu_style){
+        case 'menu_photo_list': 
+        $format = '
+            <li class="menu_item site__fade site__fade-up">
+                %s
+                <div>
+                    <h3>%s</h3>
+                    <div class="menu__item-description">%s</div>
+                    %s
+                </div>
+            </li>
+        ';
+
+        $return = sprintf(
+            $format
+            ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
+            ,(!empty($item['title']) ? $item['title'] : '')
+            ,(!empty($item['description']) ? $item['description'] : '')
+            ,(!empty($item['price']) ? '<div class="menu__item-price">$'.$item['price'].'</div>' : '')
+        );
+        break;
+
+        case 'menu_photo_tiled_x3':
+        $price = (!empty($item['price']) ? $item['price'] : '');
+        $priceArr = explode('.',$price);
+        $format = '
+            <li class="menu_item site__fade site__fade-up">
+                %s
+                <h3 class="menu__item-price">%s <div>$%s.<span>%s</span></div></h3>
+                <div class="menu__item-description">%s</div>
+            </li>
+        ';
+
+        $return = sprintf(
+            $format
+            ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
+            ,(!empty($item['title']) ? $item['title'] : '')
+            ,$priceArr[0]
+            ,$priceArr[1]
+            ,(!empty($item['description']) ? $item['description'] : '')
+        );
+        break;
+
+        default: 
+        $format = '
+            <li class="menu_item site__fade site__fade-up">
+                <h3 class="menu__item-price">%s <span class="menu_price">%s</span></h3>
+                <div class="menu__item-description">%s</div>
+            </li>
+        ';
+        
+        $return = sprintf(
+            $format
+            ,(!empty($item['title']) ? $item['title'] : '')
+            ,(!empty($item['price']) ? $item['price'] : '')
+            ,(!empty($item['description']) ? $item['description'] : '')
+        );
+        break;
+    }
+    return $return;
+}
 
 function my_acf_init() {
 	

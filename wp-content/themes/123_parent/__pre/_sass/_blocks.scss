@@ -1,10 +1,191 @@
 @media only screen {
+
+    // grids here will only apply over 1280px
+    section.site__block,
+    section.page__template,
+    section.single__page {
+        width: 100%;
+        .container {
+            text-align: center;
+            padding: getVar($sizing, gutter, px, normal) 0;
+            margin: 0 auto getVar($sizing, gutter, px, normal);
+            .block__item-body {
+                font-weight: 400;
+                @include fontS-14;
+                text-align: center;
+            }
+            // set most sections heading margin
+            >h2 {
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            > .block__heading {
+                margin: 0 auto
+            }
+            > .block__details {
+                margin: 0 auto getVar($sizing, gutter, px, normal) auto;
+            }
+            // bg sections have no margin (they touch seamlessly)
+            &.hasbg {
+                margin: 0 auto 0 auto;
+            }
+            // grid layouts by block width
+            &.narrow {
+                $w: getVar($sizing, content, percent, narrow);
+                $c : 3;
+                $g: getVar($sizing, gutter, px, normal);
+                // $s: true;
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + ( 2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
+            }
+            &.normal {
+                $w: getVar($sizing, content, percent, normal);
+                $c : 3;
+                $g: getVar($sizing, gutter, px, normal);
+                // $s: true;
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + ( 2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
+            }
+            &.wide {
+                $w: getVar($sizing, content, percent, wide);
+                $c : 4;
+                $g: getVar($sizing, gutter, px, normal);
+                // $s: true;
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + ( 2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
     
+            }
+            &.full {
+                $w: getVar($sizing, content, percent, full);
+                $c : 6;
+                $g: getVar($sizing, gutter, px, normal);
+                // $s: true;
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + ( 2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
+            }
+            // end grid layouts by block width
     
+        }
+    
+    }
+    // reset the heading blocks h2 margin
+    section.site__block.block__heading, 
+    section.page__template {
+        > .container {
+            > h2 {
+                margin: 0 0 0 0;
+            }
+        }
+    }
+}
+//Do the rest of the media queries with max-width, not min-width
+@media only screen and (max-width:1280px){
+    section.site__block, 
+    section.page__template,
+    section.single__page {
+        > .container {
+            // narrow and medium bumped up to large
+            $w: getVar($sizing, content, percent, wide);
+            $c : 3;
+            $g: getVar($sizing, gutter, vw, normal);
+            // $s: true;
+            &.narrow,
+            &.normal,
+            &.full,
+            &.wide {
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + (2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
+                
+            }
+        }
+    }
+}
+@media only screen and (max-width:960px){
+    section.site__block,
+    section.page__template,
+    section.single__page {
+        > .container {
+            // drop to 2 cols
+            $w: getVar($sizing, content, percent, wide);
+            $c : 2;
+            $g: getVar($sizing, gutter, px, normal);
+            // $s: true;
+            &.narrow,
+            &.normal,
+            &.wide,
+            &.full {
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + ( 2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
+
+            }
+        }
+    }
+}
+@media only screen and (max-width:640px){
+    section.site__block,
+    section.page__template,
+    section.single__page {
+        > .container {
+
+            // set all to 1 col
+            $w: getVar($sizing, content, percent, full);
+            $c : 1;
+            $g: getVar($sizing, gutter, px, normal);
+            // $s: true;
+            &.narrow,
+            &.normal,
+            &.wide,
+            &.full {
+                width: $w;
+                // &.hasbg {
+                //     width: ($w + ( 2 * $g));
+                //     padding: $g;
+                // }
+                .site__grid {
+                    @include flexboxGrid($cols : $c , $gutter: $g);
+                }
+                
+            }
+        }
+    }
 }
 
-
-// specific block styles
+// All of the overrides
 @import 'blocks/heading_block';
 @import 'blocks/copy_block';
 @import 'blocks/services_block';
@@ -13,6 +194,6 @@
 @import 'blocks/staff_block';
 @import 'blocks/food_menus_block';
 @import 'blocks/testimonials_block';
-@import 'blocks/blog_post_block';
+@import 'blocks/blog_post_block'; 
 @import 'blocks/contact_block';
 @import 'blocks/locations_block';

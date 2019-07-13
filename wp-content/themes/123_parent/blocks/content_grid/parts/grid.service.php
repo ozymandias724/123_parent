@@ -5,7 +5,7 @@
 
     $return['content'] = '';
 
-    $guide['content']= '
+    $guide['content'] = '
         <a href="javascript:;">
             <div>
                 <div class="image" style="background-image:url(%s);"></div>
@@ -22,7 +22,7 @@
 
     if( $the_fields['status'] ){
 
-        $return['content'] .= sprintf(
+        $return['content'] = sprintf(
             $guide['content']
             //,get_permalink( $post->ID )
             ,( !empty( $the_fields['image']['url'] )? $the_fields['image']['url'] : '' )

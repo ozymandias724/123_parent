@@ -4,70 +4,6 @@
     $return = [];
     $return['section'] = '';
 
-    // Functions 
-    function get_menu_items($menu_style, $item){
-        switch($menu_style){
-            case 'menu_photo_list': 
-            $format = '
-                <li class="menu_item site__fade site__fade-up">
-                    %s
-                    <div>
-                        <h3>%s</h3>
-                        <div class="menu__item-description">%s</div>
-                        %s
-                    </div>
-                </li>
-            ';
-
-            $return = sprintf(
-                $format
-                ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
-                ,(!empty($item['title']) ? $item['title'] : '')
-                ,(!empty($item['description']) ? $item['description'] : '')
-                ,(!empty($item['price']) ? '<div class="menu__item-price">$'.$item['price'].'</div>' : '')
-            );
-            break;
-
-            case 'menu_photo_tiled_x3':
-            $price = (!empty($item['price']) ? $item['price'] : '');
-            $priceArr = explode('.',$price);
-            $format = '
-                <li class="menu_item site__fade site__fade-up">
-                    %s
-                    <h3 class="menu__item-price">%s <div>$%s.<span>%s</span></div></h3>
-                    <div class="menu__item-description">%s</div>
-                </li>
-            ';
-
-            $return = sprintf(
-                $format
-                ,(!empty($item['image']) ? '<div class="image_provided block" style="background-image:url('.$item['image']['url'].');"></div>' : '')
-                ,(!empty($item['title']) ? $item['title'] : '')
-                ,$priceArr[0]
-                ,$priceArr[1]
-                ,(!empty($item['description']) ? $item['description'] : '')
-            );
-            break;
-
-            default: 
-            $format = '
-                <li class="menu_item site__fade site__fade-up">
-                    <h3 class="menu__item-price">%s <span class="menu_price">%s</span></h3>
-                    <div class="menu__item-description">%s</div>
-                </li>
-            ';
-            
-            $return = sprintf(
-                $format
-                ,(!empty($item['title']) ? $item['title'] : '')
-                ,(!empty($item['price']) ? $item['price'] : '')
-                ,(!empty($item['description']) ? $item['description'] : '')
-            );
-            break;
-        }
-        return $return;
-    }
-
     // If there are menu posts added to the Food Menus block
     if( !empty($cB['menus']) ){
 
@@ -116,12 +52,12 @@
                     // Menu Header Format
                     if($fields['style'] !== 'menu_text_sub_group_half'){
                         $header_format = '
-                            <h2><span>%s</span></h2>
+                            <h2><span style="background-color:'.$cB['options']['background_color'].';">%s</span></h2>
                             %s
                         ';
                     }else{
                         $header_format = '
-                            <div><h2><span>%s</span></h2>
+                            <div><h2><span style="background-color:'.$cB['options']['background_color'].';">%s</span></h2>
                             %s
                         ';
                     }
@@ -180,19 +116,20 @@
     ';
     
     $return['section'] .= sprintf(
+
         $guide['section']
         ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
-        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 class="block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<p class="block__details">'.$cB['text'].'</p>' : '' )
+        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
+        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' : '' )                                                    // container has bg color class
+        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['foreground_color'] ) ? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
+        ,( !empty($cB['heading_options']['heading']) ? '<h2 class="block__heading" style="'.( !empty( $cB['heading_options']['heading_alignment'] )? 'text-align:'.$cB['heading_options']['heading_alignment'].';' : '' ).'">'.$cB['heading_options']['heading'].'</h2>' : '' )
+        ,( !empty($cB['heading_options']['sub_heading']) ? '<p class="block__details">'.$cB['heading_options']['sub_heading'].'</p>' : '' )
 
         // Return the food menus block content which is the buttons and menus
         ,( !empty($return['buttons_and_menus']) ? $return['buttons_and_menus'] : '' )
 
-        ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
+        ,( !empty($cB['button']['url']) ? '<a class="site__button" href="'.$cB['button']['url'].'">'.$cB['button']['title'].'</a>' : '' )
     );
 
     echo $return['section'];

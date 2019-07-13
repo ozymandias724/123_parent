@@ -10,8 +10,7 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
 	$guide = [];
 
 	$return['content_grid'] = '';
-	$guide['content_grid'] = '';
-		
+    $guide['content_grid'] = '';
 
 	// verify there are records in the relationship field
 	if( !empty($block['content']) ){
@@ -29,16 +28,13 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
         if( !empty( $block['sub_heading'] ) ){
             $return['content_grid'] .= '<div class="site__fade site__fade-up block__details">'.$block['sub_heading'].'</div>';
         }
-        
-        // we are going to loop. check the options.
-
-        // write the container for a site grid w/ the width and colcount on it
-        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' '.$block['options']['width'].'"><ul class="flexboxGrid">';
+         
+        // we are going to loop. check the options
+        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' flexgrid_'. $block['content'][0]->post_type .'"><ul class="flexboxGrid post_type_'.$block['content'][0]->post_type.'">';
 
         // loop thru the post results (items are post objects)
         foreach ($block['content'] as $i => $post) {
 
-            // $return['content_grid'] .= '<li class="'.$block['style'].'">';
             $return['content_grid'] .= '<li>';
 
             // check which post type this item is
@@ -53,16 +49,6 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
                     include( 'parts/grid.coupon.php' );
                     $return['content_grid'] .= ob_get_clean();
                     break;
-                case 'food_menus':
-                    ob_start();
-                    include('parts/grid.food-menus.php');
-                    $return['content_grid'] .= ob_get_clean();
-                    break;
-                case 'locations':
-                    ob_start();
-                    include('parts/grid.location.php');
-                    $return['content_grid'] .= ob_get_clean();
-                    break;
                 case 'services':
                     ob_start();
                     include('parts/grid.service.php');
@@ -75,7 +61,7 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
                     break;
                 case 'testimonials':
                     ob_start();
-                    include('parts/grid.testimonials.php');
+                    include('parts/grid.testimonial.php');
                     $return['content_grid'] .= ob_get_clean();
                     break;
                 default:

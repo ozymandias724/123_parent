@@ -10,17 +10,17 @@
     $return['tabs'] = '';
     
     // if we have galleries
-    if( !empty($cB['galleries']) ){
+    if( !empty( $cB['galleries'] ) ){
 
         $return['galleries'] = '';
 
         // set the galleries guide string
-        $guide['galleries'] = '<li class="site__fade site__fade-up"><div><div class="image" style="background-image: url(%s)"></div></div></li>';
+        $guide['galleries'] = '<li class="site__fade site__fade-up"><div class="image" style="background-image: url(%s)"></div></li>';
         // set the galleries return string
         $return['galleries'] .= '<div class="galleries">';
 
         // open the tabs list
-        if( $cB['tab_type'] != 'none' ){
+        if( $cB['tabs_style'] != 'none' ){
             $return['tabs'] .= '<div class="tabs site__fade site__fade-up"><ul>';
         }
 
@@ -28,15 +28,15 @@
         foreach( $cB['galleries'] as $i => $gallery ){
 
             // create a tab for each gallery
-            if( $cB['tab_type'] !== 'none' ){
-                $return['tabs'] .= '<li class="'.( ($i === 0 ) ? 'tab_active' : '' ).'"><a href="javascript:;" style="color:'.$cB['foreground_color'].';">'.$gallery['title'].'</a></li>';
+            if( $cB['tabs_style'] !== 'none' ){
+                $return['tabs'] .= '<li class="'.( ($i === 0 ) ? 'tab_active' : '' ).'"><a href="javascript:;">'.$gallery['title'].'</a></li>';
             }
 
             // open the galleries grid
-            if ( $cB['tab_type'] == 'none' ){
-                $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2 class="site__fade site__fade-up">'.$gallery['title'].'</h2><ul>';
+            if ( $cB['tabs_style'] == 'none' ){
+                $return['galleries'] .= '<div class="site__flexgrid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><h2 class="site__fade site__fade-up">'.$gallery['title'].'</h2><ul class="flexboxGrid">';
             }else{
-                $return['galleries'] .= '<div class="site__grid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><ul>';
+                $return['galleries'] .= '<div class="site__flexgrid '.( ($i===0) ? 'current_gallery' : 'hidden_gallery' ).'"><ul class="flexboxGrid">';
             }
 
             // loop thru the gallery images to create line items
@@ -49,7 +49,7 @@
             $return['galleries'] .= '</ul></div>';
         }
         // close the tabs list
-        if( $cB['tab_type'] !== 'none' ){
+        if( $cB['tabs_style'] !== 'none' ){
             $return['tabs'] .= '</ul></div>';
         }
 
@@ -62,7 +62,7 @@
             <div class="container %s %s" style="%s %s">
                 %s
                 %s
-                <div class="tabsandgrids_container '.$cB['tab_type'].'">
+                <div class="tabsandgrids_container '.$cB['tabs_style'].'">
                     %s
                     %s
                 </div>
@@ -74,21 +74,26 @@
     $return['section'] .= sprintf(
         $guide['section']
         //  options for every block
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
-        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        // post object grid options
-        ,( !empty($cB['heading']) ? '<h2 class=" block__heading site__fade site__fade-up">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div class="block__details site__fade site__fade-up">'.$cB['text'].'</div>' : '' )
-        // gallery options
-        ,( !empty($return['tabs']) ? $return['tabs'] : '' )
-        ,( !empty($return['galleries']) ? $return['galleries'] : '' )
-        // view all
-        ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
-    );
+        ,( !empty( $cB['anchor_enabled'] )? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
 
+        ,( !empty( $cB['options']['width'] )? $cB['options']['width'] : '' )  // container width
+
+        ,( !empty( $cB['options']['background_color'] )? 'hasbg' :'' )                                                    // container has bg color class
+        ,( !empty( $cB['options']['background_color'] )? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
+        ,( !empty( $cB['options']['foreground_color'] )? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
+
+        // post object grid options
+        ,( !empty( $cB['heading_options']['heading'] )? '<h2 class=" block__heading site__fade site__fade-up" style="'.( !empty( $cB['heading_options']['heading_alignment'] )? 'text-align:'.$cB['heading_options']['heading_alignment'].';' : '' ).'">'.$cB['heading_options']['heading'].'</h2>' : '' )
+
+        ,( !empty( $cB['heading_options']['sub_heading'] )? '<div class="block__details site__fade site__fade-up">'.$cB['heading_options']['sub_heading'].'</div>' : '' )
+
+        // gallery options
+        ,( !empty( $return['tabs'] )? $return['tabs'] : '' )
+
+        ,( !empty( $return['galleries'] )? $return['galleries'] : '' )
+        // view all
+        ,( !empty( $cB['button']['url'] )? '<a class="site__button" href="'.$cB['button']['url'].'">'.$cB['button']['title'].'</a>' : '' )
+    );
 
     // echo return string
     echo $return['section'];

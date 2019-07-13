@@ -1,19 +1,21 @@
+//
+//
 @media only screen {
-
+    //
     section.block__locations { 
         > .container {
 
             &.narrow {
-                width : getVar($sizing, content, small);
+                width : getVar($sizing, content, percent, narrow);
             }
-            &.medium {
-                width : getVar($sizing, content, medium);
+            &.normal {
+                width : getVar($sizing, content, percent, normal);
             }
             &.wide {
-                width : getVar($sizing, content, wide);
+                width : getVar($sizing, content, percent, wide);
             }
             &.full {
-                width : getVar($sizing, content, full);
+                width : getVar($sizing, content, percent, full);
             }
             
             div.locations__block-form {
@@ -54,7 +56,7 @@
             }
             ul.locations {
                 display: flex;
-                flex-flow: column wrap;
+                flex-flow: column nowrap;
                 > li {
                     margin: 0 0 getVar($sizing, gutter, vw, normal) 0;
 
@@ -67,21 +69,24 @@
     }
 }
 
-@media only screen and (max-width: 1280px){
-    section.block__locations {
-        > .container {
-            &.narrow, &.medium, &.wide, &.full {
-                width : getVar($sizing, content, medium);
-            }
-        }
-    }
-}
+
+// @media only screen and (max-width: 1280px){
+//     section.block__locations {
+//         > .container {
+//             &.narrow, &.normal, &.wide, &.full {
+//                 width : getVar($sizing, content, medium);
+//             }
+//         }
+//     }
+// }
+
+
 @media only screen and (max-width: 960px){
     section.block__locations {
         > .container {
-            &.narrow, &.medium, &.wide, &.full {
-                width : getVar($sizing, content, wide);
-            }
+            // &.narrow, &.normal, &.wide, &.full {
+            //     width : getVar($sizing, content, wide);
+            // }
             > ul.columns {
                 flex-flow: column nowrap;
                 > li.left, 
@@ -93,12 +98,13 @@
         }
     }
 }
-@media only screen and (max-width: 640px){
-    section.block__locations {
-        > .container {
-            &.narrow, &.medium, &.wide, &.full {
-                width : getVar($sizing, content, full);
-            }
-        }
-    }
-}
+
+// @media only screen and (max-width: 640px){
+//     section.block__locations {
+//         > .container {
+//             &.narrow, &.normal, &.wide, &.full {
+//                 width : getVar($sizing, content, full);
+//             }
+//         }
+//     }
+// }
