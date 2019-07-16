@@ -1,17 +1,17 @@
 {
-    "key": "group_5cec53d5d1fc7",
-    "title": "Form Block",
+    "key": "group_5cacee8aca477",
+    "title": "Copy Block",
     "fields": [
         {
-            "key": "field_5cec53d5e0173",
+            "key": "field_5caceecaf5e7d",
             "label": "Width",
             "name": "width",
             "type": "select",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -32,12 +32,12 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cec53d5e0d25",
-            "label": "Heading",
-            "name": "heading",
-            "type": "text",
+            "key": "field_5caceef3f5e7e",
+            "label": "Copy",
+            "name": "copy",
+            "type": "wysiwyg",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -45,46 +45,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5d2b6ed4f6748",
-            "label": "Sub Heading",
-            "name": "sub_heading",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_5cec53ee65c2f",
-            "label": "Form",
-            "name": "form",
-            "type": "forms",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "post_object",
-            "allow_null": 0,
-            "multiple": 0
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -118,6 +82,6 @@
         "send-trackbacks"
     ],
     "active": 0,
-    "description": "A basic form block with heading, subheading and a form selection",
-    "modified": 1563252373
+    "description": "Basic WYSIWYG Block",
+    "modified": 1563252238
 }

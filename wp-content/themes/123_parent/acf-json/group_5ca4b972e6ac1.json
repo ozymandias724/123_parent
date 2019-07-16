@@ -1,9 +1,9 @@
 {
-    "key": "group_5cce7a5095c3c",
-    "title": "Coupon Post",
+    "key": "group_5ca4b972e6ac1",
+    "title": "Staff Member",
     "fields": [
         {
-            "key": "field_5cce7a61641d0",
+            "key": "field_5ca4daab601f5",
             "label": "Status",
             "name": "status",
             "type": "true_false",
@@ -22,10 +22,10 @@
             "ui_off_text": "Inactive"
         },
         {
-            "key": "field_5cce7a74641d1",
-            "label": "Expiration",
-            "name": "expiration",
-            "type": "date_picker",
+            "key": "field_5ca4dab8601f6",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,15 +34,22 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "m\/d\/Y",
-            "return_format": "m\/d\/Y",
-            "first_day": 1
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
-            "key": "field_5cce7a8b641d2",
-            "label": "Code",
-            "name": "code",
-            "type": "text",
+            "key": "field_5d06869439899",
+            "label": "Short Bio",
+            "name": "short_bio",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -53,14 +60,14 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": 300,
+            "rows": "",
+            "new_lines": ""
         },
         {
-            "key": "field_5d01c7710502b",
-            "label": "Details",
-            "name": "details",
+            "key": "field_5ca4dac0601f7",
+            "label": "Full Bio",
+            "name": "full_bio",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -75,6 +82,27 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_5cce1b8de786f",
+            "label": "Social Media",
+            "name": "social_media",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5cce1a9d05679"
+            ],
+            "display": "group",
+            "layout": "row",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -82,11 +110,11 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "coupon"
+                "value": "staff"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 1,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -106,6 +134,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "Default Coupon Post Template",
-    "modified": 1563097373
+    "description": "Default Staff Post Template",
+    "modified": 1563127656
 }

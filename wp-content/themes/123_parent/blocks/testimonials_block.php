@@ -4,10 +4,8 @@
  * 
  */
     // empty return string
-    $return = [];
-    $guide = [];
-    $return['section'] = '';
-    $guide['section'] = '';
+    $return['testimonials_block'] = '';
+    $guide['testimonials_block'] = '';
 
     $guide['grid'] = '';
     
@@ -91,9 +89,9 @@
     $return['grid'] .= '</ul>';
 
     // empty guide string 
-    $guide['section'] = '
-        <section %s class="site__block block__testimonials">
-            <div class="container %s %s" style="%s %s">
+    $guide['testimonials_block'] = '
+        <section class="site__block block__testimonials">
+            <div class="container %s">
                 %s
                 %s
                 %s
@@ -102,22 +100,16 @@
         </section>
     ';
 
-    $return['section'] .= sprintf(
-        $guide['section']
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
-        ,( !empty( $cB['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['background_color'] ) ? 'background-color:'.$cB['background_color'].';' : '' )           // container bg color style
-        ,( !empty( $cB['foreground_color'] ) ? 'color:'.$cB['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading']) ? '<h2 class="site__fade site__fade-up block__heading" style="text-align:'.$cB['heading_alignment'].';">'.$cB['heading'].'</h2>' : '' )
-        ,( !empty($cB['text']) ? '<div class="site__fade site__fade-up block__details">'.$cB['text'].'</div>' : '' )
+    $return['testimonials_block'] .= sprintf(
+        $guide['testimonials_block']
+        ,( !empty($cB['width']) ? $cB['width'] : '')                                                         // container width
+        ,( !empty($cB['heading']) ? '<h3>' . $cB['heading'] . '</h3>' : '')
+        ,( !empty($cB['sub_heading']) ? '<div>' . $cB['sub_heading'] . '</div>' : '')
         ,( !empty($return['grid']) ? '<div class="site__grid">'.$return['grid'].'</div>' : '' )
         ,( !empty($cB['view_all_button']['link']) ? '<a class="site__button" href="'.$cB['view_all_button']['link']['url'].'">'.$cB['view_all_button']['link']['title'].'</a>' : '' )
     );
 
     // echo return string
-    echo $return['section'];
+    echo $return['testimonials_block'];
 
-    // clear the $cB, $return, $index and $guide vars for the next block
-    unset($cB, $return, $guide);
- ?>
+?>

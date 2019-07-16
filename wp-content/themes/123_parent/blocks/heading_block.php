@@ -4,32 +4,25 @@
 * 
 * 
 */
-    // set return and guide string arrays
-    $return = [];
-    $guide = [];
-    $return['section'] = '';
+    $return['heading_block'] = '';
     
     // guide string for the section
-    $guide['section'] = '
-        <section %s class="site__block block__heading">
-            <div class="container %s %s" style="%s">
+    $guide['heading_block'] = '
+        <section class="site__block block__heading">
+            <div class="container '.$cB['width'].'">
+                %s
                 %s
             </div>
         </section>
     ';
     // return string for the section
-    $return['section'] .= sprintf(
-        $guide['section']
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
-        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
-        ,'<'.$cB['heading_options']['level'].' style="color: '.$cB['options']['foreground_color'].';text-align:'.$cB['heading_options']['heading_alignment'].';">'.$cB['heading_options']['content'] . '</'.$cB['heading_options']['level'].'>' // heading content w/ level and alignment
+    $return['heading_block'] .= sprintf(
+        $guide['heading_block']
+        ,'<'.$cB['level'].'>'.$cB['heading'] . '</'.$cB['level'].'>' // heading content w/ level and alignment
+        ,'<p>'.$cB['sub_heading'].'</p>'
     );
 
     // echo return string
-    echo $return['section'];
+    echo $return['heading_block'];
 
-    // clear the $cB, $return and $guide vars
-    unset($cB, $return, $guide);
  ?>

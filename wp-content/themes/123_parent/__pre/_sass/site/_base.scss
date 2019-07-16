@@ -14,21 +14,25 @@
         letter-spacing: 0.33px;
         display: flex;
         flex-flow: column nowrap;
-        > main {
-            flex: 1;
+        &.narrow {
+            > main {
+                max-width: 960px;
+            }
         }
         &.normal {
             > main {
-                margin: 0 auto;
-                width: 100%;
-                max-width: 1600px;
+                max-width: 1280px;
             }
         }
-        &.full {
-            >main {
-                margin: 0 auto;
-                max-width: none;
+        &.large {
+            > main {
+                max-width: 1620px;
             }
+        }
+        > main {
+            flex: 1;
+            margin: 0 auto;
+            width: 100%;
         }
 
         &.js__noscroll {
@@ -77,6 +81,12 @@
     img {
         object-fit: cover;
         height: auto;
+    }
+
+    blockquote {
+        border-left: 1px solid #000;
+        padding-left: getVar($sizing, gutter, px, small);
+        text-align: left;
     }
     
 }

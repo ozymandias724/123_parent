@@ -1,9 +1,9 @@
 {
-    "key": "group_5d118050b6c45",
-    "title": "Food Menu Page",
+    "key": "group_5ceb46b31b910",
+    "title": "Food Menus Block",
     "fields": [
         {
-            "key": "field_5d1180b9f8181",
+            "key": "field_5ceb46b32a810",
             "label": "Width",
             "name": "width",
             "type": "select",
@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -32,7 +32,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5d1180d0f8182",
+            "key": "field_5ceb46b32b403",
             "label": "Heading",
             "name": "heading",
             "type": "text",
@@ -51,37 +51,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d1180e3f8183",
-            "label": "Heading Alignment",
-            "name": "heading_alignment",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "Left",
-                "center": "Center",
-                "right": "Right"
-            },
-            "default_value": [
-                "center"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5d1180fff8184",
-            "label": "Text",
-            "name": "text",
+            "key": "field_5ceb46b32bbc9",
+            "label": "Sub Heading",
+            "name": "sub_heading",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -98,7 +70,7 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d118115f8185",
+            "key": "field_5ceb88a346987",
             "label": "Tabs Style",
             "name": "tabs_style",
             "type": "select",
@@ -124,26 +96,97 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5ceb46b32bfd5",
+            "label": "Food Menus",
+            "name": "food_menus",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add a Menu",
+            "sub_fields": [
+                {
+                    "key": "field_5ceb46b35ac44",
+                    "label": "Food Menu",
+                    "name": "food_menu",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "food_menus"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_5ceb46b36782d",
+            "label": "Button",
+            "name": "button",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "templates-pages\/tpl.menu.php"
+                "value": "post"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content"
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
     ],
-    "active": 1,
-    "description": "",
-    "modified": 1561428338
+    "active": 0,
+    "description": "The Food Menus Block (complex)",
+    "modified": 1563235561
 }

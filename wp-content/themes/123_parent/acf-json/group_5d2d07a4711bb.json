@@ -1,9 +1,9 @@
 {
-    "key": "group_5d11460744d0e",
-    "title": "About Page",
+    "key": "group_5d2d07a4711bb",
+    "title": "Locations Block",
     "fields": [
         {
-            "key": "field_5d1146214ebbc",
+            "key": "field_5d2d45c4b3145",
             "label": "Width",
             "name": "width",
             "type": "select",
@@ -19,10 +19,10 @@
                 "narrow": "Narrow",
                 "medium": "Medium",
                 "wide": "Wide",
-                "full": "Full"
+                "full": "Full (100%)"
             },
             "default_value": [
-                "medium"
+                "full"
             ],
             "allow_null": 0,
             "multiple": 0,
@@ -32,7 +32,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5d11463b4ebbd",
+            "key": "field_5d2d45eab3146",
             "label": "Heading",
             "name": "heading",
             "type": "text",
@@ -51,37 +51,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d11464d4ebbe",
-            "label": "Heading Alignment",
-            "name": "heading_alignment",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "Left",
-                "center": "Center",
-                "right": "Right"
-            },
-            "default_value": [
-                "center"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_5d1146604ebbf",
-            "label": "Text",
-            "name": "text",
+            "key": "field_5d2d45f4b3147",
+            "label": "Sub Heading",
+            "name": "sub_heading",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -98,10 +70,10 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d1146794ebc0",
-            "label": "Style",
-            "name": "style",
-            "type": "select",
+            "key": "field_5d2d07afb601c",
+            "label": "Location",
+            "name": "location",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -110,39 +82,47 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "one": "One",
-                "two": "Two"
-            },
-            "default_value": [
-                "one"
+            "post_type": [
+                "areas-served"
             ],
+            "taxonomy": [],
             "allow_null": 0,
             "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "return_format": "object",
+            "ui": 1
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "templates-pages\/tpl.about.php"
+                "value": "post"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content"
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
     ],
-    "active": 1,
+    "active": 0,
     "description": "",
-    "modified": 1561413369
+    "modified": 1563248128
 }

@@ -1,31 +1,36 @@
 <?php 
 /**
- * Template: Page
- * 
- */
-    $fields = get_fields(get_the_ID());
-    
+* Template: Page
+* 
+*/
+
+    $fields = get_fields( get_the_ID() );
+
     get_header();
 ?>
 <main>
 <?php
-    
+
     // get hero
-    if (!empty($fields['hero_type'])) {
+    if ( !empty($fields['hero_type']) ) {
         include(get_template_directory() . '/parts/part.hero.php');
     }
     
-    // get content blocks    if (!empty($fields['content_blocks'])) {
-    foreach ($fields['content_blocks'] as $i => $block) {
-        if( $block['acf_fc_layout'] == 'content_grid' ){
-            
-            include(get_template_directory() . '/blocks/' . $block['acf_fc_layout'] .'/'.$block['acf_fc_layout'] . '.php');
-        }else{
-
-            $cB = $block;
-            include(get_template_directory() . '/blocks/' . $block['acf_fc_layout'] . '.php');
+    /**
+     *  Loop thru the 'content blocks' flexible content field
+     *  include template parts by name if they are available
+     */
+    if( !empty($fields['content_blocks']) ){
+        foreach ($fields['content_blocks'] as $cB) {
+            $path = get_template_directory() . '/blocks/' . $cB['acf_fc_layout'] . '.php';
+            // include the block
+            if( file_exists($path) ){
+                include($path);
+            }
         }
     }
+
+
 ?>
 </main>
 <?php 

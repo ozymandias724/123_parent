@@ -4,36 +4,33 @@
  * 
  *   Content Grid 
  */
-if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
-
-	$return = [];
-	$guide = [];
+if( !empty($cB) && $cB['acf_fc_layout'] == 'content_grid' ){
 
 	$return['content_grid'] = '';
     $guide['content_grid'] = '';
 
 	// verify there are records in the relationship field
-	if( !empty($block['content']) ){
+	if( !empty($cB['content']) ){
 
         // open up a section,
         // open up container inside section
-        $return['content_grid'] .= '<section class="site__block"><div class="container '.$block['options']['width'].'">';
+        $return['content_grid'] .= '<section class="site__block"><div class="container '.$cB['options']['width'].'">';
 
         // check for the heading,
-        if( !empty( $block['heading'] ) ){
-            $return['content_grid'] .= '<h2 class="site__fade site__fade-up block__heading">'.$block['heading'].'</h2>';
+        if( !empty( $cB['heading'] ) ){
+            $return['content_grid'] .= '<h2 class="site__fade site__fade-up block__heading">'.$cB['heading'].'</h2>';
         }
         
         // check for the sub heading
-        if( !empty( $block['sub_heading'] ) ){
-            $return['content_grid'] .= '<div class="site__fade site__fade-up block__details">'.$block['sub_heading'].'</div>';
+        if( !empty( $cB['sub_heading'] ) ){
+            $return['content_grid'] .= '<div class="site__fade site__fade-up block__details">'.$cB['sub_heading'].'</div>';
         }
          
         // we are going to loop. check the options
-        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$block['options']['column_count'].' flexgrid_'. $block['content'][0]->post_type .'"><ul class="flexboxGrid post_type_'.$block['content'][0]->post_type.'">';
+        $return['content_grid'] .= '<div class="site__flexgrid cols-'.$cB['options']['column_count'].' flexgrid_'. $cB['content'][0]->post_type .'"><ul class="flexboxGrid post_type_'.$cB['content'][0]->post_type.'">';
 
         // loop thru the post results (items are post objects)
-        foreach ($block['content'] as $i => $post) {
+        foreach ($cB['content'] as $i => $post) {
 
             $return['content_grid'] .= '<li>';
 
@@ -77,8 +74,8 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
         $return['content_grid'] .= '</ul>';
 
         // check for the view all button
-        if( !empty( $block['button'] ) ){
-            $return['content_grid'] .= '<a class="site__button" href="'.$block['button']['url'].'">'.$block['button']['title'].'</a>';
+        if( !empty( $cB['button'] ) ){
+            $return['content_grid'] .= '<a class="site__button" href="'.$cB['button']['url'].'">'.$cB['button']['title'].'</a>';
         }
         
         // close the content grid 
@@ -87,5 +84,5 @@ if( !empty($block) && $block['acf_fc_layout'] == 'content_grid' ){
         echo $return['content_grid'];
 	}
 }
-unset($return, $guide);
+
 ?>

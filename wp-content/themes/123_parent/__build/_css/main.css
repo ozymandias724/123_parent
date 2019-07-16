@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
-/* Slider */
 @import '../../node_modules/magnific-popup/dist/magnific-popup.css';
+/* Slider */
 .slick-slider {
   position: relative;
   display: block;
@@ -795,17 +795,19 @@ img {
     display: flex;
     flex-flow: column nowrap;
   }
-  body > main {
-    flex: 1;
+  body.narrow > main {
+    max-width: 960px;
   }
   body.normal > main {
+    max-width: 1280px;
+  }
+  body.large > main {
+    max-width: 1620px;
+  }
+  body > main {
+    flex: 1;
     margin: 0 auto;
     width: 100%;
-    max-width: 1600px;
-  }
-  body.full > main {
-    margin: 0 auto;
-    max-width: none;
   }
   body.js__noscroll {
     overflow: hidden;
@@ -865,6 +867,12 @@ h6 {
   img {
     object-fit: cover;
     height: auto;
+  }
+
+  blockquote {
+    border-left: 1px solid #000;
+    padding-left: 15px;
+    text-align: left;
   }
 }
 @media only screen {

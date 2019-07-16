@@ -4,17 +4,15 @@
  * 
  */
     // empty return string
-    $return = [];
-    $guide = [];
-    $return['section'] = '';
-    $return['form'] ='';
-    $guide['form'] = '';
-    $guide['section'] = '';
+    $return['form_block'] = '';
+    $return['form_object'] ='';
+    $guide['form_object'] = '';
+    $guide['form_block'] = '';
     
     // empty guide string 
-    $guide['section'] = '
-        <section %s class="site__block block__form">
-            <div class="container %s %s" style="%s %s">
+    $guide['form_block'] = '
+        <section class="site__block block__form">
+            <div class="container %s">
                 %s
                 %s
                 '.( !empty($cB['form']) ? do_shortcode('[gravityform id="'.$cB['form']['id'].'" title="false" description="false"]') : '') .'
@@ -22,21 +20,15 @@
         </section>
     ';
 
-    $return['section'] .= sprintf(
-        $guide['section']
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
-        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' :'' )                                                    // container has bg color class
-        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
-        ,( !empty( $cB['options']['foreground_color'] ) ? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading_options']['heading']) ? '<h2 style="text-align:'.$cB['heading_options']['heading_alignment'].';">'.$cB['heading_options']['heading'].'</h2>' : '' )
-        ,( !empty($cB['heading_options']['details']) ? '<div>'.$cB['heading_options']['details'].'</div>' : '' )
+    $return['form_block'] .= sprintf(
+        $guide['form_block']
+        ,( !empty( $cB['width'] ) ? $cB['width'] : '' )                                                         // container width
+        ,( !empty($cB['heading']) ? '<h3>'.$cB['heading'].'</h3>' : '' )
+        ,( !empty($cB['sub_heading']) ? '<div>'.$cB['sub_heading'].'</div>' : '' )
     );
 
 
     // echo return string
-    echo $return['section'];
+    echo $return['form_block'];
 
-    // clear the $cB, $return, $index and $guide vars for the next block
-    unset($cB, $return, $guide);
  ?>

@@ -91,7 +91,15 @@
                             "type": "group",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cbb4d2e64064",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -127,7 +135,15 @@
                             "type": "group",
                             "instructions": "Setup the Overlay part of the Popup",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cbb4d2e64064",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -289,7 +305,15 @@
                             "type": "group",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cf582eae619a",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -325,7 +349,15 @@
                             "type": "group",
                             "instructions": "Setup the Overlay part of the Popup",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cf582eae619a",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -487,7 +519,15 @@
                             "type": "number",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cbb4d2e64064",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -508,7 +548,15 @@
                             "type": "number",
                             "instructions": "If the popup has been viewed, then dismissed, the timer should be longer than normal for the next time.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cbb4d2e64064",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -529,7 +577,15 @@
                             "type": "group",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5cbb4d2e64064",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -698,19 +754,18 @@
                     },
                     "choices": {
                         "narrow": "Narrow",
-                        "normal": "Normal",
+                        "medium": "Medium",
                         "wide": "Wide",
-                        "full": "Full (100%)",
-                        "auto": "auto"
+                        "full": "Full (100%)"
                     },
                     "default_value": [
-                        "normal"
+                        "full"
                     ],
                     "allow_null": 0,
                     "multiple": 0,
-                    "ui": 1,
-                    "ajax": 1,
+                    "ui": 0,
                     "return_format": "value",
+                    "ajax": 0,
                     "placeholder": ""
                 },
                 {
@@ -1992,8 +2047,23 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": 1,
-    "description": "",
-    "modified": 1562955117
+    "description": "The Theme Settings Options Page",
+    "modified": 1563250103
 }

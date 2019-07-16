@@ -4,12 +4,17 @@
 *   Hero Section
 */
 
+$fields = get_fields( get_the_ID() );
+
 $header = 'header__' . get_field('header', 'options')['style'];
 
 // 
 // 
 // Get Foreground
 $fg = ( !empty($fields['foreground'] ) ? $fields['foreground'] : '');
+// Get Background
+$bg = (!empty($fields['background']) ? $fields['background'] : '');
+
 
 // options
 $return['fgbgtint'] = '';
@@ -55,13 +60,11 @@ $return['button'] = '';
 
 if (!empty($fg['button']['link']['url'])) {
     $guide['button'] = '
-        <a class="site__button" href="%s" style="%s %s" title="%s" target="%s">%s</a>
+        <a class="site__button" href="%s" title="%s" target="%s">%s</a>
     ';
     $return['button'] = sprintf(
         $guide['button'],
         (!empty($fg['button']['link']['url']) ? $fg['button']['link']['url'] : ''),
-        (!empty($fg['button']['foreground_color']) ? 'color:' . $fg['button']['foreground_color'] . ';' : ''),
-        (!empty($fg['button']['background_color']) ? 'background-color:' . $fg['button']['background_color'] . ';' : ''),
         (!empty($fg['button']['link']['title']) ? $fg['button']['link']['title'] : ''),
         (!empty($fg['button']['link']['target']) ? $fg['button']['link']['target'] : ''),
         (!empty($fg['button']['link']['title']) ? $fg['button']['link']['title'] : '')
@@ -81,7 +84,7 @@ $guide['fg'] = '
 $return['fg'] = sprintf(
     $guide['fg']
     ,$return['fgbgtint']
-    ,( !empty($fg['options']['foreground_color']) ? 'color:'.$fg['options']['foreground_color'].';' : '')
+    ,( !empty($bg['color']['text_color']) ? 'color:'.$bg['color']['text_color'].';' : '')
     ,( !empty($fg['options']['placement']) ? $fg['options']['placement'] : '')
     ,( !empty($fg['options']['width']) ? $fg['options']['width'] : '')
     ,$return['fg_content']
@@ -93,8 +96,6 @@ $return['fg'] = sprintf(
 
 // 
 // 
-// Get Background
-$bg = (!empty($fields['background']) ? $fields['background'] : '');
 
 $return['bgtint'] = '';
 if (!empty($bg['background_tint'])) {
@@ -104,15 +105,21 @@ if (!empty($bg['background_tint'])) {
 // check bg type
 $type = $fields['hero_type'];
 
+
 if( $type !== 'none' ){
+    
     // open hero container
     echo '<section class="hero site__fade site__fade-up" id="hero_'.$type.'">'; 
+    
     // static image
+    
     if( $type == 'image' ){
         
         echo '<div class="image" style="background-image: url('.$bg['image']['image']['url'].')">'.$return['fg'].'</div>';
 
-    }else if( $type == 'slider' ){
+    }
+    
+    else if( $type == 'slider' ){
         // 
         if ($bg['slider']['randomize']) {
             shuffle($slider_images);
@@ -129,13 +136,17 @@ if( $type !== 'none' ){
         echo $return['fg'];
         echo $slider;
         
-    }else if( $type == 'video'){
+    }
+    
+    else if( $type == 'video'){
         // 
         include(get_template_directory().'/parts/hero/part.hero.video.php');
-    }else if( $type == 'color' ){
+    }
+    
+    else if( $type == 'color' ){
         // 
         echo $return['fg'];
-        echo '<div class="hero_bgtint" style="'.$return['bgtint'].'"></div>';
+        echo '<div class="hero_bgtint" style="background-color:'.$bg['color']['fill_color'].';"></div>';
     }
     // close hero container
     echo '</section>'; 

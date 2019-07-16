@@ -1,45 +1,7 @@
 {
     "key": "group_5d00400ccb783",
-    "title": "Contact Block",
+    "title": "Columns Block",
     "fields": [
-        {
-            "key": "411",
-            "label": "Anchor Enabled",
-            "name": "anchor_enabled",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5d07b60637af3",
-            "label": "Anchor Link Text",
-            "name": "anchor_link_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
         {
             "key": "field_5d00400cd7b20",
             "label": "Width",
@@ -70,36 +32,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_5d00400cd7f19",
-            "label": "Background Color",
-            "name": "background_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
-        },
-        {
-            "key": "field_5d00400cd82d0",
-            "label": "Foreground Color",
-            "name": "foreground_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": ""
-        },
-        {
             "key": "field_5d00400cd86bd",
             "label": "Heading",
             "name": "heading",
@@ -119,37 +51,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d00400cd8aa1",
-            "label": "Heading Alignment",
-            "name": "heading_alignment",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "Left",
-                "center": "Center",
-                "right": "Right"
-            },
-            "default_value": [
-                "center"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
             "key": "field_5d00400cd8ea5",
-            "label": "Text",
-            "name": "text",
+            "label": "Sub Heading",
+            "name": "sub_heading",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -166,11 +70,11 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d004032c5256",
-            "label": "Left",
-            "name": "left",
-            "type": "flexible_content",
-            "instructions": "",
+            "key": "field_5d2af850d3628",
+            "label": "Columns",
+            "name": "columns",
+            "type": "repeater",
+            "instructions": "Create a multi-column block.\r\nEach column has a selection of other blocks available",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -178,64 +82,37 @@
                 "class": "",
                 "id": ""
             },
-            "layouts": {
-                "layout_5d01bb2cd19fb": {
-                    "key": "layout_5d01bb2cd19fb",
-                    "name": "form",
-                    "label": "Form",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5d00403dc5257",
-                            "label": "Form",
-                            "name": "form",
-                            "type": "forms",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "post_object",
-                            "allow_null": 0,
-                            "multiple": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5d01bb46f5c2c": {
-                    "key": "layout_5d01bb46f5c2c",
-                    "name": "locations",
-                    "label": "Locations",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5d01bb4cf5c2d",
-                            "label": "Locations",
-                            "name": "locations",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+            "collapsed": "field_5d01bbf092a0f",
+            "min": 1,
+            "max": 3,
+            "layout": "block",
+            "button_label": "Add a Column (3 max)",
+            "sub_fields": [
+                {
+                    "key": "field_5d01bbf092a0f",
+                    "label": "Column",
+                    "name": "column",
+                    "type": "flexible_content",
+                    "instructions": "Create a row within this column.\r\nSelect from the blocks that work with this layout style. (not the big grids for instance)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_5d01bb2cd19fb": {
+                            "key": "layout_5d01bb2cd19fb",
+                            "name": "form_block",
+                            "label": "Form Block",
+                            "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_5d01bb53f5c2e",
-                                    "label": "Location",
-                                    "name": "location",
-                                    "type": "post_object",
+                                    "key": "field_5d2d076f26d17",
+                                    "label": "Form Block",
+                                    "name": "form_block",
+                                    "type": "clone",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -244,97 +121,29 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": [
-                                        "areas-served"
+                                    "clone": [
+                                        "group_5cec53d5d1fc7"
                                     ],
-                                    "taxonomy": "",
-                                    "allow_null": 0,
-                                    "multiple": 0,
-                                    "return_format": "object",
-                                    "ui": 1
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
                                 }
-                            ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                }
-            },
-            "button_label": "Add Row",
-            "min": "",
-            "max": ""
-        },
-        {
-            "key": "field_5d01bbf092a0f",
-            "label": "Right",
-            "name": "right",
-            "type": "flexible_content",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layouts": {
-                "layout_5d01bb2cd19fb": {
-                    "key": "layout_5d01bb2cd19fb",
-                    "name": "form",
-                    "label": "Form",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5d01bbf092a10",
-                            "label": "Form",
-                            "name": "form",
-                            "type": "forms",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "post_object",
-                            "allow_null": 0,
-                            "multiple": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_5d01bb46f5c2c": {
-                    "key": "layout_5d01bb46f5c2c",
-                    "name": "locations",
-                    "label": "Locations",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5d01bbf092a11",
-                            "label": "Locations",
-                            "name": "locations",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5d2bfb4072bb4": {
+                            "key": "layout_5d2bfb4072bb4",
+                            "name": "copy_block",
+                            "label": "Copy Block",
+                            "display": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_5d01bbf092a12",
-                                    "label": "Location",
-                                    "name": "location",
-                                    "type": "post_object",
+                                    "key": "field_5d2bfb4772bb5",
+                                    "label": "Copy Block",
+                                    "name": "copy_block",
+                                    "type": "clone",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -343,25 +152,86 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "post_type": [
-                                        "areas-served"
+                                    "clone": [
+                                        "group_5cacee8aca477"
                                     ],
-                                    "taxonomy": "",
-                                    "allow_null": 0,
-                                    "multiple": 0,
-                                    "return_format": "object",
-                                    "ui": 1
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
                                 }
-                            ]
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5d2bfb5b72bb6": {
+                            "key": "layout_5d2bfb5b72bb6",
+                            "name": "heading_block",
+                            "label": "Heading Block",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5d2bfb6172bb7",
+                                    "label": "Heading Block",
+                                    "name": "heading_block",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_5cacf15da8346"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_5d01bb46f5c2c": {
+                            "key": "layout_5d01bb46f5c2c",
+                            "name": "locations_block",
+                            "label": "Locations Block",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5d2d078926d18",
+                                    "label": "Locations Block",
+                                    "name": "locations_block",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_5d2d07a4711bb"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
                         }
-                    ],
+                    },
+                    "button_label": "Add a Row to this Column",
                     "min": "",
                     "max": ""
                 }
-            },
-            "button_label": "Add Row",
-            "min": "",
-            "max": ""
+            ]
         }
     ],
     "location": [
@@ -395,6 +265,6 @@
         "send-trackbacks"
     ],
     "active": 0,
-    "description": "",
-    "modified": 1561741748
+    "description": "1-3 column layout of blocks",
+    "modified": 1563232225
 }

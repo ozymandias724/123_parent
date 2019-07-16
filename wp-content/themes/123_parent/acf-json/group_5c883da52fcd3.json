@@ -20,7 +20,7 @@
                 "image": "Image",
                 "slider": "Slider",
                 "video": "Video",
-                "color": "Color"
+                "color": "Color (Fill)"
             },
             "default_value": [
                 "none"
@@ -37,7 +37,7 @@
             "label": "Background",
             "name": "background",
             "type": "group",
-            "instructions": "The background stuff",
+            "instructions": "Setup the background of the hero section.\r\ni.e., add an image or select a fill color",
             "required": 0,
             "conditional_logic": [
                 [
@@ -60,40 +60,53 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5cfc56c0b91af",
-                    "label": "Background Tint",
-                    "name": "background_tint",
-                    "type": "color_picker",
+                    "key": "field_5cf9952050886",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c883e24686fa",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": ""
-                },
-                {
-                    "key": "field_5cfc56deb91b0",
-                    "label": "Tint Opacity",
-                    "name": "tint_opacity",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 1,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": 0,
-                    "max": 1,
-                    "step": "0.01"
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cf9956250888",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ]
                 },
                 {
                     "key": "field_5cf9950250884",
@@ -487,9 +500,9 @@
                     ]
                 },
                 {
-                    "key": "field_5cf9952050886",
-                    "label": "Image",
-                    "name": "image",
+                    "key": "field_5d2d5156ea50e",
+                    "label": "Color",
+                    "name": "color",
                     "type": "group",
                     "instructions": "",
                     "required": 0,
@@ -498,7 +511,7 @@
                             {
                                 "field": "field_5c883e24686fa",
                                 "operator": "==",
-                                "value": "image"
+                                "value": "color"
                             }
                         ]
                     ],
@@ -510,28 +523,50 @@
                     "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5cf9956250888",
-                            "label": "Image",
-                            "name": "image",
-                            "type": "image",
-                            "instructions": "",
+                            "key": "field_5d2d5230407e5",
+                            "label": "Fill Color",
+                            "name": "fill_color",
+                            "type": "color_picker",
+                            "instructions": "Enter a background color to fill.\r\nDefault is black",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5c883e24686fa",
+                                        "operator": "==",
+                                        "value": "color"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "default_value": "#000000"
+                        },
+                        {
+                            "key": "field_5d2d5251407e6",
+                            "label": "Text Color",
+                            "name": "text_color",
+                            "type": "color_picker",
+                            "instructions": "Select the color for text appearing in the hero space\r\n(for contrast)",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5c883e24686fa",
+                                        "operator": "==",
+                                        "value": "color"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#FFFFFF"
                         }
                     ]
                 }
@@ -637,57 +672,6 @@
                             "return_format": "value",
                             "ajax": 0,
                             "placeholder": ""
-                        },
-                        {
-                            "key": "field_5cfabb73aa0e7",
-                            "label": "Background Tint",
-                            "name": "background_tint",
-                            "type": "color_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
-                        },
-                        {
-                            "key": "field_5cfc4240e72b0",
-                            "label": "Tint Opacity",
-                            "name": "tint_opacity",
-                            "type": "number",
-                            "instructions": "Any opacity value from 0 to 1.\r\ni.e.: 0.15",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": 1,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "min": 0,
-                            "max": 1,
-                            "step": "0.01"
-                        },
-                        {
-                            "key": "field_5cfabb7eaa0e8",
-                            "label": "Foreground Color",
-                            "name": "foreground_color",
-                            "type": "color_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
                         }
                     ]
                 },
@@ -888,36 +872,6 @@
                                 "id": ""
                             },
                             "return_format": "array"
-                        },
-                        {
-                            "key": "field_5cfabbeaaa0ea",
-                            "label": "Foreground Color",
-                            "name": "foreground_color",
-                            "type": "color_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
-                        },
-                        {
-                            "key": "field_5cfabbf4aa0eb",
-                            "label": "Background Color",
-                            "name": "background_color",
-                            "type": "color_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": ""
                         }
                     ]
                 }
@@ -954,5 +908,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1561591422
+    "modified": 1563251325
 }

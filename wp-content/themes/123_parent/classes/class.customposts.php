@@ -153,6 +153,38 @@ class CustomPosts
         );
         register_post_type('services', $args);
         
+        $labels = array(
+            'name'               => _x( 'Galleries', 'post type general name', '123_parent' ),
+            'singular_name'      => _x( 'Gallery', 'post type singular name', '123_parent' ),
+            'menu_name'          => _x( 'Galleries', 'admin menu', '123_parent' ),
+            'name_admin_bar'     => _x( 'Gallery', 'add new on admin bar', '123_parent' ),
+            'add_new'            => _x( 'Add New', 'Gallery', '123_parent' ),
+            'add_new_item'       => __( 'Add New Gallery', '123_parent' ),
+            'new_item'           => __( 'New Gallery', '123_parent' ),
+            'edit_item'          => __( 'Edit Gallery', '123_parent' ),
+            'view_item'          => __( 'View Gallery', '123_parent' ),
+            'all_items'          => __( 'All Galleries', '123_parent' ),
+            'search_items'       => __( 'Search Galleries', '123_parent' ),
+            'parent_item_colon'  => __( 'Parent Galleries:', '123_parent' ),
+            'not_found'          => __( 'No Galleries found.', '123_parent' ),
+            'not_found_in_trash' => __( 'No Galleries found in Trash.', '123_parent' )
+        );
+        $args = array(
+            'labels'             => $labels,
+            'description'        => __( 'Description.', '123_parent' ),
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => false,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+        );
+        register_post_type('galleries', $args);
+        
         
 
         $labels = array(
@@ -189,52 +221,49 @@ class CustomPosts
 
 
         $labels = array(
-				'name'                => 'Coupon',
-				'singular_name'       => 'Coupon',
-				'add_new'             => 'Add Coupon',
-				'add_new_item'        => 'Add New Coupon',
-				'edit_item'           => 'Edit Coupon',
-				'new_item'            => 'New Coupon',
-				'view_item'           => 'View Coupon',
-				'search_items'        => 'Search Coupons',
-				'not_found'           => 'No Coupons Found',
-				'not_found_in_trash'  => 'No Coupons Found in Trash',
-				'parent_item_colon'   => 'Parent Coupon',
-				'menu_name'           => 'Coupons',
-				'all_items'           => 'All Coupons',
-			);
+            'name'                => 'Coupon',
+            'singular_name'       => 'Coupon',
+            'add_new'             => 'Add Coupon',
+            'add_new_item'        => 'Add New Coupon',
+            'edit_item'           => 'Edit Coupon',
+            'new_item'            => 'New Coupon',
+            'view_item'           => 'View Coupon',
+            'search_items'        => 'Search Coupons',
+            'not_found'           => 'No Coupons Found',
+            'not_found_in_trash'  => 'No Coupons Found in Trash',
+            'parent_item_colon'   => 'Parent Coupon',
+            'menu_name'           => 'Coupons',
+            'all_items'           => 'All Coupons',
+        );
 
-			$args = array(
-				'labels'              => $labels,
-				'hierarchical'        => false,
-				'description'         => 'description',
-				'taxonomies'          => array(),
-				'public'              => true,
-				'show_ui'             => true,
-				'show_in_menu'        => true,
-				'show_in_admin_bar'   => true,
-				'menu_position'       => 84,
-				'menu_icon'           => 'dashicons-tickets',
-				'show_in_nav_menus'   => true,
-				'publicly_queryable'  => true,
-				'exclude_from_search' => false,
-				'has_archive'         => false,
-				'query_var'           => true,
-				'can_export'          => true,
-				'rewrite'             => array(
-					'slug' => 'coupons',
-				),
-				'capability_type'     => 'post',
-				'supports'            => array(
-					'title', 'revisions', 'page-attributes', 'post-formats'
-					)
-			);
+        $args = array(
+            'labels'              => $labels,
+            'hierarchical'        => false,
+            'description'         => 'description',
+            'taxonomies'          => array(),
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 84,
+            'menu_icon'           => 'dashicons-tickets',
+            'show_in_nav_menus'   => true,
+            'publicly_queryable'  => true,
+            'exclude_from_search' => false,
+            'has_archive'         => false,
+            'query_var'           => true,
+            'can_export'          => true,
+            'rewrite'             => array(
+                'slug' => 'coupons',
+            ),
+            'capability_type'     => 'post',
+            'supports'            => array(
+                'title', 'revisions', 'page-attributes', 'post-formats'
+                )
+        );
 
-			register_post_type( 'coupon', $args );
-        
-
+        register_post_type( 'coupon', $args );
     }
-    
 }
 
 new CustomPosts();    

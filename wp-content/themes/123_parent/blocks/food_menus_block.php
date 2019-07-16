@@ -1,11 +1,9 @@
 <?php 
 
-    $guide = []; 
-    $return = [];
-    $return['section'] = '';
+    $return['food_menus_block'] = '';
 
     // If there are menu posts added to the Food Menus block
-    if( !empty($cB['menus']) ){
+    if( !empty($cB['food_menus']) ){
 
         // open buttons and menus container
         $return['buttons_and_menus'] = '<div id="tabs_style__'.$cB['tabs_style'].'" class="tabs">'; 
@@ -17,10 +15,10 @@
         $return['menus'] = '<div class="menu_area tabs_style__'.$cB['tabs_style'].'">';
 
         // for each menu
-        foreach( $cB['menus'] as $i => $menu ){
+        foreach( $cB['food_menus'] as $i => $menu ){
 
             // get fields for this menu post object
-            $fields = get_fields($menu['menu_post']->ID);
+            $fields = get_fields($menu['food_menu']->ID);
 
             // guide for a button (pill etc)
             $guide['buttons'] = '
@@ -32,7 +30,7 @@
             // write to the button group
             $return['buttons'] .= sprintf(
                 $guide['buttons'] 
-                ,$menu['menu_post']->post_title
+                ,$menu['food_menu']->post_title
             );
 
             // if this menu post has menu sections
@@ -52,12 +50,12 @@
                     // Menu Header Format
                     if($fields['style'] !== 'menu_text_sub_group_half'){
                         $header_format = '
-                            <h2><span style="background-color:'.$cB['options']['background_color'].';">%s</span></h2>
+                            <h2><span>%s</span></h2>
                             %s
                         ';
                     }else{
                         $header_format = '
-                            <div><h2><span style="background-color:'.$cB['options']['background_color'].';">%s</span></h2>
+                            <div><h2><span>%s</span></h2>
                             %s
                         ';
                     }
@@ -104,9 +102,9 @@
         $return['buttons_and_menus'] .= '</div>';
     }
 
-    $guide['section'] = '
-        <section %s class="site__block block__food_menus">
-            <div class="container %s %s" style="%s %s">
+    $guide['food_menus_block'] = '
+        <section class="site__block block__food_menus">
+            <div class="container %s">
                 %s
                 %s
                 %s
@@ -115,25 +113,16 @@
         </section>
     ';
     
-    $return['section'] .= sprintf(
-
-        $guide['section']
-        ,( !empty($cB['anchor_enabled']) ? 'id="'.strtolower($cB['anchor_link_text']).'"' : '' ) // add an ID tag for the long scroll
-        ,( !empty( $cB['options']['width'] ) ? $cB['options']['width'] : '' )                                                         // container width
-        ,( !empty( $cB['options']['background_color'] ) ? 'hasbg' : '' )                                                    // container has bg color class
-        ,( !empty( $cB['options']['background_color'] ) ? 'background-color:'.$cB['options']['background_color'].';' : '' )           // container bg color style
-        ,( !empty( $cB['options']['foreground_color'] ) ? 'color:'.$cB['options']['foreground_color'].';' : '' )           // container bg color style
-        ,( !empty($cB['heading_options']['heading']) ? '<h2 class="block__heading" style="'.( !empty( $cB['heading_options']['heading_alignment'] )? 'text-align:'.$cB['heading_options']['heading_alignment'].';' : '' ).'">'.$cB['heading_options']['heading'].'</h2>' : '' )
-        ,( !empty($cB['heading_options']['sub_heading']) ? '<p class="block__details">'.$cB['heading_options']['sub_heading'].'</p>' : '' )
-
+    $return['food_menus_block'] .= sprintf(
+        $guide['food_menus_block'],
+        (!empty($cB['width']) ? $cB['width'] : '')
+        ,(!empty($cB['heading']) ? '<h3>' . $cB['heading'] . '</h3>' : '')
+        ,(!empty($cB['sub_heading']) ? '<div>' . $cB['sub_heading'] . '</div>' : '')
         // Return the food menus block content which is the buttons and menus
         ,( !empty($return['buttons_and_menus']) ? $return['buttons_and_menus'] : '' )
-
         ,( !empty($cB['button']['url']) ? '<a class="site__button" href="'.$cB['button']['url'].'">'.$cB['button']['title'].'</a>' : '' )
     );
 
-    echo $return['section'];
+    echo $return['food_menus_block'];
      
-    // clear the $cB, $return, $index and $guide vars for the next block
-    unset($cB, $return, $guide);
 ?>
